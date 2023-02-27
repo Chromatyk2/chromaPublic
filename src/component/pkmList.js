@@ -3,9 +3,14 @@ import Axios from 'axios'
 import '../App.css'
 
 function PkmList(props) {
-  console.log(props.list);
+  const [list,setList] = useState([]);
+  useEffect(() => {
+    setList(props.list.data);
+  }, [props.list])
     return (
-        <p>oui</p>
+        {list &&
+          <p>C'est Ok</p>
+        }
     )
 }
 
