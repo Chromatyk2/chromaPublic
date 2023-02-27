@@ -14,7 +14,6 @@ const submitPost = () => {
           setList(response.data);
     })
 }
-console.log(list);
     return (
       <>
         <div>

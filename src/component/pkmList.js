@@ -3,7 +3,7 @@ import Axios from 'axios'
 import '../App.css'
 
 function PkmList(props) {
-  if(props.list.data){
+  if(props.list){
     return <p>Oui</p>
   }
 }
