@@ -7,6 +7,7 @@ function PkmList(props) {
   useEffect(() => {
     setList(props.list.data);
   }, [props.list])
+  console.log(list);
   if(list){
     return <p>Oui</p>
   }
