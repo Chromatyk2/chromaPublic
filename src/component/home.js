@@ -8,13 +8,11 @@ function HomePage() {
 const [pseudo,setPseudo] = useState("");
 const [list,setList] = useState([]);
 const submitPost = () => {
-  setList(
     Axios
       .get(`https://chromatyk-pokemon.herokuapp.com/api/getByUser/${pseudo}`)
       .then(function(response){
-          console.log(response.data);
-      })
-  )
+          setList(response.data);
+    })
 }
 console.log(list);
     return (
