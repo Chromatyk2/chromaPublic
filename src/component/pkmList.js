@@ -9,11 +9,16 @@ function PkmList(props) {
            {pkmList == [] ? (
              <h1>Loading...</h1>
            ) : (
-             pkmList.map((val, key) => {
-               return (
-                 <img src={val.pkmImage}></img>
-               );
-             })
+             <div className="pokemonGlobalContainer">
+               pkmList.map((val, key) => {
+                 return (
+                   <div className="uniquePokemonContainer">
+                      <img src={val.pkmImage}></img>
+                  </div>
+                 );
+               }
+             </div>
+           )
            )}
        </>
      );
