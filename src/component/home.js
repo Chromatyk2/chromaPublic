@@ -4,7 +4,7 @@ import '../App.css'
 
 function HomePage() {
 
-const [userName,setUserName] = useState("");
+const [pseudo,setPseudo] = useState("");
 
 const submitPost = () => {
 Axios.get(`https://chromatyk-pokemon.herokuapp.com/api/getByUser/${pseudo}`)
@@ -15,7 +15,7 @@ Axios.get(`https://chromatyk-pokemon.herokuapp.com/api/getByUser/${pseudo}`)
             <div className="uploadPost">
                 <label>Pseudo: </label>
                 <input type="text" onChange={(e)=> {
-                    setUserName(e.target.value)
+                    setPseudo(e.target.value)
                 }}/>
                 <button onClick={submitPost}>Submit Post</button>
             </div>
