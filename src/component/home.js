@@ -10,7 +10,7 @@ const [list,setList] = useState([]);
 const submitPost = () => {
   setList(Axios.get(`https://chromatyk-pokemon.herokuapp.com/api/getByUser/${pseudo}`))
 }
-
+console.log(list);
     return (
       <>
         <div>
