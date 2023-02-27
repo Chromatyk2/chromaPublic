@@ -3,16 +3,9 @@ import Axios from 'axios'
 import '../App.css'
 
 function PkmList(props) {
+  console.log(props.list);
     return (
-        <div className="CreatePost">
-            <div className="uploadPost">
-                <label>Pseudo: </label>
-                <input type="text" onChange={(e)=> {
-                    setPseudo(e.target.value)
-                }}/>
-                <button onClick={submitPost}>Submit Post</button>
-            </div>
-        </div>
+        <p>oui</p>
     )
 }
 
