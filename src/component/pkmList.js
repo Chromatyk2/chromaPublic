@@ -9,4 +9,4 @@ function PkmList(props) {
     )
 }
 
-export default HomePage
+export default PkmList
