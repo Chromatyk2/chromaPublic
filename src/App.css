@@ -1,3 +1,26 @@
 body{
-  background-image: url("../public/9828559bbdb912d1be3a621a8e148f91.jpeg");
+      background: linear-gradient(45deg, #4DADFE,#06ECFE);
+}
+
+img {
+    width: 175px;
+    display: block;
+    margin: auto;
+}
+
+.uniquePokemonContainer {
+    width: 175px;
+    margin: 30px;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/1068/1068780.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pokemonGlobalContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
 }
