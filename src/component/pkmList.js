@@ -7,11 +7,9 @@ function PkmList(props) {
   useEffect(() => {
     setList(props.list.data);
   }, [props.list])
-    return (
-        {list &&
-          <p>C'est Ok</p>
-        }
-    )
+  if(list){
+    return <p>Oui</p>
+  }
 }
 
 export default PkmList
