@@ -5,11 +5,10 @@ import '../App.css'
 function PkmList(props) {
   const pkmList = props.list;
     return (
-       <>
+      <div className="pokemonGlobalContainer">
            {pkmList == [] ? (
              <h1>Loading...</h1>
            ) : (
-             <div className="pokemonGlobalContainer">
                pkmList.map((val, key) => {
                  return (
                    <div className="uniquePokemonContainer">
@@ -17,9 +16,8 @@ function PkmList(props) {
                   </div>
                  )
                })
-            </div>
            )}
-       </>
+        </div>
      );
 }
 
