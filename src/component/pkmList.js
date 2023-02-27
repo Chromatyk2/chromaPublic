@@ -4,7 +4,11 @@ import '../App.css'
 
 function PkmList(props) {
   if(props.list.length > 0){
-    return <p>Oui</p>
+    const listDisplay = (
+      {props.list.map((pokemon) =>
+        <img src={pokemon.pkmImage}></img>
+    )}
+    )
   }
 }
 
