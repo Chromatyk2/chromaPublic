@@ -15,10 +15,9 @@ function PkmList(props) {
                    <div className="uniquePokemonContainer">
                       <img src={val.pkmImage}></img>
                   </div>
-                 );
-               }
-             </div>
-           )
+                 )
+               })
+            </div>
            )}
        </>
      );
