@@ -4,13 +4,19 @@ import '../App.css'
 
 function PkmList(props) {
   const pkmList = props.list;
-  if(props.list.length > 0){
-    return(
-      {pkmList.map((pokemon) =>
-        <img src={pokemon.pkmImage}></img>
-      )}
-    )
-  }
+    return (
+       <>
+           {pkmList == [] ? (
+             <h1>Loading...</h1>
+           ) : (
+             pkmList.map((val, key) => {
+               return (
+                 <img src={val.pkmImage}></img>
+               );
+             })
+           )}
+       </>
+     );
 }
 
 export default PkmList
