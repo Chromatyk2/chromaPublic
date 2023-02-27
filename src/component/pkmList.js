@@ -3,9 +3,10 @@ import Axios from 'axios'
 import '../App.css'
 
 function PkmList(props) {
-  if(props.list.length > 0){
+  const pkmList = props.list;
+  if(pkmList.length > 0){
     const listDisplay = (
-      {props.list.map((pokemon) =>
+      {pkmList.map((pokemon) =>
         <img src={pokemon.pkmImage}></img>
     )}
     )
