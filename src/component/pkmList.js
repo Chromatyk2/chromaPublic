@@ -73,7 +73,5 @@ function PaginatedItems({ itemsPerPage }) {
   );
 }
 
-ReactDOM.render(
-  <PaginatedItems itemsPerPage={4} />,
-  document.getElementById('container')
-);
+
+export default <PaginatedItems itemsPerPage={25} />

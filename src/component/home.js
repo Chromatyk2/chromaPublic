@@ -23,7 +23,7 @@ const submitPost = () => {
           </div>
         </div>
         <div>
-        <PkmList list={list}/>
+        <PaginatedItems list={list}/>
         </div>
       </>
     )
