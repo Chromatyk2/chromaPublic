@@ -8,6 +8,12 @@ function Items(props) {
   const nbTotal = pkmList.length;
   return (
     <>
+
+      <div className="stats">
+        <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
+        <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
+      </div>
+      <div className="pokemonGlobalContainer">
        {pkmList == [] ? (
          <h1>Loading...</h1>
        ) : (
@@ -23,6 +29,7 @@ function Items(props) {
              )
            })
        )}
+     </div>
     </>
   );
 }
@@ -51,13 +58,7 @@ function Pagination(props) {
 
   return (
     <>
-      <div className="stats">
-        <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
-        <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
-      </div>
-      <div className="pokemonGlobalContainer">
         <Items currentItems={currentItems} />
-      </div>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
