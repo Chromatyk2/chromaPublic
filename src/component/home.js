@@ -22,9 +22,6 @@ const submitPost = () => {
               <button className="buttonPseudo" onClick={submitPost}><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-        <div>
-        <PaginatedItems list={list}/>
-        </div>
       </>
     )
 }
