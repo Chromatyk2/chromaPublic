@@ -18,10 +18,12 @@ const submitPost = () => {
       <>
         <div className="CreatePost">
           <div className="uploadPost">
+            <form onSubmit={submitPost}>
               <input className="inputPseudo" type="text" placeholder="Pseudo" placeh onChange={(e)=> {
                   setPseudo(e.target.value)
               }}/>
               <button className="buttonPseudo" onClick={submitPost}><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
           </div>
         </div>
         <div>
