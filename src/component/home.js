@@ -16,17 +16,16 @@ const submitPost = () => {
 }
     return (
       <>
+        <div className="CreatePost">
+          <div className="uploadPost">
+              <input type="text" placeholder="Pseudo" placeh onChange={(e)=> {
+                  setPseudo(e.target.value)
+              }}/>
+              <button onClick={submitPost}>Submit Post</button>
+          </div>
+        </div>
         <div>
         <PkmList list={list}/>
-        </div>
-        <div className="CreatePost">
-            <div className="uploadPost">
-                <label>Pseudo: </label>
-                <input type="text" onChange={(e)=> {
-                    setPseudo(e.target.value)
-                }}/>
-                <button onClick={submitPost}>Submit Post</button>
-            </div>
         </div>
       </>
     )
