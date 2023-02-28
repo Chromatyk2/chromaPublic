@@ -19,7 +19,7 @@ function PkmList(props) {
         </div>
         <div className="pokemonGlobalContainer">
           <Pagination
-            itemsPerPage={4}
+            itemsPerPage={25}
             items={props.list}
           />
              {pkmList == [] ? (
