@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
-import Pagination from '../Pagination';
+import Pagination from './Pagination';
 import '../App.css'
 
 function PkmList(props) {
@@ -12,7 +12,7 @@ function PkmList(props) {
     const lastPageIndex = firstPageIndex + PageSize;
     return data.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
-  
+
   const pkmList = props.list;
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
