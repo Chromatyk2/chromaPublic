@@ -9,8 +9,8 @@ img {
 }
 .stats{
   position: absolute;
-display: flex;
-gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 .uniquePokemonContainer {
   background-position: 50%;
