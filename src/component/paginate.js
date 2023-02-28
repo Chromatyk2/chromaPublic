@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 function Pagination({ itemsPerPage }) {
   // Here we use item offsets; we could also use page offsets
