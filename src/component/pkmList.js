@@ -5,13 +5,13 @@ import '../App.css'
 function PkmList(props) {
   const pkmList = props.list;
     return (
-      <div className="pokemonGlobalContainer row">
+      <div className="pokemonGlobalContainer">
            {pkmList == [] ? (
              <h1>Loading...</h1>
            ) : (
                pkmList.map((val, key) => {
                  return (
-                   <div className="col-3 uniquePokemonContainer">
+                   <div className="uniquePokemonContainer">
                       <img src={val.pkmImage}></img>
                   </div>
                  )
