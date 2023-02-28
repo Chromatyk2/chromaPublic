@@ -5,13 +5,6 @@ import Pagination from './paginate.js';
 import '../App.css'
 
 function PkmList(props) {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * PageSize;
-    const lastPageIndex = firstPageIndex + PageSize;
-    return data.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage]);
 
   const pkmList = props.list;
   const shinys = pkmList.filter(item => item.shiny == 1);

@@ -24,7 +24,6 @@ function Pagination(props) {
 
   return (
     <>
-      <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
