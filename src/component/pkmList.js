@@ -20,8 +20,10 @@ function PkmList(props) {
                  pkmList.map((val, key) => {
                    return (
                      <div className="uniquePokemonContainer">
-                     {val.nbCapture > 1 ? <div>{val.nbCapture}</div> : <div></div>}
-                     {val.shiny == 1 ? <img src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"></img> : <div></div>}
+                       <div>
+                         {val.nbCapture > 1 ? <div>{val.nbCapture}</div> : <div></div>}
+                         {val.shiny == 1 ? <img src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"></img> : <div></div>}
+                       </div>
                         <img src={val.pkmImage}></img>
                     </div>
                    )
