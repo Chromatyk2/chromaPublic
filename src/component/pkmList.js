@@ -26,11 +26,7 @@ function PkmList(props) {
         </div>
         <div className="pokemonGlobalContainer">
           <Pagination
-            className="pagination-bar"
-            currentPage={currentPage}
-            totalCount={props.list.length}
-            pageSize={PageSize}
-            onPageChange={page => setCurrentPage(page)}
+            itemsPerPage={4}
           />
              {pkmList == [] ? (
                <h1>Loading...</h1>
