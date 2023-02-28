@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
-import Pagination from './pagination.js';
+import Pagination from './paginate.js';
 import '../App.css'
 
 function PkmList(props) {
