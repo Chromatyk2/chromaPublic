@@ -20,7 +20,7 @@ function PkmList(props) {
                  pkmList.map((val, key) => {
                    return (
                      <div className="uniquePokemonContainer">
-                     {val.nbCapture > 1 ? <div>{val.nbCapture} : </div>}
+                     {val.nbCapture > 1 ? <div>{val.nbCapture}</div> : <div></div>}
                         <img src={val.pkmImage}></img>
                     </div>
                    )
