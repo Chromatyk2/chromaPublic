@@ -7,6 +7,24 @@ img {
   margin: auto;
   width: 90px;
 }
+.labelStats{
+  font-weight: bold;
+  line-height: 28px;
+}
+.valueStats{
+  font-weight: bold;
+  color: #255748;
+  background-color: white;
+  padding: 10px;
+  border-radius: 88px;
+  min-width: 88px;
+  display: block;
+  height: 30px;
+  line-height: 10px;
+  text-align: center;
+  float: right;
+  margin-left: 10px;
+}
 .infoPkm{
   position: absolute;
   top: 0;
