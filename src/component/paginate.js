@@ -38,18 +38,18 @@ function Pagination(props) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-
+  const pkmList = props.list;
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + props.itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = props.list.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(props.list.length / props.itemsPerPage);
+  const currentItems = pkmList.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(pkmList.length / props.itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * props.itemsPerPage) % props.list.length;
+    const newOffset = (event.selected * props.itemsPerPage) % pkmList.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
