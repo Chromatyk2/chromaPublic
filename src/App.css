@@ -52,7 +52,7 @@ img {
     display: flex;
     gap: 30px;
     position: absolute;
-    left: 7%;
+    left: 4%;
 }
 .uniquePokemonContainer {
     background-position: 50%;
