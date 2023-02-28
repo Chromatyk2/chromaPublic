@@ -27,6 +27,7 @@ function PkmList(props) {
         <div className="pokemonGlobalContainer">
           <Pagination
             itemsPerPage={4}
+            items={props.list}
           />
              {pkmList == [] ? (
                <h1>Loading...</h1>
