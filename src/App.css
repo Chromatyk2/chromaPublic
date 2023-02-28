@@ -37,7 +37,6 @@ img {
   align-items: center;
     display: flex;
     justify-content: center;
-    margin: 20px;
 }
 .buttonPseudo{
   border-radius: 25px;
