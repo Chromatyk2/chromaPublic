@@ -4,8 +4,8 @@ import '../App.css'
 
 function PkmList(props) {
   const pkmList = props.list;
-  const shinys = data.filter(item => item.shiny == 1);
-  const nbShiny = shiny.length;
+  const shinys = pkmList.filter(item => item.shiny == 1);
+  const nbShiny = shinys.length;
     return (
       <div className="pokemonGlobalContainer">
       <p>Shiny : {nbShiny}</p>
