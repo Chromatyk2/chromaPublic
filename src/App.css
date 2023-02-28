@@ -25,11 +25,14 @@ img {
     margin: auto;
 }
 .inputPseudo{
-  display: block;
-    margin: auto;
     height: 50px;
     width: 25%;
     border-radius: 25px;
     text-align: center;
     font-size: 40px;
+}
+.uploadPost{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
