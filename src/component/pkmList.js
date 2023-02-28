@@ -6,9 +6,13 @@ function PkmList(props) {
   const pkmList = props.list;
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
+  const nbTotal = pkmList.length;
     return (
       <div className="pokemonGlobalContainer">
-      <p>Shiny : {nbShiny}</p>
+        <div className="stats">
+          <p>Shiny : {nbShiny}</p>
+          <p>Total : {nbTotal}</p>
+        </div>
            {pkmList == [] ? (
              <h1>Loading...</h1>
            ) : (
