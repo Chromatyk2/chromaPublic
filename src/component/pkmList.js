@@ -7,16 +7,10 @@ import '../App.css'
 function PkmList(props) {
     return (
       <>
-        <div className="stats">
-          <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
-          <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
-        </div>
-        <div className="pokemonGlobalContainer">
           <Pagination
             itemsPerPage={25}
             items={props.list}
           />
-          </div>
         </>
      );
 }

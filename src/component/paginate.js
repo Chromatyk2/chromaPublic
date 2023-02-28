@@ -51,7 +51,13 @@ function Pagination(props) {
 
   return (
     <>
-      <Items currentItems={currentItems} />
+      <div className="stats">
+        <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
+        <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
+      </div>
+      <div className="pokemonGlobalContainer">
+        <Items currentItems={currentItems} />
+      </div>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
