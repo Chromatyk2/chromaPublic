@@ -8,23 +8,25 @@ function PkmList(props) {
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
     return (
-      <div className="pokemonGlobalContainer">
+      <>
         <div className="stats">
-          <p>Shiny : {nbShiny}</p>
-          <p>Total : {nbTotal}</p>
+          <p>Shiny : <span>{nbShiny}</span></p>
+          <p>Total : <span>{nbTotal}</span></p>
         </div>
-           {pkmList == [] ? (
-             <h1>Loading...</h1>
-           ) : (
-               pkmList.map((val, key) => {
-                 return (
-                   <div className="uniquePokemonContainer">
-                      <img src={val.pkmImage}></img>
-                  </div>
-                 )
-               })
-           )}
-        </div>
+        <div className="pokemonGlobalContainer">
+             {pkmList == [] ? (
+               <h1>Loading...</h1>
+             ) : (
+                 pkmList.map((val, key) => {
+                   return (
+                     <div className="uniquePokemonContainer">
+                        <img src={val.pkmImage}></img>
+                    </div>
+                   )
+                 })
+             )}
+          </div>
+        </>
      );
 }
 
