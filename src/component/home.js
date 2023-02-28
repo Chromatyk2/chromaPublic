@@ -21,7 +21,7 @@ const submitPost = () => {
               <input className="inputPseudo" type="text" placeholder="Pseudo" placeh onChange={(e)=> {
                   setPseudo(e.target.value)
               }}/>
-              <button onClick={submitPost}><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button className="buttonPseudo" onClick={submitPost}><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
         <div>
