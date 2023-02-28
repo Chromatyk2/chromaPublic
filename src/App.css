@@ -25,18 +25,20 @@ img {
     margin: auto;
 }
 .inputPseudo{
-  border-radius: 25px;
-  font-size: 40px;
-  height: 50px;
-  text-align: center;
-  width: 25%;
-  background-color: rgba(255,255,255,0.9);
-  color: #255748;
+  background-color: hsla(0,0%,100%,.9);
+    border-radius: 25px;
+    color: #255748;
+    font-size: 40px;
+    height: 50px;
+    text-align: center;
+    width: 25%;
+    margin: 20px;
 }
 .uploadPost{
-  display: flex;
   align-items: center;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
 .buttonPseudo{
   border-radius: 25px;
