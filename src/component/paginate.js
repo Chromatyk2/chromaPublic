@@ -38,8 +38,7 @@ function Pagination(props) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-  const pkmList = props.list;
-  console.log(pkmList);
+  const pkmList = props.items;
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
