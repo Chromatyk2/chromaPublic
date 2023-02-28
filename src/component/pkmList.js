@@ -22,7 +22,7 @@ function PkmList(props) {
                      <div className="uniquePokemonContainer">
                        <div className="infoPkm">
                          {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
-                         {val.shiny == 1 ? <img className="infoShiny" src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"></img> : <div></div>}
+                         {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
                        </div>
                         <img src={val.pkmImage}></img>
                     </div>
