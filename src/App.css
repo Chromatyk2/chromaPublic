@@ -7,6 +7,26 @@ img {
   margin: auto;
   width: 90px;
 }
+.infoPkm{
+  position: absolute;
+  top: 0;
+}
+.infoNbCapture{
+  position: absolute;
+  left: -19px;
+  background-color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+.infoShiny{
+  width: 20px;
+  position: absolute;
+  top: 90px;
+  left: 70px;
+}
 .stats{
     display: flex;
     gap: 30px;
