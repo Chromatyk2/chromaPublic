@@ -3,31 +3,33 @@ body {
 }
 
 img {
-    width: 100px;
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
+  width: 90px;
 }
 .stats{
-  position: absolute;
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    left: 7%;
 }
 .uniquePokemonContainer {
     background-position: 50%;
     background-repeat: no-repeat;
-    margin: 30px;
-    background: rgba(37, 87, 72, 0.2);
-    padding: 15px;
+    background: rgba(37,87,72,.2);
     border-radius: 25%;
+    -webkit-filter: drop-shadow(0 0 12px #000);
     filter: drop-shadow(0 0 12px black);
+    padding: 15px;
 }
 
 .pokemonGlobalContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 50%;
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+  gap: 10px;
 }
 .inputPseudo{
   background-color: hsla(0,0%,100%,.9);
