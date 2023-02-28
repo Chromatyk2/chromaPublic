@@ -10,8 +10,8 @@ function PkmList(props) {
     return (
       <>
         <div className="stats">
-          <p>Shiny : <span>{nbShiny}</span></p>
-          <p>Total : <span>{nbTotal}</span></p>
+          <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
+          <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
         </div>
         <div className="pokemonGlobalContainer">
              {pkmList == [] ? (
