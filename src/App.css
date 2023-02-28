@@ -7,6 +7,26 @@ img {
   margin: auto;
   width: 100px;
 }
+ul {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    margin: auto;
+    list-style: none;
+}
+li a {
+    color: #255748;
+    text-decoration: none;
+    font-size: 30px;
+}
+li{
+    color: #255748;
+    text-decoration: none;
+    font-size: 30px;
+}
+.selected{
+  font-weight: bold;
+}
 #root{
   height: 100vh;
 }
