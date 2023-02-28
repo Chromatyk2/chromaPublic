@@ -7,7 +7,11 @@ img {
     display: block;
     margin: auto;
 }
-
+.stats{
+  position: absolute;
+display: flex;
+gap: 30px;
+}
 .uniquePokemonContainer {
   background-position: 50%;
   background-repeat: no-repeat;
