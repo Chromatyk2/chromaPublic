@@ -21,7 +21,6 @@ const submitPost = () => {
               <input type="text" placeholder="Pseudo" placeh onChange={(e)=> {
                   setPseudo(e.target.value)
               }}/>
-              <button onClick={submitPost}>Submit Post</button>
           </div>
         </div>
         <div>
