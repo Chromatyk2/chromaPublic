@@ -13,10 +13,13 @@ img {
   gap: 30px;
 }
 .uniquePokemonContainer {
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 30px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    margin: 30px;
+    background: rgba(37, 87, 72, 0.2);
+    padding: 15px;
+    border-radius: 25%;
+    filter: drop-shadow(0 0 12px black);
 }
 
 .pokemonGlobalContainer {
