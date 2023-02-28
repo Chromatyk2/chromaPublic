@@ -22,10 +22,13 @@ img {
   text-align: center;
 }
 .infoShiny{
-  width: 20px;
-  position: absolute;
-  top: 90px;
-  left: 70px;
+    left: 85px;
+    position: absolute;
+    top: 96px;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
 }
 .stats{
     display: flex;
