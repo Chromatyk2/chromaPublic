@@ -1,5 +1,32 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
+
+function Items(props) {
+  const pkmList = props.currentItems;
+  const shinys = pkmList.filter(item => item.shiny == 1);
+  const nbShiny = shinys.length;
+  const nbTotal = pkmList.length;
+  return (
+    <>
+       {pkmList == [] ? (
+         <h1>Loading...</h1>
+       ) : (
+           pkmList.map((val, key) => {
+             return (
+               <div className="uniquePokemonContainer">
+                 <div className="infoPkm">
+                   {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
+                   {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
+                 </div>
+                  <img src={val.pkmImage}></img>
+              </div>
+             )
+           })
+       )}
+    </>
+  );
+}
+
 function Pagination(props) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
@@ -10,12 +37,12 @@ function Pagination(props) {
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + props.itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = props.items.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(props.items.length / props.itemsPerPage);
+  const currentItems = props.list.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(props.list.length / props.itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * props.itemsPerPage) % props.items.length;
+    const newOffset = (event.selected * props.itemsPerPage) % props.list.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -24,6 +51,7 @@ function Pagination(props) {
 
   return (
     <>
+      <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
