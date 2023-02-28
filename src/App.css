@@ -1,5 +1,5 @@
-body{
-      background: linear-gradient(45deg, #4DADFE,#06ECFE);
+body {
+    background: linear-gradient(45deg,#C6EC9B,#88E4B9);
 }
 
 img {
@@ -25,14 +25,25 @@ img {
     margin: auto;
 }
 .inputPseudo{
-    height: 50px;
-    width: 25%;
-    border-radius: 25px;
-    text-align: center;
-    font-size: 40px;
+  border-radius: 25px;
+  font-size: 40px;
+  height: 50px;
+  text-align: center;
+  width: 25%;
+  background-color: rgba(255,255,255,0.9);
+  color: #fefefe;
 }
 .uploadPost{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.buttonPseudo{
+  border-radius: 25px;
+    font-size: 25px;
+    height: 50px;
+    text-align: center;
+    width: 50px;
+    background-color: rgba(255,255,255,0.9);
+    color: #fef;
 }
