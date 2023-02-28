@@ -18,9 +18,10 @@ const submitPost = () => {
       <>
         <div className="CreatePost">
           <div className="uploadPost">
-              <input type="text" placeholder="Pseudo" placeh onChange={(e)=> {
+              <input className="inputPseudo" type="text" placeholder="Pseudo" placeh onChange={(e)=> {
                   setPseudo(e.target.value)
               }}/>
+              <button onClick={submitPost}>Submit Post</button>
           </div>
         </div>
         <div>
