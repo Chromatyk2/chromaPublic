@@ -16,13 +16,18 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
-                 <div className="uniquePokemonContainer">
+                 <div id="app-title" className="uniquePokemonContainer">
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
                      {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
                    </div>
                     <img src={val.pkmImage}></img>
                   </div>
+                  <ReactTooltip
+                    anchorId="app-title"
+                    place="bottom"
+                    content="Hello world! I'm a Tooltip"
+                  />
               </>
              )
            })
@@ -73,9 +78,7 @@ function Pagination(props) {
           <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
         </div>
       }
-      <Tooltip title="oui" arrow>
-        <Items currentItems={currentItems} />
-      </Tooltip>
+      <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
         nextLabel=">>"
