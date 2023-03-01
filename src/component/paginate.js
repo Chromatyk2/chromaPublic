@@ -40,10 +40,9 @@ function Pagination(props) {
   useEffect(() => {
     setFiltredPokemon(props.items);
   }, [props.items]);
-  console.log(filtredPokemon);
   function handlePokemon(e) {
     let shiny = e.target.value;
-    shiny !== "all"
+    shiny !== 0
       ? setFiltredPokemon(filtredPokemon.filter(item => item.shiny == shiny))
       : setFiltredPokemon(filtredPokemon);
   }
@@ -67,7 +66,7 @@ function Pagination(props) {
     <>
     <div className="filtersContainer">
       <p className="filterTitle">Trier</p>
-      <button className="filterButton" onClick={handlePokemon} value="all" >Tous</button>
+      <button className="filterButton" onClick={handlePokemon} value="0" >Tous</button>
       <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
     </div>
       <Items currentItems={currentItems} />
