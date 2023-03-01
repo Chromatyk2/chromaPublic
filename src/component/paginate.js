@@ -65,7 +65,11 @@ function Pagination(props) {
 
   return (
     <>
-      <button onClick={handlePokemon} value="1" >Shiny</button>
+    <div className="filtersContainer">
+      <p className="filterTitle">Trier</p>
+      <button className="filterButton" onClick={handlePokemon} value="all" >Tous</button>
+      <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
+    </div>
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
