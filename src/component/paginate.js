@@ -3,7 +3,6 @@ import ReactPaginate from 'react-paginate';
 
 function Items(props) {
 const [pkmList,stPkmList] = useState([props.currentItems]);
-  var pkmList = props.currentItems;
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
