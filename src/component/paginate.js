@@ -39,35 +39,23 @@ function Pagination(props) {
   var pkmList = props.items;
   const shinyTri = () => {
     setPkmListFiltered(pkmList.filter(item => item.shiny == 1));
+    console.log(pkmListFiltered);
   };
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + props.itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  if(pkmListFiltered == null){
-    const currentItems = pkmListFiltered.slice(itemOffset, endOffset);
-    const pageCount = Math.ceil(pkmListFiltered.length / props.itemsPerPage);
-  }else{
-    const currentItems = pkmListFiltered.slice(itemOffset, endOffset);
-    const pageCount = Math.ceil(pkmListFiltered.length / props.itemsPerPage);
-  }
+  const currentItems = pkmList.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(pkmList.length / props.itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    if(pkmListFiltered == null){
-      const newOffset = (event.selected * props.itemsPerPage) % pkmList.length;
-      console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-      );
-      setItemOffset(newOffset);
-    }else{
-      const newOffset = (event.selected * props.itemsPerPage) % pkmListFiltered.length;
-      console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-      );
-      setItemOffset(newOffset);
-    }
+    const newOffset = (event.selected * props.itemsPerPage) % pkmList.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
   };
 
   return (
