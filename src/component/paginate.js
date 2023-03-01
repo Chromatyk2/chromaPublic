@@ -36,7 +36,7 @@ function Pagination(props) {
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
   const [pkmListFiltered,setPkmListFiltered] = useState([]);
-  const [filtredPokemon, setFiltredPokemon] = useState(null);
+  const [filtredPokemon, setFiltredPokemon] = useState(props.items);
   useEffect(() => {
     setFiltredPokemon(props.items);
   }, [props.items]);
