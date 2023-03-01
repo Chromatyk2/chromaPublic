@@ -36,7 +36,7 @@ function Pagination(props) {
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
   const pkmList = props.items;
-  shinyTri = () => {
+  const shinyTri = () => {
     console.log('this is:');
   };
   // Simulate fetching items from another resources.
