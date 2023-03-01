@@ -23,7 +23,7 @@ function Items(props) {
                      {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
                    </div>
                     <img src={val.pkmImage}></img>
-                </div>
+                  </div>
                 </Tooltip>
               </>
              )
