@@ -16,7 +16,6 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
-               <Tooltip title={val.nbCapture} arrow>
                  <div className="uniquePokemonContainer">
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
@@ -24,7 +23,6 @@ function Items(props) {
                    </div>
                     <img src={val.pkmImage}></img>
                   </div>
-                </Tooltip>
               </>
              )
            })
@@ -75,7 +73,7 @@ function Pagination(props) {
           <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
         </div>
       }
-      <Items currentItems={currentItems} />
+        <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
         nextLabel=">>"
