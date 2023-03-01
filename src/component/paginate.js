@@ -37,6 +37,7 @@ function Pagination(props) {
   const [itemOffset, setItemOffset] = useState(0);
   const [pkmListFiltered,setPkmListFiltered] = useState([]);
   const [filtredPokemon, setFiltredPokemon] = useState(props.items);
+  const hasShiny = props.items.filter(item => item.shiny == shiny);
   useEffect(() => {
     setFiltredPokemon(props.items);
   }, [props.items]);
@@ -64,11 +65,13 @@ function Pagination(props) {
 
   return (
     <>
-    <div className="filtersContainer">
-      <p className="filterTitle">Trier</p>
-      <button className="filterButton" onClick={handlePokemon} value="0" >Tous</button>
-      <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
-    </div>
+      if(hasShiny.length > 0){
+        <div className="filtersContainer">
+          <p className="filterTitle">Trier</p>
+          <button className="filterButton" onClick={handlePokemon} value="0" >Tous</button>
+          <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
+        </div>
+      }
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
