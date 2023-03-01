@@ -63,7 +63,7 @@ function Pagination(props) {
         breakLabel="..."
         nextLabel=">>"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={1}
+        pageRangeDisplayed={2}
         pageCount={pageCount}
         previousLabel="<<"
         renderOnZeroPageCount={null}
