@@ -9,9 +9,10 @@ function PkmList(props) {
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
-  function shintTri(e) {
+  function shintTri() {
     const pkmList = shinys;
   }
+  console.log(pkmList);
     return (
       <>
         <div className="stats">
