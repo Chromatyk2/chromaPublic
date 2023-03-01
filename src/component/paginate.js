@@ -44,7 +44,7 @@ function Pagination(props) {
     let shiny = e.target.value;
     shiny !== 0
       ? setFiltredPokemon(filtredPokemon.filter(item => item.shiny == shiny))
-      : setFiltredPokemon(filtredPokemon);
+      : setFiltredPokemon(props.items);
   }
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
