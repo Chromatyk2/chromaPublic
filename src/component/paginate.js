@@ -44,7 +44,7 @@ function Pagination(props) {
 
   function handlePokemon(e) {
     let shiny = e.target.value;
-    typePokemon !== "all"
+    shiny !== "all"
       ? setFiltredPokemon(filtredPokemon.filter(item => item.shiny == shiny))
       : setFiltredPokemon(filtredPokemon);
   }
@@ -67,7 +67,7 @@ function Pagination(props) {
 
   return (
     <>
-      <button onClick={shinyTri} value="1" >Shiny</button>
+      <button onClick={handlePokemon} value="1" >Shiny</button>
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
