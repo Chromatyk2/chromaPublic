@@ -36,10 +36,10 @@ function Pagination(props) {
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
   const [pkmListFiltered,setPkmListFiltered] = useState([]);
-  const [filtredPokemon, setFiltredPokemon] = useState(props.items);
+  const [filtredPokemon, setFiltredPokemon] = useState(null);
   useEffect(() => {
     setFiltredPokemon(props.items);
-  }, []);
+  }, [props.items]);
   console.log(filtredPokemon);
   function handlePokemon(e) {
     let shiny = e.target.value;
@@ -51,7 +51,6 @@ function Pagination(props) {
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
     const endOffset = itemOffset + props.itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     const currentItems = filtredPokemon.slice(itemOffset, endOffset);
     const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
 
