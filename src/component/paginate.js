@@ -1,155 +1,86 @@
-body {
-    background: linear-gradient(45deg,#C6EC9B,#88E4B9);
+import React,{useState, useEffect} from 'react';
+import ReactPaginate from 'react-paginate';
+
+function Items(props) {
+  const pkmList = props.currentItems;
+  const shinys = pkmList.filter(item => item.shiny == 1);
+  const nbShiny = shinys.length;
+  const nbTotal = pkmList.length;
+  return (
+    <>
+      <div className="pokemonGlobalContainer">
+       {pkmList == [] ? (
+         <h1>Loading...</h1>
+       ) : (
+           pkmList.map((val, key) => {
+             return (
+               <>
+                 <div className="uniquePokemonContainer">
+                   <div className="infoPkm">
+                     {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
+                     {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
+                   </div>
+                    <img src={val.pkmImage}></img>
+                </div>
+              </>
+             )
+           })
+       )}
+     </div>
+    </>
+  );
 }
 
-img {
-  display: block;
-  margin: auto;
-  width: 100px;
-}
-ul {
-    display: flex;
-    width: 50%;
-    justify-content: space-around;
-    margin: auto;
-    list-style: none;
-    padding:0;
-}
-li a {
-    color: #255748;
-    text-decoration: none;
-    font-size: 30px;
-}
-li{
-    color: #255748;
-    text-decoration: none;
-    font-size: 30px;
-}
-.filtersContainer {
-    display: flex;
-    flex-flow: column;
-    width: 322px;
-    align-items: center;
-    position: absolute;
-    top: 177px;
-    left: 4%;
-    gap: 10px;
-}
-button.filterButton {
-    background: none;
-    font-size: 20px;
-    padding: 10px;
-    width: 100px;
-    border-radius: 20px;
-    border:solid 4px #255748
-}
-button.filterButton:hover {
-    background: #255748;
-    font-size: 20px;
-    padding: 10px;
-    width: 100px;
-    border-radius: 20px;
-    color: white;
-}
-p.filterTitle {
-    font-size: 35px;
-}
-.selected{
-  font-weight: bold;
-}
-#root{
-  height: 100vh;
-}
-.labelStats{
-  font-weight: bold;
-  line-height: 28px;
-}
-.valueStats{
-  font-weight: bold;
-  color: #255748;
-  background-color: white;
-  padding: 10px;
-  border-radius: 88px;
-  min-width: 88px;
-  display: block;
-  height: 30px;
-  line-height: 10px;
-  text-align: center;
-  float: right;
-  margin-left: 10px;
-}
-.infoPkm{
-  position: absolute;
-  top: 0;
-}
-.infoNbCapture{
-  position: absolute;
-  left: -19px;
-  background-color: white;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  font-weight: bold;
-  text-align: center;
-}
-.infoShiny{
-    left: 90px;
-    position: absolute;
-    top: 105px;
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border-radius: 50%;
-}
-.stats{
-    display: flex;
-    gap: 30px;
-    position: absolute;
-    left: 4%;
-}
-.uniquePokemonContainer {
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background: rgba(37,87,72,.2);
-    border-radius: 25%;
-    -webkit-filter: drop-shadow(0 0 12px #000);
-    filter: drop-shadow(0 0 12px black);
-    padding: 15px;
+function Pagination(props) {
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [itemOffset, setItemOffset] = useState(0);
+  const [pkmListFiltered,setPkmListFiltered] = useState([]);
+  const [filtredPokemon, setFiltredPokemon] = useState(props.items);
+  useEffect(() => {
+    setFiltredPokemon(props.items);
+  }, [props.items]);
+  function handlePokemon(e) {
+    let shiny = e.target.value;
+    shiny !== 0
+      ? setFiltredPokemon(props.items.filter(item => item.shiny == shiny))
+      : setFiltredPokemon(props.items);
+  }
+  // Simulate fetching items from another resources.
+  // (This could be items from props; or items loaded in a local state
+  // from an API endpoint with useEffect and useState)
+    const endOffset = itemOffset + props.itemsPerPage;
+    const currentItems = filtredPokemon.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
+  return (
+    <>
+    <div className="filtersContainer">
+      <p className="filterTitle">Trier</p>
+      <button className="filterButton" onClick={handlePokemon} value="0" >Tous</button>
+      <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
+    </div>
+      <Items currentItems={currentItems} />
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel=">>"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={2}
+        pageCount={pageCount}
+        previousLabel="<<"
+        renderOnZeroPageCount={null}
+      />
+    </>
+  );
 }
 
-.pokemonGlobalContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-  width: 50%;
-  gap: 10px;
-}
-.inputPseudo{
-  background-color: hsla(0,0%,100%,.9);
-  border-radius: 25px;
-  color: #255748;
-  font-size: 40px;
-  margin: 20px;
-  text-align: center;
-  width: 100%;
-  border: black solid 4px;
-}
-
-.uploadPost{
-  align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.buttonPseudo{
-  background-color: hsla(0,0%,100%,.9);
-  border-radius: 25px;
-  color: #255748;
-  font-size: 25px;
-  height: 50px;
-  text-align: center;
-  width: 50px;
-  border: solid black 4px;
-  position: absolute;
-  right: 2%;
-}
+export default Pagination;
