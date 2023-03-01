@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
+import { Tooltip } from 'react-tooltip'
 
 function Items(props) {
   const pkmList = props.currentItems;
@@ -15,6 +16,7 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
+               <Tooltip title={val.nbCapture} arrow>
                  <div className="uniquePokemonContainer">
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
@@ -22,6 +24,7 @@ function Items(props) {
                    </div>
                     <img src={val.pkmImage}></img>
                 </div>
+                </Tooltip>
               </>
              )
            })
