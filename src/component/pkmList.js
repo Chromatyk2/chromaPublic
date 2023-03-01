@@ -9,15 +9,19 @@ function PkmList(props) {
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
+  function shintTri(e) {
+    const pkmList = shinys;
+  }
     return (
       <>
         <div className="stats">
           <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
           <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
         </div>
+        <button onClick={shintTri}>Shiny</button>
           <Pagination
             itemsPerPage={30}
-            items={props.list}
+            items={pkmList}
           />
         </>
      );
