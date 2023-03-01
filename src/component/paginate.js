@@ -60,6 +60,7 @@ function Pagination(props) {
 
   return (
     <>
+      <button onClick={shinyTri} >Shiny</button>
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
