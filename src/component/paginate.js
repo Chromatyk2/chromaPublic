@@ -13,7 +13,6 @@ ul {
     justify-content: space-around;
     margin: auto;
     list-style: none;
-    padding: 0;
 }
 li a {
     color: #255748;
