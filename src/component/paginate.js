@@ -37,7 +37,7 @@ function Pagination(props) {
   const [itemOffset, setItemOffset] = useState(0);
   const pkmList = props.items;
   const shinyTri = () => {
-    console.log('this is:');
+    pkmList = pkmList.filter(item => item.shiny == 1);
   };
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
