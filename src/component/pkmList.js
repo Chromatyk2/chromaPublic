@@ -1,24 +1,19 @@
 import React,{useState, useEffect} from 'react';
+import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
+import Pagination from './paginate.js';
 import '../App.css'
 
 function PkmList(props) {
-  const pkmList = props.list;
     return (
-      <div className="pokemonGlobalContainer">
-           {pkmList == [] ? (
-             <h1>Loading...</h1>
-           ) : (
-               pkmList.map((val, key) => {
-                 return (
-                   <div className="uniquePokemonContainer">
-                      <img src={val.pkmImage}></img>
-                  </div>
-                 )
-               })
-           )}
-        </div>
+      <>
+          <Pagination
+            itemsPerPage={30}
+            items={props.list}
+          />
+        </>
      );
 }
+
 
 export default PkmList
