@@ -23,7 +23,7 @@ function Items(props) {
                    </div>
                     <img src={val.pkmImage}></img>
                   </div>
-                  <ReactTooltip
+                  <Tooltip
                     anchorId="app-title"
                     place="bottom"
                     content="Hello world! I'm a Tooltip"
