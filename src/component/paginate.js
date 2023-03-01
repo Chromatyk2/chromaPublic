@@ -57,13 +57,17 @@ function Pagination(props) {
   const handlePageClick = (event) => {
     if(pkmListFiltered == null){
       const newOffset = (event.selected * props.itemsPerPage) % pkmList.length;
+      console.log(
+        `User requested page number ${event.selected}, which is offset ${newOffset}`
+      );
+      setItemOffset(newOffset);
     }else{
       const newOffset = (event.selected * props.itemsPerPage) % pkmListFiltered.length;
+      console.log(
+        `User requested page number ${event.selected}, which is offset ${newOffset}`
+      );
+      setItemOffset(newOffset);
     }
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
   };
 
   return (
