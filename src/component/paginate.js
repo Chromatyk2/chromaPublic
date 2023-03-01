@@ -51,10 +51,12 @@ function Pagination(props) {
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
-  const endOffset = itemOffset + props.itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = filtredPokemon.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
+  if(filtredPokemon != 'undefined'){
+    const endOffset = itemOffset + props.itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    const currentItems = filtredPokemon.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
+  }
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
