@@ -65,7 +65,7 @@ function Pagination(props) {
 
   return (
     <>
-      if(hasShiny.length > 0){
+      {hasShiny.length > 0 &&
         <div className="filtersContainer">
           <p className="filterTitle">Trier</p>
           <button className="filterButton" onClick={handlePokemon} value="0" >Tous</button>
