@@ -37,7 +37,7 @@ function Pagination(props) {
   const [itemOffset, setItemOffset] = useState(0);
   const [pkmListFiltered,setPkmListFiltered] = useState([]);
   const [filtredPokemon, setFiltredPokemon] = useState(props.items);
-  const hasShiny = props.items.filter(item => item.shiny == shiny);
+  const hasShiny = props.items.filter(item => item.shiny == 1);
   useEffect(() => {
     setFiltredPokemon(props.items);
   }, [props.items]);
