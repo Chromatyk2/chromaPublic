@@ -35,7 +35,9 @@ function Pagination(props) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-  var pkmList = props.items.filter(item => item.shiny == 1);
+  const [pkmList,setPkmList] = useState([]);
+  setPkmList(props.items);
+  // var pkmList = props.items.filter(item => item.shiny == 1);
   // const shinyTri = () => {
   //   pkmList = pkmList.filter(item => item.shiny == 1);
   // };
