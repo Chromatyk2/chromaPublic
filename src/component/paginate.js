@@ -42,6 +42,7 @@ function Pagination(props) {
   }, [props.items]);
   function handlePokemon(e) {
     let shiny = e.target.value;
+    console.log(shiny);
     shiny !== 0
       ? setFiltredPokemon(props.items.filter(item => item.shiny == shiny))
       : setFiltredPokemon(props.items);
