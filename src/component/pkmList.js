@@ -5,17 +5,20 @@ import Pagination from './paginate.js';
 import '../App.css'
 
 function PkmList(props) {
-  const [pkmList,setList] = useState([props.list]);
+  const [pkmList,setPkmList] = useState([props.list]);
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
+  const shinyTri = () => {
+      setPkmList(pkmList.filter(item => item.shiny == 1));
+  }
     return (
       <>
         <div className="stats">
           <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
           <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
         </div>
-        <button onClick={shintTri}>Shiny</button>
+        <button onClick={shinyTri}>Shiny</button>
           <Pagination
             itemsPerPage={30}
             items={pkmList}
