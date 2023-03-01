@@ -2,10 +2,13 @@ import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 
 function Items(props) {
-  const pkmList = props.currentItems;
+  var pkmList = props.currentItems;
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
+  const shinyTri = () => {
+      pkmList = shinys;
+  }
   return (
     <>
       <div className="pokemonGlobalContainer">
@@ -15,6 +18,7 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
+               <button onClick={shinyTri}>Shiny</button>
                  <div className="uniquePokemonContainer">
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
