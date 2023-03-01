@@ -8,7 +8,7 @@ function PkmList(props) {
     return (
       <>
           <Pagination
-            itemsPerPage={30}
+            itemsPerPage={5}
             items={props.list}
           />
         </>
