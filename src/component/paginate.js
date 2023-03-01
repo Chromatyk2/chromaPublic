@@ -35,10 +35,9 @@ function Pagination(props) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-  const [pkmListFiltered,setPkmListFiltered] = useState([]);
   var pkmList = props.items;
   const [filtredPokemon, setFiltredPokemon] = useState(pkmList);
-
+  console.log(filtredPokemon);
   function handlePokemon(e) {
     let shiny = e.target.value;
     shiny !== "all"
