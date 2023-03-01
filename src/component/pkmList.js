@@ -10,6 +10,7 @@ function PkmList(props) {
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
     return (
+      <>
         <div className="stats">
           <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
           <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
