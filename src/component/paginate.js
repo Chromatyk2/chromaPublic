@@ -2,17 +2,13 @@ import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 
 function Items(props) {
-const [pkmList,setPkmList] = useState([props.currentItems]);
+  const pkmList = props.currentItems;
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
-  const shinyTri = () => {
-      setPkmList(shinys);
-  }
   return (
     <>
       <div className="pokemonGlobalContainer">
-      <button onClick={shinyTri}>Shiny</button>
        {pkmList == [] ? (
          <h1>Loading...</h1>
        ) : (
@@ -39,7 +35,10 @@ function Pagination(props) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-  const pkmList = props.items;
+  const [pkmList,setPkmList] = useState([props.items]);
+  const shinyTri = () => {
+      setPkmList(pkmList.filter(item => item.shiny == 1));
+  }
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
@@ -59,6 +58,7 @@ function Pagination(props) {
 
   return (
     <>
+    <button onClick={shinyTri}>Shiny</button>
         <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
