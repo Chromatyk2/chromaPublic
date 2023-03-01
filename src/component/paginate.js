@@ -1,6 +1,3 @@
-body {
-    background: linear-gradient(45deg,#C6EC9B,#88E4B9);
-}
 
 img {
   display: block;
