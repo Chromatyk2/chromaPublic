@@ -5,7 +5,7 @@ import Pagination from './paginate.js';
 import '../App.css'
 
 function PkmList(props) {
-  const pkmList = props.list;
+  const [pkmList,setList] = useState([props.list]);
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
