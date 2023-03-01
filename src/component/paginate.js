@@ -37,21 +37,28 @@ function Pagination(props) {
   const [itemOffset, setItemOffset] = useState(0);
   const [pkmListFiltered,setPkmListFiltered] = useState([]);
   var pkmList = props.items;
-  const shinyTri = () => {
-    setPkmListFiltered(pkmList.filter(item => item.shiny == 1));
-    console.log(pkmListFiltered);
-  };
+  const [filtredPokemon, setFiltredPokemon] = useState(null);
+  useEffect(() => {
+    setFiltredPokemon(pkmList);
+  }, []);
+
+  function handlePokemon(e) {
+    let shiny = e.target.value;
+    typePokemon !== "all"
+      ? setFiltredPokemon(filtredPokemon.filter(item => item.shiny == shiny))
+      : setFiltredPokemon(filtredPokemon);
+  }
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + props.itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = pkmList.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(pkmList.length / props.itemsPerPage);
+  const currentItems = filtredPokemon.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * props.itemsPerPage) % pkmList.length;
+    const newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -60,7 +67,7 @@ function Pagination(props) {
 
   return (
     <>
-      <button onClick={shinyTri} >Shiny</button>
+      <button onClick={shinyTri} value="1" >Shiny</button>
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
