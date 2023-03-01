@@ -43,7 +43,7 @@ function Pagination(props) {
   function handlePokemon(e) {
     let shiny = e.target.value;
     shiny !== 0
-      ? setFiltredPokemon(filtredPokemon.filter(item => item.shiny == shiny))
+      ? setFiltredPokemon(props.items.filter(item => item.shiny == shiny))
       : setFiltredPokemon(props.items);
   }
   // Simulate fetching items from another resources.
