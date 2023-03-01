@@ -73,7 +73,9 @@ function Pagination(props) {
           <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
         </div>
       }
+      <Tooltip title="oui" arrow>
         <Items currentItems={currentItems} />
+      </Tooltip>
       <ReactPaginate
         breakLabel="..."
         nextLabel=">>"
