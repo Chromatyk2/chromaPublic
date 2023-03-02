@@ -22,8 +22,10 @@ function LaderBoard() {
         })
     }
 
-    const topThree = laderBoard.slice(0,2);
+    const topThree = laderBoard.slice(0,3);
+    const others = laderBoard.slice(3,3);
     console.log(topThree);
+    console.log(others);
     return (
       <>
         <div className="CreatePost">
