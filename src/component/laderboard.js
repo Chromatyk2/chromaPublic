@@ -44,6 +44,7 @@ function LaderBoard() {
                 <div className="name">
                   {topThree[1].pseudo}
                 </div>
+                <hr/>
                 <div className="score">
                   {topThree[1].nbCapture}
                 </div>
@@ -56,6 +57,7 @@ function LaderBoard() {
                 <div className="name">
                   {topThree[0].pseudo}
                 </div>
+                <hr/>
                 <div className="score">
                   {topThree[0].nbCapture}
                 </div>
@@ -68,6 +70,7 @@ function LaderBoard() {
                 <div className="name">
                   {topThree[2].pseudo}
                 </div>
+                <hr/>
                 <div className="score">
                   {topThree[2].nbCapture}
                 </div>
