@@ -28,6 +28,7 @@ function LaderBoard() {
             <button value="0" onClick={displayNormalLaderboard}><i class="fa-solid fa-magnifying-glass"></i></button>
             <button value="1" onClick={displayShinyLaderboard}><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
+        </div>
         <div>
           <ul>
             {laderBoard &&
