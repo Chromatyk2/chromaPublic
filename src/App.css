@@ -104,13 +104,17 @@
   transition: opacity 200ms ease-in-out;
 }
 .list .item .pic {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
+  background-position: 50%;
   background-size: cover;
-  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%), 0 1rem 1rem -0.5rem rgb(0 0 0 / 30%);
+  height: 4rem;
   margin-right: 1rem;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2), 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
+  width: 4rem;
+  background-color: #3C6537;
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
 }
 .list .item .name {
   flex-grow: 2;
@@ -161,7 +165,11 @@
 .one .score{
   margin-top:35px;
 }
-
+.pic p{
+  font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
 
 
 
