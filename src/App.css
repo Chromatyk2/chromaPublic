@@ -50,8 +50,7 @@
 }
 .top3 .item .score:after {
   display: block;
-  content: "points";
-  opacity: 0.5;
+  content: "pokemons";
 }
 .top3 .item.one {
   height: 15rem;
@@ -125,7 +124,9 @@
 .list .item:hover .pos {
   opacity: 0.8;
 }
-
+.one .pos {
+    margin-top: 15px;
+}
 
 
 
