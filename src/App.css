@@ -67,6 +67,7 @@
   width: 5rem;
   height: 5rem;
   left: 2.5rem;
+  background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv3.png);
 }
 .top3 .item:hover {
   transform: scale(1.05);
