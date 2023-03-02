@@ -33,8 +33,8 @@ function LaderBoard() {
             <button value="1" onClick={displayShinyLaderboard}><i className="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-        {topThree.length > 0 &&
           <div className="center">
+        {topThree.length > 0 &&
             <div className="top3">
               <div className="two item">
                 <div className="pos">
@@ -76,8 +76,25 @@ function LaderBoard() {
                 </div>
               </div>
             </div>
-          </div>
         }
+        <div class="list">
+        {others.length > 0 &&
+          others.map((val, key) => {
+          return (
+            <div class="item">
+              <div class="pic">#{key}</div>
+              <div class="name">
+                {val.pseudo}
+              </div>
+              <div class="score">
+                {val.nbCapture}
+              </div>
+            </div>
+           )
+         })
+        }
+          </div>
+    </div>
       </>
     )
 }
