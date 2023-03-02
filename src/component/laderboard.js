@@ -33,7 +33,7 @@ function LaderBoard() {
             <button value="1" onClick={displayShinyLaderboard}><i className="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-        {topThree &&
+        {topThree.length > 0 &&
           <div className="center">
             <div className="top3">
               <div className="two item">
