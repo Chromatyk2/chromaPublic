@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
+import { Tooltip } from 'react-tooltip'
 
 function Items(props) {
   const pkmList = props.currentItems;
@@ -8,24 +9,26 @@ function Items(props) {
   const nbTotal = pkmList.length;
   return (
     <>
-
-      <div className="stats">
-        <p className="labelStats">Shiny : <span className="valueStats">{nbShiny}</span></p>
-        <p className="labelStats">Total : <span className="valueStats">{nbTotal}</span></p>
-      </div>
       <div className="pokemonGlobalContainer">
        {pkmList == [] ? (
          <h1>Loading...</h1>
        ) : (
            pkmList.map((val, key) => {
              return (
-               <div className="uniquePokemonContainer">
-                 <div className="infoPkm">
-                   {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
-                   {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
-                 </div>
-                  <img src={val.pkmImage}></img>
-              </div>
+               <>
+                 <div id="app-title" className="uniquePokemonContainer">
+                   <div className="infoPkm">
+                     {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
+                     {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
+                   </div>
+                    <img src={val.pkmImage}></img>
+                  </div>
+                  <Tooltip
+                    anchorId="app-title"
+                    place="bottom"
+                    content="Hello world! I'm a Tooltip"
+                  />
+              </>
              )
            })
        )}
@@ -38,18 +41,28 @@ function Pagination(props) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-  const pkmList = props.items;
+  const [pkmListFiltered,setPkmListFiltered] = useState([]);
+  const [filtredPokemon, setFiltredPokemon] = useState(props.items);
+  const hasShiny = props.items.filter(item => item.shiny == 1);
+  useEffect(() => {
+    setFiltredPokemon(props.items);
+  }, [props.items]);
+  function handlePokemon(e) {
+    let shiny = e.target.value;
+    shiny != 0
+      ? setFiltredPokemon(props.items.filter(item => item.shiny == shiny))
+      : setFiltredPokemon(props.items);
+  }
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
-  const endOffset = itemOffset + props.itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = pkmList.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(pkmList.length / props.itemsPerPage);
+    const endOffset = itemOffset + props.itemsPerPage;
+    const currentItems = filtredPokemon.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * props.itemsPerPage) % pkmList.length;
+    const newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -58,14 +71,21 @@ function Pagination(props) {
 
   return (
     <>
-        <Items currentItems={currentItems} />
+      {hasShiny.length > 0 &&
+        <div className="filtersContainer">
+          <p className="filterTitle">Trier</p>
+          <button className="filterButton" onClick={handlePokemon} value="0" >Tous</button>
+          <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
+        </div>
+      }
+      <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
-        nextLabel="Suivant >"
+        nextLabel=">>"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={2}
         pageCount={pageCount}
-        previousLabel="< Précédent"
+        previousLabel="<<"
         renderOnZeroPageCount={null}
       />
     </>

@@ -13,6 +13,7 @@ ul {
     justify-content: space-around;
     margin: auto;
     list-style: none;
+    padding:0;
 }
 li a {
     color: #255748;
@@ -23,6 +24,35 @@ li{
     color: #255748;
     text-decoration: none;
     font-size: 30px;
+}
+.filtersContainer {
+    display: flex;
+    flex-flow: column;
+    width: 322px;
+    align-items: center;
+    position: absolute;
+    top: 177px;
+    left: 4%;
+    gap: 10px;
+}
+button.filterButton {
+    background: none;
+    font-size: 20px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+    border:solid 4px #255748
+}
+button.filterButton:hover {
+    background: #255748;
+    font-size: 20px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+    color: white;
+}
+p.filterTitle {
+    font-size: 35px;
 }
 .selected{
   font-weight: bold;
