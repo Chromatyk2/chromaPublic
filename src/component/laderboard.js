@@ -34,7 +34,7 @@ function LaderBoard() {
             <button value="1" onClick={displayShinyLaderboard}><i className="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-        <div>
+        <div className="center">
           <div className="top3">
             <div className="two item">
               <div className="pos">
