@@ -40,7 +40,7 @@ function LaderBoard() {
               <div className="pos">
                 2
               </div>
-              <div className="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/men/44.jpg&#39;)"></div>
+              <div className="pic"></div>
               <div className="name">
                 Edgar Soto
               </div>
@@ -52,7 +52,7 @@ function LaderBoard() {
               <div className="pos">
                 1
               </div>
-              <div className="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/men/31.jpg&#39;)"></div>
+              <div className="pic"></div>
               <div className="name">
                 Clifford James
               </div>
@@ -64,7 +64,7 @@ function LaderBoard() {
               <div className="pos">
                 3
               </div>
-              <div className="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/women/91.jpg&#39;)"></div>
+              <div className="pic"></div>
               <div className="name">
                 Nevaeh Silva
               </div>
@@ -74,7 +74,7 @@ function LaderBoard() {
             </div>
           </div>
         </div>
-      </>    
+      </>
     )
 }
 
