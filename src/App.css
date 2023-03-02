@@ -57,10 +57,11 @@
   opacity: 0.5;
 }
 .top3 .item.one {
-  width: 10rem;
   height: 15rem;
   padding-top: 3.5rem;
-  background-color: #FFD700;
+  width: 10rem;
+  border: solid 4px #ffD700;
+  color: #ffd700;
 }
 .top3 .item.one .pic {
   width: 5rem;
@@ -116,7 +117,6 @@
 }
 .list .item .score {
   margin-right: 1.5rem;
-  opacity: 0.5;
 }
 .list .item:hover {
   transform: scale(1.05);
