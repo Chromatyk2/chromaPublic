@@ -31,8 +31,8 @@ function LaderBoard() {
         </div>
         <div>
           <ul>
-            {laderboard &&
-              laderboard.map((val, key) => {
+            {laderBoard &&
+              laderBoard.map((val, key) => {
                 return (
                   <li>
                     {val.pseudo}
