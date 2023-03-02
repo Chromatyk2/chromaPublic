@@ -153,7 +153,9 @@
 .three{
   border : solid #F1AB70 4px;
 }
-
+.one .score{
+  margin-top:35px;
+}
 
 
 
