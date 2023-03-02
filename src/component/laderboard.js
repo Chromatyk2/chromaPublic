@@ -32,7 +32,6 @@ function LaderBoard() {
             <button value="1" onClick={displayShinyLaderboard}><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-          </div>
             <div className="laderBoardContainer">
               {laderBoard &&
                 laderBoard.map((val, key) => {
@@ -44,7 +43,6 @@ function LaderBoard() {
                 })
               }
             </div>
-        </div>
       </>
     )
 }
