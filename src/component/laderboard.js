@@ -37,17 +37,23 @@ function LaderBoard() {
               <th>Pseudo</th>
               <th>Nombre de Pokemons</th>
             </tr>
-            <tr>
               {laderBoard &&
                 laderBoard.map((val, key) => {
                   return (
+                  <tr>
+                    <td>
+                      {key}
+                    </td>
                     <td>
                       {val.pseudo}
                     </td>
+                    <td>
+                      {val.nbCapture}
+                    </td>
+                  </tr>
                   )
                 })
               }
-            </tr>
           </table>
         </div>
       </>
