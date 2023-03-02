@@ -139,8 +139,12 @@
   border : solid #F1AB70 4px;
   background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv1.png);
 }
-
-
+.two{
+  border: solid silver 4px;  
+}
+.three{
+  border : solid #F1AB70 4px;
+}
 
 
 
