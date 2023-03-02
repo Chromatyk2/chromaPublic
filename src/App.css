@@ -59,10 +59,12 @@
   border: solid 4px #ffD700;
 }
 .top3 .item.one .picOne {
-  width: 5rem;
+  background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv3.png);
   height: 5rem;
   left: 2.5rem;
-  background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv3.png);
+  width: 5rem;
+  background-color: gold;
+  border: solid gold 4px;
 }
 .top3 .item:hover {
   transform: scale(1.05);
@@ -128,9 +130,13 @@
     margin-top: 15px;
 }
 .picTwo{
+  background-color: silver;
+  border: solid silver 4px;
   background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv2.png);
 }
 .picThree{
+  background-color: sandybrown;
+  border : solid #F1AB70 4px;
   background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv1.png);
 }
 
