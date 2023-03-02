@@ -34,46 +34,48 @@ function LaderBoard() {
             <button value="1" onClick={displayShinyLaderboard}><i className="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-        <div className="center">
-          <div className="top3">
-            <div className="two item">
-              <div className="pos">
-                2
+        {topThree.legnth > 0 &&
+          <div className="center">
+            <div className="top3">
+              <div className="two item">
+                <div className="pos">
+                  2
+                </div>
+                <div className="pic"></div>
+                <div className="name">
+                  {topThree[1].pseudo}
+                </div>
+                <div className="score">
+                  {topThree[1].nbCapture}
+                </div>
               </div>
-              <div className="pic"></div>
-              <div className="name">
-                Edgar Soto
+              <div className="one item">
+                <div className="pos">
+                  1
+                </div>
+                <div className="pic"></div>
+                <div className="name">
+                  {topThree[0].pseudo}
+                </div>
+                <div className="score">
+                  {topThree[0].nbCapture}
+                </div>
               </div>
-              <div className="score">
-                6453
-              </div>
-            </div>
-            <div className="one item">
-              <div className="pos">
-                1
-              </div>
-              <div className="pic"></div>
-              <div className="name">
-                Clifford James
-              </div>
-              <div className="score">
-                6794
-              </div>
-            </div>
-            <div className="three item">
-              <div className="pos">
-                3
-              </div>
-              <div className="pic"></div>
-              <div className="name">
-                Nevaeh Silva
-              </div>
-              <div className="score">
-                6034
+              <div className="three item">
+                <div className="pos">
+                  3
+                </div>
+                <div className="pic"></div>
+                <div className="name">
+                  {topThree[2].pseudo}
+                </div>
+                <div className="score">
+                  {topThree[2].pseudo}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        }        
       </>
     )
 }
