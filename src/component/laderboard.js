@@ -82,7 +82,7 @@ function LaderBoard() {
           others.map((val, key) => {
           return (
             <div class="item">
-              <div class="pic">#{key}</div>
+              <div class="pic"><p>#{key}</p></div>
               <div class="name">
                 {val.pseudo}
               </div>
