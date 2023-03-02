@@ -41,7 +41,6 @@
 }
 .top3 .item .pos {
   font-weight: 900;
-  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 .top3 .item .name {
@@ -129,6 +128,14 @@
 .one .pos {
     margin-top: 15px;
     font-size: 3.5rem;
+}
+.two .pos {
+    margin-top: 15px;
+    font-size: 3.0rem;
+}
+.three .pos {
+    margin-top: 15px;
+    font-size: 2.5rem;
 }
 .picTwo{
   background-color: silver;
