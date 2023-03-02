@@ -40,7 +40,7 @@ function LaderBoard() {
                 <div className="pos">
                   2
                 </div>
-                <div className="pic"></div>
+                <div className="picTwo"></div>
                 <div className="name">
                   {topThree[1].pseudo}
                 </div>
@@ -52,7 +52,7 @@ function LaderBoard() {
                 <div className="pos">
                   1
                 </div>
-                <div className="pic"></div>
+                <div className="picOne"></div>
                 <div className="name">
                   {topThree[0].pseudo}
                 </div>
@@ -64,7 +64,7 @@ function LaderBoard() {
                 <div className="pos">
                   3
                 </div>
-                <div className="pic"></div>
+                <div className="picThree"></div>
                 <div className="name">
                   {topThree[2].pseudo}
                 </div>
