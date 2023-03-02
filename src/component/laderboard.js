@@ -27,7 +27,6 @@ function LaderBoard() {
     console.log(topThree);
     console.log(others);
     return (
-      <>
         <div className="CreatePost">
           <div className="uploadPost">
             <button value="0" onClick={displayNormalLaderboard}><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -85,7 +84,6 @@ function LaderBoard() {
               //     )
               //   })
               // }
-      </>
     )
 }
 
