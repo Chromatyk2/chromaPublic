@@ -14,7 +14,7 @@
   box-shadow: 0 0 4rem 0 rgb(0 0 0 / 10%), 0 1rem 2rem -1rem rgb(0 0 0 / 30%);
   box-sizing: border-box;
   cursor: pointer;
-  height: 12rem;
+  height: 17rem;
   margin: 1rem 1rem 2rem;
   padding: 2.8rem 0 0;
   position: relative;
@@ -24,13 +24,13 @@
   transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
   transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
-  width: 9rem;
+  width: 13rem;
   background: linear-gradient(45deg,#c6ec9b,#88e4b9);
 }
 .top3 .item .pic {
   position: absolute;
   top: -2rem;
-  left: 2.5rem;
+  left: 4.2rem;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -53,9 +53,9 @@
   content: "pokemons";
 }
 .top3 .item.one {
-  height: 15rem;
+  height: 21rem;
   padding-top: 3.5rem;
-  width: 10rem;
+  width: 15rem;
   border: solid 4px #ffD700;
 }
 .top3 .item.one .picOne {
@@ -140,7 +140,7 @@
   background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv1.png);
 }
 .two{
-  border: solid silver 4px;  
+  border: solid silver 4px;
 }
 .three{
   border : solid #F1AB70 4px;
