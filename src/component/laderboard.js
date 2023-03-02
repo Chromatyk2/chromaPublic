@@ -31,8 +31,8 @@ function LaderBoard() {
       <>
         <div className="CreatePost">
           <div className="uploadPost">
-            <button value="0" onClick={displayNormalLaderboard}><i className="fa-solid fa-magnifying-glass"></i></button>
-            <button value="1" onClick={displayShinyLaderboard}><i className="fa-solid fa-magnifying-glass"></i></button>
+            <button value="0" onClick={displayNormalLaderboard}>Global</i></button>
+            <button value="1" onClick={displayShinyLaderboard}>Shiny</i></button>
           </div>
         </div>
           <div className="center">
