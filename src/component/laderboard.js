@@ -6,6 +6,7 @@ import PkmList from './pkmList.js'
 function LaderBoard() {
     const [laderBoard,setLaderboard] = useState([]);
     const [topThree,setTopThree] = useState([]);
+    const [others,setOthers] = useState([]);
     function displayNormalLaderboard(e) {
       let shiny = e.target.value;
         Axios
@@ -13,6 +14,7 @@ function LaderBoard() {
           .then(function(response){
               setLaderboard(response.data);
               setTopThree(response.data.slice(0,3));
+              setOthers(response.data.slice(3));
         })
     }
     function displayShinyLaderboard(e) {
@@ -21,10 +23,10 @@ function LaderBoard() {
           .get(`https://chromatyk-pokemon.herokuapp.com/api/getLaderboard/1`)
           .then(function(response){
               setLaderboard(response.data);
+              setTopThree(response.data.slice(0,3));
+              setOthers(response.data.slice(3));
         })
     }
-    const others = laderBoard.slice(3);
-    console.log(others);
     return (
       <>
         <div className="CreatePost">
