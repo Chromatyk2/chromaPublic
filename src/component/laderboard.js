@@ -21,6 +21,7 @@ function LaderBoard() {
               seladerboard(response.data);
         })
     }
+    console.log(laderBoard);
     return (
       <>
         <div className="CreatePost">
