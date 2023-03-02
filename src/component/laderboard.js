@@ -33,9 +33,10 @@ function LaderBoard() {
           <ul>
             {laderboard &&
               laderboard.map((val, key) => {
-                <li>
-                  {val.pseudo}
-                </li>
+                return (
+                  <li>
+                    {val.pseudo}
+                  </li>
                 )
               })
             }
