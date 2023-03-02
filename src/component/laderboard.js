@@ -75,15 +75,15 @@ function LaderBoard() {
           </div>
         </div>
 
-              {laderBoard &&
-                laderBoard.map((val, key) => {
-                  return (
-                    <div>
-
-                    </div>
-                  )
-                })
-              }
+              // {laderBoard &&
+              //   laderBoard.map((val, key) => {
+              //     return (
+              //       <div>
+              //
+              //       </div>
+              //     )
+              //   })
+              // }
       </>
     )
 }
