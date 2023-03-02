@@ -34,9 +34,45 @@ function LaderBoard() {
             <button value="1" onClick={displayShinyLaderboard}><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-        <div class="center">
-          <div class="top3">
-            
+        <div className="center">
+          <div className="top3">
+          <p>OUI</p>
+            // <div class="two item">
+            //   <div class="pos">
+            //     2
+            //   </div>
+            //   <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/men/44.jpg&#39;)"></div>
+            //   <div class="name">
+            //     Edgar Soto
+            //   </div>
+            //   <div class="score">
+            //     6453
+            //   </div>
+            // </div>
+            // <div class="one item">
+            //   <div class="pos">
+            //     1
+            //   </div>
+            //   <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/men/31.jpg&#39;)"></div>
+            //   <div class="name">
+            //     Clifford James
+            //   </div>
+            //   <div class="score">
+            //     6794
+            //   </div>
+            // </div>
+            // <div class="three item">
+            //   <div class="pos">
+            //     3
+            //   </div>
+            //   <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/women/91.jpg&#39;)"></div>
+            //   <div class="name">
+            //     Nevaeh Silva
+            //   </div>
+            //   <div class="score">
+            //     6034
+            //   </div>
+            // </div>
           </div>
         </div>
 
