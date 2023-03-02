@@ -127,7 +127,12 @@
 .one .pos {
     margin-top: 15px;
 }
-
+.picTwo{
+  background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv2.png);
+}
+.picThree{
+  background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv1.png);
+}
 
 
 
