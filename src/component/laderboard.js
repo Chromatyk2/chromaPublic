@@ -40,7 +40,7 @@ function LaderBoard() {
                 )
               })
             }
-          <ul>
+          </ul>
         </div>
       </>
     )
