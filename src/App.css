@@ -61,7 +61,7 @@
 .top3 .item.one .picOne {
   background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv3.png);
   height: 5rem;
-  left: 2.5rem;
+  left: 4.8rem;
   width: 5rem;
   background-color: gold;
   border: solid gold 4px;
@@ -93,7 +93,7 @@
   position: absolute;
   left: -2rem;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 3.5rem;
   width: 1.5rem;
   color: white;
   opacity: 0.6;
