@@ -21,7 +21,9 @@ function LaderBoard() {
               setLaderboard(response.data);
         })
     }
-    console.log(laderBoard);
+
+    const topThree = laderBoard.slice(0,2);
+    console.log(topThree);
     return (
       <>
         <div className="CreatePost">
@@ -30,31 +32,18 @@ function LaderBoard() {
             <button value="1" onClick={displayShinyLaderboard}><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
-        <div>
-          <table>
-            <tr>
-              <th>Classement</th>
-              <th>Pseudo</th>
-              <th>Nombre de Pokemons</th>
-            </tr>
+          </div>
+            <div className="laderBoardContainer">
               {laderBoard &&
                 laderBoard.map((val, key) => {
                   return (
-                  <tr>
-                    <td>
-                      {key}
-                    </td>
-                    <td>
-                      {val.pseudo}
-                    </td>
-                    <td>
-                      {val.nbCapture}
-                    </td>
-                  </tr>
+                    <div>
+
+                    </div>
                   )
                 })
               }
-          </table>
+            </div>
         </div>
       </>
     )
