@@ -69,7 +69,7 @@ function LaderBoard() {
                   {topThree[2].pseudo}
                 </div>
                 <div className="score">
-                  {topThree[2].pseudo}
+                  {topThree[2].nbCapture}
                 </div>
               </div>
             </div>
