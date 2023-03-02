@@ -48,9 +48,6 @@
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
-.top3 .item .score {
-  opacity: 0.5;
-}
 .top3 .item .score:after {
   display: block;
   content: "points";
