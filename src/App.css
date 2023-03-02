@@ -84,7 +84,6 @@
 .list {
 	padding-left: 2rem;
 	margin: 0 auto;
-	// width: fit-content;
 
 	.item {
 		position: relative;
@@ -92,7 +91,6 @@
 		align-items: center;
 		background: white;
 		height: 3rem;
-		// width: fit-content;
 		border-radius: 4rem;
 		margin-bottom: 2rem;
 		background: $beige;
