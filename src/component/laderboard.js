@@ -4,13 +4,13 @@ import '../App.css'
 import PkmList from './pkmList.js'
 
 function LaderBoard() {
-    const [laderBoard,seladerboard] = useState([]);
+    const [laderBoard,setLaderboard] = useState([]);
     function displayNormalLaderboard(e) {
       let shiny = e.target.value;
         Axios
           .get(`https://chromatyk-pokemon.herokuapp.com/api/getLaderboard/${shiny}`)
           .then(function(response){
-              seladerboard(response.data);
+              setLaderboard(response.data);
         })
     }
     function displayShinyLaderboard(e) {
@@ -18,7 +18,7 @@ function LaderBoard() {
         Axios
           .get(`https://chromatyk-pokemon.herokuapp.com/api/getLaderboard/${shiny}`)
           .then(function(response){
-              seladerboard(response.data);
+              setLaderboard(response.data);
         })
     }
     console.log(laderBoard);
