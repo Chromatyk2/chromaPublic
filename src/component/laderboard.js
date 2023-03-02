@@ -3,7 +3,7 @@ import Axios from 'axios'
 import '../App.css'
 import PkmList from './pkmList.js'
 
-function HomePage() {
+function LaderBoard() {
     const [laderBoard,seladerboard] = useState([]);
     function displayNormalLaderboard(e) {
       let shiny = e.target.value;
@@ -45,4 +45,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default LaderBoard

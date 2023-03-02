@@ -3,6 +3,7 @@ import $ from "jquery";
 import './App.css';
 import HomePage from './component/home.js';
 import BasicExample from './component/nav.js';
+import LaderBoard from './component/laderboard.js';
 
 function App() {
   return(
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/laderboard" element={<HomePage />} />
+          <Route path="/laderboard" element={<LaderBoard />} />
         </Routes>
       </BrowserRouter>
     </>
