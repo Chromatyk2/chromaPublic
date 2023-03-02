@@ -7,7 +7,7 @@ import BasicExample from './component/nav.js';
 function App() {
   return(
     <>
-      <BasicExample />
+      // <BasicExample />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
