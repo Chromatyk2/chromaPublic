@@ -16,7 +16,7 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
-                 <div className="anchorTooltip uniquePokemonContainer">
+                 <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName}>
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
                      {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
@@ -27,10 +27,7 @@ function Items(props) {
              )
            })
        )}
-
-       <Tooltip anchorSelect=".anchorTooltip" place="top">
-         {val.pkmName} - {val.dateCapture}
-       </Tooltip>
+      <Tooltip anchorSelect=".anchorTooltip" />
      </div>
     </>
   );
