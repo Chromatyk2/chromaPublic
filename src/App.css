@@ -18,10 +18,10 @@ iframe{
 a{
   font-size: 50px;
   color: #255748;
-    font-family: "Inlanders Demo";
+  font-family: "Inlanders Demo";
 }
 a:hover{
-  font-size: 50px;
+  color: #0a3a2c;
 }
 .top3 {
   display: flex;
