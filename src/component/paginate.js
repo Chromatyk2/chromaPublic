@@ -23,13 +23,14 @@ function Items(props) {
                    </div>
                     <img src={val.pkmImage}></img>
                   </div>
-                  <Tooltip anchorSelect=".anchorTooltip" place="top">
-                    {val.pkmName} - {val.dateCapture}
-                  </Tooltip>
               </>
              )
            })
        )}
+
+       <Tooltip anchorSelect=".anchorTooltip" place="top">
+         {val.pkmName} - {val.dateCapture}
+       </Tooltip>
      </div>
     </>
   );
