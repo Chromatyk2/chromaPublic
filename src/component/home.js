@@ -16,9 +16,8 @@ const submitPost = () => {
 }
     return (
       <>
-      <h1>Bienvenu sur le site pokemon de chromatyk</h1>
-      <p>Ici tu pourras voir le live de Chromatyk, voir les pokemons que tu as obtenu sur le stream grâce à tes points de chaines ainsi que le classement des meilleurs dresseurs</p>
       <iframe src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.netlify.app" frameborder="0" allowfullscreen="true" scrolling="no" height="756" width="1240"></iframe>
+      <a href="https://discord.gg/8V6fyQdSCG">Discord</a>
       </>
     )
 }
