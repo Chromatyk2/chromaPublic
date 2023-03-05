@@ -1,6 +1,6 @@
 iframe{
   display: block;
-  margin-left: auto;
+  margin: auto;
 }
 .center {
   margin-top: 50px;
