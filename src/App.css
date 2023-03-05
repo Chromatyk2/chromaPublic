@@ -1,3 +1,6 @@
+body{
+  font-family: "NotoSansJP", serif;
+}
 iframe{
   display: block;
   margin: auto;
