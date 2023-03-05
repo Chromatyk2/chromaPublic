@@ -1,5 +1,9 @@
+@font-face {
+font-family: 'Inlanders Demo';
+src: url('../public/Inlanders Demo.otf') format('truetype');
+}
 body{
-  font-family: "NotoSansJP", serif;
+  font-family: "Inlanders Demo";
 }
 iframe{
   display: block;
