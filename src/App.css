@@ -1,3 +1,7 @@
+iframe{
+  display: block;
+  margin-left: auto;
+}
 .center {
   margin-top: 50px;
 }
