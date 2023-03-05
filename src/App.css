@@ -6,8 +6,14 @@ iframe{
   display: block;
   margin: auto;
 }
+.leaderBoardSwitch{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 .leaderBoardSwitch button{
-  border-radius: none;
+  border: none;
+  background: none;
   color: #255748;
   font-size: 30px;
   font-family: "Inlanders Demo";
