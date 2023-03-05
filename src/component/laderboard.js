@@ -29,13 +29,11 @@ function LaderBoard() {
     }
     return (
       <>
-        <div className="CreatePost">
-          <div className="uploadPost">
+        <div className="leaderBoardSwitch">
             <button value="0" onClick={displayNormalLaderboard}>Global</button>
             <button value="1" onClick={displayShinyLaderboard}>Shiny</button>
-          </div>
         </div>
-          <div className="center">
+        <div className="center">
         {topThree.length > 0 &&
             <div className="top3">
               <div className="two item">

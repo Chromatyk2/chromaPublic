@@ -6,6 +6,15 @@ iframe{
   display: block;
   margin: auto;
 }
+.leaderBoardSwitch button{
+  border-radius: none;
+  color: #255748;
+  font-size: 30px
+  font-family: "Inlanders Demo";
+}
+.leaderBoardSwitch button{
+  color: #0a3a2c;
+}
 .center {
   margin-top: 50px;
 }
