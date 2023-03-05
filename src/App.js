@@ -5,12 +5,9 @@ import 'react-tooltip/dist/react-tooltip.css'
 import HomePage from './component/home.js';
 import BasicExample from './component/nav.js';
 import LaderBoard from './component/laderboard.js';
-import { NavLink } from "react-router-dom";
 function App() {
   return(
     <>
-      <NavLink to={`/`}>Pokédex</NavLink>
-      <NavLink to={`/leaderboard`}>Classement</NavLink>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
