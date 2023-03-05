@@ -8,6 +8,7 @@ function Items(props) {
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
+  Moment.locale('fr');
   return (
     <>
       <div className="pokemonGlobalContainer">
