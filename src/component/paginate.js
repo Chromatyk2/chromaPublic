@@ -24,7 +24,7 @@ function Items(props) {
                     <img src={val.pkmImage}></img>
                   </div>
                   <Tooltip anchorSelect=".anchorTooltip" place="top">
-                    Hello world!
+                    {val.dateCapture}
                   </Tooltip>
               </>
              )
