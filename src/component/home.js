@@ -16,15 +16,7 @@ const submitPost = () => {
 }
     return (
       <>
-        <div className="CreatePost">
-          <div className="uploadPost">
-              <input className="inputPseudo" type="text" placeholder="Pseudo" placeh onChange={(e)=> {setPseudo(e.target.value)}} onKeyDown={submitPost}/>
-              <button className="buttonPseudo" onClick={submitPost}><i class="fa-solid fa-magnifying-glass"></i></button>
-          </div>
-        </div>
-        <div>
-        <PkmList list={list}/>
-        </div>
+      <iframe src="https://player.twitch.tv/?channel=chromatyk&parent=www.example.com" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
       </>
     )
 }
