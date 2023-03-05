@@ -9,6 +9,7 @@ import NavBar from './component/navbar.js';
 function App() {
   return(
     <>
+      <NavBar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
