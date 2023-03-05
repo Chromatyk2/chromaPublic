@@ -18,8 +18,9 @@ iframe{
   font-size: 30px;
   font-family: "Inlanders Demo";
 }
-.leaderBoardSwitch button{
+.leaderBoardSwitch button:hover{
   color: #0a3a2c;
+  font-size: 32px;
 }
 .center {
   margin-top: 50px;
