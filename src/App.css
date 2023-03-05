@@ -15,14 +15,13 @@ iframe{
   gap: 20px;
   margin-top: 10px;
 }
-.social a{
+a{
   font-size: 50px;
   color: #255748;
     font-family: "Inlanders Demo";
 }
-.social a:hover{
+a:hover{
   font-size: 50px;
-  color: #0a3a2c;
 }
 .top3 {
   display: flex;
