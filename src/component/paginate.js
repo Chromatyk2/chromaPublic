@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import { Tooltip } from 'react-tooltip'
+import { format } from 'date-fns'
 
 function Items(props) {
   const pkmList = props.currentItems;
@@ -16,7 +17,7 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
-                 <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName}>
+                 <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName}{format(val.dateCapture, 'dd/mm/yyyy')}>
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
                      {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
