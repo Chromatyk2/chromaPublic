@@ -31,8 +31,8 @@ function LaderBoard() {
       <>
         <div className="CreatePost">
           <div className="uploadPost">
-            <button value="0" onClick={displayNormalLaderboard}>Global</i></button>
-            <button value="1" onClick={displayShinyLaderboard}>Shiny</i></button>
+            <button value="0" onClick={displayNormalLaderboard}>Global</button>
+            <button value="1" onClick={displayShinyLaderboard}>Shiny</button>
           </div>
         </div>
           <div className="center">
