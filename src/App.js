@@ -9,8 +9,8 @@ import { NavLink } from "react-router-dom";
 function App() {
   return(
     <>
-      <NavLink to={`/`}>Pokédex</Link>
-      <NavLink to={`/leaderboard`}>Classement</Link>
+      <NavLink to={`/`}>Pokédex</NavLink>
+      <NavLink to={`/leaderboard`}>Classement</NavLink>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
