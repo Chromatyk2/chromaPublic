@@ -278,7 +278,7 @@ p.filterTitle {
   font-weight: bold;
 }
 #root{
-  height: 100vh;
+  min-height: 100vh;
 }
 .labelStats{
   font-weight: bold;
