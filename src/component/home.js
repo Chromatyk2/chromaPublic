@@ -17,7 +17,7 @@ const submitPost = () => {
     return (
       <>
       <iframe src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.netlify.app" frameborder="0" allowfullscreen="true" scrolling="no" height="756" width="1240"></iframe>
-      <a href="https://discord.gg/8V6fyQdSCG">Discord</a>
+      <a href="https://discord.gg/8V6fyQdSCG"><i class="fa-brands fa-discord"></i></a>
       </>
     )
 }
