@@ -1,10 +1,31 @@
 @font-face {
-font-family: 'Inlanders Demo';
-src: url('../public/Inlanders Demo.otf') format('truetype');
+font-family: 'AldotheApache';
+src: url('../public/AldotheApache.ttf') format('truetype');
+}
+nav.navbar.navbar-expand-lg.navbar-light {
+    background-color: #90E5B5;
+    margin-bottom: 20px;
+}
+.me-auto.navbar-nav {
+    gap: 30px;
+    justify-content: start;
+    width: 100%;
+}
+.me-auto.navbar-nav a{
+    text-decoration: none;
+    font-size: 20px;
 }
 iframe{
   display: block;
   margin: auto;
+}
+.loginContainer {
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
 }
 .leaderBoardSwitch{
   display: flex;
@@ -16,7 +37,7 @@ iframe{
   background: none;
   color: #255748;
   font-size: 30px;
-  font-family: "Inlanders Demo";
+  font-family: "AldotheApache";
 }
 .leaderBoardSwitch button:hover{
   color: #0a3a2c;
@@ -25,27 +46,66 @@ iframe{
 .center {
   margin-top: 50px;
 }
-.social{
+.socialContainer {
   display: flex;
-  justify-content: center;
+  flex-flow: column;
   gap: 20px;
-  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+.loginButton{
+  display: flex;
+  background-color: #6441a5;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 30px;
+  line-height: 22px;
+  font-size: 25px;
+}
+.loginButton:hover {
+    background-color: #64428F;
+    filter: drop-shadow(0px 0px 6px #644290);
+}
+.loginButton i{
+  margin-right:25px;
+}
+.loginContainer p {
+  color: #255748;
+  font-family: AldotheApache;
+  font-size: 30px;
+  line-height: 33px;
+  text-align: center;
+}
+a.socialLink {
+  border: 4px solid #255748;
+  border-radius: 35px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 320px;
+}
+p.myNetworks {
+    color: #255748;
+    font-family: "AldotheApache";
+    font-size: 30px;
+    text-align: center;
 }
 a{
   font-size: 50px;
   color: #255748;
-  font-family: "Inlanders Demo";
+  font-family: "AldotheApache";
 }
 a:hover{
   color: #0a3a2c;
 }
-.top3 {
+.top3Desktop {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   color: #4b4168;
 }
-.top3 .item {
+.top3Desktop .item {
   background: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 0 4rem 0 rgb(0 0 0 / 10%), 0 1rem 2rem -1rem rgb(0 0 0 / 30%);
@@ -64,7 +124,7 @@ a:hover{
   width: 13rem;
   background: linear-gradient(45deg,#c6ec9b,#88e4b9);
 }
-.top3 .item .pic {
+.top3Desktop .item .pic {
   position: absolute;
   top: -2rem;
   left: 4.2rem;
@@ -76,25 +136,24 @@ a:hover{
   margin-right: 1rem;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2), 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
 }
-.top3 .item .pos {
+.top3Desktop .item .pos {
   font-weight: 900;
-  margin-bottom: 0.5rem;
 }
-.top3 .item .name {
+.top3Desktop .item .name {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
-.top3 .item .score:after {
+.top3Desktop .item .score:after {
   display: block;
   content: "pokemons";
 }
-.top3 .item.one {
-  height: 21rem;
+.top3Desktop .item.one {
+  border: 4px solid gold;
+  height: 17rem;
   padding-top: 3.5rem;
   width: 15rem;
-  border: solid 4px #ffD700;
 }
-.top3 .item.one .picOne {
+.top3Desktop .item.one .picOne {
   background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv3.png);
   height: 5rem;
   left: 4.8rem;
@@ -102,12 +161,200 @@ a:hover{
   background-color: gold;
   border: solid gold 4px;
 }
-.top3 .item:hover {
+.top3Desktop .item:hover {
   transform: scale(1.05);
 }
 
-.list {
+.top3Mobile {
   padding-left: 2rem;
+  margin: 0 auto;
+}
+.top3Mobile .itemOne {
+    align-items: center;
+    background: transparent;
+    border-radius: 4rem;
+    box-shadow: 0 0 4rem 0 rgb(0 0 0 / 10%), 0 1rem 2rem -1rem rgb(0 0 0 / 30%);
+    color: #255748;
+    cursor: pointer;
+    display: flex;
+    height: 3rem;
+    margin: 30px auto auto;
+    position: relative;
+    transform-origin: left;
+    transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
+    width: 40%;
+    font-family: 'AldotheApache';
+    border: solid gold 4px;
+}
+.top3Mobile .itemOne .pos {
+  font-weight: 900;
+  position: absolute;
+  left: -2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  width: 1.5rem;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 200ms ease-in-out;
+}
+.top3Mobile .itemOne .picOne {
+    align-items: self-end;
+    background-color: gold;
+    background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv3.png);
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%), 0 1rem 1rem -0.5rem rgb(0 0 0 / 30%);
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    margin-right: 1rem;
+    width: 4rem;
+    left: -5px;
+    position: inherit;
+}
+.top3Mobile .itemOne .name {
+  flex-grow: 2;
+  flex-basis: 10rem;
+  font-size: 1.1rem;
+}
+.top3Mobile .itemOne .score {
+  margin-right: 1.5rem;
+}
+.top3Mobile .itemOne .score:after {
+  margin-right: 1rem;
+  content: " pokemons";
+}
+.top3Mobile .itemOne:hover {
+  transform: scale(1.05);
+}
+.top3Mobile .itemOne:hover .pos {
+  opacity: 0.8;
+}
+
+.top3Mobile .itemTwo {
+    align-items: center;
+    background: transparent;
+    border-radius: 4rem;
+    box-shadow: 0 0 4rem 0 rgb(0 0 0 / 10%), 0 1rem 2rem -1rem rgb(0 0 0 / 30%);
+    color: #255748;
+    cursor: pointer;
+    display: flex;
+    height: 3rem;
+    margin: 30px auto auto;
+    position: relative;
+    transform-origin: left;
+    transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
+    width: 40%;
+    font-family: 'AldotheApache';
+    border: solid silver 4px;
+}
+.top3Mobile .itemTwo .pos {
+  font-weight: 900;
+  position: absolute;
+  left: -2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  width: 1.5rem;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 200ms ease-in-out;
+}
+.top3Mobile .itemTwo .picTwo {
+    align-items: self-end;
+    background-color: silver;
+    background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv2.png);
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%), 0 1rem 1rem -0.5rem rgb(0 0 0 / 30%);
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    margin-right: 1rem;
+    width: 4rem;
+    left: -5px;
+    position: inherit;
+}
+.top3Mobile .itemTwo .name {
+  flex-grow: 2;
+  flex-basis: 10rem;
+  font-size: 1.1rem;
+}
+.top3Mobile .itemTwo .score {
+  margin-right: 1.5rem;
+}
+.top3Mobile .itemTwo .score:after {
+  margin-right: 1rem;
+  content: " pokemons";
+}
+.top3Mobile .itemTwo:hover {
+  transform: scale(1.05);
+}
+.top3Mobile .itemTwo:hover .pos {
+  opacity: 0.8;
+}
+.top3Mobile .itemThree {
+    align-items: center;
+    background: transparent;
+    border-radius: 4rem;
+    box-shadow: 0 0 4rem 0 rgb(0 0 0 / 10%), 0 1rem 2rem -1rem rgb(0 0 0 / 30%);
+    color: #255748;
+    cursor: pointer;
+    display: flex;
+    height: 3rem;
+    margin: 30px auto auto;
+    position: relative;
+    transform-origin: left;
+    transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
+    width: 40%;
+    font-family: 'AldotheApache';
+    border : solid #F1AB70 4px;
+}
+.top3Mobile .itemThree .pos {
+  font-weight: 900;
+  position: absolute;
+  left: -2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  width: 1.5rem;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 200ms ease-in-out;
+}
+.top3Mobile .itemThree .picThree {
+    align-items: self-end;
+    background-color: sandybrown;
+    border : solid #F1AB70 4px;
+    background-image: url(https://pokemon.gameinfo.io/images/tools/badge_lv1.png);
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%), 0 1rem 1rem -0.5rem rgb(0 0 0 / 30%);
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    margin-right: 1rem;
+    width: 4rem;
+    left: -5px;
+    position: inherit;
+}
+.top3Mobile .itemThree .name {
+  flex-grow: 2;
+  flex-basis: 10rem;
+  font-size: 1.1rem;
+}
+.top3Mobile .itemThree .score {
+  margin-right: 1.5rem;
+}
+.top3Mobile .itemThree .score:after {
+  margin-right: 1rem;
+  content: " pokemons";
+}
+.top3Mobile .itemThree:hover {
+  transform: scale(1.05);
+}
+.top3Mobile .itemThree:hover .pos {
+  opacity: 0.8;
+}
+.list {
   margin: 0 auto;
 }
 .list .item {
@@ -163,7 +410,7 @@ a:hover{
 }
 .list .item .score:after {
   margin-right: 1rem;
-  content: "pokemons";
+  content: " pokemons";
 }
 .list .item:hover {
   transform: scale(1.05);
@@ -172,7 +419,6 @@ a:hover{
   opacity: 0.8;
 }
 .one .pos {
-    margin-top: 15px;
     font-size: 3.5rem;
 }
 .two .pos {
@@ -198,9 +444,6 @@ a:hover{
 }
 .three{
   border : solid #F1AB70 4px;
-}
-.one .score{
-  margin-top:35px;
 }
 .pic p{
   font-weight: bold;
@@ -287,23 +530,27 @@ p.filterTitle {
 #root{
   min-height: 100vh;
 }
-.labelStats{
-  font-weight: bold;
+.labelStats {
+  font-weight: 700;
   line-height: 28px;
-}
-.valueStats{
-  font-weight: bold;
-  color: #255748;
-  background-color: white;
-  padding: 10px;
-  border-radius: 88px;
-  min-width: 88px;
-  display: block;
-  height: 30px;
-  line-height: 10px;
   text-align: center;
+  font-family: 'AldotheApache';
+  color: #255748;
+  font-size: 30px;
+}
+.valueStats {
+  background-color: #fff;
+  border-radius: 88px;
+  color: #255748;
+  display: block;
   float: right;
-  margin-left: 10px;
+  font-weight: 700;
+  height: 30px;
+  line-height: 13px;
+  min-width: 88px;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
 }
 .infoPkm{
   position: absolute;
@@ -328,11 +575,10 @@ p.filterTitle {
     background-color: white;
     border-radius: 50%;
 }
-.stats{
+.stats {
     display: flex;
     gap: 30px;
-    position: absolute;
-    left: 4%;
+    justify-content: center;
 }
 .uniquePokemonContainer {
     background-position: 50%;
@@ -379,4 +625,143 @@ p.filterTitle {
   border: solid black 4px;
   position: absolute;
   right: 2%;
+}
+.top3Mobile{
+  display: none;
+}
+@media screen and (min-width: 944px) and (max-width: 1659px) {
+  .pokemonGlobalContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: auto;
+    width: 88%;
+  }
+}
+@media screen and (min-width: 380px) and (max-width: 943px) {
+  .pokemonGlobalContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
+    .top3Mobile{
+      display: block;
+      padding:0;
+    }
+    .top3Desktop{
+      display: none;
+    }
+    .top3Mobile .itemOne{
+      width: 380px;
+    }
+    .top3Mobile .itemTwo{
+      width: 375px;
+    }
+    .top3Mobile .itemThree{
+      width: 370px;
+    }
+    .list .item{
+      width: 370px;
+    }
+    .list{
+      padding:0;
+    }
+    .top3Mobile .itemOne .name {
+      flex-grow: 0;
+    }
+    .top3Mobile .itemTwo .name {
+      flex-grow: 0;
+    }
+    .top3Mobile .itemThree .name {
+      flex-grow: 0;
+    }
+    .list .item .name {
+      flex-grow: 0;
+    }
+}
+@media screen and (max-width: 379px) {
+  .pokemonGlobalContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
+    .top3Mobile{
+      display: block;
+      padding:0;
+    }
+    .top3Desktop{
+      display: none;
+    }
+    .top3Mobile .itemOne{
+      width: 320px;
+    }
+    .top3Mobile .itemTwo{
+      width: 320px;
+    }
+    .top3Mobile .itemThree{
+      width: 320px;
+    }
+    .list .item{
+      width: 320px;
+    }
+    .list{
+      padding:0;
+    }
+    .top3Mobile .itemOne .name {
+      flex-grow: 0;
+    }
+    .top3Mobile .itemTwo .name {
+      flex-grow: 0;
+    }
+    .top3Mobile .itemThree .name {
+      flex-grow: 0;
+    }
+    .list .item .name {
+      flex-grow: 0;
+    }
+    .top3Mobile .itemOne .score:after {
+      margin-right: 1rem;
+      content: "";
+    }
+    .top3Mobile .itemTwo .score:after {
+      margin-right: 1rem;
+      content: "";
+    }
+    .top3Mobile .itemThree .score:after {
+      margin-right: 1rem;
+      content: "";
+    }
+    .list .item .score:after {
+      margin-right: 1rem;
+      content: "";
+    }
+    .top3Mobile .itemOne .score {
+      right: 10px;
+      position: absolute;
+    }
+    .top3Mobile .itemTwo .score {
+      right: 10px;
+      position: absolute;
+    }
+    .top3Mobile .itemThree .score {
+      right: 10px;
+      position: absolute;
+    }
+    .list .item .score {
+      right: 10px;
+      position: absolute;
+    }
+}
+.list .myItem{
+  background: #700d0f;
+}
+.list .myItem .pic{
+  background: #570a0c;
 }
