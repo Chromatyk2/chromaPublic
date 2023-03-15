@@ -100,10 +100,10 @@ function LaderBoard(props) {
               <div class="itemThree">
                 <div class="pic picThree"></div>
                 <div class="name">
-                  {topThree[1].pseudo}
+                  {topThree[2].pseudo}
                 </div>
                 <div class="score">
-                  {topThree[1].nbCapture}
+                  {topThree[2].nbCapture}
                 </div>
               </div>
             </div>
