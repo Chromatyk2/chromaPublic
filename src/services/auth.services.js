@@ -5,7 +5,7 @@ import Axios from 'axios'
 function AuthService() {
 
   const [cookies, setCookie, removeCookie] = useCookies();
-  const CLIENT_ID = "401m5gmmyoy4jme9jo4n7bzz5zzt8t";
+  const CLIENT_ID = "7kpmnnx1qptajh5ow3lylsws13u2op";
   const REDIRECT_URI = "https://chromatyk.netlify.app/";
   const SCOPES = ['openid'];
 
@@ -50,8 +50,8 @@ function AuthService() {
         Axios.post(
         'https://id.twitch.tv/oauth2/token',
         {
-          client_id:"401m5gmmyoy4jme9jo4n7bzz5zzt8t",
-          client_secret:"mdbes44v9p9576ltwyed2041xwtnw4",
+          client_id:"7kpmnnx1qptajh5ow3lylsws13u2op",
+          client_secret:"ylfb1urtgbrdopyc8kwz80a8w0zluh",
           code:params.code,
           grant_type:"authorization_code",
           redirect_uri:"https://chromatyk.netlify.app/"
@@ -65,7 +65,7 @@ function AuthService() {
               {
                 headers:{
                   'Authorization': `Bearer ${result.data.access_token}`,
-                  'Client-Id': '401m5gmmyoy4jme9jo4n7bzz5zzt8t'
+                  'Client-Id': '7kpmnnx1qptajh5ow3lylsws13u2op'
                 }
               }
             )
