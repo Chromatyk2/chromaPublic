@@ -47,10 +47,11 @@ function GuessTrade(props) {
         }
         ).then(
           (result) => {
-            Axios.get('/api/getTradeById/'+id)
-            .then(function(response){
-               setTrade(response.data);
-             })
+            Axios
+              .get("/api/getAllreadyGuess/"+pseudo+"/"+id)
+              .then(function(response){
+                  setAllreadyGuess(response.data);
+            })
           },
           (error) => {
           }
