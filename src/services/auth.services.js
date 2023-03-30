@@ -54,7 +54,7 @@ function AuthService() {
           client_secret:"1byi9sa1ch1g3mmgd9aibfzzr5ovbp",
           code:params.code,
           grant_type:"authorization_code",
-          redirect_uri:"https://chromatest.netlify.app/"
+          redirect_uri:"https://chromatyk.netlify.app/"
         }
       )
       .then(

@@ -61,7 +61,7 @@ function Guess(props) {
                    Axios.delete('/api/deleteCapture/'+trade[0].captureId)
                    .then(
                      (result) => {
-                       window.location.replace('https://chromatest.netlify.app/pokedex');
+                       window.location.replace('https://chromatyk.netlify.app/pokedex');
                     })
                  })
               })
