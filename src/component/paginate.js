@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
+import {BrowserRouter, Link} from "react-router-dom";
 import { Tooltip } from 'react-tooltip'
 import { Cookies, useCookies } from 'react-cookie';
 import Axios from 'axios'
@@ -21,6 +22,7 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
+                <Link className="navLink" to={"/pokemon/"+val.pkmId}>
                  <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
@@ -28,6 +30,7 @@ function Items(props) {
                    </div>
                     <img src={val.pkmImage}></img>
                   </div>
+                </Link>
               </>
              )
            })
@@ -81,6 +84,7 @@ function Pagination(props) {
       }
       <Items currentItems={currentItems} />
       <ReactPaginate
+      className="paginateLay"
         breakLabel="..."
         nextLabel=">>"
         onPageChange={handlePageClick}

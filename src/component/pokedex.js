@@ -7,10 +7,9 @@ import PkmList from './pkmList.js'
 function Pokedex(props) {
 const [list,setList] = useState([]);
 const pseudo = props.cookies.user.data[0].login;
-console.log(props.cookies.user);
   useEffect(() => {
     Axios
-      .get("https://chromatyk-pokemon.herokuapp.com/api/getByUser/"+pseudo)
+      .get("/api/getByUser/"+pseudo)
       .then(function(response){
           setList(response.data);
       })

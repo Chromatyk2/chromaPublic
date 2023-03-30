@@ -9,6 +9,11 @@ import Pokedex from './component/pokedex.js';
 import LaderBoard from './component/laderboard.js';
 import NavBar from './component/navbar.js';
 import Login from './services/auth.services.js';
+import PokemonPage from './component/pokemonPage.js';
+import MyTradePlace from './component/myTradePlace.js';
+import TradePlace from './component/tradePlace.js';
+import GuessTrade from './component/guessTrade.js';
+import Guess from './component/guess.js';
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -17,11 +22,18 @@ function App() {
   return(
     <>
       <BrowserRouter>
-        <NavBar />
+        {cookies.user !== undefined &&
+          <NavBar cookies={cookies} />
+        }
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
           <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
+          <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
+          <Route path="/myTrades" element={<MyTradePlace cookies={cookies} />} />
+          <Route path="/tradePlace" element={<TradePlace cookies={cookies} />} />
+          <Route path="/guessTrade/:id" element={<GuessTrade cookies={cookies} />} />
+          <Route path="/guess/:id" element={<Guess cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
     </>

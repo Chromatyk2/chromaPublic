@@ -11,7 +11,7 @@ function LaderBoard(props) {
     function displayNormalLaderboard(e) {
       let shiny = e.target.value;
         Axios
-          .get(`https://chromatyk-pokemon.herokuapp.com/api/getLaderboard/0`)
+          .get(`/api/getLaderboard/0`)
           .then(function(response){
               setLaderboard(response.data);
               setTopThree(response.data.slice(0,3));
@@ -21,7 +21,7 @@ function LaderBoard(props) {
     function displayShinyLaderboard(e) {
       let shiny = e.target.value;
         Axios
-          .get(`https://chromatyk-pokemon.herokuapp.com/api/getLaderboard/1`)
+          .get(`/api/getLaderboard/1`)
           .then(function(response){
               setLaderboard(response.data);
               setTopThree(response.data.slice(0,3));
@@ -38,19 +38,21 @@ function LaderBoard(props) {
         {topThree.length > 0 &&
           <>
           <div className="top3Desktop">
-            <div className="two item">
-              <div className="pos">
-                2
+            {topThree.length > 1 &&
+              <div className="two item">
+                <div className="pos">
+                  2
+                </div>
+                <div className="picTwo pic"></div>
+                <div className="name">
+                  {topThree[1].pseudo}
+                </div>
+                <hr/>
+                <div className="score">
+                  {topThree[1].nbCapture}
+                </div>
               </div>
-              <div className="picTwo pic"></div>
-              <div className="name">
-                {topThree[1].pseudo}
-              </div>
-              <hr/>
-              <div className="score">
-                {topThree[1].nbCapture}
-              </div>
-            </div>
+            }
             <div className="one item">
               <div className="pos">
                 1
@@ -64,6 +66,7 @@ function LaderBoard(props) {
                 {topThree[0].nbCapture}
               </div>
             </div>
+            {topThree.length > 2 &&
             <div className="three item">
               <div className="pos">
                 3
@@ -77,6 +80,7 @@ function LaderBoard(props) {
                 {topThree[2].nbCapture}
               </div>
             </div>
+            }
           </div>
             <div className="top3Mobile">
               <div class="itemOne">
@@ -88,24 +92,28 @@ function LaderBoard(props) {
                   {topThree[0].nbCapture}
                 </div>
               </div>
-              <div class="itemTwo">
-                <div class="pic picTwo"></div>
-                <div class="name">
-                  {topThree[1].pseudo}
+              {topThree.length > 1 &&
+                <div class="itemTwo">
+                  <div class="pic picTwo"></div>
+                  <div class="name">
+                    {topThree[1].pseudo}
+                  </div>
+                  <div class="score">
+                    {topThree[1].nbCapture}
+                  </div>
                 </div>
-                <div class="score">
-                  {topThree[1].nbCapture}
+              }
+              {topThree.length > 2 &&
+                <div class="itemThree">
+                  <div class="pic picThree"></div>
+                  <div class="name">
+                    {topThree[2].pseudo}
+                  </div>
+                  <div class="score">
+                    {topThree[2].nbCapture}
+                  </div>
                 </div>
-              </div>
-              <div class="itemThree">
-                <div class="pic picThree"></div>
-                <div class="name">
-                  {topThree[2].pseudo}
-                </div>
-                <div class="score">
-                  {topThree[2].nbCapture}
-                </div>
-              </div>
+              }
             </div>
           </>
         }

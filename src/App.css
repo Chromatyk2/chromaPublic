@@ -1,6 +1,6 @@
 @font-face {
-font-family: 'AldotheApache';
-src: url('../public/AldotheApache.ttf') format('truetype');
+font-family: 'Charge Vector Black';
+src: url('../public/Charge Vector Black.otf') format('truetype');
 }
 nav.navbar.navbar-expand-lg.navbar-light {
     background-color: #90E5B5;
@@ -37,7 +37,7 @@ iframe{
   background: none;
   color: #255748;
   font-size: 30px;
-  font-family: "AldotheApache";
+  font-family: "Charge Vector Black";
 }
 .leaderBoardSwitch button:hover{
   color: #0a3a2c;
@@ -73,7 +73,7 @@ iframe{
 }
 .loginContainer p {
   color: #255748;
-  font-family: AldotheApache;
+  font-family: Charge Vector Black;
   font-size: 30px;
   line-height: 33px;
   text-align: center;
@@ -85,17 +85,18 @@ a.socialLink {
   text-align: center;
   text-decoration: none;
   width: 320px;
+  font-size: 35px;
 }
 p.myNetworks {
     color: #255748;
-    font-family: "AldotheApache";
+    font-family: "Charge Vector Black";
     font-size: 30px;
     text-align: center;
 }
 a{
   font-size: 50px;
   color: #255748;
-  font-family: "AldotheApache";
+  font-family: "Charge Vector Black";
 }
 a:hover{
   color: #0a3a2c;
@@ -183,7 +184,7 @@ a:hover{
     transform-origin: left;
     transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
     width: 40%;
-    font-family: 'AldotheApache';
+    font-family: 'Charge Vector Black';
     border: solid gold 4px;
 }
 .top3Mobile .itemOne .pos {
@@ -245,7 +246,7 @@ a:hover{
     transform-origin: left;
     transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
     width: 40%;
-    font-family: 'AldotheApache';
+    font-family: 'Charge Vector Black';
     border: solid silver 4px;
 }
 .top3Mobile .itemTwo .pos {
@@ -306,7 +307,7 @@ a:hover{
     transform-origin: left;
     transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
     width: 40%;
-    font-family: 'AldotheApache';
+    font-family: 'Charge Vector Black';
     border : solid #F1AB70 4px;
 }
 .top3Mobile .itemThree .pos {
@@ -534,7 +535,7 @@ p.filterTitle {
   font-weight: 700;
   line-height: 28px;
   text-align: center;
-  font-family: 'AldotheApache';
+  font-family: 'Charge Vector Black';
   color: #255748;
   font-size: 30px;
 }
@@ -550,7 +551,7 @@ p.filterTitle {
   min-width: 88px;
   padding: 10px;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
 }
 .infoPkm{
   position: absolute;
@@ -565,7 +566,7 @@ p.filterTitle {
   height: 25px;
   font-weight: bold;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
 }
 .infoShiny{
     left: 90px;
@@ -630,6 +631,275 @@ p.filterTitle {
 .top3Mobile{
   display: none;
 }
+img.imgPokemonPage {
+    width: 200px;
+}
+p.numberPokemonPage {
+    text-align: center;
+    font-size: 50px;
+    color: #255748;
+    font-family: Charge Vector Black;
+}
+p.namePokemonPage {
+    color: #255748;
+    font-family: Charge Vector Black;
+    font-size: 50px;
+    text-align: center;
+    line-height: 10px;
+}
+.pokemonTypeContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.pokemonTypeContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.pokemonTypeContainer img {
+    margin: 0;
+    margin-top: 10px;
+}
+.capturesContainer {
+    color: #255748;
+    font-family: Charge Vector Black;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+p.titleMyCaptures {
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.pokemonPageContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+.myCapturesContainer {
+    text-align: center;
+    color: #255748;
+    font-family: Charge Vector Black;
+}
+
+.myCaptureItem {
+  align-items: center;
+  border-radius: 5px;
+  color: #255748;
+  display: flex;
+  font-size: 20px;
+  gap: 30px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: rgba(37,87,95,.2);
+}
+p.myCapturesList {
+    margin: 0;
+}
+p.shinyPokemonList{
+  color:gold;
+}
+p.titleMyCaptures{
+  color: #255748;
+    font-family: Charge Vector Black;
+    font-size: 20px;
+    text-align: center;
+}
+.alreadyTraded{
+  margin: 0;
+  background: #bc3636;
+  padding: 5px;
+  border-radius: 25px;
+  color: white;
+  padding: 10px;
+}
+.createTradeButton {
+  background: #0a3a2c;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+  border:none;
+}
+.createTradeButton:hover {
+  background: white;
+  border-radius: 25px;
+  color: #0a3a2c;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+  border:none;
+}
+.myTradesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+.pokemonNameTrade{
+  text-align: center;
+  color: #255748;
+  font-family: Charge Vector Black;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.uniqueTradeContainer {
+    padding: 20px;
+    background: rgba(37, 87, 95,0.2);
+    border-radius: 25px;
+}
+button.deleteTrade {
+    display: block;
+    margin: auto;
+    border: none;
+    background: red;
+    border-radius: 25px;
+    padding: 8px;
+    width: 100%;
+    color: white;
+    font-family: Charge Vector Black;
+    letter-spacing: 2px;
+}
+.guessTradeButton {
+    background: #0a3a2c;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    display: block;
+    margin-top: 10px;
+    font-family: Charge Vector Black;
+    width: 100%;
+    letter-spacing: 2px;
+}
+.guessTradeButton:hover{
+  background: white;
+  color: #0a3a2c;
+}
+.tradeHub {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    align-items: center;
+}
+img.imgPokemonTrade {
+    width: 100%;
+}
+.guessedPokemon{
+  width:300px;
+}
+.guessedPokemonName{
+  color: #255748;
+  font-family: Charge Vector Black;
+  font-size: 30px;
+  margin-top: 5px;
+  text-align: center;
+}
+.autoSearchItem{
+  font-size: 10px;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+.autoSearchItemContainer{
+  display: flex;
+  flex-flow: column;
+}
+.autoCompleteSearch{
+  display: block;
+  margin:auto;
+  width:300px;
+    font-size: 25px;
+    color: #255748;
+    font-family: Charge Vector Black;
+}
+.autoCompleteSearch input{
+  font-size: 25px;
+  color: #255748;
+  font-family: Charge Vector Black;
+}
+ul{
+  flex-wrap: wrap;
+  display: block;
+  margin: auto;
+}
+li{
+  font-size: 25px;
+  width: 300px;
+  color: #255748;
+  font-family: Charge Vector Black;
+}
+li:hover{
+  cursor: pointer;
+  background-color: #eee;
+}
+li svg{
+  display: none;
+}
+.allreadyGuessButton{
+  background: red;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+  border:none;
+  display: block;
+  margin: auto;
+  font-family: Charge Vector Black;
+
+}
+.validateGuessButton{
+  background: #0a3a2c;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+  border:none;
+  display: block;
+  margin: auto;
+  font-family: Charge Vector Black;
+}
+.validateGuessButton:hover{
+  background: white;
+  color: #0a3a2c;
+}
+ul.paginateLay {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    text-align: center;
+}
+.paginateLay li:hover {
+    background: none;
+}
+span.myCountProposition {
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    border-radius: 25px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 26px;
+}
+.myTradesLink{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.noTrade{
+  text-align: center;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
@@ -682,6 +952,15 @@ p.filterTitle {
     }
     .list .item .name {
       flex-grow: 0;
+    }
+
+    .capturesContainer{
+      display: block;
+      margin: auto;
+      width: 300px;
+      color: #255748;
+      font-family: Charge Vector Black;
+      text-align: center;
     }
 }
 @media screen and (max-width: 379px) {
@@ -758,6 +1037,15 @@ p.filterTitle {
     .list .item .score {
       right: 10px;
       position: absolute;
+    }
+
+    .capturesContainer{
+      display: block;
+      margin: auto;
+      width: 300px;
+      color: #255748;
+      font-family: Charge Vector Black;
+      text-align: center;
     }
 }
 .list .myItem{
