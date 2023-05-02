@@ -52,7 +52,7 @@ function AllNotes(props) {
         <>
           <div style={{width:"fit-content",display:"block",margin:"auto",marginTop:"100px;"}}>
             <p className="owner">CHROMA</p>
-            <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:loading*30+"px", width:loading*30+"px", fontSize:size+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
+            <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:size+"px", width:size+"px", fontSize:size+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
               <svg class="c-progress-circle__svg">
                 <defs>
                   <linearGradient id="gradient">
