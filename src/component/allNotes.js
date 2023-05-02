@@ -10,7 +10,7 @@ import moment from 'moment';
 
 function AllNotes(props) {
   document.getElementById("root").style.background = 'transparent';
-  const [myNote, setMyNote] = useState(0);
+  const [myNote, setMyNote] = useState(null);
   const [loading, setLoading] = useState(0);
   useEffect(() => {
     Axios
@@ -20,9 +20,10 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
-    if(myNote == 20){
-      for (let i = 0; i < myNote; i++) {
-          setLoading(i);
+    if(mynote != null){
+      while (loading == myNote) {
+        setLoading(loading);
+        loading++;
       }
     }
     if (myNote !== null){
