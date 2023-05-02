@@ -16,11 +16,12 @@ function AllNotes(props) {
     Axios
       .get("/api/getMyNote")
       .then(function(response){
-          console.log(response);
           setMyNote(response.data[0].note);
       })
     }, [])
     if(myNote !== null){
+      console.log(myNote);
+      console.log(loading);
       while (loading == myNote) {
         setLoading(loading);
         loading++;
