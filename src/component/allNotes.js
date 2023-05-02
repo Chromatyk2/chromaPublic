@@ -19,9 +19,9 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
-    useEffect((myNote) => {
+    useEffect(() => {
       const interval = setInterval(() => {
-        if(loading < myNote || myNote === null){
+        if(loading < myNote){
           console.log(loading);
           console.log(myNote);
           setLoading((loading) => loading + 1);
@@ -30,7 +30,7 @@ function AllNotes(props) {
           clearInterval(interval);
         }
       }, 100);
-    }, [myNote !== null]);
+    }, [myNote]);
     if (myNote !== null){
       return (
         <>
