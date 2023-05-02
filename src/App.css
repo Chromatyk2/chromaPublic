@@ -36,8 +36,14 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
   filter: drop-shadow(5px 5px 0 black) drop-shadow(-5px -5px 0 black);
 }
 .myNoteContainer{
-  position: relative;
-  left: 500px;
+    left: 300px;
+    position: relative;
+    top: 170px;
+}
+.viewersNoteContainer{
+    left: 900px;
+    position: relative;
+    top: 170px;
 }
 nav.navbar.navbar-expand-lg.navbar-light {
     background-color: #90E5B5;
