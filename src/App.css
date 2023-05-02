@@ -15,7 +15,8 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
   border-radius: 50%;
   position: relative;
   transform: rotate(271deg);
-  box-shadow: 0px 0px 50px 0px #00ff00;
+  box-shadow: 0 0 16px 0 #0f0, 0 0 35px 0 #f0f;
+  border:solid 1px black;
 }
 .c-progress-circle::after {
   -webkit-text-stroke: 1px #000;
