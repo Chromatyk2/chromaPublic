@@ -29,8 +29,7 @@ function AllNotes(props) {
           </div>
           <div className="viewersNoteContainer">
             <p className="myNoteText">Chat</p>
-            <img className="myNoteImg" src={`/images/slimeBack.png`}></img>
-            <p className="myNote">{myNote}</p>
+            <p className="myNote">1</p>
           </div>
         </>
       );
