@@ -30,7 +30,7 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
   height: 440px;
 }
 .c-progress-circle::after {
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 5px #000;
     align-items: center;
     background: -webkit-linear-gradient(top,#0f0 21%,#f0f 70%);
     -webkit-background-clip: text;
