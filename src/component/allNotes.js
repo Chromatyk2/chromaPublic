@@ -21,6 +21,8 @@ function AllNotes(props) {
       })
     }, [])
     useEffect(() => {
+      console.log(myNote);
+      console.log(loading);
       const interval = setInterval(() => {
         while(loading < myNote){
           setLoading((loading) => loading + 1);
