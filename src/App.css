@@ -19,7 +19,7 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 }
 .myNoteText{
   font-family: "Flying Slime Reguler";
-  font-size: 300px;
+  font-size: 100px;
   left: 50px;
   position: absolute;
   top: 10px;
