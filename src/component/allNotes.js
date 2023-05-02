@@ -12,6 +12,7 @@ function AllNotes(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
   const [loading, setLoading] = useState(0);
+  const [size, setSize] = useState(0);
     useEffect(() => {
       Axios
         .get("/api/getMyNote")
@@ -32,10 +33,23 @@ function AllNotes(props) {
       return () => clearInterval(timer);
     }, [loading]);
 
+    useEffect(() => {
+      clearInterval(timer);
+      var timer = setInterval(() => {
+        if (size === 200) {
+          clearInterval(timer);
+          return;
+        }
+        setSize((prev) => prev + 1);
+      }, 100);
+
+      return () => clearInterval(timer);
+    }, [size]);
+
     if (myNote !== null){
       return (
         <>
-          <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f"}} class="c-progress-circle" id="circle" data-percentage={loading}>
+          <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:size+"px", width:size+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
             <svg class="c-progress-circle__svg">
               <defs>
                 <linearGradient id="gradient">
