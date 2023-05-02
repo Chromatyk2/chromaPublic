@@ -19,11 +19,9 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
-    useEffect(() => {
       const interval = setInterval(() => {
           setLoading((loading) => loading + 1);
       }, 100);
-    }, [loading > myNote]);
     if (myNote !== null){
       return (
         <>
