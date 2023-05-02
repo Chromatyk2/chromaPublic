@@ -12,7 +12,7 @@ function AllNotes(props) {
   const [myNote, setMyNote] = useState(null);
   useEffect(() => {
     Axios
-      .get("/api/getMyNote)
+      .get("/api/getMyNote")
       .then(function(response){
           setMyNote(response.data);
       })
