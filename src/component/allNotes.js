@@ -18,13 +18,16 @@ function AllNotes(props) {
       .then(function(response){
           setMyNote(response.data[0].note);
           var i = 0;
-      }).then(function(i){
-        while (i != myNote) {
-          setLoading(i);
-          i++;
-        }
       })
     }, [])
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setLoading((loading) => loading + 1);
+      }, 1000);
+      return () => {
+        clearInterval(interval);
+      };
+    }, []);
     if (myNote !== null){
       return (
         <>
