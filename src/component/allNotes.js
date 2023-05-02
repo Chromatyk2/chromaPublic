@@ -25,7 +25,7 @@ function AllNotes(props) {
       }, 1000);
     }, []);
     function stop(){
-        clearInterval(intervalID);
+        clearInterval(interval);
     }
     if(loading == myNote){
       stop();
