@@ -29,7 +29,7 @@ function AllNotes(props) {
           return;
         }
         setLoading((prev) => prev + 1);
-      }, 300);
+      }, 1300);
 
       return () => clearInterval(timer);
     }, [loading]);
