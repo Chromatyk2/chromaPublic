@@ -49,7 +49,7 @@ function AllNotes(props) {
     if (myNote !== null){
       return (
         <>
-          <div style={{width:"200px"}}>
+          <div style={{width:"fit-content"}}>
             <p className="owner">CHROMA</p>
             <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:size+"px", width:size+"px", fontSize:size/2+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
               <svg class="c-progress-circle__svg">
