@@ -19,11 +19,10 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
+    if (loading >= myNote && loading !== null) {
       const interval = setInterval(() => {
           setLoading(loading + 1);
       }, 1000);
-      if (loading >= myNote) {
-        clearInterval(interval);
     }
     if (myNote !== null){
       return (
