@@ -28,6 +28,9 @@ function NavBar(props) {
             <Link className="navLink" to="/leaderboard">Classement</Link>
             <Link className="navLink myTradesLink" to="/myTrades">Mes Echanges {count > 0 && <span className="myCountProposition">{count}</span>}</Link>
             <Link className="navLink" to="/tradePlace">Place aux echanges</Link>
+            {pseudo == "Chromatyk" &&
+              <Link className="navLink" to="/noteChroma">Note</Link>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
