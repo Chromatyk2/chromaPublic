@@ -2,6 +2,13 @@
 font-family: 'Charge Vector Black';
 src: url('../public/Charge Vector Black.otf') format('truetype');
 }
+@font-face {
+font-family: 'Flying Slime Reguler';
+src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
+}
+.myNote{
+font-family: "Flying Slime Reguler";
+}
 nav.navbar.navbar-expand-lg.navbar-light {
     background-color: #90E5B5;
     margin-bottom: 20px;

@@ -22,7 +22,7 @@ function AllNotes(props) {
     if (myNote !== null){
       return (
         <>
-          <p className="alreadyTraded">{myNote}</p>
+          <p className="myNote">{myNote}</p>
         </>
       );
     }
