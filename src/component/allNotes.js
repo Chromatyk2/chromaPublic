@@ -37,7 +37,7 @@ function AllNotes(props) {
     useEffect(() => {
       clearInterval(timer);
       var timer = setInterval(() => {
-        if (size === 200) {
+        if (size === 600) {
           clearInterval(timer);
           return;
         }

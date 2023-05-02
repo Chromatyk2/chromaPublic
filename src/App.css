@@ -9,8 +9,8 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 
 .c-progress-circle {
   display: block;
-  width: 225px;
-  height: 225px;
+  width: 600px;
+  height: 600px;
   margin: 40px auto;
   border-radius: 50%;
   position: relative;
@@ -26,8 +26,8 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
   color: transparent;
   font-family: sans-serif;
   font-family: Flying Slime Reguler;
-  font-size: 105px;
-  height: 110px;
+  font-size: 400px;
+  height: 440px;
 }
 .c-progress-circle::after {
   -webkit-text-stroke: 1px #000;
