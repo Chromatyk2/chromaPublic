@@ -18,17 +18,26 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
   box-shadow: 0 0 16px 0 #0f0, 0 0 35px 0 #f0f;
   border:solid 5px white;
 }
+.owner{
+  text-align: center;
+  background: -webkit-linear-gradient(top,#0f0 21%,#f0f 70%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: sans-serif;
+  font-family: Flying Slime Reguler;
+  font-size: 105px;
+}
 .c-progress-circle::after {
   -webkit-text-stroke: 1px #000;
     align-items: center;
     background: -webkit-linear-gradient(top,#0f0 21%,#f0f 70%);
     -webkit-background-clip: text;
     color: transparent;
-    content: attr(data-percentage);
-    display: flex;
     font-family: sans-serif;
     font-family: Flying Slime Reguler;
     font-size: 105px;
+    content: attr(data-percentage);
+    display: flex;
     height: 100%;
     justify-content: center;
     left: -10px;
