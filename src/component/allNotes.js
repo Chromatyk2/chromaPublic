@@ -20,7 +20,7 @@ function AllNotes(props) {
       })
     }, [])
       const interval = setInterval(() => {
-          setLoading((loading) => loading + 1);
+          setLoading(loading + 1);
       }, 1000);
       if (loading >= myNote) {
         clearInterval(interval);
