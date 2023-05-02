@@ -27,9 +27,7 @@ function AllNotes(props) {
           clearInterval(timer);
           return;
         }
-        if(myNote > 1){
-          setLoading((prev) => prev + 1);          
-        }
+        setLoading((prev) => prev + 1);
       }, 100);
 
       return () => clearInterval(timer);
