@@ -19,6 +19,13 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoading(loading => loading + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  console.log(loading);
     if (myNote !== null){
       return (
         <>
