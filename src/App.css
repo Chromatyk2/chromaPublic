@@ -8,6 +8,21 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 }
 .myNote{
 font-family: "Flying Slime Reguler";
+position: absolute;
+color: #00ff00;
+font-size: 300px;
+left: 110px;
+top: 42px;
+text-shadow: 5px 0 #000, -5px 0 #000, 0 5px #000, 0 -5px #000, 5px 5px #000, -5px -5px #000, 5px -5px #000, -5px 5px #000;
+}
+.myNoteImg{
+  position: absolute;
+  width: 500px;
+  filter: drop-shadow(5px 5px 0 black) drop-shadow(-5px -5px 0 black);
+}
+.myNoteContainer{
+  position: relative;
+  left: 500px;
 }
 nav.navbar.navbar-expand-lg.navbar-light {
     background-color: #90E5B5;
