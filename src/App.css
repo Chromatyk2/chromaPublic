@@ -6,7 +6,7 @@ src: url('../public/Charge Vector Black.otf') format('truetype');
 font-family: 'Flying Slime Reguler';
 src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 }
-.myNoteText{
+.myNoteText, .myNote{
   font-family: "Flying Slime Reguler";
   background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
   -webkit-background-clip: text;
