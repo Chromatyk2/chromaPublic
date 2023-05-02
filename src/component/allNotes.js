@@ -31,7 +31,7 @@ function AllNotes(props) {
       return () => {
         clearInterval(interval);
       };
-    }, [myNote]);
+    }, []);
     if (myNote !== null){
       return (
         <>
