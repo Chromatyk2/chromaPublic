@@ -11,8 +11,8 @@ import moment from 'moment';
 function ViewersNote(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
-  const [loading, setLoading] = useState(-3);
-  const [size, setSize] = useState(-3);
+  const [loading, setLoading] = useState(-15);
+  const [size, setSize] = useState(-15);
     useEffect(() => {
       Axios
         .get("/api/getViewersNote")
@@ -25,7 +25,6 @@ function ViewersNote(props) {
         })
     }, [])
     useEffect(() => {
-      console.log(myNote);
       clearInterval(timer);
       var timer = setInterval(() => {
         if (loading === myNote ) {
