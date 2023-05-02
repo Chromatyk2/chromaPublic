@@ -32,9 +32,6 @@ function MyNote(props) {
       </label>
       <input type="submit" />
     </form>
-    {message != "" &&
-      <p>{message}</p>
-    }
   )
 }
 export default MyNote
