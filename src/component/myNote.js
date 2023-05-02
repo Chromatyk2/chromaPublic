@@ -8,8 +8,17 @@ import '../App.css'
 import moment from 'moment';
 
 function MyNote(props) {
+  const [note, setNote] = useState(0);
   return(
-    <p>Oui</p>
+    <form>
+      <label>Enter your name:
+        <input
+          type="number"
+          value={name}
+          onChange={(e) => setNote(e.target.value)}
+        />
+      </label>
+    </form>
   )
 }
 export default MyNote
