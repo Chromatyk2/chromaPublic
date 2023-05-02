@@ -26,7 +26,7 @@ function AllNotes(props) {
           clearInterval(timer);
           return;
         }
-        setCounter((prev) => prev + 1);
+        setLoading((prev) => prev + 1);
       }, 10);
 
       return () => clearInterval(timer);
