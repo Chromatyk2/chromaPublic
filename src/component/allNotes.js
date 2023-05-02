@@ -19,31 +19,6 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
-    var progressCircles = document.querySelectorAll('.c-progress-circle');
-
-setTimeout(function(){
-  for(var i=0; i < progressCircles.length; i++) {
-    var circle = progressCircles[i],
-        val = Number(circle.getAttribute('data-percentage')),
-        bar = circle.querySelectorAll('.c-progress-circle__bar')[0];
-
-    if (isNaN(val)) {
-      val = 100;
-    }
-        else {
-          var r = bar.getAttribute('r');
-          var c = Math.PI*(r*2);
-
-          if (val < 0) { val = 0;}
-          if (val > 100) { val = 100;}
-
-          var pct = ((100-val)/100)*c;
-
-          bar.style.strokeDashoffset = pct;
-          bar.setAttribute('data-percentage', val);
-        }
-      }
-    }, 500);
     if (myNote !== null){
       return (
         <>
