@@ -23,7 +23,7 @@ function AllNotes(props) {
       console.log(loading);
       console.log(myNote);
       const interval = setInterval(() => {
-          setLoading(loading + 1);
+          setLoading((loading) => loading + 1);
       }, 1000);
     }
     if (myNote !== null){
