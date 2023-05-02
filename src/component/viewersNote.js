@@ -21,7 +21,7 @@ function ViewersNote(props) {
           response.data.map((val, key) => {
             sum+=val.note;
           });
-          setMyNote(sum/response.data.length);
+          setMyNote(Math.round(sum/response.data.length));
         })
     }, [])
     useEffect(() => {
