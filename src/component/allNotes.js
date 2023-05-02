@@ -11,7 +11,7 @@ import moment from 'moment';
 function AllNotes(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
-  const [loading, setLoading] = useState(0);
+  const [loading, setLoading] = useState(-1);
   const [size, setSize] = useState(0);
     useEffect(() => {
       Axios
@@ -29,7 +29,7 @@ function AllNotes(props) {
           return;
         }
         setLoading((prev) => prev + 1);
-      }, 1300);
+      }, 100);
 
       return () => clearInterval(timer);
     }, [loading]);
