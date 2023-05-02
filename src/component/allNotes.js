@@ -20,9 +20,11 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
-      for (let i = 0; i <= myNote; i++) {
+    if(myNote != null){
+      for (let i = 0; i < myNote; i++) {
           setLoading(i);
       }
+    }
     if (myNote !== null){
       return (
         <>
