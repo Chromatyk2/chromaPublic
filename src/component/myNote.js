@@ -9,17 +9,21 @@ import moment from 'moment';
 
 function MyNote(props) {
   const [note, setNote] = useState(0);
+  const [message, setMessage] = useState("");
   function handleSubmit() {
-    const idMainCapture = parseInt(e.target.value);
-    setDisable(true);
     return Axios.post('/api/chromaGuess',
     {
       note:note
     }
+    ).then(
+      (result) => {
+        setMessage("Note attribuée");
+      }
+    )
   }
   return(
     <form onSubmit={handleSubmit}>
-      <label>Enter your name:
+      <label>Donne la note:
         <input
           type="number"
           value={note}
@@ -28,6 +32,9 @@ function MyNote(props) {
       </label>
       <input type="submit" />
     </form>
+    {message != "" &&
+      <p>{message}</p>
+    }
   )
 }
 export default MyNote
