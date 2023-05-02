@@ -9,24 +9,26 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 .myNote{
   font-family: "Flying Slime Reguler";
   font-size: 300px;
-  left: 110px;
+  left: 107px;
+  top: 150px;
   position: absolute;
-  top: 42px;
   background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-stroke: 4px black;
+  z-index: 1;
 }
 .myNoteText{
   font-family: "Flying Slime Reguler";
-  font-size: 100px;
-  left: 50px;
   position: absolute;
+  font-size: 200px;
+  left: -30px;
   top: 10px;
   background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-stroke: 4px black;
+  z-index: 1;
 }
 .myNoteImg{
   position: absolute;
