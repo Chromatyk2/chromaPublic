@@ -12,17 +12,17 @@ function AllNotes(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
   const [loading, setLoading] = useState(0);
-  var i = 0;
   useEffect(() => {
     Axios
       .get("/api/getMyNote")
       .then(function(response){
           setMyNote(response.data[0].note);
           var i = 0;
-          while (i != myNote) {
-            setLoading(i);
-            i++;
-          }
+      }).then(function(i){
+        while (i != myNote) {
+          setLoading(i);
+          i++;
+        }
       })
     }, [])
     if (myNote !== null){
