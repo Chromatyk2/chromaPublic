@@ -18,7 +18,7 @@ function ViewersNote(props) {
         .get("/api/getViewersNote")
         .then(function(response){
           var sum = 0;
-          response.map((val, key) => {
+          response.data.map((val, key) => {
             sum+=val.note;
           });
           setMyNote(sum/response.data.length);
@@ -50,7 +50,6 @@ function ViewersNote(props) {
 
       return () => clearInterval(timer);
     }, [size]);
-    console.log(myNote);
     if (myNote !== null){
       return (
         <>
