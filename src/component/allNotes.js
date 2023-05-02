@@ -41,7 +41,7 @@ function AllNotes(props) {
           return;
         }
         setSize((prev) => prev + 1);
-      }, 5);
+      }, 1);
 
       return () => clearInterval(timer);
     }, [size]);
