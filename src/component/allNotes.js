@@ -22,7 +22,7 @@ function AllNotes(props) {
     }, [])
     useEffect(() => {
       const interval = setInterval(() => {
-        if(loading < myNote){
+        if(loading < myNote || myNote === null){
           console.log('oui');
           setLoading((loading) => loading + 1);
         }else{
