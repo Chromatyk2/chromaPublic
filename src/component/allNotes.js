@@ -25,10 +25,10 @@ function AllNotes(props) {
         const interval = setInterval(() => {
             setLoading((loading) => loading + 1);
         }, 500);
+        return () => {
+          clearInterval(interval);
+        };
       }
-      return () => {
-        clearInterval(interval);
-      };
     }, []);
     if (myNote !== null){
       return (
