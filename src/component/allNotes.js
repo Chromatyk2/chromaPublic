@@ -12,6 +12,7 @@ function AllNotes(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
   const [loading, setLoading] = useState(0);
+  var i = 0;
   useEffect(() => {
     Axios
       .get("/api/getMyNote")
@@ -20,7 +21,6 @@ function AllNotes(props) {
       })
     }, [])
     if(myNote !== null){
-      var i = 0;
       while (i != myNote) {
         setLoading(i);
         i++;
