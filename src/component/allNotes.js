@@ -18,6 +18,11 @@ function AllNotes(props) {
       .get("/api/getMyNote")
       .then(function(response){
           setMyNote(response.data[0].note);
+          var i = 0;
+          while (i != myNote) {
+            setLoading(i);
+            i++;
+          }
       })
     }, [])
     if (myNote !== null){
