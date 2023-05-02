@@ -20,12 +20,10 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
-    if(myNote !== null){
       while (i != myNote) {
         setLoading(i);
         i++;
       }
-    }
     if (myNote !== null){
       return (
         <>
