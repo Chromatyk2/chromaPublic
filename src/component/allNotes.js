@@ -17,13 +17,12 @@ function AllNotes(props) {
           setMyNote(response.data);
       })
     }, [])
+    if (myNote !== null){
+      return (
+        <>
+          <p className="alreadyTraded">{myNote}</p>
+        </>
+      );
+    }
   }
-  if (myNote !== null){
-    return (
-      <>
-        <p className="alreadyTraded">{myNote}</p>
-      </>
-    );
-  }
-}
 export default AllNotes
