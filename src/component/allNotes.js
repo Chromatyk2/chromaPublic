@@ -30,7 +30,7 @@ function AllNotes(props) {
           console.log('non');
           clearInterval(interval);
         }
-      }, 1000);
+      }, 100);
     }, []);
     if (myNote !== null){
       return (
