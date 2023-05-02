@@ -22,7 +22,7 @@ function AllNotes(props) {
     useEffect(() => {
       clearInterval(timer);
       var timer = setInterval(() => {
-        if (loading === 100) {
+        if (loading === myNote) {
           clearInterval(timer);
           return;
         }
