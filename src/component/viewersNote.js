@@ -18,8 +18,8 @@ function ViewersNote(props) {
         .get("/api/getViewersNote")
         .then(function(response){
           var sum = 0;
-          forEach((response.data, i) => {
-            sum+=i.note;
+          response.map((val, key) => {
+            sum+=val.note;
           });
           setMyNote(sum/response.data.length);
         })
