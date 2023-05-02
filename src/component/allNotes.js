@@ -22,14 +22,15 @@ function AllNotes(props) {
     if (myNote !== null){
       return (
         <>
-          <div className="myNoteContainer">
-            <p className="myNoteText">Chroma</p>
-            <img className="myNoteImg" src={`/images/slimeBack.png`}></img>
-            <p className="myNote">{myNote}</p>
-          </div>
-          <div className="viewersNoteContainer">
-            <p className="myNoteText">Chat</p>
-            <p className="myNote">1</p>
+          <div className="allNotesContainer">
+            <div className="myNoteContainer">
+              <p className="myNoteText">Chroma</p>
+              <p className="myNote">{myNote}</p>
+            </div>
+            <div className="viewersNoteContainer">
+              <p className="myNoteText">Chat</p>
+              <p className="myNote">1</p>
+            </div>
           </div>
         </>
       );
