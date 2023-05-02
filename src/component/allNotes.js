@@ -11,6 +11,7 @@ import moment from 'moment';
 function AllNotes(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
+  const [loading, setLoading] = useState(0);
   useEffect(() => {
     Axios
       .get("/api/getMyNote")
@@ -19,10 +20,15 @@ function AllNotes(props) {
           setMyNote(response.data[0].note);
       })
     }, [])
+    if(myNote != null){
+      for (let i = 0; i <= myNote; i++) {
+          setLoading(i);
+      }
+    }
     if (myNote !== null){
       return (
         <>
-          <div class="c-progress-circle" id="circle" data-percentage={myNote}>
+          <div class="c-progress-circle" id="circle" data-percentage={loading}>
             <svg class="c-progress-circle__svg">
               <defs>
                 <linearGradient id="gradient">
