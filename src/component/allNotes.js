@@ -9,7 +9,7 @@ import '../App.css'
 import moment from 'moment';
 
 function AllNotes(props) {
-  document.getElementById("root").css('background','transparent');
+  document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
   useEffect(() => {
     Axios
