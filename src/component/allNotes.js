@@ -14,6 +14,7 @@ function AllNotes(props) {
     Axios
       .get("/api/getMyNote")
       .then(function(response){
+          console.log(response);
           setMyNote(response.data);
       })
     }, [])
