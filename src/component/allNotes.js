@@ -50,7 +50,7 @@ function AllNotes(props) {
     if (myNote !== null){
       return (
         <>
-          <div style={{width:"fit-content"}}>
+          <div style={{width:"fit-content",display:"block",margin:"auto",marginTop:"100px;"}}>
             <p className="owner">CHROMA</p>
             <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:size+"px", width:size+"px", fontSize:size/2+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
               <svg class="c-progress-circle__svg">
@@ -62,16 +62,6 @@ function AllNotes(props) {
                 </defs>
                 <circle class="c-progress-circle__bar" r="90" cx="50%" cy="50%" stroke="url(#gradient)"></circle>
               </svg>
-            </div>
-          </div>
-          <div className="allNotesContainer">
-            <div className="myNoteContainer">
-              <p className="myNoteText">Chroma</p>
-              <p className="myNote">{myNote}</p>
-            </div>
-            <div className="viewersNoteContainer">
-              <p className="myNoteText">Chat</p>
-              <p className="myNote">1</p>
             </div>
           </div>
         </>
