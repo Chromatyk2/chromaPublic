@@ -12,20 +12,24 @@ function AllNotes(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
   const [loading, setLoading] = useState(0);
-  useEffect(() => {
-    Axios
-      .get("/api/getMyNote")
-      .then(function(response){
-          setMyNote(response.data[0].note);
-      })
+    useEffect(() => {
+      Axios
+        .get("/api/getMyNote")
+        .then(function(response){
+            setMyNote(response.data[0].note);
+        })
     }, [])
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoading(loading => loading + 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-  console.log(loading);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setLoading(loading => loading + 1);
+      }, 1000);
+    }, []);
+    function stop(){
+        clearInterval(intervalID);
+    }
+    if(loading == myNote){
+      stop();
+    }
     if (myNote !== null){
       return (
         <>
