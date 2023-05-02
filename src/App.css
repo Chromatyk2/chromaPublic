@@ -15,6 +15,15 @@ left: 110px;
 top: 42px;
 text-shadow: 5px 0 #000, -5px 0 #000, 0 5px #000, 0 -5px #000, 5px 5px #000, -5px -5px #000, 5px -5px #000, -5px 5px #000;
 }
+.myNoteText{
+font-family: "Flying Slime Reguler";
+position: absolute;
+color: #00ff00;
+font-size: 300px;
+left: 110px;
+top: 42px;
+text-shadow: 5px 0 #000, -5px 0 #000, 0 5px #000, 0 -5px #000, 5px 5px #000, -5px -5px #000, 5px -5px #000, -5px 5px #000;
+}
 .myNoteImg{
   position: absolute;
   width: 500px;

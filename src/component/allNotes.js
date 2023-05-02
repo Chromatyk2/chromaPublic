@@ -23,6 +23,7 @@ function AllNotes(props) {
       return (
         <>
           <div className="myNoteContainer">
+            <p className="myNoteText">Chroma</p>
             <img className="myNoteImg" src={`/images/slimeBack.png`}></img>
             <p className="myNote">{myNote}</p>
           </div>
