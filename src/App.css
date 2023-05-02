@@ -6,6 +6,118 @@ src: url('../public/Charge Vector Black.otf') format('truetype');
 font-family: 'Flying Slime Reguler';
 src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 }
+
+
+
+
+// Geometry!
+$pi: 3.14159265359;
+
+@function makeCircleDiameter($radius) {
+  @return ($radius * 2);
+}
+
+@function makeCircleWidthHeight($radius, $padding) {
+  @return ($radius * 2) + $padding * 3;
+}
+
+@function makeCircleCircumfrence($diameter) {
+  @return $diameter *;
+}
+
+// Progress Circles
+$progress-circle-radius: 90px;
+$progress-circle-padding: 15px;
+
+.c-progress-circle {
+  display: block;
+  width: makeCircleWidthHeight(
+    $progress-circle-radius,
+    $progress-circle-padding
+  );
+  height: makeCircleWidthHeight(
+    $progress-circle-radius,
+    $progress-circle-padding
+  );
+  margin: 40px auto;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(271deg);
+  box-shadow: 0px 0px 50px 0px rgba(126, 143, 255, 1);
+
+  &::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-family: sans-serif;
+    content: attr(data-percentage);
+    font-size: 90px;
+    transform: rotate(90deg);
+    color: #fff;
+  }
+
+  .c-progress-circle__svg {
+    width: 100%;
+    height: 100%;
+
+    circle {
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1s linear;
+      stroke-width: 4px;
+      stroke-linecap: round;
+    }
+
+    .c-progress-circle__bar {
+      fill: transparent;
+      stroke-dashoffset: makeCircleCircumfrence(
+        makeCircleDiameter($progress-circle-radius)
+      );
+      stroke-dasharray: makeCircleCircumfrence(
+        makeCircleDiameter($progress-circle-radius)
+      );
+    }
+  }
+
+  // Smaller Version with Image
+  $progress-circle--sm-radius: 40px;
+  $progress-circle--sm-padding: 5px;
+
+  &.c-progress-circle--sm {
+    width: makeCircleWidthHeight(
+      $progress-circle--sm-radius,
+      $progress-circle--sm-padding
+    );
+    height: makeCircleWidthHeight(
+      $progress-circle--sm-radius,
+      $progress-circle--sm-padding
+    );
+    box-shadow: none;
+
+    &::after {
+      font-size: 40px;
+    }
+
+    .c-progress-circle__bar {
+      stroke-width: 3px;
+      stroke-dashoffset: makeCircleCircumfrence(
+        makeCircleDiameter($progress-circle--sm-radius)
+      );
+      stroke-dasharray: makeCircleCircumfrence(
+        makeCircleDiameter($progress-circle--sm-radius)
+      );
+    }
+  }
+}
+
+
+
+
+
 .myNoteText, .myNote{
   font-family: "Flying Slime Reguler";
   background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
