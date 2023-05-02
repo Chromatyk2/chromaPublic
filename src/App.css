@@ -6,45 +6,6 @@ src: url('../public/Charge Vector Black.otf') format('truetype');
 font-family: 'Flying Slime Reguler';
 src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 }
-.myNote{
-  font-family: "Flying Slime Reguler";
-  font-size: 300px;
-  left: 107px;
-  top: 150px;
-  position: absolute;
-  background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 4px black;
-  z-index: 1;
-}
-.myNoteText{
-  font-family: "Flying Slime Reguler";
-  position: absolute;
-  font-size: 200px;
-  left: -30px;
-  top: 10px;
-  background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 4px black;
-  z-index: 1;
-}
-.myNoteImg{
-  position: absolute;
-  width: 500px;
-  filter: drop-shadow(5px 5px 0 black) drop-shadow(-5px -5px 0 black);
-}
-.myNoteContainer{
-    left: 300px;
-    position: relative;
-    top: 170px;
-}
-.viewersNoteContainer{
-    left: 900px;
-    position: relative;
-    top: 170px;
-}
 nav.navbar.navbar-expand-lg.navbar-light {
     background-color: #90E5B5;
     margin-bottom: 20px;
