@@ -22,7 +22,7 @@ function AllNotes(props) {
     if(myNote !== null){
       console.log(myNote);
       console.log(loading);
-      while (loading == myNote) {
+      while (loading != myNote) {
         console.log(loading);
         setLoading(loading);
         loading++;
