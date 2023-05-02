@@ -23,11 +23,13 @@ function AllNotes(props) {
     useEffect(() => {
       clearInterval(timer);
       var timer = setInterval(() => {
-        if (loading === myNote || myNote === 1) {
+        if (loading === myNote ) {
           clearInterval(timer);
           return;
         }
-        setLoading((prev) => prev + 1);
+        if(myNote > 1){
+          setLoading((prev) => prev + 1);          
+        }
       }, 100);
 
       return () => clearInterval(timer);
