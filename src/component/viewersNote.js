@@ -17,7 +17,11 @@ function ViewersNote(props) {
       Axios
         .get("/api/getViewersNote")
         .then(function(response){
-            console.log(response.data);
+          var sum = 0;
+          forEach((response.data, i) => {
+            sum+=i.note;
+          });
+          setMyNote(sum/response.data.length);
         })
     }, [])
     useEffect(() => {
@@ -46,7 +50,7 @@ function ViewersNote(props) {
 
       return () => clearInterval(timer);
     }, [size]);
-
+    console.log(myNote);
     if (myNote !== null){
       return (
         <>
