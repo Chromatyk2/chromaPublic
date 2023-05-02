@@ -52,7 +52,7 @@ function AllNotes(props) {
         <>
           <div style={{width:"fit-content",display:"block",margin:"auto",marginTop:"100px;"}}>
             <p className="owner">CHROMA</p>
-            <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:"600px", width:"600px", fontSize:size+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
+            <div style={{boxShadow:"rgb(255, 0, 255) 0px 0px "+loading*8+"px 40px inset, rgb(0, 255, 0) 0px 0px "+loading*10+"px "+loading+"px,rgb(0, 255, 0) 0px 0px "+loading*10+"px "+loading+"px, rgb(255, 255, 255) "+loading*2+"px "+loading+"px "+loading*40+"px "+loading*5+"px, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f, rgb(255, 255, 255) "+loading*2+"px "+loading+"px "+loading*40+"px "+loading*5+"px,rgb(255, 255, 255) "+loading*3+"px "+loading*8+"px "+loading*6+"px "+loading*7+"px inset", height:"600px", width:"600px", fontSize:size+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
               <svg class="c-progress-circle__svg">
                 <defs>
                   <linearGradient id="gradient">
