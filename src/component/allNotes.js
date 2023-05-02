@@ -20,12 +20,8 @@ function AllNotes(props) {
       })
     }, [])
     if(myNote !== null){
-      console.log(myNote);
-      console.log(loading);
       while (loading != myNote) {
-        console.log(loading);
-        setLoading(loading);
-        loading++;
+        setLoading(loading+1);
       }
     }
     if (myNote !== null){
