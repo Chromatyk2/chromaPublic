@@ -28,6 +28,8 @@ src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
   font-family: Flying Slime Reguler;
   font-size: 400px;
   height: 440px;
+    z-index: 1;
+    position: relative;
 }
 .c-progress-circle::after {
   -webkit-text-stroke: 5px #000;
