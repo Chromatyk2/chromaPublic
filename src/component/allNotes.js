@@ -20,16 +20,17 @@ function AllNotes(props) {
         })
     }, [])
     useEffect(() => {
-      const interval = setInterval(() => {
-        setLoading(loading => loading + 1);
-      }, 1000);
-    }, []);
-    function stop(){
-        clearInterval(interval);
-    }
-    if(loading == myNote){
-      stop();
-    }
+      clearInterval(timer);
+      var timer = setInterval(() => {
+        if (loading === 100) {
+          clearInterval(timer);
+          return;
+        }
+        setCounter((prev) => prev + 1);
+      }, 10);
+
+      return () => clearInterval(timer);
+    }, [loading]);
     if (myNote !== null){
       return (
         <>
