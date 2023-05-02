@@ -14,7 +14,7 @@ function MyNote(props) {
       <label>Enter your name:
         <input
           type="number"
-          value={name}
+          value={note}
           onChange={(e) => setNote(e.target.value)}
         />
       </label>
