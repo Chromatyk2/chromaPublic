@@ -22,7 +22,7 @@ function AllNotes(props) {
     if (myNote !== null){
       return (
         <>
-          <div class="c-progress-circle" id="circle" data-percentage="44">
+          <div class="c-progress-circle" id="circle" data-percentage={myNote}>
             <svg class="c-progress-circle__svg">
               <defs>
                 <linearGradient id="gradient">
