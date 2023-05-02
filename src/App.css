@@ -7,15 +7,6 @@ font-family: 'Flying Slime Reguler';
 src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 }
 
-
-
-
-body {
-  background: #242e68;
-  display: flex;
-  align-items: center;
-}
-
 .c-progress-circle {
   display: block;
   width: 225px;
