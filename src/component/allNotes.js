@@ -41,7 +41,7 @@ function AllNotes(props) {
           return;
         }
         setSize((prev) => prev + 1);
-      }, 1.5);
+      }, 2);
 
       return () => clearInterval(timer);
     }, [size]);
@@ -49,16 +49,19 @@ function AllNotes(props) {
     if (myNote !== null){
       return (
         <>
-          <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:size+"px", width:size+"px", fontSize:size/2+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
-            <svg class="c-progress-circle__svg">
-              <defs>
-                <linearGradient id="gradient">
-                  <stop offset="0%" stop-color="#71b0ff" />
-                  <stop offset="100%" stop-color="#8c6cff" />
-                </linearGradient>
-              </defs>
-              <circle class="c-progress-circle__bar" r="90" cx="50%" cy="50%" stroke="url(#gradient)"></circle>
-            </svg>
+          <div>
+            <p>CHROMA</p>
+            <div style={{boxShadow:"inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*4+"px 0 #0f0,inset 0 0 "+loading*8+"px 0 white, inset 0 0 "+loading*8+"px 0 #f0f, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f", height:size+"px", width:size+"px", fontSize:size/2+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
+              <svg class="c-progress-circle__svg">
+                <defs>
+                  <linearGradient id="gradient">
+                    <stop offset="0%" stop-color="#71b0ff" />
+                    <stop offset="100%" stop-color="#8c6cff" />
+                  </linearGradient>
+                </defs>
+                <circle class="c-progress-circle__bar" r="90" cx="50%" cy="50%" stroke="url(#gradient)"></circle>
+              </svg>
+            </div>
           </div>
           <div className="allNotesContainer">
             <div className="myNoteContainer">
