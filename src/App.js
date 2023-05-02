@@ -15,6 +15,7 @@ import TradePlace from './component/tradePlace.js';
 import GuessTrade from './component/guessTrade.js';
 import Guess from './component/guess.js';
 import MyNote from './component/myNote.js';
+import AllNotes from './component/allNotes.js';
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/guessTrade/:id" element={<GuessTrade cookies={cookies} />} />
           <Route path="/guess/:id" element={<Guess cookies={cookies} />} />
           <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
+          <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
     </>
