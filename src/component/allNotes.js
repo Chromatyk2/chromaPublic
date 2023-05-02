@@ -35,7 +35,7 @@ function AllNotes(props) {
     if (myNote !== null){
       return (
         <>
-          <div style={{boxShadow:"inset 0 0 80px 0 #0f0, inset 0 0 160px 0 #f0f"}} class="c-progress-circle" id="circle" data-percentage={loading}>
+          <div style={{boxShadow:"inset 0 0 "+loading*4+"px 0 #0f0, inset 0 0 160px 0 #f0f"}} class="c-progress-circle" id="circle" data-percentage={loading}>
             <svg class="c-progress-circle__svg">
               <defs>
                 <linearGradient id="gradient">
