@@ -15,7 +15,7 @@ function AllNotes(props) {
       .get("/api/getMyNote")
       .then(function(response){
           console.log(response);
-          setMyNote(response.data);
+          setMyNote(response.data[0].note);
       })
     }, [])
     if (myNote !== null){
