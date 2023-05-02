@@ -27,7 +27,7 @@ function AllNotes(props) {
           return;
         }
         setLoading((prev) => prev + 1);
-      }, 1000);
+      }, 500);
 
       return () => clearInterval(timer);
     }, [loading]);
