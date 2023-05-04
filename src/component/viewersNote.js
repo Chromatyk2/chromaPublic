@@ -23,9 +23,6 @@ function ViewersNote(props) {
           });
           setMyNote(Math.round(sum/response.data.length));
         })
-        .then(
-          Axios.get("/api/truncateViewers")
-        )
     }, [])
     useEffect(() => {
       console.log(myNote);
