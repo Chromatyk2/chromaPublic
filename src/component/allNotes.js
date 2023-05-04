@@ -51,7 +51,7 @@ function AllNotes(props) {
       return (
         <>
           <div style={{width:"fit-content",display:"block",margin:"auto",marginTop:"100px;"}}>
-            <p style={{width:loading/20*100+"px"}} className="owner">CHROMA</p>
+            <p style={{width:loading/20*100+"%"}} className="owner">CHROMA</p>
             <div style={{boxShadow:"rgb(255, 0, 255) 0px 0px "+loading*8+"px 40px inset, rgb(0, 255, 0) 0px 0px "+loading*10+"px "+loading+"px,rgb(0, 255, 0) 0px 0px "+loading*10+"px "+loading+"px, rgb(255, 255, 255) "+loading*2+"px "+loading+"px "+loading*40+"px "+loading*5+"px, 0 0 "+loading*2+"px 0 #0f0, 0 0 "+loading*4+"px 0 #f0f, rgb(255, 255, 255) "+loading*2+"px "+loading+"px "+loading*40+"px "+loading*5+"px,rgb(255, 255, 255) "+loading+"px 0px "+loading*2+"px "+loading*14+"px inset", height:"600px", width:"600px", fontSize:size+"px"}} class="c-progress-circle" id="circle" data-percentage={loading}>
               <svg class="c-progress-circle__svg">
                 <defs>
