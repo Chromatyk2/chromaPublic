@@ -52,7 +52,7 @@ function AllNotes(props) {
         <>
           <div style={{width:"fit-content",display:"block",margin:"auto",marginTop:"100px;"}}>
             <p style={{width:loading/20*100+"%"}} className="owner">CHROMA</p>
-            <p style={{height:"600px", width:"600px", fontSize:size+"px"}}>{loading}</p>
+            <p className="owner">{loading}</p>
           </div>
         </>
       );
