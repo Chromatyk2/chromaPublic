@@ -17,6 +17,7 @@ import Guess from './component/guess.js';
 import MyNote from './component/myNote.js';
 import AllNotes from './component/allNotes.js';
 import ViewersNote from './component/viewersNote.js';
+import NostalPick from './component/nostalPick.js';
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGG" element={<NostalPick cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
     </>
