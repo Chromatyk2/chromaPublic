@@ -20,4 +20,4 @@ function NostalPick(props) {
       </>
     )
 }
-export default nostalPick
+export default NostalPick
