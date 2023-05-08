@@ -36,7 +36,7 @@ function ViewersNote(props) {
     if (myNote !== null){
       return (
         <>
-          <p style{{color:}} className="owner">{myNote}</p>
+          <p style{{color:color}} className="owner">{myNote}</p>
         </>
       );
     }
