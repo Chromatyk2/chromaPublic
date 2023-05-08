@@ -10,13 +10,6 @@ import moment from 'moment';
 function NostalPick(props) {
   return(
     <>
-      <div id="odds">
-        <p style={{fontWeight:"bold",textAlign:"center"}}>Taux :</p>
-        <p style={{fontWeight:"bold",color:"green"}}>Rare : 75% (1 Pokemon Random)</p>
-        <p style={{fontWeight:"bold",color:"purple"}}>Epic : 25% (1 Pokemon Taux Shiny x 2)</p>
-        <p style={{fontWeight:"bold",color:"orange"}}>Légendaire : 5% (1 Pokemon Légendaire)</p>
-        <p className="rainbow-text" style={{fontWeight:"bold",color:"rgba(0,0,0,0.3)"}}>Mythique : 0.5% (1 Pokemon Shiny)</p>
-      </div>
       <div id="stage" className="content-width">
       	<h1 id="greenTitle">NOSTAL<br/>PICK</h1>
         <h1 id="pinkTitle">NOSTAL<br/>PICK</h1>
