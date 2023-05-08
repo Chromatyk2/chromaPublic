@@ -8,6 +8,17 @@ import '../App.css'
 import moment from 'moment';
 import $ from 'jquery';
 
+var consoles = ["GB","GBA","GBC","MASTER SYSTEM","MEGADRIVE","N64","NDS","NES","NGC","PS1","PSP","SNES"];
+function checkOpen() {
+  var allBoxes = $('.box-list li button');
+  var allOpenBoxes = $('.box-list li button.open');
+  var allBoxesAreOpen = (allBoxes.length === allOpenBoxes.length);
+
+  if(allBoxesAreOpen)
+    {
+      $('#again').show();
+    }
+}
 $('.box-list li').on('click', '.box', function (){
   $('audio#karateka')[0].play()
   $('.looseTexte').css('display','none');
@@ -20,9 +31,6 @@ $('.box-list li').on('click', '.box', function (){
   $('#containerGlobal').removeClass('shakeOrange');
   $('#containerGlobal').removeClass('shakeRainbow');
   $("#containerGlobal").animate({backgroundColor:'rgba(0,0,0,0.8)'}, 1500);
-  if(localStorage.getItem("array100") === null){
-    localStorage.setItem("array100",numbers);
-  }
   function getNumber(selectedConsole) {
     var numbers = [];
     if(selectedConsole == "DREAMCAST"){
@@ -67,7 +75,6 @@ $('.box-list li').on('click', '.box', function (){
     return Math.floor((Math.random() * max) + 1);
   }
   function getConsole() {
-    console.log(consoles);
       var selectedConsole = consoles[Math.floor(Math.random()*consoles.length)]
       var consoleIndex = consoles.indexOf(selectedConsole);
       consoles.splice(consoleIndex, 1);
