@@ -19,6 +19,7 @@ function NostalPick(props) {
         };
       }, [url]);
     };
+  useScript('https://code.jquery.com/jquery-3.6.4.min.js');
   useScript('lootScript.js');
   return(
     <>
