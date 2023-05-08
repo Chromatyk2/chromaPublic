@@ -617,7 +617,7 @@ p.filterTitle {
 }
 #root{
   min-height: 100vh;
-  background: linear-gradient(45deg,#C6EC9B,#88E4B9);
+  background: transparent;
 }
 .labelStats {
   font-weight: 700;
