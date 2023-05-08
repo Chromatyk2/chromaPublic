@@ -32,7 +32,6 @@ function ViewersNote(props) {
           }
         })
     }, [])
-    if(myNote < )
     if (myNote !== null){
       return (
         <>
