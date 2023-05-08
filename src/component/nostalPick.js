@@ -91,7 +91,7 @@ function NostalPick(props) {
                 <p style="font-size:65px;color:purple " class="500Texte resultTexte">1 Pokemon Taux shiny x 2 !!</p>
                 <p style="font-size:65px;color:orange " class="1000Texte resultTexte">1 Pokemon Légendaire !!!</p>
                 <p style="font-size:65px;color:rgba(0,0,0,0.3) " class="rainbow-text 5000Texte resultTexte">1 Pokemon shiny !!!!</p>
-                <img id="imgModal">
+                <img id="imgModal" />
                 <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
                           <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
                         </svg>
