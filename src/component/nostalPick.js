@@ -269,7 +269,7 @@ function NostalPick(props) {
         <h1 id="pinkTitle">NOSTAL<br/>PICK</h1>
         <object style={{position:"absolute",top:"50px",zIndex:"-2",left: "1130px"}} data="télécharger.svg" width="150" height="300"> </object>
         	<ul className="box-list row">
-        		<li onClick={PickBox} className="col-4 uniqueBox">
+        		<li className="col-4 uniqueBox">
               <div id="one" className="button2">
                 <p className="nbBox">1</p>
           			<button type="button" className="button2 box closed"></button>
