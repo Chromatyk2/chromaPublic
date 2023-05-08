@@ -25,7 +25,7 @@ function ViewersNote(props) {
           if(myNote < 7){
             setColor("red");
           }
-          if(myNote >= 15){
+          if(myNote > 14){
             setColor("green");
           }else{
             setColor("orange");
