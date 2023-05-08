@@ -1,14 +1,13 @@
 import React,{useState, useEffect} from 'react';
-import { useParams,BrowserRouter, Link } from 'react-router-dom'
-import ReactPaginate from 'react-paginate';
+import { Cookies, useCookies } from 'react-cookie';
 import Axios from 'axios'
-import Pagination from './paginate.js';
-import CreateTrade from './createTrade.js';
 import '../App.css'
-import moment from 'moment';
+import PkmList from './pkmList.js'
 
 function NostalPick(props) {
-    return(
+const [list,setList] = useState([]);
+const pseudo = props.cookies.user.data[0].login;
+    return (
       <>
         <div id="odds">
           <p style="font-weight:bold;text-align:center">Taux :</p>
@@ -20,4 +19,5 @@ function NostalPick(props) {
       </>
     )
 }
+
 export default NostalPick
