@@ -23,6 +23,11 @@ function ViewersNote(props) {
           setMyNote(Math.round(sum/response.data.length));
         })
     }, [])
+    useEffect(() => {
+      if(myNote > 14){
+        setColor("green");
+      }
+    }, [myNote])
     if (myNote !== null){
       return (
         <>
