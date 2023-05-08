@@ -116,7 +116,7 @@ function NostalPick(props) {
           <audio id="rainbowWin">
             <source src="sounds/RainbowWin.mp3" type="audio/mpeg" />
           </audio>
-        <div>
+        </div>
       </>
     )
 }
