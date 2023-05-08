@@ -8,30 +8,14 @@ import '../App.css'
 import moment from 'moment';
 
 function NostalPick(props) {
-  const [note, setNote] = useState(0);
-  const [message, setMessage] = useState("");
-  function handleSubmit() {
-    return Axios.post('/api/chromaGuess',
-    {
-      note:note
-    }
-    ).then(
-      (result) => {
-        setMessage("Note attribuée");
-      }
-    )
-  }
   return(
-    <form onSubmit={handleSubmit}>
-      <label>Donne la note:
-        <input
-          type="number"
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-        />
-      </label>
-      <input type="submit" />
-    </form>
+    <div id="odds">
+      <p style="font-weight:bold;text-align:center">Taux :</p>
+      <p style="font-weight:bold;color:green">Rare : 75% (1 Pokemon Random)</p>
+      <p style="font-weight:bold;color:purple">Epic : 25% (1 Pokemon Taux Shiny x 2)</p>
+      <p style="font-weight:bold;color:orange">Légendaire : 5% (1 Pokemon Légendaire)</p>
+      <p class="rainbow-text" style="font-weight:bold;color:rgba(0,0,0,0.3)">Mythique : 0.5% (1 Pokemon Shiny)</p>
+    </div>
   )
 }
 export default NostalPick
