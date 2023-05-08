@@ -5,7 +5,6 @@ import Axios from 'axios'
 import Pagination from './paginate.js';
 import CreateTrade from './createTrade.js';
 import '../App.css'
-import ScriptTag from 'react-script-tag';
 import moment from 'moment';
 
 function NostalPick(props) {
@@ -110,8 +109,6 @@ function NostalPick(props) {
           <source src="sounds/RainbowWin.mp3" type="audio/mpeg"/>
         </audio>
       </div>
-      <ScriptTag isHydrating={true} type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" />
-      <ScriptTag isHydrating={true} type="text/javascript" src="lootScript.js" />
     </>
   )
 }
