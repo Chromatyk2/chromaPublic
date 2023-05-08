@@ -11,8 +11,7 @@ import moment from 'moment';
 function ViewersNote(props) {
   document.getElementById("root").style.background = 'transparent';
   const [myNote, setMyNote] = useState(null);
-  const [loading, setLoading] = useState(-3);
-  const [size, setSize] = useState(-3);
+  const [color, setColor] = useState("");
     useEffect(() => {
       Axios
         .get("/api/getViewersNote")
@@ -24,11 +23,11 @@ function ViewersNote(props) {
           });
           setMyNote(Math.round(sum/response.data.length));
           if(myNote < 7){
-            color = "red";
+            setColor("red");
           }else if(myNote >= 15){
-            color = "green";
+            setColor("green");
           }else{
-            color="orange";
+            setColor("orange");
           }
         })
     }, [])
