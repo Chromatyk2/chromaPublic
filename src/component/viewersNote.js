@@ -22,13 +22,11 @@ function ViewersNote(props) {
           });
           setMyNote(Math.round(sum/response.data.length));
         })
-        .then(function(){
-          if(myNote > 14){
-            color="green";
-          }
-        })
     }, [])
     if (myNote !== null){
+      if(myNote > 14){
+        setColor("green");
+      }
       return (
         <>
           <p style={{color:color}} className="owner">{myNote}</p>
