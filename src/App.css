@@ -1486,3 +1486,6 @@ div#odds {
 .list .myItem .pic{
   background: #570a0c;
 }
+.uniqueBox:hover{
+  background: transparent;
+}
