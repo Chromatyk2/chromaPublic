@@ -24,7 +24,8 @@ function ViewersNote(props) {
           setMyNote(Math.round(sum/response.data.length));
           if(myNote < 7){
             setColor("red");
-          }else if(myNote >= 15){
+          }
+          if(myNote >= 15){
             setColor("green");
           }else{
             setColor("orange");
