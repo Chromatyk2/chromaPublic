@@ -1,16 +1,15 @@
-var consoles = ["GB","GBA","GBC","MASTER SYSTEM","MEGADRIVE","N64","NDS","NES","NGC","PS1","PSP","SNES"];
-function checkOpen() {
-	var allBoxes = $('.box-list li button');
-	var allOpenBoxes = $('.box-list li button.open');
-	var allBoxesAreOpen = (allBoxes.length === allOpenBoxes.length);
-
-	if(allBoxesAreOpen)
-		{
-			$('#again').show();
-		}
-}
-
 $(document).ready(function(){
+	var consoles = ["GB","GBA","GBC","MASTER SYSTEM","MEGADRIVE","N64","NDS","NES","NGC","PS1","PSP","SNES"];
+	function checkOpen() {
+		var allBoxes = $('.box-list li button');
+		var allOpenBoxes = $('.box-list li button.open');
+		var allBoxesAreOpen = (allBoxes.length === allOpenBoxes.length);
+
+		if(allBoxesAreOpen)
+			{
+				$('#again').show();
+			}
+	}
 	$('.box-list li').on('click', '.box', function (){
 		$('audio#karateka')[0].play()
 		$('.looseTexte').css('display','none');
