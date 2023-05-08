@@ -19,8 +19,6 @@ function NostalPick(props) {
         };
       }, [url]);
     };
-  useScript('https://code.jquery.com/jquery-3.6.4.min.js');
-  useScript('lootScript.js');
   return(
     <>
       <div style={{backgroundImage:"url(/images/thumb-1920-950765.png)"}} id="backgroundGlobal"></div>
@@ -122,7 +120,6 @@ function NostalPick(props) {
           <source src="sounds/RainbowWin.mp3" type="audio/mpeg"/>
         </audio>
       </div>
-      <script type="text/jsx" src="./lootScript.js"></script>
     </>
   )
 }
