@@ -24,9 +24,6 @@ function ViewersNote(props) {
         })
     }, [])
     if (myNote !== null){
-      if(myNote > 14){
-        setColor("green");
-      }
       return (
         <>
           <p style={{color:color}} className="owner">{myNote}</p>
