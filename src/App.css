@@ -128,7 +128,7 @@ iframe{
   font-size: 30px;
   font-family: "Charge Vector Black";
 }
-.leaderBoardSwitch button:hover{
+.leaderBoardSwitch button:className={
   color: #0a3a2c;
   font-size: 32px;
 }
@@ -1199,8 +1199,8 @@ h1#pinkTitle {
   animation-iteration-count: infinite;
   background: white;
     border-radius: 50%;
-    width: 23px;
-    height: 23px;
+    width: 40px;
+    height: 40px;
     text-align: center;
 }
 
