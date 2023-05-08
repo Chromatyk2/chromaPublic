@@ -1,23 +1,37 @@
 import React,{useState, useEffect} from 'react';
-import { Cookies, useCookies } from 'react-cookie';
+import { useParams } from 'react-router-dom'
+import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
+import Pagination from './paginate.js';
+import CreateTrade from './createTrade.js';
 import '../App.css'
-import PkmList from './pkmList.js'
+import moment from 'moment';
 
 function NostalPick(props) {
-const [list,setList] = useState([]);
-const pseudo = props.cookies.user.data[0].login;
-    return (
-      <>
-        <div id="odds">
-          <p style="font-weight:bold;text-align:center">Taux :</p>
-          <p style="font-weight:bold;color:green">Rare : 75% (1 Pokemon Random)</p>
-          <p style="font-weight:bold;color:purple">Epic : 25% (1 Pokemon Taux Shiny x 2)</p>
-          <p style="font-weight:bold;color:orange">Légendaire : 5% (1 Pokemon Légendaire)</p>
-          <p class="rainbow-text" style="font-weight:bold;color:rgba(0,0,0,0.3)">Mythique : 0.5% (1 Pokemon Shiny)</p>
-        </div>
-      </>
+  const [note, setNote] = useState(0);
+  const [message, setMessage] = useState("");
+  function handleSubmit() {
+    return Axios.post('/api/chromaGuess',
+    {
+      note:note
+    }
+    ).then(
+      (result) => {
+        setMessage("Note attribuée");
+      }
     )
+  }
+  return(
+    <form onSubmit={handleSubmit}>
+      <label>Donne la note:
+        <input
+          type="number"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        />
+      </label>
+      <input type="submit" />
+    </form>
+  )
 }
-
 export default NostalPick

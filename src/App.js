@@ -41,7 +41,7 @@ function App() {
           <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGG" element={<NostalPick cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGS" element={<NostalPick cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
     </>
