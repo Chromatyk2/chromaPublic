@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import $ from "jquery";
 import './App.css';
-import 'react-tooltip/dist/react-tooltip.css';
-import Guess from './component/guess.js';
+import 'react-tooltip/dist/react-tooltip.css'
+import Login from './services/auth.services.js';
 import MyNote from './component/myNote.js';
 import AllNotes from './component/allNotes.js';
 import ViewersNote from './component/viewersNote.js';
@@ -17,9 +17,6 @@ function Obs() {
   return(
     <>
       <BrowserRouter>
-        {cookies.user !== undefined &&
-          <NavBar cookies={cookies} />
-        }
         <Routes>
           <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
