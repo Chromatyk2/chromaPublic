@@ -17,7 +17,6 @@ function ViewersNote(props) {
         .get("/api/getViewersNote")
         .then(function(response){
           var sum = 0;
-          var color = "blue";
           response.data.map((val, key) => {
             sum+=val.note;
           });
