@@ -22,18 +22,18 @@ function ViewersNote(props) {
             sum+=val.note;
           });
           setMyNote(Math.round(sum/response.data.length));
-          if( myNote !== null){
-            if(myNote < 7){
-              setColor("red");
-            }
-            if(myNote > 14){
-              setColor("green");
-            }else{
-              setColor("orange");
-            }
-          }
         })
     }, [])
+    if( myNote !== null){
+      if(myNote < 7){
+        setColor("red");
+      }
+      if(myNote > 14){
+        setColor("green");
+      }else{
+        setColor("orange");
+      }
+    }
     if (myNote !== null){
       return (
         <>
