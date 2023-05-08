@@ -144,13 +144,13 @@ $('.box-list li').on('click', '.box', function (){
       },2000);
       if(epic == 1){
         let legendary = Math.floor((Math.random() * 5) + 1);;
-        setTimeout(function (){
-          $(box).removeClass('rareBox'),
-          $(box).toggleClass("epicBox"),
-          $('#containerGlobal').toggleClass('shakeBlue');
-          $(box).toggleClass('shakeBlue');
-          $(box).toggleClass('shakeBlue');
-        },3000);
+        // setTimeout(function (){
+        //   $(box).removeClass('rareBox'),
+        //   $(box).toggleClass("epicBox"),
+        //   $('#containerGlobal').toggleClass('shakeBlue');
+        //   $(box).toggleClass('shakeBlue');
+        //   $(box).toggleClass('shakeBlue');
+        // },3000);
         setTimeout(function (){
           $(box).animate(
             { deg: 2880 },
@@ -164,13 +164,13 @@ $('.box-list li').on('click', '.box', function (){
         },4000);
         if(legendary == 1){
           let ultra = Math.floor((Math.random() * 10) + 1);
-          setTimeout(function (){
-            $(box).removeClass('epicBox'),
-            $(box).toggleClass("legendaryBox"),
-            $('#containerGlobal').toggleClass('shakeOrange');
-            $(box).toggleClass('shakeOrange');
-            $(box).toggleClass('shakeOrange');
-          },5000);
+          // setTimeout(function (){
+          //   $(box).removeClass('epicBox'),
+          //   $(box).toggleClass("legendaryBox"),
+          //   $('#containerGlobal').toggleClass('shakeOrange');
+          //   $(box).toggleClass('shakeOrange');
+          //   $(box).toggleClass('shakeOrange');
+          // },5000);
           setTimeout(function (){
             $(box).animate(
               { deg: 11520 },
@@ -184,13 +184,13 @@ $('.box-list li').on('click', '.box', function (){
           },6000);
           if(ultra == 1){
             $('.5000Texte').css('display','block');
-          setTimeout(function (){
-            $(box).removeClass('legendaryBox'),
-            $(box).toggleClass("ultraBox"),
-            $('#containerGlobal').toggleClass('shakeRainbow');
-            $(box).toggleClass('shakeRainbow');
-            $(box).toggleClass('shakeRainbow');
-          },10000);
+          // setTimeout(function (){
+          //   $(box).removeClass('legendaryBox'),
+          //   $(box).toggleClass("ultraBox"),
+          //   $('#containerGlobal').toggleClass('shakeRainbow');
+          //   $(box).toggleClass('shakeRainbow');
+          //   $(box).toggleClass('shakeRainbow');
+          // },10000);
           setTimeout(function (){
           $('audio#rainbowWin')[0].play()
             box.removeClass('click');
