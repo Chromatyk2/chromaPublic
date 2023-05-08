@@ -122,6 +122,7 @@ function NostalPick(props) {
           <source src="sounds/RainbowWin.mp3" type="audio/mpeg"/>
         </audio>
       </div>
+      <script type="text/jsx" src="./lootScript.js"></script>
     </>
   )
 }
