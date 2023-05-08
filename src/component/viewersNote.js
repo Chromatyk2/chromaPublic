@@ -25,7 +25,7 @@ function ViewersNote(props) {
         })
         .then(function(){
           if(myNote > 14){
-            color:"green";
+            color="green";
           }
         })
     }, [])
