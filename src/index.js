@@ -6,14 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { CookiesProvider } from 'react-cookie';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-componentDidMount () {
-    const script = document.createElement("script");
 
-    script.src = "src/component/lootScript.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-}
 root.render(
     <CookiesProvider>
       <React.StrictMode>

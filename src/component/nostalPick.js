@@ -8,6 +8,18 @@ import '../App.css'
 import moment from 'moment';
 
 function NostalPick(props) {
+  const useScript = url => {
+      useEffect(() => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+        document.body.appendChild(script);
+        return () => {
+          document.body.removeChild(script);
+        };
+      }, [url]);
+    };
+  useScript('lootScript.js');
   return(
     <>
       <div style={{backgroundImage:"url(/images/thumb-1920-950765.png)"}} id="backgroundGlobal"></div>
