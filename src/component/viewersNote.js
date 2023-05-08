@@ -18,45 +18,25 @@ function ViewersNote(props) {
         .get("/api/getViewersNote")
         .then(function(response){
           var sum = 0;
+          var color = "";
           response.data.map((val, key) => {
             sum+=val.note;
           });
           setMyNote(Math.round(sum/response.data.length));
+          if(myNote < 7){
+            color = "red";
+          }else if(myNote >= 15){
+            color = "green";
+          }else{
+            color="orange";
+          }
         })
     }, [])
-    useEffect(() => {
-      console.log(myNote);
-      clearInterval(timer);
-      var timer = setInterval(() => {
-        if (loading === myNote ) {
-          clearInterval(timer);
-          return;
-        }
-        setLoading((prev) => prev + 1);
-      }, 100);
-
-      return () => clearInterval(timer);
-    }, [loading]);
-
-    useEffect(() => {
-      clearInterval(timer);
-      var timer = setInterval(() => {
-        if (size === 600) {
-          clearInterval(timer);
-          return;
-        }
-        setSize((prev) => prev + 1);
-      }, 2);
-
-      return () => clearInterval(timer);
-    }, [size]);
+    if(myNote < )
     if (myNote !== null){
       return (
         <>
-          <div style={{width:"fit-content",display:"block",margin:"auto",marginTop:"100px;"}}>
-          <p style={{width:loading/20*100+"%"}} className="owner">CHAT</p>
-          <p className="owner">{loading}</p>
-          </div>
+          <p style{{color:}} className="owner">{myNote}</p>
         </>
       );
     }
