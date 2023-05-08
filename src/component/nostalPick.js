@@ -10,6 +10,7 @@ import moment from 'moment';
 function NostalPick(props) {
   return(
     <>
+      <div style={{backgroundImage:"url(/images/thumb-1920-950765.png)"}} id="backgroundGlobal"></div>
       <div id="stage" className="content-width">
       	<h1 id="greenTitle">NOSTAL<br/>PICK</h1>
         <h1 id="pinkTitle">NOSTAL<br/>PICK</h1>
