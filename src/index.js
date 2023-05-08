@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Obs from './Obs';
+import Obs from './Obs.js';
 import reportWebVitals from './reportWebVitals';
 import { CookiesProvider } from 'react-cookie';
 
