@@ -15,25 +15,25 @@ function ViewersNote(props) {
     useEffect(() => {
       Axios
         .get("/api/getViewersNote")
-        .then(function(response){
-          var sum = 0;
-          var color = "blue";
-          response.data.map((val, key) => {
-            sum+=val.note;
-          });
-          setMyNote(Math.round(sum/response.data.length));
-        })
-        .then(function(myNote)){
-            if(myNote < 7){
-              setColor("red");
-            }
-            if(myNote >= 7 && myNote <= 14){
-              setColor("orange");
-            }
-            if(myNote > 14){
-              setColor("green");
-            }
-        }
+          .then(function(response){
+            var sum = 0;
+            var color = "blue";
+            response.data.map((val, key) => {
+              sum+=val.note;
+            });
+            setMyNote(Math.round(sum/response.data.length));
+          })
+          .then(function(myNote){
+              if(myNote < 7){
+                setColor("red");
+              }
+              if(myNote >= 7 && myNote <= 14){
+                setColor("orange");
+              }
+              if(myNote > 14){
+                setColor("green");
+          })
+      }
     }, [])
     if (myNote !== null){
       return (
