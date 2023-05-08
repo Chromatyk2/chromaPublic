@@ -99,22 +99,22 @@ function NostalPick(props) {
             </div>
           </div>
           <audio id="loose">
-            <source src="sounds/Loose.mp3" type="audio/mpeg">
+            <source src="sounds/Loose.mp3" type="audio/mpeg" />
           </audio>
           <audio id="karateka">
-            <source src="sounds/karateka.mp3" type="audio/mpeg">
+            <source src="sounds/karateka.mp3" type="audio/mpeg" />
           </audio>
           <audio id="greenWin">
-            <source src="sounds/GreenWin.mp3" type="audio/mpeg">
+            <source src="sounds/GreenWin.mp3" type="audio/mpeg" />
           </audio>
           <audio id="blueWin">
-            <source src="sounds/BlueWin.mp3" type="audio/mpeg">
+            <source src="sounds/BlueWin.mp3" type="audio/mpeg" />
           </audio>
           <audio id="orangeWin">
-            <source src="sounds/OrangeWin.mp3" type="audio/mpeg">
+            <source src="sounds/OrangeWin.mp3" type="audio/mpeg" />
           </audio>
           <audio id="rainbowWin">
-            <source src="sounds/RainbowWin.mp3" type="audio/mpeg">
+            <source src="sounds/RainbowWin.mp3" type="audio/mpeg" />
           </audio>
         <div>
       </>
