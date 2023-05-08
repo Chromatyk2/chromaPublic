@@ -2,14 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Obs from './Obs';
 import reportWebVitals from './reportWebVitals';
 import { CookiesProvider } from 'react-cookie';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const obs = ReactDOM.createRoot(document.getElementById('obs'));
 root.render(
     <CookiesProvider>
       <React.StrictMode>
         <App />
+      </React.StrictMode>
+    </CookiesProvider>
+);
+obs.render(
+    <CookiesProvider>
+      <React.StrictMode>
+        <Obs />
       </React.StrictMode>
     </CookiesProvider>
 );
