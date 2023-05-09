@@ -3,43 +3,41 @@ import Axios from 'axios'
 import '../App.css'
 
 function UniqueBox(props) {
-    const [max, setMax] = useState(null);
-    const [console, setConsole] = useState(props.console);
     if(props.console == "GB"){
-        setMax( 432);
+        var max = 432
     }
     if(props.console == "GBA"){
-        setMax(424);
+        var max = 424
     }
     if(props.console == "GBC"){
-        setMax(233);
+        var max = 233
     }
     if(props.console == "MASTER SYSTEM"){
-        setMax(194);
+        var max = 194
     }
     if(props.console == "MEGADRIVE"){
-        setMax(400);
+        var max = 400
     }
     if(props.console == "N64"){
-        setMax(133);
+        var max = 133
     }
     if(props.console == "NDS"){
-        setMax(488);
+        var max = 488
     }
     if(props.console == "NES"){
-        setMax(280);
+        var max = 280
     }
     if(props.console == "NGC"){
-        setMax(234);
+        var max = 234
     }
     if(props.console == "PS1"){
-        setMax(147);
+        var max = 147
     }
     if(props.console == "PSP"){
-        setMax(286);
+        var max = 286
     }
     if(props.console == "SNES"){
-        setMax(458);
+        var max = 458
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     return(
@@ -47,7 +45,7 @@ function UniqueBox(props) {
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
                 <p>{props.console} : {max}</p>
-                <img className="arrowImage" src={'/images/jaquettes/'+{console}+'Jaquette ('+{randomNumber}+').png'}></img>
+                <img className="arrowImage" src={'/images/jaquettes/'+{props.console}+'Jaquette ('+{randomNumber}+').png'}></img>
                 <div type="button" className="button2 box closed"></div>
             </div>
         </li>
