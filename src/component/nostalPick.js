@@ -4,15 +4,14 @@ import UniqueBox from "./UniqueBox";
 
 function NostalPick(props) {
   var consoles = ["GB","GBA","GBC","MASTER SYSTEM","MEGADRIVE","N64","NDS","NES","NGC","PS1","PSP","SNES"];
+  var numbers = [1,2,3,4,5,6,7,8,9];
   function PickBox(){
       console.log(consoles);
   }
-  for (var i = 1;i < 9;i++){
-      return(
-          <>
-            <UniqueBox/>
-          </>
-      )
-  }
+    {
+        numbers.map((val, key) => {
+            return <UniqueBox number={val}></UniqueBox>
+        })
+    }
 }
 export default NostalPick
