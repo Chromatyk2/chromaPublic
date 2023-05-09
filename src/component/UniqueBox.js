@@ -39,11 +39,13 @@ function UniqueBox(props) {
     if(props.console == "SNES"){
         var max = 458
     }
+    var randomNumber = Math.floor(Math.random()*max) + 1;
     return(
         <li className="uniqueBox">
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
                 <p>{props.console} : {max}</p>
+                <img className="arrowImage" src={`/images/jaquettes/`+{console}+`Jaquette (`+{randomNumber}+`).png`}></img>
                 <div type="button" className="button2 box closed"></div>
             </div>
         </li>
