@@ -12,7 +12,9 @@ function NostalPick(props) {
         <ul className="box-list row">
           {numbers.map((val, key) => {
             return (
-                <UniqueBox number={val}/>
+                <ul className="box-list row">
+                  <UniqueBox number={val}/>
+                </ul>
             )
           })
           }
