@@ -7,6 +7,7 @@ function UniqueBox(props) {
         <li className="uniqueBox">
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
+                <p>{props.console}</p>
                 <div type="button" className="button2 box closed"></div>
             </div>
         </li>

@@ -10,7 +10,7 @@ function NostalPick(props) {
         <ul className="box-list">
           {numbers.map((val, key) => {
             return (
-                  <UniqueBox number={val}/>
+                  <UniqueBox number={val} console={consoles[Math.floor(Math.random()*consoles.length)]}/>
             )
           })
           }
