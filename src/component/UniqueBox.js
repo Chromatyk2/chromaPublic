@@ -41,7 +41,6 @@ function UniqueBox(props) {
     if(props.console == "SNES"){
         setMax(458);
     }
-    if(max !== null){
         var randomNumber = Math.floor(Math.random()*max) + 1;
         return(
             <li className="uniqueBox">
@@ -53,6 +52,5 @@ function UniqueBox(props) {
                 </div>
             </li>
         )
-    }
 }
 export default UniqueBox
