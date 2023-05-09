@@ -31,6 +31,7 @@ function LaderBoard(props) {
     return (
       <>
         <div className="leaderBoardSwitch">
+        <p>test</p>
             <button value="0" onClick={displayNormalLaderboard}>Global</button>
             <button value="1" onClick={displayShinyLaderboard}>Shiny</button>
         </div>
