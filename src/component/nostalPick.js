@@ -7,7 +7,7 @@ function NostalPick(props) {
   function PickBox(){
       console.log(consoles);
   }
-  for (var i = 1; i< 9;i++){
+  for (var i = 1;i < 9;i++){
       return(
           <>
             <UniqueBox/>
