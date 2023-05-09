@@ -3,52 +3,56 @@ import Axios from 'axios'
 import '../App.css'
 
 function UniqueBox(props) {
+    const [max, setMax] = useState(null);
+    const [console, setConsole] = useState(props.console);
     if(props.console == "GB"){
-        var max = 432
+        setMax( 432);
     }
     if(props.console == "GBA"){
-        var max = 424
+        setMax(424);
     }
     if(props.console == "GBC"){
-        var max = 233
+        setMax(233);
     }
     if(props.console == "MASTER SYSTEM"){
-        var max = 194
+        setMax(194);
     }
     if(props.console == "MEGADRIVE"){
-        var max = 400
+        setMax(400);
     }
     if(props.console == "N64"){
-        var max = 133
+        setMax(133);
     }
     if(props.console == "NDS"){
-        var max = 488
+        setMax(488);
     }
     if(props.console == "NES"){
-        var max = 280
+        setMax(280);
     }
     if(props.console == "NGC"){
-        var max = 234
+        setMax(234);
     }
     if(props.console == "PS1"){
-        var max = 147
+        setMax(147);
     }
     if(props.console == "PSP"){
-        var max = 286
+        setMax(286);
     }
     if(props.console == "SNES"){
-        var max = 458
+        setMax(458);
     }
-    var randomNumber = Math.floor(Math.random()*max) + 1;
-    return(
-        <li className="uniqueBox">
-            <div id="one" className="button2">
-                <p className="nbBox">{props.number}</p>
-                <p>{props.console} : {max}</p>
-                <img className="arrowImage" src={`/images/jaquettes/`+{console}+`Jaquette (`+{randomNumber}+`).png`}></img>
-                <div type="button" className="button2 box closed"></div>
-            </div>
-        </li>
-    )
+    if(max !== null){
+        var randomNumber = Math.floor(Math.random()*max) + 1;
+        return(
+            <li className="uniqueBox">
+                <div id="one" className="button2">
+                    <p className="nbBox">{props.number}</p>
+                    <p>{props.console} : {max}</p>
+                    <img className="arrowImage" src={'/images/jaquettes/'+{console}+'Jaquette ('+{randomNumber}+').png'}></img>
+                    <div type="button" className="button2 box closed"></div>
+                </div>
+            </li>
+        )
+    }
 }
 export default UniqueBox
