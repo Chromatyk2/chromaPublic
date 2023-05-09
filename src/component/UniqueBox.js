@@ -7,6 +7,7 @@ function UniqueBox(props) {
         <li className="col-4 uniqueBox">
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
+                <object style={{position:"absolute",top:"50px",zIndex:"-2",left: "1130px"}} data="télécharger.svg" width="150" height="300"> </object>
             </div>
         </li>
     )
