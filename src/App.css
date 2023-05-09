@@ -1120,19 +1120,16 @@ h1#pinkTitle {
 
 .box-list {
   display: flex;
-  padding: 0;
-  margin: 0;
   width: 100%;
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
-  top: 340px;
   position: relative;
+  justify-content:center ;
 }
 .box-list li {
   padding: 1em;
   height: 200px;
-  position: rela
 }
 .box-list li .box {
   background-color: transparent;
