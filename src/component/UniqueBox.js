@@ -4,7 +4,7 @@ import '../App.css'
 
 function UniqueBox(props) {
     return(
-        <li className="col-4 uniqueBox">
+        <li className="uniqueBox">
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
                 <div type="button" className="button2 box closed"></div>

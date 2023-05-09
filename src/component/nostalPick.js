@@ -9,7 +9,7 @@ function NostalPick(props) {
   console.log(consoles);
   return(
       <>
-        <ul className="box-list row">
+        <ul className="box-list">
           {numbers.map((val, key) => {
             return (
                   <UniqueBox number={val}/>
