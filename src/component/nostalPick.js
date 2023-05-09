@@ -7,10 +7,21 @@ function NostalPick(props) {
   var numbers = [1,2,3,4,5,6,7,8,9];
   console.log(numbers);
   console.log(consoles);
-  {
-    numbers.map((val, key) => {
-        return <UniqueBox number={val} />
-    })
-  }
+  return(
+      <>
+        <ul className="box-list row">
+          {numbers.map((val, key) => {
+            return (
+                <li className="col-4 uniqueBox">
+                  <div id="one" className="button2">
+                    <p className="nbBox">{val}</p>
+                  </div>
+                </li>
+            )
+          })
+          }
+        </ul>
+      </>
+  )
 }
 export default NostalPick
