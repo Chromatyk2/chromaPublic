@@ -3,7 +3,7 @@ import Axios from 'axios'
 import '../App.css'
 
 function UniqueBox() {
-    reutrn(
+    return(
         <p>1</p>
     )
 }
