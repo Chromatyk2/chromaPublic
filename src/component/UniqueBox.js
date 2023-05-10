@@ -66,13 +66,13 @@ function UniqueBox(props) {
         }
         var others = $('.box-list li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
         others.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 1500);
-        if(box.hasClass('open'))
+        if($("#nbBox"+boxNumber).hasClass('open'))
         {
             return;
         }
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
-            $(box).animate(
+            $("#nbBox"+boxNumber).animate(
                 { deg: 360 },
                 {
                     duration: 500,
@@ -84,11 +84,11 @@ function UniqueBox(props) {
             if(rare <= 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
-                    $(box).toggleClass("rareBox");
+                    $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
                 },1000);
                 setTimeout(function (){
-                    $(box).animate(
+                    $("#nbBox"+boxNumber).animate(
                         { deg: 1440 },
                         {
                             duration: 500,
@@ -101,7 +101,7 @@ function UniqueBox(props) {
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);;
                     setTimeout(function (){
-                        $(box).animate(
+                        $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
                             {
                                 duration: 500,
@@ -114,7 +114,7 @@ function UniqueBox(props) {
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
-                            $(box).animate(
+                            $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
                                 {
                                     duration: 3000,
@@ -128,9 +128,8 @@ function UniqueBox(props) {
                             $('.5000Texte').css('display','block');
                             setTimeout(function (){
                                 $('audio#rainbowWin')[0].play()
-                                box.removeClass('click');
-                                box.toggleClass('closed open');
-                                checkOpen();
+                                $("#nbBox"+boxNumber).removeClass('click');
+                                $("#nbBox"+boxNumber).toggleClass('closed open');
                             }, 10501);
                             setTimeout(function (){
                                 $('#modal-container').removeAttr('class').addClass("one");
@@ -140,9 +139,8 @@ function UniqueBox(props) {
                         }else{
                             $('.1000Texte').css('display','block');
                             setTimeout(function (){
-                                box.removeClass('click');
-                                box.toggleClass('closed open');
-                                checkOpen();
+                                $("#nbBox"+boxNumber).removeClass('click');
+                                $("#nbBox"+boxNumber).toggleClass('closed open');
                             }, 10501);
                             setTimeout(function (){
                                 $('#modal-container').removeAttr('class').addClass("one");
@@ -154,9 +152,8 @@ function UniqueBox(props) {
                     }else{
                         $('.500Texte').css('display','block');
                         setTimeout(function (){
-                            box.removeClass('click');
-                            box.toggleClass('closed open');
-                            checkOpen();
+                            $("#nbBox"+boxNumber).removeClass('click');
+                            $("#nbBox"+boxNumber).toggleClass('closed open');
                         }, 4501);
                         setTimeout(function (){
                             $('#modal-container').removeAttr('class').addClass("one");
@@ -168,9 +165,8 @@ function UniqueBox(props) {
                 }else{
                     $('.100Texte').css('display','block');
                     setTimeout(function (){
-                        box.removeClass('click');
-                        box.toggleClass('closed open');
-                        checkOpen();
+                        $("#nbBox"+boxNumber).removeClass('click');
+                        $("#nbBox"+boxNumber).toggleClass('closed open');
                     }, 2501);
                     setTimeout(function (){
                         $('#modal-container').removeAttr('class').addClass("one");
@@ -182,9 +178,8 @@ function UniqueBox(props) {
             }else{
                 $('.looseTexte').css('display','block');
                 setTimeout(function (){
-                    box.removeClass('click');
-                    box.toggleClass('closed open');
-                    checkOpen();
+                    $("#nbBox"+boxNumber).removeClass('click');
+                    $("#nbBox"+boxNumber).toggleClass('closed open');
                 }, 501);
                 setTimeout(function (){
                     $('#modal-container').removeAttr('class').addClass("one");
