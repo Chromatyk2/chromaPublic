@@ -29,8 +29,6 @@ function NostalPick(props) {
     };
   return(
       <>
-        <div id="backgroundGlobal"></div>
-        <div id="containerGlobal" style="height:100vh" className="container-fluid">
         <ul className="box-list">
           {numbers.map((val, key) => {
             var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
@@ -56,7 +54,6 @@ function NostalPick(props) {
                   </div>
               </div>
           </div>
-        </div>
           <audio id="karateka">
               <source src="sounds/karateka.mp3" type="audio/mpeg"/>
           </audio>
