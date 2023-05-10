@@ -6,12 +6,15 @@ import UniqueBox from "./UniqueBox";
 function LastGames(props) {
     const [lastGames, setLastGames] = useState(null);
     useEffect(() => {
-        Axios.get('/api/lastGame')
+        const interval = setInterval(() => {
+            Axios.get('/api/lastGame')
             .then(function(response){
                 setLastGames(response.data);
             })
-    }, [])
+        }, 2000);
 
+        return () => clearInterval(interval);
+    }, []);
     {lastGames &&
         lastGames.map((val, key) => {
             return(
