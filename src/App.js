@@ -18,8 +18,8 @@ import MyNote from './component/myNote.js';
 import AllNotes from './component/allNotes.js';
 import ViewersNote from './component/viewersNote.js';
 import NostalPick from './component/nostalPick.js';
-import CurrentGameImage from "./component/currentGameImage";
-import LastGames from "./component/lastGame";
+import CurrentGameImage from "./component/currentGameImage.js";
+import LastGames from "./component/lastGame.js";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
