@@ -102,13 +102,13 @@ function UniqueBox(props) {
                 },2000);
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 2) + 1);;
-                    setTimeout(function (){
-                        $("#nbBox"+boxNumber).removeClass('rareBox'),
-                            $("#nbBox"+boxNumber).toggleClass("epicBox"),
-                            $('#containerGlobal').toggleClass('shakeBlue');
-                        $("#nbBox"+boxNumber).toggleClass('shakeBlue');
-                        $("#nbBox"+boxNumber).toggleClass('shakeBlue');
-                    },3000);
+                    // setTimeout(function (){
+                    //     $("#nbBox"+boxNumber).removeClass('rareBox'),
+                    //         $("#nbBox"+boxNumber).toggleClass("epicBox"),
+                    //         $('#containerGlobal').toggleClass('shakeBlue');
+                    //     $("#nbBox"+boxNumber).toggleClass('shakeBlue');
+                    //     $("#nbBox"+boxNumber).toggleClass('shakeBlue');
+                    // },3000);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
@@ -122,13 +122,13 @@ function UniqueBox(props) {
                     },4000);
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 2) + 1);
-                        setTimeout(function (){
-                            $("#nbBox"+boxNumber).removeClass('epicBox'),
-                                $("#nbBox"+boxNumber).toggleClass("legendaryBox"),
-                                $('#containerGlobal').toggleClass('shakeOrange');
-                            $("#nbBox"+boxNumber).toggleClass('shakeOrange');
-                            $("#nbBox"+boxNumber).toggleClass('shakeOrange');
-                        },5000);
+                        // setTimeout(function (){
+                        //     $("#nbBox"+boxNumber).removeClass('epicBox'),
+                        //         $("#nbBox"+boxNumber).toggleClass("legendaryBox"),
+                        //         $('#containerGlobal').toggleClass('shakeOrange');
+                        //     $("#nbBox"+boxNumber).toggleClass('shakeOrange');
+                        //     $("#nbBox"+boxNumber).toggleClass('shakeOrange');
+                        // },5000);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
@@ -142,13 +142,13 @@ function UniqueBox(props) {
                         },6000);
                         if(ultra == 1){
                             $('.5000Texte').css('display','block');
-                            setTimeout(function (){
-                                $("#nbBox"+boxNumber).removeClass('legendaryBox'),
-                                    $("#nbBox"+boxNumber).toggleClass("ultraBox"),
-                                    $('#containerGlobal').toggleClass('shakeRainbow');
-                                $("#nbBox"+boxNumber).toggleClass('shakeRainbow');
-                                $("#nbBox"+boxNumber).toggleClass('shakeRainbow');
-                            },10000);
+                            // setTimeout(function (){
+                            //     $("#nbBox"+boxNumber).removeClass('legendaryBox'),
+                            //         $("#nbBox"+boxNumber).toggleClass("ultraBox"),
+                            //         $('#containerGlobal').toggleClass('shakeRainbow');
+                            //     $("#nbBox"+boxNumber).toggleClass('shakeRainbow');
+                            //     $("#nbBox"+boxNumber).toggleClass('shakeRainbow');
+                            // },10000);
                             setTimeout(function (){
                                 $('audio#rainbowWin')[0].play()
                                 $("#nbBox"+boxNumber).removeClass('click');
