@@ -1630,7 +1630,9 @@ div#odds {
         transform: scale(0);
     }
     100% {
-        transform: scale(1);
+      left: -500px;
+      top: -60px;
+      transform: scale(1);
     }
 }
 @keyframes zoomOut {
