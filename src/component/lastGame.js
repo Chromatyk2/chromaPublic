@@ -11,8 +11,6 @@ function LastGames(props) {
                 setLastGames(response.data);
             })
     }, [])
-    console.log(lastGames);
-    if(lastGames !== null){
         {lastGames.map((val, key) => {
             return(
                 <div className="lastGameContainer">
@@ -21,6 +19,5 @@ function LastGames(props) {
                 </div>
             )
         })}
-    }
 }
 export default LastGames
