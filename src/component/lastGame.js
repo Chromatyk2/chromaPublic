@@ -11,13 +11,16 @@ function LastGames(props) {
                 setLastGames(response.data);
             })
     }, [])
-        {lastGames.map((val, key) => {
+
+    {lastGames &&
+        lastGames.map((val, key) => {
             return(
                 <div className="lastGameContainer">
                     <p>{val.title}</p>
                     <p>{val.console}</p>
                 </div>
             )
-        })}
+        })
+    }
 }
 export default LastGames
