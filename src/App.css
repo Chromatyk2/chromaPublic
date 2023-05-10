@@ -1129,6 +1129,7 @@ h1#pinkTitle {
 .box-list li {
   padding: 1em;
   height: 200px;
+    position: inherit;
 }
 .box-list li .box {
   background-color: transparent;

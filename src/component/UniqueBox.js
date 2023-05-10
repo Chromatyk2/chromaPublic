@@ -41,8 +41,9 @@ function UniqueBox(props) {
         var max = 458
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
-    function displayNormalLaderboard() {
-        $(".button2").parent(".box-list li").attr('checked', 'checked');
+    function displayNormalLaderboard(e) {
+
+        e.target.$(".button2").parent(".box-list li").attr('checked', 'checked');
         console.log($("[checked=checked]").position().top);
         if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
             $("[checked=checked]").animate({
