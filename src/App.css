@@ -1517,11 +1517,11 @@ div#odds {
 #modal-container.one {
     transform: scaleY(0.01) scaleX(0);
     animation: unfoldIn 0.5s forwards;
-    animation-delay: 6.6s;
+    animation-delay: 0s;
 }
 #modal-container.one .modal-background .modal {
     transform: scale(0);
-    animation: zoomIn 3s 0s forwards;
+    animation: zoomIn 3s 10s forwards;
     animation-delay: 0.8s;
 }
 #modal-container.one.out {
