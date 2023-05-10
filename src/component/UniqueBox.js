@@ -41,23 +41,31 @@ function UniqueBox(props) {
         var max = 458
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
-    if(($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)){
-        $("[checked=checked]").animate({"top": $("#centerBox").position().top, "left": $("#centerBox").position().left}, 1500);
-    }else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
-        $("[checked=checked]").animate({"top": "-200px", "left": "-250px"}, 1500);
-    }else if(($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)){
-        $("[checked=checked]").animate({"top": "200px"}, 1500);
-    }else if(($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)){
-        $("[checked=checked]").animate({"top": "200px", "left":"-250px"}, 1500);
-    }else if(($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)){
-        $("[checked=checked]").animate({"left":"250px"}, 1500);
-    }else if(($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)){
-        $("[checked=checked]").animate({"left":"-250px"}, 1500);
-    }else if(($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)){
-        $("[checked=checked]").animate({"top":"-200px","left":"250px"}, 1500);
-    }else if(($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)){
-        $("[checked=checked]").animate({"top":"-200px"}, 1500);
+    $('.uniqueBox').on('click', '.box', function () {
+        var box = $(this);
+        box.parent(".button2").parent(".box-list li").attr('checked', 'checked');
+        if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({
+                "top": $("#centerBox").position().top,
+                "left": $("#centerBox").position().left
+            }, 1500);
+        } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({"top": "-200px", "left": "-250px"}, 1500);
+        } else if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({"top": "200px"}, 1500);
+        } else if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({"top": "200px", "left": "-250px"}, 1500);
+        } else if (($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({"left": "250px"}, 1500);
+        } else if (($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({"left": "-250px"}, 1500);
+        } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({"top": "-200px", "left": "250px"}, 1500);
+        } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)) {
+            $("[checked=checked]").animate({"top": "-200px"}, 1500);
+        }
     }
+
     return(
         <li className="uniqueBox">
             <div id="one" className="button2">
