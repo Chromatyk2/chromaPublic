@@ -65,7 +65,7 @@ function UniqueBox(props) {
             }, 1500);
         } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
             $("[checked=checked]").animate({"top": "-200px", "left": "-300px"}, 1500);
-            $("[checked=checked]").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
+            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
         } else if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)) {
             $("[checked=checked]").animate({"top": "200px"}, 1500);
         } else if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
