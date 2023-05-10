@@ -42,7 +42,7 @@ function UniqueBox(props) {
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
-        var boxNumber = e.target.value;
+        var boxNumber = e.target.getAttribute("number");
         console.log(boxNumber);
         var box = $(".boxnb"+boxNumber);
         console.log(box);
@@ -70,7 +70,7 @@ function UniqueBox(props) {
     }
 
     return(
-        <li value={props.number} onClick={displayNormalLaderboard} className={"uniqueBox boxnb"+props.number} id={props.number === 5 ? 'centerBox' : 'otherBox'}>
+        <li onClick={displayNormalLaderboard} className={"uniqueBox boxnb"+props.number} id={props.number === 5 ? 'centerBox' : 'otherBox'} number={props.number}>
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
                 <div type="button" className="button2 box closed"></div>
