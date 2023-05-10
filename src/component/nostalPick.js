@@ -5,6 +5,28 @@ import UniqueBox from "./UniqueBox";
 function NostalPick(props) {
   var consoles = ["GB","GBA","GBC","MASTER SYSTEM","MEGADRIVE","N64","NDS","NES","NGC","PS1","PSP","SNES"];
   var numbers = [1,2,3,4,5,6,7,8,9];
+    function displayModal(e) {
+        $('audio#loose')[0].pause();
+        $('audio#loose')[0].currentTime = 0;
+        $('audio#greenWin')[0].pause();
+        $('audio#greenWin')[0].currentTime = 0;
+        $('audio#blueWin')[0].pause();
+        $('audio#blueWin')[0].currentTime = 0;
+        $('audio#orangeWin')[0].pause();
+        $('audio#orangeWin')[0].currentTime = 0;
+        $('audio#rainbowWin')[0].pause();
+        $('audio#rainbowWin')[0].currentTime = 0;
+        $('#containerGlobal').css("background-color","rgba(0,0,0,0)");
+        others.css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 1500);
+        $('[alreadyopen]').css("visibility","hidden")
+        setTimeout(function (){
+            $("[checked=checked]").css("visibility","hidden");
+            $("[checked=checked]").attr("alreadyopen","alreadyopen");
+            $("[checked=checked]").removeAttr("checked");
+        },1),
+            $(this).addClass('out');
+        $('body').removeClass('modal-active');
+    };
   return(
       <>
         <ul className="box-list">
@@ -17,7 +39,7 @@ function NostalPick(props) {
             )
           })}
         </ul>
-          <div id="modal-container" className="one out">
+          <div onClick={displayModal} id="modal-container" className="one out">
               <div className="modal-background">
                   <div style={{overflow:"inherit"}} className="modal">
                       <p style={{fontSize:"65px",color:"white"}} className="looseTexte resultTexte">Perdu</p>
