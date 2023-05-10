@@ -71,7 +71,8 @@ function UniqueBox(props) {
             return;
         }
         setTimeout(function (){
-            let rare = Math.floor((Math.random() * 100) + 1);
+            let rare = Math.floor((Math.random() * 2) + 1);
+            console.log(rare);
             $("#nbBox"+boxNumber).animate(
                 { deg: 360 },
                 {
@@ -81,8 +82,8 @@ function UniqueBox(props) {
                     }
                 }
             );
-            if(rare <= 99){
-                let epic = Math.floor((Math.random() * 1) + 1);
+            if(rare == rare){
+                let epic = Math.floor((Math.random() * 2) + 1);;
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
@@ -98,10 +99,16 @@ function UniqueBox(props) {
                         }
                     );
                 },2000);
-                if(epic == 1){
-                    let legendary = Math.floor((Math.random() * 1) + 1);
+                if(epic == epic){
+                    let legendary = Math.floor((Math.random() * 5) + 1);;
                     setTimeout(function (){
-                        $("#nbBox"+boxNumber).toggleClass("epicBox");
+                        $("#nbBox"+boxNumber).removeClass('rareBox'),
+                            $("#nbBox"+boxNumber).toggleClass("epicBox"),
+                            $('#containerGlobal').toggleClass('shakeBlue');
+                        $("#nbBox"+boxNumber).toggleClass('shakeBlue');
+                        $("#nbBox"+boxNumber).toggleClass('shakeBlue');
+                    },3000);
+                    setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
                             {
@@ -112,10 +119,16 @@ function UniqueBox(props) {
                             }
                         );
                     },4000);
-                    if(legendary == 1){
+                    if(legendary == legendary){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
-                            $("#nbBox"+boxNumber).toggleClass("legendaryBox");
+                            $("#nbBox"+boxNumber).removeClass('epicBox'),
+                                $("#nbBox"+boxNumber).toggleClass("legendaryBox"),
+                                $('#containerGlobal').toggleClass('shakeOrange');
+                            $("#nbBox"+boxNumber).toggleClass('shakeOrange');
+                            $("#nbBox"+boxNumber).toggleClass('shakeOrange');
+                        },5000);
+                        setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
                                 {
@@ -126,8 +139,15 @@ function UniqueBox(props) {
                                 }
                             );
                         },6000);
-                        if(ultra == 1){
+                        if(ultra == ultra){
                             $('.5000Texte').css('display','block');
+                            setTimeout(function (){
+                                $("#nbBox"+boxNumber).removeClass('legendaryBox'),
+                                    $("#nbBox"+boxNumber).toggleClass("ultraBox"),
+                                    $('#containerGlobal').toggleClass('shakeRainbow');
+                                $("#nbBox"+boxNumber).toggleClass('shakeRainbow');
+                                $("#nbBox"+boxNumber).toggleClass('shakeRainbow');
+                            },10000);
                             setTimeout(function (){
                                 $('audio#rainbowWin')[0].play()
                                 $("#nbBox"+boxNumber).removeClass('click');
