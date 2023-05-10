@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import '../App.css';
-import UniqueBox from "./UniqueBox";
-import $ from 'jquery';
+import Axios from 'axios';
 
 function CurrentGameImage(props) {
     const [currentGame, setCurrentGame] = useState(null);
