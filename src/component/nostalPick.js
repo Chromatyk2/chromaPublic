@@ -17,7 +17,7 @@ function NostalPick(props) {
             )
           })}
         </ul>
-          <div id="modal-container">
+          <div id="modal-container" className="one out">
               <div className="modal-background">
                   <div style={{overflow:"inherit"}} className="modal">
                       <p style={{fontSize:"65px",color:"white"}} className="looseTexte resultTexte">Perdu</p>
