@@ -1126,6 +1126,7 @@ h1#pinkTitle {
   list-style-type: none;
   position: relative;
   justify-content:center ;
+  top:160px;
 }
 .box-list li {
   padding: 1em;
