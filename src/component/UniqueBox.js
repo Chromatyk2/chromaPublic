@@ -101,14 +101,11 @@ function UniqueBox(props) {
                     );
                 },2000);
                 if(epic == 1){
-                    let legendary = Math.floor((Math.random() * 2) + 1);;
-                    // setTimeout(function (){
-                    //     $("#nbBox"+boxNumber).removeClass('rareBox'),
-                    //         $("#nbBox"+boxNumber).toggleClass("epicBox"),
-                    //         $('#containerGlobal').toggleClass('shakeBlue');
-                    //     $("#nbBox"+boxNumber).toggleClass('shakeBlue');
-                    //     $("#nbBox"+boxNumber).toggleClass('shakeBlue');
-                    // },3000);
+                    let legendary = Math.floor((Math.random() * 2) + 1);
+                    setTimeout(function (){
+                        $("#nbBox"+boxNumber).toggleClass("epicBox");
+                        $('#containerGlobal').toggleClass('shakeBlue');
+                    },3000);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
