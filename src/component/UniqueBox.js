@@ -43,7 +43,7 @@ function UniqueBox(props) {
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
-        Axios.post('/api/createGuess',
+        Axios.post('/api/addCurrentImage',
         {
             image:"/images/jaquettes/"+props.console+"/Jaquette ("+randomNumber+").png"
         })
