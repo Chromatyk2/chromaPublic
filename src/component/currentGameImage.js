@@ -12,7 +12,7 @@ function CurrentGameImage(props) {
     }, [])
     if(currentGame !== null){
         return(
-            <img src={currentGame} alt=""/>
+            <img style={{position:"relative",width:"600px",top:"200px"}} src={currentGame} alt=""/>
         )
     }
 }
