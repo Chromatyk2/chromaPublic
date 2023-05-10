@@ -20,8 +20,11 @@ function NostalPick(props) {
         $('#containerGlobal').css("background-color","rgba(0,0,0,0)");
         var others = $('.box-list li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
         others.css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 1500);
-        $('[alreadyopen]').css("visibility","hidden");
-        $(this).addClass('out');
+        $('[alreadyopen]').css("visibility","hidden")
+        $("[checked=checked]").css("visibility","hidden");
+        $("[checked=checked]").attr("alreadyopen","alreadyopen");
+        $("[checked=checked]").removeAttr("checked");
+        $('.one').addClass('out');
         $('body').removeClass('modal-active');
     };
   return(
