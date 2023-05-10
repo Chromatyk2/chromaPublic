@@ -4,6 +4,7 @@ import '../App.css';
 import $ from 'jquery';
 
 function UniqueBox(props) {
+
     if(props.console == "GB"){
         var max = 432
     }
@@ -42,6 +43,10 @@ function UniqueBox(props) {
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
+        Axios.post('/api/createGuess',
+        {
+            image:"/images/jaquettes/"+props.console+"/Jaquette ("+randomNumber+").png"
+        })
         var console = props.console;
         var nbJaquette = randomNumber;
         $('#imgModal').attr("src","/images/jaquettes/"+console+"/Jaquette ("+nbJaquette+").png");
