@@ -88,7 +88,7 @@ function UniqueBox(props) {
                 }
             );
             if(rare <= 99){
-                let epic = Math.floor((Math.random() * 2) + 1);
+                let epic = Math.floor((Math.random() * 1) + 1);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
