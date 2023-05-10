@@ -1648,3 +1648,6 @@ div#odds {
     margin-bottom: 50px;
     z-index: -1;
 }
+img#imgModal {
+    width: 700px;
+}
