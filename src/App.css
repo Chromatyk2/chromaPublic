@@ -1521,7 +1521,7 @@ div#odds {
 }
 #modal-container.one .modal-background .modal {
     transform: scale(0);
-    animation: zoomIn 3s 10s forwards;
+    animation: zoomIn 3s 0s forwards;
     animation-delay: 0.8s;
 }
 #modal-container.one.out {
