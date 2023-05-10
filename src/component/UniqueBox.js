@@ -43,6 +43,15 @@ function UniqueBox(props) {
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
         $('audio#karateka')[0].play()
+        $('.looseTexte').css('display','none');
+        $('.100Texte').css('display','none');
+        $('.500Texte').css('display','none');
+        $('.1000Texte').css('display','none');
+        $('.5000Texte').css('display','none');
+        $('#containerGlobal').removeClass('shakeGreen');
+        $('#containerGlobal').removeClass('shakeBlue');
+        $('#containerGlobal').removeClass('shakeOrange');
+        $('#containerGlobal').removeClass('shakeRainbow');
         $("#containerGlobal").animate({backgroundColor:'rgba(0,0,0,0.8)'}, 1500);
         var boxNumber = props.number;
         $("#nbBox"+boxNumber).parent(".button2").parent(".box-list li").attr('checked','checked');
