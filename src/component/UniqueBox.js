@@ -41,21 +41,6 @@ function UniqueBox(props) {
         var max = 458
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
-
-    var others = $('.box-list li').not($("[checked=checked]"));
-
-    $('.button2').click(function(){
-        var buttonId = $(this).attr('id');
-        $('body').addClass('modal-active');
-    })
-
-    $('#modal-container').click(function(){
-        $('#containerGlobal').css("background-color","rgba(0,0,0,0)");
-        $(this).addClass('out');
-        $('body').removeClass('modal-active');
-    });
-
-
     function displayNormalLaderboard(e) {
         $('audio#karateka')[0].play()
         $("#containerGlobal").animate({backgroundColor:'rgba(0,0,0,0.8)'}, 1500);
