@@ -42,10 +42,7 @@ function UniqueBox(props) {
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
-        var boxNumber = e.target.getAttribute("data-number").value;
-        console.log(boxNumber);
-        var box = $(".boxnb"+boxNumber);
-        console.log(box);
+        console.log(e.target);
         box.parent(".button2").parent(".box-list li").attr('checked','checked');
         if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
             $("[checked=checked]").animate({
@@ -70,7 +67,7 @@ function UniqueBox(props) {
     }
 
     return(
-        <li onClick={displayNormalLaderboard} className={"uniqueBox boxnb"+props.number} id={props.number === 5 ? 'centerBox' : 'otherBox'} data-number={props.number}>
+        <li onClick={displayNormalLaderboard} className={"uniqueBox"} id={props.number === 5 ? 'centerBox' : 'otherBox'}>
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
                 <div type="button" className="button2 box closed"></div>
