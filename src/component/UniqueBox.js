@@ -42,7 +42,7 @@ function UniqueBox(props) {
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
-        var boxNumber = e.target.getAttribute("number");
+        var boxNumber = e.target.getAttribute("number").value;
         console.log(boxNumber);
         var box = $(".boxnb"+boxNumber);
         console.log(box);
