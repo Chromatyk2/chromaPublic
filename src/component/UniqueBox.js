@@ -43,7 +43,9 @@ function UniqueBox(props) {
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
         var boxNumber = e.target.value;
+        console.log(boxNumber);
         var box = $(".boxnb"+boxNumber);
+        console.log(box);
         box.parent(".button2").parent(".box-list li").attr('checked','checked');
         if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
             $("[checked=checked]").animate({
