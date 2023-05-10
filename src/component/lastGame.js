@@ -11,6 +11,7 @@ function LastGames(props) {
                 setLastGames(response.data);
             })
     }, [])
+    console.log(lastGames);
     if(lastGames !== null){
         {lastGames.map((val, key) => {
             return(
