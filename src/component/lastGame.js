@@ -8,7 +8,7 @@ function LastGames(props) {
     useEffect(() => {
         Axios.get('/api/lastGame')
             .then(function(response){
-                setLastGames(response.data[0].image);
+                setLastGames(response.data);
             })
     }, [])
     if(lastGames !== null){
