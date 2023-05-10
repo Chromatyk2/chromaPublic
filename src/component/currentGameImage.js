@@ -7,7 +7,7 @@ function CurrentGameImage(props) {
     useEffect(() => {
         Axios.get('/api/getCurrentGame')
             .then(function(response){
-                setCurrentGame(response.data);
+                setCurrentGame(response.data[0].image);
             })
     }, [])
     if(currentGame !== null){
