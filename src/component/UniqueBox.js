@@ -70,7 +70,7 @@ function UniqueBox(props) {
         } else if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
             $("[checked=checked]").animate({"top": "200px", "left": "-250px"}, 1500);
         } else if (($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"left": "250px"}, 1500);
+            $("[checked=checked]").animate({"left": "300px"}, 1500);
         } else if (($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
             $("[checked=checked]").animate({"left": "-250px"}, 1500);
         } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
