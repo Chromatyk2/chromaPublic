@@ -50,25 +50,8 @@ function UniqueBox(props) {
     })
 
     $('#modal-container').click(function(){
-        $('audio#loose')[0].pause();
-        $('audio#loose')[0].currentTime = 0;
-        $('audio#greenWin')[0].pause();
-        $('audio#greenWin')[0].currentTime = 0;
-        $('audio#blueWin')[0].pause();
-        $('audio#blueWin')[0].currentTime = 0;
-        $('audio#orangeWin')[0].pause();
-        $('audio#orangeWin')[0].currentTime = 0;
-        $('audio#rainbowWin')[0].pause();
-        $('audio#rainbowWin')[0].currentTime = 0;
         $('#containerGlobal').css("background-color","rgba(0,0,0,0)");
-        others.css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 1500);
-        $('[alreadyopen]').css("visibility","hidden")
-        setTimeout(function (){
-            $("[checked=checked]").css("visibility","hidden");
-            $("[checked=checked]").attr("alreadyopen","alreadyopen");
-            $("[checked=checked]").removeAttr("checked");
-        },1),
-            $(this).addClass('out');
+        $(this).addClass('out');
         $('body').removeClass('modal-active');
     });
 
