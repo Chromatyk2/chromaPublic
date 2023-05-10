@@ -66,6 +66,129 @@ function UniqueBox(props) {
         }
         var others = $('.box-list li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
         others.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 1500);
+        if($("#nbBox"+boxNumber).hasClass('open'))
+        {
+            return;
+        }
+        setTimeout(function (){
+            let rare = Math.floor((Math.random() * 100) + 1);
+            $("#nbBox"+boxNumber).animate(
+                { deg: 360 },
+                {
+                    duration: 500,
+                    step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                    }
+                }
+            );
+            if(rare <= 99){
+                let epic = Math.floor((Math.random() * 1) + 1);
+                setTimeout(function (){
+                    $("#nbBox"+boxNumber).toggleClass("rareBox");
+                    $('#containerGlobal').toggleClass('shakeGreen');
+                },1000);
+                setTimeout(function (){
+                    $("#nbBox"+boxNumber).animate(
+                        { deg: 1440 },
+                        {
+                            duration: 500,
+                            step: function(now) {
+                                $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                            }
+                        }
+                    );
+                },2000);
+                if(epic == 1){
+                    let legendary = Math.floor((Math.random() * 5) + 1);;
+                    setTimeout(function (){
+                        $("#nbBox"+boxNumber).animate(
+                            { deg: 2880 },
+                            {
+                                duration: 500,
+                                step: function(now) {
+                                    $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                                }
+                            }
+                        );
+                    },4000);
+                    if(legendary == 1){
+                        let ultra = Math.floor((Math.random() * 10) + 1);
+                        setTimeout(function (){
+                            $("#nbBox"+boxNumber).animate(
+                                { deg: 11520 },
+                                {
+                                    duration: 3000,
+                                    step: function(now) {
+                                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                                    }
+                                }
+                            );
+                        },6000);
+                        if(ultra == 1){
+                            $('.5000Texte').css('display','block');
+                            setTimeout(function (){
+                                $('audio#rainbowWin')[0].play()
+                                $("#nbBox"+boxNumber).removeClass('click');
+                                $("#nbBox"+boxNumber).toggleClass('closed open');
+                            }, 10501);
+                            setTimeout(function (){
+                                $('#modal-container').removeAttr('class').addClass("one");
+                                $('audio#karateka')[0].pause()
+                                $('audio#karateka')[0].currentTime = 0
+                            },10502);
+                        }else{
+                            $('.1000Texte').css('display','block');
+                            setTimeout(function (){
+                                $("#nbBox"+boxNumber).removeClass('click');
+                                $("#nbBox"+boxNumber).toggleClass('closed open');
+                            }, 10501);
+                            setTimeout(function (){
+                                $('#modal-container').removeAttr('class').addClass("one");
+                                $('audio#orangeWin')[0].play()
+                                $('audio#karateka')[0].pause()
+                                $('audio#karateka')[0].currentTime = 0
+                            },10502);
+                        };
+                    }else{
+                        $('.500Texte').css('display','block');
+                        setTimeout(function (){
+                            $("#nbBox"+boxNumber).removeClass('click');
+                            $("#nbBox"+boxNumber).toggleClass('closed open');
+                        }, 4501);
+                        setTimeout(function (){
+                            $('#modal-container').removeAttr('class').addClass("one");
+                            $('audio#blueWin')[0].play()
+                            $('audio#karateka')[0].pause()
+                            $('audio#karateka')[0].currentTime = 0
+                        },4502);
+                    };
+                }else{
+                    $('.100Texte').css('display','block');
+                    setTimeout(function (){
+                        $("#nbBox"+boxNumber).removeClass('click');
+                        $("#nbBox"+boxNumber).toggleClass('closed open');
+                    }, 2501);
+                    setTimeout(function (){
+                        $('#modal-container').removeAttr('class').addClass("one");
+                        $('audio#greenWin')[0].play()
+                        $('audio#karateka')[0].pause()
+                        $('audio#karateka')[0].currentTime = 0
+                    },2502);
+                };
+            }else{
+                $('.looseTexte').css('display','block');
+                setTimeout(function (){
+                    $("#nbBox"+boxNumber).removeClass('click');
+                    $("#nbBox"+boxNumber).toggleClass('closed open');
+                }, 501);
+                setTimeout(function (){
+                    $('#modal-container').removeAttr('class').addClass("one");
+                    $('audio#loose')[0].play()
+                    $('audio#karateka')[0].pause()
+                    $('audio#karateka')[0].currentTime = 0
+                },502);
+            };
+        },1501);
     }
 
     return(
