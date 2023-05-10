@@ -4,9 +4,6 @@ import '../App.css';
 import $ from 'jquery';
 
 function UniqueBox(props) {
-    if(props.number == 5){
-        $(".uniqueBox").attr('id', 'centerBox');
-    }
     if(props.console == "GB"){
         var max = 432
     }
@@ -70,7 +67,7 @@ function UniqueBox(props) {
     }
 
     return(
-        <li onClick={displayNormalLaderboard} className="uniqueBox">
+        <li onClick={displayNormalLaderboard} className="uniqueBox" id={props.number === 5 ? 'centerBox' : 'otherBox'}>
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
                 <div type="button" className="button2 box closed"></div>
