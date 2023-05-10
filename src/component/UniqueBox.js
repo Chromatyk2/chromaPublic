@@ -42,6 +42,9 @@ function UniqueBox(props) {
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
+        var console = props.console;
+        var nbJaquette = randomNumber;
+        $('#imgModal').attr("src","/images/jaquettes/"+console+"/Jaquette ("+nbJaquette+").png");
         $('audio#karateka')[0].play()
         $('.looseTexte').css('display','none');
         $('.100Texte').css('display','none');
