@@ -18,6 +18,7 @@ import MyNote from './component/myNote.js';
 import AllNotes from './component/allNotes.js';
 import ViewersNote from './component/viewersNote.js';
 import NostalPick from './component/nostalPick.js';
+import CurrentGameImage from "./component/currentGameImage";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGS" element={<NostalPick cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
     </>
