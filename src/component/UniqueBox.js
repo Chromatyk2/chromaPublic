@@ -67,7 +67,7 @@ function UniqueBox(props) {
     }
 
     return(
-        <li onClick={displayNormalLaderboard} className="uniqueBox">
+        <li onClick={displayNormalLaderboard} className="uniqueBox" {props.number == 5 ?  "id=centerBox" : "id="}>
             <div id="one" className="button2">
                 <p className="nbBox">{props.number}</p>
                 <div type="button" className="button2 box closed"></div>
