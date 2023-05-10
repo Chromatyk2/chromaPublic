@@ -29,7 +29,7 @@ function NostalPick(props) {
     };
   return(
       <>
-        <div id="backgroundGlobal"></div>
+        <div style={{backgroundImage:"url(/images/thumb-1920-950765.png"}} id="backgroundGlobal"></div>
         <ul className="box-list">
           {numbers.map((val, key) => {
             var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
