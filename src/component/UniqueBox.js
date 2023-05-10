@@ -200,7 +200,7 @@ function UniqueBox(props) {
                     $('audio#loose')[0].play()
                     $('audio#karateka')[0].pause()
                     $('audio#karateka')[0].currentTime = 0
-                },502);
+                },200);
             };
         },1501);
     }
