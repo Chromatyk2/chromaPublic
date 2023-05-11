@@ -58,7 +58,7 @@ function LastGames(props) {
             container.onclick = removeListItem;
         });
 
-        addBtn.onclick = function(e){
+        function deploy(e){
             const container = document.createElement('li'); container.classList.add('list-container'); container.setAttribute('role', 'listitem');
             const listItem = document.createElement('div'); listItem.classList.add('list-item'); listItem.innerHTML = 'List Item';
             container.append(listItem);
@@ -88,7 +88,7 @@ function LastGames(props) {
                     <div className="list-item show">List Item</div>
                 </li>
             </ul>
-            <button className="add-btn">Add New Item</button>
+            <button onClick={deploy} className="add-btn">Add New Item</button>
             {lastGames &&
                 lastGames.map((val, key) => {
                     return(
