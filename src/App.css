@@ -1656,3 +1656,9 @@ div#odds {
 img#imgModal {
     width: 700px;
 }
+.lastGameContainer{
+    min-width: 500px;
+    height: 100px;
+    background: linear-gradient(0.75turn, #08116d, #2B42C4);
+    color: white;
+}
