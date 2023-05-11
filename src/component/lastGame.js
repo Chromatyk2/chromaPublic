@@ -21,7 +21,6 @@ function LastGames(props) {
     //
     //     return () => clearInterval(interval);
     // }, []);
-    if(lastGames !== null){
         const addBtn = $('.add-btn');
         function calculateHeightOfListContainer(){
             const firstListItem = lastGames[0];
@@ -71,7 +70,6 @@ function LastGames(props) {
                 }, 350);
             }, 15);
         }
-    }
     return(
         <>
             <ul className="list" aria-live="assertive">
