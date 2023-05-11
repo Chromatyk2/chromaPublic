@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import '../App.css';
 import Axios from 'axios';
+import $ from 'jquery';
 
 function LastGames(props) {
     const [lastGames, setLastGames] = useState(null);
@@ -21,7 +22,7 @@ function LastGames(props) {
     //     return () => clearInterval(interval);
     // }, []);
     if(lastGames !== null){
-        const addBtn = document.querySelector('.add-btn');
+        const addBtn = $('.add-btn');
         function calculateHeightOfListContainer(){
             const firstListItem = lastGames[0];
             let heightOfListItem = firstListItem.clientHeight;
