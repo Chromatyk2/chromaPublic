@@ -1657,8 +1657,11 @@ img#imgModal {
     width: 700px;
 }
 .lastGameContainer{
-    min-width: 500px;
+    background: linear-gradient(-2deg,#ff00ff,#00ff00);
+    color: #fff;
     height: 100px;
-    background: linear-gradient(0.75turn, #08116d, #2B42C4);
-    color: white;
+    width: 500px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
 }
