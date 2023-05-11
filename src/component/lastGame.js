@@ -74,6 +74,21 @@ function LastGames(props) {
     }
     return(
         <>
+            <ul className="list" aria-live="assertive">
+                <li className="list-container show">
+                    <div className="list-item show">List Item</div>
+                </li>
+                <li className="list-container show">
+                    <div className="list-item show">List Item</div>
+                </li>
+                <li className="list-container show">
+                    <div className="list-item show">List Item</div>
+                </li>
+                <li className="list-container show">
+                    <div className="list-item show">List Item</div>
+                </li>
+            </ul>
+            <button className="add-btn">Add New Item</button>
             {lastGames &&
                 lastGames.map((val, key) => {
                     return(
@@ -82,21 +97,6 @@ function LastGames(props) {
                                 <p>{val.title}</p>
                                 <p>{val.console}</p>
                             </div>
-                            <ul className="list" aria-live="assertive">
-                                <li className="list-container show">
-                                    <div className="list-item show">List Item</div>
-                                </li>
-                                <li className="list-container show">
-                                    <div className="list-item show">List Item</div>
-                                </li>
-                                <li className="list-container show">
-                                    <div className="list-item show">List Item</div>
-                                </li>
-                                <li className="list-container show">
-                                    <div className="list-item show">List Item</div>
-                                </li>
-                            </ul>
-                            <button className="add-btn">Add New Item</button>
                         </>
                     )
                 })
