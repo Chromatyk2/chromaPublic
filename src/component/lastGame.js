@@ -22,11 +22,8 @@ function LastGames(props) {
     // }, []);
     if(lastGames !== null){
         const addBtn = document.querySelector('.add-btn');
-        const list = document.querySelector('.list');
-
-        const listItems = document.querySelectorAll('.list-item');
         function calculateHeightOfListContainer(){
-            const firstListItem = listItems[0];
+            const firstListItem = lastGames[0];
             let heightOfListItem = firstListItem.clientHeight;
             const styleTag = document.createElement('style');
             document.body.prepend(styleTag);
