@@ -21,6 +21,7 @@ function LastGames(props) {
     //
     //     return () => clearInterval(interval);
     // }, []);
+    if(lastGames !== null){
         const addBtn = $('.add-btn');
         function calculateHeightOfListContainer(){
             const firstListItem = lastGames[0];
@@ -56,20 +57,20 @@ function LastGames(props) {
         document.querySelectorAll('.list .list-container').forEach(function(container) {
             container.onclick = removeListItem;
         });
-
-        function deploy(e){
-            const container = document.createElement('li'); container.classList.add('list-container'); container.setAttribute('role', 'listitem');
-            const listItem = document.createElement('div'); listItem.classList.add('list-item'); listItem.innerHTML = 'List Item';
-            container.append(listItem);
-            addBtn.parentNode.insertBefore(container, addBtn);
-            container.onclick = removeListItem;
+    }
+    function deploy(e){
+        const container = document.createElement('li'); container.classList.add('list-container'); container.setAttribute('role', 'listitem');
+        const listItem = document.createElement('div'); listItem.classList.add('list-item'); listItem.innerHTML = 'List Item';
+        container.append(listItem);
+        addBtn.parentNode.insertBefore(container, addBtn);
+        container.onclick = removeListItem;
+        setTimeout(function(){
+            container.classList.add('show');
             setTimeout(function(){
-                container.classList.add('show');
-                setTimeout(function(){
-                    listItem.classList.add('show');
-                }, 350);
-            }, 15);
-        }
+                listItem.classList.add('show');
+            }, 350);
+        }, 15);
+    }
     return(
         <>
             <ul className="list" aria-live="assertive">
