@@ -5,15 +5,21 @@ import Axios from 'axios';
 function LastGames(props) {
     const [lastGames, setLastGames] = useState(null);
     useEffect(() => {
-        const interval = setInterval(() => {
             Axios.get('/api/lastGame')
-            .then(function(response){
-                setLastGames(response.data);
-            })
-        }, 10000);
-
-        return () => clearInterval(interval);
+                .then(function(response){
+                    setLastGames(response.data);
+                })
     }, []);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         Axios.get('/api/lastGame')
+    //         .then(function(response){
+    //             setLastGames(response.data);
+    //         })
+    //     }, 10000);
+    //
+    //     return () => clearInterval(interval);
+    // }, []);
     return(
         <>
             {lastGames &&
@@ -26,7 +32,7 @@ function LastGames(props) {
                     )
                 })
             }
-        </>      
+        </>
     )
 }
 export default LastGames
