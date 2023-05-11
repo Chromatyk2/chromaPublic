@@ -58,7 +58,7 @@ function LastGames(props) {
         });
     }
     function deploy(e){
-        condole.log('yes');
+        console.log('yes');
         const container = document.createElement('li'); container.classList.add('list-container'); container.setAttribute('role', 'listitem');
         const listItem = document.createElement('div'); listItem.classList.add('list-item'); listItem.innerHTML = 'List Item';
         container.append(listItem);
