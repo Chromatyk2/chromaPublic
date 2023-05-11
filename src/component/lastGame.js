@@ -22,7 +22,6 @@ function LastGames(props) {
     //     return () => clearInterval(interval);
     // }, []);
     if(lastGames !== null){
-        const addBtn = $('.add-btn');
         function calculateHeightOfListContainer(){
             const firstListItem = lastGames[0];
             let heightOfListItem = firstListItem.clientHeight;
@@ -62,8 +61,6 @@ function LastGames(props) {
         const container = document.createElement('li'); container.classList.add('list-container'); container.setAttribute('role', 'listitem');
         const listItem = document.createElement('div'); listItem.classList.add('list-item'); listItem.innerHTML = 'List Item';
         container.append(listItem);
-        addBtn.parentNode.insertBefore(container, addBtn);
-        container.onclick = removeListItem;
         setTimeout(function(){
             container.classList.add('show');
             setTimeout(function(){
