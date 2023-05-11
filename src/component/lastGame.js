@@ -15,7 +15,11 @@ function LastGames(props) {
         const interval = setInterval(() => {
             Axios.get('/api/lastGame')
             .then(function(response){
-                <p>{response.data[0].title}</p>
+                const newElement = document.createElement('span');
+                newElement.innerText = response.data[0].title;
+                return (
+                    <div id="non-portal" ref={node => node.appendChild(newElement)}></div>
+                )
             })
         }, 10000);
 
