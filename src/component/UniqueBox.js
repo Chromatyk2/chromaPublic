@@ -160,7 +160,7 @@ function UniqueBox(props) {
                             );
                         },6000);
                         if(ultra == 1){
-                            $('.5000Texte').css('display','block');
+                            $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
                                 $('#containerGlobal').toggleClass('shakeRainbow');
