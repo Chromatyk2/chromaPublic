@@ -21,6 +21,8 @@ function NostalPick(props) {
         var others = $('.box-list li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
         others.css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 1500);
         $('[alreadyopen]').css("visibility","hidden")
+        $('[alreadyopen]').css("top","0")
+        $('[alreadyopen]').css("left","0")
         $("[checked=checked]").css("visibility","hidden");
         $("[checked=checked]").attr("alreadyopen","alreadyopen");
         $("[checked=checked]").removeAttr("checked");
