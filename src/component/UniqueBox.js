@@ -125,7 +125,7 @@ function UniqueBox(props) {
                         }
                     );
                 },2000);
-                if(epic == epic){
+                if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
@@ -142,7 +142,7 @@ function UniqueBox(props) {
                             }
                         );
                     },4000);
-                    if(legendary == legendary){
+                    if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
@@ -159,7 +159,7 @@ function UniqueBox(props) {
                                 }
                             );
                         },6000);
-                        if(ultra == ultra){
+                        if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
