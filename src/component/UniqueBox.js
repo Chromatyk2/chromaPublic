@@ -126,7 +126,7 @@ function UniqueBox(props) {
                     );
                 },2000);
                 if(epic == 1){
-                    let legendary = Math.floor((Math.random() * 2) + 1);
+                    let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
                         $('#containerGlobal').toggleClass('shakeBlue');
@@ -143,7 +143,7 @@ function UniqueBox(props) {
                         );
                     },4000);
                     if(legendary == 1){
-                        let ultra = Math.floor((Math.random() * 2) + 1);
+                        let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
                             $('#containerGlobal').toggleClass('shakeOrange');
