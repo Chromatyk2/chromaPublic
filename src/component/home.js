@@ -4,7 +4,7 @@ import '../App.css'
 import PkmList from './pkmList.js'
 
 function HomePage(props) {
-  console.log(props.cookies.user.data[0].login);
+  console.log(props.cookies.user);
   return (
     <>
       <p style={{textAlign:"center"}}>Bienvenu, {props.cookies.user.data[0].login}</p>
