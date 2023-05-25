@@ -4,10 +4,10 @@ import '../App.css'
 import PkmList from './pkmList.js'
 
 function HomePage(props) {
-  console.log(props.cookies);
+  console.log(props.cookies.user.data[0].login);
   return (
     <>
-      <p>{props.cookies}</p>
+      <p>{props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
         <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i class="fa-brands fa-discord"></i>Discord</a>
