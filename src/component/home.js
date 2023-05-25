@@ -6,6 +6,9 @@ import PkmList from './pkmList.js'
 function HomePage(props) {
   return (
     <>
+    {
+      props.cookies
+    }
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
         <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i class="fa-brands fa-discord"></i>Discord</a>
