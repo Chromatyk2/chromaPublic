@@ -1731,7 +1731,7 @@ img#imgModal {
 #bangerBox{
   width:500px;
   height:500px;
-  left:300px;
+  left:400px;
 }
 #boxListBanger {
     align-items: center;
@@ -1741,5 +1741,5 @@ img#imgModal {
     left: -480px;
     list-style-type: none;
     position: relative;
-    top: 300px;
+    top: 400px;
 }
