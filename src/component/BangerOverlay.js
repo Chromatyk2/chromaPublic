@@ -18,7 +18,7 @@ function BangerOverlay(props) {
         $('audio#rainbowWin')[0].pause();
         $('audio#rainbowWin')[0].currentTime = 0;
         $('#containerGlobal').css("background-color","rgba(0,0,0,0)");
-        var others = $('.box-list li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
+        var others = $('.box-listbanger li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
         others.css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 1500);
         $('[alreadyopen]').css("visibility","hidden")
         $('[alreadyopen]').css("top","0")
