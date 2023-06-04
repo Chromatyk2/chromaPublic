@@ -1733,3 +1733,13 @@ img#imgModal {
   height:500px;
   left:300px;
 }
+.box-listbanger {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    left: -480px;
+    list-style-type: none;
+    position: relative;
+    top: 200px;
+}
