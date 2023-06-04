@@ -6,40 +6,40 @@ import $ from 'jquery';
 function BangerBox(props) {
 
     if(props.console == "GB"){
-        var max = 432
+        var max = 8
     }
     if(props.console == "GBA"){
-        var max = 424
+        var max = 57
     }
     if(props.console == "GBC"){
-        var max = 233
+        var max = 14
     }
     if(props.console == "MASTER SYSTEM"){
-        var max = 194
+        var max = 7
     }
     if(props.console == "MEGADRIVE"){
-        var max = 400
+        var max = 13
     }
     if(props.console == "N64"){
-        var max = 133
+        var max = 31
     }
     if(props.console == "NDS"){
-        var max = 488
+        var max = 99
     }
     if(props.console == "NES"){
         var max = 280
     }
     if(props.console == "NGC"){
-        var max = 234
+        var max = 53
     }
     if(props.console == "PS1"){
-        var max = 147
+        var max = 34
     }
     if(props.console == "PSP"){
-        var max = 286
+        var max = 38
     }
     if(props.console == "SNES"){
-        var max = 458
+        var max = 30
     }
     var randomNumber = Math.floor(Math.random()*max) + 1;
     function displayNormalLaderboard(e) {
@@ -49,7 +49,7 @@ function BangerBox(props) {
         })
         var console = props.console;
         var nbJaquette = randomNumber;
-        $('#imgModal').attr("src","/images/Banger/"+console+"/Jaquette ("+nbJaquette+").png");
+        $('#imgModal').attr("src","/images/Banger/"+console+"/Banger ("+nbJaquette+").png");
         $('audio#karateka')[0].play()
         $('.looseTexte').css('display','none');
         $('.100Texte').css('display','none');

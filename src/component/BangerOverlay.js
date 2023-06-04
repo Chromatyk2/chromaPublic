@@ -4,7 +4,7 @@ import BangerBox from "./BangerBox";
 import $ from 'jquery';
 
 function BangerOverlay(props) {
-  var consoles = ["GBA","GBC","GB","MEGADRIVE","MasterSystem","N64","NDS","NGC","PS1","PSP","NES","SNES"];
+  var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES"];
   var numbers = [1,2,3,4,5,6,7,8,9];
     function displayModal(e) {
         $('audio#loose')[0].pause();
