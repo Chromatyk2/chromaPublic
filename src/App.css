@@ -1733,7 +1733,7 @@ img#imgModal {
   height:500px;
   left:300px;
 }
-.box-listbanger {
+#boxListBanger {
     align-items: center;
     display: flex;
     justify-content: space-around;

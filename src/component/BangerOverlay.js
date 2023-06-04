@@ -33,7 +33,7 @@ function BangerOverlay(props) {
       var consoleIndex = consoles.indexOf(uniqueConsole);
   return(
       <>
-        <ul className="box-list">
+        <ul className="box-list" id={"boxListBanger"}>
           <BangerBox number={1} console={uniqueConsole}/>
         </ul>
           <div onClick={displayModal} id="modal-container" className="one out">
