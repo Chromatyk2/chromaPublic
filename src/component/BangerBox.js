@@ -62,44 +62,17 @@ function BangerBox(props) {
         $('#containerGlobal').removeClass('shakeRainbow');
         $("#containerGlobal").animate({backgroundColor:'rgba(0,0,0,0.8)'}, 1500);
         var boxNumber = props.number;
-        $("#nbBox"+boxNumber).parent(".button2").parent(".box-list li").attr('checked','checked');
-        if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top": "200px","left": "600px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top": "-200px", "left": "50px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top": "200px", "left": "300px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top < $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top": "230px", "left": "50px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top":"30px","left": "600px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left > $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top":"30px","left": "50px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left < $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top": "-200px", "left": "600px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top > $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top": "-200px","left": "300px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        } else if (($("[checked=checked]").position().top == $("#centerBox").position().top) && ($("[checked=checked]").position().left == $("#centerBox").position().left)) {
-            $("[checked=checked]").animate({"top": "30px","left": "300px"}, 1500);
-            $("[checked=checked]").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        }
+        $("#bangerBox").animate({"top": "200px","left": "600px"}, 1500);
+        $("#bangerBox").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
         var others = $('.box-list li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
         others.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 1500);
-        if($("#nbBox"+boxNumber).hasClass('open'))
+        if($("#bangerBox").hasClass('open'))
         {
             return;
         }
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
-            $("#nbBox"+boxNumber).animate(
+            $("#bangerBox").animate(
                 { deg: 360 },
                 {
                     duration: 500,
@@ -111,11 +84,11 @@ function BangerBox(props) {
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
-                    $("#nbBox"+boxNumber).toggleClass("rareBox");
+                    $("#bangerBox").toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
                 },1000);
                 setTimeout(function (){
-                    $("#nbBox"+boxNumber).animate(
+                    $("#bangerBox").animate(
                         { deg: 1440 },
                         {
                             duration: 500,
@@ -128,11 +101,11 @@ function BangerBox(props) {
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
-                        $("#nbBox"+boxNumber).toggleClass("epicBox");
+                        $("#bangerBox").toggleClass("epicBox");
                         $('#containerGlobal').toggleClass('shakeBlue');
                     },3000);
                     setTimeout(function (){
-                        $("#nbBox"+boxNumber).animate(
+                        $("#bangerBox").animate(
                             { deg: 2880 },
                             {
                                 duration: 500,
@@ -145,11 +118,11 @@ function BangerBox(props) {
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
-                            $("#nbBox"+boxNumber).toggleClass("legendaryBox");
+                            $("#bangerBox").toggleClass("legendaryBox");
                             $('#containerGlobal').toggleClass('shakeOrange');
                         },5000);
                         setTimeout(function (){
-                            $("#nbBox"+boxNumber).animate(
+                            $("#bangerBox").animate(
                                 { deg: 11520 },
                                 {
                                     duration: 3000,
@@ -162,13 +135,13 @@ function BangerBox(props) {
                         if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
-                                $("#nbBox"+boxNumber).toggleClass("ultraBox");
+                                $("#bangerBox").toggleClass("ultraBox");
                                 $('#containerGlobal').toggleClass('shakeRainbow');
                             },10000);
                             setTimeout(function (){
                                 $('audio#rainbowWin')[0].play()
-                                $("#nbBox"+boxNumber).removeClass('click');
-                                $("#nbBox"+boxNumber).toggleClass('closed open');
+                                $("#bangerBox").removeClass('click');
+                                $("#bangerBox").toggleClass('closed open');
                             }, 10501);
                             setTimeout(function (){
                                 $('#modal-container').removeAttr('class').addClass("one");
@@ -178,8 +151,8 @@ function BangerBox(props) {
                         }else{
                             $('.1000Texte').css('display','block');
                             setTimeout(function (){
-                                $("#nbBox"+boxNumber).removeClass('click');
-                                $("#nbBox"+boxNumber).toggleClass('closed open');
+                                $("#bangerBox").removeClass('click');
+                                $("#bangerBox").toggleClass('closed open');
                             }, 10501);
                             setTimeout(function (){
                                 $('#modal-container').removeAttr('class').addClass("one");
@@ -191,8 +164,8 @@ function BangerBox(props) {
                     }else{
                         $('.500Texte').css('display','block');
                         setTimeout(function (){
-                            $("#nbBox"+boxNumber).removeClass('click');
-                            $("#nbBox"+boxNumber).toggleClass('closed open');
+                            $("#bangerBox").removeClass('click');
+                            $("#bangerBox").toggleClass('closed open');
                         }, 4501);
                         setTimeout(function (){
                             $('#modal-container').removeAttr('class').addClass("one");
@@ -204,8 +177,8 @@ function BangerBox(props) {
                 }else{
                     $('.100Texte').css('display','block');
                     setTimeout(function (){
-                        $("#nbBox"+boxNumber).removeClass('click');
-                        $("#nbBox"+boxNumber).toggleClass('closed open');
+                        $("#bangerBox").removeClass('click');
+                        $("#bangerBox").toggleClass('closed open');
                     }, 2501);
                     setTimeout(function (){
                         $('#modal-container').removeAttr('class').addClass("one");
@@ -217,8 +190,8 @@ function BangerBox(props) {
             }else{
                 $('.looseTexte').css('display','block');
                 setTimeout(function (){
-                    $("#nbBox"+boxNumber).removeClass('click');
-                    $("#nbBox"+boxNumber).toggleClass('closed open');
+                    $("#bangerBox").removeClass('click');
+                    $("#bangerBox").toggleClass('closed open');
                 }, 501);
                 setTimeout(function (){
                     $('#modal-container').removeAttr('class').addClass("one");
@@ -235,7 +208,7 @@ function BangerBox(props) {
             <li onClick={displayNormalLaderboard} className={"uniqueBox"} id={props.number === 5 ? 'centerBox' : 'otherBox'}>
                 <div id="one" className="button2">
                     <p className="nbBox">{props.number}</p>
-                    <div type="button" className={"button2 box closed"}  id={"nbBox"+props.number}></div>
+                    <div type="button" className={"button2 box closed"}  id={"bangerBox"}></div>
                 </div>
             </li>
         </>
