@@ -20,6 +20,7 @@ import ViewersNote from './component/viewersNote.js';
 import NostalPick from './component/nostalPick.js';
 import CurrentGameImage from "./component/currentGameImage.js";
 import LastGames from "./component/lastGame.js";
+import BangerOverlay from "./component/BangerOverlay.js";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -46,6 +47,7 @@ function App() {
           <Route path="/29ct92B3ZrvxGS" element={<NostalPick cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
     </>

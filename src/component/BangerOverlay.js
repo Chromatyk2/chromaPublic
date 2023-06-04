@@ -1,10 +1,10 @@
 import React,{useState, useEffect} from 'react';
 import '../App.css';
-import UniqueBox from "./UniqueBox";
+import BangerBox from "./BangerBox";
 import $ from 'jquery';
 
-function NostalPick(props) {
-  var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES"];
+function BangerOverlay(props) {
+  var consoles = ["GBA","GBC","GB","MEGADRIVE","MasterSystem","N64","NDS","NGC","PS1","PSP","NES","SNES"];
   var numbers = [1,2,3,4,5,6,7,8,9];
     function displayModal(e) {
         $('audio#loose')[0].pause();
@@ -29,17 +29,12 @@ function NostalPick(props) {
         $('.one').addClass('out');
         $('body').removeClass('modal-active');
     };
+      var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
+      var consoleIndex = consoles.indexOf(uniqueConsole);
   return(
       <>
         <ul className="box-list">
-          {numbers.map((val, key) => {
-            var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
-            var consoleIndex = consoles.indexOf(uniqueConsole);
-            consoles.splice(consoleIndex, 1);
-            return (
-              <UniqueBox number={val} console={uniqueConsole}/>
-            )
-          })}
+          <BangerBox number={val} console={uniqueConsole}/>
         </ul>
           <div onClick={displayModal} id="modal-container" className="one out">
               <div className="modal-background">
@@ -77,4 +72,4 @@ function NostalPick(props) {
       </>
   )
 }
-export default NostalPick
+export default BangerOverlay
