@@ -1743,3 +1743,10 @@ img#imgModal {
     position: relative;
     top: 400px;
 }
+#consoleBanger{
+  background-color: white;
+  color:black;
+  font-size: 75px;
+  padding: 15px;
+  width: fit-content;
+}
