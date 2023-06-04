@@ -4,7 +4,7 @@ import UniqueBox from "./UniqueBox";
 import $ from 'jquery';
 
 function NostalPick(props) {
-  var consoles = ["GB","GBA","GBC","MASTER SYSTEM","MEGADRIVE","N64","NDS","NES","NGC","PS1","PSP","SNES"];
+  var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES"];
   var numbers = [1,2,3,4,5,6,7,8,9];
     function displayModal(e) {
         $('audio#loose')[0].pause();
