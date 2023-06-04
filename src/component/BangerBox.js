@@ -232,10 +232,9 @@ function BangerBox(props) {
 
     return(
         <>
-            <li onClick={displayNormalLaderboard} className={"uniqueBox"} id={props.number === 5 ? 'centerBox' : 'otherBox'}>
+            <li onClick={displayNormalLaderboard} className={"uniqueBox"} id={"bangerBox"}>
                 <div id="one" className="button2">
-                    <p className="nbBox">{props.number}</p>
-                    <div type="button" className={"button2 box closed"}  id={"nbBox"+props.number}></div>
+                    <div type="button" className={"button2 box closed"}  id={"uniqueBangerBox"}></div>
                 </div>
             </li>
         </>

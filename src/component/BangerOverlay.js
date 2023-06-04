@@ -34,7 +34,7 @@ function BangerOverlay(props) {
   return(
       <>
         <ul className="box-list">
-          <BangerBox number={val} console={uniqueConsole}/>
+          <BangerBox console={uniqueConsole}/>
         </ul>
           <div onClick={displayModal} id="modal-container" className="one out">
               <div className="modal-background">
