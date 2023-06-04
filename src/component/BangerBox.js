@@ -62,7 +62,6 @@ function BangerBox(props) {
         $('#containerGlobal').removeClass('shakeRainbow');
         $("#containerGlobal").animate({backgroundColor:'rgba(0,0,0,0.8)'}, 1500);
         var boxNumber = props.number;
-        $("#bangerBox").animate({"top": "200px","left": "600px"}, 1500);
         $("#bangerBox").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
         if($("#bangerBox").hasClass('open'))
         {

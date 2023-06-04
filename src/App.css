@@ -1728,3 +1728,7 @@ img#imgModal {
     -webkit-background-clip: text;
     display: inline-flex;
 }
+#bangerBox{
+  width:500px;
+  height:500px;
+}
