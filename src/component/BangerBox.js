@@ -49,7 +49,7 @@ function BangerBox(props) {
         })
         var console = props.console;
         var nbJaquette = randomNumber;
-        $('#imgModal').attr("src","/images/jaquettes/"+console+"/Jaquette ("+nbJaquette+").png");
+        $('#imgModal').attr("src","/images/Banger/"+console+"/Jaquette ("+nbJaquette+").png");
         $('audio#karateka')[0].play()
         $('.looseTexte').css('display','none');
         $('.100Texte').css('display','none');
@@ -64,8 +64,6 @@ function BangerBox(props) {
         var boxNumber = props.number;
         $("#bangerBox").animate({"top": "200px","left": "600px"}, 1500);
         $("#bangerBox").children(".button2").children(".button2").animate({"height": "500px", "width": "500px"}, 1500);
-        var others = $('.box-list li').not($("[checked=checked],[alreadyopen=alreadyopen]"));
-        others.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 1500);
         if($("#bangerBox").hasClass('open'))
         {
             return;
