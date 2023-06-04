@@ -203,9 +203,10 @@ function BangerBox(props) {
 
     return(
         <>
-            <li onClick={displayNormalLaderboard}>
+            <li onClick={displayNormalLaderboard} className={"uniqueBox"} id={props.number === 5 ? 'centerBox' : 'otherBox'}>
                 <div id="one" className="button2">
                     <p className="nbBox">{props.number}</p>
+                    <div type="button" className={"button2 box closed"}  id={"bangerBox"}></div>
                 </div>
             </li>
         </>
