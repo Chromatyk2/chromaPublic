@@ -219,13 +219,13 @@ function UniqueBox(props) {
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).removeClass('click');
                     $("#nbBox"+boxNumber).toggleClass('closed open');
-                }, 2300);
+                }, 2700);
                 setTimeout(function (){
                     $('#modal-container').removeAttr('class').addClass("one");
                     $('audio#loose')[0].play()
                     $('audio#karateka')[0].pause()
                     $('audio#karateka')[0].currentTime = 0
-                },2300);
+                },2700);
             };
         },1500);
     }
