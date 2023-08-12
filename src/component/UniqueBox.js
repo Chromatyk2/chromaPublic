@@ -115,7 +115,7 @@ function UniqueBox(props) {
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
-                },2000);
+                },5000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
                         { deg: 1440 },
@@ -134,7 +134,7 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
                         $('#containerGlobal').toggleClass('shakeBlue');
-                    },4500);
+                    },7500);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
@@ -153,7 +153,7 @@ function UniqueBox(props) {
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
                             $('#containerGlobal').toggleClass('shakeOrange');
-                        },6500);
+                        },9500);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
@@ -171,7 +171,7 @@ function UniqueBox(props) {
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
                                 $('#containerGlobal').toggleClass('shakeRainbow');
-                            },8500);
+                            },11500);
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).stop();
                                 $('audio#rainbowWin')[0].play()
