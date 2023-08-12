@@ -95,20 +95,26 @@ function UniqueBox(props) {
         }
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
-            $("#nbBox"+boxNumber).animate(
-                {
-                    duration: 150,
-                    step: function(now) {
-                        $(this).css({ transform: 'translateX(105px)' });
-                    }
-                },
-                {
-                    duration: 150,
-                    step: function(now) {
-                        $(this).css({ transform: 'translateX(-105px)' });
-                    }
-                }
-            );
+            setTimeout(function (){
+              $("#nbBox"+boxNumber).animate(
+                  {
+                      duration: 150,
+                      step: function(now) {
+                          $(this).css({ transform: 'translateX(50px)' });
+                      }
+                  }
+              );
+            },2000);
+            setTimeout(function (){
+              $("#nbBox"+boxNumber).animate(
+                  {
+                      duration: 150,
+                      step: function(now) {
+                          $(this).css({ transform: 'translateX(-100px)' });
+                      }
+                  }
+              );
+            },2150);
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
