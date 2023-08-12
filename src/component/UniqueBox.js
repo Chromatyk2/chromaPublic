@@ -124,7 +124,7 @@ function UniqueBox(props) {
                             }
                         }
                     );
-                },100000);
+                },1600);
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
@@ -206,13 +206,13 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
-                    }, 100000);
+                    }, 1650);
                     setTimeout(function (){
                         $('#modal-container').removeAttr('class').addClass("one");
                         $('audio#greenWin')[0].play()
                         $('audio#karateka')[0].pause()
                         $('audio#karateka')[0].currentTime = 0
-                    },10000);
+                    },1651);
                 };
             }else{
                 $('.looseTexte').css('display','block');
