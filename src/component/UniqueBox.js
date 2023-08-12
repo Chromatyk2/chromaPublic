@@ -113,7 +113,7 @@ function UniqueBox(props) {
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
-                },1500);
+                },2000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
                         { deg: 1440 },
@@ -227,7 +227,7 @@ function UniqueBox(props) {
                     $('audio#karateka')[0].currentTime = 0
                 },10000);
             };
-        },0);
+        },1500);
     }
 
     return(
