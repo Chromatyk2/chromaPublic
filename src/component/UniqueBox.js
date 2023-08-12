@@ -193,13 +193,13 @@ function UniqueBox(props) {
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).removeClass('click');
                             $("#nbBox"+boxNumber).toggleClass('closed open');
-                        }, 5000);
+                        }, 6500);
                         setTimeout(function (){
                             $('#modal-container').removeAttr('class').addClass("one");
                             $('audio#blueWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
-                        },5000);
+                        },6500);
                     };
                 }else{
                     $('.100Texte').css('display','block');
