@@ -227,7 +227,7 @@ function UniqueBox(props) {
                     $('audio#karateka')[0].currentTime = 0
                 },10000);
             };
-        },500);
+        },0);
     }
 
     return(
