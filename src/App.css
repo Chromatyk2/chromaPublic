@@ -1019,16 +1019,16 @@ span.myCountProposition {
   0% {
     top: 0;
   }
-  25% {
-  transform: rotate(15deg);
+  30% {
+  transform: rotate(5deg);
     top: -5px;
   }
   50% {
-  transform: rotate(30deg);
-    top: 0px;
+  transform: rotate(-5deg);
+    top: -5px;
   }75% {
-  transform: rotate(15deg);
-    top: 5px;
+  transform: rotate(5deg);
+    top: -5px;
   }
   100% {
   transform: rotate(0deg);
