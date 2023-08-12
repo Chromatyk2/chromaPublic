@@ -56,6 +56,10 @@ function UniqueBox(props) {
         $('.500Texte').css('display','none');
         $('.1000Texte').css('display','none');
         $('.5000Texte').css('display','none');
+        $('#containerGlobal').removeClass('shakeGreen');
+        $('#containerGlobal').removeClass('shakeBlue');
+        $('#containerGlobal').removeClass('shakeOrange');
+        $('#containerGlobal').removeClass('shakeRainbow');
         $("#containerGlobal").animate({backgroundColor:'rgba(0,0,0,0.8)'}, 1500);
         var boxNumber = props.number;
         $("#nbBox"+boxNumber).parent(".button2").parent(".box-list li").attr('checked','checked');
@@ -95,38 +99,71 @@ function UniqueBox(props) {
         }
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
-            $("#nbBox"+boxNumber).toggleClass("shakeBoxEffect");
+            $("#nbBox"+boxNumber).animate(
+                { deg: 360 },
+                {
+                    duration: 500,
+                    step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                    }
+                }
+            );
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
-                },5000);
+                    $('#containerGlobal').toggleClass('shakeGreen');
+                },1000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
+                        { deg: 1440 },
+                        {
+                            duration: 500,
+                            step: function(now) {
+                                $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                            }
+                        }
                     );
-                },5000);
+                },2000);
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
-                    },5000);
+                        $('#containerGlobal').toggleClass('shakeBlue');
+                    },3000);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
+                            { deg: 2880 },
+                            {
+                                duration: 500,
+                                step: function(now) {
+                                    $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                                }
+                            }
                         );
-                    },5000);
+                    },4000);
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
+                            $('#containerGlobal').toggleClass('shakeOrange');
                         },5000);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
+                                { deg: 11520 },
+                                {
+                                    duration: 3000,
+                                    step: function(now) {
+                                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                                    }
+                                }
                             );
-                        },5000);
+                        },6000);
                         if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
+                                $('#containerGlobal').toggleClass('shakeRainbow');
                             },10000);
                             setTimeout(function (){
                                 $('audio#rainbowWin')[0].play()
@@ -190,7 +227,7 @@ function UniqueBox(props) {
                     $('audio#karateka')[0].currentTime = 0
                 },502);
             };
-        },6000);
+        },1501);
     }
 
     return(
