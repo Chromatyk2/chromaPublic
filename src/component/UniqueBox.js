@@ -130,7 +130,7 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
                         $('#containerGlobal').toggleClass('shakeBlue');
-                    },100000);
+                    },4500);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
@@ -141,7 +141,7 @@ function UniqueBox(props) {
                                 }
                             }
                         );
-                    },100000);
+                    },4500);
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
@@ -193,13 +193,13 @@ function UniqueBox(props) {
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).removeClass('click');
                             $("#nbBox"+boxNumber).toggleClass('closed open');
-                        }, 100000);
+                        }, 5000);
                         setTimeout(function (){
                             $('#modal-container').removeAttr('class').addClass("one");
                             $('audio#blueWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
-                        },100000);
+                        },5000);
                     };
                 }else{
                     $('.100Texte').css('display','block');
