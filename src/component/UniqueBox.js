@@ -102,20 +102,20 @@ function UniqueBox(props) {
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
-                },1000);
+                },5000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
                     );
-                },2000);
+                },5000);
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
-                    },3000);
+                    },5000);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                         );
-                    },4000);
+                    },5000);
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
@@ -124,7 +124,7 @@ function UniqueBox(props) {
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
                             );
-                        },6000);
+                        },5000);
                         if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
