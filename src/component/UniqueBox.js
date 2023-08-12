@@ -206,13 +206,13 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
-                    }, 3500);
+                    }, 4000);
                     setTimeout(function (){
                         $('#modal-container').removeAttr('class').addClass("one");
                         $('audio#greenWin')[0].play()
                         $('audio#karateka')[0].pause()
                         $('audio#karateka')[0].currentTime = 0
-                    },3500);
+                    },4000);
                 };
             }else{
                 $('.looseTexte').css('display','block');
