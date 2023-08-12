@@ -206,7 +206,7 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
-                    }, 1650);
+                    }, 2000);
                     setTimeout(function (){
                         $('#modal-container').removeAttr('class').addClass("one");
                         $('audio#greenWin')[0].play()
