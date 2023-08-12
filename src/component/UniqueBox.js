@@ -173,6 +173,7 @@ function UniqueBox(props) {
                                 $('#containerGlobal').toggleClass('shakeRainbow');
                             },8500);
                             setTimeout(function (){
+                                $("#nbBox"+boxNumber).stop();
                                 $('audio#rainbowWin')[0].play()
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
