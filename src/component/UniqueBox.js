@@ -192,7 +192,7 @@ function UniqueBox(props) {
                     }else{
                         $('.500Texte').css('display','block');
                         setTimeout(function (){
-                          $("#nbBox"+boxNumber).stop();
+                            $("#nbBox"+boxNumber).stop();
                             $("#nbBox"+boxNumber).removeClass('click');
                             $("#nbBox"+boxNumber).toggleClass('closed open');
                         }, 6500);
@@ -206,7 +206,15 @@ function UniqueBox(props) {
                 }else{
                     $('.100Texte').css('display','block');
                     setTimeout(function (){
-                        $("#nbBox"+boxNumber).stop();
+                      $("#nbBox"+boxNumber).animate(
+                          { deg: 2880 },
+                          {
+                              duration: 500,
+                              step: function(now) {
+                                  $(this).stop();
+                              }
+                          }
+                      );
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
                     }, 4000);
