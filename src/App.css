@@ -3,8 +3,8 @@ font-family: 'Charge Vector Black';
 src: url('../public/Charge Vector Black.otf') format('truetype');
 }
 @font-face {
-font-family: 'Flying Slime Reguler';
-src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
+font-family: 'RetroTypo';
+src: url('../public/RetroTypo.ttf') format('truetype');
 }
 #containerGlobal{
   position: absolute;
