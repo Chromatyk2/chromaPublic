@@ -136,7 +136,7 @@ function UniqueBox(props) {
                             {
                                 duration: 500,
                                 step: function(now) {
-                                    $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                                    $(this).css({ transform: 'translateX(105px)' });
                                 }
                             }
                         );
