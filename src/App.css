@@ -1265,32 +1265,32 @@ object{
 
 
 @keyframes horizontal-shakingGreen {
- 0% { transform: translateX(0) }
- 25% { transform: translateX(10px) }
- 50% { transform: translateX(-10px) }
- 75% { transform: translateX(10px) }
- 100% { transform: translateX(0) }
+ 0% { transform: translateX(0);width:100%;height:100vh }
+ 25% { transform: translateX(10px);width:100%;height:100vh }
+ 50% { transform: translateX(-10px);width:100%;height:100vh }
+ 75% { transform: translateX(10px);width:100%;height:100vh }
+ 100% { transform: translateX(0);width:100%;height:100vh }
 }
 @keyframes horizontal-shakingBlue {
- 0% { transform: translateX(0) }
- 25% { transform: translateX(10px) }
- 50% { transform: translateX(-10px) }
- 75% { transform: translateX(10px) }
- 100% { transform: translateX(0) }
+ 0% { transform: translateX(0);width:100%;height:100vh }
+ 25% { transform: translateX(10px);width:100%;height:100vh }
+ 50% { transform: translateX(-10px);width:100%;height:100vh }
+ 75% { transform: translateX(10px);width:100%;height:100vh }
+ 100% { transform: translateX(0);width:100%;height:100vh }
 }
 @keyframes horizontal-shakingOrange {
- 0% { transform: translateX(0) }
- 25% { transform: translateX(10px) }
- 50% { transform: translateX(-10px) }
- 75% { transform: translateX(10px) }
- 100% { transform: translateX(0) }
+ 0% { transform: translateX(0);width:100%;height:100vh }
+ 25% { transform: translateX(10px);width:100%;height:100vh }
+ 50% { transform: translateX(-10px);width:100%;height:100vh }
+ 75% { transform: translateX(10px);width:100%;height:100vh }
+ 100% { transform: translateX(0);width:100%;height:100vh }
 }
 @keyframes horizontal-shakingRainbow {
- 0% { transform: translateX(0) }
- 25% { transform: translateX(10px) }
- 50% { transform: translateX(-10px) }
- 75% { transform: translateX(10px) }
- 100% { transform: translateX(0) }
+ 0% { transform: translateX(0);width:100%;height:100vh }
+ 25% { transform: translateX(10px);width:100%;height:100vh }
+ 50% { transform: translateX(-10px);width:100%;height:100vh }
+ 75% { transform: translateX(10px);width:100%;height:100vh }
+ 100% { transform: translateX(0);width:100%;height:100vh }
 }
 @keyframes flashGreen {
    50% {
@@ -1329,7 +1329,7 @@ object{
    }
 }
 .shakeGreen {
-  animation: horizontal-shakingGreen 1s, flashGreen 1s;
+  animation: horizontal-shakingGreen 0.5s, flashGreen 0.5s;
   -webkit-animation: horizontal-shakingGreen 1s, flashGreen 1s;
   -moz-animation: horizontal-shakingGreen 1s, flashGreen 1s;
 }
