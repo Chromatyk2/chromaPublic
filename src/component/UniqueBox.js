@@ -103,7 +103,7 @@ function UniqueBox(props) {
                 {
                     duration: 500,
                     step: function(now) {
-                        $(this).css({ transform: 'translateX(42px)' });
+                        $(this).css({ transform: 'translateX(500px)' });
                     }
                 }
             );
