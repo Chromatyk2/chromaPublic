@@ -95,9 +95,7 @@ function UniqueBox(props) {
         }
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
-            setTimeout(function (){
-                $("#nbBox"+boxNumber).toggleClass("shakeBoxEffect");
-            },2150);
+            $("#nbBox"+boxNumber).toggleClass("shakeBoxEffect");
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
