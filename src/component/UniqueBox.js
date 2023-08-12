@@ -100,20 +100,21 @@ function UniqueBox(props) {
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
             $("#nbBox"+boxNumber).animate(
-                { deg: 360 },
-                {
-                    duration: 500,
-                    step: function(now) {
-                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
-                    }
-                }
+              [
+                { transform: "translateY(0px)" },
+                { transform: "translateY(-300px)" },
+              ],
+              {
+                duration: 1000,
+                iterations: Infinity,
+              },
             );
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
-                },2500);
+                },100000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
                         { deg: 1440 },
@@ -206,26 +207,26 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
-                    }, 2700);
+                    }, 100000);
                     setTimeout(function (){
                         $('#modal-container').removeAttr('class').addClass("one");
                         $('audio#greenWin')[0].play()
                         $('audio#karateka')[0].pause()
                         $('audio#karateka')[0].currentTime = 0
-                    },2700);
+                    },10000);
                 };
             }else{
                 $('.looseTexte').css('display','block');
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).removeClass('click');
                     $("#nbBox"+boxNumber).toggleClass('closed open');
-                }, 3500);
+                }, 10000);
                 setTimeout(function (){
                     $('#modal-container').removeAttr('class').addClass("one");
                     $('audio#loose')[0].play()
                     $('audio#karateka')[0].pause()
                     $('audio#karateka')[0].currentTime = 0
-                },3500);
+                },100000);
             };
         },1500);
     }
