@@ -113,7 +113,7 @@ function UniqueBox(props) {
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
-                },1500);
+                },2000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
                         { deg: 1440 },
@@ -124,7 +124,7 @@ function UniqueBox(props) {
                             }
                         }
                     );
-                },1501);
+                },2001);
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
