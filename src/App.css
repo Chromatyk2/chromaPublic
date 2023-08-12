@@ -30,7 +30,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
   -webkit-background-clip: text;
   color: transparent;
   font-family: sans-serif;
-  font-family: Flying Slime Reguler;
+  font-family: RetroTypo;
   font-size: 400px;
   height: 440px;
     z-index: 1;
@@ -43,7 +43,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     -webkit-background-clip: text;
     color: transparent;
     font-family: sans-serif;
-    font-family: Flying Slime Reguler;
+    font-family: RetroTypo;
     font-size: 400px;
     content: attr(data-percentage);
     display: flex;
@@ -90,7 +90,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
 
 
 .myNoteText, .myNote{
-  font-family: "Flying Slime Reguler";
+  font-family: "RetroTypo";
   background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
   -webkit-background-clip: text;
   color: transparent;
@@ -1737,7 +1737,7 @@ img#imgModal {
     font-size: 2.5rem;
 }
 .resultTexte{
-  font-family: Flying Slime Reguler;
+  font-family: RetroTypo;
 }
 .looseTexte{
   color: "white";
