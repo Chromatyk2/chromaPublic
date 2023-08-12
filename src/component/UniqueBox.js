@@ -56,10 +56,6 @@ function UniqueBox(props) {
         $('.500Texte').css('display','none');
         $('.1000Texte').css('display','none');
         $('.5000Texte').css('display','none');
-        $('#containerGlobal').removeClass('shakeGreen');
-        $('#containerGlobal').removeClass('shakeBlue');
-        $('#containerGlobal').removeClass('shakeOrange');
-        $('#containerGlobal').removeClass('shakeRainbow');
         $("#containerGlobal").animate({backgroundColor:'rgba(0,0,0,0.8)'}, 1500);
         var boxNumber = props.number;
         $("#nbBox"+boxNumber).parent(".button2").parent(".box-list li").attr('checked','checked');
@@ -111,7 +107,6 @@ function UniqueBox(props) {
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
                 setTimeout(function (){
-                    $('#containerGlobal').toggleClass('shakeGreen');
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                 },1000);
                 setTimeout(function (){
@@ -128,7 +123,6 @@ function UniqueBox(props) {
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
-                    $('#containerGlobal').toggleClass('shakeBlue');
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
                     },3000);
                     setTimeout(function (){
@@ -145,7 +139,6 @@ function UniqueBox(props) {
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
-                        $('#containerGlobal').toggleClass('shakeOrange');
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
                         },5000);
                         setTimeout(function (){
@@ -162,11 +155,9 @@ function UniqueBox(props) {
                         if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
-                            $('#containerGlobal').toggleClass('shakeRainbow');
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
                             },10000);
                             setTimeout(function (){
-                            $('#containerGlobal').toggleClass('shakeRainbow');
                                 $('audio#rainbowWin')[0].play()
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
@@ -179,7 +170,6 @@ function UniqueBox(props) {
                         }else{
                             $('.1000Texte').css('display','block');
                             setTimeout(function (){
-                            $('#containerGlobal').toggleClass('shakeOrange');
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
                             }, 10501);
@@ -193,7 +183,6 @@ function UniqueBox(props) {
                     }else{
                         $('.500Texte').css('display','block');
                         setTimeout(function (){
-                        $('#containerGlobal').toggleClass('shakeBlue');
                             $("#nbBox"+boxNumber).removeClass('click');
                             $("#nbBox"+boxNumber).toggleClass('closed open');
                         }, 4501);
@@ -207,7 +196,6 @@ function UniqueBox(props) {
                 }else{
                     $('.100Texte').css('display','block');
                     setTimeout(function (){
-                        $('#containerGlobal').toggleClass('shakeGreen');
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
                     }, 2501);
