@@ -1064,14 +1064,6 @@ span.myCountProposition {
     transform: scale(1);
   }
 }
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(3600deg);
-  }
-}
 * {
   box-sizing: border-box;
 }
