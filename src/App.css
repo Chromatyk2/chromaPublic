@@ -1329,9 +1329,9 @@ object{
    }
 }
 .shakeGreen {
-  animation: horizontal-shakingGreen 0.5s, flashGreen 0.5s;
-  -webkit-animation: horizontal-shakingGreen 1s, flashGreen 1s;
-  -moz-animation: horizontal-shakingGreen 1s, flashGreen 1s;
+  animation: horizontal-shakingGreen 0.1s, flashGreen 0.1s;
+  -webkit-animation: horizontal-shakingGreen 0.1s, flashGreen 0.1s;
+  -moz-animation: horizontal-shakingGreen 0.1s, flashGreen 0.1s;
 }
 .shakeBlue {
   animation: horizontal-shakingBlue 0.1s, flashBlue 0.2s;
