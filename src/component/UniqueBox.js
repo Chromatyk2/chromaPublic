@@ -199,7 +199,7 @@ function UniqueBox(props) {
                             $('audio#blueWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
-                        },6500);
+                        },6300);
                     };
                 }else{
                     $('.100Texte').css('display','block');
