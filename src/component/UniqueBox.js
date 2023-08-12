@@ -103,6 +103,7 @@ function UniqueBox(props) {
                 { deg: 1440 },
                 {
                     duration: 500,
+                    iterations: 1,
                     step: function(now) {
                         $(this).css({ transform: 'rotate(' + now + 'deg)' });
                     }
@@ -119,6 +120,7 @@ function UniqueBox(props) {
                         { deg: 1440 },
                         {
                             duration: 500,
+                            iterations: 1,
                             step: function(now) {
                                 $(this).css({ transform: 'rotate(' + now + 'deg)' });
                             }
@@ -136,6 +138,7 @@ function UniqueBox(props) {
                             { deg: 2880 },
                             {
                                 duration: 500,
+                                iterations: 1,
                                 step: function(now) {
                                     $(this).css({ transform: 'rotate(' + now + 'deg)' });
                                 }
@@ -153,6 +156,7 @@ function UniqueBox(props) {
                                 { deg: 11520 },
                                 {
                                     duration: 3000,
+                                    iterations: 1,
                                     step: function(now) {
                                         $(this).css({ transform: 'rotate(' + now + 'deg)' });
                                     }
