@@ -98,9 +98,9 @@ function UniqueBox(props) {
             $("#nbBox"+boxNumber).animate(
                 { deg: 360 },
                 {
-                    duration: 500,
+                    duration: 10000,
                     step: function(now) {
-                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                        $(this).css({ transform: 'translateX(105px)' });
                     }
                 }
             );
@@ -145,9 +145,9 @@ function UniqueBox(props) {
                             $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
                                 {
-                                    duration: 3000,
+                                    duration: 500,
                                     step: function(now) {
-                                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                                        $(this).css({ transform: 'translateX(105px)' });
                                     }
                                 }
                             );
