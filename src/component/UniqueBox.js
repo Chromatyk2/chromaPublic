@@ -206,26 +206,26 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
-                    }, 100000);
+                    }, 2550);
                     setTimeout(function (){
                         $('#modal-container').removeAttr('class').addClass("one");
                         $('audio#greenWin')[0].play()
                         $('audio#karateka')[0].pause()
                         $('audio#karateka')[0].currentTime = 0
-                    },100000);
+                    },2550);
                 };
             }else{
                 $('.looseTexte').css('display','block');
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).removeClass('click');
                     $("#nbBox"+boxNumber).toggleClass('closed open');
-                }, 100000);
+                }, 2300);
                 setTimeout(function (){
                     $('#modal-container').removeAttr('class').addClass("one");
                     $('audio#loose')[0].play()
                     $('audio#karateka')[0].pause()
                     $('audio#karateka')[0].currentTime = 0
-                },10000);
+                },2300);
             };
         },1500);
     }
