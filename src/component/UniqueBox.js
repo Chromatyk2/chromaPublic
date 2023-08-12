@@ -96,11 +96,16 @@ function UniqueBox(props) {
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
             $("#nbBox"+boxNumber).animate(
-                { deg: 360 },
                 {
-                    duration: 10000,
+                    duration: 150,
                     step: function(now) {
                         $(this).css({ transform: 'translateX(105px)' });
+                    }
+                },
+                {
+                    duration: 150,
+                    step: function(now) {
+                        $(this).css({ transform: 'translateX(-105px)' });
                     }
                 }
             );
