@@ -96,13 +96,6 @@ function UniqueBox(props) {
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
             $("#nbBox"+boxNumber).animate(
-                { deg: 360 },
-                {
-                    duration: 500,
-                    step: function(now) {
-                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
-                    }
-                }
             );
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
@@ -120,13 +113,6 @@ function UniqueBox(props) {
                     },3000);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
-                            { deg: 2880 },
-                            {
-                                duration: 500,
-                                step: function(now) {
-                                    $(this).css({ transform: 'rotate(' + now + 'deg)' });
-                                }
-                            }
                         );
                     },4000);
                     if(legendary == 1){
@@ -136,13 +122,6 @@ function UniqueBox(props) {
                         },5000);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
-                                { deg: 11520 },
-                                {
-                                    duration: 3000,
-                                    step: function(now) {
-                                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
-                                    }
-                                }
                             );
                         },6000);
                         if(ultra == 1){
