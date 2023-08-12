@@ -1019,14 +1019,13 @@ span.myCountProposition {
   0% {
     top: 0;
   }
-  30% {
+  50% {
+  transform: rotate(30deg);
     top: -5px;
   }
-  90% {
-    top: 5px;
-  }
   100% {
-    top: 0;
+  transform: rotate(0deg);
+    top: 5px;
   }
 }
 @keyframes shadow-aperture {
