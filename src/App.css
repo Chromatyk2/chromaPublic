@@ -1065,20 +1065,11 @@ span.myCountProposition {
   }
 }
 @keyframes spin {
-  0% {
-    transform: translate(-50%, -50%);
+  from {
+    transform: rotate(0deg);
   }
-  30% {
-    opacity: 0.15;
-    transform: translate(-50%, -50%);
-  }
-  90% {
-    opacity: 0.4;
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    opacity: 0.35;
-    transform: translate(-50%, -50%);
+  to {
+    transform: rotate(3600deg);
   }
 }
 * {
