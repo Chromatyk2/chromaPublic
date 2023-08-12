@@ -6,7 +6,12 @@ src: url('../public/Charge Vector Black.otf') format('truetype');
 font-family: 'Flying Slime Reguler';
 src: url('../public/Flying-Slime-Reguler.ttf') format('truetype');
 }
-
+#containerGlobal{
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1000;
+}
 .c-progress-circle {
   display: block;
   width: 600px;
@@ -1289,7 +1294,7 @@ object{
 }
 @keyframes flashGreen {
    50% {
-      opacity: 0.5;
+      opacity: 1;
       background-color: green;
    }
    100% {
