@@ -212,7 +212,7 @@ function UniqueBox(props) {
                         $('audio#greenWin')[0].play()
                         $('audio#karateka')[0].pause()
                         $('audio#karateka')[0].currentTime = 0
-                    },4000);
+                    },3500);
                 };
             }else{
                 $('.looseTexte').css('display','block');
