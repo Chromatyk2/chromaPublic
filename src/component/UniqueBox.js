@@ -99,13 +99,23 @@ function UniqueBox(props) {
         }
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
+            $("#nbBox"+boxNumber).animate(
+                { deg: 1440 },
+                {
+                    duration: 500,
+                    iterations: 1,
+                    step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                    }
+                }
+            );
             if(rare < 99){
                 // let epic = Math.floor((Math.random() * 2) + 1);
                 let epic = 1;
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
-                },5000);
+                },2000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
                         { deg: 1440 },
@@ -124,7 +134,7 @@ function UniqueBox(props) {
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
                         $('#containerGlobal').toggleClass('shakeBlue');
-                    },7500);
+                    },4500);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
@@ -143,7 +153,7 @@ function UniqueBox(props) {
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
                             $('#containerGlobal').toggleClass('shakeOrange');
-                        },9500);
+                        },6500);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
@@ -161,7 +171,7 @@ function UniqueBox(props) {
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
                                 $('#containerGlobal').toggleClass('shakeRainbow');
-                            },11500);
+                            },8500);
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).stop();
                                 $('audio#rainbowWin')[0].play()
