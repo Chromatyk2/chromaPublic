@@ -113,7 +113,7 @@ function UniqueBox(props) {
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
-                },2000);
+                },3000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
                         { deg: 1440 },
@@ -124,13 +124,13 @@ function UniqueBox(props) {
                             }
                         }
                     );
-                },2001);
+                },3005);
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
                         $('#containerGlobal').toggleClass('shakeBlue');
-                    },3000);
+                    },3555);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
                             { deg: 2880 },
@@ -141,13 +141,13 @@ function UniqueBox(props) {
                                 }
                             }
                         );
-                    },4000);
+                    },3556);
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
                             $('#containerGlobal').toggleClass('shakeOrange');
-                        },5000);
+                        },4057);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
@@ -158,7 +158,7 @@ function UniqueBox(props) {
                                     }
                                 }
                             );
-                        },6000);
+                        },4058);
                         if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
