@@ -111,13 +111,6 @@ function UniqueBox(props) {
                 },1000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
-                        { deg: 1440 },
-                        {
-                            duration: 500,
-                            step: function(now) {
-                                $(this).css({ transform: 'rotate(' + now + 'deg)' });
-                            }
-                        }
                     );
                 },2000);
                 if(epic == 1){
