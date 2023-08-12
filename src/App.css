@@ -1069,10 +1069,15 @@ span.myCountProposition {
 }
 @keyframes horizontal-shaking {
  0% { transform: translateX(0) }
- 25% { transform: translateX(5px) }
- 50% { transform: translateX(-5px) }
- 75% { transform: translateX(5px) }
+ 25% { transform: translateX(500px) }
+ 50% { transform: translateX(-500px) }
+ 75% { transform: translateX(500px) }
  100% { transform: translateX(0) }
+}
+.horizontalShaking{
+  animation-name: horizontal-shaking;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 body, html {
   width: 100%;
@@ -1167,9 +1172,6 @@ h1#pinkTitle {
   animation: inflate 0.5s 1, float 2s infinite;
   cursor: pointer;
   outline: 0;
-}
-.box-list li .box.click {
-  animation: spin 5s , inflate 0.5s 1, float 2s infinite;
 }
 .box-list li .box.open {
   background-image: url('../public/rareBoxOpen.png');
