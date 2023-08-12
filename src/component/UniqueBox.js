@@ -96,24 +96,6 @@ function UniqueBox(props) {
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
             setTimeout(function (){
-              $("#nbBox"+boxNumber).animate(
-                  {
-                      duration: 150,
-                      step: function(now) {
-                          $(this).css({ transform: 'translateX(50px)' });
-                      }
-                  }
-              );
-            },2000);
-            setTimeout(function (){
-              $("#nbBox"+boxNumber).animate(
-                  {
-                      duration: 150,
-                      step: function(now) {
-                          $(this).css({ transform: 'translateX(-100px)' });
-                      }
-                  }
-              );
             },2150);
             if(rare < 99){
                 let epic = Math.floor((Math.random() * 2) + 1);
@@ -122,13 +104,6 @@ function UniqueBox(props) {
                 },1000);
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).animate(
-                        { deg: 1440 },
-                        {
-                            duration: 500,
-                            step: function(now) {
-                                $(this).css({ transform: 'translateX(105px)' });
-                            }
-                        }
                     );
                 },2000);
                 if(epic == 1){
@@ -138,13 +113,6 @@ function UniqueBox(props) {
                     },3000);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
-                            { deg: 2880 },
-                            {
-                                duration: 500,
-                                step: function(now) {
-                                    $(this).css({ transform: 'translateX(105px)' });
-                                }
-                            }
                         );
                     },4000);
                     if(legendary == 1){
@@ -154,13 +122,6 @@ function UniqueBox(props) {
                         },5000);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
-                                { deg: 11520 },
-                                {
-                                    duration: 500,
-                                    step: function(now) {
-                                        $(this).css({ transform: 'translateX(105px)' });
-                                    }
-                                }
                             );
                         },6000);
                         if(ultra == 1){
