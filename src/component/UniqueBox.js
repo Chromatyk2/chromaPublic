@@ -172,8 +172,17 @@ function UniqueBox(props) {
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
                                 $('#containerGlobal').toggleClass('shakeRainbow');
                             },8500);
-                            setTimeout(function (){
-                                $("#nbBox"+boxNumber).style.transform = null;
+                            setTimeout(function ()
+                            {$("#nbBox"+boxNumber).animate(
+                                { deg: 11520 },
+                                {
+                                    duration: 3000,
+                                    iterations: 1,
+                                    step: function(now) {
+                                        $(this).css({ transform: 'rotate(0)' });
+                                    }
+                                }
+                            );
                                 $('audio#rainbowWin')[0].play()
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
