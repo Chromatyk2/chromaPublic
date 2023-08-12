@@ -110,7 +110,8 @@ function UniqueBox(props) {
                 }
             );
             if(rare < 99){
-                let epic = Math.floor((Math.random() * 2) + 1);
+                // let epic = Math.floor((Math.random() * 2) + 1);
+                let epic = 1;
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).toggleClass("rareBox");
                     $('#containerGlobal').toggleClass('shakeGreen');
@@ -128,7 +129,8 @@ function UniqueBox(props) {
                     );
                 },2000);
                 if(epic == 1){
-                    let legendary = Math.floor((Math.random() * 5) + 1);
+                  let legendary = 1;
+                    // let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
                         $('#containerGlobal').toggleClass('shakeBlue');
@@ -146,7 +148,8 @@ function UniqueBox(props) {
                         );
                     },4500);
                     if(legendary == 1){
-                        let ultra = Math.floor((Math.random() * 10) + 1);
+                        // let ultra = Math.floor((Math.random() * 10) + 1);
+                        let ultra = 1;
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
                             $('#containerGlobal').toggleClass('shakeOrange');
@@ -168,17 +171,17 @@ function UniqueBox(props) {
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
                                 $('#containerGlobal').toggleClass('shakeRainbow');
-                            },10000);
+                            },8500);
                             setTimeout(function (){
                                 $('audio#rainbowWin')[0].play()
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
-                            }, 100000);
+                            }, 10500);
                             setTimeout(function (){
                                 $('#modal-container').removeAttr('class').addClass("one");
                                 $('audio#karateka')[0].pause()
                                 $('audio#karateka')[0].currentTime = 0
-                            },100000);
+                            },10500);
                         }else{
                             $('.1000Texte').css('display','block');
                             setTimeout(function (){
@@ -208,16 +211,6 @@ function UniqueBox(props) {
                 }else{
                     $('.100Texte').css('display','block');
                     setTimeout(function (){
-                        $("#nbBox"+boxNumber).animate(
-                          { deg: 11520 },
-                          {
-                              duration: 3000,
-                              iterations: 1,
-                              step: function(now) {
-                                  $(this).css({ transform: 'rotate(' + now + 'deg)' });
-                              }
-                          }
-                        );
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
                     }, 4000);
