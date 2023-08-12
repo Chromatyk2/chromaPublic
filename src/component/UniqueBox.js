@@ -101,8 +101,8 @@ function UniqueBox(props) {
             let rare = Math.floor((Math.random() * 100) + 1);
             $("#nbBox"+boxNumber).animate(
               [
-                { transform: "translateY(0px)" },
-                { transform: "translateY(-300px)" },
+                { transform: "translateX(0px)" },
+                { transform: "translateX(-300px)" },
               ],
               {
                 duration: 1000,
