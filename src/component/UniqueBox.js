@@ -178,6 +178,7 @@ function UniqueBox(props) {
                         }else{
                             $('.1000Texte').css('display','block');
                             setTimeout(function (){
+                              $("#nbBox"+boxNumber).stop();
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
                             }, 8500);
@@ -191,6 +192,7 @@ function UniqueBox(props) {
                     }else{
                         $('.500Texte').css('display','block');
                         setTimeout(function (){
+                          $("#nbBox"+boxNumber).stop();
                             $("#nbBox"+boxNumber).removeClass('click');
                             $("#nbBox"+boxNumber).toggleClass('closed open');
                         }, 6500);
@@ -204,6 +206,7 @@ function UniqueBox(props) {
                 }else{
                     $('.100Texte').css('display','block');
                     setTimeout(function (){
+                        $("#nbBox"+boxNumber).stop();
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
                     }, 4000);
@@ -219,6 +222,7 @@ function UniqueBox(props) {
                 setTimeout(function (){
                     $("#nbBox"+boxNumber).removeClass('click');
                     $("#nbBox"+boxNumber).toggleClass('closed open');
+                    $("#nbBox"+boxNumber).stop();
                 }, 10000);
                 setTimeout(function (){
                     $('#modal-container').removeAttr('class').addClass("one");
