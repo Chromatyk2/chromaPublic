@@ -122,6 +122,19 @@ function UniqueBox(props) {
                         },5000);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
+                                { deg: 11520 },
+                                {
+                                    duration: 3000,
+                                    step: function(now) {
+                                        $(this).css({
+                                          0% { transform: translateX(0) }
+                                          25% { transform: translateX(5px) }
+                                          50% { transform: translateX(-5px) }
+                                          75% { transform: translateX(5px) }
+                                          100% { transform: translateX(0) }
+                                        });
+                                    }
+                                }
                             );
                         },6000);
                         if(ultra == 1){
