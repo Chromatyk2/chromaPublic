@@ -124,7 +124,7 @@ function UniqueBox(props) {
                             }
                         }
                     );
-                },2100);
+                },2000);
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
@@ -147,7 +147,7 @@ function UniqueBox(props) {
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
                             $('#containerGlobal').toggleClass('shakeOrange');
-                        },100000);
+                        },6500);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
                                 { deg: 11520 },
@@ -158,7 +158,7 @@ function UniqueBox(props) {
                                     }
                                 }
                             );
-                        },100000);
+                        },6500);
                         if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
@@ -180,13 +180,13 @@ function UniqueBox(props) {
                             setTimeout(function (){
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
-                            }, 100000);
+                            }, 8500);
                             setTimeout(function (){
                                 $('#modal-container').removeAttr('class').addClass("one");
                                 $('audio#orangeWin')[0].play()
                                 $('audio#karateka')[0].pause()
                                 $('audio#karateka')[0].currentTime = 0
-                            },100000);
+                            },8300);
                         };
                     }else{
                         $('.500Texte').css('display','block');
