@@ -128,8 +128,8 @@ function UniqueBox(props) {
                 if(epic == 1){
                     let legendary = Math.floor((Math.random() * 5) + 1);
                     setTimeout(function (){
+                    $('#containerGlobal').toggleClass('shakeBlue');
                         $("#nbBox"+boxNumber).toggleClass("epicBox");
-                        $('#containerGlobal').toggleClass('shakeBlue');
                     },3000);
                     setTimeout(function (){
                         $("#nbBox"+boxNumber).animate(
@@ -145,8 +145,8 @@ function UniqueBox(props) {
                     if(legendary == 1){
                         let ultra = Math.floor((Math.random() * 10) + 1);
                         setTimeout(function (){
+                        $('#containerGlobal').toggleClass('shakeOrange');
                             $("#nbBox"+boxNumber).toggleClass("legendaryBox");
-                            $('#containerGlobal').toggleClass('shakeOrange');
                         },5000);
                         setTimeout(function (){
                             $("#nbBox"+boxNumber).animate(
@@ -162,10 +162,11 @@ function UniqueBox(props) {
                         if(ultra == 1){
                             $('.5000Texte').css('display','inline-flex');
                             setTimeout(function (){
+                            $('#containerGlobal').toggleClass('shakeRainbow');
                                 $("#nbBox"+boxNumber).toggleClass("ultraBox");
-                                $('#containerGlobal').toggleClass('shakeRainbow');
                             },10000);
                             setTimeout(function (){
+                            $('#containerGlobal').toggleClass('shakeRainbow');
                                 $('audio#rainbowWin')[0].play()
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
@@ -178,6 +179,7 @@ function UniqueBox(props) {
                         }else{
                             $('.1000Texte').css('display','block');
                             setTimeout(function (){
+                            $('#containerGlobal').toggleClass('shakeOrange');
                                 $("#nbBox"+boxNumber).removeClass('click');
                                 $("#nbBox"+boxNumber).toggleClass('closed open');
                             }, 10501);
@@ -191,6 +193,7 @@ function UniqueBox(props) {
                     }else{
                         $('.500Texte').css('display','block');
                         setTimeout(function (){
+                        $('#containerGlobal').toggleClass('shakeBlue');
                             $("#nbBox"+boxNumber).removeClass('click');
                             $("#nbBox"+boxNumber).toggleClass('closed open');
                         }, 4501);
@@ -204,6 +207,7 @@ function UniqueBox(props) {
                 }else{
                     $('.100Texte').css('display','block');
                     setTimeout(function (){
+                        $('#containerGlobal').toggleClass('shakeGreen');
                         $("#nbBox"+boxNumber).removeClass('click');
                         $("#nbBox"+boxNumber).toggleClass('closed open');
                     }, 2501);
