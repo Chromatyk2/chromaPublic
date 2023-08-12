@@ -1157,8 +1157,20 @@ h1#pinkTitle {
 .box-list li .box.click {
   animation: spin 5s , inflate 0.5s 1, float 2s infinite;
 }
+.box-list li .box.open {
+  background-image: url('../public/rareBoxOpen.png');
+}
 .box-list li .box.open.rareBox {
   background-image: url('../public/rareBoxOpen.png');
+}
+.box-list li .box.open.epicBox {
+  background-image: url('../public/epicBoxOpen.png');
+}
+.box-list li .box.open.legendaryBox {
+  background-image: url('../public/legendaryBoxOpen.png');
+}
+.box-list li .box.open.ultraBox {
+  background-image: url('../public/ultraBoxOpen.png');
 }
 .box-list li .box.closed {
   background-image: url('../public/basicBox.png');
@@ -1166,6 +1178,16 @@ h1#pinkTitle {
 .box-list li .box.closed.rareBox {
   background-image: url('../public/rareBox.png');
 }
+.box-list li .box.closed.epicBox {
+  background-image: url('../public/epicBox.png');
+}
+.box-list li .box.closed.legendaryBox {
+  background-image: url('../public/legendaryBox.png');
+}
+.box-list li .box.closed.ultraBox {
+  background-image: url('../public/ultraBox.png');
+}
+
 .box-list li .loot-shadow {
   position: absolute;
   bottom: -50%;
@@ -1491,21 +1513,6 @@ div#odds {
 }
 .uniqueBox:hover{
   background: transparent;
-}
-.epicBox{
-    filter: drop-shadow(0 0 25px purple);
-}
-.legendaryBox{
-    filter: drop-shadow(0 0 25px orange);
-}
-.ultraBox{
-    filter: drop-shadow(0 0 25px #FF0000)
-    drop-shadow(0 0 25px #FF7F00)
-    drop-shadow(0 0 25px #FFFF00)
-    drop-shadow(0 0 25px #00FF00)
-    drop-shadow(0 0 25px #0000FF)
-    drop-shadow(0 0 25px #2E2B5F)
-    drop-shadow(0 0 25px #8B00FF) ;
 }
 #modal-container {
     position: fixed;
