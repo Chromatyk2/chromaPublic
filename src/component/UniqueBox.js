@@ -99,16 +99,6 @@ function UniqueBox(props) {
         }
         setTimeout(function (){
             let rare = Math.floor((Math.random() * 100) + 1);
-            $("#nbBox"+boxNumber).animate(
-                { deg: 1440 },
-                {
-                    duration: 500,
-                    iterations: 1,
-                    step: function(now) {
-                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
-                    }
-                }
-            );
             if(rare < 99){
                 // let epic = Math.floor((Math.random() * 2) + 1);
                 let epic = 1;
