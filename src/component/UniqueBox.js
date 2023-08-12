@@ -105,7 +105,7 @@ function UniqueBox(props) {
                 { transform: "translateX(-300px)" },
               ],
               {
-                duration: 1000,
+                duration: 10,
                 iterations: Infinity,
               },
             );
