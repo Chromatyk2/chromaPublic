@@ -1163,6 +1163,9 @@ h1#pinkTitle {
 .box-list li .box.closed {
   background-image: url('../public/basicBox.png');
 }
+.box-list li .box.closed.rareBox {
+  background-image: url('../public/rareBox.png');
+}
 .box-list li .loot-shadow {
   position: absolute;
   bottom: -50%;
@@ -1488,9 +1491,6 @@ div#odds {
 }
 .uniqueBox:hover{
   background: transparent;
-}
-.rareBox{
-  background-image: url('../public/rareBox.png');
 }
 .epicBox{
     filter: drop-shadow(0 0 25px purple);
