@@ -24,11 +24,10 @@ const [items, setItems] = useState([]);
        }
      )
  }, []);
-
-  if(items){
     return (
       <>
-        {items.cards.map((val, key) => {
+        { items &&
+          items.cards.map((val, key) => {
           return <img
             class="fit-picture"
             src={val.image+"/high.webp"}
@@ -38,5 +37,4 @@ const [items, setItems] = useState([]);
       </>
     )
   }
-}
 export default CardsHub
