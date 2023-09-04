@@ -11,7 +11,7 @@ const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
 const [items, setItems] = useState([]);
   useEffect(() => {
-   fetch("https://api.tcgdex.net/v2/fr/sets/swsh3swsh3-136")
+   fetch("https://api.tcgdex.net/v2/fr/sets/136")
      .then(res => res.json())
      .then(
        (result) => {
