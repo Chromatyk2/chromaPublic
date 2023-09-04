@@ -24,16 +24,19 @@ const [items, setItems] = useState([]);
        }
      )
  }, []);
-return (
-  <>
-    {items.cards.map((val, key) => {
-      return <img
-        class="fit-picture"
-        src={val.image+"/high.webp"}
-        alt="Grapefruit slice atop a pile of other slices"
-      />
-    })}
-  </>
-)
+
+  if(items){
+    return (
+      <>
+        {items.cards.map((val, key) => {
+          return <img
+            class="fit-picture"
+            src={val.image+"/high.webp"}
+            alt="Grapefruit slice atop a pile of other slices"
+          />
+        })}
+      </>
+    )
+  }
 }
 export default CardsHub
