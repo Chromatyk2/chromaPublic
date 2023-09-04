@@ -27,13 +27,12 @@ const [items, setItems] = useState([]);
     return (
       <>
         {items &&
-          items.map((val, key) => {
-          return <img
-            class="fit-picture"
-            src={val.cards.image+"/high.webp"}
-            alt="Grapefruit slice atop a pile of other slices"
-          />
-        })}
+          items.cards.map((val, key) => {
+            return(
+              <img class="fit-picture" src={val.cards.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+            )
+          })
+        }
       </>
     )
   }
