@@ -24,6 +24,6 @@ const [items, setItems] = useState([]);
        }
      )
  }, [])
-  return 'Yes'
+  return <p>Yes</p>
 }
 export default CardsHub
