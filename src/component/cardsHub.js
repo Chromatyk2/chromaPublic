@@ -35,4 +35,5 @@ return (
     })}
   </>
 )
+}
 export default CardsHub
