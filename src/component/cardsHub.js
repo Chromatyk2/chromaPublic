@@ -23,7 +23,7 @@ const [items, setItems] = useState([]);
          setError(error);
        }
      )
- },
+ }, []);
 return (
   <>
     {items.cards.captures.map((val, key) => {
