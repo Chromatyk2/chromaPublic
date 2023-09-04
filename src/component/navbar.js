@@ -32,6 +32,7 @@ function NavBar(props) {
               <>
                 <Link className="navLink" to="/aNu5YwZ5X75m5j">Note</Link>
                 <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>
+                <Link className="navLink" to="/29ct92B3ZrvxGT">TCG</Link>
               </>
             }
           </Nav>
