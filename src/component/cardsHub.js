@@ -26,7 +26,7 @@ const [items, setItems] = useState([]);
  }, []);
 return (
   <>
-    {items.cards.captures.map((val, key) => {
+    {items.cards.map((val, key) => {
       return <img
         class="fit-picture"
         src={val.image+"/high.webp"}
