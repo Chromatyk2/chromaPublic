@@ -21,7 +21,7 @@ import NostalPick from './component/nostalPick.js';
 import CurrentGameImage from "./component/currentGameImage.js";
 import LastGames from "./component/lastGame.js";
 import BangerOverlay from "./component/BangerOverlay.js";
-import CardsHub from "./component/CardsHub.js";
+import CardsHub from "./component/cardsHub.js";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
