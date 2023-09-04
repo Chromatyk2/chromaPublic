@@ -11,7 +11,7 @@ const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
 const [items, setItems] = useState([]);
   useEffect(() => {
-   fetch("https://api.tcgdex.net/v2/fr/sets/136")
+   fetch("https://api.tcgdex.net/v2/fr/sets/base1/1")
      .then(res => res.json())
      .then(
        (result) => {
@@ -24,6 +24,10 @@ const [items, setItems] = useState([]);
        }
      )
  }, [])
-  return <p>Yes</p>
+  return <img
+  class="fit-picture"
+  src={"https://assets.tcgdex.net/fr/base/base1/1/high.webp"}
+  alt="Grapefruit slice atop a pile of other slices"
+/>
 }
 export default CardsHub
