@@ -9,8 +9,8 @@ import moment from 'moment';
 function CardsHub(props) {
 const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
-const [items, setItems] = useState([]);
-const [cards, setCards] = useState([]);
+const [items, setItems] = useState(null);
+const [cards, setCards] = useState(null);
   useEffect(() => {
    fetch("https://api.tcgdex.net/v2/fr/sets/base1")
      .then(res => res.json())
