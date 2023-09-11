@@ -17,6 +17,11 @@ function CardsHub() {
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
             </div>
+            <iframe id="twitch-chat-embed"
+                    src="https://www.twitch.tv/embed/chromatyk/chat?parent=dev.twitch.tv"
+                    height="500"
+                    width="350">
+            </iframe>
             {page == "myCards" &&
                 <MyCards />
             }
