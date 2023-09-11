@@ -13,8 +13,7 @@ function CardsHub() {
     return(
         <>
             <div className="leaderBoardSwitch">
-                <button value="myCards" onClick={displayNormalLaderboard}>Global</button>
-                <button value="1" onClick={displayShinyLaderboard}>Shiny</button>
+                <button value="myCards" onClick={displayMyCards}>Mes Cartes</button>
             </div>
             {page == "myCards" &&
                 <MyCards />
