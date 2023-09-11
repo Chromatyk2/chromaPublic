@@ -10,7 +10,6 @@ function CardsHub(props) {
 const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
 const [items, setItems] = useState(null);
-const [cards, setCards] = useState(null);
   useEffect(() => {
    fetch("https://api.tcgdex.net/v2/fr/sets/base1")
      .then(res => res.json())
@@ -25,13 +24,10 @@ const [cards, setCards] = useState(null);
        }
      )
  }, []);
-      useEffect(() => {
-          setCards(items.cards);
-      }, [items]);
     return (
       <>
-        {cards.length > 0 &&
-          cards.map((val, key) => {
+        {items &&
+          item.cards.map((val, key) => {
             return(
               <img class="fit-picture" src={val.cards.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
             )
