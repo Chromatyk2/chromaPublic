@@ -6,10 +6,11 @@ import 'react-tooltip/dist/react-tooltip.css'
 import MyCards from './myCards.js';
 import NavBar from "./navbar";
 function CardsHub() {
-    const [page, setPage] = useCookies(null);
+    const [page, setPage] = useState(null);
     function displayMyCards(e) {
         setPage(e.value)
     }
+    console.log(page);
     return(
         <>
             <div className="leaderBoardSwitch">
