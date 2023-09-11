@@ -26,7 +26,6 @@ function MyCards(props) {
     }, []);
     return (
         <>
-            <div className={"allCards"}>
                 {items &&
                     items.cards.map((val, key) => {
                         return(
@@ -34,7 +33,6 @@ function MyCards(props) {
                         )
                     })
                 }
-            </div>
         </>
     )
 }

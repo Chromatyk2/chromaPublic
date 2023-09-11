@@ -26,7 +26,6 @@ function CardsShop(props) {
     }, []);
     return (
         <>
-            <div className={"allCards"}>
                 {items &&
                     items.map((val, key) => {
                         return(
@@ -34,7 +33,6 @@ function CardsShop(props) {
                         )
                     })
                 }
-            </div>
         </>
     )
 }
