@@ -27,7 +27,7 @@ const [items, setItems] = useState(null);
     return (
       <>
         {items &&
-          item.cards.map((val, key) => {
+          items.cards.map((val, key) => {
             return(
               <img class="fit-picture" src={val.cards.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
             )
