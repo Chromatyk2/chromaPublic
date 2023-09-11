@@ -1,41 +1,21 @@
 import React,{useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom'
-import ReactPaginate from 'react-paginate';
-import Axios from 'axios'
-import Pagination from './paginate.js';
-import '../App.css'
-import moment from 'moment';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { useCookies } from 'react-cookie';
+import $ from "jquery";
+import './App.css';
+import 'react-tooltip/dist/react-tooltip.css'
+import MyCards from './myCards.js';
+function CardsHub() {
+    const [cookies, setCookie] = useCookies();
+    return(
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/29ct92B3ZrvxGT/mesCartes" element={<MyCards cookies={cookies} />} />
+                </Routes>
+            </BrowserRouter>
+        </>
+    );
+}
 
-function CardsHub(props) {
-const [error, setError] = useState(null);
-const [isLoaded, setIsLoaded] = useState(false);
-const [items, setItems] = useState(null);
-  useEffect(() => {
-   fetch("https://api.tcgdex.net/v2/fr/sets/base1")
-     .then(res => res.json())
-     .then(
-       (result) => {
-         setIsLoaded(true);
-         setItems(result);
-       },
-       (error) => {
-         setIsLoaded(true);
-         setError(error);
-       }
-     )
- }, []);
-    return (
-      <>
-          <div className={"allCards"}>
-              {items &&
-                  items.cards.map((val, key) => {
-                      return(
-                          <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
-                      )
-                  })
-              }
-          </div>
-      </>
-    )
-  }
-export default CardsHub
+export default CardsHub;
