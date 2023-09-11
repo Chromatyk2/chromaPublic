@@ -25,11 +25,9 @@ const [cards, setCards] = useState([]);
        }
      )
  }, []);
-  if(items){
       useEffect(() => {
           setCards(items.cards);
-      }, []);
-  }
+      }, [items]);
     return (
       <>
         {cards &&
