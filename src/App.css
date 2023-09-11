@@ -1378,7 +1378,12 @@ div#odds {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.allCards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
