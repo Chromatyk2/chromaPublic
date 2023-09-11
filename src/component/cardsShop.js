@@ -30,7 +30,7 @@ function CardsShop(props) {
                 {items &&
                     items.map((val, key) => {
                         return(
-                            <img class="fit-picture" src={val.logo+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                            <img class="fit-picture" src={val.logo} alt="Grapefruit slice atop a pile of other slices"/>
                         )
                     })
                 }
