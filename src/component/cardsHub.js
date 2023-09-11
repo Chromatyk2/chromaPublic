@@ -25,7 +25,7 @@ const [items, setItems] = useState([]);
      )
  }, []);
   if(items){
-      console.log(items);
+      console.log(items.cards);
   }
     return (
       <>
