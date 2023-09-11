@@ -4,21 +4,24 @@ import { useCookies } from 'react-cookie';
 import $ from "jquery";
 import 'react-tooltip/dist/react-tooltip.css'
 import MyCards from './myCards.js';
+import CardsShop from './cardsShop.js';
 import NavBar from "./navbar";
 function CardsHub() {
     const [page, setPage] = useState(null);
-    function displayMyCards(e) {
+    function displayTcgContent(e) {
         setPage(e.target.value)
-        console.log(page);
     }
-    console.log(page);
     return(
         <>
             <div className="leaderBoardSwitch">
-                <button value="myCards" onClick={displayMyCards}>Mes Cartes</button>
+                <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
+                <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
             </div>
             {page == "myCards" &&
                 <MyCards />
+            }
+            {page == "cardsShop" &&
+                <CardsShop />
             }
         </>
     );
