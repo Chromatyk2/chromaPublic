@@ -8,7 +8,8 @@ import NavBar from "./navbar";
 function CardsHub() {
     const [page, setPage] = useState(null);
     function displayMyCards(e) {
-        setPage(e.value)
+        setPage(e.target.value)
+        console.log(page);
     }
     console.log(page);
     return(
