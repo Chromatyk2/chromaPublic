@@ -1383,6 +1383,10 @@ div#odds {
     flex-wrap: wrap;
     width: 75%;
     margin: auto;
+    gap: 30px;
+}
+.fit-picture{
+    width: 200px;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
