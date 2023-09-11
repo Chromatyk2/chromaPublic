@@ -17,6 +17,7 @@ function NavBar(props) {
             setCount(response.data[0].count);
       })
   }, [])
+    console.log(props.cookies.user);
   return (
     <Navbar expand="lg">
       <Container>
