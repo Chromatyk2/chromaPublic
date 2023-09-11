@@ -24,6 +24,9 @@ const [items, setItems] = useState([]);
        }
      )
  }, []);
+  if(items){
+      console.log(items);
+  }
     return (
       <>
         {items &&
