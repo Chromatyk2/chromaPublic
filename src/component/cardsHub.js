@@ -6,15 +6,19 @@ import 'react-tooltip/dist/react-tooltip.css'
 import MyCards from './myCards.js';
 import NavBar from "./navbar";
 function CardsHub() {
-    const [cookies, setCookie] = useCookies();
+    const [page, setPage] = useCookies(null);
+    function displayMyCards(e) {
+        setPage(e.value)
+    }
     return(
         <>
-            <NavBar cookies={cookies} />
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/29ct92B3ZrvxGT/mesCartes" element={<MyCards cookies={cookies} />} />
-                </Routes>
-            </BrowserRouter>
+            <div className="leaderBoardSwitch">
+                <button value="myCards" onClick={displayNormalLaderboard}>Global</button>
+                <button value="1" onClick={displayShinyLaderboard}>Shiny</button>
+            </div>
+            {page == "myCards" &&
+                <MyCards />
+            }
         </>
     );
 }
