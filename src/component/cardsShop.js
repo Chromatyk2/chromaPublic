@@ -7,6 +7,8 @@ import '../App.css'
 import moment from 'moment';
 
 function CardsShop(props) {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/sets")
