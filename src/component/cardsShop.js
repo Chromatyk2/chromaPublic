@@ -12,6 +12,7 @@ function CardsShop(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
     const [points,setPoints] = useState(-1);
+    const [loading,setLoading] = useState(false);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/sets")
             .then(res => res.json())
@@ -34,6 +35,7 @@ function CardsShop(props) {
             })
     }, [])
     function buyBooster(e) {
+        setLoading(true);
         return Axios.post('/api/removeCardsPoint',
                 {
                     user:props.user
@@ -51,8 +53,10 @@ function CardsShop(props) {
                             {
                                 pseudo:props.user,
                                 booster:e.target.value
-                            })
-                    }
+                            }).then(
+                            (result) => {
+                                setLoading(false);
+                            }
                 )
             }
         )
@@ -95,7 +99,10 @@ function CardsShop(props) {
                                 <p className="pokemonNameTrade">{val.name}</p>
                                 <p className="pokemonNameTrade">1000 Cards Points</p>
                                 {points > 999 ?
-                                    <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                    loading === true ?
+                                        <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                        :
+                                        <button className="guessTradeButton">Chargement</button>
                                     :
                                     <button className="guessTradeButton">Card Points manquants</button>
                                 }
