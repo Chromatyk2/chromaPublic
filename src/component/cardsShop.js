@@ -94,7 +94,7 @@ function CardsShop(props) {
                 </div>
                 <div id={"cardsContainer"}>
                     {items &&
-                        items.slice(0,1).map((val, key) => {
+                        items.slice(0,2).map((val, key) => {
                             return(
                                 <div className="uniqueTradeContainer">
                                     <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
