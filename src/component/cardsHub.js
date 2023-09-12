@@ -21,21 +21,7 @@ function CardsHub(props) {
     function displayTcgContent(e) {
         setPage(e.target.value)
     }
-    function registerCards(e) {
-        return Axios.post('/api/registerCards',
-            {
-                pseudo:e.target.value
-            }
-            ).then(
-            (result) => {
-                Axios
-                    .get("/api/getCardsPoint/"+e.target.value)
-                    .then(function(response){
-                        setPoints(response.data[0].points);
-                    })
-            }
-        )
-    }
+
     return(
         <>
             <div className="leaderBoardSwitch">

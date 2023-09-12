@@ -40,20 +40,36 @@ function CardsShop(props) {
                 }
         ).then(
             (result) => {
-                Axios.post('/api/addBooster',
-                    {
-                        pseudo:props.user,
-                        booster:e.target.value
-                    }
-                ).then(
+                Axios
+                    .get("/api/getCardsPoint/"+props.user)
+                    .then(function(response){
+                        setPoints(response.data[0].points);
+                    }).then(
                     (result) => {
-                        Axios
-                            .get("/api/getCardsPoint/"+pseudo)
-                            .then(function(response){
-                                setPoints(response.data[0].points);
+
+                        Axios.post('/api/addBooster',
+                            {
+                                pseudo:props.user,
+                                booster:e.target.value
                             })
                     }
                 )
+            }
+        )
+    }
+
+    function registerCards(e) {
+        return Axios.post('/api/registerCards',
+            {
+                pseudo:e.target.value
+            }
+        ).then(
+            (result) => {
+                Axios
+                    .get("/api/getCardsPoint/"+e.target.value)
+                    .then(function(response){
+                        setPoints(response.data[0].points);
+                    })
             }
         )
     }
