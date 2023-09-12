@@ -36,6 +36,7 @@ function CardsShop(props) {
     }, [])
     function buyBooster(e) {
         setLoading(true);
+        var idBooster = e.target.value;
         return Axios.post('/api/removeCardsPoint',
                 {
                     user:props.user
@@ -51,7 +52,7 @@ function CardsShop(props) {
                         Axios.post('/api/addBooster',
                             {
                                 pseudo:props.user,
-                                booster:e.target.value
+                                booster:idBooster
                             }).then(
                             (result) => {
                                 setLoading(false);
