@@ -50,7 +50,7 @@ function CardsShop(props) {
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 <p className="pokemonNameTrade">{val.name}</p>
                                 <p className="pokemonNameTrade">1000 Cards Points</p>
-                                {props.points > 1000 ?
+                                {props.points > 999 ?
                                     <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
                                     :
                                     <button className="guessTradeButton">Card Points manquants</button>
