@@ -8,7 +8,7 @@ import CardsShop from './cardsShop.js';
 import NavBar from "./navbar";
 import Axios from 'axios'
 function CardsHub(props) {
-    const [points,setPoints] = useState(null);
+    const [points,setPoints] = useState(-1);
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
@@ -45,7 +45,7 @@ function CardsHub(props) {
             </div>
             <div>
                 {points &&
-                    points === "undefined" ?
+                    points == -1 ?
                         <div className="leaderBoardSwitch">
                             <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
                         </div>
