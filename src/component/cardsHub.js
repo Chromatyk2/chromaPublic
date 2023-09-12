@@ -6,6 +6,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 import MyCards from './myCards.js';
 import CardsShop from './cardsShop.js';
 import NavBar from "./navbar";
+import Axios from 'axios'
 function CardsHub(props) {
     const [points,setPoints] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
