@@ -6,11 +6,21 @@ import 'react-tooltip/dist/react-tooltip.css'
 import MyCards from './myCards.js';
 import CardsShop from './cardsShop.js';
 import NavBar from "./navbar";
-function CardsHub() {
+function CardsHub(props) {
+    const [points,setPoints] = useState(null);
+    const pseudo = props.cookies.user.data[0].login;
+    useEffect(() => {
+        Axios
+            .get("/api/getCardsPoint/"+pseudo)
+            .then(function(response){
+                setPoints(response.data);
+            })
+    }, [])
     const [page, setPage] = useState(null);
     function displayTcgContent(e) {
         setPage(e.target.value)
     }
+    console.log(points);
     return(
         <>
             <div className="leaderBoardSwitch">
