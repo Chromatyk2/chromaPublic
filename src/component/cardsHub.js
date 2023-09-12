@@ -36,7 +36,7 @@ function CardsHub(props) {
             }
         )
     }
-    console.log(points);
+    console.log(points.data[0]);
     return(
         <>
             <div className="leaderBoardSwitch">
@@ -50,7 +50,9 @@ function CardsHub(props) {
                             <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
                         </div>
                     :
+                    <>
                         <p>Cards Point : {points[0].points}</p>
+                    </>
                 }
             </div>
             <div className={"allCards"}>
