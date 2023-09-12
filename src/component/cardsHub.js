@@ -21,6 +21,21 @@ function CardsHub(props) {
     function displayTcgContent(e) {
         setPage(e.target.value)
     }
+    function registerCards(e) {
+        return Axios.post('/api/registerCards',
+            {
+                user:e.target.value
+            }
+            ).then(
+            (result) => {
+                Axios
+                    .get("/api/getCardsPoint/"+e.target.value)
+                    .then(function(response){
+                        setPoints(response.data);
+                    })
+            }
+        )
+    }
     console.log(points);
     return(
         <>
@@ -31,7 +46,9 @@ function CardsHub(props) {
             <div>
                 {points &&
                     points.length == 0 ?
-                        <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
+                        <div className="leaderBoardSwitch">
+                            <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
+                        </div>
                     :
                         <p>Cards Point : {points}</p>
                 }
