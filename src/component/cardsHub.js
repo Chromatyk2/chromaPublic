@@ -31,7 +31,7 @@ function CardsHub(props) {
                 Axios
                     .get("/api/getCardsPoint/"+e.target.value)
                     .then(function(response){
-                        setPoints(response.data);
+                        setPoints(response.data[0].points);
                     })
             }
         )
