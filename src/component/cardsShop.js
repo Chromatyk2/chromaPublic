@@ -27,7 +27,11 @@ function CardsShop(props) {
     return (
         <>
                 {items &&
-                    <img className="fit-picture" src={"https://images.pokemontcg.io/" + items[0].id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                    items.slice(0,1).items.map((val, key) => {
+                        return(
+                            <img class="fit-picture" src={"https://images.pokemontcg.io/"+val.id+"/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                        )
+                    })
                 }
         </>
     )
