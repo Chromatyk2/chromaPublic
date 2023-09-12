@@ -100,7 +100,7 @@ function CardsShop(props) {
                                 <p className="pokemonNameTrade">{val.name}</p>
                                 <p className="pokemonNameTrade">1000 Cards Points</p>
                                 {points > 999 ?
-                                    loading === true ?
+                                    loading === false ?
                                         <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
                                         :
                                         <button className="guessTradeButton">Chargement</button>
