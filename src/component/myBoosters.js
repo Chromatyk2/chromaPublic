@@ -20,7 +20,6 @@ function MyBoosters(props) {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            backgroundColor:'rgba(0,0,0,0.75)'
         },
     };
     function openModal() {
