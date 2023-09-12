@@ -45,13 +45,13 @@ function CardsHub(props) {
             </div>
             <div>
                 {points &&
-                    points.length == 0 ?
+                    points === null ?
                         <div className="leaderBoardSwitch">
                             <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
                         </div>
                     :
                     <>
-                        <p>Cards Point :</p>
+                        <p>Cards Point : {points}</p>
                     </>
                 }
             </div>
