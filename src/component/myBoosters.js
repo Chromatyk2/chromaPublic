@@ -25,7 +25,7 @@ function MyBoosters(props) {
     function openModal() {
         setIsOpen(true);
     }
-    
+
     function closeModal() {
         setIsOpen(false);
     }
@@ -53,7 +53,6 @@ function MyBoosters(props) {
             </div>
             <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
