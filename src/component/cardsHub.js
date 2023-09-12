@@ -36,25 +36,12 @@ function CardsHub(props) {
             }
         )
     }
-    console.log(points);
     return(
         <>
             <div className="leaderBoardSwitch">
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
-            </div>
-            <div>
-                {points &&
-                    points == -1 ?
-                        <div className="myPointsDisplay">
-                            <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
-                        </div>
-                    :
-                        <div className="myPointsDisplay">
-                            <p>Cards Point : {points}</p>
-                        </div>
-                }
             </div>
             <div className={"allCards"}>
                 <div>

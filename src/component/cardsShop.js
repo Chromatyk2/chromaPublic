@@ -11,6 +11,7 @@ function CardsShop(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
+    const [points,setPoints] = useState(-1);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/sets")
             .then(res => res.json())
@@ -25,6 +26,13 @@ function CardsShop(props) {
                 }
             )
     }, []);
+    useEffect(() => {
+        Axios
+            .get("/api/getCardsPoint/"+pseudo)
+            .then(function(response){
+                setPoints(response.data[0].points);
+            })
+    }, [])
     function buyBooster(e) {
         return Axios.post('/api/removeCardsPoint',
                 {
@@ -37,12 +45,32 @@ function CardsShop(props) {
                         pseudo:props.user,
                         booster:e.target.value
                     }
+                ).then(
+                    (result) => {
+                        Axios
+                            .get("/api/getCardsPoint/"+pseudo)
+                            .then(function(response){
+                                setPoints(response.data[0].points);
+                            })
+                    }
                 )
             }
         )
     }
     return (
         <>
+                <div>
+                    {points &&
+                    points == -1 ?
+                        <div className="myPointsDisplay">
+                            <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
+                        </div>
+                        :
+                        <div className="myPointsDisplay">
+                            <p>Cards Point : {points}</p>
+                        </div>
+                    }
+                </div>
                 {items &&
                     items.slice(0,1).map((val, key) => {
                         return(
@@ -50,7 +78,7 @@ function CardsShop(props) {
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 <p className="pokemonNameTrade">{val.name}</p>
                                 <p className="pokemonNameTrade">1000 Cards Points</p>
-                                {props.points > 999 ?
+                                {points > 999 ?
                                     <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
                                     :
                                     <button className="guessTradeButton">Card Points manquants</button>
