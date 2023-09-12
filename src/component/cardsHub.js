@@ -28,7 +28,14 @@ function CardsHub(props) {
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
             </div>
-
+            <div>
+                {points &&
+                    points.length == 0 ?
+                        <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
+                    :
+                        <p>Cards Point : {points}</p>
+                }
+            </div>
             <div className={"allCards"}>
                 <div>
                     <iframe id="twitch-chat-embed"
