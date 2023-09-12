@@ -43,14 +43,12 @@ function CardsHub(props) {
                     {/*    allowFullScreen>*/}
                     {/*</iframe>*/}
                 </div>
-                <div id={"cardsContainer"}>
                     {page == "myCards" &&
                         <MyCards />
                     }
                     {page == "cardsShop" &&
                         <CardsShop user={pseudo} points={points}/>
                     }
-                </div>
             </div>
         </>
     );

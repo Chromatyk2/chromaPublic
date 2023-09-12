@@ -26,6 +26,7 @@ function MyCards(props) {
     }, []);
     return (
         <>
+            <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
                         return(
@@ -33,6 +34,7 @@ function MyCards(props) {
                         )
                     })
                 }
+            </div>
         </>
     )
 }

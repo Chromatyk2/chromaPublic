@@ -93,25 +93,27 @@ function CardsShop(props) {
                         </div>
                     }
                 </div>
-                {items &&
-                    items.slice(0,1).map((val, key) => {
-                        return(
-                            <div className="uniqueTradeContainer">
-                                <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                                <p className="pokemonNameTrade">{val.name}</p>
-                                <p className="pokemonNameTrade">1000 Cards Points</p>
-                                {points > 999 ?
-                                    loading === false ?
-                                        <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                <div id={"cardsContainer"}>
+                    {items &&
+                        items.slice(0,1).map((val, key) => {
+                            return(
+                                <div className="uniqueTradeContainer">
+                                    <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                                    <p className="pokemonNameTrade">{val.name}</p>
+                                    <p className="pokemonNameTrade">1000 Cards Points</p>
+                                    {points > 999 ?
+                                        loading === false ?
+                                            <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                            :
+                                            <button className="guessTradeButton">Chargement</button>
                                         :
-                                        <button className="guessTradeButton">Chargement</button>
-                                    :
-                                    <button className="guessTradeButton">Card Points manquants</button>
-                                }
-                            </div>
-                        )
-                    })
-                }
+                                        <button className="guessTradeButton">Card Points manquants</button>
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div>
         </>
     )
 }
