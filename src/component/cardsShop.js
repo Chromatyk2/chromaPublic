@@ -28,7 +28,7 @@ function CardsShop(props) {
     }, []);
     useEffect(() => {
         Axios
-            .get("/api/getCardsPoint/"+pseudo)
+            .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
                 setPoints(response.data[0].points);
             })
@@ -79,7 +79,7 @@ function CardsShop(props) {
                     {points &&
                     points == -1 ?
                         <div className="myPointsDisplay">
-                            <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
+                            <button value={props.user} onClick={registerCards}>S'enregistrer</button>
                         </div>
                         :
                         <div className="myPointsDisplay">
