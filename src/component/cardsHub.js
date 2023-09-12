@@ -26,7 +26,7 @@ function CardsHub() {
                             width="350">
                     </iframe>
                 </div>
-                <div>
+                <div id={"cardsContainer"}>
                     {page == "myCards" &&
                         <MyCards />
                     }

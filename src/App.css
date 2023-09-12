@@ -1386,7 +1386,19 @@ div#odds {
     gap: 30px;
 }
 .fit-picture{
-    width: 200px;
+    width: 250px;
+}
+#twitch-chat-embed{
+    position: fixed;
+    right: 25px;
+    top:65px;
+}
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    gap: 14px;
+    margin: auto;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
