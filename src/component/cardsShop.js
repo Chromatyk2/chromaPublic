@@ -25,6 +25,22 @@ function CardsShop(props) {
                 }
             )
     }, []);
+    function buyBooster(e) {
+        return Axios.post('/api/addBooster',
+            {
+                pseudo:props.user
+                booster:e.target.value
+            }
+        ).then(
+            (result) => {
+                Axios
+                    .get("/api/getCardsPoint/"+e.target.value)
+                    .then(function(response){
+                        setPoints(response.data[0].points);
+                    })
+            }
+        )
+    }
     return (
         <>
                 {items &&
@@ -35,9 +51,9 @@ function CardsShop(props) {
                                 <p className="pokemonNameTrade">{val.name}</p>
                                 <p className="pokemonNameTrade">1000 Cards Points</p>
                                 {props.points > 1000 ?
-                                    <button className="guessTradeButton">Acheter</button>
+                                    <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
                                     :
-                                    <button className="guessTradeButton">Card Points manaquants</button>
+                                    <button className="guessTradeButton">Card Points manquants</button>
                                 }
                             </div>
                         )

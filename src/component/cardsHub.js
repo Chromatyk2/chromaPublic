@@ -41,6 +41,7 @@ function CardsHub(props) {
         <>
             <div className="leaderBoardSwitch">
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
+                <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
             </div>
             <div>
@@ -74,7 +75,7 @@ function CardsHub(props) {
                         <MyCards />
                     }
                     {page == "cardsShop" &&
-                        <CardsShop points={points}/>
+                        <CardsShop user={pseudo} points={points}/>
                     }
                 </div>
             </div>
