@@ -34,7 +34,11 @@ function CardsShop(props) {
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 <p className="pokemonNameTrade">{val.name}</p>
                                 <p className="pokemonNameTrade">1000 Cards Points</p>
-                                <button className="guessTradeButton">Acheter</button>
+                                {props.points > 1000 ?
+                                    <button className="guessTradeButton">Acheter</button>
+                                    :
+                                    <button className="guessTradeButton">Card Points manaquants</button>
+                                }
                             </div>
                         )
                     })

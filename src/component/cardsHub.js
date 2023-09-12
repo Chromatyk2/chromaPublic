@@ -74,7 +74,7 @@ function CardsHub(props) {
                         <MyCards />
                     }
                     {page == "cardsShop" &&
-                        <CardsShop />
+                        <CardsShop points={points}/>
                     }
                 </div>
             </div>
