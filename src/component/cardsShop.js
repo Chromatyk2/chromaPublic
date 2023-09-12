@@ -28,7 +28,7 @@ function CardsShop(props) {
     function buyBooster(e) {
         return Axios.post('/api/removeCardsPoint',
                 {
-                    user:props.user,
+                    user:"chromatyk",
                 }
         )
     }
