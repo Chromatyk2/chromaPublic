@@ -85,7 +85,6 @@ function CardsShop(props) {
                     {points &&
                     points == -1 ?
                         <div className="myPointsDisplay">
-                            <button value={props.user} onClick={registerCards}>S'enregistrer</button>
                         </div>
                         :
                         <div className="myPointsDisplay">
