@@ -51,7 +51,7 @@ function CardsHub(props) {
                         </div>
                     :
                     <>
-                        <p>Cards Point : {points[0].points}</p>
+                        <p>Cards Point :</p>
                     </>
                 }
             </div>
