@@ -1400,6 +1400,15 @@ div#odds {
     gap: 14px;
     margin: auto;
 }
+.myPointsDisplay button{
+    background: none;
+    border: none;
+}
+.myPointsDisplay{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
