@@ -36,7 +36,6 @@ function CardsHub(props) {
             }
         )
     }
-    console.log(points.data[0]);
     return(
         <>
             <div className="leaderBoardSwitch">
@@ -51,7 +50,7 @@ function CardsHub(props) {
                         </div>
                     :
                     <>
-                        <p>Cards Point : {points[0].points}</p>
+                        <p>Cards Point : {points.data[0].points}</p>
                     </>
                 }
             </div>
