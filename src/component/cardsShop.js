@@ -48,7 +48,6 @@ function CardsShop(props) {
                         setPoints(response.data[0].points);
                     }).then(
                     (result) => {
-
                         Axios.post('/api/addBooster',
                             {
                                 pseudo:props.user,
@@ -57,6 +56,8 @@ function CardsShop(props) {
                             (result) => {
                                 setLoading(false);
                             }
+                        )
+                    }
                 )
             }
         )
