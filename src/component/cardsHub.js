@@ -50,7 +50,7 @@ function CardsHub(props) {
                             <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
                         </div>
                     :
-                        <p>Cards Point : {points}</p>
+                        <p>Cards Point : {points[0].points}</p>
                 }
             </div>
             <div className={"allCards"}>
