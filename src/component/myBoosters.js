@@ -50,7 +50,7 @@ function MyBoosters(props) {
                             <div className="uniqueTradeContainer">
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 <p className="pokemonNameTrade">Possédé(s) : {val.nbBooster}</p>
-                                <button className="guessTradeButton">Ouvrir</button>
+                                <button onClick={openModal} className="guessTradeButton">Ouvrir</button>
                             </div>
                         )
                     })
