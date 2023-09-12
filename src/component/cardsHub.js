@@ -45,7 +45,7 @@ function CardsHub(props) {
             </div>
             <div>
                 {points &&
-                    points === null ?
+                    points === "undefined" ?
                         <div className="leaderBoardSwitch">
                             <button value={pseudo} onClick={registerCards}>S'enregistrer</button>
                         </div>
