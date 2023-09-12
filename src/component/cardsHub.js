@@ -7,6 +7,7 @@ import MyCards from './myCards.js';
 import CardsShop from './cardsShop.js';
 import NavBar from "./navbar";
 import Axios from 'axios'
+import MyBoosters from "./myBoosters";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const pseudo = props.cookies.user.data[0].login;
@@ -48,6 +49,9 @@ function CardsHub(props) {
                     }
                     {page == "cardsShop" &&
                         <CardsShop user={pseudo} points={points}/>
+                    }
+                    {page == "myBoosters" &&
+                        <MyBoosters user={pseudo}/>
                     }
             </div>
         </>
