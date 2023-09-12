@@ -27,18 +27,9 @@ function CardsShop(props) {
     }, []);
     function buyBooster(e) {
         return Axios.post('/api/removeCardsPoint',
-            {
-                user:props.user
-            }
-        ).then(
-            (result) => {
-                Axios.post('/api/addBooster',
-                    {
-                        pseudo:props.user,
-                        booster:e.target.value
-                    }
-                )
-            }
+                {
+                    user:props.user,
+                }
         )
     }
     return (
