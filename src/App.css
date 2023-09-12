@@ -1393,7 +1393,7 @@ div#odds {
     right: 25px;
     top:65px;
 }
-.cardsContainer{
+#cardsContainer{
     display: flex;
     flex-wrap: wrap;
     width: 75%;
