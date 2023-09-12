@@ -62,12 +62,12 @@ function CardsHub(props) {
                             height="500"
                             width="350">
                     </iframe>
-                    <iframe
-                        src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr"
-                        height="<height>"
-                        width="<width>"
-                        allowFullScreen>
-                    </iframe>
+                    {/*<iframe*/}
+                    {/*    src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr"*/}
+                    {/*    height="<height>"*/}
+                    {/*    width="<width>"*/}
+                    {/*    allowFullScreen>*/}
+                    {/*</iframe>*/}
                 </div>
                 <div id={"cardsContainer"}>
                     {page == "myCards" &&
