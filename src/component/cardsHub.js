@@ -24,7 +24,7 @@ function CardsHub(props) {
     function registerCards(e) {
         return Axios.post('/api/registerCards',
             {
-                user:e.target.value
+                pseudo:e.target.value
             }
             ).then(
             (result) => {
