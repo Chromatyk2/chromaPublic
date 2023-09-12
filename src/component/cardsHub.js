@@ -19,17 +19,21 @@ function CardsHub() {
             </div>
 
             <div className={"allCards"}>
-                <iframe id="twitch-chat-embed"
-                        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"
-                        height="500"
-                        width="350">
-                </iframe>
-                {page == "myCards" &&
-                    <MyCards />
-                }
-                {page == "cardsShop" &&
-                    <CardsShop />
-                }
+                <div>
+                    <iframe id="twitch-chat-embed"
+                            src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"
+                            height="500"
+                            width="350">
+                    </iframe>
+                </div>
+                <div>
+                    {page == "myCards" &&
+                        <MyCards />
+                    }
+                    {page == "cardsShop" &&
+                        <CardsShop />
+                    }
+                </div>
             </div>
         </>
     );
