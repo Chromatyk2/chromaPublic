@@ -1440,9 +1440,6 @@ div#odds {
     60% {
         transform:scale(1.1);
     }
-    80% {
-        transform:scale(0.9);
-    }
     100% {
         visibility: hidden;
         transform:scale(0);
@@ -1463,10 +1460,12 @@ div#odds {
     }
 }
 .showBooster{
-    animation:bounceIn 1s ease-in-out;
+    animation:bounceIn 1s;
+    animation-fill-mode: forwards;
 }
 .hiddenBooster{
-    animation:bounceOut 1s ease-in-out;
+    animation:bounceOut 1s;
+    animation-fill-mode: forwards;
 }
 .hiddenCards{
     visibility: hidden;
