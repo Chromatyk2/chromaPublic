@@ -17,7 +17,7 @@ function OpeningBooster(props) {
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    setItems(result);
+                    setItems(result.cards);
                 },
                 (error) => {
                     setIsLoaded(true);
