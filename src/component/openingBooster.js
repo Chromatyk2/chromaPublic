@@ -27,7 +27,7 @@ function OpeningBooster(props) {
             )
     }, []);
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/fr/cards/"+item[Math.floor(Math.random() * items.length)])
+        fetch("https://api.tcgdex.net/v2/fr/cards/"+items[Math.floor(Math.random() * items.length)])
             .then(res => res.json())
             .then(
                 (result) => {
