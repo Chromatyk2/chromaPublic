@@ -8,23 +8,27 @@ import moment from 'moment';
 import Modal from 'react-modal';
 
 function OpeningCards(props) {
-    const [tenCards, setTenCards] = useState(null);
+    const [tenCards, setTenCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
+    const [nbCards, setNbCards] = useState(0);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(true);
-                    setTenCards(result);
+                    if(result.rarity == "Commune"){
+                        setIsLoaded(true);
+                        setTenCards(tenCards => [...tenCards,result]);
+                        setNbCards(nbCards +1);
+                    }
                 },
                 (error) => {
                     setIsLoaded(true);
                     setError(error);
                 }
             )
-    }, []);
+    }, [nbCards < 4]);
     console.log(tenCards)
     return (
         <>
