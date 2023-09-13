@@ -8,6 +8,22 @@ import moment from 'moment';
 import Modal from 'react-modal';
 
 function OpeningBooster(props) {
+    const [items, setItems] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    useEffect(() => {
+        fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setItems(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, []);
        return (
         <>
             <p>{props.idBooster}</p>
