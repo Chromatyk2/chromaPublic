@@ -11,7 +11,7 @@ function OpeningCards(props) {
     const [tenCards, setTenCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
-    var nbCards = 0;
+    const [nbCards, setNbCards] = useState(0);
     useEffect(() => {
        fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
        .then(res => res.json())
@@ -20,7 +20,7 @@ function OpeningCards(props) {
                if(result.rarity == "Commune"){
                    setIsLoaded(true);
                    setTenCards(tenCards => [...tenCards,result]);
-                   nbCards = nbCards + 1;
+                   setNbCards (nbCards + 1);
                }
            },
            (error) => {
@@ -29,6 +29,7 @@ function OpeningCards(props) {
            }
        )
    }, [])
+    console.log(tenCards);
    console.log(nbCards);
     return (
         <>
