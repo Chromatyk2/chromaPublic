@@ -6,6 +6,7 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
+import OpeningCards from "./openingCards";
 
 function OpeningBooster(props) {
     const [items, setItems] = useState(null);
@@ -26,12 +27,11 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
-        useEffect(() => {
-                console.log(items[Math.floor(Math.random() * items.length)].id);
-        }, [items]);
     return (
         <>
-            <p>{props.idBooster}</p>
+            {items &&
+                <OpeningCards items={items}/>
+            }
         </>
     )
 }
