@@ -27,7 +27,9 @@ function OpeningBooster(props) {
             )
     }, []);
     if(items !== null){
-        console.log(items[Math.floor(Math.random() * items.length)].id);
+        useEffect(() => {
+            console.log(items[Math.floor(Math.random() * items.length)].id);
+        }, []);
     }
     return (
         <>
