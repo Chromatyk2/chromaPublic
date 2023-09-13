@@ -24,7 +24,7 @@ function OpeningCards(props) {
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                             }else{
-                                setNbCards(nbCards);
+                                setNbCards(nbCards + 0);
                             }
                         }else if(nbCards > 7 && nbCards < 10){
                             if(result.rarity == "Peu Commune"){
@@ -32,7 +32,7 @@ function OpeningCards(props) {
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                             }else{
-                                setNbCards(nbCards);
+                                setNbCards(nbCards + 0);
                             }
                         }else if(nbCards == 9){
                             if(result.rarity == "Rare"){
@@ -40,7 +40,7 @@ function OpeningCards(props) {
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                             }else{
-                                setNbCards(nbCards);
+                                setNbCards(nbCards + 0);
                             }
                         }
                     }
