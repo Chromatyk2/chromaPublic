@@ -9,7 +9,7 @@ import Modal from 'react-modal';
 
 function OpeningCards(props) {
     const [tenCards, setTenCards] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(true);
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
     useEffect(() => {
@@ -45,12 +45,17 @@ function OpeningCards(props) {
                         }
                     }
                 )
+        }else{
+            setIsLoaded(false);
         }
     }, [nbCards])
    console.log(tenCards.length);
    console.log(nbCards);
     return (
         <>
+            {isLoaded &&
+                <p>Chargement ...</p>
+            }
             {tenCards &&
                 tenCards.map((val, key) => {
                     return(
