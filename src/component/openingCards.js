@@ -54,7 +54,7 @@ function OpeningCards(props) {
             {tenCards &&
                 tenCards.map((val, key) => {
                     return(
-                        <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img class="fit-picture dropCards" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }

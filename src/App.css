@@ -1410,6 +1410,10 @@ div#odds {
     width: 100%;
     justify-content: center;
 }
+.dropCards{
+    width: 350px;
+    position: absolute;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
