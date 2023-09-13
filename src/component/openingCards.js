@@ -13,7 +13,7 @@ function OpeningCards(props) {
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
     useEffect(() => {
-        if (nbCards < 11) {
+        if (tenCards.length < 11) {
             fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
                 .then(res => res.json())
                 .then(
@@ -24,7 +24,7 @@ function OpeningCards(props) {
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                             }else{
-                                setNbCards(nbCards + 0);
+                                setNbCards(nbCards + 1);
                             }
                         }else if(nbCards > 7 && nbCards < 10){
                             if(result.rarity == "Peu Commune"){
@@ -32,7 +32,7 @@ function OpeningCards(props) {
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                             }else{
-                                setNbCards(nbCards + 0);
+                                setNbCards(nbCards + 1);
                             }
                         }else if(nbCards == 9){
                             if(result.rarity == "Rare"){
@@ -40,7 +40,7 @@ function OpeningCards(props) {
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                             }else{
-                                setNbCards(nbCards + 0);
+                                setNbCards(nbCards + 1);
                             }
                         }
                     }
