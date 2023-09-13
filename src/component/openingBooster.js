@@ -26,7 +26,9 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
-    console.log(items[Math.floor(Math.random() * items.length)].id);
+    if(items !== null){
+        console.log(items[Math.floor(Math.random() * items.length)].id);
+    }
     return (
         <>
             <p>{props.idBooster}</p>
