@@ -51,7 +51,7 @@ function OpeningCards(props) {
     }, [nbCards])
     const customStyles = {
         cardsDrawed: {
-            visibility:hidden,
+            visibility:'hidden',
         },
     };
     return (
