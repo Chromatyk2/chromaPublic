@@ -25,8 +25,8 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
-
-       return (
+    console.log(items);
+    return (
         <>
             <p>{props.idBooster}</p>
         </>
