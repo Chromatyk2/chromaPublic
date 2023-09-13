@@ -1420,6 +1420,7 @@ div#odds {
 }
 @keyframes bounceIn {
     0% {
+        visibility: visible;
         transform:scale(0.0001);
     }
     60% {
@@ -1432,12 +1433,26 @@ div#odds {
         transform:scale(1);
     }
 }
+@keyframes bounceOut {
+    0% {
+        transform:scale(1);
+    }
+    60% {
+        transform:scale(1.1);
+    }
+    80% {
+        transform:scale(0.9);
+    }
+    100% {
+        visibility: hidden;
+        transform:scale(0);
+    }
+}
 .showBooster{
     animation:bounceIn 1s ease-in-out;
-    visibility: visible;
 }
 .hiddenBooster{
-    visibility: hidden;
+    animation:bounceOut 1s ease-in-out;
 }
 .hiddenCards{
     visibility: hidden;
