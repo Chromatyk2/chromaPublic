@@ -1463,11 +1463,11 @@ div#odds {
     }
 }
 @keyframes moveCard {
-    from {
+    0% {
         transform: rotate(0deg);
     }
-    to {
-        transform: rotate(60deg) translate(3rem, 3rem);
+    100% {
+        transform: translate(20em) rotate(60deg);
     }
 }
 .showBooster{
@@ -1492,7 +1492,6 @@ div#odds {
 .gettedCard{
     animation:moveCard 0.7s;
     animation-fill-mode: forwards;
-    animation-delay: 0s;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
