@@ -13,6 +13,7 @@ function MyBoosters(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [boosters, setBoosters] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [boosterId, setBoosterId] = React.useState(null);
     const customStyles = {
         content: {
             top: '50%',
@@ -25,7 +26,9 @@ function MyBoosters(props) {
             background:'none'
         },
     };
-    function openModal() {
+    function openModal(e) {
+        var id = e.target.value;
+        setBoosterId(id);
         setIsOpen(true);
     }
 
@@ -48,7 +51,7 @@ function MyBoosters(props) {
                             <div className="uniqueTradeContainer">
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 <p className="pokemonNameTrade">Possédé(s) : {val.nbBooster}</p>
-                                <button onClick={openModal} className="guessTradeButton">Ouvrir</button>
+                                <button value={val.booster} onClick={openModal} className="guessTradeButton">Ouvrir</button>
                             </div>
                         )
                     })
@@ -60,7 +63,7 @@ function MyBoosters(props) {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <OpeningBooster />
+                <OpeningBooster idBooster={boosterId}/>
             </Modal>
         </>
     )

@@ -10,7 +10,7 @@ import Modal from 'react-modal';
 function OpeningBooster(props) {
        return (
         <>
-            <p>Test</p>
+            <p>{props.idBooster}</p>
         </>
     )
 }
