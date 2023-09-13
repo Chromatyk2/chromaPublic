@@ -31,7 +31,7 @@ function OpeningBooster(props) {
     return (
         <>
             {items &&
-                <OpeningCards items={items}/>
+                <OpeningCards idBooster={props.idBooster} items={items}/>
             }
         </>
     )

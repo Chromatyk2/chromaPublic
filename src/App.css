@@ -1414,6 +1414,10 @@ div#odds {
     width: 350px;
     position: absolute;
 }
+.dropBooster{
+    width: 350px;
+    position: absolute;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;

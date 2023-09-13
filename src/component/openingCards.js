@@ -54,9 +54,7 @@ function OpeningCards(props) {
     };
     return (
         <>
-            {isLoaded &&
-                <p>Chargement ...</p>
-            }
+            <img className="dropBooster fit-picture" src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
             {tenCards &&
                 tenCards.map((val, key) => {
                     return(
