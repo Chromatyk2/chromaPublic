@@ -39,7 +39,7 @@ function OpeningBooster(props) {
                     setError(error);
                 }
             )
-    }, [items]);
+    }, [items !== null]);
     console.log(tenCards);
     return (
         <>
