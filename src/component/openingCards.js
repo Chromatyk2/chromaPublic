@@ -19,7 +19,7 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        if(tenCards.length < 8){
+                        if(tenCards.length < 7){
                             if(result.rarity == "Commune"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
@@ -27,7 +27,7 @@ function OpeningCards(props) {
                             }else{
                                 setNbCards(nbCards + 1);
                             }
-                        }else if(tenCards.length > 7 && tenCards.length < 10){
+                        }else if(tenCards.length > 6 && tenCards.length < 9){
                             if(result.rarity == "Peu Commune"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
