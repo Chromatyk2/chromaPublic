@@ -13,6 +13,7 @@ function OpeningBooster(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
+
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
