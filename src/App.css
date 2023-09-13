@@ -1424,12 +1424,15 @@ div#odds {
         transform:scale(0.0001);
     }
     60% {
+        visibility: visible;
         transform:scale(1.1);
     }
     80% {
+        visibility: visible;
         transform:scale(0.9);
     }
     100% {
+        visibility: visible;
         transform:scale(1);
     }
 }
@@ -1460,6 +1463,7 @@ div#odds {
     }
 }
 .showBooster{
+    visibility: hidden;
     animation:bounceIn 1s;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
