@@ -12,7 +12,7 @@ function OpeningCards(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
-    useEffect(() => {
+    if(nbCards < 4){
         fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
             .then(res => res.json())
             .then(
@@ -28,7 +28,7 @@ function OpeningCards(props) {
                     setError(error);
                 }
             )
-    }, [nbCards < 4]);
+    }
     console.log(tenCards)
     return (
         <>
