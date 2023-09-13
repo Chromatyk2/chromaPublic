@@ -1448,6 +1448,20 @@ div#odds {
         transform:scale(0);
     }
 }
+@keyframes bounceInCards {
+    0% {
+        transform:scale(0.0001);
+    }
+    60% {
+        transform:scale(1.1);
+    }
+    80% {
+        transform:scale(0.9);
+    }
+    100% {
+        transform:scale(1);
+    }
+}
 .showBooster{
     animation:bounceIn 1s ease-in-out;
 }
@@ -1458,7 +1472,7 @@ div#odds {
     visibility: hidden;
 }
 .showCards{
-    animation:bounceIn 1s ease-in-out;
+    animation:bounceInCards 1s ease-in-out;
     animation-delay: 2s;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
