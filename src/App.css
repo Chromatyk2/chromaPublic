@@ -1418,6 +1418,18 @@ div#odds {
     width: 350px;
     position: absolute;
 }
+.showBooster{
+    visibility: visible;
+}
+.hiddenBooster{
+    visibility: hidden;
+}
+.hiddenCards{
+    visibility: hidden;
+}
+.showCards{
+    visibility: visible;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;

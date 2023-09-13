@@ -12,6 +12,7 @@ function OpeningCards(props) {
     const [isLoaded, setIsLoaded] = useState(true);
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
+    const [isHidden, setIsHidden] = useState(true);
     useEffect(() => {
         if (tenCards.length < 11) {
             fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
@@ -47,18 +48,16 @@ function OpeningCards(props) {
                 )
         }
     }, [nbCards])
-    const customStyles = {
-        cardsDrawed: {
-            visibility:'hidden',
-        },
-    };
+    function showCards() {
+        setIsHidden(false);
+    }
     return (
         <>
-            <img className="dropBooster fit-picture" src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+            <img  onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
             {tenCards &&
                 tenCards.map((val, key) => {
                     return(
-                        <img style={customStyles.cardsDrawed} class="fit-picture dropCards" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img class={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
