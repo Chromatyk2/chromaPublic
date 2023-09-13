@@ -51,7 +51,13 @@ function OpeningCards(props) {
    console.log(nbCards);
     return (
         <>
-            <p>Test</p>
+            {tenCards &&
+                tenCards.map((val, key) => {
+                    return(
+                        <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                    )
+                })
+            }
         </>
     )
 }
