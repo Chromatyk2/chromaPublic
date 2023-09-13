@@ -1490,8 +1490,9 @@ div#odds {
     animation-delay: 1.1s;
 }
 .gettedCard{
-    animation:moveCard 0.7s;
-    animation-fill-mode: forwards;
+    animation: moveCard 2s forwards;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
