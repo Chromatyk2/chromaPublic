@@ -1447,6 +1447,7 @@ div#odds {
 }
 @keyframes bounceInCards {
     0% {
+        visibility: visible;
         transform:scale(0.0001);
     }
     60% {
