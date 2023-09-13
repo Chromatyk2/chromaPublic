@@ -1449,16 +1449,17 @@ div#odds {
     }
 }
 .showBooster{
-    animation:bounceIn 1s ease-in-out;
+    animation:bounceIn 0.3s ease-in-out;
 }
 .hiddenBooster{
-    animation:bounceOut 1s ease-in-out;
+    animation:bounceOut 0.3s ease-in-out;
 }
 .hiddenCards{
     visibility: hidden;
 }
 .showCards{
-    visibility: visible;
+    animation:bounceIn 0.3s ease-in-out;
+    animation-delay: 0.4s;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
