@@ -49,8 +49,11 @@ function OpeningCards(props) {
             setIsLoaded(false);
         }
     }, [nbCards])
-   console.log(tenCards.length);
-   console.log(nbCards);
+    const customStyles = {
+        cardsDrawed: {
+            visibility:hidden,
+        },
+    };
     return (
         <>
             {isLoaded &&
@@ -59,7 +62,7 @@ function OpeningCards(props) {
             {tenCards &&
                 tenCards.map((val, key) => {
                     return(
-                        <img class="fit-picture dropCards" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img style={customStyles.cardsDrawed} class="fit-picture dropCards" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
