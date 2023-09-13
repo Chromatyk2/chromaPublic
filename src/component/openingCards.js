@@ -12,23 +12,23 @@ function OpeningCards(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
-    function addCardToPull(){
-       fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
-       .then(res => res.json())
-       .then(
-           (result) => {
-               if(nbCards < 4){
-                   if(result.rarity == "Commune"){
-                       setIsLoaded(true);
-                       setTenCards(tenCards => [...tenCards,result]);
-                       setNbCards (nbCards + 1);
-                   }else{
-                       return addCardToPull();
-                   }
-               }
-           }
-       )
-    }
+    useEffect(() => {
+        if (nbCards < 3) {
+            fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        if(nbCards < 4){
+                            if(result.rarity == "Commune"){
+                                setIsLoaded(true);
+                                setTenCards(tenCards => [...tenCards,result]);
+                                setNbCards (nbCards + 1);
+                            }
+                        }
+                    }
+                )
+        }
+    }, [nbCards])
    console.log(tenCards);
    console.log(nbCards);
     return (
