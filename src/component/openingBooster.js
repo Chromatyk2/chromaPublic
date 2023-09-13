@@ -10,6 +10,7 @@ import Modal from 'react-modal';
 function OpeningBooster(props) {
     const [items, setItems] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [error, setError] = useState(null);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
