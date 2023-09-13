@@ -19,7 +19,7 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        if(tenCards.length < 7){
+                        if(tenCards.length < 8){
                             if(result.rarity == "Commune"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
