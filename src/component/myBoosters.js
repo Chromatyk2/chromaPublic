@@ -6,6 +6,7 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
+import OpeningBooster from "./openingBooster";
 
 function MyBoosters(props) {
     const [error, setError] = useState(null);
@@ -57,15 +58,7 @@ function MyBoosters(props) {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                    <input />
-                    <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
-                </form>
+                <OpeningBooster />
             </Modal>
         </>
     )
