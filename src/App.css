@@ -1418,7 +1418,22 @@ div#odds {
     width: 350px;
     position: absolute;
 }
+@keyframes bounceIn {
+    0% {
+        transform:scale(0.0001);
+    }
+    60% {
+        transform:scale(1.1);
+    }
+    80% {
+        transform:scale(0.9);
+    }
+    100% {
+        transform:scale(1);
+    }
+}
 .showBooster{
+    animation:bounceIn 1s ease-in-out;
     visibility: visible;
 }
 .hiddenBooster{
