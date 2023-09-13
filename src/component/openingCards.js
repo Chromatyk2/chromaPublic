@@ -20,7 +20,7 @@ function OpeningCards(props) {
                     if(result.rarity == "Commune"){
                         setIsLoaded(true);
                         setTenCards(tenCards => [...tenCards,result]);
-                        setNbCards(nbCards +1);
+                        setNbCards(nbCards + 1);
                     }
                 },
                 (error) => {
