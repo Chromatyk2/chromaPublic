@@ -53,6 +53,7 @@ function OpeningCards(props) {
     }
     function getCard(e) {
         var idCard = e.target.value;
+        var idBooster = props.idBooster;
         e.target.classList.toggle('gettedCard');
     }
     return (
