@@ -27,10 +27,8 @@ function OpeningBooster(props) {
             )
     }, []);
         useEffect(() => {
-            if(items !== null){
                 console.log(items[Math.floor(Math.random() * items.length)].id);
-            }
-        }, []);
+        }, [items]);
     return (
         <>
             <p>{props.idBooster}</p>
