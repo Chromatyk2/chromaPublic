@@ -23,7 +23,7 @@ function OpeningCards(props) {
                        setTenCards(tenCards => [...tenCards,result]);
                        setNbCards (nbCards + 1);
                    }else{
-                       addCardToPull();
+                       return addCardToPull();
                    }
                }
            }
