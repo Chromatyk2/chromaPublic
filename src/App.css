@@ -1467,7 +1467,7 @@ div#odds {
         transform: rotate(0deg);
     }
     100% {
-        transform: translate(20em) rotate(60deg);
+        transform: translate(40em) rotate(60deg);
     }
 }
 .showBooster{
@@ -1493,6 +1493,7 @@ div#odds {
     animation: moveCard 2s forwards;
     transform-origin: 50% 50%;
     transform-box: fill-box;
+    visibility: visible;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
