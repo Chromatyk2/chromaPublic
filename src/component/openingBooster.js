@@ -11,13 +11,14 @@ function OpeningBooster(props) {
     const [items, setItems] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
+    const [tenCards, setTenCards] = useState([]);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    setItems(result.cards.id);
+                    setItems(result.cards);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -25,7 +26,21 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
-    console.log(items);
+    useEffect(() => {
+        fetch("https://api.tcgdex.net/v2/fr/cards/"+item[Math.floor(Math.random() * items.length)])
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setTenCards(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, [items]);
+    console.log(tenCards);
     return (
         <>
             <p>{props.idBooster}</p>
