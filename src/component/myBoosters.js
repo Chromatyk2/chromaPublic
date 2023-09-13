@@ -25,7 +25,9 @@ function MyBoosters(props) {
             border:'none',
             background:'none',
             width:'380px',
-            height:'100vh'
+            height:'100vh',
+            display: 'flex';
+            alignItems: 'center';
         },
     };
     function openModal(e) {
