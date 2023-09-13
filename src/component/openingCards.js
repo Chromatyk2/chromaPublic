@@ -47,7 +47,7 @@ function OpeningCards(props) {
                 )
         }
     }, [nbCards])
-   console.log(tenCards);
+   console.log(tenCards.length);
    console.log(nbCards);
     return (
         <>
