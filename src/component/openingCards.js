@@ -11,7 +11,7 @@ function OpeningCards(props) {
     const [tenCards, setTenCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
-    const [nbCards, setNbCards] = useState(0);
+    var nbCards = 0;
    if(nbCards < 4){
        fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
        .then(res => res.json())
