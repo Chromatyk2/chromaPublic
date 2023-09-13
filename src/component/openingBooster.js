@@ -26,21 +26,7 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
-    useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/fr/cards/"+items[Math.floor(Math.random() * items.length)])
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setTenCards(result);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [items !== null]);
-    console.log(tenCards);
+    console.log(items[Math.floor(Math.random() * items.length)].id);
     return (
         <>
             <p>{props.idBooster}</p>
