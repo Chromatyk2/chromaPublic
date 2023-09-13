@@ -24,7 +24,7 @@ function MyBoosters(props) {
             transform: 'translate(-50%, -50%)',
             border:'none',
             background:'none',
-            width:'100%',
+            width:'380px',
             height:'100vh'
         },
     };

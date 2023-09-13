@@ -36,17 +36,15 @@ function OpeningCards(props) {
                             }
                         }else if(tenCards.length == 9){
                             if(result.rarity == "Rare"){
-                                setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
+                                setIsLoaded(false);
                             }else{
                                 setNbCards(nbCards + 1);
                             }
                         }
                     }
                 )
-        }else{
-            setIsLoaded(false);
         }
     }, [nbCards])
     const customStyles = {
