@@ -23,18 +23,24 @@ function OpeningCards(props) {
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
+                            }else{
+                                setNbCards(nbCards);
                             }
                         }else if(nbCards > 7 && nbCards < 10){
                             if(result.rarity == "Peu Commune"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
+                            }else{
+                                setNbCards(nbCards);
                             }
                         }else if(nbCards == 9){
                             if(result.rarity == "Rare"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
+                            }else{
+                                setNbCards(nbCards);
                             }
                         }
                     }
