@@ -13,13 +13,25 @@ function OpeningCards(props) {
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
     useEffect(() => {
-        if (nbCards < 3) {
+        if (nbCards < 11) {
             fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        if(nbCards < 4){
+                        if(nbCards < 8){
                             if(result.rarity == "Commune"){
+                                setIsLoaded(true);
+                                setTenCards(tenCards => [...tenCards,result]);
+                                setNbCards (nbCards + 1);
+                            }
+                        }else if(nbCards > 7 && nbCards < 10){
+                            if(result.rarity == "Peu Commune"){
+                                setIsLoaded(true);
+                                setTenCards(tenCards => [...tenCards,result]);
+                                setNbCards (nbCards + 1);
+                            }
+                        }else if(nbCards == 9){
+                            if(result.rarity == "Rare"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
