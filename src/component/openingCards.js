@@ -60,7 +60,7 @@ function OpeningCards(props) {
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    card:idCard
+                    idCard:idCard
                 })
             e.target.classList.toggle('gettedCard');
             setEndPull(true);
@@ -71,7 +71,7 @@ function OpeningCards(props) {
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    card:idCard
+                    idCard:idCard
                 })
             e.target.classList.toggle('gettedCard');
             setIndex(index + 1);
