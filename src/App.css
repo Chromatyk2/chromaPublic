@@ -1478,7 +1478,6 @@ div#odds {
         z-index:-1;
     }
 }
-
 .discoveredCardsContainer{
     display: contents;
 }

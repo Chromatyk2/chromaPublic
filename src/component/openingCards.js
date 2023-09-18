@@ -7,7 +7,7 @@ import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
 
-function OpeningCards(props) {
+function OpeningCards({props,change}) {
     const [tenCards, setTenCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(true);
     const [error, setError] = useState(null);
@@ -60,7 +60,7 @@ function OpeningCards(props) {
             var idBooster = props.idBooster;
             e.target.classList.toggle('gettedCard');
             setEndPull(true);
-            setIsOpen(false);
+            change();
         } else {
             var idCard = e.target.value;
             var idBooster = props.idBooster;
@@ -83,7 +83,6 @@ function OpeningCards(props) {
             <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
                 <img style={customStyles.imgModal} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                 <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
-
             </div>
             {tenCards &&
                 tenCards.slice(0).reverse().map((val, key) => {
