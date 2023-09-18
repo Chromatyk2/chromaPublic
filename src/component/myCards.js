@@ -14,6 +14,9 @@ function MyCards(props) {
     const [page, setPage] = useState(null);
     function displayPage(e) {
         setPage(e.target.value)
+
+    function backPage() {
+        setPage(null)
     }
     useEffect(() => {
         Axios
@@ -24,6 +27,7 @@ function MyCards(props) {
     }, [])
     return (
         <>
+            <button onClick={backPage} className="guessTradeButton">Retour</button>
             <div id={"cardsContainer"}>
                 { page ?
                         <MyCardsSet idBooster={page}/>
