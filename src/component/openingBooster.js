@@ -38,7 +38,7 @@ function OpeningBooster(props) {
         <>
             <div class={"discoveredCardsContainer"}>
                 {items &&
-                    <OpeningCards change = {handleState} idBooster={props.idBooster} items={items}/>
+                    <OpeningCards user={props.user} change = {handleState} idBooster={props.idBooster} items={items}/>
                 }
             </div>
         </>
