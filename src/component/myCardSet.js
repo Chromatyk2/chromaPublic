@@ -33,8 +33,8 @@ function MyCardsSet(props) {
               setMyCards(response.data);
             })
     }, [])
-    if(cards !== null){
-      items.cards.map((val, key) => {
+    if(myCards !== null){
+      myCards.map((val, key) => {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }
