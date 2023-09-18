@@ -58,7 +58,11 @@ function OpeningCards(props) {
     }
     return (
         <>
-            <img onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+            <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
+                <img src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                <p>Appuie pour découvrir tes cartes</p>
+
+            </div>
             {tenCards &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
