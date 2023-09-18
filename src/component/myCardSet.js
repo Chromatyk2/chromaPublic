@@ -47,7 +47,7 @@ function MyCardsSet(props) {
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <div className={"cardBox"}>
-                            <p>{cardNb.nbCard}</p>
+                            <p className={"nbCardList"}>{cardNb.nbCard}</p>
                             <img class="fit-picture" src={val.image+"/high.webp"} />
                           </div>
                         )
