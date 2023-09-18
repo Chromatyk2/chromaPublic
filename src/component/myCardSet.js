@@ -40,8 +40,8 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
-            {{items &&
-              <p>items.cardCount.total</p>
+            {items &&
+              <p>{items.cardCount.total}</p>
             }
             <div id={"cardsContainer"}>
                 {items &&
