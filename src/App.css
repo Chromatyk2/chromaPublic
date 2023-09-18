@@ -1467,11 +1467,15 @@ div#odds {
         transform: rotate(0deg);
     }
     50% {
-        transform: translate(40em);
-        z-index:-1;
+        transform: translate(25em);
+    }
+    75% {
+         transform: translate(25em);
+        z-index: -1;
     }
     100% {
         transform: translate(0em);
+        z-index:-1;
     }
 }
 .discoveredCardsContainer{
