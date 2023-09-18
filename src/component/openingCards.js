@@ -61,7 +61,7 @@ function OpeningCards(props) {
                     pseudo:props.user,
                     idCard:"test"
                 })
-            e.target.classList.toggle('gettedCard');
+            this.classList.toggle('gettedCard');
             setEndPull(true);
             props.change();
         } else {
@@ -70,7 +70,7 @@ function OpeningCards(props) {
                     pseudo:props.user,
                     idCard:"test"
                 })
-            e.target.classList.toggle('gettedCard');
+            this.classList.toggle('gettedCard');
             setIndex(index + 1);
         }
     }
