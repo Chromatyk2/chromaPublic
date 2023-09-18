@@ -13,6 +13,7 @@ function OpeningCards(props) {
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
     const [isHidden, setIsHidden] = useState(true);
+    const [index, setIndex] = React.useState(0)
     useEffect(() => {
         if (tenCards.length < 11) {
             fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
@@ -52,9 +53,17 @@ function OpeningCards(props) {
         setIsHidden(false);
     }
     function getCard(e) {
-        var idCard = e.target.value;
-        var idBooster = props.idBooster;
-        e.target.classList.toggle('gettedCard');
+        if(index === tenCards.length - 1){
+            var idCard = e.target.value;
+            var idBooster = props.idBooster;
+            e.target.classList.toggle('gettedCard');
+            setIsHidden(true);
+        } else {
+            var idCard = e.target.value;
+            var idBooster = props.idBooster;
+            e.target.classList.toggle('gettedCard');
+            setIndex(index + 1);
+        }
     }
     const customStyles = {
         textModal: {
