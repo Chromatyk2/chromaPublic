@@ -1510,7 +1510,6 @@ div#odds {
 .endPull{
     animation:bounceOut 1s;
     animation-fill-mode: forwards;
-    animation-delay: 2s;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
