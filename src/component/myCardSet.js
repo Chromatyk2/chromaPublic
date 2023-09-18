@@ -37,6 +37,7 @@ function MyCardsSet(props) {
     if(myCards !== null){
       myCards.forEach((val) => {
         setMyCardsId([...myCardsId,val.card]);
+        console.log(myCardsId);
       });
     }
     return (
