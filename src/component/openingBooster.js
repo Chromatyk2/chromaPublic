@@ -30,9 +30,11 @@ function OpeningBooster(props) {
     }, []);
     return (
         <>
-            {items &&
-                <OpeningCards idBooster={props.idBooster} items={items}/>
-            }
+            <div class={"discoveredCardsContainer"}>
+                {items &&
+                    <OpeningCards idBooster={props.idBooster} items={items}/>
+                }
+            </div>
         </>
     )
 }
