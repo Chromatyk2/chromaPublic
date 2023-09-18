@@ -31,7 +31,7 @@ function MyCards(props) {
                 { page ?
                       <>
                         <button onClick={backPage} className="guessTradeButton">Retour</button>
-                        <MyCardsSet idBooster={page}/>
+                        <MyCardsSet user={props.user} idBooster={page}/>
                       </>
                     :
                         nbCards &&

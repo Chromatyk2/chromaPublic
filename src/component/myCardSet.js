@@ -9,7 +9,8 @@ import moment from 'moment';
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState(null);
+    const [items, setItems] = useState(null
+    const [myCards, setMyCards] = useState(null);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
@@ -24,14 +25,32 @@ function MyCardsSet(props) {
                 }
             )
     }, []);
+    useEffect(() => {
+        fetch("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setMyCards(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, []);
     return (
         <>
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
+                      if(myCards.includes(val.id)){
                         return(
                             <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                         )
+                      }else{
+                          <img class="fit-picture" src={"https://images.pokemontcg.io/none/1.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                      }
                     })
                 }
             </div>
