@@ -53,25 +53,25 @@ function OpeningCards(props) {
     function showCards() {
         setIsHidden(false);
     }
-    function getCard(e, data) {
-        console.log(e.target);
-        console.log(data);
+    getCard = (e, val) => {
+        console.log(e);
+        console.log(val);
         if(index === tenCards.length - 1){
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    idCard:e
+                    idCard:"test"
                 })
-            this.classList.toggle('gettedCard');
+            e.target.classList.toggle('gettedCard');
             setEndPull(true);
             props.change();
         } else {
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    idCard:e
+                    idCard:"test"
                 })
-            this.classList.toggle('gettedCard');
+            e.target.classList.toggle('gettedCard');
             setIndex(index + 1);
         }
     }
@@ -95,7 +95,7 @@ function OpeningCards(props) {
             {tenCards &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <img value={val.id} onClick={((e) => this.getCard(e, val.id))} onClick={() => getCard(val.id)} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img value={val.id} onClick={((e) => this.getCard(e, val))} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
