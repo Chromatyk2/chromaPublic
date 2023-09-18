@@ -63,7 +63,7 @@ function OpeningCards(props) {
         },
         imgModal: {
             width:'200px',
-            margin:'30px'
+            marginBottom:'30px'
         },
     };
     return (
