@@ -38,7 +38,7 @@ function MyCardsSet(props) {
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
-                      if(myCardsId.includes(val.id)){
+                      if(myCards.includes(val.id)){
                         return(
                             <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                         )
