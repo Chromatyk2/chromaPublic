@@ -31,7 +31,7 @@ function MyCardsSet(props) {
             .then(function(response){
                 setMyCards(response.data);
             })
-    }, []);
+    }, [])
     console.log(myCards);
     return (
         <>
