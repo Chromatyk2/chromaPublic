@@ -26,19 +26,12 @@ function MyCardsSet(props) {
             )
     }, []);
     useEffect(() => {
-        fetch("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setMyCards(result.data);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    },[]);
+        Axios
+            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .then(function(response){
+                setMyCards(response.data);
+            })
+    }, []);
     console.log(myCards);
     return (
         <>
