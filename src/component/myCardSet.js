@@ -40,6 +40,7 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
+            {items.cardCount.total}
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
