@@ -47,7 +47,7 @@ function MyCardsSet(props) {
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <>
-                            <p>{cardNb.COUNT(card)}</p>
+                            <p>{cardNb.nbCard}</p>
                             <img class="fit-picture" src={val.image+"/high.webp"} />
                           </>
                         )
