@@ -36,7 +36,12 @@ function MyBoosters(props) {
         setBoosterId(id);
         Axios.delete('/api/deleteBooster/'+props.user+'/'+id)
             .then(function(response) {
-                    setIsOpen(true);
+                Axios
+                    .get("/api/getMyBoosters/"+props.user)
+                    .then(function(response){
+                        setBoosters(response.data);
+                        setIsOpen(true);
+                    })
                 })
     }
 
