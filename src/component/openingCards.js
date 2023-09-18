@@ -54,14 +54,14 @@ function OpeningCards(props) {
         setIsHidden(false);
     }
     function getCard(e) {
-        let idCard = e.target.value;
+        var idCard = e.target.value;
         let idBooster = props.idBooster;
         console.log(idCard);
         if(index === tenCards.length - 1){
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    idCard:idCard
+                    idCard:"test"
                 })
             e.target.classList.toggle('gettedCard');
             setEndPull(true);
@@ -70,7 +70,7 @@ function OpeningCards(props) {
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    idCard:idCard
+                    idCard:"test"
                 })
             e.target.classList.toggle('gettedCard');
             setIndex(index + 1);
