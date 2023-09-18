@@ -38,21 +38,19 @@ function MyCardsSet(props) {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }, [myCards]);
-    console.log(myCardsId);
     return (
         <>
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
                       if(myCardsId.includes(val.id)){
-                        return(<img class="fit-picture" src={val.image+"/high.webp"} />)
-                        myCards.map((nbCard, key) => {
-                          return(
-                            <>
-                              <div>{nbCard.nbCard}</div>
-                            </>
-                          )
-                        })
+                        let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
+                        return(
+                          <>
+                            <p>{cardNb.nbcard}</p>
+                            <img class="fit-picture" src={val.image+"/high.webp"} />
+                          </>
+                        )
                       }else{
                         return(
                           <img class="fit-picture" src={"https://images.pokemontcg.io/none/1.png"} />
