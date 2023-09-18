@@ -34,7 +34,6 @@ function MyBoosters(props) {
     function openModal(e) {
         var id = e.target.value;
         setBoosterId(id);
-        useEffect(() => {
             Axios
                 .delete("/api/deleteBooster",
                     {
@@ -45,7 +44,6 @@ function MyBoosters(props) {
                 .then(function(response){
                     setIsOpen(true);
                 })
-        }, [])
     }
 
     function closeModal() {
