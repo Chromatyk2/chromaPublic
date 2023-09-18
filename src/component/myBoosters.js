@@ -32,18 +32,17 @@ function MyBoosters(props) {
         },
     };
     function openModal(e) {
+        var id = e.target.value;
+        setBoosterId(id);
         useEffect(() => {
             Axios
                 .delete("/api/deleteBooster",
                     {
-                        idMainCapture:idMainCapture,
-                        idSecondCapture:null,
-                        state:1
+                        user:props.user,
+                        booster:id
                     }
                 )
                 .then(function(response){
-                    var id = e.target.value;
-                    setBoosterId(id);
                     setIsOpen(true);
                 })
         }, [])
