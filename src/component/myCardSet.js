@@ -42,6 +42,7 @@ function MyCardsSet(props) {
         <>
             <div id={"cardsContainer"}>
                 {items &&
+                    <p>{items.cardCount.total}</p>
                     items.cards.map((val, key) => {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
