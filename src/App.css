@@ -1466,12 +1466,12 @@ div#odds {
     0% {
         transform: rotate(0deg);
     }
-    50% {
+    25% {
         transform: translate(25em);
     }
-    75% {
+    50% {
          transform: translate(25em);
-        z-index: -1;
+        z-index:-1;
     }
     100% {
         transform: translate(0em);
