@@ -9,7 +9,7 @@ import moment from 'moment';
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState(null
+    const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState(null);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
