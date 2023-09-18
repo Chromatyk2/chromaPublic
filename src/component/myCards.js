@@ -14,7 +14,7 @@ function MyCards(props) {
     const [page, setPage] = useState(null);
     function displayPage(e) {
         setPage(e.target.value)
-
+    }
     function backPage() {
         setPage(null)
     }
