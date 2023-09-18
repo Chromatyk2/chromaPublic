@@ -15,6 +15,7 @@ function OpeningCards(props) {
     const [isHidden, setIsHidden] = useState(true);
     const [index, setIndex] = React.useState(0)
     const [endPull, setEndPull] = React.useState(false)
+    const [modalIsOpen, setIsOpen] = React.useState(true);
     useEffect(() => {
         if (tenCards.length < 11) {
             fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
