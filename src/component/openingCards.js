@@ -54,7 +54,7 @@ function OpeningCards(props) {
         setIsHidden(false);
     }
     function getCard(e) {
-        var idCard = e.target.value;
+        var idCard = e;
         let idBooster = props.idBooster;
         console.log(e.target.value);
         if(index === tenCards.length - 1){
