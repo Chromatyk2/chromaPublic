@@ -16,6 +16,7 @@ function MyBoosters(props) {
     const [boosterId, setBoosterId] = React.useState(null);
     const customStyles = {
         content: {
+            position:'initial',
             border: 'none',
             background: 'none',
             borderRadius: '4px',
