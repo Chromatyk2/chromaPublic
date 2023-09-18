@@ -53,9 +53,10 @@ function OpeningCards(props) {
     function showCards() {
         setIsHidden(false);
     }
-    function getCard (e, val){
-        console.log(e);
-        console.log(val);
+    function getCard(e) {
+        var idCard = e.target.value;
+        let idBooster = props.idBooster;
+        console.log(e.target.value);
         if(index === tenCards.length - 1){
             Axios.post('/api/addCard',
                 {
@@ -95,7 +96,7 @@ function OpeningCards(props) {
             {tenCards &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <img value={val.id} onClick={((e) => this.getCard(e, val))} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img value={val.id} onClick={getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
