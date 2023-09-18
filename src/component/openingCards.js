@@ -53,7 +53,7 @@ function OpeningCards(props) {
     function showCards() {
         setIsHidden(false);
     }
-    getCard = (e, val) => {
+    function getCard (e, val){
         console.log(e);
         console.log(val);
         if(index === tenCards.length - 1){
