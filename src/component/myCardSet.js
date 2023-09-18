@@ -31,7 +31,7 @@ function MyCardsSet(props) {
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    setMyCards(result);
+                    setMyCards(result.data);
                 },
                 (error) => {
                     setIsLoaded(true);
