@@ -66,7 +66,6 @@ function MyBoosters(props) {
                 }
             </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <button className={"endModalButton"} onClick={closeModal}>Fermer</button>
                 <OpeningBooster change = {handleState} idBooster={boosterId}/>
             </Modal>
         </>

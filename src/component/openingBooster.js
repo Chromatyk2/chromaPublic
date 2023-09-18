@@ -16,7 +16,7 @@ function OpeningBooster(props) {
     const [modalIsOpen, setIsOpen] = React.useState(true);
     let [state, setState] = useState("Initial");
     function handleState() {
-        console.log('ça marche !')
+        props.change();
     }
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
