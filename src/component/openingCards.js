@@ -54,9 +54,9 @@ function OpeningCards(props) {
         setIsHidden(false);
     }
     function getCard(e) {
+        var idCard = e.target.value;
+        var idBooster = props.idBooster;
         if(index === tenCards.length - 1){
-            var idCard = e.target.value;
-            var idBooster = props.idBooster;
             console.log(idCard);
             Axios.post('/api/addCard',
                 {
@@ -67,8 +67,6 @@ function OpeningCards(props) {
             setEndPull(true);
             props.change();
         } else {
-            var idCard = e.target.value;
-            var idBooster = props.idBooster;
             console.log(idCard);
             Axios.post('/api/addCard',
                 {
