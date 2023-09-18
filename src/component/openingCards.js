@@ -86,7 +86,7 @@ function OpeningCards(props) {
             {tenCards &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <img value={val.id} onClick={getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards endPull" : "fit-picture dropCards showCards gettedCard"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img value={val.id} onClick={getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
