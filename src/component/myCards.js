@@ -9,28 +9,25 @@ import moment from 'moment';
 function MyCards(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState(null);
+    const [nbCards, setNbCards] = useState(null);
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/fr/sets/base1")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, []);
+        Axios
+            .get("/api/getNbCards/"+props.user)
+            .then(function(response){
+                setNbCards(response.data);
+            })
+    }, [])
     return (
         <>
             <div id={"cardsContainer"}>
-                {items &&
-                    items.cards.map((val, key) => {
+                {nbCards &&
+                    nbCards.map((val, key) => {
                         return(
-                            <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                            <div className="uniqueTradeContainer">
+                                <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                                <p className="pokemonNameTrade">{val.nbCard}</p>
+                                <button value={val.booster} className="guessTradeButton">Voir toute mes cartes</button>
+                            </div>
                         )
                     })
                 }
