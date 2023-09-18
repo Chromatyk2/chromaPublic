@@ -28,7 +28,7 @@ function MyCards(props) {
     return (
         <>
             <div id={"cardsContainer"}>
-                { page
+                { page ?
                       <>
                         <button onClick={backPage} className="guessTradeButton">Retour</button>
                         <MyCardsSet idBooster={page}/>
