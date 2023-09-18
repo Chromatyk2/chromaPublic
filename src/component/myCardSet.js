@@ -11,6 +11,7 @@ function MyCardsSet(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
+    const [myCardsId, setMyCardsId] = useState([]);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
@@ -32,7 +33,10 @@ function MyCardsSet(props) {
               setMyCards(response.data);
             })
     }, [])
-    console.log(myCards);
+    items.cards.map((val, key) => {
+      setMyCardsId(myCardsId => [...myCardsId,val.card]);
+    })
+    console.log(myCardsId);
     return (
         <>
             <div id={"cardsContainer"}>
