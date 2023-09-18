@@ -33,11 +33,11 @@ function MyCardsSet(props) {
               setMyCards(response.data);
             })
     }, [])
-    if(myCards !== null){
+    useEffect(() => {
       myCards.map((val, key) => {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
-    }
+    }, [myCards])
     console.log(myCardsId);
     return (
         <>
