@@ -7,7 +7,7 @@ import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
 
-function OpeningCards({props,change}) {
+function OpeningCards(props) {
     const [tenCards, setTenCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(true);
     const [error, setError] = useState(null);
@@ -15,7 +15,6 @@ function OpeningCards({props,change}) {
     const [isHidden, setIsHidden] = useState(true);
     const [index, setIndex] = React.useState(0)
     const [endPull, setEndPull] = React.useState(false)
-    const [modalIsOpen, setIsOpen] = React.useState(true);
     useEffect(() => {
         if (tenCards.length < 11) {
             fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
@@ -60,7 +59,6 @@ function OpeningCards({props,change}) {
             var idBooster = props.idBooster;
             e.target.classList.toggle('gettedCard');
             setEndPull(true);
-            change();
         } else {
             var idCard = e.target.value;
             var idBooster = props.idBooster;
@@ -83,6 +81,7 @@ function OpeningCards({props,change}) {
             <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
                 <img style={customStyles.imgModal} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                 <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
+
             </div>
             {tenCards &&
                 tenCards.slice(0).reverse().map((val, key) => {
