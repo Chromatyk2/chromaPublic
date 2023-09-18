@@ -56,7 +56,7 @@ function OpeningCards(props) {
     function getCard(e) {
         var idCard = e.target.value;
         let idBooster = props.idBooster;
-        console.log(e.target.value);
+        console.log(e.target);
         if(index === tenCards.length - 1){
             Axios.post('/api/addCard',
                 {
