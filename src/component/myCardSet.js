@@ -11,6 +11,7 @@ function MyCardsSet(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
+    const [myCardsId, setMyCardsId] = useState([]);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
@@ -33,13 +34,17 @@ function MyCardsSet(props) {
               setMyCards(response.data);
             })
     }, [])
-    console.log(myCards);
+    if(myCards !== null){
+      myCards.forEach((val) => {
+        setMyCardsId([...myCardsId,val.card]);
+      });
+    }
     return (
         <>
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
-                      if(myCards.includes(val.id)){
+                      if(myCardsId.includes(val.id)){
                         return(
                             <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                         )
