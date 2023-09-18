@@ -29,6 +29,7 @@ function MyCardsSet(props) {
         Axios
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
             .then(function(response){
+              console.log(response);
                 setMyCards(response);
             })
     }, [])
