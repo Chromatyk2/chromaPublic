@@ -1478,6 +1478,11 @@ div#odds {
         z-index:-1;
     }
 }
+.endPull{
+    animation:bounceOut 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
 .discoveredCardsContainer{
     display: contents;
 }
