@@ -37,7 +37,7 @@ function MyCardsSet(props) {
       myCards.map((val, key) => {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
-    }, [myCards]
+    }, [myCards]);
     console.log(myCardsId);
     return (
         <>
