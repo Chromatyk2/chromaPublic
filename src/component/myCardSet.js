@@ -52,7 +52,7 @@ function MyCardsSet(props) {
                               <div>{nbCard.nbCard}</div>
                             </>
                           )
-                        }
+                        })
                       }else{
                         return(
                           <img class="fit-picture" src={"https://images.pokemontcg.io/none/1.png"} />
