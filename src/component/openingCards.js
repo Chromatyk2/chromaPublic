@@ -59,7 +59,7 @@ function OpeningCards(props) {
                 {
                     pseudo:props.user,
                     idCard:e.target.getAttribute("cardId"),
-                    setCard:props.idBooster
+                    booster:props.idBooster
                 })
             e.target.classList.toggle('gettedCard');
             setEndPull(true);
@@ -69,7 +69,7 @@ function OpeningCards(props) {
                 {
                     pseudo:props.user,
                     idCard:e.target.getAttribute("cardId"),
-                    setCard:props.idBooster
+                    booster:props.idBooster
                 })
             e.target.classList.toggle('gettedCard');
             setIndex(index + 1);
