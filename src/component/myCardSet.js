@@ -45,12 +45,17 @@ function MyCardsSet(props) {
                 {items &&
                     items.cards.map((val, key) => {
                       if(myCardsId.includes(val.id)){
-                        return(
-                            <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
-                        )
+                        myCards.map((nbCard, key) => {
+                          return(
+                            <>
+                              <img class="fit-picture" src={val.image+"/high.webp"} />
+                              <div>{nbCard.nbCard}</div>
+                            </>
+                          )
+                        }
                       }else{
                         return(
-                          <img class="fit-picture" src={"https://images.pokemontcg.io/none/1.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                          <img class="fit-picture" src={"https://images.pokemontcg.io/none/1.png"} />
                         )
                       }
                     })
