@@ -38,7 +38,8 @@ function MyCardsSet(props) {
                     setError(error);
                 }
             )
-    }, []);
+    },
+    console.log(myCards);
     return (
         <>
             <div id={"cardsContainer"}>
