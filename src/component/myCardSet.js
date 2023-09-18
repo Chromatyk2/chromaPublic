@@ -33,6 +33,7 @@ function MyCardsSet(props) {
               setMyCards(response.data.card);
             })
     }, [])
+    console.log(myCards);
     return (
         <>
             <div id={"cardsContainer"}>
