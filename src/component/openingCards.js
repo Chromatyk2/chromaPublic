@@ -59,6 +59,7 @@ function OpeningCards(props) {
             var idBooster = props.idBooster;
             e.target.classList.toggle('gettedCard');
             setEndPull(true);
+            setIsOpen(false);
         } else {
             var idCard = e.target.value;
             var idBooster = props.idBooster;

@@ -13,6 +13,7 @@ function OpeningBooster(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
+    const [modalIsOpen, setIsOpen] = React.useState(true);
 
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
