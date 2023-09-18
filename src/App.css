@@ -1466,6 +1466,10 @@ div#odds {
     0% {
         transform: rotate(0deg);
     }
+    30% {
+        transform: rotate(0deg);
+        z-index:-1;
+    }
     100% {
         transform: translate(40em) rotate(60deg);
     }
