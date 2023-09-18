@@ -61,6 +61,10 @@ function OpeningCards(props) {
             fontSize:'30px',
             textAlign:'center'
         },
+        imgModal: {
+            width:'200px',
+            margin:'30px'
+        },
     };
     return (
         <>
