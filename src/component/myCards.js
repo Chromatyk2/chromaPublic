@@ -5,11 +5,16 @@ import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
+import MyCardsSet from './myCardSet.js';
 
 function MyCards(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [nbCards, setNbCards] = useState(null);
+    const [page, setPage] = useState(null);
+    function displayPage(e) {
+        setPage(e.target.value)
+    }
     useEffect(() => {
         Axios
             .get("/api/getNbCards/"+props.user)
@@ -26,10 +31,13 @@ function MyCards(props) {
                             <div className="uniqueTradeContainer">
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 <p className="pokemonNameTrade">{val.nbCard}</p>
-                                <button value={val.booster} className="guessTradeButton">Voir toute mes cartes</button>
+                                <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                             </div>
                         )
                     })
+                }
+                {page &&
+                    <MyCardsSet idBooster={page}/>
                 }
             </div>
         </>
