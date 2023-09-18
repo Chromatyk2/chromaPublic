@@ -30,7 +30,7 @@ function MyCardsSet(props) {
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
             .then(function(response){
               console.log(response);
-                setMyCards(response);
+                setMyCards(response.data);
             })
     }, [])
     console.log(myCards);
