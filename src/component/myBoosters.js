@@ -16,19 +16,15 @@ function MyBoosters(props) {
     const [boosterId, setBoosterId] = React.useState(null);
     const customStyles = {
         content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            border:'none',
-            background:'none',
-            width:'100%',
-            height:'100vh',
+            position: 'absolute',
+            border: 'none',
+            background: 'none',
+            borderRadius: '4px',
+            width: '100%',
+            height: '100vh',
             display: 'flex',
             alignItems: 'center',
-            overflow:'hidden'
+            justifyContent: 'center'
         },
     };
     function openModal(e) {

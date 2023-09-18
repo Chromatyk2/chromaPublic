@@ -1470,6 +1470,9 @@ div#odds {
         transform: translate(40em) rotate(60deg);
     }
 }
+.discoveredCardsContainer{
+    display: contents;
+}
 .showBooster{
     visibility: hidden;
     animation:bounceIn 1s;
