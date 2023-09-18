@@ -11,7 +11,6 @@ function MyCardsSet(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
-    const [myCardsId, setMyCardsId] = useState([]);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
@@ -31,15 +30,9 @@ function MyCardsSet(props) {
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
             .then(function(response){
               console.log(response);
-              setMyCards(response.data);
+              setMyCards(response.data.card);
             })
     }, [])
-    if(myCards !== null){
-      myCards.forEach((val) => {
-        setMyCardsId([...myCardsId,val.card]);
-        console.log(myCardsId);
-      });
-    }
     return (
         <>
             <div id={"cardsContainer"}>
@@ -50,7 +43,9 @@ function MyCardsSet(props) {
                             <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                         )
                       }else{
+                        return(
                           <img class="fit-picture" src={"https://images.pokemontcg.io/none/1.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                        )
                       }
                     })
                 }
