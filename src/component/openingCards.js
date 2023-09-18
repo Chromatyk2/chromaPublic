@@ -14,6 +14,7 @@ function OpeningCards(props) {
     const [nbCards, setNbCards] = useState(0);
     const [isHidden, setIsHidden] = useState(true);
     const [index, setIndex] = React.useState(0)
+    const [endPull, setEndPull] = React.useState(false)
     useEffect(() => {
         if (tenCards.length < 11) {
             fetch("https://api.tcgdex.net/v2/fr/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
@@ -57,7 +58,7 @@ function OpeningCards(props) {
             var idCard = e.target.value;
             var idBooster = props.idBooster;
             e.target.classList.toggle('gettedCard');
-            setIsHidden(true);
+            setEndPull(true);
         } else {
             var idCard = e.target.value;
             var idBooster = props.idBooster;
@@ -85,7 +86,7 @@ function OpeningCards(props) {
             {tenCards &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <img value={val.id} onClick={getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img value={val.id} onClick={getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards endPull" : "fit-picture dropCards showCards"} src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
