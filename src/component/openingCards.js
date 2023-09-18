@@ -69,7 +69,7 @@ function OpeningCards(props) {
     return (
         <>
             <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
-                <img src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                <img style={customStyles.imgModal} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                 <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
 
             </div>
