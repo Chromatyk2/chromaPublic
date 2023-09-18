@@ -27,10 +27,12 @@ function MyCards(props) {
     }, [])
     return (
         <>
-            <button onClick={backPage} className="guessTradeButton">Retour</button>
             <div id={"cardsContainer"}>
-                { page ?
+                { page
+                      <>
+                        <button onClick={backPage} className="guessTradeButton">Retour</button>
                         <MyCardsSet idBooster={page}/>
+                      </>
                     :
                         nbCards &&
                             nbCards.map((val, key) => {
