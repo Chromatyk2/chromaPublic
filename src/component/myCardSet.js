@@ -45,10 +45,10 @@ function MyCardsSet(props) {
                 {items &&
                     items.cards.map((val, key) => {
                       if(myCardsId.includes(val.id)){
+                        return(<img class="fit-picture" src={val.image+"/high.webp"} />)
                         myCards.map((nbCard, key) => {
                           return(
                             <>
-                              <img class="fit-picture" src={val.image+"/high.webp"} />
                               <div>{nbCard.nbCard}</div>
                             </>
                           )
