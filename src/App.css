@@ -1502,7 +1502,7 @@ div#odds {
     animation-delay: 1.1s;
 }
 .gettedCard{
-    animation: moveCard 2s forwards;
+    animation: moveCard 1s forwards;
     transform-origin: 50% 50%;
     transform-box: fill-box;
     visibility: visible;
