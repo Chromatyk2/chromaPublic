@@ -54,23 +54,22 @@ function OpeningCards(props) {
         setIsHidden(false);
     }
     function getCard(e) {
-        console.log(e.target.getAttribute("cardId"));
         if(index === tenCards.length - 1){
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    idCard:"test"
+                    idCard:e.target.getAttribute("cardId")
                 })
-            this.classList.toggle('gettedCard');
+            e.target.classList.toggle('gettedCard');
             setEndPull(true);
             props.change();
         } else {
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
-                    idCard:"test"
+                    idCard:e.target.getAttribute("cardId")
                 })
-            this.classList.toggle('gettedCard');
+            e.target.classList.toggle('gettedCard');
             setIndex(index + 1);
         }
     }
