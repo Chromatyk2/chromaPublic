@@ -56,8 +56,8 @@ function OpeningCards(props) {
     function getCard(e) {
         var idCard = e.target.value;
         var idBooster = props.idBooster;
+        console.log(idCard);
         if(index === tenCards.length - 1){
-            console.log(idCard);
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
@@ -67,7 +67,6 @@ function OpeningCards(props) {
             setEndPull(true);
             props.change();
         } else {
-            console.log(idCard);
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
