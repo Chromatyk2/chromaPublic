@@ -37,14 +37,14 @@ function MyCardsSet(props) {
       myCards.map((val, key) => {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
-    }, [myCards])
+    }, [myCards]
     console.log(myCardsId);
     return (
         <>
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
-                      if(myCards.includes(val.id)){
+                      if(myCardsId.includes(val.id)){
                         return(
                             <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
                         )
