@@ -56,11 +56,17 @@ function OpeningCards(props) {
         var idBooster = props.idBooster;
         e.target.classList.toggle('gettedCard');
     }
+    const customStyles = {
+        textModal: {
+            fontSize:'30px',
+            textAlign:'center'
+        },
+    };
     return (
         <>
             <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
                 <img src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                <p>Appuie pour découvrir tes cartes</p>
+                <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
 
             </div>
             {tenCards &&

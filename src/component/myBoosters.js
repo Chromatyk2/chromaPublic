@@ -26,6 +26,10 @@ function MyBoosters(props) {
             alignItems: 'center',
             justifyContent: 'center'
         },
+        textModal: {
+            fontSize:'30px',
+            textAlign:'center'
+        },
     };
     function openModal(e) {
         var id = e.target.value;
