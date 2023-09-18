@@ -45,7 +45,7 @@ function CardsHub(props) {
                     {/*</iframe>*/}
                 </div>
                     {page == "myCards" &&
-                        <MyCards />
+                        <MyCards user={pseudo} />
                     }
                     {page == "cardsShop" &&
                         <CardsShop user={pseudo} points={points}/>
