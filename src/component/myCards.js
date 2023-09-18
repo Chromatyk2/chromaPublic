@@ -26,18 +26,18 @@ function MyCards(props) {
         <>
             <div id={"cardsContainer"}>
                 {nbCards &&
-                    nbCards.map((val, key) => {
-                        return(
-                            <div className="uniqueTradeContainer">
-                                <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                                <p className="pokemonNameTrade">{val.nbCard}</p>
-                                <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
-                            </div>
-                        )
-                    })
-                }
-                {page &&
-                    <MyCardsSet idBooster={page}/>
+                    page ?
+                        <MyCardsSet idBooster={page}/>
+                    :
+                        nbCards.map((val, key) => {
+                            return(
+                                <div className="uniqueTradeContainer">
+                                    <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                                    <p className="pokemonNameTrade">{val.nbCard}</p>
+                                    <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
+                                </div>
+                            )
+                        })
                 }
             </div>
         </>
