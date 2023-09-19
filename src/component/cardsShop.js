@@ -98,8 +98,9 @@ function CardsShop(props) {
                             return(
                                 <div className="uniqueTradeContainer">
                                     <div className={"containerImgBooster"}>
-                                        <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                                    </div>                                    <p className="pokemonNameTrade">1000 Cards Points</p>
+                                        <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>
+                                    <p className="pokemonNameTrade">1000 Cards Points</p>
                                     {points > 999 ?
                                         loading === false ?
                                             <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
