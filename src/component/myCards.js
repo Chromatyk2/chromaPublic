@@ -11,6 +11,7 @@ function MyCards(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [nbCards, setNbCards] = useState(null);
+    const [nbCard, setNbCard] = useState(null);
     const [page, setPage] = useState(null);
     function displayPage(e) {
         setPage(e.target.value)
