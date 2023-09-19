@@ -7,10 +7,28 @@ import '../App.css'
 import moment from 'moment';
 
 function ProgressBarCard(props) {
-    console.log(props.item.items.cardCount.total);
+    const customStyles = {
+    extBar: {
+        width: '100%',
+        backgroundColor: '#90e5b5',
+        position: 'relative',
+        zIndex: '-1',
+        borderRadius: '50px'
+    },
+    intBar: {
+        width: parseFloat(props.getNb/props.item.items.cardCount.total*100).toFixed(2)+"px",
+        position: 'relative',
+        background: '#0a3a2c',
+        textWrap: 'nowrap',
+        color: 'white',
+        padding: '10px',
+        borderRadius: '50px 0 0 50px'
+    },
+};
+
     return (
-    <div className="fullProgressBar">
-        <div>{props.getNb+" / "+props.item.items.cardCount.total+"("+parseFloat(props.getNb/props.item.items.cardCount.total*100).toFixed(2)+"%)"}</div>
+    <div style={customStyles.extBar} className="fullProgressBar">
+        <div style={customStyles.intBar}>{props.getNb+" / "+props.item.items.cardCount.total+"("+parseFloat(props.getNb/props.item.items.cardCount.total*100).toFixed(2)+"%)"}</div>
     </div>
     )
 }
