@@ -12,7 +12,7 @@ function MyCardsSet(props) {
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
-    const [totalNb, setTotalNb] = useState(null);
+    const [totalNb, setTotalNb] = useState(0);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
@@ -20,6 +20,7 @@ function MyCardsSet(props) {
                 (result) => {
                     setIsLoaded(true);
                     setItems(result);
+                    setTotalNb(response.data.cardCount.total);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -32,7 +33,6 @@ function MyCardsSet(props) {
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
             .then(function(response){
               setMyCards(response.data);
-              setTotalNb(response.data);
             })
     }, [])
     useEffect(() => {
@@ -40,13 +40,12 @@ function MyCardsSet(props) {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }, [myCards]);
-    console.log(totalNb);
     return (
         <>
             {totalNb > 0 &&
                 <>
                     <div className="fullProgressBar">
-                        <div style="width:25%">{totalNb.total+"/"+props.card}</div>
+                        <div style="width:25%">{totalNb+"/"+props.card}</div>
                     </div>
                 </>
             }
