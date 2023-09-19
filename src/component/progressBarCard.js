@@ -7,9 +7,10 @@ import '../App.css'
 import moment from 'moment';
 
 function ProgressBarCard(props) {
+    console.log(props.item);
     return (
     <div className="fullProgressBar">
-        <div>{props.item.cardCount.total}</div>
+        <div>6</div>
     </div>
     )
 }

@@ -39,7 +39,6 @@ function MyCardsSet(props) {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }, [myCards]);
-    console.log(items);
     return (
         <>
             {items &&
