@@ -8,9 +8,9 @@ import moment from 'moment';
 
 function ProgressBarCard(props) {
     return (
-        <div className="fullProgressBar">
-            <div style="width:25%">{props.item.cardCount.total+"/"+props.card}</div>
-        </div>
+    <div className="fullProgressBar">
+        <div style="width:25%">1</div>
+    </div>
     )
 }
 export default ProgressBarCard
