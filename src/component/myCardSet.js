@@ -43,7 +43,7 @@ function MyCardsSet(props) {
             <>
                 {items &&
                     <div className="fullProgressBar">
-                        <div style="width:25%">{items.cardCount.total+"/"+props.nbCard</div>
+                        <div style="width:25%">{items.cardCount.total+"/"+props.nbCard}</div>
                     </div>
                 }
             </>
