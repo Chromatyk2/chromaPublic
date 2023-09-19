@@ -32,7 +32,7 @@ function MyCardsSet(props) {
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
             .then(function(response){
               setMyCards(response.data);
-                setTotalNb(response.data.cardCount.total);
+              setTotalNb(response.data.cardCount);
             })
     }, [])
     useEffect(() => {
@@ -45,7 +45,7 @@ function MyCardsSet(props) {
             {totalNb > 0 &&
                 <>
                     <div className="fullProgressBar">
-                        <div style="width:25%">{totalNb+"/"+props.card}</div>
+                        <div style="width:25%">{totalNb.total+"/"+props.card}</div>
                     </div>
                 </>
             }
