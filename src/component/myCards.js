@@ -30,8 +30,8 @@ function MyCards(props) {
     return (
         <>
             <div id={"cardsContainer"}>
-                <button onClick={backPage} className="guessTradeButton">Retour</button>
                 { page ?
+                    <button onClick={backPage} className="backButton">Retour</button>
                         <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
                     :
                         nbCards &&
