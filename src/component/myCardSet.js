@@ -12,7 +12,7 @@ function MyCardsSet(props) {
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
-    const [totalNb, setTotalNb] = useState(0);
+    const [totalNb, setTotalNb] = useState(null);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
