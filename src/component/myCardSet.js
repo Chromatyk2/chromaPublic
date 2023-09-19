@@ -20,7 +20,7 @@ function MyCardsSet(props) {
                 (result) => {
                     setIsLoaded(true);
                     setItems(result);
-                    setTotalNb(result.cardCount.total);
+                    setTotalNb(result);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -42,10 +42,10 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
-            {totalNb > 0 &&
+            {totalNb.cardCount.total > 0 &&
                 <>
                     <div className="fullProgressBar">
-                        <div style="width:25%">{totalNb+"/"+props.card}</div>
+                        <div style="width:25%">{totalNb.cardCount.total+"/"+props.card}</div>
                     </div>
                 </>
             }
