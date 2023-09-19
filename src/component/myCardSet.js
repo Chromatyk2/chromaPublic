@@ -40,11 +40,13 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
-            {items &&
-                <div className="w3-light-grey">
-                    <div className="w3-container w3-green w3-center" style="width:25%">{items.cardCount.total}</div>
-                </div>
-            }
+            <>
+                {items &&
+                    <div className="fullProgressBar">
+                        <div style="width:25%">{items.cardCount.total}</div>
+                    </div>
+                }
+            </>
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
