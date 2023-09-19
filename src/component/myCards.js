@@ -38,7 +38,7 @@ function MyCards(props) {
                             nbCards.map((val, key) => {
                                 return(
                                     <div className="uniqueTradeContainer">
-                                        <div>
+                                        <div className={"containerImgBooster"}>
                                             <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                         </div>
                                         <p className="pokemonNameTrade">{val.nbCard} carte(s)</p>
