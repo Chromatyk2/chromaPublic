@@ -27,8 +27,6 @@ function MyCards(props) {
     }, [])
     return (
         <>
-            <button onClick={backPage} className="guessTradeButton">Retour</button>
-            <div id={"cardsContainer"}>
                 { page ?
                       <>
                         <button onClick={backPage} className="guessTradeButton">Retour</button>
@@ -46,7 +44,6 @@ function MyCards(props) {
                                 )
                             })
                 }
-            </div>
         </>
     )
 }
