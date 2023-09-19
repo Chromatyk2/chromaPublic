@@ -42,9 +42,6 @@ function MyCardsSet(props) {
     console.log(items);
     return (
         <>
-            {items &&
-                <ProgressBarCard item={items} />
-            }
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
