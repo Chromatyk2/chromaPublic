@@ -27,13 +27,11 @@ function App() {
   if(Object.keys(cookies).length == 0) {
     return <Login />
   }
-  console.log(cookies);
   return(
     <>
+      {cookies.user !== undefined &&
       <BrowserRouter>
-        {cookies.user !== undefined &&
           <NavBar cookies={cookies} />
-        }
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
@@ -53,6 +51,7 @@ function App() {
           <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
+      }
     </>
   );
 }
