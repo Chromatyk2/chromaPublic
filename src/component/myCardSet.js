@@ -42,7 +42,7 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
-            {totalNb > 0 &&
+            {totalNb.total > 0 &&
                 <>
                     <div className="fullProgressBar">
                         <div style="width:25%">{totalNb.total+"/"+props.card}</div>
