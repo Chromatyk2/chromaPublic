@@ -52,12 +52,12 @@ function MyCardsSet(props) {
                         return(
                           <div className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
-                            <img class="fit-picture" src={val.image+"/high.webp"} />
+                            <img class="fit-picture-card" src={val.image+"/high.webp"} />
                           </div>
                         )
                       }else{
                         return(
-                          <img class="fit-picture" src={"/images/backCard.png"} />
+                          <img class="fit-picture-card" src={"/images/backCard.png"} />
                         )
                       }
                     })
