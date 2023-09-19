@@ -10,7 +10,7 @@ function ProgressBarCard(props) {
     console.log(props.item.items.cardCount.total);
     return (
     <div className="fullProgressBar">
-        <div>{props.getNb+" / "+props.item.items.cardCount.total+"("+Math.round(props.getNb/props.item.items.cardCount.total*100)+"%)"}</div>
+        <div>{props.getNb+" / "+props.item.items.cardCount.total+"("+parseFloat(props.getNb/props.item.items.cardCount.total*100).toFixed(2)+"%)"}</div>
     </div>
     )
 }
