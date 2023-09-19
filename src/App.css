@@ -125,6 +125,7 @@ iframe{
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .leaderBoardSwitch button{
   border: none;
@@ -1430,6 +1431,7 @@ div#odds {
     width: 75%;
     gap: 14px;
     margin: auto;
+    justify-content: center;
 }
 .myPointsDisplay button{
     background: none;

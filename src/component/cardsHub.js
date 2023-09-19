@@ -32,11 +32,11 @@ function CardsHub(props) {
             </div>
             <div className={"allCards"}>
                 <div>
-                    <iframe id="twitch-chat-embed"
-                            src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"
-                            height="500"
-                            width="350">
-                    </iframe>
+                    {/*<iframe id="twitch-chat-embed"*/}
+                    {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
+                    {/*        height="500"*/}
+                    {/*        width="350">*/}
+                    {/*</iframe>*/}
                     {/*<iframe*/}
                     {/*    src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr"*/}
                     {/*    height="<height>"*/}
