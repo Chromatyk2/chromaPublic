@@ -16,7 +16,7 @@ function ProgressBarCard(props) {
         borderRadius: '50px'
     },
     intBar: {
-        width: "50px",
+        width: parseFloat(props.getNb/props.item.items.cardCount.total*100).toFixed(2)+"px",
         position: 'relative',
         background: '#0a3a2c',
         textWrap: 'nowrap',
