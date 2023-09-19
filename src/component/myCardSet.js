@@ -40,6 +40,7 @@ function MyCardsSet(props) {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }, [myCards]);
+    console.log(totalNb);
     return (
         <>
             {totalNb.total > 0 &&
