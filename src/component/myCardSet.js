@@ -20,7 +20,7 @@ function MyCardsSet(props) {
                 (result) => {
                     setIsLoaded(true);
                     setItems(result);
-                    setTotalNb(response.data.cardCount.total);
+                    setTotalNb(result.data.cardCount.total);
                 },
                 (error) => {
                     setIsLoaded(true);
