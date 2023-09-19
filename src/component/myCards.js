@@ -32,8 +32,9 @@ function MyCards(props) {
                         <button onClick={backPage} className="guessTradeButton">Retour</button>
                         <MyCardsSet user={props.user} idBooster={page}/>
                       </>
-                    :
-                        nbCards &&
+                :
+                    <div id={"cardsContainer"}>
+                        {nbCards &&
                             nbCards.map((val, key) => {
                                 return(
                                     <div className="uniqueTradeContainer">
@@ -42,7 +43,8 @@ function MyCards(props) {
                                         <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                                     </div>
                                 )
-                            })
+                            })}
+                    </div>
                 }
         </>
     )
