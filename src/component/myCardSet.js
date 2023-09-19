@@ -43,7 +43,7 @@ function MyCardsSet(props) {
     return (
         <>
             {items &&
-                <ProgressBarCard />
+                <ProgressBarCard item={{items}}/>
             }
             <div id={"cardsContainer"}>
                 {items &&

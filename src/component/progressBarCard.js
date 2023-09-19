@@ -9,7 +9,7 @@ import moment from 'moment';
 function ProgressBarCard(props) {
     return (
     <div className="fullProgressBar">
-        <div>1</div>
+        <div>{props.item.cardCount.total}</div>
     </div>
     )
 }
