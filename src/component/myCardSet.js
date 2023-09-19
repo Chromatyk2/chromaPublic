@@ -40,7 +40,7 @@ function MyCardsSet(props) {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }, [myCards]);
-console.log(totalNb.cardCount.total);
+console.log(totalNb.data.cardCount.total);
     return (
         <>
             {totalNb &&
