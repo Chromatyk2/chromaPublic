@@ -1378,6 +1378,19 @@ div#odds {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.nbCardList{
+  position: absolute;
+    background: #0a3a2c;
+    width: fit-content;
+    height: 15px;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 .allCards{
     display: flex;
     flex-wrap: wrap;

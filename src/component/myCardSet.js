@@ -10,6 +10,8 @@ function MyCardsSet(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
+    const [myCards, setMyCards] = useState([]);
+    const [myCardsId, setMyCardsId] = useState([]);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
@@ -24,14 +26,39 @@ function MyCardsSet(props) {
                 }
             )
     }, []);
+    useEffect(() => {
+        Axios
+            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .then(function(response){
+              setMyCards(response.data);
+            })
+    }, [])
+    useEffect(() => {
+      myCards.map((val, key) => {
+        setMyCardsId(myCardsId => [...myCardsId,val.card]);
+      })
+    }, [myCards]);
     return (
         <>
+            {items &&
+              <p>{items.cardCount.total}</p>
+            }
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
+                      if(myCardsId.includes(val.id)){
+                        let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
-                            <img class="fit-picture" src={val.image+"/high.webp"} alt="Grapefruit slice atop a pile of other slices"/>
+                          <div className={"cardBox"}>
+                            <p className={"nbCardList"}>{cardNb.nbCard}</p>
+                            <img class="fit-picture" src={val.image+"/high.webp"} />
+                          </div>
                         )
+                      }else{
+                        return(
+                          <img class="fit-picture" src={"https://images.pokemontcg.io/none/1.png"} />
+                        )
+                      }
                     })
                 }
             </div>

@@ -15,7 +15,11 @@ function MyCards(props) {
     function displayPage(e) {
         setPage(e.target.value)
     }
+<<<<<<< HEAD
     function backPage(e) {
+=======
+    function backPage() {
+>>>>>>> 630cb81e3aee630025c1838dacde3c3377fb6422
         setPage(null)
     }
     useEffect(() => {
@@ -30,7 +34,10 @@ function MyCards(props) {
             <button onClick={backPage} className="guessTradeButton">Retour</button>
             <div id={"cardsContainer"}>
                 { page ?
-                        <MyCardsSet idBooster={page}/>
+                      <>
+                        <button onClick={backPage} className="guessTradeButton">Retour</button>
+                        <MyCardsSet user={props.user} idBooster={page}/>
+                      </>
                     :
                         nbCards &&
                             nbCards.map((val, key) => {
