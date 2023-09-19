@@ -29,7 +29,6 @@ function MyCards(props) {
         <>
                 { page ?
                       <>
-                        <button onClick={backPage} className="guessTradeButton">Retour</button>
                         <MyCardsSet user={props.user} idBooster={page}/>
                       </>
                 :
