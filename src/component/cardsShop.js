@@ -97,9 +97,9 @@ function CardsShop(props) {
                         items.slice(0,2).map((val, key) => {
                             return(
                                 <div className="uniqueTradeContainer">
-                                    <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.id + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                                    <p className="pokemonNameTrade">{val.name}</p>
-                                    <p className="pokemonNameTrade">1000 Cards Points</p>
+                                    <div className={"containerImgBooster"}>
+                                        <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>                                    <p className="pokemonNameTrade">1000 Cards Points</p>
                                     {points > 999 ?
                                         loading === false ?
                                             <button value={val.id} onClick={buyBooster} className="guessTradeButton">Acheter</button>

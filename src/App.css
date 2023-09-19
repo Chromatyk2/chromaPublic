@@ -1400,7 +1400,11 @@ div#odds {
     flex-flow: column;
 }
 .fit-picture{
-    width: 250px;
+    width: 150px;
+}
+.containerImgBooster {
+    display: flex;
+    height: 150px;
 }
 #twitch-chat-embed{
     position: fixed;
