@@ -53,8 +53,7 @@ function AuthService() {
           client_id:"7kpmnnx1qptajh5ow3lylsws13u2op",
           client_secret:"1byi9sa1ch1g3mmgd9aibfzzr5ovbp",
           code:params.code,
-          grant_type:"authorization_code",
-          redirect_uri:"https://chromatyk.fr/"
+          grant_type:"authorization_code"
         }
       )
       .then(
