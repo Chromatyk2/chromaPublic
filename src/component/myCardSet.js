@@ -40,12 +40,11 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
-            <div className={""}>
-                <button onClick={backPage} className="guessTradeButton">Retour</button>
-                {items &&
-                  <p>{items.cardCount.total}</p>
-                }
-            </div>
+            {items &&
+                <div className={"progressBarCards"}>
+                    <p>{items.cardCount.total}</p>
+                </div>
+            }
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
