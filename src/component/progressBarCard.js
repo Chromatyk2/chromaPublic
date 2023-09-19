@@ -9,7 +9,7 @@ import moment from 'moment';
 function ProgressBarCard(props) {
     return (
     <div className="fullProgressBar">
-        <div style="width:25%">1</div>
+        <div>1</div>
     </div>
     )
 }
