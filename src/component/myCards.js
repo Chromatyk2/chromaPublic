@@ -15,6 +15,9 @@ function MyCards(props) {
     function displayPage(e) {
         setPage(e.target.value)
     }
+    function backPage(e) {
+        setPage(null)
+    }
     useEffect(() => {
         Axios
             .get("/api/getNbCards/"+props.user)
@@ -24,6 +27,7 @@ function MyCards(props) {
     }, [])
     return (
         <>
+            <button onClick={backPage} className="guessTradeButton">Retour</button>
             <div id={"cardsContainer"}>
                 { page ?
                         <MyCardsSet idBooster={page}/>
@@ -33,7 +37,7 @@ function MyCards(props) {
                                 return(
                                     <div className="uniqueTradeContainer">
                                         <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                                        <p className="pokemonNameTrade">{val.nbCard}</p>
+                                        <p className="pokemonNameTrade">{val.nbCard} carte(s)</p>
                                         <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                                     </div>
                                 )
