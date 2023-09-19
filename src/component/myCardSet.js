@@ -44,7 +44,6 @@ console.log(totalNb);
     return (
         <>
             {totalNb &&
-                totalNb.cardCount.total > 0 &&
                 <>
                     <div className="fullProgressBar">
                         <div style="width:25%">{totalNb.cardCount.total+"/"+props.card}</div>
