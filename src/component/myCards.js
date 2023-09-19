@@ -31,7 +31,7 @@ function MyCards(props) {
                 { page ?
                       <>
                         <button onClick={backPage} className="guessTradeButton">Retour</button>
-                        <MyCardsSet user={props.user} idBooster={page}/>
+                        <MyCardsSet card={nbCard} user={props.user} idBooster={page}/>
                       </>
                 :
                     <div id={"cardsContainer"}>
@@ -41,7 +41,7 @@ function MyCards(props) {
                                     <div className="uniqueTradeContainer">
                                         <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                         <p className="pokemonNameTrade">{val.nbCard} carte(s)</p>
-                                        <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
+                                        <button nbCard={val.nbCard} value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                                     </div>
                                 )
                             })}
