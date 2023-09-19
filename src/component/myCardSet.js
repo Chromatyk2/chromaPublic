@@ -5,6 +5,7 @@ import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
+import ProgressBarCard from "./progressBarCard";
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
@@ -40,11 +41,7 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
-            {items &&
-                    <div className="fullProgressBar">
-                        <div style="width:25%">{items.cardCount.total+"/"+props.card}</div>
-                    </div>
-            }
+            <ProgressBarCard item={items} />
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
