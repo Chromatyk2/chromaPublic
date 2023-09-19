@@ -27,6 +27,7 @@ function App() {
   if(Object.keys(cookies).length == 0) {
     return <Login />
   }
+  console.log(cookies);
   return(
     <>
       <BrowserRouter>

@@ -4,9 +4,6 @@ import '../App.css'
 import PkmList from './pkmList.js'
 
 function HomePage(props) {
-    if(props.cookies.user === 'undefined'){
-        window.location.reload(false);
-    }
   return (
     <>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
