@@ -15,11 +15,7 @@ function MyCards(props) {
     function displayPage(e) {
         setPage(e.target.value)
     }
-<<<<<<< HEAD
-    function backPage(e) {
-=======
     function backPage() {
->>>>>>> 630cb81e3aee630025c1838dacde3c3377fb6422
         setPage(null)
     }
     useEffect(() => {
