@@ -28,26 +28,23 @@ function MyCards(props) {
     }, [])
     return (
         <>
+            <div id={"cardsContainer"}>
+                <button onClick={backPage} className="guessTradeButton">Retour</button>
                 { page ?
-                      <>
-                        <button onClick={backPage} className="guessTradeButton">Retour</button>
-                        <MyCardsSet card={nbCard} user={props.user} idBooster={page}/>
-                      </>
-                :
-                    <div id={"cardsContainer"}>
-                        {nbCards &&
+                        <MyCardsSet idBooster={page}/>
+                    :
+                        nbCards &&
                             nbCards.map((val, key) => {
                                 return(
                                     <div className="uniqueTradeContainer">
                                         <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                         <p className="pokemonNameTrade">{val.nbCard} carte(s)</p>
-                                        <button nbCard={val.nbCard} value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
+                                        <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                                     </div>
                                 )
-                            })}
-
-                    </div>
+                            })
                 }
+            </div>
         </>
     )
 }
