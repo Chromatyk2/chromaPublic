@@ -31,8 +31,10 @@ function MyCards(props) {
         <>
             <div id={"cardsContainer"}>
                 { page ?
-                    <button onClick={backPage} className="backButton">Retour</button>
-                        <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
+                        <>
+                            <button onClick={backPage} className="backButton">Retour</button>
+                            <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
+                        </>
                     :
                         nbCards &&
                             nbCards.map((val, key) => {
