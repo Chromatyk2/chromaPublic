@@ -42,6 +42,9 @@ function MyCardsSet(props) {
     console.log(items);
     return (
         <>
+            {items &&
+                <p>Test</p>
+            }
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
