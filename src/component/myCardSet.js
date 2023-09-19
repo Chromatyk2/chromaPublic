@@ -40,13 +40,11 @@ function MyCardsSet(props) {
     }, [myCards]);
     return (
         <>
-            <>
                 {items &&
                     <div className="fullProgressBar">
                         <div style="width:25%">{items.cardCount.total+"/"+props.card}</div>
                     </div>
                 }
-            </>
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
