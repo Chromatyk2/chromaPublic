@@ -41,8 +41,8 @@ function MyCardsSet(props) {
     return (
         <>
             {items &&
-                <div className={"progressBarCards"}>
-                    <p>{items.cardCount.total}</p>
+                <div className="w3-light-grey">
+                    <div className="w3-container w3-green w3-center" style="width:25%">{items.cardCount.total}</div>
                 </div>
             }
             <div id={"cardsContainer"}>
