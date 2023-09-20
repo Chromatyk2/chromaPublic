@@ -14,19 +14,12 @@ function CardsShop(props) {
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/en/sets")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, []);
+        Axios
+            .get("/api/getBoostersList")
+            .then(function(response){
+                setItems(response.data);
+            })
+    }, [])
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+props.user)
