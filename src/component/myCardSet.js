@@ -56,7 +56,7 @@ function MyCardsSet(props) {
                         )
                       }else{
                         return(
-                          <img class="fit-picture-card" src={"/images/backCard.png"} />
+                          <img value={val.localId} class="fit-picture-card" src={"/images/backCard.png"} />
                         )
                       }
                     })
