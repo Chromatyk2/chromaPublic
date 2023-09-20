@@ -50,7 +50,7 @@ function MyCardsSet(props) {
                       if(myCardsId.includes(val.id)){
                         return(
                           <div className={"cardBox"}>
-                            <img class="fit-picture-card" src={val.image+"/high.webp"} />
+                            <img class="fit-picture-card" src={"https://images.pokemontcg.io/"+props.idBooster+"/"+val.id+"_hires.png"} />
                           </div>
                         )
                       }else{
