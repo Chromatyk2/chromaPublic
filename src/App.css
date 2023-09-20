@@ -1395,7 +1395,7 @@ div#odds {
 .allCards{
     display: flex;
     flex-wrap: wrap;
-    width: 75%;
+    width: 100%;
     margin: auto;
     gap: 30px;
     flex-flow: column;
@@ -1429,7 +1429,7 @@ div#odds {
 #cardsContainer{
     display: flex;
     flex-wrap: wrap;
-    width: 75%;
+    width: 100%;
     gap: 14px;
     margin: auto;
     justify-content: center;

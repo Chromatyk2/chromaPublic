@@ -9,7 +9,7 @@ import moment from 'moment';
 function ProgressBarCard(props) {
     const customStyles = {
     extBar: {
-        width: '100%',
+        width: '75%',
         backgroundColor: '#90e5b5',
         position: 'relative',
         zIndex: '-1',
@@ -21,7 +21,7 @@ function ProgressBarCard(props) {
         background: '#0a3a2c',
         textWrap: 'nowrap',
         color: 'white',
-        padding: '10px',
+        padding: '15px',
         borderRadius: '50px 0 0 50px'
     },
 };
