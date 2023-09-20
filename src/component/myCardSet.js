@@ -47,10 +47,10 @@ function MyCardsSet(props) {
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
-                      if(myCardsId.includes(val.id)){
+                      if(myCardsId.includes(val.localId)){
                         return(
                           <div className={"cardBox"}>
-                            <img class="fit-picture-card" src={"https://images.pokemontcg.io/"+props.idBooster+"/"+val.id+"_hires.png"} />
+                            <img class="fit-picture-card" src={"https://images.pokemontcg.io/"+props.idBooster+"/"+val.localId+"_hires.png"} />
                           </div>
                         )
                       }else{
