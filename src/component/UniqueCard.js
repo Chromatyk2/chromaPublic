@@ -44,7 +44,7 @@ function UniqueCard(props) {
                             <img src={props.cardImage + "/high.webp"}
                                  className="cover-image"/>
                         </div>
-                        <img src={items.sprites.other.officialArtwork.front_default}
+                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+items.id+".png"}
                              className="character"/>
                     </div>
                 }
