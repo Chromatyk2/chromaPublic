@@ -19,21 +19,6 @@ function UniqueCard(props) {
         setTimeout(() => {
             props.change();
         }, 2000);
-    }
-    useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result.cards);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, []);
     return (
         <>
             <div class={"discoveredCardsContainer"}>
