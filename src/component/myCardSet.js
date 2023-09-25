@@ -14,7 +14,7 @@ function MyCardsSet(props) {
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+        fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -39,7 +39,6 @@ function MyCardsSet(props) {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }, [myCards]);
-
     return (
         <>
             {items &&
@@ -48,15 +47,17 @@ function MyCardsSet(props) {
             <div id={"cardsContainer"}>
                 {items &&
                     items.cards.map((val, key) => {
-                      if(myCardsId.includes(val.localId)){
+                      if(myCardsId.includes(val.id)){
+                        let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <div className={"cardBox"}>
-                            <img value={val.localId} class="fit-picture-card" src={"https://images.pokemontcg.io/"+props.idBooster+"/"+val.localId+"_hires.png"} />
+                            <p className={"nbCardList"}>{cardNb.nbCard}</p>
+                            <img class="fit-picture-card" src={val.image+"/high.webp"} />
                           </div>
                         )
                       }else{
                         return(
-                          <img value={val.localId} class="fit-picture-card" src={"/images/backCard.png"} />
+                          <img class="fit-picture-card" src={"/images/backCard.png"} />
                         )
                       }
                     })
