@@ -88,9 +88,9 @@ function MyCardsSet(props) {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
-                          <button style={customStyles.buttonMyCard} myCardNb={cardNb.nbCard} value={val.image} onClick={openModal} className={"cardBox"}>
+                          <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
-                            <img class="fit-picture-card" src={val.image+"/high.webp"} />
+                            <img myCardNb={cardNb.nbCard} value={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
                           </button>
                         )
                       }else{
