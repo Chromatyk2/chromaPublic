@@ -15,11 +15,14 @@ function UniqueCard(props) {
             zIndex: 1,
             fontSize: '50px'
         },
+        image: {
+            width:'100%'
+        }
     };
         return (
             <>
                 <div class={"myCardsContainer"}>
-                    <img className="fit-picture-card" src={props.cardImage + "/high.webp"}/>
+                    <img style={customStyles.image} className="fit-picture-card" src={props.cardImage + "/high.webp"}/>
                     <p style={customStyles.content}>X {props.cardNb}</p>
                 </div>
             </>
