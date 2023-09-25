@@ -22,7 +22,7 @@ function OpeningCards(props) {
                 .then(
                     (result) => {
                         if(tenCards.length < 7){
-                            if(result.rarity == "Commune"){
+                            if(result.rarity == "Common"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
@@ -30,7 +30,7 @@ function OpeningCards(props) {
                                 setNbCards(nbCards + 1);
                             }
                         }else if(tenCards.length > 6 && tenCards.length < 9){
-                            if(result.rarity == "Peu Commune"){
+                            if(result.rarity == "Uncommon"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
