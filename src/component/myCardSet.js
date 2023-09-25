@@ -83,7 +83,7 @@ function MyCardsSet(props) {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
-                          <div myCardNb={cardNb.nbCard} value={val.image} onClick={openModal} className={"cardBox"}>
+                          <div myCardNb={val} onClick={openModal} className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
                             <img class="fit-picture-card" src={val.image+"/high.webp"} />
                           </div>
