@@ -96,8 +96,6 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     transition: all .5s;
     width: 75%;
     z-index: -1;
-    bottom: -142px;
-    left: -100px;
 }
 
 .card:hover .character {
