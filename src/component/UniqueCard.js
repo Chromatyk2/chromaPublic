@@ -15,18 +15,20 @@ function UniqueCard(props) {
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
     let [state, setState] = useState("Initial");
+
     function handleState() {
         setTimeout(() => {
             props.change();
         }, 2000);
-    return (
-        <>
-            <div class={"discoveredCardsContainer"}>
-                {items &&
-                    <OpeningCards user={props.user} change = {handleState} idBooster={props.idBooster} items={items}/>
-                }
-            </div>
-        </>
-    )
+        return (
+            <>
+                <div class={"discoveredCardsContainer"}>
+                    {items &&
+                        <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items}/>
+                    }
+                </div>
+            </>
+        )
+    }
 }
 export default UniqueCard
