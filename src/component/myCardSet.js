@@ -6,6 +6,8 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import ProgressBarCard from "./progressBarCard";
+import UniqueCard from "./UniqueCard.js";
+import Modal from "react-modal";
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
@@ -13,6 +15,7 @@ function MyCardsSet(props) {
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
             .then(res => res.json())
@@ -39,6 +42,15 @@ function MyCardsSet(props) {
         setMyCardsId(myCardsId => [...myCardsId,val.card]);
       })
     }, [myCards]);
+    function openModal(e) {
+        var cardNb = e.target.value;
+        console.log(cardNb);
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
     return (
         <>
             {items &&
@@ -50,7 +62,7 @@ function MyCardsSet(props) {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
-                          <div className={"cardBox"}>
+                          <div value={cardNb} onClick={openModal} className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
                             <img class="fit-picture-card" src={val.image+"/high.webp"} />
                           </div>
@@ -63,6 +75,9 @@ function MyCardsSet(props) {
                     })
                 }
             </div>
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                <UniqueCard cardNb={cardNb} change = {handleState} idBooster={boosterId} user={props.user}/>
+            </Modal>
         </>
     )
 }
