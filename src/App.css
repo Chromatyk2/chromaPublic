@@ -16,7 +16,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding: 0 36px;
     perspective: 2500px;
     margin: 0 50px;
@@ -46,7 +46,6 @@ src: url('../public/RetroTypo.ttf') format('truetype');
 
 .wrapper::before,
 .wrapper::after {
-    content: "";
     opacity: 0;
     width: 100%;
     height: 80px;
