@@ -54,7 +54,7 @@ function UniqueCard(props) {
     }, []);
         return (
             <>
-                {pkm.category == "pokemon" ?
+                {pkm.category == "Pokemon" ?
                     <div className="card">
                         <div className="wrapper">
                             <img src={props.cardImage + "/high.webp"}
