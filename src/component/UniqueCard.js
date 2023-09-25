@@ -23,9 +23,8 @@ function UniqueCard(props) {
         return (
             <>
                 <div class={"discoveredCardsContainer"}>
-                    {items &&
-                        <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items}/>
-                    }
+                    <img myCardNb={cardNb.nbCard} image={val.image} className="fit-picture-card" src={props.cardImage + "/high.webp"}/>
+                    <p>{props.cardNb}</p>
                 </div>
             </>
         )
