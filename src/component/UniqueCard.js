@@ -11,9 +11,11 @@ function UniqueCard(props) {
     const customStyles = {
         content: {
             position: 'relative',
-            bottom: '50px',
+            bottom: '107px',
             zIndex: 1,
-            fontSize: '50px'
+            fontSize: '100px',
+            height: 'inherit',
+            right: '-25px'
         },
         image: {
             width:'100%',
