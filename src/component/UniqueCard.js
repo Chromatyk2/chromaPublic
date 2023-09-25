@@ -23,7 +23,7 @@ function UniqueCard(props) {
         }
     };
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon/"+pkm.dexId)
+        fetch("https://pokeapi.co/api/v2/pokemon/"+pkm.dexId[0])
             .then(res => res.json())
             .then(
                 (result) => {
