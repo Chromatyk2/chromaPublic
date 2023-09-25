@@ -1456,6 +1456,7 @@ div#odds {
     flex-flow: column;
     align-items: end;
     justify-content: center;
+    height: 0;
 }
 @keyframes bounceIn {
     0% {
