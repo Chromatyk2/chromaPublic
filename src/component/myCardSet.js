@@ -62,7 +62,7 @@ function MyCardsSet(props) {
     }, [myCards]);
     function openModal(e) {
         setMyCardNb(e.target.value);
-        console.log(myCardNb);
+        console.log(e.target.getAttribute("myCardNb"));
         setIsOpen(true);
     }
 
@@ -83,7 +83,7 @@ function MyCardsSet(props) {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
-                          <div value={val.image} onClick={openModal} className={"cardBox"}>
+                          <div myCardNb={cardNb.nbCard} value={val.image} onClick={openModal} className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
                             <img class="fit-picture-card" src={val.image+"/high.webp"} />
                           </div>
@@ -96,9 +96,11 @@ function MyCardsSet(props) {
                     })
                 }
             </div>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <UniqueCard cardNb={myCardNb} change = {handleState}/>
-            </Modal>
+            {myCardNb &&
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                    <UniqueCard cardNb={myCardNb} change = {handleState}/>
+                </Modal>
+            }
         </>
     )
 }
