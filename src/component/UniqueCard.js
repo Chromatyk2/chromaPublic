@@ -23,9 +23,6 @@ function UniqueCard(props) {
         }
     };
     useEffect(() => {
-
-    }, [pkm]);
-    useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/cards/"+props.cardId)
             .then(res => res.json())
             .then(
