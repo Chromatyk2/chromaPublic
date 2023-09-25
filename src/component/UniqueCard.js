@@ -50,6 +50,7 @@ function UniqueCard(props) {
                 }
             )
     }, []);
+    console.log(pkm);
         return (
             <>
                 {pkm.category == "Pokemon" ?
