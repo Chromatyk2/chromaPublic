@@ -63,7 +63,7 @@ function MyCardsSet(props) {
     function openModal(e) {
         var myNbCard = e.target.getAttribute("cardNb");
         setMyCardNb(myNbCard);
-        console.log(myNbCard);
+        console.log(myCardNb);
         setIsOpen(true);
     }
 
