@@ -61,7 +61,7 @@ function MyCardsSet(props) {
       })
     }, [myCards]);
     function openModal(e) {
-        var cardNb = e.target.value;
+        var cardNb = e.target.getAttribute("cardNb");
         setMyCardNb(cardNb);
         console.log(cardNb);
         setIsOpen(true);
@@ -84,7 +84,7 @@ function MyCardsSet(props) {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
-                          <div value={cardNb} onClick={openModal} className={"cardBox"}>
+                          <div cardNb={cardNb} onClick={openModal} className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
                             <img class="fit-picture-card" src={val.image+"/high.webp"} />
                           </div>
