@@ -16,7 +16,7 @@ function MyCardsSet(props) {
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [myCardNb, setMyCardNb] = React.useState(false);
+    const [myCardNb, setMyCardNb] = React.useState(null);
     const customStyles = {
         content: {
             position:'initial',
