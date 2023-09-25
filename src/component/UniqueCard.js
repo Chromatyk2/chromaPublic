@@ -18,8 +18,7 @@ function UniqueCard(props) {
             right: '-25px'
         },
         image: {
-            width:'100%',
-            marginTop:'85px'
+            width:'100%'
         }
     };
         return (
