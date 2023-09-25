@@ -7,7 +7,7 @@ font-family: 'RetroTypo';
 src: url('../public/RetroTypo.ttf') format('truetype');
 }
 :root {
-    --card-height: 300px;
+    --card-height: 700px;
     --card-width: calc(var(--card-height) / 1.5);
 }
 .card {
