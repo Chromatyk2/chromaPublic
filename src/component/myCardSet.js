@@ -16,6 +16,24 @@ function MyCardsSet(props) {
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [myCardNb, setMyCardNb] = React.useState(false);
+    const customStyles = {
+        content: {
+            position:'initial',
+            border: 'none',
+            background: 'none',
+            borderRadius: '4px',
+            width: '100%',
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
+        textModal: {
+            fontSize:'30px',
+            textAlign:'center'
+        },
+    };
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
             .then(res => res.json())
@@ -44,11 +62,15 @@ function MyCardsSet(props) {
     }, [myCards]);
     function openModal(e) {
         var cardNb = e.target.value;
+        setMyCardNb(cardNb);
         console.log(cardNb);
         setIsOpen(true);
     }
 
     function closeModal() {
+        setIsOpen(false);
+    }
+    function handleState() {
         setIsOpen(false);
     }
     return (
@@ -76,7 +98,7 @@ function MyCardsSet(props) {
                 }
             </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <UniqueCard cardNb={cardNb} change = {handleState} idBooster={boosterId} user={props.user}/>
+                <UniqueCard cardNb={myCardNb} change = {handleState}/>
             </Modal>
         </>
     )
