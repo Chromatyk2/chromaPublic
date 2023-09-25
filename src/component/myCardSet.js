@@ -65,7 +65,7 @@ function MyCardsSet(props) {
       })
     }, [myCards]);
     function openModal(e) {
-        console.log(e.target.value);
+        console.log(e.target.getAttribute("image"));
         console.log(e.target.getAttribute("myCardNb"));
         console.log(e.target);
         setIsOpen(true);
@@ -90,7 +90,7 @@ function MyCardsSet(props) {
                         return(
                           <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
-                            <img myCardNb={cardNb.nbCard} value={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
+                            <img myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
                           </button>
                         )
                       }else{
