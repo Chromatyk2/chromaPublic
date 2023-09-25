@@ -23,7 +23,6 @@ function UniqueCard(props) {
         }
     };
     useEffect(() => {
-        var name = props.pokemonName.toLowerCase();
         fetch("https://pokeapi.co/api/v2/pokemon/"+pkm.dexId)
             .then(res => res.json())
             .then(
