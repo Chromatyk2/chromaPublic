@@ -11,8 +11,7 @@ function UniqueCard(props) {
     const customStyles = {
         content: {
             position: 'relative',
-            bottom: '40px',
-            right: '-26px',
+            bottom: '50px',
             zIndex: 1,
             fontSize: '50px'
         },
