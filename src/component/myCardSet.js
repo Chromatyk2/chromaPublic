@@ -36,7 +36,8 @@ function MyCardsSet(props) {
         },
         buttonMyCard: {
             border:'none',
-            background:'none'
+            background:'none',
+            padding:0
         },
     };
     useEffect(() => {
@@ -89,7 +90,6 @@ function MyCardsSet(props) {
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                            <p className={"nbCardList"}>{cardNb.nbCard}</p>
                             <img myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
                           </button>
                         )
