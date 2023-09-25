@@ -21,6 +21,20 @@ function UniqueCard(props) {
             width:'100%'
         }
     };
+    useEffect(() => {
+        fetch("https://pokeapi.co/api/v2/pokemon/"+props.pokemonName)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setItems(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, []);
         return (
             <>
                 <div className="card">
