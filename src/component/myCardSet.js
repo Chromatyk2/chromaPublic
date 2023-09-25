@@ -71,7 +71,7 @@ function MyCardsSet(props) {
     function openModal(e) {
         setMyCardImage(e.target.getAttribute("image"));
         setMyCardNb(e.target.getAttribute("myCardNb"));
-        setPokemonName(e.target.getAttribute("pokemonName"));
+        setPokemonName(e.target.getAttribute("pokemonId"));
         setCardId(e.target.getAttribute("cardId"));
         setIsOpen(true);
     }
@@ -94,7 +94,7 @@ function MyCardsSet(props) {
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                            <img cardId={val.id} pokemonName={val.name} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
+                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
                           </button>
                         )
                       }else{
