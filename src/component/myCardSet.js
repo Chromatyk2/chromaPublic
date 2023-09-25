@@ -14,7 +14,7 @@ function MyCardsSet(props) {
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/fr/sets/"+props.idBooster)
+        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
             .then(res => res.json())
             .then(
                 (result) => {
