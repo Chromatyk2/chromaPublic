@@ -8,11 +8,20 @@ function UniqueCard(props) {
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
     let [state, setState] = useState("Initial");
+    const customStyles = {
+        content: {
+            position: 'relative',
+            bottom: '40px',
+            right: '-26px',
+            zIndex: 1,
+            fontSize: '50px'
+        },
+    };
         return (
             <>
-                <div class={"discoveredCardsContainer"}>
+                <div class={"myCardsContainer"}>
                     <img className="fit-picture-card" src={props.cardImage + "/high.webp"}/>
-                    <p>{props.cardNb}</p>
+                    <p style={customStyles.content}>{props.cardNb}</p>
                 </div>
             </>
         )

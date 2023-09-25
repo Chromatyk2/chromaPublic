@@ -1451,6 +1451,13 @@ div#odds {
     width: 350px;
     position: absolute;
 }
+.myCardsContainer {
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+    height: 100vh;
+    justify-content: center;
+}
 @keyframes bounceIn {
     0% {
         visibility: visible;
