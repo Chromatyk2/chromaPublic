@@ -101,7 +101,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
 
 .card:hover .character {
     opacity: 1;
-    transform: translate3d(0%, -60%, 110px);
+    transform: translate3d(0%, 60%, 0);
 }
 
 #containerGlobal{
