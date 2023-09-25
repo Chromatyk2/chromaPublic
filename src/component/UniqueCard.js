@@ -15,7 +15,7 @@ function UniqueCard(props) {
             zIndex: 1,
             fontSize: '100px',
             height: 'inherit',
-            right: '-25px'
+            right: '-7px'
         },
         image: {
             width:'100%'
