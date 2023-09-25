@@ -33,6 +33,10 @@ function MyCardsSet(props) {
             fontSize:'30px',
             textAlign:'center'
         },
+        buttonMyCard: {
+            border:'none',
+            background:'none'
+        },
     };
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
@@ -81,7 +85,7 @@ function MyCardsSet(props) {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
-                          <button value={val} onClick={openModal} className={"cardBox"}>
+                          <button myCardNb={cardNb.nbCard} value={val.image} onClick={openModal} className={"cardBox"}>
                             <p className={"nbCardList"}>{cardNb.nbCard}</p>
                             <img class="fit-picture-card" src={val.image+"/high.webp"} />
                           </button>
