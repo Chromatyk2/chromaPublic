@@ -16,7 +16,7 @@ function MyCardsSet(props) {
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [image, setImage] = React.useState(null);
+    const [myCardNb, setMyCardNb] = React.useState(null);
     const customStyles = {
         content: {
             position:'initial',
@@ -61,9 +61,8 @@ function MyCardsSet(props) {
       })
     }, [myCards]);
     function openModal(e) {
-        setImage(e.target.value);
+        setMyCardNb(e.target.value);
         setIsOpen(true);
-        console.log(image);
     }
 
     function closeModal() {
@@ -97,7 +96,7 @@ function MyCardsSet(props) {
                 }
             </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <UniqueCard change = {handleState}/>
+                <UniqueCard cardNb={myCardNb} change = {handleState}/>
             </Modal>
         </>
     )
