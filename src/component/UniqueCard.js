@@ -64,9 +64,11 @@ function UniqueCard(props) {
                              className="character"/>
                     </div>
                     :
-                    <div class={"myCardsContainer"}>
-                        <img style={customStyles.image} className="fit-picture-card" src={props.cardImage + "/high.webp"}/>
-                        <p style={customStyles.content}>X {props.cardNb}</p>
+                    <div className="card">
+                        <div className="wrapper">
+                            <img src={props.cardImage + "/high.webp"}
+                                 className="cover-image"/>
+                        </div>
                     </div>
                 }
             </>
