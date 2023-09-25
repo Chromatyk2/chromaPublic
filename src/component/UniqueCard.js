@@ -7,6 +7,7 @@ function UniqueCard(props) {
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
+    const [pkm, setPkm] = React.useState(true);
     let [state, setState] = useState("Initial");
     const customStyles = {
         content: {
@@ -36,9 +37,25 @@ function UniqueCard(props) {
                 }
             )
     }, []);
+    useEffect(() => {
+        var name = props.pokemonName.toLowerCase();
+        fetch("https://api.tcgdex.net/v2/en/cards/"+props.cardId)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setPkm(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, []);
         return (
             <>
                 {items &&
+                    pkm.category == "pokemon" ?
                     <div className="card">
                         <div className="wrapper">
                             <img src={props.cardImage + "/high.webp"}
@@ -47,11 +64,12 @@ function UniqueCard(props) {
                         <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+items.id+".png"}
                              className="character"/>
                     </div>
+                    :
+                    <div class={"myCardsContainer"}>
+                        <img style={customStyles.image} className="fit-picture-card" src={props.cardImage + "/high.webp"}/>
+                        <p style={customStyles.content}>X {props.cardNb}</p>
+                    </div>
                 }
-                {/*<div class={"myCardsContainer"}>*/}
-                {/*    <img style={customStyles.image} className="fit-picture-card" src={props.cardImage + "/high.webp"}/>*/}
-                {/*    <p style={customStyles.content}>X {props.cardNb}</p>*/}
-                {/*</div>*/}
             </>
         )
 }

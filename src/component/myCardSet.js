@@ -19,6 +19,7 @@ function MyCardsSet(props) {
     const [myCardNb, setMyCardNb] = React.useState(null);
     const [myCardImage, setMyCardImage] = React.useState(null);
     const [pokemonName, setPokemonName] = React.useState(null);
+    const [cardId, setCardId] = React.useState(null);
     const customStyles = {
         content: {
             position:'initial',
@@ -71,6 +72,7 @@ function MyCardsSet(props) {
         setMyCardImage(e.target.getAttribute("image"));
         setMyCardNb(e.target.getAttribute("myCardNb"));
         setPokemonName(e.target.getAttribute("pokemonName"));
+        setCardId(e.target.getAttribute("cardId"));
         setIsOpen(true);
     }
 
@@ -92,7 +94,7 @@ function MyCardsSet(props) {
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                            <img pokemonName={val.name} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
+                            <img pokemonName={val.id} pokemonName={val.name} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
                           </button>
                         )
                       }else{
@@ -104,7 +106,7 @@ function MyCardsSet(props) {
                 }
             </div>
                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                    <UniqueCard pokemonName={pokemonName} onRequestClose={closeModal} cardImage={myCardImage} cardNb={myCardNb} change = {handleState}/>
+                    <UniqueCard pokemonName={pokemonName} onRequestClose={closeModal} cardImage={myCardImage} cardNb={myCardNb} cardId={cardId} change = {handleState}/>
                 </Modal>
         </>
     )
