@@ -44,7 +44,7 @@ function UniqueCard(props) {
                             <img src={props.cardImage + "/high.webp"}
                                  className="cover-image"/>
                         </div>
-                        <img src={items.sprites.other.official-artwork.front_default}
+                        <img src={items.sprites.other.officialArtwork.front_default}
                              className="character"/>
                     </div>
                 }
