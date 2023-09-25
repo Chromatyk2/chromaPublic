@@ -102,7 +102,7 @@ function MyCardsSet(props) {
                 }
             </div>
                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                    <UniqueCard cardImage={myCardImage} cardNb={myCardNb} change = {handleState}/>
+                    <UniqueCard onRequestClose={closeModal} cardImage={myCardImage} cardNb={myCardNb} change = {handleState}/>
                 </Modal>
         </>
     )
