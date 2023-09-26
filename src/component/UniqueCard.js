@@ -59,7 +59,7 @@ function UniqueCard(props) {
                         </div>
                         <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"}
                              className="character"/>
-                        <p className={"nbCardHover"}>X {props.cardNb}</p>
+                        <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
                     </div>
                     :
                     <div className="card">
