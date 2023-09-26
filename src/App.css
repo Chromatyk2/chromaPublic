@@ -199,7 +199,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
 }
 
 .card:hover .wrapper .nbCardHover{
-    transform: perspective(900px) translateY(5%) rotateX(330deg) translateZ(0);
+    transform: perspective(900px) translateY(5%) rotateX(330deg) translateZ(0) translate3d(0%, 81%, 0);
 }
 
 .myNoteText, .myNote{

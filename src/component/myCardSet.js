@@ -95,7 +95,7 @@ function MyCardsSet(props) {
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={val.image+"/high.webp"} />
+                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg"} />
                           </button>
                         )
                       }else{
