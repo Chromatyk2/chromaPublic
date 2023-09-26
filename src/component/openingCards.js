@@ -17,7 +17,7 @@ function OpeningCards(props) {
     const [endPull, setEndPull] = React.useState(false)
     useEffect(() => {
         if (tenCards.length < 11) {
-            fetch("https://api.tcgdex.net/v2/en/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
+            fetch("https://api.pokemontcg.io/v2/cards"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
                 .then(res => res.json())
                 .then(
                     (result) => {
