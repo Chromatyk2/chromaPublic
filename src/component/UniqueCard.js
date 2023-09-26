@@ -54,12 +54,11 @@ function UniqueCard(props) {
                 {pkm.category == "Pokemon" ?
                     <div className="card">
                         <div className="wrapper">
+                            <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
                             <img src={props.cardImage + "/high.webp"}
                                  className="cover-image"/>
                         </div>
-                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"}
-                             className="character"/>
-                        <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
+                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"} className="character"/>
                     </div>
                     :
                     <div className="card">

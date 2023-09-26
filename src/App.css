@@ -197,9 +197,12 @@ src: url('../public/RetroTypo.ttf') format('truetype');
   stroke-dasharray: 251.3274122872px;
 }
 
-
-
-
+.card:hover .wrapper .nbCardHover{
+    transform: perspective(900px) translateY(-5%) rotateX(0) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
 
 .myNoteText, .myNote{
   font-family: "RetroTypo";
