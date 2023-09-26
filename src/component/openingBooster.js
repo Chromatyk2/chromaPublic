@@ -21,7 +21,7 @@ function OpeningBooster(props) {
         }, 2000);
     }
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster)
             .then(res => res.json())
             .then(
                 (result) => {
