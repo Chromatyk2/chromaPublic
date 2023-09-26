@@ -111,6 +111,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     z-index: 1;
     font-size: 65px;
     text-align: end;
+    opacity: 0;
 }
 
 .card:hover .nbCardHover {
