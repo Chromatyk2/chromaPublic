@@ -104,6 +104,20 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     transform: translate3d(0%, 60%, 0);
 }
 
+.nbCardHover {
+    left: -27%;
+    opacity: 0;
+    position: absolute;
+    transition: all .5s;
+    width: 75%;
+    z-index: 1;
+}
+
+.card:hover .nbCardHover {
+    opacity: 1;
+    transform: translate3d(0%, 60%, 0);
+}
+
 #containerGlobal{
   position: absolute;
   top:0;
