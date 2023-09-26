@@ -21,9 +21,9 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log(result.rarity);
+                        console.log(result.data.rarity);
                         if(tenCards.length < 7){
-                            if(result.rarity == "Common"){
+                            if(result.data.rarity == "Common"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
@@ -31,7 +31,7 @@ function OpeningCards(props) {
                                 setNbCards(nbCards + 1);
                             }
                         }else if(tenCards.length > 6 && tenCards.length < 9){
-                            if(result.rarity == "Uncommon"){
+                            if(result.data.rarity == "Uncommon"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
@@ -39,7 +39,7 @@ function OpeningCards(props) {
                                 setNbCards(nbCards + 1);
                             }
                         }else if(tenCards.length == 9){
-                            if(result.rarity.includes("Rare" ) || result.rarity == "LEGEND" || result.rarity == "Promo"){
+                            if(result.data.rarity.includes("Rare" ) || result.data.rarity == "LEGEND" || result.data.rarity == "Promo"){
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                                 setIsLoaded(false);
