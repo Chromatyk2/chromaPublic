@@ -38,7 +38,7 @@ function OpeningCards(props) {
                                 setNbCards(nbCards + 1);
                             }
                         }else if(tenCards.length == 9){
-                            if(result.rarity == "Rare"){
+                            if(result.rarity.includes("Rare" ) || result.rarity == "LEGEND" || result.rarity == "Promo"){
                                 setTenCards(tenCards => [...tenCards,result]);
                                 setNbCards (nbCards + 1);
                                 setIsLoaded(false);
