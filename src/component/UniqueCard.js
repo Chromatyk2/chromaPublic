@@ -7,7 +7,7 @@ function UniqueCard(props) {
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
-    const [pkm, setPkm] = React.useState(true);
+    const [pkm, setPkm] = React.useState(null);
     let [state, setState] = useState("Initial");
     const [glow, setGlow] = React.useState(null);
     const customStyles = {
@@ -61,7 +61,7 @@ function UniqueCard(props) {
         }
     }, [pkm]);
     console.log(glow);
-    console.log(pkm);
+    console.log(pkm.data);
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png";
