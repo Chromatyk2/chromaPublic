@@ -49,7 +49,6 @@ function CardsHub(props) {
         setPage(e.target.value)
     }
     function addPointButton() {
-        if(canGetPoint===true){
             if (timer.length == 0) {
                 if(canGetPoint === false){
                     Axios.post('/api/addButtonClick',
@@ -102,7 +101,6 @@ function CardsHub(props) {
                     )
                 }
             }
-        }
     }
     return(
         <>
