@@ -29,6 +29,7 @@ function UniqueCard(props) {
                 (result) => {
                     setIsLoaded(true);
                     setPkm(result);
+                    console.log(result);
                     if(result.rarity == "Ultra Rare"  || result.rarity == "Trainer Gallery Rare Holo"  || result.rarity == "Special Illustration"  || result.rarity == "Special Illustration Rare"  || result.rarity == "Rare BREAK" || result.rarity == "Illustration Rare" || result.rarity == "Hyper Rare"  || result.rarity == "LEGEND" || result.rarity == "Promo" || result.rarity == "Rare Holo GX" || result.rarity == "Rare Holo V" || result.rarity == "Rare Holo VMAX" || result.rarity == "Rare Rainbow" || result.rarity == "Rare Secret" || result.rarity == "Rare Shiny GX" || result.rarity == "Rare Ultra"){
                         setGlow("bigImageRainbow")
                     }else if(result.rarity == "Classic Collection"  || result.rarity == "Promo"  || result.rarity == "Radiant Rare"  || result.rarity == "Double Rare"  || result.rarity == "Amazing Rare" || result.rarity == "Promo" || result.rarity == "Rare ACE" || result.rarity == "Rare Holo" || result.rarity == "Rare Holo Star" || result.rarity == "Rare Holo LV.X" || result.rarity == "Rare Holo" || result.rarity == "Rare Holo EX" || result.rarity == "Rare Prime" || result.rarity == "Rare Prism Star" || result.rarity == "Rare Shining" || result.rarity == "Rare Shiny"){
