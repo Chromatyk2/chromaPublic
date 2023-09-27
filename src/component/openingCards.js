@@ -77,17 +77,6 @@ function OpeningCards(props) {
         setIsHidden(false);
     }
     function getCard(e) {
-        if(index === tenCards.length - 1){
-            Axios.post('/api/addCard',
-                {
-                    pseudo:props.user,
-                    idCard:e.target.getAttribute("cardId"),
-                    booster:props.idBooster
-                })
-            e.target.classList.toggle('gettedCard');
-            setEndPull(true);
-            props.change();
-        } else {
             Axios.post('/api/addCard',
                 {
                     pseudo:props.user,
@@ -96,8 +85,20 @@ function OpeningCards(props) {
                 })
             e.target.classList.toggle('gettedCard');
             setIndex(index + 1);
-        }
     }
+
+    function getLastCard(e) {
+        Axios.post('/api/addCard',
+            {
+                pseudo: props.user,
+                idCard: e.target.getAttribute("cardId"),
+                booster: props.idBooster
+            })
+        e.target.classList.toggle('gettedCard');
+        setEndPull(true);
+        props.change();
+    }
+
     const customStyles = {
         textModal: {
             fontSize:'30px',
@@ -120,7 +121,7 @@ function OpeningCards(props) {
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <img cardId={val.id} onClick={getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img cardId={val.id}  onClick={key==10 ? getCard  : getLastCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
