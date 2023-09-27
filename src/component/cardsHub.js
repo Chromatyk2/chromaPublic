@@ -36,7 +36,7 @@ function CardsHub(props) {
             Axios.post('/api/addButtonClick',
                 {
                     pseudo:pseudo,
-                    hour:Date.now()
+                    hour:new Date()
                 }).then(
                 (result) => {
                     Axios
@@ -53,7 +53,7 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            console.log(((Date.now()) - timer) < oneHour);
+                            console.log(new Date(timer));
                         }
                     )
                 }
@@ -61,7 +61,7 @@ function CardsHub(props) {
         }else{
             Axios.post('/api/updateButtonTime',
                 {
-                    hour:Date.now(),
+                    hour:new Date(),
                     pseudo:pseudo
                 }
             ).then(
@@ -80,7 +80,7 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            console.log(((Date.now()) - timer) < oneHour);
+                            console.log(new Date(timer));
                         }
                     )
                 }
