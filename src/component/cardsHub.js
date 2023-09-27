@@ -113,8 +113,7 @@ function CardsHub(props) {
                     {
 
                     }
-                    {timer &&
-                        timer.length == 0 ?
+                    {timer.length == 0 ?
                             <button onClick={addPointButton}>Prendre les points</button>
                         :
                         canGetPoint === true ?
