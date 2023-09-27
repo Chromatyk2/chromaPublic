@@ -29,6 +29,13 @@ function UniqueCard(props) {
                 (result) => {
                     setIsLoaded(true);
                     setPkm(result);
+                    if(result.rarity == "Ultra Rare"  || result.rarity == "Trainer Gallery Rare Holo"  || result.rarity == "Special Illustration"  || result.rarity == "Special Illustration Rare"  || result.rarity == "Rare BREAK" || result.rarity == "Illustration Rare" || result.rarity == "Hyper Rare"  || result.rarity == "LEGEND" || result.rarity == "Promo" || result.rarity == "Rare Holo GX" || result.rarity == "Rare Holo V" || result.rarity == "Rare Holo VMAX" || result.rarity == "Rare Rainbow" || result.rarity == "Rare Secret" || result.rarity == "Rare Shiny GX" || result.rarity == "Rare Ultra"){
+                        setGlow("bigImageRainbow")
+                    }else if(result.rarity == "Classic Collection"  || result.rarity == "Promo"  || result.rarity == "Radiant Rare"  || result.rarity == "Double Rare"  || result.rarity == "Amazing Rare" || result.rarity == "Promo" || result.rarity == "Rare ACE" || result.rarity == "Rare Holo" || result.rarity == "Rare Holo Star" || result.rarity == "Rare Holo LV.X" || result.rarity == "Rare Holo" || result.rarity == "Rare Holo EX" || result.rarity == "Rare Prime" || result.rarity == "Rare Prism Star" || result.rarity == "Rare Shining" || result.rarity == "Rare Shiny"){
+                        setGlow("bigImageGold")
+                    }else{
+                        setGlow("bigImageRare")
+                    }
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -36,17 +43,6 @@ function UniqueCard(props) {
                 }
             )
     }, []);
-    useEffect(() => {
-        if(pkm !== null){
-            if(pkm.rarity == "Ultra Rare"  || pkm.rarity == "Trainer Gallery Rare Holo"  || pkm.rarity == "Special Illustration"  || pkm.rarity == "Special Illustration Rare"  || pkm.rarity == "Rare BREAK" || pkm.rarity == "Illustration Rare" || pkm.rarity == "Hyper Rare"  || pkm.rarity == "LEGEND" || pkm.rarity == "Promo" || pkm.rarity == "Rare Holo GX" || pkm.rarity == "Rare Holo V" || pkm.rarity == "Rare Holo VMAX" || pkm.rarity == "Rare Rainbow" || pkm.rarity == "Rare Secret" || pkm.rarity == "Rare Shiny GX" || pkm.rarity == "Rare Ultra"){
-                setGlow("bigImageRainbow")
-            }else if(pkm.rarity == "Classic Collection"  || pkm.rarity == "Promo"  || pkm.rarity == "Radiant Rare"  || pkm.rarity == "Double Rare"  || pkm.rarity == "Amazing Rare" || pkm.rarity == "Promo" || pkm.rarity == "Rare ACE" || pkm.rarity == "Rare Holo" || pkm.rarity == "Rare Holo Star" || pkm.rarity == "Rare Holo LV.X" || pkm.rarity == "Rare Holo" || pkm.rarity == "Rare Holo EX" || pkm.rarity == "Rare Prime" || pkm.rarity == "Rare Prism Star" || pkm.rarity == "Rare Shining" || pkm.rarity == "Rare Shiny"){
-                setGlow("bigImageGold")
-            }else{
-                setGlow("bigImageRare")
-            }
-        }
-    }, [pkm]);
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png";
