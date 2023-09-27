@@ -83,6 +83,10 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
+    function errorImage(e){
+        e.target.onerror = null;
+        e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+".png"};
+    }
     return (
         <>
             {items &&
@@ -95,7 +99,7 @@ function MyCardsSet(props) {
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
                           <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg" } onError={(e) => {e.target.onerror = null, e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+".png"}} />
+                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg" } onError={errorImage} />
                           </button>
                         )
                       }else{
