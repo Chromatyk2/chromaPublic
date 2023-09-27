@@ -33,8 +33,10 @@ function UniqueCard(props) {
                         setGlow("bigImageRainbow")
                     }else if(result.rarity == "Classic Collection"  || result.rarity == "Promo"  || result.rarity == "Radiant Rare"  || result.rarity == "Double Rare"  || result.rarity == "Amazing Rare" || result.rarity == "Promo" || result.rarity == "Rare ACE" || result.rarity == "Rare Holo" || result.rarity == "Rare Holo Star" || result.rarity == "Rare Holo LV.X" || result.rarity == "Rare Holo" || result.rarity == "Rare Holo EX" || result.rarity == "Rare Prime" || result.rarity == "Rare Prism Star" || result.rarity == "Rare Shining" || result.rarity == "Rare Shiny"){
                         setGlow("bigImageGold")
-                    }else{
+                    }else if(result.rarity == "Rare"){
                         setGlow("bigImageRare")
+                    }else{
+                        setGlow("")
                     }
                 },
                 (error) => {
