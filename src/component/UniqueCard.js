@@ -29,6 +29,7 @@ function UniqueCard(props) {
                 (result) => {
                     setIsLoaded(true);
                     setPkm(result);
+                    console.log(pkm);
                     console.log(result);
                     if(result.rarity == "Ultra Rare"  || result.rarity == "Trainer Gallery Rare Holo"  || result.rarity == "Special Illustration"  || result.rarity == "Special Illustration Rare"  || result.rarity == "Rare BREAK" || result.rarity == "Illustration Rare" || result.rarity == "Hyper Rare"  || result.rarity == "LEGEND" || result.rarity == "Promo" || result.rarity == "Rare Holo GX" || result.rarity == "Rare Holo V" || result.rarity == "Rare Holo VMAX" || result.rarity == "Rare Rainbow" || result.rarity == "Rare Secret" || result.rarity == "Rare Shiny GX" || result.rarity == "Rare Ultra"){
                         setGlow("bigImageRainbow")
