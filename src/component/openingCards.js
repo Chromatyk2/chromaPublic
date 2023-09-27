@@ -22,7 +22,7 @@ function OpeningCards(props) {
                 .then(
                     (result) => {
                         if(tenCards.length < 7){
-                            if(result.data.rarity == "Common" || result.data.rarity == "Classic Collection"){
+                            if(result.data.rarity == "Common"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result.data]);
                                 setNbCards (nbCards + 1);
@@ -30,7 +30,7 @@ function OpeningCards(props) {
                                 setNbCards(nbCards + 1);
                             }
                         }else if(tenCards.length > 6 && tenCards.length < 9){
-                            if(result.data.rarity == "Uncommon" || result.data.rarity == "Classic Collection"){
+                            if(result.data.rarity == "Uncommon"){
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,result.data]);
                                 setNbCards (nbCards + 1);
@@ -38,12 +38,34 @@ function OpeningCards(props) {
                                 setNbCards(nbCards + 1);
                             }
                         }else if(tenCards.length == 9){
-                            if(result.data.rarity.includes("Rare" ) || result.data.rarity == "LEGEND" || result.data.rarity == "Promo" || result.data.rarity == "Classic Collection"){
-                                setTenCards(tenCards => [...tenCards,result.data]);
-                                setNbCards (nbCards + 1);
-                                setIsLoaded(false);
+                            var holo = Math.floor(Math.random() * 2);
+                            if(holo == 1){
+                                var ultra = Math.floor(Math.random() * 2);
+                                if(ultra == 1){
+                                    if(result.data.rarity.includes("Rare" )){
+                                        setTenCards(tenCards => [...tenCards,result.data]);
+                                        setNbCards (nbCards + 1);
+                                        setIsLoaded(false);
+                                    }else{
+                                        setNbCards(nbCards + 1);
+                                    }
+                                }else{
+                                    if(result.data.rarity =="Rare"  || result.data.rarity == "LEGEND" || result.data.rarity == "Promo" || result.data.rarity == "Rare ACE" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo"){
+                                        setTenCards(tenCards => [...tenCards,result.data]);
+                                        setNbCards (nbCards + 1);
+                                        setIsLoaded(false);
+                                    }else{
+                                        setNbCards(nbCards + 1);
+                                    }
+                                }
                             }else{
-                                setNbCards(nbCards + 1);
+                                if(result.data.rarity =="Rare"  || result.data.rarity == "LEGEND" || result.data.rarity == "Promo" || result.data.rarity == "Rare Holo EX" || result.data.rarity == "Rare Holo GX" || result.data.rarity == "Rare Holo LV.X" || result.data.rarity == "Rare Holo Star" || result.data.rarity == "Rare Holo V" || result.data.rarity == "Rare Holo VMAX" || result.data.rarity == "Rare Prime" || result.data.rarity == "Rare Prism Star" || result.data.rarity == "Rare Rainbow" || result.data.rarity == "Rare Secret" || result.data.rarity == "Rare Shining" || result.data.rarity == "Rare Shiny" || result.data.rarity == "Rare Shiny GX" || result.data.rarity == "Rare Ultra"){
+                                    setTenCards(tenCards => [...tenCards,result.data]);
+                                    setNbCards (nbCards + 1);
+                                    setIsLoaded(false);
+                                }else{
+                                    setNbCards(nbCards + 1);
+                                }
                             }
                         }
                     }
