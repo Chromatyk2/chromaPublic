@@ -28,7 +28,7 @@ function CardsHub(props) {
             })
     }, [])
     useEffect(() => {
-        if(timer.length > 0){
+        if(timer !== null){
             var myTimestamp = new Date(timer[0].hour).getTime() / 1000;
             var twoHour = ((new Date().getTime() / 1000) - 7200);
             console.log(twoHour);
@@ -39,7 +39,7 @@ function CardsHub(props) {
                 setCanGetPoint(false);
             }
         }
-    }, [])
+    }, [timer])
     const [page, setPage] = useState(null);
     function displayTcgContent(e) {
         setPage(e.target.value)
