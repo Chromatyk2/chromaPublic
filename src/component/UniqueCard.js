@@ -25,6 +25,7 @@ function UniqueCard(props) {
     };
     useEffect(() => {
         fetch("https://api.pokemontcg.io/v2/cards/"+props.cardId)
+            .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
