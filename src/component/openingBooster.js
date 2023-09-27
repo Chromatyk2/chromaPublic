@@ -10,7 +10,7 @@ import OpeningCards from "./openingCards";
 
 function OpeningBooster(props) {
     const [items, setItems] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(true);
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
