@@ -10,7 +10,7 @@ import Axios from 'axios'
 import MyBoosters from "./myBoosters";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
-    const [timer,setTimer] = useState([]);
+    const [timer,setTimer] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
     const [canGetPoint,setCanGetPoint] = useState(false);
     useEffect(() => {
