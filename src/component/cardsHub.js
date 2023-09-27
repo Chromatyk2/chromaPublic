@@ -31,14 +31,14 @@ function CardsHub(props) {
         setPage(e.target.value)
     }
     function addPointButton() {
-        if(timer === null){
+        if(timer.length == 0){
             Axios.post('/api/addButtonClick',
                 {
                     pseudo:pseudo,
                     hour:new Date()
                 })
         }else{
-            return Axios.post('/api/removeCardsPoint',
+            return Axios.post('/api/updateButtonTime',
                 {
                     user:pseudo,
                     hour:new Date()
