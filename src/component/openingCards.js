@@ -39,9 +39,12 @@ function OpeningCards(props) {
                             }
                         }else if(tenCards.length == 9){
                             var holo = Math.floor(Math.random() * 1);
+                            console.log(holo);
                             if(holo == 0){
                                 var ultra = Math.floor(Math.random() * 1);
+                                console.log(ultra);
                                 if(ultra == 0){
+
                                     if(result.data.rarity =="Rare"  || result.data.rarity == "LEGEND" || result.data.rarity == "Promo" || result.data.rarity == "Rare Holo EX" || result.data.rarity == "Rare Holo GX" || result.data.rarity == "Rare Holo LV.X" || result.data.rarity == "Rare Holo Star" || result.data.rarity == "Rare Holo V" || result.data.rarity == "Rare Holo VMAX" || result.data.rarity == "Rare Prime" || result.data.rarity == "Rare Prism Star" || result.data.rarity == "Rare Rainbow" || result.data.rarity == "Rare Secret" || result.data.rarity == "Rare Shining" || result.data.rarity == "Rare Shiny" || result.data.rarity == "Rare Shiny GX" || result.data.rarity == "Rare Ultra"){
                                         setTenCards(tenCards => [...tenCards,result.data]);
                                         setNbCards (nbCards + 1);
