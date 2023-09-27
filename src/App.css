@@ -1742,7 +1742,7 @@ div#odds {
     100% {
         transform: translate(0em);
         z-index:-2;
-        display: none;
+        visibility: hidden;
     }
 }
 .discoveredCardsContainer{
