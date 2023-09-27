@@ -18,7 +18,7 @@ function OpeningBooster(props) {
     function handleState() {
         setTimeout(() => {
             props.change();
-        }, 2000);
+        }, 1000);
     }
     useEffect(() => {
         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster)
