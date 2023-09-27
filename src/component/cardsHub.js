@@ -52,7 +52,8 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            console.log(new Date().getTime() - timer.getTime());
+                            var today= new Date();
+                            console.log(today.getTime() - timer.getTime());
                         }
                     )
                 }
@@ -79,7 +80,8 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            console.log(new Date().getTime() - timer.getTime());
+                            var today= new Date();
+                            console.log(today.getTime() - timer.getTime());
                         }
                     )
                 }
