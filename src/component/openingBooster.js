@@ -36,7 +36,7 @@ function OpeningBooster(props) {
     }, []);
     return (
         <>
-            {isLoaded === true &&
+            {isLoaded === false &&
                 <div className={"loaderPokemon"}>
                     <h2 className="u-text-center">Chargement ...</h2>
                     <div className="pokemon"></div>
