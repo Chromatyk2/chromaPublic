@@ -25,6 +25,16 @@ function CardsHub(props) {
             .get("/api/getDateButton/"+pseudo)
             .then(function(response){
                 setTimer(response.data);
+            }).then(function(reponse){
+                if(reponse.length > 0){
+                    var myTimestamp = new Date(reponse[0].hour).getTime() / 1000;
+                    var twoHour = ((new Date().getTime() / 1000) - 7200);
+                    if(myTimestamp < twoHour){
+                        setCanGetPoint(true);
+                    }else{
+                        setCanGetPoint(false);
+                    }
+                }
             })
     }, [])
     const [page, setPage] = useState(null);
@@ -51,6 +61,10 @@ function CardsHub(props) {
                                 }
                             )
                         }
+                    ).then(
+                        (result) =>{
+                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
+                        }
                     )
                 }
             )
@@ -74,22 +88,15 @@ function CardsHub(props) {
                                 }
                             )
                         }
+                    ).then(
+                        (result) =>{
+                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
+                        }
                     )
                 }
             )
         }
     }
-    useEffect(() => {
-        if(timer.length > 0){
-            var myTimestamp = new Date(timer[0].hour).getTime() / 1000;
-            var twoHour = ((new Date().getTime() / 1000) - 7200);
-            if(myTimestamp < twoHour){
-                setCanGetPoint(true);
-            }else{
-                setCanGetPoint(false);
-            }
-        }
-    }, [timer])
     return(
         <>
             <div className="leaderBoardSwitch">
@@ -113,7 +120,8 @@ function CardsHub(props) {
                     {
 
                     }
-                    {timer.length == 0 ?
+                    {timer &&
+                        timer.length == 0 ?
                             <button onClick={addPointButton}>Prendre les points</button>
                         :
                         canGetPoint === true ?
