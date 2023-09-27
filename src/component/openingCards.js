@@ -109,17 +109,25 @@ function OpeningCards(props) {
     };
     return (
         <>
+            {tenCards.length == 10 &&
             <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
                 <img style={customStyles.imgModal} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                 <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
 
             </div>
+            }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
                         <img cardId={val.id} onClick={getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
+            }
+            {tenCards.length !=10 &&
+                <article>
+                    <h2 className="u-text-center">Rubber Band</h2>
+                    <div className="o-pokeball c-loader u-rubber-band"></div>
+                </article>
             }
         </>
     )
