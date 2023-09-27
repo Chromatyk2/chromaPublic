@@ -53,7 +53,7 @@ function CardsHub(props) {
                     ).then(
                         (result) =>{
                             var today= new Date();
-                            console.log(today.getTime() - timer.getTime());
+                            console.log(today.getHours() - timer.getHours());
                         }
                     )
                 }
@@ -81,7 +81,7 @@ function CardsHub(props) {
                     ).then(
                         (result) =>{
                             var today= new Date();
-                            console.log(today.getTime() - timer.getTime());
+                            console.log(today.getHours() - timer.getHours());
                         }
                     )
                 }
