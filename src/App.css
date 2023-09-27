@@ -1781,6 +1781,48 @@ div#odds {
     animation:bounceOut 1s;
     animation-fill-mode: forwards;
 }
+
+.bigImage:hover {
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+.bigImage:before {
+    animate: 0.5s;
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.bigImage:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
