@@ -54,7 +54,7 @@ function CardsHub(props) {
                     ).then(
                         (result) =>{
                             console.log(timer);
-                            console.log(new Date(timer[0].hour));
+                            console.log(new Date(timer[0].hour).getTime());
                         }
                     )
                 }
@@ -82,7 +82,7 @@ function CardsHub(props) {
                     ).then(
                         (result) =>{
                             console.log(timer);
-                            console.log(new Date(timer[0].hour));
+                            console.log(new Date(timer[0].hour).getTime());
                         }
                     )
                 }
