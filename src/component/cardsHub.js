@@ -136,7 +136,7 @@ function CardsHub(props) {
                                 <div className={"buttonToPointContainer"}>
                                     <p>Appuie pour gagner des points</p>
                                     <p className={'buttonArrow'}>↓</p>
-                                    <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
+                                    <button className={"buttonToPoint disableButtonPoint"} onClick={addPointButton} disabled>+</button>
                                 </div>
                         :
                         canGetPoint === true ?
@@ -149,7 +149,7 @@ function CardsHub(props) {
                             <div className={"buttonToPointContainer"}>
                                 <p>Appuie pour gagner des points</p>
                                 <p className={'buttonArrow'}>↓</p>
-                                <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
+                                <button className={"buttonToPoint disableButtonPoint"} onClick={addPointButton} disabled>+</button>
                             </div>
                     }
                 </div>

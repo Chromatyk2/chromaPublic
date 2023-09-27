@@ -697,6 +697,19 @@ a:hover{
     }
 }
 
+@keyframes disableButton {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
 .buttonArrow{
     -webkit-animation: float 6s ease-in-out infinite;
     animation: floatArrow 6s ease-in-out infinite;
@@ -706,6 +719,9 @@ a:hover{
     font-weight: bolder;
 }
 
+.disableButtonPoint{
+    animation: disableButton 6s ease-in-out forwards;
+}
 
 
 
