@@ -731,7 +731,10 @@ a:hover{
     padding: 10px;
 
 }
-
+.selectGen{
+    width: 200px;
+    margin: auto;
+}
 
 
 

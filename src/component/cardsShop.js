@@ -101,7 +101,7 @@ function CardsShop(props) {
                         </div>
                     }
                 </div>
-                <select onChange={selectGen} name="pets" id="pet-select">
+                <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
                     <option value="all">All Gen</option>
                     <option value="1">Gen 1</option>
                     <option value="2">Gen 2</option>
