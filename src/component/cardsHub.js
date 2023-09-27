@@ -43,6 +43,7 @@ function CardsHub(props) {
                     {/*    width="<width>"*/}
                     {/*    allowFullScreen>*/}
                     {/*</iframe>*/}
+                    <button>Prendre les points</button>
                 </div>
                     {page == "myCards" &&
                         <MyCards user={pseudo} />
