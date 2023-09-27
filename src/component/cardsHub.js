@@ -78,6 +78,9 @@ function CardsHub(props) {
             )
         }
     }
+    useEffect(() => {
+        console.log(new Date().getTime() - timer.getTime())
+    }, [timer])
     return(
         <>
             <div className="leaderBoardSwitch">
