@@ -20,6 +20,7 @@ function MyCardsSet(props) {
     const [myCardImage, setMyCardImage] = React.useState(null);
     const [pokemonName, setPokemonName] = React.useState(null);
     const [cardId, setCardId] = React.useState(null);
+    const [errorCard, setErrorCard] = React.useState("");
     const customStyles = {
         content: {
             position:'initial',
@@ -85,7 +86,8 @@ function MyCardsSet(props) {
     }
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+".png";
+        setErrorCard("https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png");
+        e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
     return (
         <>
