@@ -7,7 +7,7 @@ function UniqueCard(props) {
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
-    const [pkm, setPkm] = React.useState(null);
+    const [pkm, setPkm] = React.useState(true);
     let [state, setState] = useState("Initial");
     const [glow, setGlow] = React.useState(null);
     const customStyles = {
@@ -64,10 +64,9 @@ function UniqueCard(props) {
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png";
     }
-    console.log(pkm);
         return (
             <>
-                {pkm.supertype == "Pokémon" ?
+                {pkm.category == "Pokemon" ?
                     <div className="card">
                         <div className={"wrapper "+glow}>
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
