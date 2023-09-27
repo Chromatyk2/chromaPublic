@@ -9,6 +9,7 @@ function UniqueCard(props) {
     const [modalIsOpen, setIsOpen] = React.useState(true);
     const [pkm, setPkm] = React.useState(true);
     let [state, setState] = useState("Initial");
+    const [glow, setGlow] = React.useState(null);
     const customStyles = {
         content: {
             position: 'relative',
@@ -23,7 +24,7 @@ function UniqueCard(props) {
         }
     };
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/en/cards/"+props.cardId)
+        fetch("https://api.pokemontcg.io/v2/cards/"+props.cardId)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -48,6 +49,17 @@ function UniqueCard(props) {
                 }
             )
     }, []);
+    useEffect(() => {
+        if(pkm !== null){
+            if(pkm.rarity == "Ultra Rare"  || pkm.rarity == "Trainer Gallery Rare Holo"  || pkm.rarity == "Special Illustration"  || pkm.rarity == "Special Illustration Rare"  || pkm.rarity == "Rare BREAK" || pkm.rarity == "Illustration Rare" || pkm.rarity == "Hyper Rare"  || pkm.rarity == "LEGEND" || pkm.rarity == "Promo" || pkm.rarity == "Rare Holo GX" || pkm.rarity == "Rare Holo V" || pkm.rarity == "Rare Holo VMAX" || pkm.rarity == "Rare Rainbow" || pkm.rarity == "Rare Secret" || pkm.rarity == "Rare Shiny GX" || pkm.rarity == "Rare Ultra"){
+                setGlow("bigImageRainbow")
+            }else if(pkm.rarity == "Classic Collection"  || pkm.rarity == "Promo"  || pkm.rarity == "Radiant Rare"  || pkm.rarity == "Double Rare"  || pkm.rarity == "Amazing Rare" || pkm.rarity == "Promo" || pkm.rarity == "Rare ACE" || pkm.rarity == "Rare Holo" || pkm.rarity == "Rare Holo Star" || pkm.rarity == "Rare Holo LV.X" || pkm.rarity == "Rare Holo" || pkm.rarity == "Rare Holo EX" || pkm.rarity == "Rare Prime" || pkm.rarity == "Rare Prism Star" || pkm.rarity == "Rare Shining" || pkm.rarity == "Rare Shiny"){
+                setGlow("bigImageGold")
+            }else{
+                setGlow("bigImageRare")
+            }
+        }
+    }, [pkm]);
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png";
@@ -56,18 +68,18 @@ function UniqueCard(props) {
             <>
                 {pkm.category == "Pokemon" ?
                     <div className="card">
-                        <div className="wrapper bigImage">
+                        <div className={"wrapper "+glow}>
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
                             <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
-                                 className="cover-image bigImage"/>
+                                 className={"cover-image "+glow}/>
                         </div>
                         <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"} className="character"/>
                     </div>
                     :
                     <div className="card">
-                        <div className="wrapper  bigImage">
+                        <div className={"wrapper "+glow}>
                             <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
-                                 className="cover-image  bigImage"/>
+                                 className={"cover-image "+glow}/>
                         </div>
                     </div>
                 }
