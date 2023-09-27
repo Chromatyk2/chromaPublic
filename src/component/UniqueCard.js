@@ -25,16 +25,16 @@ function UniqueCard(props) {
     };
     useEffect(() => {
         fetch("https://api.pokemontcg.io/v2/cards/"+props.cardId)
-            .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
                     setPkm(result);
-                    if(result.data.datararity == "Ultra Rare"  || result.data.datararity == "Trainer Gallery Rare Holo"  || result.data.datararity == "Special Illustration"  || result.data.datararity == "Special Illustration Rare"  || result.data.datararity == "Rare BREAK" || result.data.datararity == "Illustration Rare" || result.data.datararity == "Hyper Rare"  || result.data.datararity == "LEGEND" || result.data.datararity == "Promo" || result.data.datararity == "Rare Holo GX" || result.data.datararity == "Rare Holo V" || result.data.datararity == "Rare Holo VMAX" || result.data.datararity == "Rare Rainbow" || result.data.datararity == "Rare Secret" || result.data.datararity == "Rare Shiny GX" || result.data.datararity == "Rare Ultra"){
+                    console.log(pkm);
+                    if(result.data.rarity == "Ultra Rare"  || result.data.rarity == "Trainer Gallery Rare Holo"  || result.data.rarity == "Special Illustration"  || result.data.rarity == "Special Illustration Rare"  || result.data.rarity == "Rare BREAK" || result.data.rarity == "Illustration Rare" || result.data.rarity == "Hyper Rare"  || result.data.rarity == "LEGEND" || result.data.rarity == "Promo" || result.data.rarity == "Rare Holo GX" || result.data.rarity == "Rare Holo V" || result.data.rarity == "Rare Holo VMAX" || result.data.rarity == "Rare Rainbow" || result.data.rarity == "Rare Secret" || result.data.rarity == "Rare Shiny GX" || result.data.rarity == "Rare Ultra"){
                         setGlow("bigImageRainbow")
-                    }else if(result.data.datararity == "Classic Collection"  || result.data.datararity == "Promo"  || result.data.datararity == "Radiant Rare"  || result.data.datararity == "Double Rare"  || result.data.datararity == "Amazing Rare" || result.data.datararity == "Promo" || result.data.datararity == "Rare ACE" || result.data.datararity == "Rare Holo" || result.data.datararity == "Rare Holo Star" || result.data.datararity == "Rare Holo LV.X" || result.data.datararity == "Rare Holo" || result.data.datararity == "Rare Holo EX" || result.data.datararity == "Rare Prime" || result.data.datararity == "Rare Prism Star" || result.data.datararity == "Rare Shining" || result.data.datararity == "Rare Shiny"){
+                    }else if(result.data.rarity == "Classic Collection"  || result.data.rarity == "Promo"  || result.data.rarity == "Radiant Rare"  || result.data.rarity == "Double Rare"  || result.data.rarity == "Amazing Rare" || result.data.rarity == "Promo" || result.data.rarity == "Rare ACE" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo Star" || result.data.rarity == "Rare Holo LV.X" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo EX" || result.data.rarity == "Rare Prime" || result.data.rarity == "Rare Prism Star" || result.data.rarity == "Rare Shining" || result.data.rarity == "Rare Shiny"){
                         setGlow("bigImageGold")
-                    }else if(result.data.datararity == "Rare"){
+                    }else if(result.data.rarity == "Rare"){
                         setGlow("bigImageRare")
                     }else{
                         setGlow("")
