@@ -72,6 +72,22 @@ function CardsShop(props) {
             }
         )
     }
+
+    function selectGen(e) {
+        if(e.target.value = "all"){
+            Axios
+                .get("/api/getBoostersList")
+                .then(function(response){
+                    setItems(response.data);
+                })
+        }else{
+            Axios
+                .get("/api/getBoostersList/"+ e.target.value)
+                .then(function(response){
+                    setItems(response.data);
+                })
+        }
+    }
     return (
         <>
                 <div>
@@ -85,6 +101,18 @@ function CardsShop(props) {
                         </div>
                     }
                 </div>
+                <select onChange={selectGen} name="pets" id="pet-select">
+                    <option value="all">All Gen</option>
+                    <option value="1">Gen 1</option>
+                    <option value="2">Gen 2</option>
+                    <option value="3">Gen 3</option>
+                    <option value="4">Gen 4</option>
+                    <option value="5">Gen 5</option>
+                    <option value="6">Gen 6</option>
+                    <option value="7">Gen 7</option>
+                    <option value="8">Gen 8</option>
+                    <option value="9">Gen 9</option>
+                </select>
                 <div id={"cardsContainer"}>
                     {items &&
                         items.map((val, key) => {
