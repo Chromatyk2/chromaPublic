@@ -30,6 +30,10 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     object-fit: cover;
 }
 
+.cover-image:hover {
+    opacity:0.8;
+}
+
 .wrapper {
     transition: all 0.5s;
     position: absolute;
