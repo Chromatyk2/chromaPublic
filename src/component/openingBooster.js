@@ -25,7 +25,7 @@ function OpeningBooster(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                     setItems(result.data);
                 },
                 (error) => {
@@ -36,11 +36,19 @@ function OpeningBooster(props) {
     }, []);
     return (
         <>
-            <div class={"discoveredCardsContainer"}>
-                {items &&
-                    <OpeningCards user={props.user} change = {handleState} idBooster={props.idBooster} items={items}/>
-                }
-            </div>
+            {isLoaded === true &&
+                <div className={"discoveredCardsContainer"}>
+                    <h2 className="u-text-center">Chargement ...</h2>
+                    <div className="pokemon"></div>
+                </div>
+            }
+            {isLoaded === false &&
+                <div className={"discoveredCardsContainer"}>
+                    {items &&
+                        <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items}/>
+                    }
+                </div>
+            }
         </>
     )
 }

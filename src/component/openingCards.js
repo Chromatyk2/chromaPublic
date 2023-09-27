@@ -9,7 +9,7 @@ import Modal from 'react-modal';
 
 function OpeningCards(props) {
     const [tenCards, setTenCards] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
     const [nbCards, setNbCards] = useState(0);
     const [isHidden, setIsHidden] = useState(true);
@@ -123,11 +123,9 @@ function OpeningCards(props) {
                     )
                 })
             }
-            {tenCards.length !=10 &&
-                <article>
+            {tenCards.length < 10 &&
                     <h2 className="u-text-center">Chargement ...</h2>
                     <div className="pokemon"></div>
-                </article>
             }
         </>
     )
