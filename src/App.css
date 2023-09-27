@@ -1786,11 +1786,6 @@ div#odds {
     animation-fill-mode: forwards;
 }
 
-.bigImage:hover {
-    animation: animate 8s linear infinite;
-    animate: 0.5s;
-    transition: 0.5s;
-}
 
 @keyframes animate {
     0% {
@@ -1801,7 +1796,13 @@ div#odds {
     }
 }
 
-.bigImage:before {
+.bigImageRainbow:hover {
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
+.bigImageRainbow:before {
     animate: 0.5s;
     transition: 0.5s;
     content: '';
@@ -1819,7 +1820,71 @@ div#odds {
 
 }
 
-.bigImage:hover:before {
+.bigImageRainbow:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
+.bigImageGold:hover {
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
+.bigImageGold:before {
+    animate: 0.5s;
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, gold, white);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.bigImageGold:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
+.bigImageRare:hover {
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
+.bigImageRare:before {
+    animate: 0.5s;
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, deepskyblue, white);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.bigImageRare:hover:before {
     filter: blur(20px);
     opacity: 1;
     animation: animate 8s linear infinite;
