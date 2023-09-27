@@ -94,7 +94,6 @@ function OpeningCards(props) {
                 idCard: e.target.getAttribute("cardId"),
                 booster: props.idBooster
             })
-        e.target.classList.toggle('gettedCard');
         setEndPull(true);
         props.change();
     }
