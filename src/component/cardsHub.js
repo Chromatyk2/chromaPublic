@@ -46,10 +46,10 @@ function CardsHub(props) {
                 }
             )
         }else{
-            return Axios.post('/api/updateButtonTime',
+            Axios.post('/api/updateButtonTime',
                 {
-                    pseudo:pseudo,
-                    hour:new Date()
+                    hour:new Date(),
+                    pseudo:pseudo
                 }
             )
         }
