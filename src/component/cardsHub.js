@@ -12,7 +12,7 @@ function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
-    const oneHour = 60*60*1000;
+    const [canGetPoint,setCanGetPoint] = useState(false);
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
@@ -53,8 +53,7 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            console.log(timer);
-                            console.log(new Date(timer[0].hour).getTime());
+                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
                         }
                     )
                 }
@@ -81,15 +80,24 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            console.log(timer);
-                            console.log(new Date(timer[0].hour).getTime());
+                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
                         }
                     )
                 }
             )
         }
     }
-
+    useEffect(() => {
+        if(timer.length > 0){
+            var myTimestamp = new Date(timer[0].hour).getTime() / 1000;
+            var twoHour = ((new Date().getTime() / 1000) - 7200);
+            if(myTimestamp < twoHour){
+                setCanGetPoint(true);
+            }else{
+                setCanGetPoint(false);
+            }
+        }
+    }, [timer])
     return(
         <>
             <div className="leaderBoardSwitch">
@@ -110,7 +118,18 @@ function CardsHub(props) {
                     {/*    width="<width>"*/}
                     {/*    allowFullScreen>*/}
                     {/*</iframe>*/}
-                    <button onClick={addPointButton}>Prendre les points</button>
+                    {
+
+                    }
+                    {timer &&
+                        time.length == 0 ?
+                            <button onClick={addPointButton}>Prendre les points</button>
+                        :
+                        canGetPoint === true ?
+                            <button onClick={addPointButton}>Prendre les points</button>
+                         :
+                            <button onClick={addPointButton} disabled>Prendre les points</button>
+                    }
                 </div>
                     {page == "myCards" &&
                         <MyCards user={pseudo} />
