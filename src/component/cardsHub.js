@@ -126,12 +126,18 @@ function CardsHub(props) {
                     }
                     {timer &&
                         timer.length == 0 ?
-                        canGetPoint === true &&
-                            <div className={"buttonToPointContainer"}>
-                                <p>Appuie pour gagner des points</p>
-                                <p className={'buttonArrow'}>↓</p>
-                                <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
-                            </div>
+                            canGetPoint === true ?
+                                <div className={"buttonToPointContainer"}>
+                                    <p>Appuie pour gagner des points</p>
+                                    <p className={'buttonArrow'}>↓</p>
+                                    <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
+                                </div>
+                            :
+                                <div className={"buttonToPointContainer"}>
+                                    <p>Appuie pour gagner des points</p>
+                                    <p className={'buttonArrow'}>↓</p>
+                                    <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
+                                </div>
                         :
                         canGetPoint === true ?
                             <div className={"buttonToPointContainer"}>
