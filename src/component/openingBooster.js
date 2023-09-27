@@ -25,7 +25,7 @@ function OpeningBooster(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                     setItems(result.data);
                 },
                 (error) => {
@@ -36,7 +36,7 @@ function OpeningBooster(props) {
     }, []);
     return (
         <>
-            {isLoaded === false &&
+            {isLoaded === true &&
                 <div className={"loaderPokemon"}>
                     <h2 className="u-text-center">Chargement ...</h2>
                     <div className="pokemon"></div>
