@@ -26,7 +26,7 @@ function CardsHub(props) {
         Axios.post('/api/addButtonClick',
             {
                 pseudo:pseudo,
-                hour:Date.now()
+                hour:new Date()
             })
     }
     return(
