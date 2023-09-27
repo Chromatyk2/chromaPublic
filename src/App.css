@@ -1730,6 +1730,7 @@ div#odds {
 @keyframes moveCard {
     0% {
         transform: rotate(0deg);
+        z-index:1;
     }
     25% {
         transform: translate(25em);
@@ -1770,6 +1771,7 @@ div#odds {
     transform-origin: 50% 50%;
     transform-box: fill-box;
     visibility: visible;
+    z-index: -1;
 }
 .endPull{
     animation:bounceOut 1s;
