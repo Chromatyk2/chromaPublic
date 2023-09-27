@@ -122,19 +122,19 @@ function CardsHub(props) {
                     {timer &&
                         timer.length == 0 ?
                             <div className={"buttonToPointContainer"}>
-                                <button className={"buttonToPoint"} onClick={addPointButton}><img
-                                    className="fit-picture-card" src={"/images/gift.png"}/></button>
+                                <p>Appuie oour gagner des points</p>
+                                <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
                             </div>
                         :
                         canGetPoint === true ?
                             <div className={"buttonToPointContainer"}>
-                                <button className={"buttonToPoint"} onClick={addPointButton}><img
-                                    className="fit-picture-card" src={"/images/gift.png"}/></button>
+                                <p>Appuie oour gagner des points</p>
+                                <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
                             </div>
                          :
                             <div className={"buttonToPointContainer"}>
-                                <button className={"buttonToPoint"} onClick={addPointButton} disabled><img
-                                    className="fit-picture-card" src={"/images/gift.png"}/></button>
+                                <p>Appuie oour gagner des points</p>
+                                <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
                             </div>
                     }
                 </div>
