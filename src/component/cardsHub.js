@@ -10,7 +10,7 @@ import Axios from 'axios'
 import MyBoosters from "./myBoosters";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
-    const [timer,setTimer] = useState(null);
+    const [timer,setTimer] = useState([]);
     const pseudo = props.cookies.user.data[0].login;
     const [canGetPoint,setCanGetPoint] = useState(false);
     useEffect(() => {
@@ -25,18 +25,20 @@ function CardsHub(props) {
             .get("/api/getDateButton/"+pseudo)
             .then(function(response){
                 setTimer(response.data);
-                if(response.length > 0){
-                    var myTimestamp = new Date(response[0].hour).getTime() / 1000;
-                    var twoHour = ((new Date().getTime() / 1000) - 7200);
-                    console.log(twoHour);
-                    console.log(myTimestamp);
-                    if(myTimestamp < twoHour){
-                        setCanGetPoint(true);
-                    }else{
-                        setCanGetPoint(false);
-                    }
-                }
             })
+    }, [])
+    useEffect(() => {
+        if(timer.length > 0){
+            var myTimestamp = new Date(timer[0].hour).getTime() / 1000;
+            var twoHour = ((new Date().getTime() / 1000) - 7200);
+            console.log(twoHour);
+            console.log(myTimestamp);
+            if(myTimestamp < twoHour){
+                setCanGetPoint(true);
+            }else{
+                setCanGetPoint(false);
+            }
+        }
     }, [])
     const [page, setPage] = useState(null);
     function displayTcgContent(e) {
