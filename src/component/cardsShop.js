@@ -82,7 +82,7 @@ function CardsShop(props) {
                 })
         }else{
             Axios
-                .get("/api/getBoostersList/"+ e.target.value)
+                .get("/api/getBoostersListByGen/"+ e.target.value)
                 .then(function(response){
                     setItems(response.data);
                 })
