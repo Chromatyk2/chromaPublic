@@ -25,8 +25,8 @@ function CardsHub(props) {
             .get("/api/getDateButton/"+pseudo)
             .then(function(response){
                 setTimer(response.data);
-                if(reponse.length > 0){
-                    var myTimestamp = new Date(reponse[0].hour).getTime() / 1000;
+                if(response.length > 0){
+                    var myTimestamp = new Date(response[0].hour).getTime() / 1000;
                     var twoHour = ((new Date().getTime() / 1000) - 7200);
                     console.log(twoHour);
                     console.log(myTimestamp);
