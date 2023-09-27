@@ -86,7 +86,6 @@ function MyCardsSet(props) {
     }
     function errorImage(e){
         e.target.onerror = null;
-        setErrorCard("https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png");
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
     return (

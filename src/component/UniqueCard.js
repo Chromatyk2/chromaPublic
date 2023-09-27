@@ -48,14 +48,17 @@ function UniqueCard(props) {
                 }
             )
     }, []);
-    console.log(pkm);
+    function errorImage(e){
+        e.target.onerror = null;
+        e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png";
+    }
         return (
             <>
                 {pkm.category == "Pokemon" ?
                     <div className="card">
                         <div className="wrapper">
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
-                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={"this.onerror=null; this.src='https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png'"}
+                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
                                  className="cover-image"/>
                         </div>
                         <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"} className="character"/>
@@ -63,7 +66,7 @@ function UniqueCard(props) {
                     :
                     <div className="card">
                         <div className="wrapper">
-                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={"this.onerror=null; this.src='https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png'"}
+                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
                                  className="cover-image"/>
                         </div>
                     </div>
