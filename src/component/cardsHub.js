@@ -42,7 +42,15 @@ function CardsHub(props) {
                         .get("/api/getDateButton/"+pseudo)
                         .then(function(response){
                             setTimer(response.data);
-                        })
+                        }).then(
+                        (result) =>{
+                            Axios.post('/api/registerCards',
+                                {
+                                    pseudo:pseudo
+                                }
+                            )
+                        }
+                    )
                 }
             )
         }else{
@@ -50,6 +58,22 @@ function CardsHub(props) {
                 {
                     hour:new Date(),
                     pseudo:pseudo
+                }
+            ).then(
+                (result) => {
+                    Axios
+                        .get("/api/getDateButton/"+pseudo)
+                        .then(function(response){
+                            setTimer(response.data);
+                        }).then(
+                        (result) =>{
+                            Axios.post('/api/addCardsPointButton',
+                                {
+                                    user:pseudo
+                                }
+                            )
+                        }
+                    )
                 }
             )
         }
