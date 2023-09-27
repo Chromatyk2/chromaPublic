@@ -7,7 +7,7 @@ function UniqueCard(props) {
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
-    const [pkm, setPkm] = React.useState(true);
+    const [pkm, setPkm] = React.useState(null);
     let [state, setState] = useState("Initial");
     const [glow, setGlow] = React.useState(null);
     const customStyles = {
@@ -25,7 +25,6 @@ function UniqueCard(props) {
     };
     useEffect(() => {
         fetch("https://api.pokemontcg.io/v2/cards/"+props.cardId)
-            .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
