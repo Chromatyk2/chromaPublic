@@ -22,7 +22,13 @@ function CardsHub(props) {
     function displayTcgContent(e) {
         setPage(e.target.value)
     }
-
+    function addPointButton() {
+        Axios.post('/api/addButtonClick',
+            {
+                pseudo:pseudo,
+                hour:Date.now()
+            })
+    }
     return(
         <>
             <div className="leaderBoardSwitch">
@@ -43,7 +49,7 @@ function CardsHub(props) {
                     {/*    width="<width>"*/}
                     {/*    allowFullScreen>*/}
                     {/*</iframe>*/}
-                    <button>Prendre les points</button>
+                    <button onClick={addPointButton}>Prendre les points</button>
                 </div>
                     {page == "myCards" &&
                         <MyCards user={pseudo} />
