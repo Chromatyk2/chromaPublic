@@ -55,7 +55,7 @@ function UniqueCard(props) {
                     <div className="card">
                         <div className="wrapper">
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
-                            <img src={props.cardImage + "/high.webp"}
+                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={"this.onerror=null; this.src='https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png'"}
                                  className="cover-image"/>
                         </div>
                         <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"} className="character"/>
@@ -63,7 +63,7 @@ function UniqueCard(props) {
                     :
                     <div className="card">
                         <div className="wrapper">
-                            <img src={props.cardImage + "/high.webp"}
+                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={"this.onerror=null; this.src='https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png'"}
                                  className="cover-image"/>
                         </div>
                     </div>

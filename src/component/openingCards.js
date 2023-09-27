@@ -121,7 +121,7 @@ function OpeningCards(props) {
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <img keyCard={key} cardId={val.id}  onClick={key == 0 ? getLastCard : getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard" : "fit-picture dropCards showCards"} src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+".png"} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img keyCard={key} cardId={val.id}  onClick={key == 0 ? getLastCard : getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard" : "fit-picture dropCards showCards"} src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg" } onError={"this.onerror=null; this.src='https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+".png'"} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
