@@ -66,7 +66,8 @@ function UniqueCard(props) {
     }
         return (
             <>
-                {pkm.data.supertype == "Pokémon" ?
+                { pkm &&
+                    pkm.data.supertype == "Pokémon" ?
                     <div className="card">
                         <div className={"wrapper "+glow}>
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
