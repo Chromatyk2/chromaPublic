@@ -60,6 +60,8 @@ function UniqueCard(props) {
             }
         }
     }, [pkm]);
+    console.log(glow);
+    console.log(pkm);
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png";
@@ -67,7 +69,7 @@ function UniqueCard(props) {
         return (
             <>
                 { pkm &&
-                    pkm.data.supertype == "Pokémon" ?
+                    pkm.supertype == "Pokémon" ?
                     <div className="card">
                         <div className={"wrapper "+glow}>
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
