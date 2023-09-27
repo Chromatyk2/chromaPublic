@@ -42,6 +42,10 @@ function CardsHub(props) {
     }, [timer])
     const [page, setPage] = useState(null);
     function displayTcgContent(e) {
+        Axios.get("/api/getDateButton/"+pseudo)
+            .then(function(response){
+                setTimer(response.data);
+            })
         setPage(e.target.value)
     }
     function addPointButton() {
