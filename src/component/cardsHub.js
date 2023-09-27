@@ -36,7 +36,15 @@ function CardsHub(props) {
                 {
                     pseudo:pseudo,
                     hour:new Date()
-                })
+                }).then(
+                (result) => {
+                    Axios
+                        .get("/api/getDateButton/"+pseudo)
+                        .then(function(response){
+                            setTimer(response.data);
+                        })
+                }
+            )
         }else{
             return Axios.post('/api/updateButtonTime',
                 {
