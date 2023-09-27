@@ -29,18 +29,6 @@ function UniqueCard(props) {
                 (result) => {
                     setIsLoaded(true);
                     setPkm(result);
-                    fetch("https://pokeapi.co/api/v2/pokemon/"+result.dexId[0])
-                        .then(res => res.json())
-                        .then(
-                            (result) => {
-                                setIsLoaded(true);
-                                setItems(result);
-                            },
-                            (error) => {
-                                setIsLoaded(true);
-                                setError(error);
-                            }
-                        )
                 },
                 (error) => {
                     setIsLoaded(true);
