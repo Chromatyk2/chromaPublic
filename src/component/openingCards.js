@@ -117,7 +117,7 @@ function OpeningCards(props) {
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <div onClick={getCard} className={"shine"}>
+                        <div onClick={getCard} className={isHidden === true ? "fit-picture dropCards hiddenCards shine " : endPull === true ? "fit-picture dropCards showCards gettedCard endPull shine" : "fit-picture dropCards showCards shine"}>
                             <img cardId={val.id}
                                  className={isHidden === true ? "shine fit-picture dropCards hiddenCards" : endPull === true ? "shine fit-picture dropCards showCards gettedCard endPull" : "shine fit-picture dropCards showCards"}
                                  src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
