@@ -51,10 +51,6 @@ function CardsHub(props) {
                                 }
                             )
                         }
-                    ).then(
-                        (result) =>{
-                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
-                        }
                     )
                 }
             )
@@ -77,10 +73,6 @@ function CardsHub(props) {
                                     user:pseudo
                                 }
                             )
-                        }
-                    ).then(
-                        (result) =>{
-                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
                         }
                     )
                 }
@@ -122,7 +114,7 @@ function CardsHub(props) {
 
                     }
                     {timer &&
-                        time.length == 0 ?
+                        timer.length == 0 ?
                             <button onClick={addPointButton}>Prendre les points</button>
                         :
                         canGetPoint === true ?
