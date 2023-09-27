@@ -720,7 +720,7 @@ a:hover{
 }
 
 .disableButtonPoint{
-    animation: disableButton 6s ease-in-out forwards;
+    animation: disableButton 1s ease-in-out forwards;
 }
 
 
