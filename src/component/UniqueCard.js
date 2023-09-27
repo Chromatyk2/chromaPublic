@@ -49,7 +49,8 @@ function UniqueCard(props) {
     }
         return (
             <>
-                {pkm.category == "Pokemon" ?
+                {pkm &&
+                    pkm.category == "Pokemon" ?
                     <div className="card">
                         <div className={"wrapper "+glow}>
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
