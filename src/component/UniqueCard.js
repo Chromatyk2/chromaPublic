@@ -51,9 +51,9 @@ function UniqueCard(props) {
     }, []);
     useEffect(() => {
         if(pkm !== null){
-            if(pkm.rarity == "Ultra Rare"  || pkm.rarity == "Trainer Gallery Rare Holo"  || pkm.rarity == "Special Illustration"  || pkm.rarity == "Special Illustration Rare"  || pkm.rarity == "Rare BREAK" || pkm.rarity == "Illustration Rare" || pkm.rarity == "Hyper Rare"  || pkm.rarity == "LEGEND" || pkm.rarity == "Promo" || pkm.rarity == "Rare Holo GX" || pkm.rarity == "Rare Holo V" || pkm.rarity == "Rare Holo VMAX" || pkm.rarity == "Rare Rainbow" || pkm.rarity == "Rare Secret" || pkm.rarity == "Rare Shiny GX" || pkm.rarity == "Rare Ultra"){
+            if(pkm.data.rarity == "Ultra Rare"  || pkm.data.rarity == "Trainer Gallery Rare Holo"  || pkm.data.rarity == "Special Illustration"  || pkm.data.rarity == "Special Illustration Rare"  || pkm.data.rarity == "Rare BREAK" || pkm.data.rarity == "Illustration Rare" || pkm.data.rarity == "Hyper Rare"  || pkm.data.rarity == "LEGEND" || pkm.data.rarity == "Promo" || pkm.data.rarity == "Rare Holo GX" || pkm.data.rarity == "Rare Holo V" || pkm.data.rarity == "Rare Holo VMAX" || pkm.data.rarity == "Rare Rainbow" || pkm.data.rarity == "Rare Secret" || pkm.data.rarity == "Rare Shiny GX" || pkm.data.rarity == "Rare Ultra"){
                 setGlow("bigImageRainbow")
-            }else if(pkm.rarity == "Classic Collection"  || pkm.rarity == "Promo"  || pkm.rarity == "Radiant Rare"  || pkm.rarity == "Double Rare"  || pkm.rarity == "Amazing Rare" || pkm.rarity == "Promo" || pkm.rarity == "Rare ACE" || pkm.rarity == "Rare Holo" || pkm.rarity == "Rare Holo Star" || pkm.rarity == "Rare Holo LV.X" || pkm.rarity == "Rare Holo" || pkm.rarity == "Rare Holo EX" || pkm.rarity == "Rare Prime" || pkm.rarity == "Rare Prism Star" || pkm.rarity == "Rare Shining" || pkm.rarity == "Rare Shiny"){
+            }else if(pkm.data.rarity == "Classic Collection"  || pkm.data.rarity == "Promo"  || pkm.data.rarity == "Radiant Rare"  || pkm.data.rarity == "Double Rare"  || pkm.data.rarity == "Amazing Rare" || pkm.data.rarity == "Promo" || pkm.data.rarity == "Rare ACE" || pkm.data.rarity == "Rare Holo" || pkm.data.rarity == "Rare Holo Star" || pkm.data.rarity == "Rare Holo LV.X" || pkm.data.rarity == "Rare Holo" || pkm.data.rarity == "Rare Holo EX" || pkm.data.rarity == "Rare Prime" || pkm.data.rarity == "Rare Prism Star" || pkm.data.rarity == "Rare Shining" || pkm.data.rarity == "Rare Shiny"){
                 setGlow("bigImageGold")
             }else{
                 setGlow("bigImageRare")
@@ -66,14 +66,14 @@ function UniqueCard(props) {
     }
         return (
             <>
-                {pkm.supertype == "Pokémon" ?
+                {pkm.data.supertype == "Pokémon" ?
                     <div className="card">
                         <div className={"wrapper "+glow}>
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
                             <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
                                  className={"cover-image "+glow}/>
                         </div>
-                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"} className="character"/>
+                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.data.dexId[0]+".png"} className="character"/>
                     </div>
                     :
                     <div className="card">
