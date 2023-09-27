@@ -51,7 +51,6 @@ function CardsHub(props) {
     function addPointButton() {
         setCanGetPoint(false);
             if (timer.length == 0) {
-                if(canGetPoint === false){
                     Axios.post('/api/addButtonClick',
                         {
                             pseudo: pseudo,
@@ -73,11 +72,10 @@ function CardsHub(props) {
                             )
                         }
                     )
-                }
             } else{
                 var myTimestamp = (new Date(timer[0].hour).getTime() / 1000)  + 7200;
                 var twoHour = ((new Date().getTime() / 1000));
-                if(myTimestamp <= twoHour && canGetPoint === false){
+                if(myTimestamp <= twoHour){
                     Axios.post('/api/updateButtonTime',
                         {
                             hour: new Date(),
