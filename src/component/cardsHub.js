@@ -12,7 +12,7 @@ function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
-    const [canGetPoint,setCanGetPoint] = useState(false);
+    const [canGetPoint,setCanGetPoint] = useState(true);
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
