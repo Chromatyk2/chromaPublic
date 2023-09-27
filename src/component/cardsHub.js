@@ -50,6 +50,10 @@ function CardsHub(props) {
                                 }
                             )
                         }
+                    ).then(
+                        (result) =>{
+                            console.log(new Date().getTime() - timer.getTime());
+                        }
                     )
                 }
             )
@@ -73,14 +77,16 @@ function CardsHub(props) {
                                 }
                             )
                         }
+                    ).then(
+                        (result) =>{
+                            console.log(new Date().getTime() - timer.getTime());
+                        }
                     )
                 }
             )
         }
     }
-    useEffect(() => {
-        console.log(new Date().getTime() - timer.getTime())
-    }, [timer])
+
     return(
         <>
             <div className="leaderBoardSwitch">
