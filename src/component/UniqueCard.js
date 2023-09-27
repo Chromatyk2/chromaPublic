@@ -56,7 +56,7 @@ function UniqueCard(props) {
             <>
                 {pkm.category == "Pokemon" ?
                     <div className="card">
-                        <div className="wrapper">
+                        <div className="wrapper bigImage">
                             <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
                             <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
                                  className="cover-image bigImage"/>
@@ -65,9 +65,9 @@ function UniqueCard(props) {
                     </div>
                     :
                     <div className="card">
-                        <div className="wrapper">
+                        <div className="wrapper  bigImage">
                             <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
-                                 className="cover-image"/>
+                                 className="cover-image  bigImage"/>
                         </div>
                     </div>
                 }
