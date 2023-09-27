@@ -85,7 +85,7 @@ function MyCardsSet(props) {
     }
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+".png"};
+        e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+".png";
     }
     return (
         <>
