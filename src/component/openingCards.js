@@ -125,8 +125,8 @@ function OpeningCards(props) {
             }
             {tenCards.length !=10 &&
                 <article>
-                    <h2 className="u-text-center">Rubber Band</h2>
-                    <div className="o-pokeball c-loader u-rubber-band"></div>
+                    <h2 className="u-text-center">Chargement ...</h2>
+                    <div className="pokemon"></div>
                 </article>
             }
         </>
