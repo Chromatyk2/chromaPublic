@@ -49,6 +49,7 @@ function CardsHub(props) {
         setPage(e.target.value)
     }
     function addPointButton() {
+        setCanGetPoint(false);
         if(timer.length == 0){
             Axios.post('/api/addButtonClick',
                 {
@@ -122,20 +123,20 @@ function CardsHub(props) {
                     {timer &&
                         timer.length == 0 ?
                             <div className={"buttonToPointContainer"}>
-                                <p>Appuie oour gagner des points</p>
+                                <p>Appuie pour gagner des points</p>
                                 <p className={'buttonArrow'}>↓</p>
                                 <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
                             </div>
                         :
                         canGetPoint === true ?
                             <div className={"buttonToPointContainer"}>
-                                <p>Appuie oour gagner des points</p>
+                                <p>Appuie pour gagner des points</p>
                                 <p className={'buttonArrow'}>↓</p>
                                 <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
                             </div>
                          :
                             <div className={"buttonToPointContainer"}>
-                                <p>Appuie oour gagner des points</p>
+                                <p>Appuie pour gagner des points</p>
                                 <p className={'buttonArrow'}>↓</p>
                                 <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
                             </div>

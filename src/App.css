@@ -701,8 +701,12 @@ a:hover{
 }
 
 .buttonArrow{
-    transform: translatey(0px);
-    animation: float 6s ease-in-out infinite;
+    -webkit-animation: float 6s ease-in-out infinite;
+    animation: floatArrow 6s ease-in-out infinite;
+    -webkit-transform: translatey(0);
+    transform: translatey(0);
+    font-size: 45px;
+    font-weight: bolder;
 }
 
 
