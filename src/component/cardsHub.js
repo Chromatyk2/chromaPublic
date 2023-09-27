@@ -12,6 +12,7 @@ function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
+    const oneHour = 60*60*1000;
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
@@ -52,8 +53,7 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            var today= new Date();
-                            console.log(today.getHours() - timer.getHours());
+                            console.log(((new Date) - timer) < oneHour);
                         }
                     )
                 }
@@ -80,8 +80,7 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) =>{
-                            var today= new Date();
-                            console.log(today.getHours() - timer.getHours());
+                            console.log(((new Date) - timer) < oneHour);
                         }
                     )
                 }
