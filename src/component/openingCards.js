@@ -124,8 +124,10 @@ function OpeningCards(props) {
                 })
             }
             {tenCards.length < 10 &&
+                <>
                     <h2 className="u-text-center">Chargement ...</h2>
                     <div className="pokemon"></div>
+                </>
             }
         </>
     )
