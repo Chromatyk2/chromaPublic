@@ -27,19 +27,19 @@ function CardsHub(props) {
                 setTimer(response.data);
             })
     }, [])
-    // useEffect(() => {
-    //     if(timer !== null && timer.length > 0){
-    //         var myTimestamp = (new Date(timer[0].hour).getTime() / 1000)  + 7200;
-    //         var twoHour = ((new Date().getTime() / 1000));
-    //         console.log(twoHour);
-    //         console.log(myTimestamp);
-    //         if(myTimestamp <= twoHour){
-    //             setCanGetPoint(true);
-    //         }else{
-    //             setCanGetPoint(false);
-    //         }
-    //     }
-    // }, [timer])
+    useEffect(() => {
+        if(timer !== null && timer.length > 0){
+            var myTimestamp = (new Date(timer[0].hour).getTime() / 1000)  + 7200;
+            var twoHour = ((new Date().getTime() / 1000));
+            console.log(twoHour);
+            console.log(myTimestamp);
+            if(myTimestamp <= twoHour){
+                setCanGetPoint(true);
+            }else{
+                setCanGetPoint(false);
+            }
+        }
+    }, [timer])
     const [page, setPage] = useState(null);
     function displayTcgContent(e) {
         Axios.get("/api/getDateButton/"+pseudo)
@@ -50,7 +50,7 @@ function CardsHub(props) {
     }
     function addPointButton() {
         setCanGetPoint(false);
-        if(timer.length == 0){
+        if(timer.length == 0 && canGetPoint === false){
             Axios.post('/api/addButtonClick',
                 {
                     pseudo:pseudo,
