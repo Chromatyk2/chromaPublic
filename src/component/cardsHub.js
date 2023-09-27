@@ -33,7 +33,7 @@ function CardsHub(props) {
             var twoHour = ((new Date().getTime() / 1000) - 7200);
             console.log(twoHour);
             console.log(myTimestamp);
-            if(myTimestamp < twoHour){
+            if(myTimestamp >= twoHour){
                 setCanGetPoint(true);
             }else{
                 setCanGetPoint(false);
