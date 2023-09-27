@@ -10,6 +10,7 @@ import Axios from 'axios'
 import MyBoosters from "./myBoosters";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
+    const [timer,setTimer] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
@@ -18,16 +19,32 @@ function CardsHub(props) {
                 setPoints(response.data[0].points);
             })
     }, [])
+    useEffect(() => {
+        Axios
+            .get("/api/getDateButton/"+pseudo)
+            .then(function(response){
+                setTimer(response.data);
+            })
+    }, [])
     const [page, setPage] = useState(null);
     function displayTcgContent(e) {
         setPage(e.target.value)
     }
     function addPointButton() {
-        Axios.post('/api/addButtonClick',
-            {
-                pseudo:pseudo,
-                hour:new Date()
-            })
+        if(timer === null){
+            Axios.post('/api/addButtonClick',
+                {
+                    pseudo:pseudo,
+                    hour:new Date()
+                })
+        }else{
+            return Axios.post('/api/removeCardsPoint',
+                {
+                    user:pseudo,
+                    hour:new Date()
+                }
+            )
+        }
     }
     return(
         <>
