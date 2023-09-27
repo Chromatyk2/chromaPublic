@@ -38,6 +38,7 @@ function UniqueCard(props) {
                     }else{
                         setGlow("")
                     }
+                    console.log(glow);
                 },
                 (error) => {
                     setIsLoaded(true);
