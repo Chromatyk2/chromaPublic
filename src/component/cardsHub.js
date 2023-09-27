@@ -61,10 +61,6 @@ function CardsHub(props) {
                                 }
                             )
                         }
-                    ).then(
-                        (result) =>{
-                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
-                        }
                     )
                 }
             )
@@ -87,10 +83,6 @@ function CardsHub(props) {
                                     user:pseudo
                                 }
                             )
-                        }
-                    ).then(
-                        (result) =>{
-                            setTimestamp(new Date(timer[0].hour).getTime() / 1000);
                         }
                     )
                 }
