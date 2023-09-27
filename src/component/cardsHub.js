@@ -49,9 +49,7 @@ function CardsHub(props) {
         setPage(e.target.value)
     }
     function addPointButton() {
-            var myTimestamp = (new Date(timer[0].hour).getTime() / 1000)  + 7200;
-            var twoHour = ((new Date().getTime() / 1000));
-            if (timer.length == 0 && myTimestamp <= twoHour) {
+            if (timer.length == 0) {
                 Axios.post('/api/addButtonClick',
                     {
                         pseudo: pseudo,
@@ -73,29 +71,33 @@ function CardsHub(props) {
                         )
                     }
                 )
-            } else if(myTimestamp <= twoHour) {
-                Axios.post('/api/updateButtonTime',
-                    {
-                        hour: new Date(),
-                        pseudo: pseudo
-                    }
-                ).then(
-                    (result) => {
-                        Axios
-                            .get("/api/getDateButton/" + pseudo)
-                            .then(function (response) {
-                                setTimer(response.data);
-                            }).then(
-                            (result) => {
-                                Axios.post('/api/addCardsPointButton',
-                                    {
-                                        user: pseudo
-                                    }
-                                )
-                            }
-                        )
-                    }
-                )
+            } else{
+                var myTimestamp = (new Date(timer[0].hour).getTime() / 1000)  + 7200;
+                var twoHour = ((new Date().getTime() / 1000));
+                if(myTimestamp <= twoHour){
+                    Axios.post('/api/updateButtonTime',
+                        {
+                            hour: new Date(),
+                            pseudo: pseudo
+                        }
+                    ).then(
+                        (result) => {
+                            Axios
+                                .get("/api/getDateButton/" + pseudo)
+                                .then(function (response) {
+                                    setTimer(response.data);
+                                }).then(
+                                (result) => {
+                                    Axios.post('/api/addCardsPointButton',
+                                        {
+                                            user: pseudo
+                                        }
+                                    )
+                                }
+                            )
+                        }
+                    )
+                }
             }
     }
     return(
