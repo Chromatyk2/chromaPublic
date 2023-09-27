@@ -29,11 +29,11 @@ function CardsHub(props) {
     }, [])
     useEffect(() => {
         if(timer !== null && timer.length > 0){
-            var myTimestamp = (new Date(timer[0].hour).getTime() / 1000) - 7280;
+            var myTimestamp = (new Date(timer[0].hour).getTime() / 1000)  + 7200;
             var twoHour = ((new Date().getTime() / 1000));
             console.log(twoHour);
             console.log(myTimestamp);
-            if(myTimestamp >= twoHour){
+            if(myTimestamp <= twoHour){
                 setCanGetPoint(true);
             }else{
                 setCanGetPoint(false);
