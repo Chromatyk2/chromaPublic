@@ -723,7 +723,14 @@ a:hover{
     display: none;
     animation: disableButton 1s ease-in-out forwards;
 }
-
+.textButtonPoint{
+    width: fit-content;
+    color: white;
+    background: rgba(129,0,0,0.8);
+    margin: auto;
+    padding: 10px;
+}
+}
 
 
 
