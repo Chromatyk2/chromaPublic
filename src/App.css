@@ -1831,6 +1831,23 @@ div#odds {
 
 }
 
+.listUserElement {
+    background-color: #255748;
+    color: white;
+    display: flex;
+    border-radius: 15px;
+    padding: 15px;
+    line-height: 27px;
+}
+
+.lisUser{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+}
+
 .exitModalButton {
     position: absolute;
     top: 65px;
