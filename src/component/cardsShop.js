@@ -14,7 +14,7 @@ function CardsShop(props) {
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
     if(items !== null){
-        console.log(items[Math.floor(Math.random() * items.length)]);
+        console.log(items[Math.floor(Math.random() * items.length)].name);
     }
     useEffect(() => {
         Axios
