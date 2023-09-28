@@ -40,6 +40,7 @@ function ListUserTcg(props) {
     }
     return (
         <>
+            <input onChange={searchUser} type="text" id="name" name="name"/>
             {page ?
                 <MyCards user={pseudo} />
                 :
@@ -47,7 +48,6 @@ function ListUserTcg(props) {
                 list.map((val, key) => {
                     return(
                         <>
-                            <input onChange={searchUser} type="text" id="name" name="name"/>
                             <div className={"listUser"}>
                                 <div className="listUserElement">
                                     <p>{val.user}</p>
