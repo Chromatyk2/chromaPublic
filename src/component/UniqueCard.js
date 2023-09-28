@@ -61,7 +61,7 @@ function UniqueCard(props) {
                             <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
                                  className={"cover-image "+glow}/>
                         </div>
-                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.dexId[0]+".png"} className="character"/>
+                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.data.nationalPokedexNumbers[0]+".png"} className="character"/>
                     </div>
                     :
                     <div className="card">
