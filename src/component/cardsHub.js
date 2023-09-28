@@ -127,7 +127,10 @@ function CardsHub(props) {
                     {/*    width="<width>"*/}
                     {/*    allowFullScreen>*/}
                     {/*</iframe>*/}
-                    {
+                    {page === null &&
+                        <p>
+                            Bonjour
+                        </p>
 
                     }
                     {timer &&
