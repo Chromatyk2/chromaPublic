@@ -7,6 +7,7 @@ import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
 import OpeningBooster from "./openingBooster";
+import MyCards from "./myCards";
 
 function ListUserTcg(props) {
     const [error, setError] = useState(null);
@@ -14,6 +15,8 @@ function ListUserTcg(props) {
     const [list, setList] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [boosterId, setBoosterId] = React.useState(null);
+    const [pseudo, setPseudo] = React.useState(null);
+    const [page, setPage] = React.useState(null);
 
     useEffect(() => {
         Axios
@@ -22,7 +25,11 @@ function ListUserTcg(props) {
                 setList(response.data);
             })
     }, [])
+    function showUserList(e) {
+        setPage(e.target.getAttribute("page"));
+        setPseudo(e.target.getAttribute("pseudo"));
 
+    }
     return (
         <>
             <div className={"listUser"}>
@@ -31,13 +38,17 @@ function ListUserTcg(props) {
                         return(
                             <div className="listUserElement">
                                 <p>{val.user}</p>
-                                <p>{val.nbCardUser}</p>
-                                <button>Voir</button>
+                                <p>{val.nbCardUser} cartes</p>
+                                <button pseudo={val.user} page={"cardListUser"} onClick={showUserList}>Voir</button>
                             </div>
                         )
                     })
                 }
             </div>
+            {page == "cardListUser" &&
+                <MyCards user={pseudo} />
+            }
+
         </>
     )
 }
