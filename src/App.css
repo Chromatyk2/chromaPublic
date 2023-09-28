@@ -1807,7 +1807,7 @@ div#odds {
     }
 }
 
-.bigImageRainbow:hover {
+.bigImageRainbow {
     animation: animate 8s linear infinite;
     animate: 0.5s;
     transition: 0.5s;
@@ -1831,7 +1831,7 @@ div#odds {
 
 }
 
-.bigImageRainbow:hover:before {
+.bigImageRainbow:before {
     filter: blur(20px);
     opacity: 1;
     animation: animate 8s linear infinite;
