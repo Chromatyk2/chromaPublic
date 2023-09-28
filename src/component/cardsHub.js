@@ -132,7 +132,7 @@ function CardsHub(props) {
                             Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !<br />
                             Ici, l'aventure commence dès que tu cliques sur le bouton rouge !<br />
                             Le premier clique t'offre 10 000 points pour la boutique !<br />
-                            Ensuite reviens cliquer sur le bouton tous les 2h pour en gagner 1 000 à chaque fois !<br />
+                            Ensuite reviens cliquer sur le bouton tous les 1h pour en gagner 1 000 à chaque fois !<br />
 
                             Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />
 
