@@ -32,21 +32,21 @@ function ListUserTcg(props) {
     }
     return (
         <>
-            <div className={"listUser"}>
-                {list &&
-                    list.map((val, key) => {
-                        return(
-                            <div className="listUserElement">
-                                <p>{val.user}</p>
-                                <p>{val.nbCardUser} cartes</p>
-                                <button pseudo={val.user} page={"cardListUser"} onClick={showUserList}>Voir</button>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-            {page == "cardListUser" &&
+            {page ?
                 <MyCards user={pseudo} />
+                :
+                list &&
+                list.map((val, key) => {
+                    return(
+                        <div className={"listUser"}>
+                        <div className="listUserElement">
+                            <p>{val.user}</p>
+                            <p>{val.nbCardUser} cartes</p>
+                            <button pseudo={val.user} page={"cardListUser"} onClick={showUserList}>Voir</button>
+                        </div>
+                        </div>
+                    )
+                })
             }
 
         </>
