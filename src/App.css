@@ -95,7 +95,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
 }
 
 .character {
-    left: -27%;
+    left: -15%;
     opacity: 0;
     position: absolute;
     transition: all .5s;
@@ -109,7 +109,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     transform: translate3d(0,60%,0);
     -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
     filter: drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 10px black);
-    width: 100%;
+    width: 75%;
 }
 
 .nbCardHover {
