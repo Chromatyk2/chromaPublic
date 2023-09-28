@@ -40,7 +40,7 @@ function ListUserTcg(props) {
     }
     return (
         <>
-            <input onChange={searchUser} type="text" id="name" name="name"/>
+            <input className={"searchPlayer"} onChange={searchUser} placeholder={"Cherchez un joueur"} type="text" id="name" name="name"/>
             {page ?
                 <MyCards user={pseudo} />
                 :
