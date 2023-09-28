@@ -66,9 +66,11 @@ function UniqueCard(props) {
                     :
                     <div className="card">
                         <div className={"wrapper "+glow}>
+                            <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
                             <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
                                  className={"cover-image "+glow}/>
                         </div>
+                        <img src={pkm.data.set.images.logo} className="character"/>
                     </div>
                 }
             </>
