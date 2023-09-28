@@ -27,12 +27,13 @@ function MyCardsSet(props) {
             border: 'none',
             background: 'none',
             borderRadius: '4px',
-            width: '100%',
+            width: 'fit-content',
             height: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            overflow:'hidden'
+            overflow:'hidden',
+            margin:'auto'
         },
         textModal: {
             fontSize:'30px',
