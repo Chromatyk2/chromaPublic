@@ -28,12 +28,13 @@ function MyCardsSet(props) {
             background: 'none',
             borderRadius: '4px',
             width: 'fit-content',
-            height: '100vh',
+            height: 'fit-content',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             overflow:'hidden',
-            margin:'auto'
+            margin:'auto',
+            marginTop:'5%'
         },
         textModal: {
             fontSize:'30px',
