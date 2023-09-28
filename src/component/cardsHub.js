@@ -129,7 +129,19 @@ function CardsHub(props) {
                     {/*</iframe>*/}
                     {page === null &&
                         <p>
-                            Bonjour
+                            Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !
+                            Ici, l'aventure commence dès que tu cliques sur le bouton rouge !
+                            Le premier clique t'offre 10 000 points pour la boutique !
+                            Ensuite reviens cliquer sur le bouton tous les 2h pour en gagner 1 000 à chaque fois !
+
+                            Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !
+
+                            Ce mini site a été fait pas Chromatyk !
+                            Retrouve le en stream ici : <a href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a>
+
+                            N'hésite pas à Follow ça fait toujours plaisir !
+
+                            Amuse toi bien !
                         </p>
 
                     }
