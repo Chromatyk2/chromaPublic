@@ -25,7 +25,7 @@ function ListUserTcg(props) {
 
     return (
         <>
-            <div id={"listUser"}>
+            <div className={"listUser"}>
                 {list &&
                     list.map((val, key) => {
                         return(
