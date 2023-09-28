@@ -55,22 +55,28 @@ function UniqueCard(props) {
             <>
                 {pkm &&
                     pkm.data.supertype == "Pokémon" ?
-                    <div className="card">
-                        <div className={"wrapper "+glow}>
-                            <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
-                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
-                                 className={"cover-image "+glow}/>
+                    <>
+                        <button className={"exitModalButton"}>X</button>
+                        <div className="card">
+                            <div className={"wrapper "+glow}>
+                                <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
+                                <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
+                                     className={"cover-image "+glow}/>
+                            </div>
+                            <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.data.nationalPokedexNumbers[0]+".png"} className="character"/>
                         </div>
-                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+pkm.data.nationalPokedexNumbers[0]+".png"} className="character"/>
-                    </div>
+                    </>
                     :
-                    <div className="card">
-                        <div className={"wrapper "+glow}>
-                            <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
-                            <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
-                                 className={"cover-image "+glow}/>
+                    <>
+                        <button className={"exitModalButton"}>X</button>
+                        <div className="card">
+                            <div className={"wrapper "+glow}>
+                                <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
+                                <img src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+"_hiresopt.jpg" } onError={errorImage}
+                                     className={"cover-image "+glow}/>
+                            </div>
                         </div>
-                    </div>
+                    </>
                 }
             </>
         )

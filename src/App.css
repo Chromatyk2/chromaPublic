@@ -1831,6 +1831,11 @@ div#odds {
 
 }
 
+.exitModalButton{
+    position: absolute;
+    top: 0;
+}
+
 .bigImageRainbow:before {
     filter: blur(20px);
     opacity: 1;
