@@ -115,13 +115,14 @@ function CardsShop(props) {
                 </select>
                 <div id={"cardsContainer"}>
                     <div className="uniqueTradeContainer">
+                        <p className="pokemonNameTrade">Booster Aléatoire</p>
                         <div className={"containerImgBooster"}>
                             <img className="fit-picture" src={"/images/random.png"} alt="Grapefruit slice atop a pile of other slices"/>
                         </div>
                         <p className="pokemonNameTrade">1000 Points Boutique</p>
                         {points > 999 ?
                             loading === false ?
-                                <button value={items[Math.floor(Math.random() * items.length)].id} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
                                 :
                                 <button className="guessTradeButton">Chargement</button>
                             :
