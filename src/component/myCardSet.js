@@ -11,7 +11,7 @@ import Modal from "react-modal";
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(true);
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
@@ -49,7 +49,7 @@ function MyCardsSet(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                     setItems(result);
                 },
                 (error) => {
@@ -93,30 +93,46 @@ function MyCardsSet(props) {
     }
     return (
         <>
-            {items &&
+
+            {isLoaded === false &&
                 <ProgressBarCard getNb={myCards.length} item={{items}}/>
             }
-            <div id={"cardsContainer"}>
-                {items &&
-                    items.data.map((val, key) => {
-                      if(myCardsId.includes(val.id)){
-                        let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
-                        return(
-                          <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} class="fit-picture-card" src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg" } onError={errorImage} />
-                          </button>
-                        )
-                      }else{
-                        return(
-                          <img class="fit-picture-card" src={"/images/backCard.png"} />
-                        )
-                      }
-                    })
-                }
-            </div>
-                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                    <UniqueCard pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb} cardId={cardId} idBooster={props.idBooster} change = {handleState}/>
-                </Modal>
+            {isLoaded === true &&
+                <div className={"loaderPokemon"}>
+                    <h2 className="u-text-center">Chargement ...</h2>
+                    <div className="pokemon"></div>
+                </div>
+            }
+            {isLoaded === false &&
+                <>
+                    <div id={"cardsContainer"}>
+                        {items &&
+                            items.data.map((val, key) => {
+                                if (myCardsId.includes(val.id)) {
+                                    let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
+                                    return (
+                                        <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
+                                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                 image={val.image} className="fit-picture-card"
+                                                 src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
+                                                 onError={errorImage}/>
+                                        </button>
+                                    )
+                                } else {
+                                    return (
+                                        <img className="fit-picture-card" src={"/images/backCard.png"}/>
+                                    )
+                                }
+                            })
+                        }
+                    </div>
+                    <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
+                           contentLabel="Example Modal">
+                        <UniqueCard pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
+                                    cardId={cardId} idBooster={props.idBooster} change={handleState}/>
+                    </Modal>
+                </>
+            }
         </>
     )
 }
