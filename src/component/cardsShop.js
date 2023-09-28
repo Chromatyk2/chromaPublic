@@ -97,7 +97,7 @@ function CardsShop(props) {
                         </div>
                         :
                         <div className="myPointsDisplay">
-                            <p>Cards Point : {points}</p>
+                            <p>Points Boutique : {points}</p>
                         </div>
                     }
                 </div>
