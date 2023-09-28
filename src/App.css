@@ -41,7 +41,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     z-index: -1;
 }
 
-.card:active .wrapper {
+.card:hover .wrapper {
     transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
@@ -78,7 +78,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     );
 }
 
-.card:active .wrapper::before,
+.card:hover .wrapper::before,
 .wrapper::after {
     opacity: 1;
 }
@@ -90,7 +90,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     width: 100%;
     transition: transform 0.5s;
 }
-.card:active .title {
+.card:hover .title {
     transform: translate3d(0%, -50px, 100px);
 }
 
@@ -103,7 +103,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     z-index: 1;
 }
 
-.card:active .character {
+.card:hover .character {
     opacity: 1;
     -webkit-transform: translate3d(0,60%,0);
     transform: translate3d(0,60%,0);
@@ -122,7 +122,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     opacity: 0;
 }
 
-.card:active .nbCardHover {
+.card:hover .nbCardHover {
     opacity: 1;
     transform: translate3d(0%, 60%, 0);
 }
