@@ -45,7 +45,7 @@ function MyCardsSet(props) {
         },
     };
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+        fetch("https://api.pokemontcg.io/v2/sets/"+props.idBooster)
             .then(res => res.json())
             .then(
                 (result) => {
