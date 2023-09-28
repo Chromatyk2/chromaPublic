@@ -8,6 +8,7 @@ import CardsShop from './cardsShop.js';
 import NavBar from "./navbar";
 import Axios from 'axios'
 import MyBoosters from "./myBoosters";
+import ListUserTcg from "./listUserTcg";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
@@ -111,6 +112,7 @@ function CardsHub(props) {
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
+                <button value="listuserTcg" onClick={displayTcgContent}>Classement</button>
             </div>
             <div className={"allCards"}>
                 <div>
@@ -165,6 +167,9 @@ function CardsHub(props) {
                     }
                     {page == "myBoosters" &&
                         <MyBoosters user={pseudo}/>
+                    }
+                    {page == "listuserTcg" &&
+                        <ListUserTcg user={pseudo}/>
                     }
             </div>
         </>
