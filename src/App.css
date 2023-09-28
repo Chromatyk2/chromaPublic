@@ -1844,7 +1844,7 @@ div#odds {
     right: -5px;
     bottom: -5px;
     z-index: -1;
-    background: linear-gradient(90deg, gold, white);
+    background: linear-gradient(90deg,#FFDD00,#fff,#FFDD00);
     background-size: 400%;
     border-radius: 40px;
     opacity: 0;
@@ -1876,7 +1876,7 @@ div#odds {
     right: -5px;
     bottom: -5px;
     z-index: -1;
-    background: linear-gradient(90deg, deepskyblue, white);
+    background: linear-gradient(90deg,#0AE4EB,#fff,#0AE4EB);
     background-size: 400%;
     border-radius: 40px;
     opacity: 0;
