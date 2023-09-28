@@ -33,35 +33,34 @@ function CardsShop(props) {
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
-                setPoints(response.data[0].points);
-            })
-        if(points - 1000 >= 0){
-            return Axios.post('/api/removeCardsPoint',
-                {
-                    user:props.user
-                }
-            ).then(
-                (result) => {
-                    Axios
-                        .get("/api/getCardsPoint/"+props.user)
-                        .then(function(response){
-                            setPoints(response.data[0].points);
-                        }).then(
+                if(response.data[0].points - 1000 >= 0){
+                    return Axios.post('/api/removeCardsPoint',
+                        {
+                            user:props.user
+                        }
+                    ).then(
                         (result) => {
-                            Axios.post('/api/addBooster',
-                                {
-                                    pseudo:props.user,
-                                    booster:idBooster
+                            Axios
+                                .get("/api/getCardsPoint/"+props.user)
+                                .then(function(response){
+                                    setPoints(response.data[0].points);
                                 }).then(
                                 (result) => {
-                                    setLoading(false);
+                                    Axios.post('/api/addBooster',
+                                        {
+                                            pseudo:props.user,
+                                            booster:idBooster
+                                        }).then(
+                                        (result) => {
+                                            setLoading(false);
+                                        }
+                                    )
                                 }
                             )
                         }
                     )
                 }
-            )
-        }
+            })
     }
 
     function registerCards(e) {
