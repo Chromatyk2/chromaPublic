@@ -1845,7 +1845,7 @@ div#odds {
     display: flex;
     flex-flow: column;
     gap: 20px;
-    width: 90%;
+    width: 300px;
     margin: auto;
 }
 

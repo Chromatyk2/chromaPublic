@@ -30,6 +30,14 @@ function ListUserTcg(props) {
         setPseudo(e.target.getAttribute("pseudo"));
 
     }
+    function searchUser(e) {
+        Axios
+            .get("/api/getListUser/"+e.target.value)
+            .then(function(response){
+                setList(response.data);
+            })
+
+    }
     return (
         <>
             {page ?
@@ -38,13 +46,16 @@ function ListUserTcg(props) {
                 list &&
                 list.map((val, key) => {
                     return(
-                        <div className={"listUser"}>
-                        <div className="listUserElement">
-                            <p>{val.user}</p>
-                            <p>{val.nbCardUser} cartes</p>
-                            <button pseudo={val.user} page={"cardListUser"} onClick={showUserList}>Voir</button>
-                        </div>
-                        </div>
+                        <>
+                            <input onChange={searchUser} type="text" id="name" name="name"/>
+                            <div className={"listUser"}>
+                                <div className="listUserElement">
+                                    <p>{val.user}</p>
+                                    <p>{val.nbCardUser} cartes</p>
+                                    <button pseudo={val.user} page={"cardListUser"} onClick={showUserList}>Voir</button>
+                                </div>
+                            </div>
+                        </>
                     )
                 })
             }
