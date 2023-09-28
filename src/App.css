@@ -1838,6 +1838,7 @@ div#odds {
     border-radius: 15px;
     padding: 15px;
     line-height: 27px;
+    justify-content:space-between;
 }
 
 .listUser{
