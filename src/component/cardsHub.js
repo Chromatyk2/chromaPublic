@@ -115,7 +115,7 @@ function CardsHub(props) {
                 <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
             </div>
             <div className={"allCards"}>
-                <div>
+                <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
                     {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
                     {/*        height="500"*/}
@@ -137,7 +137,7 @@ function CardsHub(props) {
                             Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />
 
                             Ce mini site a été fait pas Chromatyk !<br />
-                            Retrouve le en stream ici : <a href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />
+                            Retrouve le en stream ici : <a className={"introTCGLink"} href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />
 
                             N'hésite pas à Follow ça fait toujours plaisir !<br />
 

@@ -1838,6 +1838,15 @@ div#odds {
     background: #90e5b5;
     color: #255748;
 }
+.introTCGtext{
+    text-align: center;
+    margin: 20px;
+}
+.introTCGLink{
+    color: #255748;
+    font-family: Charge Vector Black;
+    font-size: 25px;
+}
 .listUserElement {
     background-color: #255748;
     color: white;
