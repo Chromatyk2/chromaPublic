@@ -13,6 +13,9 @@ function CardsShop(props) {
     const [items, setItems] = useState(null);
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
+    if(items !== null){
+        console.log(items[Math.floor(Math.random() * items.length)]);
+    }
     useEffect(() => {
         Axios
             .get("/api/getBoostersList")
@@ -114,6 +117,20 @@ function CardsShop(props) {
                     <option value="9">Gen 9</option>
                 </select>
                 <div id={"cardsContainer"}>
+                    {/*<div className="uniqueTradeContainer">*/}
+                    {/*    <div className={"containerImgBooster"}>*/}
+                    {/*        <img className="fit-picture" src={"/images/randoms.png"} alt="Grapefruit slice atop a pile of other slices"/>*/}
+                    {/*    </div>*/}
+                    {/*    <p className="pokemonNameTrade">1000 Points Boutique</p>*/}
+                    {/*    {points > 999 ?*/}
+                    {/*        loading === false ?*/}
+                    {/*            <button value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>*/}
+                    {/*            :*/}
+                    {/*            <button className="guessTradeButton">Chargement</button>*/}
+                    {/*        :*/}
+                    {/*        <button className="guessTradeButton">Card Points manquants</button>*/}
+                    {/*    }*/}
+                    {/*</div>*/}
                     {items &&
                         items.map((val, key) => {
                             return(
