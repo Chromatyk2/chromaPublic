@@ -12,7 +12,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
 }
 .card {
     width: var(--card-width);
-    height: var(--card-height);
+    height: fit-content;
     position: relative;
     display: flex;
     justify-content: center;
