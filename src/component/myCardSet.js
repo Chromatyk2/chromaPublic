@@ -98,7 +98,7 @@ function MyCardsSet(props) {
             }
             <div id={"cardsContainer"}>
                 {items &&
-                    items.cards.map((val, key) => {
+                    items.data.cards.map((val, key) => {
                       if(myCardsId.includes(val.id)){
                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                         return(
