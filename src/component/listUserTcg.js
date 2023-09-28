@@ -32,6 +32,7 @@ function ListUserTcg(props) {
                             <div className="listUserElement">
                                 <p>{val.user}</p>
                                 <p>{val.nbCardUser}</p>
+                                <button>Voir</button>
                             </div>
                         )
                     })
