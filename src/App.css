@@ -105,7 +105,11 @@ src: url('../public/RetroTypo.ttf') format('truetype');
 
 .card:hover .character {
     opacity: 1;
-    transform: translate3d(0%, 60%, 0);
+    -webkit-transform: translate3d(0,60%,0);
+    transform: translate3d(0,60%,0);
+    -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 10px black);
+    width: 100%;
 }
 
 .nbCardHover {
@@ -210,6 +214,7 @@ src: url('../public/RetroTypo.ttf') format('truetype');
     background: linear-gradient(156deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 10px black);
 }
 
 .myNoteText, .myNote{
