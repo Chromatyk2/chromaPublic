@@ -52,7 +52,7 @@ function ListUserTcg(props) {
                                 <div className="listUserElement">
                                     <p>{val.user}</p>
                                     <p>{val.nbCardUser} cartes</p>
-                                    <button pseudo={val.user} page={"cardListUser"} onClick={showUserList}>Voir</button>
+                                    <button className={"buttonShowList"} pseudo={val.user} page={"cardListUser"} onClick={showUserList}>Voir</button>
                                 </div>
                             </div>
                         </>
