@@ -30,7 +30,8 @@ function ListUserTcg(props) {
                     list.map((val, key) => {
                         return(
                             <div className="listUserElement">
-                                <p>{val.user}+" "+{val.nbCardUser}</p>
+                                <p>{val.user}</p>
+                                <p>{val.nbCardUser}</p>
                             </div>
                         )
                     })
