@@ -51,12 +51,15 @@ function UniqueCard(props) {
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+props.cardId+".png";
     }
+    function handleState() {
+            props.change();
+    }
         return (
             <>
                 {pkm &&
                     pkm.data.supertype == "Pokémon" ?
                     <>
-                        <button className={"exitModalButton"}>X</button>
+                        <button onClick={handleState} className={"exitModalButton"}>X</button>
                         <div className="card">
                             <div className={"wrapper "+glow}>
                                 <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
@@ -68,7 +71,7 @@ function UniqueCard(props) {
                     </>
                     :
                     <>
-                        <button className={"exitModalButton"}>X</button>
+                        <button onClick={handleState} className={"exitModalButton"}>X</button>
                         <div className="card">
                             <div className={"wrapper "+glow}>
                                 <p className={"nbCardHover"}>{"X "+props.cardNb}</p>

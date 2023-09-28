@@ -88,6 +88,9 @@ function MyCardsSet(props) {
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
+    function handleState() {
+        setIsOpen(false);
+    }
     return (
         <>
             {items &&
