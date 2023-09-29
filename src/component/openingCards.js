@@ -34,6 +34,7 @@ function OpeningCards(props) {
                             const randomCommon = commonArray[Math.floor(Math.random() * commonArray.length)];
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,randomCommon]);
+                                setNbCards (nbCards + 1);
                         }else if(tenCards.length > 6 && tenCards.length < 9){
                             if(result.data.rarity == "Uncommon"){
                                 setIsLoaded(true);
