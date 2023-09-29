@@ -56,11 +56,6 @@ function MyBoosters(props) {
     }, [])
     function handleState() {
         setIsOpen(false);
-        Axios
-            .get("/api/getMyBoosters/"+props.user)
-            .then(function(response){
-                setBoosters(response.data);
-            })
     }
     return (
         <>
