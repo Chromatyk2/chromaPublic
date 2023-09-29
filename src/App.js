@@ -54,6 +54,7 @@ function App() {
   //     }
   //   </>
   // );
+  const [cookies, setCookie] = useState("chromatyk");
   return(
       <>
             <BrowserRouter>
