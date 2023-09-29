@@ -60,7 +60,6 @@ function MyBoosters(props) {
             .get("/api/getMyBoosters/"+props.user)
             .then(function(response){
                 setBoosters(response.data);
-                setIsOpen(true);
             })
     }
     return (
