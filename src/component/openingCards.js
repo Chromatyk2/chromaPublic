@@ -94,6 +94,9 @@ function OpeningCards(props) {
                 idCard: e.target.getAttribute("cardId"),
                 booster: props.idBooster
             })
+            .then(function(response) {
+                Axios.delete('/api/deleteBooster/'+props.user+'/'+id)
+            })
         setEndPull(true);
         props.change();
         e.target.classList.toggle(' endPull');
