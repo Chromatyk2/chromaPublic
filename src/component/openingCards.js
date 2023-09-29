@@ -21,6 +21,7 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
+                        console.log(props.items.filter(item => item.rarity == 'Common'));
                         if(tenCards.length < 7){
                             if(result.data.rarity == "Common"){
                                 setIsLoaded(true);
