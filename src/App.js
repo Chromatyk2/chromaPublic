@@ -23,62 +23,36 @@ import LastGames from "./component/lastGame.js";
 import BangerOverlay from "./component/BangerOverlay.js";
 import CardsHub from "./component/cardsHub.js";
 function App() {
-  // const [cookies, setCookie] = useCookies();
-  // if(Object.keys(cookies).length == 0) {
-  //   return <Login />
-  // }
-  // return(
-  //   <>
-  //     {cookies.user !== undefined &&
-  //     <BrowserRouter>
-  //         <NavBar cookies={cookies} />
-  //       <Routes>
-  //         <Route path="/" element={<HomePage cookies={cookies} />} />
-  //         <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
-  //         <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
-  //         <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
-  //         <Route path="/myTrades" element={<MyTradePlace cookies={cookies} />} />
-  //         <Route path="/tradePlace" element={<TradePlace cookies={cookies} />} />
-  //         <Route path="/guessTrade/:id" element={<GuessTrade cookies={cookies} />} />
-  //         <Route path="/guess/:id" element={<Guess cookies={cookies} />} />
-  //         <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
-  //         <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
-  //         <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
-  //         <Route path="/29ct92B3ZrvxGS" element={<NostalPick cookies={cookies} />} />
-  //         <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
-  //         <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
-  //         <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
-  //         <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
-  //       </Routes>
-  //     </BrowserRouter>
-  //     }
-  //   </>
-  // );
-  const [cookies, setCookie] = useState("chromatyk");
+  const [cookies, setCookie] = useCookies();
+  if(Object.keys(cookies).length == 0) {
+    return <Login />
+  }
   return(
-      <>
-            <BrowserRouter>
-              <NavBar cookies={cookies} />
-              <Routes>
-                <Route path="/" element={<HomePage cookies={cookies} />} />
-                <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
-                <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
-                <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
-                <Route path="/myTrades" element={<MyTradePlace cookies={cookies} />} />
-                <Route path="/tradePlace" element={<TradePlace cookies={cookies} />} />
-                <Route path="/guessTrade/:id" element={<GuessTrade cookies={cookies} />} />
-                <Route path="/guess/:id" element={<Guess cookies={cookies} />} />
-                <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
-                <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
-                <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
-                <Route path="/29ct92B3ZrvxGS" element={<NostalPick cookies={cookies} />} />
-                <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
-                <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
-                <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
-                <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
-              </Routes>
-            </BrowserRouter>
-      </>
+    <>
+      {cookies.user !== undefined &&
+      <BrowserRouter>
+          <NavBar cookies={cookies} />
+        <Routes>
+          <Route path="/" element={<HomePage cookies={cookies} />} />
+          <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
+          <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
+          <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
+          <Route path="/myTrades" element={<MyTradePlace cookies={cookies} />} />
+          <Route path="/tradePlace" element={<TradePlace cookies={cookies} />} />
+          <Route path="/guessTrade/:id" element={<GuessTrade cookies={cookies} />} />
+          <Route path="/guess/:id" element={<Guess cookies={cookies} />} />
+          <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
+          <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
+          <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGS" element={<NostalPick cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
+        </Routes>
+      </BrowserRouter>
+      }
+    </>
   );
 }
 
