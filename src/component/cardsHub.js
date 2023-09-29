@@ -12,7 +12,7 @@ import ListUserTcg from "./listUserTcg";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
-    const pseudo = "chromatyk";
+    const pseudo = props.cookies.user.data[0].login;
     const [canGetPoint,setCanGetPoint] = useState(false);
     useEffect(() => {
         Axios
