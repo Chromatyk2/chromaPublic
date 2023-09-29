@@ -21,9 +21,15 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log(props.items.filter(item => item.rarity == 'Common'));
-                        console.log(props.items.filter(item => item.rarity == 'Uncommon'));
-                        console.log(props.items.filter(item => item.rarity == 'Rare'));
+                        const commonArray = props.items.filter(item => item.rarity == 'Common');
+                        const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
+                        const rareArray = props.items.filter(item => item.rarity == 'Rare');
+                        const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny");
+                        const ultraArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny"  || item.rarity == "Ultra Rare"  || item.rarity == "Trainer Gallery Rare Holo"  || item.rarity == "Special Illustration"  || item.rarity == "Special Illustration Rare"  || item.rarity == "Rare BREAK" || item.rarity == "Illustration Rare" || item.rarity == "Hyper Rare"  || item.rarity == "LEGEND" || item.rarity == "Promo" || item.rarity == "Rare Holo GX" || item.rarity == "Rare Holo V" || item.rarity == "Rare Holo VMAX" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Shiny GX" || item.rarity == "Rare Ultra");
+                        console.log(commonArray[[Math.floor(Math.random() * commonArray.length)]]);
+                        console.log(commonArray[[Math.floor(Math.random() * commonArray.length)]]);
+                        console.log(commonArray[[Math.floor(Math.random() * commonArray.length)]]);
+                        console.log(commonArray[[Math.floor(Math.random() * commonArray.length)]]);
                         if(tenCards.length < 7){
                             if(result.data.rarity == "Common"){
                                 setIsLoaded(true);
