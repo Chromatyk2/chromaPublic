@@ -29,6 +29,7 @@ function OpeningCards(props) {
 
 
                         if(tenCards.length < 7){
+                            console.log(tenCards);
                             const commonArray = props.items.filter(item => item.rarity == 'Common');
                             const randomCommon = commonArray[Math.floor(Math.random() * commonArray.length)];
                                 setIsLoaded(true);
