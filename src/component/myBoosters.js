@@ -34,6 +34,12 @@ function MyBoosters(props) {
     function openModal(e) {
         var id = e.target.value;
         setBoosterId(id);
+                Axios
+                    .get("/api/getMyBoosters/"+props.user)
+                    .then(function(response){
+                        setBoosters(response.data);
+                        setIsOpen(true);
+                    })
     }
 
     function closeModal() {
