@@ -23,12 +23,27 @@ function OpeningCards(props) {
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,randomCommon]);
                                 setNbCards (nbCards + 1);
-                        }else if(tenCards.length > 6 && tenCards.length < 9){
+                        }else if(tenCards.length > 6 && tenCards.length < 8){
                             const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
                             const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
                                 setIsLoaded(true);
                                 setTenCards(tenCards => [...tenCards,randomUncommon]);
                                 setNbCards (nbCards + 1);
+                        }else if(tenCards.length == 8){
+                            var bonus = Math.floor(Math.random() * 10);
+                            if(bonus == 0){
+                                const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny");
+                                const randomEpic = epicArray[Math.floor(Math.random() * epicArray.length)];
+                                setTenCards(tenCards => [...tenCards,randomEpic]);
+                                setNbCards (nbCards + 1);
+                                setIsLoaded(false);
+                            }else{
+                                const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
+                                const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
+                                setIsLoaded(true);
+                                setTenCards(tenCards => [...tenCards,randomUncommon]);
+                                setNbCards (nbCards + 1);
+                            }
                         }else if(tenCards.length == 9){
                             var holo = Math.floor(Math.random() * 5);
                             if(holo == 0){
