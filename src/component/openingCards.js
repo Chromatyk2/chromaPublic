@@ -47,7 +47,8 @@ function OpeningCards(props) {
                                         setTenCards(tenCards => [...tenCards,result.data]);
                                         setNbCards (nbCards + 1);
                                         setIsLoaded(false);
-                                        Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster)
+                                        Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster);
+                                        props.change();
                                     }else{
                                         setNbCards(nbCards + 1);
                                     }
@@ -56,7 +57,8 @@ function OpeningCards(props) {
                                         setTenCards(tenCards => [...tenCards,result.data]);
                                         setNbCards (nbCards + 1);
                                         setIsLoaded(false);
-                                        Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster)
+                                        Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster);
+                                        props.change();
                                     }else{
                                         setNbCards(nbCards + 1);
                                     }
@@ -66,7 +68,8 @@ function OpeningCards(props) {
                                     setTenCards(tenCards => [...tenCards,result.data]);
                                     setNbCards (nbCards + 1);
                                     setIsLoaded(false);
-                                    Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster)
+                                    Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster);
+                                    props.change();
                                 }else{
                                     setNbCards(nbCards + 1);
                                 }
