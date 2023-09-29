@@ -17,37 +17,64 @@ function OpeningCards(props) {
     const [endPull, setEndPull] = React.useState(false)
     useEffect(() => {
         if (tenCards.length < 11) {
-                        const commonArray = props.items.filter(item => item.rarity == 'Common');
+            fetch("https://api.pokemontcg.io/v2/cards/"+props.items[[Math.floor(Math.random() * props.items.length)]].id)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+
                         const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
                         const rareArray = props.items.filter(item => item.rarity == 'Rare');
                         const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny");
                         const ultraArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny"  || item.rarity == "Ultra Rare"  || item.rarity == "Trainer Gallery Rare Holo"  || item.rarity == "Special Illustration"  || item.rarity == "Special Illustration Rare"  || item.rarity == "Rare BREAK" || item.rarity == "Illustration Rare" || item.rarity == "Hyper Rare"  || item.rarity == "LEGEND" || item.rarity == "Promo" || item.rarity == "Rare Holo GX" || item.rarity == "Rare Holo V" || item.rarity == "Rare Holo VMAX" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Shiny GX" || item.rarity == "Rare Ultra");
+
+
                         if(tenCards.length < 7){
+                            const commonArray = props.items.filter(item => item.rarity == 'Common');
+                            const randomCommon = commonArray[Math.floor(Math.random() * commonArray.length)];
                                 setIsLoaded(true);
-                                setTenCards(tenCards => [...tenCards,commonArray[[Math.floor(Math.random() * commonArray.length)]]]);
-                                setNbCards (nbCards + 1);
+                                setTenCards(tenCards => [...tenCards,randomCommon]);
                         }else if(tenCards.length > 6 && tenCards.length < 9){
+                            if(result.data.rarity == "Uncommon"){
                                 setIsLoaded(true);
-                                setTenCards(tenCards => [...tenCards,uncommonArray[[Math.floor(Math.random() * uncommonArray.length)]]]);
+                                setTenCards(tenCards => [...tenCards,result.data]);
+                                setNbCards (nbCards + 1);
+                            }else{
+                                setNbCards(nbCards + 1);
+                            }
                         }else if(tenCards.length == 9){
                             var holo = Math.floor(Math.random() * 5);
                             if(holo == 0){
                                 var ultra = Math.floor(Math.random() * 2);
                                 if(ultra == 0){
-                                        setTenCards(tenCards => [...tenCards,ultraArray[[Math.floor(Math.random() * ultraArray.length)]]]);
+
+                                    if(result.data.rarity =="Rare"  || result.data.rarity == "Classic Collection"  || result.data.rarity == "Promo"  || result.data.rarity == "Radiant Rare"  || result.data.rarity == "Double Rare"  || result.data.rarity == "Amazing Rare" || result.data.rarity == "Promo" || result.data.rarity == "Rare ACE" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo Star" || result.data.rarity == "Rare Holo LV.X" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo EX" || result.data.rarity == "Rare Prime" || result.data.rarity == "Rare Prism Star" || result.data.rarity == "Rare Shining" || result.data.rarity == "Rare Shiny"  || result.data.rarity == "Ultra Rare"  || result.data.rarity == "Trainer Gallery Rare Holo"  || result.data.rarity == "Special Illustration"  || result.data.rarity == "Special Illustration Rare"  || result.data.rarity == "Rare BREAK" || result.data.rarity == "Illustration Rare" || result.data.rarity == "Hyper Rare"  || result.data.rarity == "LEGEND" || result.data.rarity == "Promo" || result.data.rarity == "Rare Holo GX" || result.data.rarity == "Rare Holo V" || result.data.rarity == "Rare Holo VMAX" || result.data.rarity == "Rare Rainbow" || result.data.rarity == "Rare Secret" || result.data.rarity == "Rare Shiny GX" || result.data.rarity == "Rare Ultra"){
+                                        setTenCards(tenCards => [...tenCards,result.data]);
                                         setNbCards (nbCards + 1);
                                         setIsLoaded(false);
+                                    }else{
+                                        setNbCards(nbCards + 1);
+                                    }
                                 }else{
-                                        setTenCards(tenCards => [...tenCards,epicArray[[Math.floor(Math.random() * epicArray.length)]]]);
+                                    if(result.data.rarity =="Rare"  || result.data.rarity == "Classic Collection"  || result.data.rarity == "Promo"  || result.data.rarity == "Radiant Rare"  || result.data.rarity == "Double Rare"  || result.data.rarity == "Amazing Rare" || result.data.rarity == "Promo" || result.data.rarity == "Rare ACE" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo Star" || result.data.rarity == "Rare Holo LV.X" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo EX" || result.data.rarity == "Rare Prime" || result.data.rarity == "Rare Prism Star" || result.data.rarity == "Rare Shining" || result.data.rarity == "Rare Shiny"){
+                                        setTenCards(tenCards => [...tenCards,result.data]);
                                         setNbCards (nbCards + 1);
                                         setIsLoaded(false);
+                                    }else{
+                                        setNbCards(nbCards + 1);
+                                    }
                                 }
                             }else{
-                                    setTenCards(tenCards => [...tenCards,rareArray[[Math.floor(Math.random() * rareArray.length)]]]);
+                                if(result.data.rarity =="Rare"){
+                                    setTenCards(tenCards => [...tenCards,result.data]);
                                     setNbCards (nbCards + 1);
                                     setIsLoaded(false);
+                                }else{
+                                    setNbCards(nbCards + 1);
+                                }
                             }
                         }
+                    }
+                )
         }
     }, [nbCards])
     function showCards() {
