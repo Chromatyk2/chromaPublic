@@ -47,6 +47,7 @@ function OpeningCards(props) {
                                         setTenCards(tenCards => [...tenCards,result.data]);
                                         setNbCards (nbCards + 1);
                                         setIsLoaded(false);
+                                        Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster)
                                     }else{
                                         setNbCards(nbCards + 1);
                                     }
@@ -55,6 +56,7 @@ function OpeningCards(props) {
                                         setTenCards(tenCards => [...tenCards,result.data]);
                                         setNbCards (nbCards + 1);
                                         setIsLoaded(false);
+                                        Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster)
                                     }else{
                                         setNbCards(nbCards + 1);
                                     }
@@ -64,6 +66,7 @@ function OpeningCards(props) {
                                     setTenCards(tenCards => [...tenCards,result.data]);
                                     setNbCards (nbCards + 1);
                                     setIsLoaded(false);
+                                    Axios.delete('/api/deleteBooster/'+props.user+'/'+props.idBooster)
                                 }else{
                                     setNbCards(nbCards + 1);
                                 }
@@ -93,9 +96,6 @@ function OpeningCards(props) {
                 pseudo: props.user,
                 idCard: e.target.getAttribute("cardId"),
                 booster: props.idBooster
-            })
-            .then(function(response) {
-                Axios.delete('/api/deleteBooster/'+props.user+'/'+id)
             })
         setEndPull(true);
         props.change();
