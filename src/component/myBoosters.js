@@ -31,17 +31,18 @@ function MyBoosters(props) {
             textAlign:'center'
         },
     };
-    function handleState() {
-    }
     function openModal(e) {
         var id = e.target.value;
         setBoosterId(id);
+        Axios.delete('/api/deleteBooster/'+props.user+'/'+id)
+            .then(function(response) {
                 Axios
                     .get("/api/getMyBoosters/"+props.user)
                     .then(function(response){
                         setBoosters(response.data);
                         setIsOpen(true);
                     })
+                })
     }
 
     function closeModal() {
