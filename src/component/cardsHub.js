@@ -112,7 +112,10 @@ function CardsHub(props) {
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
-                {pseudo == "chromatyk" || pseudo == "Kimalwe" &&
+                {pseudo == "chromatyk" &&
+                    <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
+                }
+                {pseudo == "kimalwe" &&
                     <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
                 }
             </div>
