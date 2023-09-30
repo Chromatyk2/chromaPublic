@@ -19,10 +19,10 @@ function AuthService() {
 
   const authentication = () => {
     const params = {
-        client_id: CLIENT_ID,
-        redirect_uri: REDIRECT_URI,
+        client_id: process.env.REACT_APP_CLIENT_ID,
+        redirect_uri: process.env.REACT_APP_REDIRECT_URI,
         response_type: "code",
-        scope: SCOPES,
+        scope: process.env.REACT_APP_SCOPES,
     };
       const queryString = encodeQueryString(params);
       const authenticationUrl = `https://id.twitch.tv/oauth2/authorize?${queryString}`;
@@ -50,11 +50,11 @@ function AuthService() {
         Axios.post(
         'https://id.twitch.tv/oauth2/token',
         {
-          client_id:env.CLIENT_ID,
-          client_secret:env.CLIENT_SECRET,
+          client_id:process.env.REACT_APP_CLIENT_ID,
+          client_secret:process.env.REACT_APP_CLIENT_SECRET,
           code:params.code,
           grant_type:"authorization_code",
-          redirect_uri:env.REDIRECT_URI
+          redirect_uri:process.env.REACT_APP_REDIRECT_URI
         }
       )
       .then(
@@ -65,7 +65,7 @@ function AuthService() {
               {
                 headers:{
                   'Authorization': `Bearer ${result.data.access_token}`,
-                  'Client-Id': env.CLIENT_ID
+                  'Client-Id': process.env.REACT_APP_CLIENT_ID
                 }
               }
             )
