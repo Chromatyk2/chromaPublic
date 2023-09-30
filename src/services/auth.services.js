@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import { useCookies } from 'react-cookie';
 import Axios from 'axios'
+import env from "react-dotenv";
 
 function AuthService() {
 
@@ -51,7 +52,7 @@ function AuthService() {
         'https://id.twitch.tv/oauth2/token',
         {
           client_id:"7kpmnnx1qptajh5ow3lylsws13u2op",
-          client_secret:"yu2o4wtecxsms3j30adryz3arwtjjt",
+          client_secret:process.env.REACT_APP_CLIENT_SECRET,
           code:params.code,
           grant_type:"authorization_code",
           redirect_uri:"https://chromatyk.fr/"
