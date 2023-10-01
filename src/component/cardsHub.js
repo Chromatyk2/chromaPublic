@@ -110,7 +110,6 @@ function CardsHub(props) {
                 }
             }
     }
-    console.log(diff);
     return(
         <>
             <div className="leaderBoardSwitch">
@@ -126,7 +125,9 @@ function CardsHub(props) {
             </div>
             <div className={"allCards"}>
                 {diff &&
-                    <Countdown date={Date.now() + diff} />
+                    <Countdown date={Date.now() + diff}>
+                        <p>Dispo !</p>
+                    </Countdown>
                 }
                 <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
