@@ -111,8 +111,6 @@ function CardsHub(props) {
     }
     return(
         <>
-            console.log(twoHour);
-            console.log(myTimestamp);
             <div className="leaderBoardSwitch">
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
@@ -126,7 +124,7 @@ function CardsHub(props) {
             </div>
             <div className={"allCards"}>
                 {timestamp &&
-                    <Countdown date={Date.now() + ((timestamp - twoHour) * 1000)} />
+                    <Countdown date={Date.now() + 10000} />
                 }
                 <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
