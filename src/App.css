@@ -1831,11 +1831,15 @@ div#odds {
 
 }
 a.linkOnAir {
-    color: red;
-    font-size: 38px;
-    text-align: center;
-    margin: auto;
     display: block;
+    font-size: 38px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: red;
+    width: 200px;
+    border-radius: 50px;
 }
 .countdown {
     width: 100%;
