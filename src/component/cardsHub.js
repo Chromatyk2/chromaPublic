@@ -83,7 +83,7 @@ function CardsHub(props) {
             } else{
                 setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
                 setTwoHour((new Date().getTime() / 1000));
-                if(myTimestamp <= twoHour){
+                if((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
                     Axios.post('/api/updateButtonTime',
                         {
                             hour: new Date(),
