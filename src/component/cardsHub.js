@@ -123,9 +123,7 @@ function CardsHub(props) {
                 }
             </div>
             <div className={"allCards"}>
-                {timestamp &&
-                    <Countdown date={Date.now() + 10000} />
-                }
+                    <Countdown date={Date.now() + ((timestamp - twoHour) * 1000)} />
                 <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
                     {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
