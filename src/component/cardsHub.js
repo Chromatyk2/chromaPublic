@@ -37,7 +37,7 @@ function CardsHub(props) {
             if(timer.length > 0) {
                 setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
                 setTwoHour((new Date().getTime() / 1000));
-                setDiff(((new Date(timer[0].hour).getTime() / 1000)  + (new Date().getTime() / 1000)) * 1000);
+                setDiff(((new Date(timer[0].hour).getTime() / 1000)  - (new Date().getTime() / 1000)) * 1000);
                 if ((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
                     setCanGetPoint(true);
                 } else {
@@ -83,7 +83,7 @@ function CardsHub(props) {
             } else{
                 setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
                 setTwoHour((new Date().getTime() / 1000));
-                setDiff(((new Date(timer[0].hour).getTime() / 1000)  + (new Date().getTime() / 1000)) * 1000);
+                setDiff(((new Date(timer[0].hour).getTime() / 1000)  - (new Date().getTime() / 1000)) * 1000);
                 if((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
                     Axios.post('/api/updateButtonTime',
                         {
