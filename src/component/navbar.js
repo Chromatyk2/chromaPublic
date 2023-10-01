@@ -6,12 +6,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {BrowserRouter, Link} from "react-router-dom";
+import env from "react-dotenv";
 
 function NavBar(props) {
   const [count, setCount] = useState(0);
   const [stream, setStream] = useState(null);
   const pseudo = props.cookies.user.data[0].login;
-  import env from "react-dotenv";
   useEffect(() => {
       Axios
         .get("/api/getCountProposition/"+pseudo)
