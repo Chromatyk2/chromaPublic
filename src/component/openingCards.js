@@ -45,7 +45,7 @@ function OpeningCards(props) {
                     setNbCards (nbCards + 1);
                 }
             }else if(tenCards.length == 9){
-                var holo = Math.floor(Math.random() * 5);
+                var holo = Math.floor(Math.random() * 2);
                 if(holo == 0){
                     var ultra = Math.floor(Math.random() * 2);
                     if(ultra == 0){
