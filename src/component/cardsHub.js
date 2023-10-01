@@ -157,7 +157,6 @@ function CardsHub(props) {
                         </Countdown>
                     }
                 </div>
-                <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
                     {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
                     {/*        height="500"*/}
@@ -187,7 +186,6 @@ function CardsHub(props) {
                         </p>
 
                     }
-                </div>
                     {page == "myCards" &&
                         <MyCards user={pseudo} />
                     }
