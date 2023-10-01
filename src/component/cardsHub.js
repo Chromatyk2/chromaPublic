@@ -93,6 +93,7 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) => {
+                            console.log(diff);
                             Axios
                                 .get("/api/getDateButton/" + pseudo)
                                 .then(function (response) {
