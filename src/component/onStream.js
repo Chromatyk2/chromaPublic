@@ -30,7 +30,7 @@ function OnStream(props) {
         <>
             {stream &&
                 stream.data.length > 0 &&
-                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>En stream !</a>
+                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Chromatyk est en stream, regarde le et gagne des points ! (clique ici)</a>
             }
         </>
 

@@ -1830,6 +1830,13 @@ div#odds {
     transition: 0.5s;
 
 }
+a.linkOnAir {
+    color: red;
+    font-size: 38px;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
 .countdown {
     width: 100%;
     display: flex;
