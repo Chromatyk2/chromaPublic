@@ -21,7 +21,7 @@ function NavBar(props) {
   }, [])
     useEffect(() => {
         Axios.get(
-            'https://api.twitch.tv/helix/streams&user_login=Neru',
+            'https://api.twitch.tv/helix/streams?user_login=Neru',
             {
                 headers:{
                     'Authorization': `Bearer ${props.cookies.token.access_token}`,
