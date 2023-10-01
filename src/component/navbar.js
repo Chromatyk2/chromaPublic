@@ -17,7 +17,13 @@ function NavBar(props) {
             setCount(response.data[0].count);
       })
   }, [])
-    console.log(props.cookies.user);
+    useEffect(() => {
+        Axios
+            .get("/api/getCountProposition/"+pseudo)
+            .then(function(response){
+                setCount(response.data[0].count);
+            })
+    }, [])
   return (
     <Navbar expand="lg">
       <Container>
