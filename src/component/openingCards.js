@@ -20,12 +20,24 @@ function OpeningCards(props) {
             if(tenCards.length < 7){
                 const commonArray = props.items.filter(item => item.rarity == 'Common');
                 const randomCommon = commonArray[Math.floor(Math.random() * commonArray.length)];
+                Axios.post('/api/addCard',
+                    {
+                        pseudo:props.user,
+                        idCard:randomCommon.id,
+                        booster:props.idBooster
+                    })
                 setIsLoaded(true);
                 setTenCards(tenCards => [...tenCards,randomCommon]);
                 setNbCards (nbCards + 1);
             }else if(tenCards.length > 6 && tenCards.length < 8){
                 const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
                 const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
+                Axios.post('/api/addCard',
+                    {
+                        pseudo:props.user,
+                        idCard:randomUncommon.id,
+                        booster:props.idBooster
+                    })
                 setIsLoaded(true);
                 setTenCards(tenCards => [...tenCards,randomUncommon]);
                 setNbCards (nbCards + 1);
@@ -34,12 +46,24 @@ function OpeningCards(props) {
                 if(bonus == 0){
                     const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny");
                     const randomEpic = epicArray[Math.floor(Math.random() * epicArray.length)];
+                    Axios.post('/api/addCard',
+                        {
+                            pseudo:props.user,
+                            idCard:randomEpic.id,
+                            booster:props.idBooster
+                        })
                     setTenCards(tenCards => [...tenCards,randomEpic]);
                     setNbCards (nbCards + 1);
                     setIsLoaded(false);
                 }else{
                     const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
                     const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
+                    Axios.post('/api/addCard',
+                        {
+                            pseudo:props.user,
+                            idCard:randomUncommon.id,
+                            booster:props.idBooster
+                        })
                     setIsLoaded(true);
                     setTenCards(tenCards => [...tenCards,randomUncommon]);
                     setNbCards (nbCards + 1);
@@ -50,20 +74,35 @@ function OpeningCards(props) {
                     var ultra = Math.floor(Math.random() * 2);
                     if(ultra == 0){
                         const ultraArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny"  || item.rarity == "Ultra Rare"  || item.rarity == "Trainer Gallery Rare Holo"  || item.rarity == "Special Illustration"  || item.rarity == "Special Illustration Rare"  || item.rarity == "Rare BREAK" || item.rarity == "Illustration Rare" || item.rarity == "Hyper Rare"  || item.rarity == "LEGEND" || item.rarity == "Promo" || item.rarity == "Rare Holo GX" || item.rarity == "Rare Holo V" || item.rarity == "Rare Holo VMAX" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Shiny GX" || item.rarity == "Rare Ultra");
-                        const randomUltra = ultraArray[Math.floor(Math.random() * ultraArray.length)];
+                        const randomUltra = ultraArray[Math.floor(Math.random() * ultraArray.length)];Axios.post('/api/addCard',
+                            {
+                                pseudo:props.user,
+                                idCard:randomUltra.id,
+                                booster:props.idBooster
+                            })
                         setTenCards(tenCards => [...tenCards,randomUltra]);
                         setNbCards (nbCards + 1);
                         setIsLoaded(false);
                     }else{
                         const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny");
-                        const randomEpic = epicArray[Math.floor(Math.random() * epicArray.length)];
+                        const randomEpic = epicArray[Math.floor(Math.random() * epicArray.length)];Axios.post('/api/addCard',
+                            {
+                                pseudo:props.user,
+                                idCard:randomEpic.id,
+                                booster:props.idBooster
+                            })
                         setTenCards(tenCards => [...tenCards,randomEpic]);
                         setNbCards (nbCards + 1);
                         setIsLoaded(false);
                     }
                 }else{
                     const rareArray = props.items.filter(item => item.rarity =="Rare");
-                    const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];
+                    const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];Axios.post('/api/addCard',
+                        {
+                            pseudo:props.user,
+                            idCard:randomRare.id,
+                            booster:props.idBooster
+                        })
                     setTenCards(tenCards => [...tenCards,randomRare]);
                     setNbCards (nbCards + 1);
                     setIsLoaded(false);
@@ -75,23 +114,11 @@ function OpeningCards(props) {
         setIsHidden(false);
     }
     function getCard(e) {
-        Axios.post('/api/addCard',
-            {
-                pseudo:props.user,
-                idCard:e.target.getAttribute("cardId"),
-                booster:props.idBooster
-            })
         e.target.classList.toggle('gettedCard');
         setIndex(index + 1);
     }
 
     function getLastCard(e) {
-        Axios.post('/api/addCard',
-            {
-                pseudo: props.user,
-                idCard: e.target.getAttribute("cardId"),
-                booster: props.idBooster
-            })
         setEndPull(true);
         props.change();
         e.target.classList.toggle(' endPull');
