@@ -30,7 +30,7 @@ function OpeningCards(props) {
                 setTenCards(tenCards => [...tenCards,randomUncommon]);
                 setNbCards (nbCards + 1);
             }else if(tenCards.length == 8){
-                var bonus = Math.floor(Math.random() * 10);
+                var bonus = Math.floor(Math.random() * 5);
                 if(bonus == 0){
                     const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny");
                     const randomEpic = epicArray[Math.floor(Math.random() * epicArray.length)];
