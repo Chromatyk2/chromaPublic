@@ -1840,6 +1840,7 @@ a.linkOnAir {
     background: red;
     width: 200px;
     border-radius: 50px;
+    margin-bottom: 10px;
 }
 .countdown {
     width: 100%;
