@@ -9,11 +9,14 @@ import NavBar from "./navbar";
 import Axios from 'axios'
 import MyBoosters from "./myBoosters";
 import ListUserTcg from "./listUserTcg";
+import Countdown from 'react-countdown';
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
     const [canGetPoint,setCanGetPoint] = useState(false);
+    const [twoHour,setTwoHour] = useState(false);
+    const [timestamp,setTimestamp] = useState(false);
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
@@ -78,8 +81,8 @@ function CardsHub(props) {
                         }
                     )
             } else{
-                var myTimestamp = (new Date(timer[0].hour).getTime() / 1000)  + 3600;
-                var twoHour = ((new Date().getTime() / 1000));
+                setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
+                setTwoHour((new Date().getTime() / 1000));
                 if(myTimestamp <= twoHour){
                     Axios.post('/api/updateButtonTime',
                         {
@@ -108,6 +111,8 @@ function CardsHub(props) {
     }
     return(
         <>
+            console.log(twoHour);
+            console.log(myTimestamp);
             <div className="leaderBoardSwitch">
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
@@ -120,6 +125,7 @@ function CardsHub(props) {
                 }
             </div>
             <div className={"allCards"}>
+                <Countdown date={Date.now() + ((myTimestamp - twoHour) * 1000)} />
                 <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
                     {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
