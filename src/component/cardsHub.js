@@ -15,8 +15,9 @@ function CardsHub(props) {
     const [timer,setTimer] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
     const [canGetPoint,setCanGetPoint] = useState(false);
-    const [twoHour,setTwoHour] = useState(false);
-    const [timestamp,setTimestamp] = useState(false);
+    const [twoHour,setTwoHour] = useState(null);
+    const [timestamp,setTimestamp] = useState(null);
+    const [diff,setDiff] = useState(null);
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
@@ -83,6 +84,7 @@ function CardsHub(props) {
             } else{
                 setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
                 setTwoHour((new Date().getTime() / 1000));
+                setDiff((new Date(timer[0].hour).getTime() / 1000)  + (new Date().getTime() / 1000) * 1000);
                 if((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
                     Axios.post('/api/updateButtonTime',
                         {
@@ -123,7 +125,9 @@ function CardsHub(props) {
                 }
             </div>
             <div className={"allCards"}>
-                    <Countdown date={Date.now() + ((timestamp - twoHour) * 1000)} />
+                {diff &&
+                    <Countdown date={Date.now() + diff} />
+                }
                 <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
                     {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
