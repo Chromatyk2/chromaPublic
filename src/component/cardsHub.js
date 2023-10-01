@@ -126,7 +126,7 @@ function CardsHub(props) {
             <div className={"allCards"}>
                 {diff &&
                     <Countdown date={Date.now() + diff}>
-                        timer.length == 0 ?
+                        {timer.length == 0 ?
                         canGetPoint === true ?
                         <div className={"buttonToPointContainer"}>
                             <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
@@ -151,7 +151,7 @@ function CardsHub(props) {
                             <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
                             <p className={'buttonArrow'}>↓</p>
                             <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
-                        </div>
+                        </div>}
                     </Countdown>
                 }
                 <div className={"introTCGtext"}>
