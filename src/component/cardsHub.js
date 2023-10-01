@@ -125,6 +125,7 @@ function CardsHub(props) {
             </div>
             <div className={"allCards"}>
                 <div className={"countdown"}>
+                    <p>Prochain drop dans : </p>
                     {diff &&
                         <Countdown date={Date.now() + diff}>
                             {timer.length == 0 ?
