@@ -9,6 +9,7 @@ import {BrowserRouter, Link} from "react-router-dom";
 
 function NavBar(props) {
   const [count, setCount] = useState(0);
+  const [stream, setStream] = useState(null);
   const pseudo = props.cookies.user.data[0].login;
   useEffect(() => {
       Axios
@@ -18,11 +19,17 @@ function NavBar(props) {
       })
   }, [])
     useEffect(() => {
-        Axios
-            .get("/api/getCountProposition/"+pseudo)
-            .then(function(response){
-                setCount(response.data[0].count);
-            })
+        Axios.get(
+            'https://api.twitch.tv/helix/streams&user_login=Neru',
+            {
+                headers:{
+                    'Authorization': `Bearer ${props.cookies.token.access_token}`,
+                    'Client-Id': CLIENT_ID
+                }
+            }
+        ).then(function(response){
+            setStream(response.data);
+        })
     }, [])
   return (
     <Navbar expand="lg">

@@ -74,19 +74,6 @@ function AuthService() {
             .then(
               (result) => {
                 setCookie('user', result.data );
-                  Axios.get(
-                      'https://api.twitch.tv/helix/streams',
-                      {
-                          headers:{
-                              'Authorization': `Bearer ${result.data.access_token}`,
-                              'Client-Id': CLIENT_ID
-                          }
-                      }
-                  ).then(
-                      (result) => {
-                          setCookie('streams', result.data );
-                      }
-                  )
               }
             )
           }
