@@ -1830,29 +1830,34 @@ div#odds {
     transition: 0.5s;
 
 }
+.spanOnair{
+    font-size: 10px;
+}
 a.linkOnAir {
-    display: block;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
     font-size: 38px;
-    margin: auto;
+    margin: auto auto 10px;
     text-align: center;
     text-decoration: none;
-    color: white;
+    width: 300px;
+    flex-flow: column;
+    padding: 10px;
     background: red;
-    width: 200px;
-    border-radius: 50px;
-    margin-bottom: 10px;
 }
 a.linkOnAirOff {
-    display: block;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
     font-size: 38px;
-    margin: auto;
+    margin: auto auto 10px;
     text-align: center;
     text-decoration: none;
-    color: white;
+    width: 300px;
+    flex-flow: column;
+    padding: 10px;
     background: gray;
-    width: 200px;
-    border-radius: 50px;
-    margin-bottom: 10px;
 }
 .countdown {
     width: 100%;
