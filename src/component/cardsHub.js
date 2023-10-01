@@ -124,36 +124,38 @@ function CardsHub(props) {
                 }
             </div>
             <div className={"allCards"}>
-                {diff &&
-                    <Countdown date={Date.now() + diff}>
-                        {timer.length == 0 ?
-                        canGetPoint === true ?
-                        <div className={"buttonToPointContainer"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
-                        </div>
-                        :
-                        <div className={"buttonToPointContainer disableButtonPoint"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
-                        </div>
-                        :
-                        canGetPoint === true ?
-                        <div className={"buttonToPointContainer"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
-                        </div>
-                        :
-                        <div className={"buttonToPointContainer disableButtonPoint"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
-                        </div>}
-                    </Countdown>
-                }
+                <div className={"countdown"}>
+                    {diff &&
+                        <Countdown date={Date.now() + diff}>
+                            {timer.length == 0 ?
+                                canGetPoint === true ?
+                                    <div className={"buttonToPointContainer"}>
+                                        <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
+                                        <p className={'buttonArrow'}>↓</p>
+                                        <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
+                                    </div>
+                                    :
+                                    <div className={"buttonToPointContainer disableButtonPoint"}>
+                                        <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
+                                        <p className={'buttonArrow'}>↓</p>
+                                        <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
+                                    </div>
+                                :
+                                canGetPoint === true ?
+                                    <div className={"buttonToPointContainer"}>
+                                        <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
+                                        <p className={'buttonArrow'}>↓</p>
+                                        <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
+                                    </div>
+                                    :
+                                    <div className={"buttonToPointContainer disableButtonPoint"}>
+                                        <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
+                                        <p className={'buttonArrow'}>↓</p>
+                                        <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
+                                    </div>}
+                        </Countdown>
+                    }
+                </div>
                 <div className={"introTCGtext"}>
                     {/*<iframe id="twitch-chat-embed"*/}
                     {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
