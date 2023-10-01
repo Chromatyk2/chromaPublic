@@ -11,6 +11,7 @@ function NavBar(props) {
   const [count, setCount] = useState(0);
   const [stream, setStream] = useState(null);
   const pseudo = props.cookies.user.data[0].login;
+  import env from "react-dotenv";
   useEffect(() => {
       Axios
         .get("/api/getCountProposition/"+pseudo)
@@ -24,7 +25,7 @@ function NavBar(props) {
             {
                 headers:{
                     'Authorization': `Bearer ${props.cookies.token.access_token}`,
-                    'Client-Id': CLIENT_ID
+                    'Client-Id': process.env.REACT_APP_CLIENT_ID
                 }
             }
         ).then(function(response){
