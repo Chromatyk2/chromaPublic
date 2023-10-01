@@ -14,7 +14,7 @@ function OnStream(props) {
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login=Chromatyk',
+            'https://api.twitch.tv/helix/streams?user_login=Ultia',
             {
                 headers:{
                     'Authorization': `Bearer ${props.cookies.token.access_token}`,
