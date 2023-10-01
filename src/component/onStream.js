@@ -14,7 +14,7 @@ function OnStream(props) {
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login=Neru',
+            'https://api.twitch.tv/helix/streams?user_login=Chromatyk',
             {
                 headers:{
                     'Authorization': `Bearer ${props.cookies.token.access_token}`,
@@ -30,7 +30,7 @@ function OnStream(props) {
         <>
             {stream &&
                 stream.data.length > 0 &&
-                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Chromatyk est en stream, regarde le et gagne des points ! (clique ici)</a>
+                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img src={"/images/twitchLogo.png"}/></a>
             }
         </>
 
