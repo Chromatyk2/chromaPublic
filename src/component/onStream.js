@@ -43,7 +43,8 @@ function OnStream(props) {
                                 <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>
                             </>
                         }
-                        {stream.length > 0 &&
+                        {stream &&
+                            stream.length > 0 &&
                             <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>En stream !</a>
                         }
                     </Nav>
