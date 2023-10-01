@@ -19,19 +19,6 @@ function NavBar(props) {
             setCount(response.data[0].count);
       })
   }, [])
-    useEffect(() => {
-        Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login=Shakaam',
-            {
-                headers:{
-                    'Authorization': `Bearer ${props.cookies.token.access_token}`,
-                    'Client-Id': process.env.REACT_APP_CLIENT_ID
-                }
-            }
-        ).then(function(response){
-            setStream(response.data);
-        })
-    }, [])
   return (
     <Navbar expand="lg">
       <Container>
