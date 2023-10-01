@@ -6,7 +6,7 @@ import env from "react-dotenv";
 function AuthService() {
 
   const [cookies, setCookie, removeCookie] = useCookies();
-  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;;
+  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
   const REDIRECT_URI = "https://preview--chromatyk.netlify.app/";
   const SCOPES = ['openid'];
   const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
