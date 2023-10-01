@@ -6,9 +6,10 @@ import env from "react-dotenv";
 function AuthService() {
 
   const [cookies, setCookie, removeCookie] = useCookies();
-  const CLIENT_ID = "7kpmnnx1qptajh5ow3lylsws13u2op";
+  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;;
   const REDIRECT_URI = "https://preview--chromatyk.netlify.app/";
   const SCOPES = ['openid'];
+  const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 
   const encodeQueryString = (params) => {
       const queryString = new URLSearchParams();
@@ -51,8 +52,8 @@ function AuthService() {
         Axios.post(
         'https://id.twitch.tv/oauth2/token',
         {
-          client_id:"7kpmnnx1qptajh5ow3lylsws13u2op",
-          client_secret:"yu2o4wtecxsms3j30adryz3arwtjjt",
+          client_id:CLIENT_ID,
+          client_secret:CLIENT_SECRET,
           code:params.code,
           grant_type:"authorization_code",
           redirect_uri:"https://preview--chromatyk.netlify.app/"
@@ -66,7 +67,7 @@ function AuthService() {
               {
                 headers:{
                   'Authorization': `Bearer ${result.data.access_token}`,
-                  'Client-Id': '7kpmnnx1qptajh5ow3lylsws13u2op'
+                  'Client-Id': CLIENT_ID
                 }
               }
             )
