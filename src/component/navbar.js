@@ -6,9 +6,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {BrowserRouter, Link} from "react-router-dom";
+import env from "react-dotenv";
 
 function NavBar(props) {
   const [count, setCount] = useState(0);
+  const [stream, setStream] = useState(null);
   const pseudo = props.cookies.user.data[0].login;
   useEffect(() => {
       Axios
@@ -17,7 +19,6 @@ function NavBar(props) {
             setCount(response.data[0].count);
       })
   }, [])
-    console.log(props.cookies.user);
   return (
     <Navbar expand="lg">
       <Container>

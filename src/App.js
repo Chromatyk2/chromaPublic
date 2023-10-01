@@ -22,6 +22,7 @@ import CurrentGameImage from "./component/currentGameImage.js";
 import LastGames from "./component/lastGame.js";
 import BangerOverlay from "./component/BangerOverlay.js";
 import CardsHub from "./component/cardsHub.js";
+import OnStream from "./component/onStream";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -32,6 +33,7 @@ function App() {
       {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
+          <OnStream cookies={cookies} />
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
