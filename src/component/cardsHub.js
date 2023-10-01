@@ -92,7 +92,6 @@ function CardsHub(props) {
                         }
                     ).then(
                         (result) => {
-                            console.log(diff);
                             Axios
                                 .get("/api/getDateButton/" + pseudo)
                                 .then(function (response) {
@@ -111,6 +110,7 @@ function CardsHub(props) {
                 }
             }
     }
+    console.log(diff);
     return(
         <>
             <div className="leaderBoardSwitch">
