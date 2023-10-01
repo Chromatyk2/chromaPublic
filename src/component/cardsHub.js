@@ -177,7 +177,7 @@ function CardsHub(props) {
 
                             Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />
 
-                            Ce mini site a été fait pas Chromatyk !<br />
+                            Ce mini site a été fait par Chromatyk !<br />
                             Retrouve le en stream ici : <a className={"introTCGLink"} href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />
 
                             N'hésite pas à Follow ça fait toujours plaisir !<br />
