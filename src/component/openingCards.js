@@ -15,6 +15,20 @@ function OpeningCards(props) {
     const [isHidden, setIsHidden] = useState(true);
     const [index, setIndex] = React.useState(0)
     const [endPull, setEndPull] = React.useState(false)
+    const [myCards, setMyCards] = useState([]);
+    const [myCardsId, setMyCardsId] = useState([]);
+    useEffect(() => {
+        Axios
+            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .then(function(response){
+                setMyCards(response.data);
+            })
+    }, [])
+    useEffect(() => {
+        myCards.map((val, key) => {
+            setMyCardsId(myCardsId => [...myCardsId,val.card]);
+        })
+    }, [myCards]);
     useEffect(() => {
         if (tenCards.length < 11) {
             if(tenCards.length < 7){
@@ -162,6 +176,9 @@ function OpeningCards(props) {
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
+                        if(myCardsId.includes(val.id)){
+                            return(<p>New</p>)
+                        }
                         return(
                             <>
                             <img rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
