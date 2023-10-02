@@ -1983,6 +1983,26 @@ a.linkOnAirOff {
     animate: 0.5s;
     transition: 0.5s;
 }
+.glowGet{
+    display: block;
+    filter: drop-shadow(2px 4px 30px blue);
+    animation: glowGet 1s infinite;
+}
+
+@keyframes glowGet {
+    0% {
+        filter: drop-shadow(2px 4px 0px blue);
+    }
+    25% {
+        filter: drop-shadow(2px 4px 30px blue);
+    }
+    75% {
+        filter: drop-shadow(2px 4px 0px blue);
+    }
+    100% {
+        filter: drop-shadow(2px 4px 30px blue);
+    }
+}
 
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
