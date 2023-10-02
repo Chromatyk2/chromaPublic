@@ -1986,7 +1986,7 @@ a.linkOnAirOff {
 .glowGet{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
-    animation: glowGet 3s infinite alternate;
+    animation: glowGet 3s infinite alternate, bounceInCards 1s forwards;
 }
 
 @keyframes glowGet {
