@@ -1986,16 +1986,51 @@ a.linkOnAirOff {
 .glowGet{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
-    animation: glowGet 3s infinite alternate, bounceInCards 1s forwards;
+    animation: bounceInCards 1s forwards;
+}
+.glowGetBlue{
+    display: block;
+    filter: drop-shadow(2px 4px 30px blue);
+    animation: glowGetBlue 3s infinite alternate, bounceInCards 1s forwards;
+}
+.glowGetGold{
+    display: block;
+    filter: drop-shadow(2px 4px 30px blue);
+    animation: glowGetGold 3s infinite alternate, bounceInCards 1s forwards;
+}
+.glowGetRainbow{
+    display: block;
+    filter: drop-shadow(2px 4px 30px blue);
+    animation: glowGetRainbow 3s infinite alternate, bounceInCards 1s forwards;
 }
 
-@keyframes glowGet {
+@keyframes glowGetBlue {
     0% {
-        filter: drop-shadow(2px 4px 15px blue);
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px #0AE4EB);
     }
 
     100% {
-        filter: drop-shadow(2px 4px 30px blue);
+        filter: drop-shadow(2px 4px 15px #0AE4EB) drop-shadow(2px 4px 15px #0000) drop-shadow(2px 4px 15px #0AE4EB);
+    }
+}
+
+@keyframes glowGetGold {
+    0% {
+        filter: drop-shadow(2px 4px 5px #FFDD00) drop-shadow(2px 4px 5px #fff) drop-shadow(2px 4px 5px #FFDD00);
+    }
+
+    100% {
+        filter: drop-shadow(2px 4px 15px #FFDD00) drop-shadow(2px 4px 15px #fff) drop-shadow(2px 4px 15px #FFDD00);
+    }
+}
+
+@keyframes glowGetRainbow {
+    0% {
+        filter: drop-shadow(2px 4px 5px #03a9f4) drop-shadow(2px 4px 5px #f441a5) drop-shadow(2px 4px 5px #ffeb3b) drop-shadow(2px 4px 5px #03a9f4);
+    }
+
+    100% {
+        filter: drop-shadow(2px 4px 15px #03a9f4) drop-shadow(2px 4px 15px #f441a5) drop-shadow(2px 4px 15px #ffeb3b) drop-shadow(2px 4px 15px #03a9f4);
     }
 }
 
