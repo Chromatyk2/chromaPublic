@@ -176,8 +176,10 @@ function OpeningCards(props) {
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
-                        if(myCardsId.includes(val.id)){
+                        if(!myCardsId.includes(val.id)){
                             return(<p>New</p>)
+                        }else{
+
                         }
                         return(
                             <>
