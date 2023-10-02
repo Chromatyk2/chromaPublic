@@ -116,7 +116,6 @@ function OpeningCards(props) {
     function getCard(e) {
         e.target.classList.toggle('gettedCard');
         setIndex(index + 1);
-        tenCards[]
     }
 
     function getLastCard(e) {
