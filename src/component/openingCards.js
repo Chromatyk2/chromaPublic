@@ -115,8 +115,8 @@ function OpeningCards(props) {
     }
     function getCard(e) {
         e.target.classList.toggle('gettedCard');
-        var id = (e.target.getAttribute("keyCard")+1);
-        var nextId = parseInt(id,10) + 1;
+        var id = (e.target.getAttribute("keyCard"));
+        var nextId = parseInt(id,10) - 1;
         console.log(id);
         console.log(nextId);
         var next = document.getElementById("cardNb"+nextId);
