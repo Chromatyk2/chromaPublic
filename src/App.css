@@ -2016,11 +2016,37 @@ a.linkOnAirOff {
 
 @keyframes glowGetBlue {
     0% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px #0AE4EB);
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px #ff0000);
     }
-
+    10% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 6px #0000) drop-shadow(2px 4px 5px #ffa500);
+    }
+    20% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 7px #0000) drop-shadow(2px 4px 5px #ffff00);
+    }
+    30% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 8px #0000) drop-shadow(2px 4px 5px #008000);
+    }
+    40% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 9px #0000) drop-shadow(2px 4px 5px #0000ff);
+    }
+    50% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 10px #0000) drop-shadow(2px 4px 5px #4b0082);
+    }
+    60% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 11px #0000) drop-shadow(2px 4px 5px #ee82ee);
+    }
+    70% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 12px #0000) drop-shadow(2px 4px 5px #ff0000);
+    }
+    80% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 13px #0000) drop-shadow(2px 4px 5px #ffa500);
+    }
+    90% {
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 14px #0000) drop-shadow(2px 4px 5px #ffff00);
+    }
     100% {
-        filter: drop-shadow(2px 4px 15px #0AE4EB) drop-shadow(2px 4px 15px #0000) drop-shadow(2px 4px 15px #0AE4EB);
+        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px #0AE4EB);
     }
 }
 
