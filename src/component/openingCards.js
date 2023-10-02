@@ -156,6 +156,7 @@ function OpeningCards(props) {
     }
 
     function getLastCard(e) {
+        setIsNew(false);
         setEndPull(true);
         props.change();
         e.target.classList.toggle(' endPull');
