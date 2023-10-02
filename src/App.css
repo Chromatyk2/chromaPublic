@@ -1988,6 +1988,16 @@ a.linkOnAirOff {
     filter: drop-shadow(2px 4px 30px blue);
     animation: bounceInCards 1s forwards;
 }
+.glowGet:before {
+    content:"";
+    position: absolute;
+    inset: -5px;
+    transform: translate(10px,8px);
+    z-index: -1;
+    background: conic-gradient(from 90deg at 40% -10%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+    filter: blur(10px);
+}
+
 .glowGetBlue{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
