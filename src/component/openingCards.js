@@ -17,6 +17,7 @@ function OpeningCards(props) {
     const [endPull, setEndPull] = React.useState(false)
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
+    const [isNew, setIsNew] = useState(false);
     useEffect(() => {
         Axios
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
@@ -126,12 +127,16 @@ function OpeningCards(props) {
     }, [nbCards])
     function showCards() {
         setIsHidden(false);
+        if(!myCardsId.includes(tenCards.slice(0).reverse()[9].id)){
+            setIsNew(true);
+        }
     }
     function getCard(e) {
         var id = (e.target.getAttribute("keyCard"));
         var nextId = parseInt(id,10) - 1;
         var next = document.getElementById("cardNb"+nextId);
         var rarity = next.getAttribute("rarity");
+        var nextCardId = nex.getAttribute("cardId");
         if(rarity == "Rare"){
             next.classList.toggle('glowGetBlue');
         }else if(rarity =="Rare"  || rarity == "Classic Collection"  || rarity == "Promo"  || rarity == "Radiant Rare"  || rarity == "Double Rare"  || rarity == "Amazing Rare" || rarity == "Promo" || rarity == "Rare ACE" || rarity == "Rare Holo" || rarity == "Rare Holo Star" || rarity == "Rare Holo LV.X" || rarity == "Rare Holo" || rarity == "Rare Holo EX" || rarity == "Rare Prime" || rarity == "Rare Prism Star" || rarity == "Rare Shining" || rarity == "Rare Shiny" || rarity == "Rare Holo V"){
@@ -139,7 +144,11 @@ function OpeningCards(props) {
         }else if(rarity == "Ultra Rare"  || rarity == "Trainer Gallery Rare Holo"  || rarity == "Special Illustration"  || rarity == "Special Illustration Rare"  || rarity == "Rare BREAK" || rarity == "Illustration Rare" || rarity == "Hyper Rare"  || rarity == "LEGEND" || rarity == "Promo" || rarity == "Rare Holo GX" || rarity == "Rare Holo VMAX" || rarity == "Rare Rainbow" || rarity == "Rare Secret" || rarity == "Rare Shiny GX" || rarity == "Rare Ultra"){
             next.classList.toggle('glowGetRainbow');
         }
-        console.log(rarity);
+        if(!myCardsId.includes(nextCardId)){
+            setIsNew(true);
+        }else{
+            setIsNew(false);
+        }
         next.style.display = "block";
         e.target.classList.toggle('glowGet');
         e.target.classList.toggle('gettedCard');
@@ -174,20 +183,11 @@ function OpeningCards(props) {
                     <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
                 </div>
             }
+            {isNew === true &&
+                <p>NEW !</p>
+            }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
-                        if(!myCardsId.includes(val.id)){
-                            return(
-                                <>
-                                    <p>NEW</p>
-                                    <img rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
-                                         cardId={val.id} onClick={key == 0 ? getLastCard : getCard}
-                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                         src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
-                                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
-                                </>
-                            )
-                        }else{
                             return(
                                 <>
                                     <img rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
@@ -197,7 +197,6 @@ function OpeningCards(props) {
                                          onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                                 </>
                             )
-                        }
                 })
             }
             {tenCards.length < 10 &&
