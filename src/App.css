@@ -1986,19 +1986,14 @@ a.linkOnAirOff {
 .glowGet{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
-    animation: glowGet 1s infinite;
+    animation: glowGet 3s infinite alternate;
 }
 
 @keyframes glowGet {
     0% {
-        filter: drop-shadow(2px 4px 0px blue);
+        filter: drop-shadow(2px 4px 15px blue);
     }
-    25% {
-        filter: drop-shadow(2px 4px 30px blue);
-    }
-    75% {
-        filter: drop-shadow(2px 4px 0px blue);
-    }
+
     100% {
         filter: drop-shadow(2px 4px 30px blue);
     }
