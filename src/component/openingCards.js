@@ -117,8 +117,8 @@ function OpeningCards(props) {
         var id = (e.target.getAttribute("keyCard"));
         var nextId = parseInt(id,10) - 1;
         var next = document.getElementById("cardNb"+nextId);
-        var rarirty = next.getAttribute("rarirty");
-        if(rarirty == "Rare"){
+        var rarity = next.getAttribute("rarirty");
+        if(rarity == "Rare"){
             next.classList.toggle('glowGetBlue');
         }else if(rarity =="Rare"  || rarity == "Classic Collection"  || rarity == "Promo"  || rarity == "Radiant Rare"  || rarity == "Double Rare"  || rarity == "Amazing Rare" || rarity == "Promo" || rarity == "Rare ACE" || rarity == "Rare Holo" || rarity == "Rare Holo Star" || rarity == "Rare Holo LV.X" || rarity == "Rare Holo" || rarity == "Rare Holo EX" || rarity == "Rare Prime" || rarity == "Rare Prism Star" || rarity == "Rare Shining" || rarity == "Rare Shiny" || rarity == "Rare Holo V"){
             next.classList.toggle('glowGetGold');
