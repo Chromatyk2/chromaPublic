@@ -116,6 +116,7 @@ function OpeningCards(props) {
     function getCard(e) {
         e.target.classList.toggle('gettedCard');
         setIndex(index + 1);
+        tenCards[]
     }
 
     function getLastCard(e) {
@@ -144,13 +145,12 @@ function OpeningCards(props) {
                 <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
                     <img style={customStyles.imgModal} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                     <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
-
                 </div>
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
-                        <img keyCard={key} cardId={val.id}  onClick={key == 0 ? getLastCard : getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ?  "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg" } onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                        <img id={"cardNb"+key} style={{display:key != 10 && 'none' }}  keyCard={key} cardId={val.id}  onClick={key == 0 ? getLastCard : getCard} class={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ?  "fit-picture dropCards showCards gettedCard endPull" : "fit-picture dropCards showCards"} src={"https://images.pokemoncard.io/images/"+props.idBooster+"/"+val.id+"_hiresopt.jpg" } onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                     )
                 })
             }
