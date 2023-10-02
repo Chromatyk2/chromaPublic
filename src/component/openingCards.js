@@ -125,6 +125,7 @@ function OpeningCards(props) {
         }else if(rarity == "Ultra Rare"  || rarity == "Trainer Gallery Rare Holo"  || rarity == "Special Illustration"  || rarity == "Special Illustration Rare"  || rarity == "Rare BREAK" || rarity == "Illustration Rare" || rarity == "Hyper Rare"  || rarity == "LEGEND" || rarity == "Promo" || rarity == "Rare Holo GX" || rarity == "Rare Holo VMAX" || rarity == "Rare Rainbow" || rarity == "Rare Secret" || rarity == "Rare Shiny GX" || rarity == "Rare Ultra"){
             next.classList.toggle('glowGetRainbow');
         }
+        console.log(rarity);
         next.style.display = "block";
         e.target.classList.toggle('glowGet');
         e.target.classList.toggle('gettedCard');
