@@ -184,7 +184,9 @@ function OpeningCards(props) {
                 </div>
             }
             {isNew === true &&
-                <p>NEW !</p>
+                <div id={"shadowBox"}>
+                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                </div>
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
