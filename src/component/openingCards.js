@@ -154,8 +154,7 @@ function OpeningCards(props) {
                 tenCards.slice(0).reverse().map((val, key) => {
                     return(
                         <div className="card">
-                            <div className={"wrapper "+glow}>
-                                <p className={"nbCardHover"}>{"X "+props.cardNb}</p>
+                            <div className={"wrapper "}>
                                 <img style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
                                      cardId={val.id} onClick={key == 0 ? getLastCard : getCard}
                                      className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards" : "fit-picture dropCards "}
