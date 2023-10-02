@@ -1991,17 +1991,17 @@ a.linkOnAirOff {
 .glowGetBlue{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
-    animation: glowGetBlue 3s infinite alternate, bounceInCards 1s forwards;
+    animation: glowGetBlue 2s infinite alternate, bounceInCards 1s forwards;
 }
 .glowGetGold{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
-    animation: glowGetGold 3s infinite alternate, bounceInCards 1s forwards;
+    animation: glowGetGold 2s infinite alternate, bounceInCards 1s forwards;
 }
 .glowGetRainbow{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
-    animation: glowGetRainbow 3s infinite alternate, bounceInCards 1s forwards;
+    animation: glowGetRainbow 2s infinite alternate, bounceInCards 1s forwards;
 }
 
 @keyframes glowGetBlue {
@@ -2026,11 +2026,11 @@ a.linkOnAirOff {
 
 @keyframes glowGetRainbow {
     0% {
-        filter: drop-shadow(2px 4px 5px #03a9f4) drop-shadow(2px 4px 5px #f441a5) drop-shadow(2px 4px 5px #ffeb3b) drop-shadow(2px 4px 5px #03a9f4);
+        filter: drop-shadow(2px 4px 5px #FF0000) drop-shadow(2px 4px 5px #FF7F00) drop-shadow(2px 4px 5px #FFFF00) drop-shadow(2px 4px 5px #00FF00) drop-shadow(2px 4px 5px #0000FF) drop-shadow(2px 4px 5px #2E2B5F) drop-shadow(2px 4px 5px #8B00FF);
     }
 
     100% {
-        filter: drop-shadow(2px 4px 15px #03a9f4) drop-shadow(2px 4px 15px #f441a5) drop-shadow(2px 4px 15px #ffeb3b) drop-shadow(2px 4px 15px #03a9f4);
+        filter: drop-shadow(2px 4px 15px #FF0000) drop-shadow(2px 4px 15px #FF7F00) drop-shadow(2px 4px 15px #FFFF00) drop-shadow(2px 4px 15px #00FF00) drop-shadow(2px 4px 15px #0000FF) drop-shadow(2px 4px 15px #2E2B5F) drop-shadow(2px 4px 15px #8B00FF);
     }
 }
 
