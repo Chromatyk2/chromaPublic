@@ -1985,7 +1985,6 @@ a.linkOnAirOff {
 }
 .glowGet{
     display: block;
-    filter: drop-shadow(2px 4px 30px blue);
     animation: bounceInCards 1s forwards;
 }
 .glowGetBlue{
@@ -2026,37 +2025,49 @@ a.linkOnAirOff {
 
 @keyframes glowGetRainbow {
     0% {
-        filter: drop-shadow(2px 4px 15px #ff0000);
+        -webkit-filter: drop-shadow(2px 4px 15px red);
+        filter: drop-shadow(2px 4px 35px #ff0000);
     }
+
     10% {
-        filter: drop-shadow(2px 4px 15px #ffa500);
+        -webkit-filter: drop-shadow(2px 4px 15px orange);
+        filter: drop-shadow(2px 4px 35px #ffa500);
     }
     20% {
-        filter: drop-shadow(2px 4px 15px #ffff00);
+        -webkit-filter: drop-shadow(2px 4px 15px #ff0);
+        filter: drop-shadow(2px 4px 35px #ffff00);
     }
     30% {
-        filter: drop-shadow(2px 4px 15px #008000);
+        -webkit-filter: drop-shadow(2px 4px 15px green);
+        filter: drop-shadow(2px 4px 35px #008000);
     }
     40% {
-        filter: drop-shadow(2px 4px 15px #0000ff);
+        -webkit-filter: drop-shadow(2px 4px 15px #00f);
+        filter: drop-shadow(2px 4px 35px purple);
     }
     50% {
-        filter: drop-shadow(2px 4px 15px #4b0082);
+        -webkit-filter: drop-shadow(2px 4px 15px indigo);
+        filter: drop-shadow(2px 4px 35px pink);
     }
     60% {
-        filter: drop-shadow(2px 4px 15px #ee82ee);
+        -webkit-filter: drop-shadow(2px 4px 15px violet);
+        filter: drop-shadow(2px 4px 35px yellow);
     }
     70% {
-        filter: drop-shadow(2px 4px 15px #ff0000);
+        -webkit-filter: drop-shadow(2px 4px 15px red);
+        filter: drop-shadow(2px 4px 35px gold);
     }
     80% {
-        filter: drop-shadow(2px 4px 15px #ffa500);
+        -webkit-filter: drop-shadow(2px 4px 15px orange);
+        filter: drop-shadow(2px 4px 35px darkorange);
     }
     90% {
-        filter: drop-shadow(2px 4px 15px #ffff00);
+        -webkit-filter: drop-shadow(2px 4px 15px #ff0);
+        filter: drop-shadow(2px 4px 35px red);
     }
     100% {
-        filter: drop-shadow(2px 4px 15px #0AE4EB);
+        -webkit-filter: drop-shadow(2px 4px 15px #0ae4eb);
+        filter: drop-shadow(2px 4px 35px #0AE4EB);
     }
 }
 
