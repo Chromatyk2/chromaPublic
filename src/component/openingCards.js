@@ -118,6 +118,7 @@ function OpeningCards(props) {
         var nextId = parseInt(id,10) - 1;
         var next = document.getElementById("cardNb"+nextId);
         next.style.display = "block";
+        e.target.classList.toggle('glowGet');
         e.target.classList.toggle('gettedCard');
         setIndex(index + 1);
     }
