@@ -115,7 +115,7 @@ function OpeningCards(props) {
     }
     function getCard(e) {
         e.target.classList.toggle('gettedCard');
-        var next = document.getElementById("cardNb"+(e.target.getAttribute("keyCard") + 1));
+        var next = document.getElementById("cardNb"+e.target.getAttribute("keyCard")+1);
         next.style.display = "block";
         setIndex(index + 1);
     }
