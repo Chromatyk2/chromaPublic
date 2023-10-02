@@ -1988,16 +1988,6 @@ a.linkOnAirOff {
     filter: drop-shadow(2px 4px 30px blue);
     animation: bounceInCards 1s forwards;
 }
-.glowGet:before {
-    content:"";
-    position: absolute;
-    inset: -5px;
-    transform: translate(10px,8px);
-    z-index: -1;
-    background: conic-gradient(from 90deg at 40% -10%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
-    filter: blur(10px);
-}
-
 .glowGetBlue{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
@@ -2016,37 +2006,11 @@ a.linkOnAirOff {
 
 @keyframes glowGetBlue {
     0% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px #ff0000);
-    }
-    10% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 6px #0000) drop-shadow(2px 4px 5px #ffa500);
-    }
-    20% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 7px #0000) drop-shadow(2px 4px 5px #ffff00);
-    }
-    30% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 8px #0000) drop-shadow(2px 4px 5px #008000);
-    }
-    40% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 9px #0000) drop-shadow(2px 4px 5px #0000ff);
-    }
-    50% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 10px #0000) drop-shadow(2px 4px 5px #4b0082);
-    }
-    60% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 11px #0000) drop-shadow(2px 4px 5px #ee82ee);
-    }
-    70% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 12px #0000) drop-shadow(2px 4px 5px #ff0000);
-    }
-    80% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 13px #0000) drop-shadow(2px 4px 5px #ffa500);
-    }
-    90% {
-        filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 14px #0000) drop-shadow(2px 4px 5px #ffff00);
-    }
-    100% {
         filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px #0AE4EB);
+    }
+
+    100% {
+        filter: drop-shadow(2px 4px 15px #0AE4EB) drop-shadow(2px 4px 15px #0000) drop-shadow(2px 4px 15px #0AE4EB);
     }
 }
 
@@ -2062,11 +2026,37 @@ a.linkOnAirOff {
 
 @keyframes glowGetRainbow {
     0% {
-        filter: drop-shadow(2px 4px 5px #FF0000) drop-shadow(2px 4px 5px #FF7F00) drop-shadow(2px 4px 5px #FFFF00) drop-shadow(2px 4px 5px #00FF00) drop-shadow(2px 4px 5px #0000FF) drop-shadow(2px 4px 5px #2E2B5F) drop-shadow(2px 4px 5px #8B00FF);
+        filter: drop-shadow(2px 4px 15px #ff0000);
     }
-
+    10% {
+        filter: drop-shadow(2px 4px 15px #ffa500);
+    }
+    20% {
+        filter: drop-shadow(2px 4px 15px #ffff00);
+    }
+    30% {
+        filter: drop-shadow(2px 4px 15px #008000);
+    }
+    40% {
+        filter: drop-shadow(2px 4px 15px #0000ff);
+    }
+    50% {
+        filter: drop-shadow(2px 4px 15px #4b0082);
+    }
+    60% {
+        filter: drop-shadow(2px 4px 15px #ee82ee);
+    }
+    70% {
+        filter: drop-shadow(2px 4px 15px #ff0000);
+    }
+    80% {
+        filter: drop-shadow(2px 4px 15px #ffa500);
+    }
+    90% {
+        filter: drop-shadow(2px 4px 15px #ffff00);
+    }
     100% {
-        filter: drop-shadow(2px 4px 15px #FF0000) drop-shadow(2px 4px 15px #FF7F00) drop-shadow(2px 4px 15px #FFFF00) drop-shadow(2px 4px 15px #00FF00) drop-shadow(2px 4px 15px #0000FF) drop-shadow(2px 4px 15px #2E2B5F) drop-shadow(2px 4px 15px #8B00FF);
+        filter: drop-shadow(2px 4px 15px #0AE4EB);
     }
 }
 
