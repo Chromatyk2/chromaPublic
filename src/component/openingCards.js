@@ -117,6 +117,14 @@ function OpeningCards(props) {
         var id = (e.target.getAttribute("keyCard"));
         var nextId = parseInt(id,10) - 1;
         var next = document.getElementById("cardNb"+nextId);
+        var rarirty = next.getAttribute("rarirty");
+        if(rarirty == "Rare"){
+            next.classList.toggle('glowGetBlue');
+        }else if(rarity =="Rare"  || rarity == "Classic Collection"  || rarity == "Promo"  || rarity == "Radiant Rare"  || rarity == "Double Rare"  || rarity == "Amazing Rare" || rarity == "Promo" || rarity == "Rare ACE" || rarity == "Rare Holo" || rarity == "Rare Holo Star" || rarity == "Rare Holo LV.X" || rarity == "Rare Holo" || rarity == "Rare Holo EX" || rarity == "Rare Prime" || rarity == "Rare Prism Star" || rarity == "Rare Shining" || rarity == "Rare Shiny" || rarity == "Rare Holo V"){
+            next.classList.toggle('glowGetGold');
+        }else if(rarity == "Ultra Rare"  || rarity == "Trainer Gallery Rare Holo"  || rarity == "Special Illustration"  || rarity == "Special Illustration Rare"  || rarity == "Rare BREAK" || rarity == "Illustration Rare" || rarity == "Hyper Rare"  || rarity == "LEGEND" || rarity == "Promo" || rarity == "Rare Holo GX" || rarity == "Rare Holo VMAX" || rarity == "Rare Rainbow" || rarity == "Rare Secret" || rarity == "Rare Shiny GX" || rarity == "Rare Ultra"){
+            next.classList.toggle('glowGetRainbow');
+        }
         next.style.display = "block";
         e.target.classList.toggle('glowGet');
         e.target.classList.toggle('gettedCard');
