@@ -86,12 +86,12 @@ function OpeningCards(props) {
                     setNbCards (nbCards + 1);
                 }
             }else if(tenCards.length == 9){
-                var stadeTwo = Math.floor(Math.random() * 100);
-                if(stadeTwo < 75){
-                    var stadeThree = Math.floor(Math.random() * 2);
+                var stadeTwo = Math.floor(Math.random() * 2);
+                if(stadeTwo == 0){
+                    var stadeThree = Math.floor(Math.random() * 5);
                     if(stadeThree == 0){
-                        var stadeFour = Math.floor(Math.random() * 100);
-                        if(stadeFour > 90){
+                        var stadeFour = Math.floor(Math.random() * 10);
+                        if(stadeFour == 0){
                             var rarityArray = props.rarities.filter(item => item.stade == 4);
                             const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
                             const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
@@ -134,7 +134,7 @@ function OpeningCards(props) {
                     }
                 }else{
                     var rarityArray = props.rarities.filter(item => item.stade == 1);
-                    const rareArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarirty);
+                    const rareArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
                     const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];
                     Axios.post('/api/addCard',
                         {
