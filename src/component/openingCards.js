@@ -86,11 +86,11 @@ function OpeningCards(props) {
                     setNbCards (nbCards + 1);
                 }
             }else if(tenCards.length == 9){
-                var stadeTwo = Math.floor(Math.random() * 1);
+                var stadeTwo = Math.floor(Math.random() * 2);
                 if(stadeTwo == 0){
-                    var stadeThree = Math.floor(Math.random() * 1);
+                    var stadeThree = Math.floor(Math.random() * 5);
                     if(stadeThree == 0){
-                        var stadeFour = Math.floor(Math.random() * 1);
+                        var stadeFour = Math.floor(Math.random() * 10);
                         if(stadeFour == 0){
                             var rarityArray = props.rarities.filter(item => item.stade == 4);
                             const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
