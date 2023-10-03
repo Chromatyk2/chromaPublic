@@ -63,6 +63,41 @@ function CardsShop(props) {
             })
     }
 
+    function buyBoosterRandom(e) {
+        setLoading(true);
+        var idBooster = e.target.value;
+        Axios
+            .get("/api/getCardsPoint/"+props.user)
+            .then(function(response){
+                if(response.data[0].points - 500 >= 0){
+                    return Axios.post('/api/removeCardsPointRandom',
+                        {
+                            user:props.user
+                        }
+                    ).then(
+                        (result) => {
+                            Axios
+                                .get("/api/getCardsPoint/"+props.user)
+                                .then(function(response){
+                                    setPoints(response.data[0].points);
+                                }).then(
+                                (result) => {
+                                    Axios.post('/api/addBooster',
+                                        {
+                                            pseudo:props.user,
+                                            booster:idBooster
+                                        }).then(
+                                        (result) => {
+                                            setLoading(false);
+                                        }
+                                    )
+                                }
+                            )
+                        }
+                    )
+                }
+            })
+    }
     function registerCards(e) {
         return Axios.post('/api/registerCards',
             {
@@ -129,7 +164,7 @@ function CardsShop(props) {
                             <p className="pokemonNameTrade">1000 Points Boutique</p>
                             {points > 999 ?
                                 loading === false ?
-                                    <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                    <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
                                     :
                                     <button className="guessTradeButton">Chargement</button>
                                 :
