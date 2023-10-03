@@ -15,6 +15,7 @@ function OpeningBooster(props) {
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
     let [state, setState] = useState("Initial");
+    let [rarities, setRarities] = useState(null);
     function handleState() {
         setTimeout(() => {
             props.change();
@@ -34,6 +35,13 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
+    useEffect(() => {
+        Axios
+            .get("/api/getRaritiesByBooster/"+props.idBooster)
+            .then(function(response){
+                setRarities(response.data);
+            })
+    }, [])
     return (
         <>
             {isLoaded === true &&
@@ -45,7 +53,7 @@ function OpeningBooster(props) {
             {isLoaded === false &&
                 <div className={"discoveredCardsContainer"}>
                     {items &&
-                        <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items}/>
+                        <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items} rarities={rarities}/>
                     }
                 </div>
             }
