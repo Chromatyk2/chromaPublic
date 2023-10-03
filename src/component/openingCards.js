@@ -111,7 +111,7 @@ function OpeningCards(props) {
                         setIsLoaded(false);
                     }
                 }else{
-                    const rareArray = props.items.filter(item => item.rarity =="Rare");
+                    const rareArray = props.items.filter(item => item.rarity =="Rare" || item.rarity == "Rare Holo");
                     const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];Axios.post('/api/addCard',
                         {
                             pseudo:props.user,
