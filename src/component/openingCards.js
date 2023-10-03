@@ -18,6 +18,7 @@ function OpeningCards(props) {
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     const [isNew, setIsNew] = useState(false);
+
     useEffect(() => {
         Axios
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
@@ -59,15 +60,16 @@ function OpeningCards(props) {
             }else if(tenCards.length == 8){
                 var bonus = Math.floor(Math.random() * 5);
                 if(bonus == 0){
-                    const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny" || item.rarity == "Rare Holo V");
-                    const randomEpic = epicArray[Math.floor(Math.random() * epicArray.length)];
+                    var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2);
+                    const bonusArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                    const randomBonus = bonusArray[Math.floor(Math.random() * bonusArray.length)];
                     Axios.post('/api/addCard',
                         {
                             pseudo:props.user,
                             idCard:randomEpic.id,
                             booster:props.idBooster
                         })
-                    setTenCards(tenCards => [...tenCards,randomEpic]);
+                    setTenCards(tenCards => [...tenCards,randomBonus]);
                     setNbCards (nbCards + 1);
                     setIsLoaded(false);
                 }else{
@@ -84,23 +86,43 @@ function OpeningCards(props) {
                     setNbCards (nbCards + 1);
                 }
             }else if(tenCards.length == 9){
-                var holo = Math.floor(Math.random() * 2);
-                if(holo == 0){
-                    var ultra = Math.floor(Math.random() * 2);
-                    if(ultra == 0){
-                        const ultraArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny"  || item.rarity == "Ultra Rare"  || item.rarity == "Trainer Gallery Rare Holo"  || item.rarity == "Special Illustration"  || item.rarity == "Special Illustration Rare"  || item.rarity == "Rare BREAK" || item.rarity == "Illustration Rare" || item.rarity == "Hyper Rare"  || item.rarity == "LEGEND" || item.rarity == "Promo" || item.rarity == "Rare Holo GX" || item.rarity == "Rare Holo V" || item.rarity == "Rare Holo VMAX" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Shiny GX" || item.rarity == "Rare Ultra");
-                        const randomUltra = ultraArray[Math.floor(Math.random() * ultraArray.length)];Axios.post('/api/addCard',
-                            {
-                                pseudo:props.user,
-                                idCard:randomUltra.id,
-                                booster:props.idBooster
-                            })
-                        setTenCards(tenCards => [...tenCards,randomUltra]);
-                        setNbCards (nbCards + 1);
-                        setIsLoaded(false);
+                var stadeTwo = Math.floor(Math.random() * 100);
+                if(stadeTwo < 75){
+                    var stadeThree = Math.floor(Math.random() * 2);
+                    if(stadeThree == 0){
+                        var stadeFour = Math.floor(Math.random() * 100);
+                        if(stadeFour > 90){
+                            var rarityArray = props.rarities.filter(item => item.stade == 4);
+                            const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                            const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo:props.user,
+                                    idCard:randomUltra.id,
+                                    booster:props.idBooster
+                                })
+                            setTenCards(tenCards => [...tenCards,randomFinal]);
+                            setNbCards (nbCards + 1);
+                            setIsLoaded(false);
+                        }else{
+                            var rarityArray = props.rarities.filter(item => item.stade == 3);
+                            const ultraArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                            const randomUltra = ultraArray[Math.floor(Math.random() * ultraArray.length)];
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo:props.user,
+                                    idCard:randomUltra.id,
+                                    booster:props.idBooster
+                                })
+                            setTenCards(tenCards => [...tenCards,randomUltra]);
+                            setNbCards (nbCards + 1);
+                            setIsLoaded(false);
+                        }
                     }else{
-                        const epicArray = props.items.filter(item => item.rarity =="Rare"  || item.rarity == "Classic Collection"  || item.rarity == "Promo"  || item.rarity == "Radiant Rare"  || item.rarity == "Double Rare"  || item.rarity == "Amazing Rare" || item.rarity == "Promo" || item.rarity == "Rare ACE" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Holo LV.X" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo EX" || item.rarity == "Rare Prime" || item.rarity == "Rare Prism Star" || item.rarity == "Rare Shining" || item.rarity == "Rare Shiny" || item.rarity == "Rare Holo V");
-                        const randomEpic = epicArray[Math.floor(Math.random() * epicArray.length)];Axios.post('/api/addCard',
+                        var rarityArray = props.rarities.filter(item => item.stade == 2);
+                        const stadeTwoArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                        const randomEpic = stadeTwoArray[Math.floor(Math.random() * stadeTwoArray.length)];
+                        Axios.post('/api/addCard',
                             {
                                 pseudo:props.user,
                                 idCard:randomEpic.id,
@@ -111,8 +133,10 @@ function OpeningCards(props) {
                         setIsLoaded(false);
                     }
                 }else{
-                    const rareArray = props.items.filter(item => item.rarity =="Rare" || item.rarity == "Rare Holo");
-                    const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];Axios.post('/api/addCard',
+                    var rarityArray = props.rarities.filter(item => item.stade == 1);
+                    const rareArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarirty);
+                    const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];
+                    Axios.post('/api/addCard',
                         {
                             pseudo:props.user,
                             idCard:randomRare.id,
