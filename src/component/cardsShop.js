@@ -161,8 +161,8 @@ function CardsShop(props) {
                             <div className={"containerImgBooster"}>
                                 <img className="fit-picture" src={"/images/random.png"} alt="Grapefruit slice atop a pile of other slices"/>
                             </div>
-                            <p className="pokemonNameTrade">1000 Points Boutique</p>
-                            {points > 999 ?
+                            <p className="pokemonNameTrade">500 Points Boutique</p>
+                            {points > 499 ?
                                 loading === false ?
                                     <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
                                     :
