@@ -66,7 +66,7 @@ function OpeningCards(props) {
                     Axios.post('/api/addCard',
                         {
                             pseudo:props.user,
-                            idCard:randomEpic.id,
+                            idCard:randomBonus.id,
                             booster:props.idBooster
                         })
                     setTenCards(tenCards => [...tenCards,randomBonus]);
@@ -98,7 +98,7 @@ function OpeningCards(props) {
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
-                                    idCard:randomUltra.id,
+                                    idCard:randomFinal.id,
                                     booster:props.idBooster
                                 })
                             setTenCards(tenCards => [...tenCards,randomFinal]);
