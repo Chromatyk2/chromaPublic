@@ -161,7 +161,7 @@ function OpeningCards(props) {
         var next = document.getElementById("cardNb"+nextId);
         var rarity = next.getAttribute("rarity");
         var nextCardId = next.getAttribute("cardId");
-        if(rarity == "Rare" || rarity == "Rare Holo"){
+        if(rarity == "Rare Holo"){
             next.classList.toggle('glowGetBlue');
         }else if(rarity == "Classic Collection"  || rarity == "Promo"  || rarity == "Radiant Rare"  || rarity == "Double Rare"  || rarity == "Amazing Rare" || rarity == "Promo" || rarity == "Rare ACE" || rarity == "Rare Holo Star" || rarity == "Rare Holo LV.X" || rarity == "Rare Holo" || rarity == "Rare Holo EX" || rarity == "Rare Prime" || rarity == "Rare Prism Star" || rarity == "Rare Shining" || rarity == "Rare Shiny" || rarity == "Rare Holo V"){
             next.classList.toggle('glowGetGold');
