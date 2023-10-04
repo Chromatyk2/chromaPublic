@@ -8,7 +8,6 @@ import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
 
 function MyCards(props) {
-    console.log(props.user);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [nbCards, setNbCards] = useState(null);

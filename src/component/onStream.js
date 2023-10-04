@@ -25,7 +25,6 @@ function OnStream(props) {
             setStream(response.data);
         })
     }, [])
-    console.log(stream);
     return (
         <>
             {stream &&

@@ -69,7 +69,6 @@ $(document).ready(function(){
 			return Math.floor((Math.random() * max) + 1);
 		}
 		function getConsole() {
-			console.log(consoles);
 				var selectedConsole = consoles[Math.floor(Math.random()*consoles.length)]
 				var consoleIndex = consoles.indexOf(selectedConsole);
 				consoles.splice(consoleIndex, 1);
@@ -77,7 +76,6 @@ $(document).ready(function(){
 		}
 		setTimeout(function (){
 			var selectedConsole = getConsole();
-			console.log(selectedConsole);
 			var number = getNumber(selectedConsole);
 			$('#imgModal').attr("src","Images/"+selectedConsole+"/Jaquette ("+number+").png");
 			var cookieArray = localStorage.getItem("array100").split(/,/);

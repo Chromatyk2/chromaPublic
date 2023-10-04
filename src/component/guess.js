@@ -28,7 +28,6 @@ function Guess(props) {
   }, [])
   function deleteGuess(e) {
     const idGuess = parseInt(e.target.value);
-    console.log(idGuess);
     return Axios.delete('/api/deleteGuess/'+idGuess)
     .then(
       (result) => {

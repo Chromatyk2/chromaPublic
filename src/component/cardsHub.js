@@ -10,6 +10,7 @@ import Axios from 'axios'
 import MyBoosters from "./myBoosters";
 import ListUserTcg from "./listUserTcg";
 import Countdown from 'react-countdown';
+import SellCards from "./SellCards";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
@@ -116,6 +117,7 @@ function CardsHub(props) {
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
+                <button value="sellCards" onClick={displayTcgContent}>Doublons</button>
                 {pseudo == "chromatyk" &&
                     <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
                 }
@@ -200,6 +202,9 @@ function CardsHub(props) {
                     }
                     {page == "listuserTcg" &&
                         <ListUserTcg user={pseudo}/>
+                    }
+                    {page == "sellCards" &&
+                        <SellCards user={pseudo}/>
                     }
             </div>
         </>
