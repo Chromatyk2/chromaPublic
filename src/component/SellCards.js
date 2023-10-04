@@ -30,13 +30,7 @@ function SellCards(props) {
     return (
         <>
             <div id={"cardsContainer"}>
-                { page ?
-                    <>
-                        <button onClick={backPage} className="backButton">Retour</button>
-                        <MyCardSell user={props.user} card={nbCard} idBooster={page}/>
-                    </>
-                    :
-                    nbCards &&
+                {nbCards &&
                     nbCards.map((val, key) => {
                         return(
                             <div className="uniqueTradeContainer">
