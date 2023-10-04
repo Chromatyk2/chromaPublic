@@ -114,6 +114,7 @@ function MyCardSell(props) {
                             }
                         }
                 }else{
+                    console.log("unsellButton"+cardId);
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
