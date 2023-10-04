@@ -160,7 +160,9 @@ function MyCardSell(props) {
                     <div id={"cardsContainer"}>
                         {pointToWin > 0 &&
                             <>
-                                <p>{pointToWin}</p>
+                                <div className={"buttonToSellContainer"}>
+                                    <button className={"buttonToSell"}>Vendre ces cartes pour {pointToWin} points</button>
+                                </div>
                             </>
                         }
                         {items &&
