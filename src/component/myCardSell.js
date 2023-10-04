@@ -85,7 +85,6 @@ function MyCardSell(props) {
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
                 if(cardToSell.find((card) => card.card == cardId)){
-                    if(e.type === 'click'){
                         if(cardToSell[cartItemIndex].nbToSell + 1 <= cardNb) {
                             cardToSell[cartItemIndex] = {
                                 ...cardToSell[cartItemIndex],
@@ -113,9 +112,6 @@ function MyCardSell(props) {
                                 }
                             }
                         }
-                    }else if (e.type === 'contextmenu') {
-                        unsellCard(e.target);
-                    }
                 }else{
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
@@ -180,8 +176,6 @@ function MyCardSell(props) {
             }
         }
     }
-    console.log(cardToSell);
-    console.log(pointToWin);
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
@@ -214,6 +208,10 @@ function MyCardSell(props) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
                                         <>
+                                            {cardToSell.length > 0 &&
+                                                cardToSell.find((card) => card.card == cardId) &&
+                                                <button  onClick={unsellCard}>-</button>
+                                            }
                                             <p>{cardNb.nbCard}</p>
                                             <button style={customStyles.buttonMyCard} onClick={handleClick} className={"cardBox"}>
                                                 <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
