@@ -166,12 +166,15 @@ function MyCardSell(props) {
                                 if (myCardsId.includes(val.id)) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
-                                        <button style={customStyles.buttonMyCard} onClick={handleClick} className={"cardBox"}>
-                                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} rarity={val.rarity} className="fit-picture-card"
-                                                 src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
-                                                 onError={errorImage}/>
-                                        </button>
+                                        <>
+                                            <p>{cardNb.nbCard}</p>
+                                            <button style={customStyles.buttonMyCard} onClick={handleClick} className={"cardBox"}>
+                                                <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                     image={val.image} rarity={val.rarity} className="fit-picture-card"
+                                                     src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
+                                                     onError={errorImage}/>
+                                            </button>
+                                        </>
                                     )
                                 }
                             })
