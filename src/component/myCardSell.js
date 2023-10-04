@@ -75,7 +75,8 @@ function MyCardSell(props) {
         var cardNb = e.target.getAttribute("myCardNb");
         if(cardToSell.length > 0){
             if(cardToSell.find((card) => card.card.includes(cardId))){
-
+                const cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
+                cardToSell[cartItemIndex] = { ...cardToSell[cartItemIndex], nbToSell: item.nbToSell + 1 }
             }else{
                 setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
             }
