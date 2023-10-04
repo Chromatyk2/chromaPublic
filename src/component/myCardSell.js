@@ -21,6 +21,8 @@ function MyCardSell(props) {
     const [cardId, setCardId] = React.useState(null);
     const [errorCard, setErrorCard] = React.useState("");
     const [cardToSell, setCardToSell] = useState([]);
+    const [pointToWin, setPointToWin] = useState(0);
+    const [rarities, setRarities] = useState(null);
     const customStyles = {
         content: {
             position:'initial',
@@ -66,6 +68,13 @@ function MyCardSell(props) {
             })
     }, [])
     useEffect(() => {
+        Axios
+            .get("/api/getRaritiesByBooster/"+props.idBooster)
+            .then(function(response){
+                setRarities(response.data);
+            })
+    }, [])
+    useEffect(() => {
         myCards.map((val, key) => {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
@@ -73,6 +82,7 @@ function MyCardSell(props) {
     function handleClick(e) {
         var cardId = e.target.getAttribute("cardId");
         var cardNb = e.target.getAttribute("myCardNb");
+        var rarityCard = e.target.getAttribute("rarity");
         const cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
         if(cardToSell.length > 0){
                 if(cardToSell.find((card) => card.card.includes(cardId))){
@@ -80,6 +90,9 @@ function MyCardSell(props) {
                         cardToSell[cartItemIndex] = {
                             ...cardToSell[cartItemIndex],
                             nbToSell: cardToSell[cartItemIndex].nbToSell + 1
+                        }
+                        if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
+                            console.log(rarities.find((rarity) => rarity.rarity.includes(rarityCard)));
                         }
                     }
                 }else{
@@ -93,7 +106,6 @@ function MyCardSell(props) {
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
-    console.log(cardToSell);
     return (
         <>
 
@@ -116,7 +128,7 @@ function MyCardSell(props) {
                                     return (
                                         <button style={customStyles.buttonMyCard} onClick={handleClick} className={"cardBox"}>
                                             <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} className="fit-picture-card"
+                                                 image={val.image} rarity={val.rarity} className="fit-picture-card"
                                                  src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
                                                  onError={errorImage}/>
                                         </button>
