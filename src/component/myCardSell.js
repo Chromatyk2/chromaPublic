@@ -114,7 +114,6 @@ function MyCardSell(props) {
                             }
                         }
                 }else{
-                    console.log("unsellButton"+cardId);
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
@@ -155,7 +154,7 @@ function MyCardSell(props) {
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                 }else{
                     document.getElementById("unsellButton"+cardId).style.display = 'none';
-                    cardToSell.splice(cardToSell[cartItemIndex], 1);
+                    cardToSell.splice(cartItemIndex, 1);
                 }
                 if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
