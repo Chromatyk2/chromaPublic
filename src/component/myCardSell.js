@@ -15,7 +15,6 @@ function MyCardSell(props) {
     const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
-    const [modalIsOpen, setIsOpen] = React.useState(false);
     const [myCardNb, setMyCardNb] = React.useState(null);
     const [myCardImage, setMyCardImage] = React.useState(null);
     const [pokemonName, setPokemonName] = React.useState(null);
@@ -70,26 +69,12 @@ function MyCardSell(props) {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
     }, [myCards]);
-    function openModal(e) {
-        setMyCardImage(e.target.getAttribute("image"));
-        setMyCardNb(e.target.getAttribute("myCardNb"));
-        setPokemonName(e.target.getAttribute("pokemonId"));
-        setCardId(e.target.getAttribute("cardId"));
-        setIsOpen(true);
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
-    function handleState() {
-        setIsOpen(false);
+    function handleClick(e) {
+        console.log("Oui");
     }
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
-    }
-    function handleState() {
-        setIsOpen(false);
     }
     return (
         <>
@@ -111,7 +96,7 @@ function MyCardSell(props) {
                                 if (myCardsId.includes(val.id)) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
-                                        <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
+                                        <button style={customStyles.buttonMyCard} onClick={handleClick} className={"cardBox"}>
                                             <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} className="fit-picture-card"
                                                  src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
@@ -122,11 +107,6 @@ function MyCardSell(props) {
                             })
                         }
                     </div>
-                    <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
-                           contentLabel="Example Modal">
-                        <UniqueCard pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
-                                    cardId={cardId} idBooster={props.idBooster} change={handleState}/>
-                    </Modal>
                 </>
             }
         </>
