@@ -10,7 +10,7 @@ import Axios from 'axios'
 import MyBoosters from "./myBoosters";
 import ListUserTcg from "./listUserTcg";
 import Countdown from 'react-countdown';
-import SellCards from "./SellCards";
+import SellCards from "./SellCards.js";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
