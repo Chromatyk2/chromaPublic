@@ -85,32 +85,36 @@ function MyCardSell(props) {
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
                 if(cardToSell.find((card) => card.card == cardId)){
-                    if(cardToSell[cartItemIndex].nbToSell + 1 <= cardNb) {
-                        cardToSell[cartItemIndex] = {
-                            ...cardToSell[cartItemIndex],
-                            nbToSell: cardToSell[cartItemIndex].nbToSell + 1
+                    if(e.type === 'click'){
+                        if(cardToSell[cartItemIndex].nbToSell + 1 <= cardNb) {
+                            cardToSell[cartItemIndex] = {
+                                ...cardToSell[cartItemIndex],
+                                nbToSell: cardToSell[cartItemIndex].nbToSell + 1
+                            }
+                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
+                                    setPointToWin(pointToWin + 50);
+                                }
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
+                                    setPointToWin(pointToWin + 25);
+                                }
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
+                                    setPointToWin(pointToWin + 250);
+                                }
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 4){
+                                    setPointToWin(pointToWin + 1000);
+                                }
+                            }else{
+                                if(rarityCard == "Common"){
+                                    setPointToWin(pointToWin + 5);
+                                }
+                                if(rarityCard == "Uncommon"){
+                                    setPointToWin(pointToWin + 10);
+                                }
+                            }
                         }
-                        if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
-                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
-                                setPointToWin(pointToWin + 50);
-                            }
-                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
-                                setPointToWin(pointToWin + 25);
-                            }
-                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
-                                setPointToWin(pointToWin + 250);
-                            }
-                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 4){
-                                setPointToWin(pointToWin + 1000);
-                            }
-                        }else{
-                            if(rarityCard == "Common"){
-                                setPointToWin(pointToWin + 5);
-                            }
-                            if(rarityCard == "Uncommon"){
-                                setPointToWin(pointToWin + 10);
-                            }
-                        }
+                    }else if (e.type === 'contextmenu') {
+                        unsellCard(e.target);
                     }
                 }else{
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
@@ -136,6 +140,45 @@ function MyCardSell(props) {
                         }
                     }
                 }
+    }
+    function unsellCard(e) {
+        var cardId = e.getAttribute("cardId");
+        var cardNb = e.getAttribute("myCardNb");
+        var rarityCard = e.getAttribute("rarity");
+        var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
+        if(cardToSell.find((card) => card.card == cardId)){
+            if(cardToSell[cartItemIndex].nbToSell - 1 >= 0) {
+                if(cardToSell[cartItemIndex].nbToSell - 1 > 0){
+                    cardToSell[cartItemIndex] = {
+                        ...cardToSell[cartItemIndex],
+                        nbToSell: cardToSell[cartItemIndex].nbToSell -1
+                    }
+                }else{
+                    cardToSell.splice(cardToSell[cartItemIndex], 1);
+                }
+                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
+                    if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
+                        setPointToWin(pointToWin - 50);
+                    }
+                    if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
+                        setPointToWin(pointToWin - 25);
+                    }
+                    if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
+                        setPointToWin(pointToWin - 250);
+                    }
+                    if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 4){
+                        setPointToWin(pointToWin - 1000);
+                    }
+                }else{
+                    if(rarityCard == "Common"){
+                        setPointToWin(pointToWin - 5);
+                    }
+                    if(rarityCard == "Uncommon"){
+                        setPointToWin(pointToWin - 10);
+                    }
+                }
+            }
+        }
     }
     console.log(cardToSell);
     console.log(pointToWin);
