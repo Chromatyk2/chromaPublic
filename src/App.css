@@ -1800,7 +1800,22 @@ div#odds {
    height: 600px;
     width:350px;
 }
-
+.buttonToSellContainer {
+    display: flex;
+    position: fixed;
+    bottom: 15px;
+}
+button.buttonToSell {
+    color: #0a3a2c;
+    background: #90e5b5;
+    font-size: 25px;
+    border-radius: 25px;
+    padding: 10px;
+}
+button.buttonToSell:hover {
+    color: white;
+    background: #0a3a2c;
+}
 .rainbow {
     text-align: center;
     text-decoration: underline;
