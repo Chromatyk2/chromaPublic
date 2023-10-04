@@ -84,7 +84,7 @@ function MyCardSell(props) {
                     }
                 }else{
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
-                }}
+                }
         }else{
             setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
         }
