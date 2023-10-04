@@ -20,6 +20,7 @@ function MyCardSell(props) {
     const [pokemonName, setPokemonName] = React.useState(null);
     const [cardId, setCardId] = React.useState(null);
     const [errorCard, setErrorCard] = React.useState("");
+    const [cardToSell, setCardToSell] = useState([]);
     const customStyles = {
         content: {
             position:'initial',
@@ -70,7 +71,9 @@ function MyCardSell(props) {
         })
     }, [myCards]);
     function handleClick(e) {
-        console.log("Oui");
+        var cardId = e.target.getAttribute("cardId");
+        setCardToSell(cardToSell => [...cardToSell,cardId]);
+        console.log(cardToSell);
     }
     function errorImage(e){
         e.target.onerror = null;
