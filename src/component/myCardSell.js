@@ -90,12 +90,7 @@ function MyCardSell(props) {
                             ...cardToSell[cartItemIndex],
                             nbToSell: cardToSell[cartItemIndex].nbToSell + 1
                         }
-                            if(rarityCard == "Common"){
-                                setPointToWin(pointToWin + 5);
-                            }
-                            if(rarityCard == "Uncommon"){
-                                setPointToWin(pointToWin + 10);
-                            }
+                        if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                             if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
                                 setPointToWin(pointToWin + 50);
                             }
@@ -108,15 +103,18 @@ function MyCardSell(props) {
                             if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 4){
                                 setPointToWin(pointToWin + 1000);
                             }
+                        }else{
+                            if(rarityCard == "Common"){
+                                setPointToWin(pointToWin + 5);
+                            }
+                            if(rarityCard == "Uncommon"){
+                                setPointToWin(pointToWin + 10);
+                            }
+                        }
                     }
                 }else{
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
-                        if(rarityCard == "Common"){
-                            setPointToWin(pointToWin + 5);
-                        }
-                        if(rarityCard == "Uncommon"){
-                            setPointToWin(pointToWin + 10);
-                        }
+                    if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
                             setPointToWin(pointToWin + 50);
                         }
@@ -129,6 +127,14 @@ function MyCardSell(props) {
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 4){
                             setPointToWin(pointToWin + 1000);
                         }
+                    }else{
+                        if(rarityCard == "Common"){
+                            setPointToWin(pointToWin + 5);
+                        }
+                        if(rarityCard == "Uncommon"){
+                            setPointToWin(pointToWin + 10);
+                        }
+                    }
                 }
     }
     console.log(cardToSell);
