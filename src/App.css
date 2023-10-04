@@ -1816,6 +1816,23 @@ button.buttonToSell:hover {
     color: white;
     background: #0a3a2c;
 }
+.unsellButton{
+    position: relative;
+    display: flex;
+    border: none;
+    background: red;
+    color: white;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 11px;
+    border-radius: 30px;
+    overflow: hidden;
+    top: 25px;
+    right: -221px;
+    font-size: 40px;
+}
 .rainbow {
     text-align: center;
     text-decoration: underline;
