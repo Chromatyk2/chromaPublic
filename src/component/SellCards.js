@@ -33,7 +33,7 @@ function SellCards(props) {
                 { page ?
                     <>
                         <button onClick={backPage} className="backButton">Retour</button>
-                        <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
+                        <MyCardSell user={props.user} card={nbCard} idBooster={page}/>
                     </>
                     :
                     nbCards &&
