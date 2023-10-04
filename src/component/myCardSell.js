@@ -216,7 +216,7 @@ function MyCardSell(props) {
                                         <>
                                             <button style={customStyles.buttonMyCard} className={"cardBox"}>
                                                 <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                        image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+key} onClick={unsellCard}>-</button>
+                                                        image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
                                                 <img onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                      image={val.image} rarity={val.rarity} className="fit-picture-card"
                                                      src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
