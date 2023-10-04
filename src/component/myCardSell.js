@@ -75,13 +75,16 @@ function MyCardSell(props) {
         var cardNb = e.target.getAttribute("myCardNb");
         const cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
         if(cardToSell.length > 0){
-            if(cardToSell[cartItemIndex].nbToSell + 1 <= cardNb){
                 if(cardToSell.find((card) => card.card.includes(cardId))){
-                    cardToSell[cartItemIndex] = { ...cardToSell[cartItemIndex], nbToSell: cardToSell[cartItemIndex].nbToSell + 1 }
+                    if(cardToSell[cartItemIndex].nbToSell + 1 <= cardNb) {
+                        cardToSell[cartItemIndex] = {
+                            ...cardToSell[cartItemIndex],
+                            nbToSell: cardToSell[cartItemIndex].nbToSell + 1
+                        }
+                    }
                 }else{
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
-                }
-            }
+                }}
         }else{
             setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
         }
