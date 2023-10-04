@@ -84,6 +84,7 @@ function MyCardSell(props) {
         var cardNb = e.target.getAttribute("myCardNb");
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
+        console.log(cardId);
                 if(cardToSell.find((card) => card.card.includes(cardId))){
                     if(cardToSell[cartItemIndex].nbToSell + 1 <= cardNb) {
                         cardToSell[cartItemIndex] = {
