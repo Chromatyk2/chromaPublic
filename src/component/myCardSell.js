@@ -138,9 +138,9 @@ function MyCardSell(props) {
                 }
     }
     function unsellCard(e) {
-        var cardId = e.getAttribute("cardId");
-        var cardNb = e.getAttribute("myCardNb");
-        var rarityCard = e.getAttribute("rarity");
+        var cardId = e.target.getAttribute("cardId");
+        var cardNb = e.target.getAttribute("myCardNb");
+        var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
         if(cardToSell.find((card) => card.card == cardId)){
             if(cardToSell[cartItemIndex].nbToSell - 1 >= 0) {
