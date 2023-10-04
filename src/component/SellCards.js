@@ -53,4 +53,4 @@ function SellCards(props) {
         </>
     )
 }
-export default SellCards
+export default MyCardSell
