@@ -1834,6 +1834,7 @@ button.buttonToSell:hover {
     top: 25px;
     right: -221px;
     font-size: 40px;
+    margin:-20px;
 }
 .rainbow {
     text-align: center;
