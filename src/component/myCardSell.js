@@ -208,11 +208,7 @@ function MyCardSell(props) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
                                         <>
-                                            {cardToSell.length > 0 &&
-                                                cardToSell.find((card) => card.card == cardId) &&
-                                                <button  onClick={unsellCard}>-</button>
-                                            }
-                                            <p>{cardNb.nbCard}</p>
+                                            <button id={"unsellButton"+key} onClick={unsellCard}>-</button>
                                             <button style={customStyles.buttonMyCard} onClick={handleClick} className={"cardBox"}>
                                                 <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                      image={val.image} rarity={val.rarity} className="fit-picture-card"
