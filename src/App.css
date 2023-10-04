@@ -1817,6 +1817,9 @@ button.buttonToSell:hover {
     background: #0a3a2c;
 }
 .unsellButton{
+    display: none;
+}
+.unsellButton{
     position: relative;
     display: flex;
     border: none;

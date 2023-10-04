@@ -85,6 +85,7 @@ function MyCardSell(props) {
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
                 if(cardToSell.find((card) => card.card == cardId)){
+                    document.getElementById("unsellButton"+cardId).style.display = 'flex';
                         if(cardToSell[cartItemIndex].nbToSell + 1 <= cardNb) {
                             cardToSell[cartItemIndex] = {
                                 ...cardToSell[cartItemIndex],
@@ -113,6 +114,7 @@ function MyCardSell(props) {
                             }
                         }
                 }else{
+                    document.getElementById("unsellButton"+cardId).style.display = 'flex';
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
@@ -149,7 +151,9 @@ function MyCardSell(props) {
                         ...cardToSell[cartItemIndex],
                         nbToSell: cardToSell[cartItemIndex].nbToSell -1
                     }
+                    document.getElementById("unsellButton"+cardId).style.display = 'flex';
                 }else{
+                    document.getElementById("unsellButton"+cardId).style.display = 'none';
                     cardToSell.splice(cardToSell[cartItemIndex], 1);
                 }
                 if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
