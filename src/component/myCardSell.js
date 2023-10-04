@@ -144,17 +144,18 @@ function MyCardSell(props) {
         var cardId = e.target.getAttribute("cardId");
         var cardNb = e.target.getAttribute("myCardNb");
         var rarityCard = e.target.getAttribute("rarity");
+        var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
         if(cardToSell.find((card) => card.card == cardId)){
-            if(cardToSell[cardToSell.findIndex(item => item.card === cardId)].nbToSell - 1 >= 0) {
-                if(cardToSell[cardToSell.findIndex(item => item.card === cardId)].nbToSell - 1 > 0){
-                    cardToSell[cardToSell.findIndex(item => item.card === cardId)] = {
-                        ...cardToSell[cardToSell.findIndex(item => item.card === cardId)],
-                        nbToSell: cardToSell[cardToSell.findIndex(item => item.card === cardId)].nbToSell -1
+            if(cardToSell[cartItemIndex].nbToSell - 1 >= 0) {
+                if(cardToSell[cartItemIndex].nbToSell - 1 > 0){
+                    cardToSell[cartItemIndex] = {
+                        ...cardToSell[cartItemIndex],
+                        nbToSell: cardToSell[cartItemIndex].nbToSell -1
                     }
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                 }else{
                     document.getElementById("unsellButton"+cardId).style.display = 'none';
-                    cardToSell.splice(cardToSell[cardToSell.findIndex(item => item.card === cardId)], 1);
+                    cardToSell.splice(cardToSell[cartItemIndex], 1);
                 }
                 if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
