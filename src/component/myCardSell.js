@@ -92,7 +92,24 @@ function MyCardSell(props) {
                             nbToSell: cardToSell[cartItemIndex].nbToSell + 1
                         }
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
-                            console.log(rarities.find((rarity) => rarity.rarity.includes(rarityCard)));
+                            if(rarityCard == "Common"){
+                                setPointToWin(pointToWin + 5);
+                            }
+                            if(rarityCard == "Uncommon"){
+                                setPointToWin(pointToWin + 10);
+                            }
+                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
+                                setPointToWin(pointToWin + 50);
+                            }
+                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
+                                setPointToWin(pointToWin + 25);
+                            }
+                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
+                                setPointToWin(pointToWin + 250);
+                            }
+                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 4){
+                                setPointToWin(pointToWin + 1000);
+                            }
                         }
                     }
                 }else{
@@ -121,6 +138,11 @@ function MyCardSell(props) {
             {isLoaded === false &&
                 <>
                     <div id={"cardsContainer"}>
+                        {pointToWin > 0 &&
+                            <>
+                                <p>{pointToWin}</p>
+                            </>
+                        }
                         {items &&
                             items.data.map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
