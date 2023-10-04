@@ -83,12 +83,12 @@ function MyCardSell(props) {
         }else{
             setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
         }
+        console.log(cardToSell);
     }
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
-    console.log(cardToSell);
     return (
         <>
 
