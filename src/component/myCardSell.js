@@ -142,8 +142,10 @@ function MyCardSell(props) {
 
         const requests = cardToSell.map((val, key) => {
             var limitNb = parseInt(val.nbToSell);
-            setMyCards(response.data);
             return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
+                .then(function(response){
+                    Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+                })
         });
 
         return Promise.all(requests).then(() => {
