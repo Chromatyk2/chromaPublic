@@ -150,20 +150,22 @@ function MyCardSell(props) {
                 cardPoint:pointToWin
             }
         )
-        cardToSell.map((val, key) => {
-            console.log(val.nbToSell);
+        const requests = cardToSell.map((val, key) => {
             var limitNb = parseInt(val.nbToSell);
-            Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
-        })
-        Axios
-            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-            .then(function(response){
-                setMyCards(response.data);
-                response.data.map((val, key) => {
-                    setMyCardsId(myCardsId => [...myCardsId,val.card]);
+            return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
+        });
+
+        return Promise.all(requests).then(() => {
+            Axios
+                .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+                .then(function(response){
+                    setMyCards(response.data);
+                    response.data.map((val, key) => {
+                        setMyCardsId(myCardsId => [...myCardsId,val.card]);
+                    })
+                    setIsOpen(false);
                 })
-                setIsOpen(false);
-            })
+        })
     }
     function unsellCard(e) {
         var cardId = e.target.getAttribute("cardId");
