@@ -1988,7 +1988,9 @@ a.linkOnAirOff {
 .nbSellPick{
     margin: 0;
 }
-
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+    z-index: 20;
+}
 .listUser{
     display: flex;
     flex-flow: column;
