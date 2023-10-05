@@ -326,7 +326,8 @@ function MyCardSell(props) {
                                 </div>
                             </>
                         }
-                        {items &&
+                        {canSell == true ?
+                            items &&
                             rarities &&
                                 sellingTime &&
                                     myCards.map((val, key) => {
@@ -356,7 +357,7 @@ function MyCardSell(props) {
                                                         </button>
                                                     </>
                                                 )
-                                        })
+                                        }):<p>Attend 10 min</p>
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
