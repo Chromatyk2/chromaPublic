@@ -217,6 +217,9 @@ function MyCardSell(props) {
                                                 <div className={"nbToSellContainer"}>
                                                     <p className={"nbToSell"}>Carte(s) possédée(s) : {cardNb.nbCard}</p>
                                                 </div>
+                                                <div>
+                                                    <p>{cardToSell.find((card) => card.card == cardId).nbToSell}</p>
+                                                </div>
                                                 <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                         image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
                                                 <img onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
