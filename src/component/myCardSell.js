@@ -261,8 +261,9 @@ function MyCardSell(props) {
                         {items &&
                             rarities &&
                                 myCards.map((val, key) => {
-                                    if(items.data.find((myCard) => myCard.id.includes(val.card)).rarity != "Common" || items.data.find((myCard) => myCard.id.includes(val.card)).rarity != "Uncommon"){
-                                        var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(items.data.find((myCard) => myCard.id.includes(val.card)).rarity)).stade;
+                                    var stadeB = "Illustration Rare";
+                                    if(stadeB != "Common" || stadeB != "Uncommon"){
+                                        var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(stadeB).stade;
                                     }else{
                                         var stadeC = 0;
                                     }
