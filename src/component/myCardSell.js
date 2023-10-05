@@ -93,7 +93,7 @@ function MyCardSell(props) {
                 if(cardToSell.find((card) => card.card == cardId)){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
-                        if(cardToSell[cartItemIndex].nbToSell + 2 <= cardNb) {
+                        if(cardToSell[cartItemIndex].nbToSell + 2 <= cardNb || cardToSell.length == 5) {
                             cardToSell[cartItemIndex] = {
                                 ...cardToSell[cartItemIndex],
                                 nbToSell: cardToSell[cartItemIndex].nbToSell + 1
@@ -120,7 +120,7 @@ function MyCardSell(props) {
                                 }
                             }
                         }
-                }else{
+                }else if(cardNb > 1){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
@@ -153,7 +153,7 @@ function MyCardSell(props) {
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
         if(cardToSell.find((card) => card.card == cardId)){
-            if(cardToSell[cartItemIndex].nbToSell - 1 >= 0 || cardToSell.length == 5) {
+            if(cardToSell[cartItemIndex].nbToSell - 1 >= 0) {
                 if(cardToSell[cartItemIndex].nbToSell - 1 > 0){
                     cardToSell[cartItemIndex] = {
                         ...cardToSell[cartItemIndex],
