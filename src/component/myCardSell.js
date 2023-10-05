@@ -265,6 +265,8 @@ function MyCardSell(props) {
                                     var rarityC = items.data.find((myCard) => myCard.id.includes(val.card)).rarity;
                                     if(rarities.find((stadeU) => stadeU.rarity.includes(rarityC))){
                                         var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(rarityC)).rarity;
+                                    }else{
+                                        var stadeC = 0;
                                     }
                                         return (
                                             <>
