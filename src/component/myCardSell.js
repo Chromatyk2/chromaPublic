@@ -263,7 +263,7 @@ function MyCardSell(props) {
                                 myCards.map((val, key) => {
                                     var stadeB = "Illustration Rare";
                                     if(stadeB != "Common" || stadeB != "Uncommon"){
-                                        var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(stadeB).stade;
+                                        var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(stadeB)).stade;
                                     }else{
                                         var stadeC = 0;
                                     }
