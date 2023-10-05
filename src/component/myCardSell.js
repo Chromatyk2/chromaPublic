@@ -236,6 +236,7 @@ function MyCardSell(props) {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
     }, [myCards]);
+    console.log(rarities.find((stadeU) => stadeU.rarity.includes("Common");
     return (
         <>
 
