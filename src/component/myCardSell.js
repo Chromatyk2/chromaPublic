@@ -29,7 +29,6 @@ function MyCardSell(props) {
     const [twoHour,setTwoHour] = useState(null);
     const [timestamp,setTimestamp] = useState(null);
     const [canSell,setCanSell] = useState(false);
-    const [timer,setTimer] = useState(null);
     const [diff,setDiff] = useState(null);
     const customStyles = {
         content: {
@@ -64,12 +63,12 @@ function MyCardSell(props) {
     }, [])
 
     useEffect(() => {
-        if(timer !== null){
-            if(timer.length > 0) {
-                setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 600);
+        if(sellingTime !== null){
+            if(sellingTime.length > 0) {
+                setTimestamp((new Date(sellingTime[0].hour).getTime() / 1000)  + 600);
                 setTwoHour((new Date().getTime() / 1000));
-                setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-                if ((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
+                setDiff((((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+                if ((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
                     setCanSell(true);
                 } else {
                     setCanSell(false);
@@ -78,7 +77,8 @@ function MyCardSell(props) {
                 setCanSell(true);
             }
         }
-    }, [timer])
+    }, [sellingTime])
+
     useEffect(() => {
         Axios
             .get("/api/getRaritiesByBooster/"+props.idBooster)
@@ -261,8 +261,8 @@ function MyCardSell(props) {
                         setSellingIsLoad(false);
                         setIsOpen(false);
                         setCanSell(false);
-                        console.log(timer);
-                        if (timer.length == 0) {
+                        console.log(sellingTime);
+                        if (sellingTime.length == 0) {
                             Axios.post('/api/addButtonClick',
                                 {
                                     pseudo: props.user,
@@ -272,7 +272,7 @@ function MyCardSell(props) {
                                     Axios
                                         .get("/api/getDateButton/" + props.user)
                                         .then(function (response) {
-                                            setTimer(response.data);
+                                            setsellingTime(response.data);
                                         }).then(
                                         (result) => {
                                             Axios.post('/api/registerCards',
@@ -285,10 +285,10 @@ function MyCardSell(props) {
                                 }
                             )
                         } else{
-                            setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 600);
+                            setTimestamp((new Date(sellingTime[0].hour).getTime() / 1000)  + 600);
                             setTwoHour((new Date().getTime() / 1000));
-                            setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-                            if((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
+                            setDiff((((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+                            if((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
                                 Axios.post('/api/updateButtonTime',
                                     {
                                         hour: new Date(),
@@ -299,7 +299,7 @@ function MyCardSell(props) {
                                         Axios
                                             .get("/api/getDateButton/" + props.user)
                                             .then(function (response) {
-                                                setTimer(response.data);
+                                                setsellingTime(response.data);
                                             }).then(
                                             (result) => {
                                                 Axios.post('/api/addCardsPointButton',
