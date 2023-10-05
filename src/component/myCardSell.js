@@ -219,7 +219,7 @@ function MyCardSell(props) {
                                                 </div>
                                                 <div>
                                                     {cardToSell.find((card) => card.card == cardId) &&
-                                                        <p>Test</p>
+                                                        <p>{cardToSell.find((card) => card.card == cardId).nbToSell}</p>
                                                      }
                                                 </div>
                                                 <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
