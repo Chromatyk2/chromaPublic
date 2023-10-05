@@ -278,7 +278,7 @@ function MyCardSell(props) {
                                         )
                                     }
                                 })
-                            }
+                            })
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
