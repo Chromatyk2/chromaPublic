@@ -266,26 +266,28 @@ function MyCardSell(props) {
                                         }else{
                                             var stadeC = 0;
                                         }
-                                        return (
-                                            <>
-                                                <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
-                                                    <div className={"nbToSellContainer"}>
-                                                        <p className={"nbToSell"}>Carte(s) possédée(s) : {val.nbCard}</p>
-                                                    </div>
-                                                    <div className={"nbSellPickContainer"}>
-                                                        {cardToSell.find((card) => card.card == val.card) &&
-                                                            <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.card).nbToSell}</p>
-                                                        }
-                                                    </div>
-                                                    <button cardId={val.card} myCardNb={val.nbCard}
-                                                            rarity={items.data.find((myCard) => myCard.id === val.card).rarity} className={"unsellButton"} id={"unsellButton"+val.card} onClick={unsellCard}>-</button>
-                                                    <img test={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
-                                                          rarity={items.data.find((myCard) => myCard.id === val.card).rarity} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                                                         src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
-                                                         onError={errorImage}/>
-                                                </button>
-                                            </>
-                                        )
+                                        if(val.nbCard > 1){
+                                            return (
+                                                <>
+                                                    <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
+                                                        <div className={"nbToSellContainer"}>
+                                                            <p className={"nbToSell"}>Carte(s) possédée(s) : {val.nbCard}</p>
+                                                        </div>
+                                                        <div className={"nbSellPickContainer"}>
+                                                            {cardToSell.find((card) => card.card == val.card) &&
+                                                                <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.card).nbToSell}</p>
+                                                            }
+                                                        </div>
+                                                        <button cardId={val.card} myCardNb={val.nbCard}
+                                                                rarity={items.data.find((myCard) => myCard.id === val.card).rarity} className={"unsellButton"} id={"unsellButton"+val.card} onClick={unsellCard}>-</button>
+                                                        <img test={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
+                                                             rarity={items.data.find((myCard) => myCard.id === val.card).rarity} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                                             src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
+                                                             onError={errorImage}/>
+                                                    </button>
+                                                </>
+                                            )
+                                        }
                                     })
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
