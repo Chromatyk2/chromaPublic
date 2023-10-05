@@ -23,6 +23,7 @@ function MyCardSell(props) {
     const [cardToSell, setCardToSell] = useState([]);
     const [pointToWin, setPointToWin] = useState(0);
     const [rarities, setRarities] = useState(null);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
     const customStyles = {
         content: {
             position:'initial',
@@ -183,7 +184,9 @@ function MyCardSell(props) {
             }
         }
     }
-    console.log(cardToSell);
+    function openModal(e) {
+        setIsOpen(true);
+    }
     function errorImage(e){
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
@@ -206,7 +209,7 @@ function MyCardSell(props) {
                         {pointToWin > 0 &&
                             <>
                                 <div className={"buttonToSellContainer"}>
-                                    <button className={"buttonToSell"}>Vendre ces cartes pour {pointToWin} points</button>
+                                    <button onClick={openModal} className={"buttonToSell"}>Vendre ces cartes pour {pointToWin} points</button>
                                 </div>
                             </>
                         }
@@ -237,6 +240,9 @@ function MyCardSell(props) {
                                 }
                             })
                         }
+                        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                            <p>Valider</p>
+                        </Modal>
                     </div>
                 </>
             }
