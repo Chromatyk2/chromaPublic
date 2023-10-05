@@ -240,7 +240,7 @@ function MyCardSell(props) {
                                 }
                             })
                         }
-                        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                        <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Example Modal">
                             <p>Valider</p>
                         </Modal>
                     </div>
