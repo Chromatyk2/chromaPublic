@@ -147,35 +147,7 @@ function MyCardSell(props) {
                     }
                 }
     }
-    function confirmSelling(e) {
-        setSellingIsLoad(true);
-        const requests = cardToSell.map((val, key) => {
-            var limitNb = parseInt(val.nbToSell);
-            return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
-                .then(function(response){
-                    document.getElementById("unsellButton"+val.card).style.display = 'none';
-                    document.getElementById("card"+val.card).style.opacity = '1';
-            })
-        });
 
-        return Promise.all(requests).then(() => {
-            Axios
-                .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-                .then(function(response){
-                    setMyCards(response.data);
-                    Axios.post('/api/addCardsPointFromSelling',
-                        {
-                            user:props.user,
-                            cardPoint:pointToWin
-                        }
-                    ).then(function(response){
-                        setSellingIsLoad(false);
-                        setIsOpen(false);
-                        setCardToSell([]);
-                    })
-                })
-        })
-    }
     function unsellCard(e) {
         var cardId = e.target.getAttribute("cardId");
         var rarityCard = e.target.getAttribute("rarity");
@@ -233,6 +205,36 @@ function MyCardSell(props) {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
     }, [myCards]);
+
+    function confirmSelling(e) {
+        setSellingIsLoad(true);
+        const requests = cardToSell.map((val, key) => {
+            var limitNb = parseInt(val.nbToSell);
+            return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
+                .then(function(response){
+                    document.getElementById("unsellButton"+val.card).style.display = 'none';
+                    document.getElementById("card"+val.card).style.opacity = '1';
+                })
+        });
+
+        return Promise.all(requests).then(() => {
+            Axios
+                .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+                .then(function(response){
+                    setMyCards(response.data);
+                    Axios.post('/api/addCardsPointFromSelling',
+                        {
+                            user:props.user,
+                            cardPoint:pointToWin
+                        }
+                    ).then(function(response){
+                        setCardToSell([]);
+                        setSellingIsLoad(false);
+                        setIsOpen(false);
+                    })
+                })
+        })
+    }
     return (
         <>
 
