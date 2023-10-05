@@ -81,6 +81,7 @@ function MyCardSell(props) {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
     }, [myCards]);
+    console.log(myCards);
     function handleClick(e) {
         var cardId = e.target.getAttribute("cardId");
         var cardNb = e.target.getAttribute("myCardNb");
@@ -243,6 +244,7 @@ function MyCardSell(props) {
                             </>
                         }
                         {items &&
+                            myCards.length > 0 &&
                             items.data.map((val, key) => {
                                 if (myCards.id.includes(val.id)) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
