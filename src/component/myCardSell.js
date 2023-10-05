@@ -153,12 +153,8 @@ function MyCardSell(props) {
             var limitNb = parseInt(val.nbToSell);
             return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
                 .then(function(response){
-                    Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-                    .then(function(response){
-                        setMyCards(response.data);
-                        document.getElementById("unsellButton"+val.card).style.display = 'none';
-                        document.getElementById("card"+val.card).style.opacity = '1';
-                    })
+                    document.getElementById("unsellButton"+val.card).style.display = 'none';
+                    document.getElementById("card"+val.card).style.opacity = '1';
             })
         });
 
@@ -233,7 +229,6 @@ function MyCardSell(props) {
     }
 
     useEffect(() => {
-        console.log(myCards);
         myCards.map((val, key) => {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
@@ -295,8 +290,19 @@ function MyCardSell(props) {
                             <div>
                                 <p>Valider la vente pour {pointToWin} points ?</p>
                                 <div className={"validationSellContainer"}>
-                                    <button onClick={confirmSelling} className={"validationSellButton"} >Valider</button>
-                                    <button className={"cancelSellButton"} onClick={closeModal}>Annuler</button>
+                                    {sellingIsLoad === true ?
+                                        <>
+                                            <div className={"loaderPokemon"}>
+                                                <h2 className="u-text-center">Chargement ...</h2>
+                                                <div className="pokemon"></div>
+                                            </div>
+                                        </>
+                                        :
+                                        <>
+                                            <button onClick={confirmSelling} className={"validationSellButton"} >Valider</button>
+                                            <button className={"cancelSellButton"} onClick={closeModal}>Annuler</button>
+                                        </>
+                                    }
                                 </div>
                             </div>
                         </Modal>
