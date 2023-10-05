@@ -153,7 +153,7 @@ function MyCardSell(props) {
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
         if(cardToSell.find((card) => card.card == cardId)){
-            if(cardToSell[cartItemIndex].nbToSell - 1 >= 0) {
+            if(cardToSell[cartItemIndex].nbToSell - 1 >= 0 || cardToSell.length == 5) {
                 if(cardToSell[cartItemIndex].nbToSell - 1 > 0){
                     cardToSell[cartItemIndex] = {
                         ...cardToSell[cartItemIndex],
