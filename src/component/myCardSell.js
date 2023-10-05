@@ -214,6 +214,9 @@ function MyCardSell(props) {
                                     return (
                                         <>
                                             <button style={customStyles.buttonMyCard} className={"cardBox"}>
+                                                <div className={"nbToSellContainer"}>
+                                                    <p className={"nbToSell"}>{cardNb.nbCard}</p>
+                                                </div>
                                                 <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                         image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
                                                 <img onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
