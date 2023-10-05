@@ -2130,6 +2130,10 @@ a.linkOnAirOff {
     animation: glowGetRainbow 2s infinite alternate, bounceInCards 1s forwards;
 }
 
+.cardOnListRainbow{
+    animation : glowGetRainbow 2s infinite alternate;
+}
+
 @keyframes glowGetBlue {
     0% {
         filter: drop-shadow(2px 4px 5px #0AE4EB) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px #0AE4EB);

@@ -48,6 +48,14 @@ function MyCardSell(props) {
             padding:0
         },
     };
+
+    useEffect(() => {
+        Axios
+            .get("/api/getRaritiesByBooster/"+props.idBooster)
+            .then(function(response){
+                setRarities(response.data);
+            })
+    }, [])
     useEffect(() => {
         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster)
             .then(res => res.json())
@@ -252,6 +260,8 @@ function MyCardSell(props) {
                         }
                         {items &&
                                 myCards.map((val, key) => {
+                                    var rarity = items.data.find((myCard) => myCard.id.includes(val.card)).rarity;
+                                    var stade = rarities.find((stade) => rarities.rarity.includes(rarity)).stade;
                                         return (
                                             <>
                                                 <button style={customStyles.buttonMyCard} className={"cardBox"}>
@@ -265,8 +275,8 @@ function MyCardSell(props) {
                                                     </div>
                                                     <button cardId={val.card} myCardNb={val.nbCard}
                                                             rarity={items.data.find((myCard) => myCard.id.includes(val.card)).rarity} className={"unsellButton"} id={"unsellButton"+val.card} onClick={unsellCard}>-</button>
-                                                    <img id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
-                                                          rarity={items.data.find((myCard) => myCard.id.includes(val.card)).rarity} className="fit-picture-card"
+                                                    <img style={{filter:stade == 1 ? "drop-shadow(2px 4px 30px #11D09A)" : stade == 2 ? "drop-shadow(2px 4px 30px #0ED0D6)" : stade == 3 && "drop-shadow(2px 4px 30px #C8B913)"}} id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
+                                                          rarity={items.data.find((myCard) => myCard.id.includes(val.card)).rarity} className={stade == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
                                                          src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
                                                          onError={errorImage}/>
                                                 </button>
