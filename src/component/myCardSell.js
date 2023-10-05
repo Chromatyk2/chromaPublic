@@ -162,7 +162,6 @@ function MyCardSell(props) {
                             cardPoint:pointToWin
                         }
                     ).then(function(response){
-                        setCardToSell([]);
                         setIsOpen(false);
                     })
                 })
