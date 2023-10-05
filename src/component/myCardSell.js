@@ -276,7 +276,7 @@ function MyCardSell(props) {
                                                     </div>
                                                     <button cardId={val.card} myCardNb={val.nbCard}
                                                             rarity={items.data.find((myCard) => myCard.id.includes(val.card)).rarity} className={"unsellButton"} id={"unsellButton"+val.card} onClick={unsellCard}>-</button>
-                                                    <img test={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(2px 4px 30px #11D09A)" : stadeC == 2 ? "drop-shadow(2px 4px 30px #0ED0D6)" : stadeC == 3 && "drop-shadow(2px 4px 30px #C8B913)"}} id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
+                                                    <img testr={rarityC} test={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(2px 4px 30px #11D09A)" : stadeC == 2 ? "drop-shadow(2px 4px 30px #0ED0D6)" : stadeC == 3 && "drop-shadow(2px 4px 30px #C8B913)"}} id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
                                                           rarity={items.data.find((myCard) => myCard.id.includes(val.card)).rarity} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
                                                          src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
                                                          onError={errorImage}/>
