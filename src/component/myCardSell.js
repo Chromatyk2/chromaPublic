@@ -8,6 +8,7 @@ import moment from 'moment';
 import ProgressBarCard from "./progressBarCard";
 import UniqueCard from "./UniqueCard.js";
 import Modal from "react-modal";
+import Countdown from "react-countdown";
 
 function MyCardSell(props) {
     const [error, setError] = useState(null);
@@ -358,7 +359,10 @@ function MyCardSell(props) {
                                         }
                                     })
                             :
-                            <p>Attend 10 min</p>
+                            diff &&
+                            <Countdown date={Date.now() + diff}>
+                                <p>Points disponibles!</p>
+                            </Countdown>
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
