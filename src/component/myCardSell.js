@@ -155,7 +155,7 @@ function MyCardSell(props) {
         return Promise.all(requests).then(() => {
             Axios
                 .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-                .then(function(response){){
+                .then(function(response){
                     setMyCards(response.data);
                     Axios.post('/api/addCardsPointFromSelling',
                         {
