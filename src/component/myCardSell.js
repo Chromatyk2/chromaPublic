@@ -247,7 +247,6 @@ function MyCardSell(props) {
                             myCards.length > 0 &&
                             items.data.map((val, key) => {
                                 myCards.map((uCard, key) => {
-                                    if (uCard.card.includes(val.id)) {
                                         let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                         return (
                                             <>
@@ -276,7 +275,6 @@ function MyCardSell(props) {
                                                 </button>
                                             </>
                                         )
-                                    }
                                 })
                             })
                         }
