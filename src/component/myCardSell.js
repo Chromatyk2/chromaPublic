@@ -145,20 +145,25 @@ function MyCardSell(props) {
             return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
                 .then(function(response){
                     Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-                })
+                    .then(function(response){
+                        setMyCards(response.data);
+                        setCardToSell([]);
+                    })
+            })
         });
 
         return Promise.all(requests).then(() => {
             Axios
                 .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-                .then(function(response){
+                .then(function(response){){
+                    setMyCards(response.data);
                     Axios.post('/api/addCardsPointFromSelling',
                         {
                             user:props.user,
                             cardPoint:pointToWin
                         }
                     ).then(function(response){
-                        setCardToSell([]);
+                        setCardToSell([];
                         setIsOpen(false);
                     })
                 })
@@ -217,10 +222,10 @@ function MyCardSell(props) {
     }
 
     useEffect(() => {
+        console.log(myCards);
         myCards.map((val, key) => {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
-        console.log(myCardsId);
     }, [myCards]);
     return (
         <>
