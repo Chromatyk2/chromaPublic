@@ -120,7 +120,7 @@ function MyCardSell(props) {
         var cardNb = e.target.getAttribute("myCardNb");
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
-                if(cardToSell.find((card) => card.card == cardId)){
+                if(cardToSell.find((card) => card.card == cardId) && cardToSell.length < 6){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                         if(cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.length < 6 ) {
