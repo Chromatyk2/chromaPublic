@@ -263,25 +263,17 @@ function MyCardSell(props) {
                         setCanSell(false);
                         console.log(sellingTime);
                         if (sellingTime.length == 0) {
-                            Axios.post('/api/addButtonClick',
+                            Axios.post('/api/addLastSelling',
                                 {
                                     pseudo: props.user,
                                     hour: new Date()
                                 }).then(
                                 (result) => {
                                     Axios
-                                        .get("/api/getDateButton/" + props.user)
+                                        .get("/api/getSellingTime/" + props.user)
                                         .then(function (response) {
                                             setSellingTime(response.data);
-                                        }).then(
-                                        (result) => {
-                                            Axios.post('/api/registerCards',
-                                                {
-                                                    pseudo: props.user
-                                                }
-                                            )
-                                        }
-                                    )
+                                        })
                                 }
                             )
                         } else{
@@ -289,7 +281,7 @@ function MyCardSell(props) {
                             setTwoHour((new Date().getTime() / 1000));
                             setDiff((((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
                             if((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
-                                Axios.post('/api/updateButtonTime',
+                                Axios.post('/api/updateSellingTime',
                                     {
                                         hour: new Date(),
                                         pseudo: props.user
@@ -297,18 +289,10 @@ function MyCardSell(props) {
                                 ).then(
                                     (result) => {
                                         Axios
-                                            .get("/api/getDateButton/" + props.user)
+                                            .get("/api/getSellingTime/" + props.user)
                                             .then(function (response) {
                                                 setSellingTime(response.data);
-                                            }).then(
-                                            (result) => {
-                                                Axios.post('/api/addCardsPointButton',
-                                                    {
-                                                        user: props.user
-                                                    }
-                                                )
-                                            }
-                                        )
+                                            })
                                     }
                                 )
                             }
