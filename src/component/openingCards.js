@@ -218,7 +218,7 @@ function OpeningCards(props) {
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
-                            var stadeC = rarities.filter((b) => b.rarity === val.rarity);
+                            var stadeC = props.rarities.filter((b) => b.rarity === val.rarity);
                             console.log(stadeC);
                             return(
                                 <>
