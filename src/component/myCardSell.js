@@ -155,16 +155,16 @@ function MyCardSell(props) {
                 .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
                 .then(function(response){
                     setMyCards(response.data);
-                    response.data.map((val, key) => {
-                        setMyCardsId(myCardsId => [...myCardsId,val.card]);
-                    }).then(function(response){
-                        Axios.post('/api/addCardsPointFromSelling',
-                            {
-                                user:props.user,
-                                cardPoint:pointToWin
-                            }
-                        )
+                    Axios.post('/api/addCardsPointFromSelling',
+                        {
+                            user:props.user,
+                            cardPoint:pointToWin
+                        }
+                    ).then(function(response){
                         setIsOpen(false);
+                        response.data.map((val, key) => {
+                            setMyCardsId(myCardsId => [...myCardsId,val.card]);
+                        })
                     })
                 })
         })
