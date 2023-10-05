@@ -272,7 +272,7 @@ function MyCardSell(props) {
                                     Axios
                                         .get("/api/getDateButton/" + props.user)
                                         .then(function (response) {
-                                            setsellingTime(response.data);
+                                            setSellingTime(response.data);
                                         }).then(
                                         (result) => {
                                             Axios.post('/api/registerCards',
@@ -299,7 +299,7 @@ function MyCardSell(props) {
                                         Axios
                                             .get("/api/getDateButton/" + props.user)
                                             .then(function (response) {
-                                                setsellingTime(response.data);
+                                                setSellingTime(response.data);
                                             }).then(
                                             (result) => {
                                                 Axios.post('/api/addCardsPointButton',
