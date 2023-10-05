@@ -25,6 +25,10 @@ function MyCardSell(props) {
     const [rarities, setRarities] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [sellingIsLoad, setSellingIsLoad] = React.useState(false);
+    const [sellingTime, setSellingTime] = React.useState(false);
+    const [twoHour,setTwoHour] = useState(null);
+    const [timestamp,setTimestamp] = useState(null);
+    const [canSell,setCanSell] = useState(false);
     const customStyles = {
         content: {
             position:'initial',
@@ -49,7 +53,30 @@ function MyCardSell(props) {
             padding:0
         },
     };
+    useEffect(() => {
+        Axios
+            .get("/api/getSellingTime/"+props.user)
+            .then(function(response){
+                setSellingTime(response.data);
+            })
+    }, [])
 
+    useEffect(() => {
+        if(timer !== null){
+            if(timer.length > 0) {
+                setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 600);
+                setTwoHour((new Date().getTime() / 1000));
+                setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+                if ((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
+                    setCanSell(true);
+                } else {
+                    setCanSell(false);
+                }
+            }else{
+                setCanSell(true);
+            }
+        }
+    }, [timer])
     useEffect(() => {
         Axios
             .get("/api/getRaritiesByBooster/"+props.idBooster)
@@ -231,6 +258,58 @@ function MyCardSell(props) {
                     ).then(function(response){
                         setSellingIsLoad(false);
                         setIsOpen(false);
+                        setCanSell(false);
+                        if (timer.length == 0) {
+                            Axios.post('/api/addButtonClick',
+                                {
+                                    pseudo: props.user,
+                                    hour: new Date()
+                                }).then(
+                                (result) => {
+                                    Axios
+                                        .get("/api/getDateButton/" + props.user)
+                                        .then(function (response) {
+                                            setTimer(response.data);
+                                        }).then(
+                                        (result) => {
+                                            Axios.post('/api/registerCards',
+                                                {
+                                                    pseudo: props.user
+                                                }
+                                            )
+                                        }
+                                    )
+                                }
+                            )
+                        } else{
+                            setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 600);
+                            setTwoHour((new Date().getTime() / 1000));
+                            setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+                            if((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
+                                Axios.post('/api/updateButtonTime',
+                                    {
+                                        hour: new Date(),
+                                        pseudo: props.user
+                                    }
+                                ).then(
+                                    (result) => {
+                                        Axios
+                                            .get("/api/getDateButton/" + props.user)
+                                            .then(function (response) {
+                                                setTimer(response.data);
+                                            }).then(
+                                            (result) => {
+                                                Axios.post('/api/addCardsPointButton',
+                                                    {
+                                                        user: props.user
+                                                    }
+                                                )
+                                            }
+                                        )
+                                    }
+                                )
+                            }
+                        }
                     })
                 })
         })
