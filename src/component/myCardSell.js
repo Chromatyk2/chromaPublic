@@ -24,6 +24,7 @@ function MyCardSell(props) {
     const [pointToWin, setPointToWin] = useState(0);
     const [rarities, setRarities] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [sellingIsLoad, setSellingIsLoad] = React.useState(false);
     const customStyles = {
         content: {
             position:'initial',
@@ -147,7 +148,7 @@ function MyCardSell(props) {
                 }
     }
     function confirmSelling(e) {
-
+        setSellingIsLoad(true);
         const requests = cardToSell.map((val, key) => {
             var limitNb = parseInt(val.nbToSell);
             return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
@@ -172,6 +173,7 @@ function MyCardSell(props) {
                             cardPoint:pointToWin
                         }
                     ).then(function(response){
+                        setSellingIsLoad(false);
                         setIsOpen(false);
                         setCardToSell([]);
                     })
@@ -293,8 +295,12 @@ function MyCardSell(props) {
                             <div>
                                 <p>Valider la vente pour {pointToWin} points ?</p>
                                 <div className={"validationSellContainer"}>
+                                    {sellingIsLoad === false ?
                                     <button onClick={confirmSelling} className={"validationSellButton"} >Valider</button>
                                     <button className={"cancelSellButton"} onClick={closeModal}>Annuler</button>
+                                        :
+                                        <p>Chargement...</p>
+                                    }
                                 </div>
                             </div>
                         </Modal>
