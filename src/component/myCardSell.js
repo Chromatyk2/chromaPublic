@@ -155,7 +155,7 @@ function MyCardSell(props) {
                     }
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                 }else{
-                    e.target.getAttribute("card"+cardId).style.opacity = '1';
+                    document.getElementById("card"+cardId).style.opacity = '1';
                     document.getElementById("unsellButton"+cardId).style.display = 'none';
                     cardToSell.splice(cartItemIndex, 1);
                 }
