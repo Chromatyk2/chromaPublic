@@ -269,7 +269,7 @@ function MyCardSell(props) {
                                         }
                                         return (
                                             <>
-                                                <button style={customStyles.buttonMyCard} className={"cardBox"}>
+                                                <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
                                                     <div className={"nbToSellContainer"}>
                                                         <p className={"nbToSell"}>Carte(s) possédée(s) : {val.nbCard}</p>
                                                     </div>
