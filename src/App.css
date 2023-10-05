@@ -1804,6 +1804,7 @@ div#odds {
     display: flex;
     position: fixed;
     bottom: 15px;
+    z-index: 2;
 }
 button.buttonToSell {
     color: #0a3a2c;
@@ -1819,22 +1820,32 @@ button.buttonToSell:hover {
 .unsellButton{
     display: none;
 }
-.unsellButton{
-    position: relative;
-    border: none;
+.unsellButton {
     background: red;
-    color: white;
-    z-index: 1;
-    width: 40px;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    display: none;
+    font-size: 40px;
     height: 40px;
     line-height: 40px;
-    padding-left: 11px;
-    border-radius: 30px;
+    margin: -20px;
     overflow: hidden;
-    top: 25px;
-    right: -221px;
-    font-size: 40px;
-    margin:-20px;
+    padding-left: 11px;
+    position: absolute;
+    width: 40px;
+    z-index: 1;
+    margin-left: 220px;
+    margin-top: -11px;
+}
+.nbToSellContainer {
+    position: absolute;
+    margin-left: 1px;
+    color: white;
+    background: #0a3a2c;
+    padding: 5px;
+    font-size: 13px;
+    margin-top: 314px;
 }
 .rainbow {
     text-align: center;
