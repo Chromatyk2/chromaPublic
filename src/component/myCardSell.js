@@ -246,30 +246,39 @@ function MyCardSell(props) {
                         {items &&
                             myCards.length > 0 &&
                             items.data.map((val, key) => {
-                                if (myCards.card.includes(val.id)) {
-                                    let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
-                                    return (
-                                        <>
-                                            <button style={customStyles.buttonMyCard} className={"cardBox"}>
-                                                <div className={"nbToSellContainer"}>
-                                                    <p className={"nbToSell"}>Carte(s) possédée(s) : {cardNb.nbCard}</p>
-                                                </div>
-                                                <div className={"nbSellPickContainer"}>
-                                                    {cardToSell.find((card) => card.card == val.id) &&
-                                                        <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.id).nbToSell}</p>
-                                                     }
-                                                </div>
-                                                <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                        image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
-                                                <img id={"card"+val.id} onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                     image={val.image} rarity={val.rarity} className="fit-picture-card"
-                                                     src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
-                                                     onError={errorImage}/>
-                                            </button>
-                                        </>
-                                    )
-                                }
-                            })
+                                myCards.data.map((uCard, key) => {
+                                    if (uCard.card.includes(val.id)) {
+                                        let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
+                                        return (
+                                            <>
+                                                <button style={customStyles.buttonMyCard} className={"cardBox"}>
+                                                    <div className={"nbToSellContainer"}>
+                                                        <p className={"nbToSell"}>Carte(s) possédée(s)
+                                                            : {cardNb.nbCard}</p>
+                                                    </div>
+                                                    <div className={"nbSellPickContainer"}>
+                                                        {cardToSell.find((card) => card.card == val.id) &&
+                                                            <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.id).nbToSell}</p>
+                                                        }
+                                                    </div>
+                                                    <button cardId={val.id} pokemonId={val.dexId}
+                                                            myCardNb={cardNb.nbCard}
+                                                            image={val.image} rarity={val.rarity}
+                                                            className={"unsellButton"} id={"unsellButton" + val.id}
+                                                            onClick={unsellCard}>-
+                                                    </button>
+                                                    <img id={"card" + val.id} onClick={handleClick} cardId={val.id}
+                                                         pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                         image={val.image} rarity={val.rarity}
+                                                         className="fit-picture-card"
+                                                         src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
+                                                         onError={errorImage}/>
+                                                </button>
+                                            </>
+                                        )
+                                    }
+                                })
+                            }
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
