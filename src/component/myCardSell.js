@@ -295,12 +295,8 @@ function MyCardSell(props) {
                             <div>
                                 <p>Valider la vente pour {pointToWin} points ?</p>
                                 <div className={"validationSellContainer"}>
-                                    {sellingIsLoad === false ?
                                     <button onClick={confirmSelling} className={"validationSellButton"} >Valider</button>
                                     <button className={"cancelSellButton"} onClick={closeModal}>Annuler</button>
-                                        :
-                                        <p>Chargement...</p>
-                                    }
                                 </div>
                             </div>
                         </Modal>
