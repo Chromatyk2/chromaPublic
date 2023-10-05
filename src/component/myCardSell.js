@@ -171,7 +171,6 @@ function MyCardSell(props) {
     }
     function unsellCard(e) {
         var cardId = e.target.getAttribute("cardId");
-        var cardNb = e.target.getAttribute("myCardNb");
         var rarityCard = e.target.getAttribute("rarity");
         var cartItemIndex = cardToSell.findIndex(item => item.card === cardId);
         if(cardToSell.find((card) => card.card == cardId)){
@@ -245,8 +244,8 @@ function MyCardSell(props) {
                         }
                         {items &&
                             items.data.map((val, key) => {
-                                let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
-                                if (myCardsId.includes(val.id)) {
+                                if (myCard.id.includes(val.id)) {
+                                    let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
                                         <>
                                             <button style={customStyles.buttonMyCard} className={"cardBox"}>
