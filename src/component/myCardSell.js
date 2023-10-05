@@ -325,6 +325,8 @@ function MyCardSell(props) {
                         }
                         {items &&
                             rarities &&
+                                sellingTime &&
+                                canSell == true ?
                                 myCards.map((val, key) => {
                                     var stadeB =  items.data.find((myCard) => myCard.id === val.card).rarity;
                                         if(stadeB != "Common" && stadeB != "Uncommon" && typeof stadeB === "undefined"){
@@ -355,6 +357,8 @@ function MyCardSell(props) {
                                             )
                                         }
                                     })
+                            :
+                            <p>Attend 10 min</p>
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
