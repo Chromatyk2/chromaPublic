@@ -220,6 +220,7 @@ function MyCardSell(props) {
         myCards.map((val, key) => {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
+        console.log(myCardsId);
     }, [myCards]);
     return (
         <>
