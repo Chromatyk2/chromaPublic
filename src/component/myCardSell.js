@@ -151,7 +151,7 @@ function MyCardSell(props) {
             }
         )
         cardToSell.map((val, key) => {
-            Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+val.nbToSell)
+            Axios.delete("/api/sellCards/"+props.user+"/"+toString(val.card)+"/"+val.nbToSell)
         })
     }
     function unsellCard(e) {
