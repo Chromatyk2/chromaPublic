@@ -226,6 +226,7 @@ function MyCardSell(props) {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
     }, [myCards]);
+    console.log(items);
     return (
         <>
 
