@@ -149,7 +149,7 @@ function MyCardSell(props) {
                                     setPointToWin(pointToWin + 10);
                                 }
                             }
-                        }else if(cardToSell.find((card) => card.card == cardId) && cardToSell[cartItemIndex].nbToSell + 2) {
+                        }else if(cardToSell.find((card) => card.card == cardId) && cardToSell[cartItemIndex].nbToSell + 2 <= cardNb) {
                             cardToSell[cartItemIndex] = {
                                 ...cardToSell[cartItemIndex],
                                 nbToSell: cardToSell[cartItemIndex].nbToSell + 1
