@@ -261,7 +261,7 @@ function MyCardSell(props) {
                         {items &&
                             rarities &&
                                 myCards.map((val, key) => {
-                                    var rarityC = items.data.find((myCard) => myCard.id.includes(val.card)).rarity;
+                                    var rarityC = toString(items.data.find((myCard) => myCard.id.includes(val.card)).rarity);
                                     if(rarityC != "Common" || rarityC != "Uncommon"){
                                         var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(rarityC)).stade;
                                     }else{
