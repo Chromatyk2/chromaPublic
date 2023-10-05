@@ -152,7 +152,8 @@ function MyCardSell(props) {
         )
         cardToSell.map((val, key) => {
             console.log(val.nbToSell);
-            Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+parseInt(val.nbToSell))
+            var limitNb = parseInt(val.nbToSell);
+            Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
         })
     }
     function unsellCard(e) {
