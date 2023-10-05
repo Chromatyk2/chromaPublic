@@ -162,8 +162,6 @@ function MyCardSell(props) {
                 response.data.map((val, key) => {
                     setMyCardsId(myCardsId => [...myCardsId,val.card]);
                 })
-                console.log(myCardsId);
-                console.log(myCard);
                 setIsOpen(false);
             })
     }
