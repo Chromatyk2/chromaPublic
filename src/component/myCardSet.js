@@ -143,7 +143,7 @@ function MyCardsSet(props) {
                     </div>
                     <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
                            contentLabel="Example Modal">
-                        <UniqueCard stade={stadeCard} cardRarity={} pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
+                        <UniqueCard stade={stadeCard} pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
                                     cardId={cardId} idBooster={props.idBooster} change={handleState}/>
                     </Modal>
                 </>
