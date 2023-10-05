@@ -163,6 +163,7 @@ function MyCardSell(props) {
                         }
                     ).then(function(response){
                         setIsOpen(false);
+                        setCardToSell([]);
                     })
                 })
         })
