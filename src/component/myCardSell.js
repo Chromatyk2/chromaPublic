@@ -245,10 +245,12 @@ function MyCardSell(props) {
                             })
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                            <p>Valider la vente pour {pointToWin} points ?</p>
                             <div>
-                                <button>Valider</button>
-                                <button onClick={closeModal}>Annuler</button>
+                                <p>Valider la vente pour {pointToWin} points ?</p>
+                                <div>
+                                    <button>Valider</button>
+                                    <button onClick={closeModal}>Annuler</button>
+                                </div>
                             </div>
                         </Modal>
                     </div>
