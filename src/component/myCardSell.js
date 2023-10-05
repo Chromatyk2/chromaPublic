@@ -123,7 +123,7 @@ function MyCardSell(props) {
                 if(cardToSell.find((card) => card.card == cardId)){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
-                        if(cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.length < 6) {
+                        if(cardToSell[cartItemIndex].nbToSell + 2 <= cardNb || cardToSell.length < 6 ) {
                             cardToSell[cartItemIndex] = {
                                 ...cardToSell[cartItemIndex],
                                 nbToSell: cardToSell[cartItemIndex].nbToSell + 1
