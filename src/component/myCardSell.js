@@ -212,6 +212,7 @@ function MyCardSell(props) {
             var limitNb = parseInt(val.nbToSell);
             return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
                 .then(function(response){
+                    setCardToSell([]);
                     document.getElementById("unsellButton"+val.card).style.display = 'none';
                     document.getElementById("card"+val.card).style.opacity = '1';
                 })
@@ -228,7 +229,6 @@ function MyCardSell(props) {
                             cardPoint:pointToWin
                         }
                     ).then(function(response){
-                        setCardToSell([]);
                         setSellingIsLoad(false);
                         setIsOpen(false);
                     })
