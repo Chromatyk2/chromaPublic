@@ -214,6 +214,7 @@ function MyCardSell(props) {
     }
 
     useEffect(() => {
+        console.log(myCards);
         myCards.map((val, key) => {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
