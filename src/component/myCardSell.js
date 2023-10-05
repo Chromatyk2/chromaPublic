@@ -153,10 +153,9 @@ function MyCardSell(props) {
                         ...cardToSell[cartItemIndex],
                         nbToSell: cardToSell[cartItemIndex].nbToSell -1
                     }
-                    e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                 }else{
-                    e.target.style.opacity = '1';
+                    e.target.getAttribute("card"+cardId).style.opacity = '1';
                     document.getElementById("unsellButton"+cardId).style.display = 'none';
                     cardToSell.splice(cartItemIndex, 1);
                 }
@@ -228,7 +227,7 @@ function MyCardSell(props) {
                                                 </div>
                                                 <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                         image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
-                                                <img onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                <img id={"card"+val.id} onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                      image={val.image} rarity={val.rarity} className="fit-picture-card"
                                                      src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
                                                      onError={errorImage}/>
