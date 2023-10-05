@@ -21,6 +21,7 @@ function MyCardsSet(props) {
     const [pokemonName, setPokemonName] = React.useState(null);
     const [cardId, setCardId] = React.useState(null);
     const [errorCard, setErrorCard] = React.useState("");
+    const [rarities, setRarities] = useState(null);
     const customStyles = {
         content: {
             position:'initial',
@@ -44,6 +45,13 @@ function MyCardsSet(props) {
             padding:0
         },
     };
+    useEffect(() => {
+        Axios
+            .get("/api/getRaritiesByBooster/"+props.idBooster)
+            .then(function(response){
+                setRarities(response.data);
+            })
+    }, [])
     useEffect(() => {
         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster)
             .then(res => res.json())
@@ -109,11 +117,16 @@ function MyCardsSet(props) {
                         {items &&
                             items.data.map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
+                                    if(stadeB != "Common" && stadeB != "Uncommon"){
+                                        var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
+                                    }else{
+                                        var stadeC = 0;
+                                    }
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
                                         <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                                            <img cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} className="fit-picture-card"
+                                            <img style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                 image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
                                                  src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
                                                  onError={errorImage}/>
                                         </button>
