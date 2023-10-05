@@ -270,9 +270,9 @@ function MyCardSell(props) {
                                         return (
                                             <>
                                                 <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
-                                                    <div className={"nbToSellContainer"}>
-                                                        <p className={"nbToSell"}>Carte(s) possédée(s) : {val.nbCard}</p>
-                                                    </div>
+                                                    {/*<div className={"nbToSellContainer"}>*/}
+                                                    {/*    <p className={"nbToSell"}>Carte(s) possédée(s) : {val.nbCard}</p>*/}
+                                                    {/*</div>*/}
                                                     <div className={"nbSellPickContainer"}>
                                                         {cardToSell.find((card) => card.card == val.card) &&
                                                             <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.card).nbToSell}</p>
