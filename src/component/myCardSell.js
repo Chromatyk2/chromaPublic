@@ -244,7 +244,7 @@ function MyCardSell(props) {
                         }
                         {items &&
                             items.data.map((val, key) => {
-                                if (myCard.id.includes(val.id)) {
+                                if (myCards.id.includes(val.id)) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
                                         <>
