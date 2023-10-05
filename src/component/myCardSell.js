@@ -29,6 +29,8 @@ function MyCardSell(props) {
     const [twoHour,setTwoHour] = useState(null);
     const [timestamp,setTimestamp] = useState(null);
     const [canSell,setCanSell] = useState(false);
+    const [timer,setTimer] = useState(null);
+    const [diff,setDiff] = useState(null);
     const customStyles = {
         content: {
             position:'initial',

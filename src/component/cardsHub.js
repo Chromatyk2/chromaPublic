@@ -14,11 +14,11 @@ import SellCards from "./SellCards.js";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
+    const [diff,setDiff] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
     const [canGetPoint,setCanGetPoint] = useState(false);
     const [twoHour,setTwoHour] = useState(null);
     const [timestamp,setTimestamp] = useState(null);
-    const [diff,setDiff] = useState(null);
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
