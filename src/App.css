@@ -2115,6 +2115,13 @@ a.linkOnAirOff {
     display: block;
     animation: bounceInCards 1s forwards;
 }
+
+.glowGetGreen{
+    display: block;
+    filter: drop-shadow(2px 4px 30px green);
+    animation: glowGetGreen 2s infinite alternate, bounceInCards 1s forwards;
+}
+
 .glowGetBlue{
     display: block;
     filter: drop-shadow(2px 4px 30px blue);
@@ -2133,6 +2140,16 @@ a.linkOnAirOff {
 
 .cardOnListRainbow{
     animation : glowGetRainbow 2s infinite alternate;
+}
+
+@keyframes glowGetGreen {
+    0% {
+        filter: drop-shadow(2px 4px 5px green) drop-shadow(2px 4px 5px #0000) drop-shadow(2px 4px 5px green);
+    }
+
+    100% {
+        filter: drop-shadow(2px 4px 15px green) drop-shadow(2px 4px 15px #0000) drop-shadow(2px 4px 15px green);
+    }
 }
 
 @keyframes glowGetBlue {

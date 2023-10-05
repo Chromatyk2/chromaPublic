@@ -161,11 +161,14 @@ function OpeningCards(props) {
         var next = document.getElementById("cardNb"+nextId);
         var rarity = next.getAttribute("rarity");
         var nextCardId = next.getAttribute("cardId");
-        if(rarity == "Rare Holo"){
+        var stadeCurrent = next.getAttribute("stade");
+        if(stadeCurrent == 1){
+            next.classList.toggle('glowGetGreen');
+        }else if(stadeCurrent == 2){
             next.classList.toggle('glowGetBlue');
-        }else if(rarity == "Classic Collection"  || rarity == "Promo"  || rarity == "Radiant Rare"  || rarity == "Double Rare"  || rarity == "Amazing Rare" || rarity == "Promo" || rarity == "Rare ACE" || rarity == "Rare Holo Star" || rarity == "Rare Holo LV.X" || rarity == "Rare Holo" || rarity == "Rare Holo EX" || rarity == "Rare Prime" || rarity == "Rare Prism Star" || rarity == "Rare Shining" || rarity == "Rare Shiny" || rarity == "Rare Holo V"){
+        }else if(stadeCurrent == 3){
             next.classList.toggle('glowGetGold');
-        }else if(rarity == "Ultra Rare"  || rarity == "Trainer Gallery Rare Holo"  || rarity == "Special Illustration"  || rarity == "Special Illustration Rare"  || rarity == "Rare BREAK" || rarity == "Illustration Rare" || rarity == "Hyper Rare"  || rarity == "LEGEND" || rarity == "Promo" || rarity == "Rare Holo GX" || rarity == "Rare Holo VMAX" || rarity == "Rare Rainbow" || rarity == "Rare Secret" || rarity == "Rare Shiny GX" || rarity == "Rare Ultra"){
+        }else if(stadeCurrent == 4){
             next.classList.toggle('glowGetRainbow');
         }
         if(!myCardsId.includes(nextCardId)){
@@ -215,9 +218,10 @@ function OpeningCards(props) {
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
+                    var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
                             return(
                                 <>
-                                    <img rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
+                                    <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
                                          cardId={val.id} onClick={key == 0 ? getLastCard : getCard}
                                          className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
                                          src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
