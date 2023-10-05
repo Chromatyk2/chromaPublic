@@ -147,9 +147,12 @@ function MyCardSell(props) {
         Axios.post('/api/addCardsPointFromSelling',
             {
                 user:props.user,
-                points:pointToWin
+                pointsCard:pointToWin
             }
         )
+        cardToSell.map((val, key) => {
+
+        })
     }
     function unsellCard(e) {
         var cardId = e.target.getAttribute("cardId");
