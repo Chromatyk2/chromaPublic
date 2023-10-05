@@ -249,7 +249,6 @@ function MyCardSell(props) {
                             </>
                         }
                         {items &&
-                            items.data.map((val, key) => {
                                 myCards.map((uCard, key) => {
                                         return (
                                             <>
@@ -272,7 +271,6 @@ function MyCardSell(props) {
                                             </>
                                         )
                                     })
-                            })
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
