@@ -262,7 +262,7 @@ function MyCardSell(props) {
                             rarities &&
                                 myCards.map((val, key) => {
                                     var rarityC = items.data.find((myCard) => myCard.id.includes(val.card)).rarity;
-                                    if(rarities.find((stadeU) => stadeU.rarity.includes(rarityC))){
+                                    if(typeof rarities.find((stadeU) => stadeU.rarity.includes(rarityC)) !== "undefined"){
                                         var stadeC = rarities.find((stadeU) => stadeU.rarity.includes("Rare")).rarity;
                                     }else{
                                         var stadeC = 0;
