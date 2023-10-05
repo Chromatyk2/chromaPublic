@@ -261,6 +261,7 @@ function MyCardSell(props) {
                         setSellingIsLoad(false);
                         setIsOpen(false);
                         setCanSell(false);
+                        console.log(timer);
                         if (timer.length == 0) {
                             Axios.post('/api/addButtonClick',
                                 {
