@@ -356,11 +356,10 @@ function MyCardSell(props) {
                                                 </>
                                             )
                                     })
-                            :
-                            diff &&
-                            <Countdown date={Date.now() + diff}>
-                                F5 !
-                            </Countdown>
+                                :
+                                <Countdown date={Date.now() + diff}>
+                                    F5 !
+                                </Countdown>
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
