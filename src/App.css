@@ -1966,6 +1966,34 @@ a.linkOnAirOff {
     font-family: Charge Vector Black;
     font-size: 25px;
 }
+.validationSellContainer {
+    display: flex;
+    justify-content: space-around;
+}
+.cancelSellButton{
+    background: red;
+    color: white;
+    border: none;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.validationSellButton{
+    background: #0a3a2c;
+    color: white;
+    border: none;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.cancelSellButton:hover{
+    border: black solid 1px;
+}
+.validationSellButton:hover{
+    border: black solid 1px;
+}
 .listUserElement {
     background-color: #255748;
     color: white;
