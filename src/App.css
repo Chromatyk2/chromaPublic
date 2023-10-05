@@ -1975,6 +1975,19 @@ a.linkOnAirOff {
     line-height: 27px;
     justify-content:space-between;
 }
+.nbSellPickContainer{
+    position: absolute;
+    font-size: 80px;
+    text-align: center;
+    width: 250px;
+    margin-top: 80px;
+    opacity: 0.8;
+    text-shadow: 0px 0px 10px aqua;
+}
+
+.nbSellPick{
+    margin: 0;
+}
 
 .listUser{
     display: flex;
