@@ -324,10 +324,17 @@ function MyCardSell(props) {
                                 </div>
                             </>
                         }
+                        {diff &&
+                            <>
+                                <Countdown date={Date.now() + diff}>
+                                    F5 !
+                                </Countdown>
+                            </>
+                        }
                         {items &&
                             rarities &&
                                 sellingTime &&
-                                canSell == true ?
+                                canSell == true &&
                                 myCards.map((val, key) => {
                                     var stadeB =  items.data.find((myCard) => myCard.id === val.card).rarity;
                                         if(stadeB != "Common" && stadeB != "Uncommon" && typeof stadeB === "undefined"){
@@ -356,17 +363,7 @@ function MyCardSell(props) {
                                                 </>
                                             )
                                     })
-                                :
-                            diff ?
-                                <>
-                                    <Countdown date={Date.now() + diff}>
-                                        F5 !
-                                    </Countdown>
-                                </>
-                                :
-                                <>
-                                    <p>Attendez 10 minutes!</p>
-                                </>
+
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                             <div>
