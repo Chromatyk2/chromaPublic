@@ -159,6 +159,9 @@ function MyCardSell(props) {
                         .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
                         .then(function(response){
                             setMyCards(response.data);
+                            response.data.map((val, key) => {
+                                setMyCardsId(myCardsId => [...myCardsId,val.card]);
+                            })
                             setIsOpen(false);
                         })
                 })
