@@ -147,6 +147,8 @@ function MyCardSell(props) {
                     Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
                     .then(function(response){
                         setMyCards(response.data);
+                        document.getElementById("unsellButton"+val.card).style.display = 'none';
+                        document.getElementById("card"+val.card).style.opacity = '1';
                     })
             })
         });
