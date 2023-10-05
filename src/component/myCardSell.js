@@ -249,7 +249,7 @@ function MyCardSell(props) {
                             </>
                         }
                         {items &&
-                                myCards.map((uCard, key) => {
+                                myCards.map((val, key) => {
                                         return (
                                             <>
                                                 <button style={customStyles.buttonMyCard} className={"cardBox"}>
@@ -262,9 +262,9 @@ function MyCardSell(props) {
                                                         }
                                                     </div>
                                                     <button cardId={val.id} pokemonId={val.dexId} myCardNb={uCard.nbCard}
-                                                            image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
+                                                            image={val.image} rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
                                                     <img id={"card"+val.id} onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={uCard.nbCard}
-                                                         image={val.image} rarity={val.rarity} className="fit-picture-card"
+                                                         image={val.image} rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className="fit-picture-card"
                                                          src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
                                                          onError={errorImage}/>
                                                 </button>
