@@ -218,8 +218,8 @@ function MyCardSell(props) {
                                                     <p className={"nbToSell"}>Carte(s) possédée(s) : {cardNb.nbCard}</p>
                                                 </div>
                                                 <div>
-                                                    {cardToSell.find((card) => card.card == cardId) &&
-                                                        <p>{cardToSell.find((card) => card.card == cardId).nbToSell}</p>
+                                                    {cardToSell.find((card) => card.card == val.id) &&
+                                                        <p>{cardToSell.find((card) => card.card == val.id).nbToSell}</p>
                                                      }
                                                 </div>
                                                 <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
