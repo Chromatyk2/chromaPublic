@@ -261,7 +261,7 @@ function MyCardSell(props) {
                         {items &&
                                 myCards.map((val, key) => {
                                     var rarityC = items.data.find((myCard) => myCard.id.includes(val.card)).rarity;
-                                    var stade = rarities.find((stade) => stade.rarity.includes(rarityC)).stade;
+                                    var stadeC = rarities.find((stadeC) => stadeC.rarity.includes(rarityC)).stade;
                                         return (
                                             <>
                                                 <button style={customStyles.buttonMyCard} className={"cardBox"}>
