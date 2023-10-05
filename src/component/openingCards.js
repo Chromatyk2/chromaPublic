@@ -218,8 +218,11 @@ function OpeningCards(props) {
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
-                            var stadeC = props.rarities.filter((b) => b.rarity === val.rarity);
-                            console.log(stadeC);
+                            if(val.rarity != "Common" && val.rarity != "Uncommon"){
+                                var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
+                            }else{
+                                var stadeC = 0;
+                            }
                             return(
                                 <>
                                     <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
