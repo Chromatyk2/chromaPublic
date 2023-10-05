@@ -81,7 +81,6 @@ function MyCardSell(props) {
             setMyCardsId(myCardsId => [...myCardsId,val.card]);
         })
     }, [myCards]);
-    console.log(myCards);
     function handleClick(e) {
         var cardId = e.target.getAttribute("cardId");
         var cardNb = e.target.getAttribute("myCardNb");
@@ -156,9 +155,6 @@ function MyCardSell(props) {
                 .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
                 .then(function(response){
                     setMyCards(response.data);
-                    response.data.map((val, key) => {
-                        setMyCardsId(myCardsId => [...myCardsId,val.card]);
-                    })
                     Axios.post('/api/addCardsPointFromSelling',
                         {
                             user:props.user,
@@ -244,38 +240,30 @@ function MyCardSell(props) {
                             </>
                         }
                         {items &&
-                            myCards.length > 0 &&
                             items.data.map((val, key) => {
-                                myCards.map((uCard, key) => {
-                                        let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
-                                        return (
-                                            <>
-                                                <button style={customStyles.buttonMyCard} className={"cardBox"}>
-                                                    <div className={"nbToSellContainer"}>
-                                                        <p className={"nbToSell"}>Carte(s) possédée(s)
-                                                            : {cardNb.nbCard}</p>
-                                                    </div>
-                                                    <div className={"nbSellPickContainer"}>
-                                                        {cardToSell.find((card) => card.card == val.id) &&
-                                                            <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.id).nbToSell}</p>
-                                                        }
-                                                    </div>
-                                                    <button cardId={val.id} pokemonId={val.dexId}
-                                                            myCardNb={cardNb.nbCard}
-                                                            image={val.image} rarity={val.rarity}
-                                                            className={"unsellButton"} id={"unsellButton" + val.id}
-                                                            onClick={unsellCard}>-
-                                                    </button>
-                                                    <img id={"card" + val.id} onClick={handleClick} cardId={val.id}
-                                                         pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                         image={val.image} rarity={val.rarity}
-                                                         className="fit-picture-card"
-                                                         src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
-                                                         onError={errorImage}/>
-                                                </button>
-                                            </>
-                                        )
-                                })
+                                if (myCard.id.includes(val.id)) {
+                                    let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
+                                    return (
+                                        <>
+                                            <button style={customStyles.buttonMyCard} className={"cardBox"}>
+                                                <div className={"nbToSellContainer"}>
+                                                    <p className={"nbToSell"}>Carte(s) possédée(s) : {cardNb.nbCard}</p>
+                                                </div>
+                                                <div className={"nbSellPickContainer"}>
+                                                    {cardToSell.find((card) => card.card == val.id) &&
+                                                        <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.id).nbToSell}</p>
+                                                     }
+                                                </div>
+                                                <button cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                        image={val.image} rarity={val.rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
+                                                <img id={"card"+val.id} onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                     image={val.image} rarity={val.rarity} className="fit-picture-card"
+                                                     src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
+                                                     onError={errorImage}/>
+                                            </button>
+                                        </>
+                                    )
+                                }
                             })
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
