@@ -22,6 +22,7 @@ function MyCardsSet(props) {
     const [cardId, setCardId] = React.useState(null);
     const [errorCard, setErrorCard] = React.useState("");
     const [rarities, setRarities] = useState(null);
+    const [stadeCard, setStadeCard] = useState(0);
     const customStyles = {
         content: {
             position:'initial',
@@ -83,6 +84,7 @@ function MyCardsSet(props) {
         setMyCardNb(e.target.getAttribute("myCardNb"));
         setPokemonName(e.target.getAttribute("pokemonId"));
         setCardId(e.target.getAttribute("cardId"));
+        setStadeCard(e.target.getAttribute("stade"));
         setIsOpen(true);
     }
 
@@ -125,7 +127,7 @@ function MyCardsSet(props) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
                                         <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                                            <img style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                            <img stade={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
                                                  src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
                                                  onError={errorImage}/>
@@ -141,7 +143,7 @@ function MyCardsSet(props) {
                     </div>
                     <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
                            contentLabel="Example Modal">
-                        <UniqueCard pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
+                        <UniqueCard stade={stadeCard} cardRarity={} pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
                                     cardId={cardId} idBooster={props.idBooster} change={handleState}/>
                     </Modal>
                 </>

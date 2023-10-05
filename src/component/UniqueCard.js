@@ -30,14 +30,14 @@ function UniqueCard(props) {
                 (result) => {
                     setIsLoaded(true);
                     setPkm(result);
-                    if(result.data.rarity == "Ultra Rare"  || result.data.rarity == "Trainer Gallery Rare Holo"  || result.data.rarity == "Special Illustration"  || result.data.rarity == "Special Illustration Rare"  || result.data.rarity == "Rare BREAK" || result.data.rarity == "Illustration Rare" || result.data.rarity == "Hyper Rare"  || result.data.rarity == "LEGEND" || result.data.rarity == "Promo" || result.data.rarity == "Rare Holo GX" || result.data.rarity == "Rare Holo VMAX" || result.data.rarity == "Rare Rainbow" || result.data.rarity == "Rare Secret" || result.data.rarity == "Rare Shiny GX" || result.data.rarity == "Rare Ultra"){
+                    if(props.stade == 4){
                         setGlow("bigImageRainbow")
-                    }else if(result.data.rarity == "Classic Collection"  || result.data.rarity == "Promo"  || result.data.rarity == "Radiant Rare"  || result.data.rarity == "Double Rare"  || result.data.rarity == "Amazing Rare" || result.data.rarity == "Promo" || result.data.rarity == "Rare ACE" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo Star" || result.data.rarity == "Rare Holo LV.X" || result.data.rarity == "Rare Holo" || result.data.rarity == "Rare Holo EX" || result.data.rarity == "Rare Prime" || result.data.rarity == "Rare Prism Star" || result.data.rarity == "Rare Shining" || result.data.rarity == "Rare Shiny" || result.data.rarity == "Rare Holo V"){
+                    }else if(props.stade == 3){
                         setGlow("bigImageGold")
-                    }else if(result.data.rarity == "Rare"){
+                    }else if(props.stade == 2){
                         setGlow("bigImageRare")
-                    }else{
-                        setGlow("")
+                    }else if(props.stade == 1){
+                        setGlow("bigImageBase")
                     }
                 },
                 (error) => {

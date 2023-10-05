@@ -2080,6 +2080,38 @@ a.linkOnAirOff {
     transition: 0.5s;
 }
 
+.bigImageBase:hover {
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
+.bigImageBase:before {
+    animate: 0.5s;
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,green,#fff,green);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.bigImageBase:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+    animate: 0.5s;
+    transition: 0.5s;
+}
+
 .bigImageRare:hover {
     animation: animate 8s linear infinite;
     animate: 0.5s;
