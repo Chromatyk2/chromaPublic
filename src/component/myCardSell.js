@@ -245,8 +245,8 @@ function MyCardSell(props) {
                         }
                         {items &&
                             items.data.map((val, key) => {
+                                let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                 if (myCardsId.includes(val.id)) {
-                                    let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
                                         <>
                                             <button style={customStyles.buttonMyCard} className={"cardBox"}>
