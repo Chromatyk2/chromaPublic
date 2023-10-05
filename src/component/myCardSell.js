@@ -261,12 +261,10 @@ function MyCardSell(props) {
                         {items &&
                             rarities &&
                                 myCards.map((val, key) => {
-                                    var stadeB = "Illustration Rare";
-                                    if(stadeB != "Common" || stadeB != "Uncommon"){
-                                        var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(stadeB)).stade;
-                                    }else{
-                                        var stadeC = 0;
-                                    }
+                                    var stadeB =  items.find((uc) => uc.rarity.includes(val.card));
+                                        if(stadeB.rarity != "Common" || stadeB.rarity != "Uncommon"){
+                                            var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(stadeB.rarity)).rarity;
+                                        }
                                         return (
                                             <>
                                                 <button style={customStyles.buttonMyCard} className={"cardBox"}>
