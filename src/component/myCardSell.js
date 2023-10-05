@@ -361,7 +361,7 @@ function MyCardSell(props) {
                             :
                             diff &&
                             <Countdown date={Date.now() + diff}>
-                                <p>Points disponibles!</p>
+                                F5 !
                             </Countdown>
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
