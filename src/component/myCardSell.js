@@ -143,6 +143,14 @@ function MyCardSell(props) {
                     }
                 }
     }
+    function confirmSelling(e) {
+        Axios.post('/api/addCardsPointFromSelling',
+            {
+                user:props.user,
+                points:pointToWin
+            }
+        )
+    }
     function unsellCard(e) {
         var cardId = e.target.getAttribute("cardId");
         var cardNb = e.target.getAttribute("myCardNb");
@@ -248,7 +256,7 @@ function MyCardSell(props) {
                             <div>
                                 <p>Valider la vente pour {pointToWin} points ?</p>
                                 <div className={"validationSellContainer"}>
-                                    <button className={"validationSellButton"} >Valider</button>
+                                    <button onClick={confirmSelling} className={"validationSellButton"} >Valider</button>
                                     <button className={"cancelSellButton"} onClick={closeModal}>Annuler</button>
                                 </div>
                             </div>
