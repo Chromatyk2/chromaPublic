@@ -35,7 +35,8 @@ function MyCardSell(props) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            overflow:'hidden'
+            overflow:'hidden',
+            zIndex:"20px"
         },
         textModal: {
             fontSize:'30px',
@@ -191,6 +192,9 @@ function MyCardSell(props) {
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
+    function closeModal() {
+        setIsOpen(false);
+    }
     return (
         <>
 
@@ -240,8 +244,12 @@ function MyCardSell(props) {
                                 }
                             })
                         }
-                        <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Example Modal">
-                            <p>Valider</p>
+                        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles.content} contentLabel="Example Modal">
+                            <p>Valider la vente pour {pointToWin} points ?</p>
+                            <div>
+                                <button>Valider</button>
+                                <button onClick={closeModal}>Annuler</button>
+                            </div>
                         </Modal>
                     </div>
                 </>
