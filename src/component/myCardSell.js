@@ -65,10 +65,10 @@ function MyCardSell(props) {
     useEffect(() => {
         if(sellingTime !== null){
             if(sellingTime.length > 0) {
-                setTimestamp((new Date(sellingTime[0].hour).getTime() / 1000)  + 600);
+                setTimestamp((new Date(sellingTime[0].sellingTime).getTime() / 1000)  + 600);
                 setTwoHour((new Date().getTime() / 1000));
-                setDiff((((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-                if ((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
+                setDiff((((new Date(sellingTime[0].sellingTime).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+                if ((new Date(sellingTime[0].sellingTime).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
                     setCanSell(true);
                 } else {
                     setCanSell(false);
@@ -266,7 +266,7 @@ function MyCardSell(props) {
                             Axios.post('/api/addLastSelling',
                                 {
                                     pseudo: props.user,
-                                    hour: new Date()
+                                    sellingTime: new Date()
                                 }).then(
                                 (result) => {
                                     Axios
@@ -277,13 +277,13 @@ function MyCardSell(props) {
                                 }
                             )
                         } else{
-                            setTimestamp((new Date(sellingTime[0].hour).getTime() / 1000)  + 600);
+                            setTimestamp((new Date(sellingTime[0].sellingTime).getTime() / 1000)  + 600);
                             setTwoHour((new Date().getTime() / 1000));
-                            setDiff((((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-                            if((new Date(sellingTime[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
+                            setDiff((((new Date(sellingTime[0].sellingTime).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+                            if((new Date(sellingTime[0].sellingTime).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
                                 Axios.post('/api/updateSellingTime',
                                     {
-                                        hour: new Date(),
+                                        sellingTime: new Date(),
                                         pseudo: props.user
                                     }
                                 ).then(
