@@ -144,12 +144,7 @@ function MyCardSell(props) {
                 }
     }
     function confirmSelling(e) {
-        Axios.post('/api/addCardsPointFromSelling',
-            {
-                user:props.user,
-                cardPoint:pointToWin
-            }
-        )
+
         const requests = cardToSell.map((val, key) => {
             var limitNb = parseInt(val.nbToSell);
             return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
@@ -162,8 +157,15 @@ function MyCardSell(props) {
                     setMyCards(response.data);
                     response.data.map((val, key) => {
                         setMyCardsId(myCardsId => [...myCardsId,val.card]);
+                    }).then(function(response){
+                        Axios.post('/api/addCardsPointFromSelling',
+                            {
+                                user:props.user,
+                                cardPoint:pointToWin
+                            }
+                        )
+                        setIsOpen(false);
                     })
-                    setIsOpen(false);
                 })
         })
     }
