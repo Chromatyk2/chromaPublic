@@ -264,6 +264,8 @@ function MyCardSell(props) {
                                     var stadeB =  items.find((uc) => uc.rarity.includes(val.card));
                                         if(stadeB.rarity != "Common" || stadeB.rarity != "Uncommon"){
                                             var stadeC = rarities.find((stadeU) => stadeU.rarity.includes(stadeB.rarity)).rarity;
+                                        }else{
+                                            var stadeC = 0;
                                         }
                                         return (
                                             <>
