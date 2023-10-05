@@ -254,16 +254,16 @@ function MyCardSell(props) {
                                             <>
                                                 <button style={customStyles.buttonMyCard} className={"cardBox"}>
                                                     <div className={"nbToSellContainer"}>
-                                                        <p className={"nbToSell"}>Carte(s) possédée(s) : {uCard.nbCard}</p>
+                                                        <p className={"nbToSell"}>Carte(s) possédée(s) : {val.nbCard}</p>
                                                     </div>
                                                     <div className={"nbSellPickContainer"}>
                                                         {cardToSell.find((card) => card.card == val.id) &&
                                                             <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.id).nbToSell}</p>
                                                         }
                                                     </div>
-                                                    <button cardId={val.card} myCardNb={uCard.nbCard}
+                                                    <button cardId={val.card} myCardNb={val.nbCard}
                                                             rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
-                                                    <img id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={uCard.nbCard}
+                                                    <img id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
                                                           rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className="fit-picture-card"
                                                          src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
                                                          onError={errorImage}/>
