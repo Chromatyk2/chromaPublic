@@ -154,17 +154,18 @@ function MyCardSell(props) {
             console.log(val.nbToSell);
             var limitNb = parseInt(val.nbToSell);
             Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
-            Axios
-                .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-                .then(function(response){
-                    setMyCards(response.data);
-                    response.data.map((val, key) => {
-                        setMyCardsId(myCardsId => [...myCardsId,val.card]);
-                    })
-                    console.log(myCardsId);
-                    setIsOpen(false);
-                })
         })
+        Axios
+            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .then(function(response){
+                setMyCards(response.data);
+                response.data.map((val, key) => {
+                    setMyCardsId(myCardsId => [...myCardsId,val.card]);
+                })
+                console.log(myCardsId);
+                console.log(myCard);
+                setIsOpen(false);
+            })
     }
     function unsellCard(e) {
         var cardId = e.target.getAttribute("cardId");
