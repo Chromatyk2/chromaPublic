@@ -147,7 +147,7 @@ function MyCardSell(props) {
         Axios.post('/api/addCardsPointFromSelling',
             {
                 user:props.user,
-                pointsCard:pointToWin
+                cardPoint:pointToWin
             }
         )
         cardToSell.map((val, key) => {
