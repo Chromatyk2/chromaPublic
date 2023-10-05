@@ -261,11 +261,11 @@ function MyCardSell(props) {
                                                             <p className={"nbSellPick"}>{cardToSell.find((card) => card.card == val.id).nbToSell}</p>
                                                         }
                                                     </div>
-                                                    <button cardId={val.id} pokemonId={val.dexId} myCardNb={uCard.nbCard}
-                                                            image={val.image} rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
-                                                    <img id={"card"+val.id} onClick={handleClick} cardId={val.id} pokemonId={val.dexId} myCardNb={uCard.nbCard}
-                                                         image={val.image} rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className="fit-picture-card"
-                                                         src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
+                                                    <button cardId={val.card} myCardNb={uCard.nbCard}
+                                                            rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className={"unsellButton"} id={"unsellButton"+val.id} onClick={unsellCard}>-</button>
+                                                    <img id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={uCard.nbCard}
+                                                          rarity={items.find((myCard) => myCard.card.includes(val.card)).rarity} className="fit-picture-card"
+                                                         src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
                                                          onError={errorImage}/>
                                                 </button>
                                             </>
