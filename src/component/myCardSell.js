@@ -149,6 +149,32 @@ function MyCardSell(props) {
                                     setPointToWin(pointToWin + 10);
                                 }
                             }
+                        }else if(cardToSell.find((card) => card.card == cardId) && cardToSell[cartItemIndex].nbToSell + 2) {
+                            cardToSell[cartItemIndex] = {
+                                ...cardToSell[cartItemIndex],
+                                nbToSell: cardToSell[cartItemIndex].nbToSell + 1
+                            }
+                            if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
+                                    setPointToWin(pointToWin + 50);
+                                }
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
+                                    setPointToWin(pointToWin + 25);
+                                }
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
+                                    setPointToWin(pointToWin + 250);
+                                }
+                                if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 4){
+                                    setPointToWin(pointToWin + 1000);
+                                }
+                            }else{
+                                if(rarityCard == "Common"){
+                                    setPointToWin(pointToWin + 5);
+                                }
+                                if(rarityCard == "Uncommon"){
+                                    setPointToWin(pointToWin + 10);
+                                }
+                            }
                         }
                 }else if(cardNb > 1){
                     e.target.style.opacity = '0.5';
