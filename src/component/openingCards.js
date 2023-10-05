@@ -218,7 +218,7 @@ function OpeningCards(props) {
             }
             {tenCards.length == 10 &&
                 tenCards.slice(0).reverse().map((val, key) => {
-                    var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
+                    var stadeC = props.rarities.find((uc) => uc.rarity === val.rarity).stade;
                             return(
                                 <>
                                     <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
