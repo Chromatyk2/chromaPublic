@@ -147,7 +147,6 @@ function MyCardSell(props) {
                     Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
                     .then(function(response){
                         setMyCards(response.data);
-                        setCardToSell([]);
                     })
             })
         });
@@ -163,7 +162,7 @@ function MyCardSell(props) {
                             cardPoint:pointToWin
                         }
                     ).then(function(response){
-                        setCardToSell([];
+                        setCardToSell([]);
                         setIsOpen(false);
                     })
                 })
