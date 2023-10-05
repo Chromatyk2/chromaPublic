@@ -262,7 +262,7 @@ function MyCardSell(props) {
                         setSellingIsLoad(false);
                         setIsOpen(false);
                         setCanSell(false);
-                        console.log(sellingTime);
+                        setPointToWin(0);
                         if (sellingTime.length == 0) {
                             Axios.post('/api/addLastSelling',
                                 {
