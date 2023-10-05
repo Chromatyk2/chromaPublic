@@ -251,7 +251,6 @@ function MyCardSell(props) {
                         {items &&
                             items.data.map((val, key) => {
                                 myCards.map((uCard, key) => {
-                                    if (uCard.card == val.id) {
                                         return (
                                             <>
                                                 <button style={customStyles.buttonMyCard} className={"cardBox"}>
@@ -272,9 +271,7 @@ function MyCardSell(props) {
                                                 </button>
                                             </>
                                         )
-                                    }
-
-                                })
+                                    })
                             })
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
