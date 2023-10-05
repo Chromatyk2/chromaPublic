@@ -76,11 +76,6 @@ function MyCardSell(props) {
                 setRarities(response.data);
             })
     }, [])
-    useEffect(() => {
-        myCards.map((val, key) => {
-            setMyCardsId(myCardsId => [...myCardsId,val.card]);
-        })
-    }, [myCards]);
     function handleClick(e) {
         var cardId = e.target.getAttribute("cardId");
         var cardNb = e.target.getAttribute("myCardNb");
@@ -217,6 +212,12 @@ function MyCardSell(props) {
     function closeModal() {
         setIsOpen(false);
     }
+
+    useEffect(() => {
+        myCards.map((val, key) => {
+            setMyCardsId(myCardsId => [...myCardsId,val.card]);
+        })
+    }, [myCards]);
     return (
         <>
 
