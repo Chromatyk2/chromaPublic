@@ -154,6 +154,14 @@ function MyCardSell(props) {
             console.log(val.nbToSell);
             var limitNb = parseInt(val.nbToSell);
             Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
+                .then(function(response) {
+                    Axios
+                        .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+                        .then(function(response){
+                            setMyCards(response.data);
+                            setIsOpen(false);
+                        })
+                })
         })
     }
     function unsellCard(e) {
