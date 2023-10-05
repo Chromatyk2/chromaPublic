@@ -302,6 +302,8 @@ function MyCardSell(props) {
                 })
         })
     }
+    console.log(canSell);
+    console.log(sellingTime);
     return (
         <>
 
