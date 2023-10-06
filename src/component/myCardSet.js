@@ -23,6 +23,8 @@ function MyCardsSet(props) {
     const [errorCard, setErrorCard] = React.useState("");
     const [rarities, setRarities] = useState(null);
     const [stadeCard, setStadeCard] = useState(0);
+    const [filterRarity, setFilterRarity] = React.useState(null);
+    const [onlyMine, setOnlyMine] = React.useState(true);
     const customStyles = {
         content: {
             position:'initial',
@@ -133,7 +135,7 @@ function MyCardsSet(props) {
                                                  onError={errorImage}/>
                                         </button>
                                     )
-                                } else {
+                                } else if(onlyMine === false) {
                                     return (
                                         <img className="fit-picture-card" src={"/images/backCard.png"}/>
                                     )

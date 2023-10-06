@@ -10,7 +10,6 @@ function UniqueCard(props) {
     const [pkm, setPkm] = React.useState(null);
     let [state, setState] = useState("Initial");
     const [glow, setGlow] = React.useState(null);
-    const [filter, setFilter] = React.useState(null);
     const customStyles = {
         content: {
             position: 'relative',
