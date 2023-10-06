@@ -94,7 +94,6 @@ function MyCardSell(props) {
                 (result) => {
                     setItems(result.data);
                     if(props.idBooster == "swsh45"){
-                        setBonusSet(true);
                         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh45sv")
                             .then(res => res.json())
                             .then(
