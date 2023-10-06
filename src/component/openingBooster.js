@@ -33,7 +33,6 @@ function OpeningBooster(props) {
                             .then(
                                 (result) => {
                                     setItems(items => [...items,result.data]);
-                                    console.log(items);
                                     setIsLoaded(false);
                                 })
                     }else{

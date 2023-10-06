@@ -8,6 +8,8 @@ import moment from 'moment';
 import Modal from 'react-modal';
 
 function OpeningCards(props) {
+
+    console.log(props.items);
     const [tenCards, setTenCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
