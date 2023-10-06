@@ -52,7 +52,7 @@ function OpeningCards(props) {
                 if(bonus == 0){
                     var bonusPlus = Math.floor(Math.random() * 100);
                     if(stadeFour > 94){
-                        var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2|| item.stade == 4);
+                        var rarityArray = props.rarities.filter(item => item.stade == 3 || item.stade == 4);
                         const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
                         const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
                         Axios.post('/api/addCard',
@@ -96,7 +96,7 @@ function OpeningCards(props) {
                 if(bonus == 0){
                     var bonusPlus = Math.floor(Math.random() * 100);
                     if(stadeFour > 94){
-                        var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2|| item.stade == 4);
+                        var rarityArray = props.rarities.filter(item => item.stade == 3|| item.stade == 4);
                         const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
                         const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
                         Axios.post('/api/addCard',
