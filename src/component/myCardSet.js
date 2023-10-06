@@ -119,7 +119,7 @@ function MyCardsSet(props) {
                         {items &&
                             items.data.map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
-                                    if(val.rarity != "Common" && val.rarity != "Uncommon"){
+                                    if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof stadeB !== "undefined"){
                                         var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
                                     }else{
                                         var stadeC = 0;
