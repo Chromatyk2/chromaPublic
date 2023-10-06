@@ -133,7 +133,8 @@ function MyCardsSet(props) {
         <>
 
             {isLoaded === false &&
-                <ProgressBarCard getNb={myCards.length} item={{items.length}}/>
+                items &&
+                <ProgressBarCard getNb={myCards.length} item={items.length}/>
             }
             {isLoaded === true &&
                 <>
