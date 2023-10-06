@@ -330,8 +330,12 @@ function MyCardSell(props) {
                                 sellingTime &&
                                     myCards.map((val, key) => {
                                         var stadeB =  items.data.find((myCard) => myCard.id === val.card).rarity;
-                                            if(stadeB != "Common" && stadeB != "Uncommon" && typeof stadeB !== "undefined"){
-                                                var stadeC = rarities.find((uc) => uc.rarity.includes(stadeB)).stade;
+                                            if(stadeB != "Common" && stadeB != "Uncommon"){
+                                                if(typeof stadeB === "undefined"){
+                                                    var stadeC = -1;
+                                                }else{
+                                                    var stadeC = rarities.find((uc) => uc.rarity.includes(stadeB)).stade;
+                                                }
                                             }else{
                                                 var stadeC = 0;
                                             }
@@ -349,7 +353,7 @@ function MyCardSell(props) {
                                                             <button cardId={val.card} myCardNb={val.nbCard}
                                                                     rarity={typeof stadeB === "undefined" ? "unknowned" : items.data.find((myCard) => myCard.id === val.card).rarity} className={"unsellButton"} id={"unsellButton"+val.card} onClick={unsellCard}>-</button>
                                                             <img test={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
-                                                                 rarity={typeof stadeB === "undefined" ? "unknowned" : items.data.find((myCard) => myCard.id === val.card).rarity} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                                                 rarity={stadeB == -1 ? "unknowned" : items.data.find((myCard) => myCard.id === val.card).rarity} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
                                                                  src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
                                                                  onError={errorImage}/>
                                                         </button>
