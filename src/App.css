@@ -225,7 +225,7 @@ color: transparent;
 -webkit-text-stroke: 4px black;
 }
 nav.navbar.navbar-expand-lg.navbar-light {
-background-color: #90E5B5;
+background-color: #90E5B5!important;
 margin-bottom: 20px;
 }
 .me-auto.navbar-nav {
@@ -2252,6 +2252,9 @@ a.linkOnAirOff {
 }
 .leaderBoardSwitchMobile{
     display: none;
+}
+span.navbar-brand {
+    width: 43%;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
