@@ -142,7 +142,7 @@ function MyCardSell(props) {
                                     setPointToWin(pointToWin + 1000);
                                 }
                             }else{
-                                if(rarityCard == "Common"){
+                                if(rarityCard == "Common" || typeof rarityCard === "undefined"){
                                     setPointToWin(pointToWin + 5);
                                 }
                                 if(rarityCard == "Uncommon"){
@@ -168,7 +168,7 @@ function MyCardSell(props) {
                             setPointToWin(pointToWin + 1000);
                         }
                     }else{
-                        if(rarityCard == "Common"){
+                        if(rarityCard == "Common" || typeof rarityCard === "undefined"){
                             setPointToWin(pointToWin + 5);
                         }
                         if(rarityCard == "Uncommon"){
@@ -209,7 +209,7 @@ function MyCardSell(props) {
                         setPointToWin(pointToWin - 1000);
                     }
                 }else{
-                    if(rarityCard == "Common"){
+                    if(rarityCard == "Common" || typeof rarityCard === "undefined"){
                         setPointToWin(pointToWin - 5);
                     }
                     if(rarityCard == "Uncommon"){
