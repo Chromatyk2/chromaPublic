@@ -57,6 +57,13 @@ function CardsHub(props) {
             })
         setPage(e.target.value)
     }
+    function selectPage(e) {
+        Axios.get("/api/getDateButton/"+pseudo)
+            .then(function(response){
+                setTimer(response.data);
+            })
+        setPage(e.target.value)
+    }
     function addPointButton() {
         setCanGetPoint(false);
             if (timer.length == 0) {
@@ -126,16 +133,13 @@ function CardsHub(props) {
                 }
             </div>
             <div className="leaderBoardSwitchMobile">
-                <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
-                <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
-                <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
-                <button value="sellCards" onClick={displayTcgContent}>Echange Doublons</button>
-                {pseudo == "chromatyk" &&
-                    <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
-                }
-                {pseudo == "kimalwe" &&
-                    <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
-                }
+                <select className={"selectGen"} onChange={selectPage} id="pet-select">
+                    <option value="">Où souhaitez vous aller ?</option>
+                    <option value="myCards">Mes Cartes</option>
+                    <option value="myBoosters">Mes Boosters</option>
+                    <option value="cardsShop">Boutique</option>
+                    <option value="sellCards">Echange Doublons</option>
+                </select>
             </div>
             <div className={"allCards"}>
                 <div className={"countdown"}>
