@@ -16,7 +16,7 @@ function ProgressBarCard(props) {
         borderRadius: '50px'
     },
     intBar: {
-        width: parseFloat(props.getNb/props.length*100).toFixed(2)+"%",
+        width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
         position: 'relative',
         background: '#0a3a2c',
         textWrap: 'nowrap',
@@ -28,7 +28,7 @@ function ProgressBarCard(props) {
 
     return (
     <div style={customStyles.extBar} className="fullProgressBar">
-        <div style={customStyles.intBar}>{props.getNb+" / "+props.item.length+"("+parseFloat(props.getNb/props.item.length*100).toFixed(2)+"%)"}</div>
+        <div style={customStyles.intBar}>{props.getNb+" / "+props.item+"("+parseFloat(props.getNb/props.item*100).toFixed(2)+"%)"}</div>
     </div>
     )
 }

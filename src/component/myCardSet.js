@@ -133,7 +133,7 @@ function MyCardsSet(props) {
         <>
 
             {isLoaded === false &&
-                <ProgressBarCard getNb={myCards.length} item={{items}}/>
+                <ProgressBarCard getNb={myCards.length} item={{items.length}}/>
             }
             {isLoaded === true &&
                 <>
@@ -158,7 +158,7 @@ function MyCardsSet(props) {
                     </div>
                     <div id={"cardsContainer"}>
                         {items &&
-                            items.sort((a, b) => a.name.localeCompare(b.name)).map((val, key) => {
+                            items.sort((a, b) => a.number.localeCompare(b.number)).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
                                     if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof stadeB !== "undefined"){
                                         var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
