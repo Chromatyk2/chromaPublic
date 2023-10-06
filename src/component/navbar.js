@@ -24,7 +24,7 @@ function NavBar(props) {
 
       <Navbar expanded={expanded} bg="light" expand="lg">
           <Container fluid>
-              <Navbar.Brand>My Expenses</Navbar.Brand>
+              <Navbar.Brand><img src={"/logo.png"} /></Navbar.Brand>
               <Navbar.Toggle
                   aria-controls="navbarScroll"
                   onClick={() => setExpanded(!expanded)}
