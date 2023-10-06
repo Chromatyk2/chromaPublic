@@ -130,10 +130,10 @@ function MyCardSell(props) {
                             }
                             if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                                 if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
-                                    setPointToWin(pointToWin + 50);
+                                    setPointToWin(pointToWin + 25);
                                 }
                                 if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
-                                    setPointToWin(pointToWin + 25);
+                                    setPointToWin(pointToWin + 50);
                                 }
                                 if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
                                     setPointToWin(pointToWin + 250);
@@ -156,10 +156,10 @@ function MyCardSell(props) {
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
-                            setPointToWin(pointToWin + 50);
+                            setPointToWin(pointToWin + 25);
                         }
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
-                            setPointToWin(pointToWin + 25);
+                            setPointToWin(pointToWin + 50);
                         }
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
                             setPointToWin(pointToWin + 250);
@@ -197,10 +197,10 @@ function MyCardSell(props) {
                 }
                 if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
-                        setPointToWin(pointToWin - 50);
+                        setPointToWin(pointToWin - 25);
                     }
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 2){
-                        setPointToWin(pointToWin - 25);
+                        setPointToWin(pointToWin - 50);
                     }
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 3){
                         setPointToWin(pointToWin - 250);
