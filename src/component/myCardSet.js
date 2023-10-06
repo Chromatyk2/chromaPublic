@@ -103,6 +103,14 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
+    const handleChangeOnlyMine = event => {
+        if (event.target.checked) {
+            setOnlyMine(false);
+        } else {
+            setOnlyMine(true);
+        }
+        setIsSubscribed(current => !current);
+    };
     return (
         <>
 
@@ -114,6 +122,17 @@ function MyCardsSet(props) {
                     <h2 className="u-text-center">Chargement ...</h2>
                     <div className="pokemon"></div>
                 </div>
+            }
+            {rarities &&
+                <label htmlFor="subscribe">
+                    <input
+                        type="checkbox"
+                        onChange={handleChangeOnlyMine}
+                        id="subscribe"
+                        name="subscribe"
+                    />
+                    Voir les cartes manquantes
+                </label>
             }
             {isLoaded === false &&
                 <>
@@ -135,7 +154,7 @@ function MyCardsSet(props) {
                                                  onError={errorImage}/>
                                         </button>
                                     )
-                                }else{
+                                }else if(!onlyMine){
                                     return (
                                         <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"} onError={errorImage}/>
                                     )
