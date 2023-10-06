@@ -34,7 +34,7 @@ function OpeningCards(props) {
     useEffect(() => {
         if (tenCards.length < 11) {
             if(tenCards.length < 7){
-                const commonArray = props.items.filter(typeof item.rarity === "undefined");
+                const commonArray = props.items.filter(item => typeof item.rarity === "undefined");
                 const randomCommon = commonArray[Math.floor(Math.random() * commonArray.length)];
                 Axios.post('/api/addCard',
                     {
