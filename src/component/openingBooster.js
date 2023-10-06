@@ -26,8 +26,19 @@ function OpeningBooster(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(false);
                     setItems(result.data);
+                    if(props.idBooster == "swsh45"){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh45sv")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    setItems(items => [...items,result.data]);
+                                    console.log(items);
+                                    setIsLoaded(false);
+                                })
+                    }else{
+                        setIsLoaded(false);
+                    }
                 },
                 (error) => {
                     setIsLoaded(true);
