@@ -19,19 +19,14 @@ function NavBar(props) {
             setCount(response.data[0].count);
       })
   }, [])
-    function collapseBar(e) {
-        document.getElementById("basic-navbar-nav").toggleClass("show");
-        document.getElementById("basic-navbar-nav").toggleClass("collapse");
-        document.getElementById("basic-navbar-nav").toggleClass("collapsing");
-    }
   return (
     <Navbar expand="lg">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link onClick={collapseBar} className="navLink" to="/">Accueil</Link>
-              <Link onClick={collapseBar} className="navLink" to="/29ct92B3ZrvxGT">TCG</Link>
+            <Link className="navLink" to="/">Accueil</Link>
+              <Link className="navLink" to="/29ct92B3ZrvxGT">TCG</Link>
             {pseudo == "chromatyk" &&
               <>
                   <Link className="navLink" to="/pokedex">Pokedex</Link>
