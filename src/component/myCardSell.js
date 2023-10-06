@@ -362,7 +362,7 @@ function MyCardSell(props) {
         <>
 
             {isLoaded === false &&
-                <ProgressBarCard getNb={myCards.length} item={{items}}/>
+                <ProgressBarCard getNb={myCards.length} item={items.length}/>
             }
             {isLoaded === true &&
                 <div className={"loaderPokemon"}>
