@@ -138,6 +138,8 @@ function MyCardsSet(props) {
                             Voir les cartes manquantes
                         </label>
                         <button value={""} onClick={handleRarity}>Toutes</button>
+                        <button value={"Common"} onClick={handleRarity}>Toutes</button>
+                        <button value={"Uncommon"} onClick={handleRarity}>Toutes</button>
                         rarities.map((uR, key) => {
                             <p>{uR.rarity}</p>
                         })
