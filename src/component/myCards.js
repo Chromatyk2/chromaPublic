@@ -32,7 +32,7 @@ function MyCards(props) {
             <div id={"cardsContainer"}>
                 { page ?
                         <>
-                            <button style={{width:"100%"}}onClick={backPage} className="backButton">Retour</button>
+                            <button style={{width:"100%",margin:"0",padding:"0"}}onClick={backPage} className="backButton">Retour</button>
                             <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
                         </>
                     :
