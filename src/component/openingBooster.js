@@ -32,7 +32,7 @@ function OpeningBooster(props) {
                             .then(res => res.json())
                             .then(
                                 (result) => {
-                                    setItems(items => [...items,result.data]);
+                                    setItems(items => [...items,...result.data]);
                                     setIsLoaded(false);
                                 })
                     }else{
