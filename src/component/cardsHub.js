@@ -133,7 +133,7 @@ function CardsHub(props) {
                 }
             </div>
             <div className="leaderBoardSwitchMobile">
-                <select className={"selectGen"} onChange={selectPage} id="pet-select">
+                <select className={"selectPage"} onChange={selectPage} id="pet-select">
                     <option value="">Où souhaitez vous aller ?</option>
                     <option value="myCards">Mes Cartes</option>
                     <option value="myBoosters">Mes Boosters</option>

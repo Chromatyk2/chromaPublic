@@ -2265,7 +2265,17 @@ a.linkOnAirOff {
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
     .leaderBoardSwitchMobile{
-        display: block;
+        display: flex;
+    }
+    .selectPage{
+        margin: auto;
+        width: fit-content;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: #255748;
+        font-family: Charge Vector Black;
+        text-align: center;
     }
     .leaderBoardSwitch{
         display: None;
