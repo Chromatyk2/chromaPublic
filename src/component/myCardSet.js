@@ -137,9 +137,9 @@ function MyCardsSet(props) {
                         Voir les cartes manquantes
                     </label>
                     <button value={""} onClick={handleRarity}>Toutes</button>
-                    rarities.map((val, key) => {
-                    <button value={val.rarity} onClick={handleRarity}>{val.rarity}</button>
-                    })
+                    {rarities.map((val, key) => {
+                        <button value={val.rarity} onClick={handleRarity}>{val.rarity}</button>
+                    })}
                 </div>
             }
             {isLoaded === false &&
