@@ -135,7 +135,7 @@ function MyCardsSet(props) {
                                                  onError={errorImage}/>
                                         </button>
                                     )
-                                } else if(onlyMine === false) {
+                                } else if(onlyMine == false) {
                                     return (
                                         <img className="fit-picture-card" src={"/images/backCard.png"}/>
                                     )
