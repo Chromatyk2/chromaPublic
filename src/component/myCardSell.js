@@ -92,8 +92,21 @@ function MyCardSell(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(false);
-                    setItems(result);
+                    setItems(result.data);
+                    if(props.idBooster == "swsh45"){
+                        setBonusSet(true);
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh45sv")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+                    }else{
+                        setIsLoaded(false);
+                    }
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -329,7 +342,7 @@ function MyCardSell(props) {
                             rarities &&
                                 sellingTime &&
                                     myCards.map((val, key) => {
-                                        var stadeB =  items.data.find((myCard) => myCard.id === val.card).rarity;
+                                        var stadeB =  items.find((myCard) => myCard.id === val.card).rarity;
                                             if(stadeB != "Common" && stadeB != "Uncommon"){
                                                 if(typeof stadeB === "undefined"){
                                                     var stadeC = -1;
@@ -351,9 +364,9 @@ function MyCardSell(props) {
                                                                 }
                                                             </div>
                                                             <button cardId={val.card} myCardNb={val.nbCard}
-                                                                    rarity={stadeC == -1 ? "unknowned" : items.data.find((myCard) => myCard.id === val.card).rarity} className={"unsellButton"} id={"unsellButton"+val.card} onClick={unsellCard}>-</button>
+                                                                    rarity={stadeC == -1 ? "unknowned" : items.find((myCard) => myCard.id === val.card).rarity} className={"unsellButton"} id={"unsellButton"+val.card} onClick={unsellCard}>-</button>
                                                             <img test={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"card"+val.card} onClick={handleClick} cardId={val.card} myCardNb={val.nbCard}
-                                                                 rarity={stadeC == -1 ? "unknowned" : items.data.find((myCard) => myCard.id === val.card).rarity} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                                                 rarity={stadeC == -1 ? "unknowned" : items.find((myCard) => myCard.id === val.card).rarity} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
                                                                  src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.card + "_hiresopt.jpg"}
                                                                  onError={errorImage}/>
                                                         </button>
