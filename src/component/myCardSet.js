@@ -25,6 +25,7 @@ function MyCardsSet(props) {
     const [stadeCard, setStadeCard] = useState(0);
     const [filterRarity, setFilterRarity] = React.useState("");
     const [onlyMine, setOnlyMine] = React.useState(true);
+    const [bonusSet, setBonusSet] = React.useState(false);
     const customStyles = {
         content: {
             position:'initial',
@@ -60,8 +61,22 @@ function MyCardsSet(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(false);
                     setItems(result);
+                    if(props.idBooster == "swsh45"){
+                        setBonusSet(true);
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh45sv")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+                    }else{
+                        setIsLoaded(false);
+                    }
+
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -113,7 +128,6 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
-    console.log(rarities);
     return (
         <>
 
