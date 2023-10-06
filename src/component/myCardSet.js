@@ -117,7 +117,7 @@ function MyCardsSet(props) {
                 <>
                     <div id={"cardsContainer"}>
                         {items &&
-                            items.data.map((val, key) => {
+                            items.data.filter(item => item.rarity.includes(filter)).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
                                     if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof stadeB !== "undefined"){
                                         var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
