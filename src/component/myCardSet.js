@@ -121,28 +121,29 @@ function MyCardsSet(props) {
                 <ProgressBarCard getNb={myCards.length} item={{items}}/>
             }
             {isLoaded === true &&
-                <div className={"loaderPokemon"}>
-                    <h2 className="u-text-center">Chargement ...</h2>
-                    <div className="pokemon"></div>
-                </div>
+                <>
+                    <div className={"loaderPokemon"}>
+                        <h2 className="u-text-center">Chargement ...</h2>
+                        <div className="pokemon"></div>
+                    </div>
+
+                    <div style={{display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
+                        <label htmlFor="subscribe">
+                            <input
+                                type="checkbox"
+                                onChange={handleChangeOnlyMine}
+                                id="subscribe"
+                                name="subscribe"
+                            />
+                            Voir les cartes manquantes
+                        </label>
+                        <button value={""} onClick={handleRarity}>Toutes</button>
+                        rarities.map((uR, key) => {
+                            <p>{uR.rarity}</p>
+                        })
+                    </div>
+                </>
             }
-            <div style={{display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
-                <label htmlFor="subscribe">
-                    <input
-                        type="checkbox"
-                        onChange={handleChangeOnlyMine}
-                        id="subscribe"
-                        name="subscribe"
-                    />
-                    Voir les cartes manquantes
-                </label>
-                <button value={""} onClick={handleRarity}>Toutes</button>
-            {rarities &&
-                    rarities.map((val, key) => {
-                        <button value={val.rarity} onClick={handleRarity}>{val.rarity}</button>
-                    })
-            }
-            </div>
             {isLoaded === false &&
                 <>
                     <div id={"cardsContainer"}>
