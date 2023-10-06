@@ -126,7 +126,10 @@ function MyCardsSet(props) {
                         <h2 className="u-text-center">Chargement ...</h2>
                         <div className="pokemon"></div>
                     </div>
-
+                </>
+            }
+            {isLoaded === false &&
+                <>
                     <div style={{display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
                         <label htmlFor="subscribe">
                             <input
@@ -140,14 +143,11 @@ function MyCardsSet(props) {
                         <button value={""} onClick={handleRarity}>Toutes</button>
                         <button value={"Common"} onClick={handleRarity}>Toutes</button>
                         <button value={"Uncommon"} onClick={handleRarity}>Toutes</button>
-                        { rarities.map((uR, key) => {
+                        {rarities &&
+                            rarities.map((uR, key) => {
                             <p>{uR.rarity}</p>
                         })}
                     </div>
-                </>
-            }
-            {isLoaded === false &&
-                <>
                     <div id={"cardsContainer"}>
                         {items &&
                             items.data.filter(item => item.rarity.includes(filterRarity)).sort((a, b) => a.number - b.number).map((val, key) => {
