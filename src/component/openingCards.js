@@ -48,32 +48,80 @@ function OpeningCards(props) {
                 setTenCards(tenCards => [...tenCards,randomCommon]);
                 setNbCards (nbCards + 1);
             }else if(tenCards.length > 6 && tenCards.length < 8){
-                const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
-                const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
-                Axios.post('/api/addCard',
-                    {
-                        pseudo:props.user,
-                        idCard:randomUncommon.id,
-                        booster:props.idBooster
-                    })
-                setIsLoaded(true);
-                setTenCards(tenCards => [...tenCards,randomUncommon]);
-                setNbCards (nbCards + 1);
-            }else if(tenCards.length == 8){
-                var bonus = Math.floor(Math.random() * 5);
+                var bonus = Math.floor(Math.random() * 100);
                 if(bonus == 0){
-                    var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2);
-                    const bonusArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
-                    const randomBonus = bonusArray[Math.floor(Math.random() * bonusArray.length)];
+                    var bonusPlus = Math.floor(Math.random() * 100);
+                    if(stadeFour > 94){
+                        var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2|| item.stade == 4);
+                        const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                        const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
+                        Axios.post('/api/addCard',
+                            {
+                                pseudo:props.user,
+                                idCard:randomFinal.id,
+                                booster:props.idBooster
+                            })
+                        setTenCards(tenCards => [...tenCards,randomFinal]);
+                        setNbCards (nbCards + 1);
+                        setIsLoaded(false);
+                    }else{
+                        var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2);
+                        const bonusArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                        const randomBonus = bonusArray[Math.floor(Math.random() * bonusArray.length)];
+                        Axios.post('/api/addCard',
+                            {
+                                pseudo:props.user,
+                                idCard:randomBonus.id,
+                                booster:props.idBooster
+                            })
+                        setTenCards(tenCards => [...tenCards,randomBonus]);
+                        setNbCards (nbCards + 1);
+                        setIsLoaded(false);
+                    }
+                }else{
+                    const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
+                    const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
                     Axios.post('/api/addCard',
                         {
                             pseudo:props.user,
-                            idCard:randomBonus.id,
+                            idCard:randomUncommon.id,
                             booster:props.idBooster
                         })
-                    setTenCards(tenCards => [...tenCards,randomBonus]);
+                    setIsLoaded(true);
+                    setTenCards(tenCards => [...tenCards,randomUncommon]);
                     setNbCards (nbCards + 1);
-                    setIsLoaded(false);
+                }
+            }else if(tenCards.length == 8){
+                var bonus = Math.floor(Math.random() * 5);
+                if(bonus == 0){
+                    var bonusPlus = Math.floor(Math.random() * 100);
+                    if(stadeFour > 94){
+                        var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2|| item.stade == 4);
+                        const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                        const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
+                        Axios.post('/api/addCard',
+                            {
+                                pseudo:props.user,
+                                idCard:randomFinal.id,
+                                booster:props.idBooster
+                            })
+                        setTenCards(tenCards => [...tenCards,randomFinal]);
+                        setNbCards (nbCards + 1);
+                        setIsLoaded(false);
+                    }else{
+                        var rarityArray = props.rarities.filter(item => item.stade == 1 || item.stade == 2);
+                        const bonusArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
+                        const randomBonus = bonusArray[Math.floor(Math.random() * bonusArray.length)];
+                        Axios.post('/api/addCard',
+                            {
+                                pseudo:props.user,
+                                idCard:randomBonus.id,
+                                booster:props.idBooster
+                            })
+                        setTenCards(tenCards => [...tenCards,randomBonus]);
+                        setNbCards (nbCards + 1);
+                        setIsLoaded(false);
+                    }
                 }else{
                     const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
                     const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
