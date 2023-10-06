@@ -2250,7 +2250,9 @@ a.linkOnAirOff {
         filter: drop-shadow(2px 4px 35px #0AE4EB);
     }
 }
-
+.leaderBoardSwitchMobile{
+    display: none;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
@@ -2262,6 +2264,12 @@ a.linkOnAirOff {
   }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
+    .leaderBoardSwitchMobile{
+        display: block;
+    }
+    .leaderBoardSwitch{
+        display: None;
+    }
   .pokemonGlobalContainer {
     display: flex;
     flex-wrap: wrap;
