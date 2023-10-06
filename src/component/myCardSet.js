@@ -135,6 +135,14 @@ function MyCardsSet(props) {
                                                  onError={errorImage}/>
                                         </button>
                                     )
+                                } else{
+                                    return (
+                                        <button style={customStyles.buttonMyCard} className={"cardBox"}>
+                                            <img style={{filter:"grayscale(1)",display:!onlyMine ? "block" : "none"}} className={"fit-picture-card"}
+                                                 src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
+                                                 onError={errorImage}/>
+                                        </button>
+                                    )
                                 }
                             })
                         }
