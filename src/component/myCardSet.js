@@ -23,7 +23,7 @@ function MyCardsSet(props) {
     const [errorCard, setErrorCard] = React.useState("");
     const [rarities, setRarities] = useState(null);
     const [stadeCard, setStadeCard] = useState(0);
-    const [filterRarity, setFilterRarity] = React.useState(null);
+    const [filterRarity, setFilterRarity] = React.useState("");
     const [onlyMine, setOnlyMine] = React.useState(true);
     const customStyles = {
         content: {
@@ -135,10 +135,9 @@ function MyCardsSet(props) {
                                                  onError={errorImage}/>
                                         </button>
                                     )
-                                } else{
-                                    return (<img style={{filter:"grayscale(1)"}} className={"fit-picture-card"}
-                                                 src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"}
-                                                 onError={errorImage}/>
+                                }else{
+                                    return (
+                                        <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemoncard.io/images/" + props.idBooster + "/" + val.id + "_hiresopt.jpg"} onError={errorImage}/>
                                     )
                                 }
                             })
