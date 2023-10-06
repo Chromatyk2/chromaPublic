@@ -135,7 +135,7 @@ function MyCardsSet(props) {
                                                  onError={errorImage}/>
                                         </button>
                                     )
-                                } else if(onlyMine == false) {
+                                } else if(!onlyMine) {
                                     return (
                                         <button style={customStyles.buttonMyCard} className={"cardBox"}>
                                             <img stade={stadeC} style={{filter:"grayscale(1)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
