@@ -110,6 +110,9 @@ function MyCardsSet(props) {
             setOnlyMine(true);
         }
     };
+    const handleRarity = event => {
+        setFilterRarity(event.target.value);
+    };
     return (
         <>
 
@@ -123,15 +126,21 @@ function MyCardsSet(props) {
                 </div>
             }
             {rarities &&
-                <label htmlFor="subscribe">
-                    <input
-                        type="checkbox"
-                        onChange={handleChangeOnlyMine}
-                        id="subscribe"
-                        name="subscribe"
-                    />
-                    Voir les cartes manquantes
-                </label>
+                <div style={{display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
+                    <label htmlFor="subscribe">
+                        <input
+                            type="checkbox"
+                            onChange={handleChangeOnlyMine}
+                            id="subscribe"
+                            name="subscribe"
+                        />
+                        Voir les cartes manquantes
+                    </label>
+                    <button value={""} onClick={handleRarity}>Toutes</button>
+                    rarities.map((val, key) => {
+                    <button value={val.rarity} onClick={handleRarity}>{val.rarity}</button>
+                    })
+                </div>
             }
             {isLoaded === false &&
                 <>
