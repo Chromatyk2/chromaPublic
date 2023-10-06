@@ -103,6 +103,50 @@ function MyCardSell(props) {
                                     })
                                     setIsLoaded(false);
                                 })
+                    }else if(props.idBooster == "swsh9"){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh9tg")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+
+                    }else if(props.idBooster == "swsh11"){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh11tg")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+
+                    }else if(props.idBooster == "swsh12pt5"){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh12pt5gg")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+
+                    }else if(props.idBooster == "sm115"){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:sma")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+
                     }else{
                         setIsLoaded(false);
                     }
