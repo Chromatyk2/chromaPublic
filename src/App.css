@@ -1637,7 +1637,6 @@ div#odds {
     flex-wrap: wrap;
     width: 100%;
     margin: auto;
-    gap: 30px;
     flex-flow: column;
 }
 .fit-picture{
