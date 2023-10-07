@@ -232,7 +232,7 @@ function MyCardsSet(props) {
                                     )
                                 }else if(!onlyMine){
                                     return (
-                                        <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemoncard.io/images/" + val.set.id + "/" + val.id + "_hiresopt.jpg"} onError={errorImage}/>
+                                        <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"} onError={errorImage}/>
                                     )
                                 }
                             })

@@ -278,7 +278,7 @@ function OpeningCards(props) {
                                     <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
                                          cardId={val.id} onClick={key == 0 ? getLastCard : getCard}
                                          className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                         src={"https://images.pokemoncard.io/images/" + val.set.id + "/" + val.id + "_hiresopt.jpg"}
+                                         src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
                                          onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                                 </>
                             )
