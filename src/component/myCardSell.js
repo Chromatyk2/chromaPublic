@@ -417,7 +417,7 @@ function MyCardSell(props) {
                                             }else{
                                                 var stadeC = 0;
                                             }
-                                            if(val.nbCard > ){
+                                            if(val.nbCard > 1){
                                                 return (
                                                     <>
                                                         <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
