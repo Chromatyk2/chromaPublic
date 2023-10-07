@@ -438,13 +438,6 @@ function MyCardSell(props) {
                                                         </button>
                                                     </>
                                                 )
-                                            }else{
-
-                                                  return (
-                                                      <>
-                                                          <p>Aucune carte en plusieurs éxemplaires</p>
-                                                      </>
-                                                  )
                                             }
                                         }):<p>Attend 2 mins</p>
                         }
