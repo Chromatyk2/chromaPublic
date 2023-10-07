@@ -406,9 +406,7 @@ function MyCardSell(props) {
                             items &&
                             rarities &&
                                 sellingTime &&
-                                    myCards.map((val, key) => {
-                                      console.log(val.card);
-                                      console.log(items);
+                                    myCards.sort((a, b) => a.nbCard + b.nbCard).map((val, key) => {
                                         var stadeB =  items.find((myCard) => myCard.id.toString() == val.card.toString()).rarity;
                                             if(stadeB != "Common" && stadeB != "Uncommon"){
                                                 if(typeof stadeB === "undefined"){
@@ -419,6 +417,7 @@ function MyCardSell(props) {
                                             }else{
                                                 var stadeC = 0;
                                             }
+                                            if(val.nbCard > ){
                                                 return (
                                                     <>
                                                         <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
@@ -439,6 +438,14 @@ function MyCardSell(props) {
                                                         </button>
                                                     </>
                                                 )
+                                            }else{
+
+                                                  return (
+                                                      <>
+                                                          <p>Aucune carte en plusieurs éxemplaires</p>
+                                                      </>
+                                                  )
+                                            }
                                         }):<p>Attend 2 mins</p>
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
