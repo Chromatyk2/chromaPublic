@@ -201,7 +201,7 @@ function MyCardSell(props) {
                 if(cardToSell.find((card) => card.card == cardId)){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
-                        if((cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.length < 5) ||  (cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.find((card) => card.card == cardId))) {
+                        if((cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.length < 10) ||  (cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.find((card) => card.card == cardId))) {
                             cardToSell[cartItemIndex] = {
                                 ...cardToSell[cartItemIndex],
                                 nbToSell: cardToSell[cartItemIndex].nbToSell + 1
@@ -228,7 +228,7 @@ function MyCardSell(props) {
                                 }
                             }
                         }
-                }else if(cardNb > 1  && cardToSell.length < 5){
+                }else if(cardNb > 1  && cardToSell.length < 10){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
