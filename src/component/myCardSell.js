@@ -406,7 +406,7 @@ function MyCardSell(props) {
                             items &&
                             rarities &&
                                 sellingTime &&
-                                    myCards.sort((a, b) => a.nbCard + b.nbCard).map((val, key) => {
+                                    myCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                                         var stadeB =  items.find((myCard) => myCard.id.toString() == val.card.toString()).rarity;
                                             if(stadeB != "Common" && stadeB != "Uncommon"){
                                                 if(typeof stadeB === "undefined"){
