@@ -226,7 +226,7 @@ function MyCardsSet(props) {
                                         <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
                                             <img stade={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                                                 src={"https://images.pokemoncard.io/images/" + val.set.id + "/" + val.id + "_hiresopt.jpg"}
+                                                 src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
                                                  onError={errorImage}/>
                                         </button>
                                     )
