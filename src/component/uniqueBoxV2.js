@@ -61,7 +61,6 @@ function UniqueBoxV2(props) {
                         setTypeBox("ultra");
                     }else
                         setTypeBox("legendary");
-                }
                 }else{
                     setTypeBox("epic");
                 }
