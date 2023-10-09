@@ -34,7 +34,7 @@ function NostalPickV2(props) {
     };
     function openModal(e) {
         var uConsole = e.target.getAttribute("uConsole");
-        var buttonClick = document.getElementsById('buttonBox'+uConsole);
+        var buttonClick = document.getElementById("buttonBox"+uConsole);
         setPickConsole(uConsole);
         buttonClick.toggleClass("getBox");
         setIsOpen(true);
