@@ -51,13 +51,13 @@ function UniqueBoxV2(props) {
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
         var rare = Math.floor(Math.random() * 100);
-        if(rare < 76){
+        if(rare < 100){
             var epic = Math.floor(Math.random() * 100);
-            if(epic > 59) {
+            if(epic > 70) {
                 var legendary = Math.floor(Math.random() * 100);
-                if(legendary > 67){
+                if(legendary > 64){
                     var ultra = Math.floor(Math.random() * 100);
-                    if(ultra > 89){
+                    if(ultra > 94){
                         setTypeBox("ultra");
                     }else
                         setTypeBox("legendary");
