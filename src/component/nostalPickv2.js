@@ -30,7 +30,7 @@ function NostalPickV2(props) {
     };
     function openModal(e) {
         console.log(e.target);
-        var uConsole = e.target.value;
+        var uConsole = e.target.getAttribute("uConsole");
         setPickConsole(uConsole);
         setIsOpen(true);
     }
@@ -42,9 +42,9 @@ function NostalPickV2(props) {
                         var consoleIndex = consoles.indexOf(uniqueConsole);
                         consoles.splice(consoleIndex, 1);
                         return (
-                            <button onClick={openModal} className={"uniqueBoxContainer"}  value={uniqueConsole}>
+                            <button onClick={openModal} className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
-                                <img className={"imgBox"} src={"/basicBox.png"}/>
+                                <img uConsole={uniqueConsole} className={"imgBox"} src={"/basicBox.png"}/>
                             </button>
                         )
                     })}
