@@ -48,14 +48,17 @@ function UniqueBoxV2(props) {
         }
     }, [])
     function openBox(e) {
-        document.getElementsByClassName("gettedGameImg").style.display = "block";
         setRandomNumber(Math.floor(Math.random()*max) + 1);
+        var img = document.getElementById("imgGame"+randomNumber);
+        setTimeout(function(){
+            img.toggleClass("gettedGameImg");
+        }.bind(this), 800)
     }
     return(
         <>
             <div className={"gettedBoxContainer"}>
                 {randomNumber &&
-                    <img className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                    <img id={"imgGame"+randomNumber} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
                 <img onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/basicBox.png"}/>
             </div>
