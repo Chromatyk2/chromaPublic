@@ -136,9 +136,9 @@ function OpeningCards(props) {
                 }
             }else if(tenCards.length == 9){
                 var stadeTwo = Math.floor(Math.random() * 100);
-                if(stadeTwo > 50){
+                if(stadeTwo > 0){
                     var stadeThree = Math.floor(Math.random() * 100);
-                    if(stadeThree > 77){
+                    if(stadeThree < 100){
                         var stadeFour = Math.floor(Math.random() * 100);
                         if(stadeFour > 94){
                             var rarityArray = props.rarities.filter(item => item.stade == 4);
