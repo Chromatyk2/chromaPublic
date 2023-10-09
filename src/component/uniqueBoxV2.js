@@ -61,21 +61,37 @@ function UniqueBoxV2(props) {
                     if(ultra > 94){
                         setTimeout(function() {
                             setTypeBox("ultra");
-                        }.bind(this), 5000)
+                        }.bind(this), 7000)
+                        setTimeout(function() {
+                            document.getElementById("box").classList.toggle("spinBox");
+                            setTypeBox("ultraOpen");
+                        }.bind(this), 8000)
                     }else{
                         setTimeout(function() {
                             setTypeBox("legendary");
-                        }.bind(this), 3000)
+                        }.bind(this), 5000)
+                        setTimeout(function() {
+                            document.getElementById("box").classList.toggle("spinBox");
+                            setTypeBox("legendaryOpen");
+                        }.bind(this), 6000)
                     }
                 }else{
                     setTimeout(function() {
                         setTypeBox("epic");
-                    }.bind(this), 2000)
+                    }.bind(this), 3000)
+                    setTimeout(function() {
+                        document.getElementById("box").classList.toggle("spinBox");
+                        setTypeBox("epicOpen");
+                    }.bind(this), 4000)
                 }
             }else {
                 setTimeout(function() {
                     setTypeBox("rare");
                 }.bind(this), 1000)
+                setTimeout(function() {
+                    document.getElementById("box").classList.toggle("spinBox");
+                    setTypeBox("rareOpen");
+                }.bind(this), 2000)
             }
         }else{
             setTypeBox("basic");
@@ -93,7 +109,7 @@ function UniqueBoxV2(props) {
                 {randomNumber &&
                     <img style={{display:"none"}} id={"imgGame"+randomNumber} className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
-                <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={typeBox == "rare" ? "/rareBox.png" : typeBox == "epic" ? "/epicBox.png" : typeBox == "legendary" ? "/legendaryBox.png" : typeBox == "ultra" ? "/ultraBox.png" : "/basicBox.png"}/>
+                <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/"+typeBox+".png"} />
             </div>
         </>
     )
