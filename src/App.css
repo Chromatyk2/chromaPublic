@@ -1369,10 +1369,11 @@ h1 {
 }
 img.imgBox {
     width: 226px;
+    animation: float 6s ease-in-out infinite;
 }
-
-.layer{
-  box-shadow: 50px 50
+.uniqueBoxContainer{
+    border: none;
+    background: none;
 }
 object{
 

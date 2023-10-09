@@ -14,9 +14,9 @@ function NostalPickV2(props) {
                         var consoleIndex = consoles.indexOf(uniqueConsole);
                         consoles.splice(consoleIndex, 1);
                         return (
-                            <div className={"uniqueBoxContainer"}>
+                            <button className={"uniqueBoxContainer"}>
                                 <img className={"imgBox"} src={"/basicBox.png"}/>
-                            </div>
+                            </button>
                         )
                     })}
             </div>
