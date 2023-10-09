@@ -1504,6 +1504,15 @@ img.gettedBoxImg {
     margin-left: 400px;
     bottom: -300px;
 }
+.textResultBox {
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+    top: -34px;
+    z-index: 1;
+    color: white;
+    text-shadow: 0 0 15px BLACK;
+}
 @keyframes showGame {
     0% {
         transform: scale(.0001) translateX(-1500px) translateY(-1500px);

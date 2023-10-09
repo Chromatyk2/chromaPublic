@@ -154,9 +154,9 @@ function UniqueBoxV2(props) {
         <>
             <div className={"gettedBoxContainer"}>
                 {randomNumber &&
-                    <>
-                        <img onClick={handleState} style={{display:"none"}} id={"imgGame"+randomNumber} className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
-                        <p>
+                    <div style={{display:"none"}} className={"gettedGameImg"} onClick={handleState} id={"imgGame"+randomNumber}>
+                        <img src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                        <p className={"textResultBox"}>
                             Tu gagnes
                             {
                                 finalState == 'ultra' ? '10 000 pts' :
@@ -165,7 +165,7 @@ function UniqueBoxV2(props) {
                                             finalState == 'rare' ? '500 pts' : 'rien'
                             }
                         </p>
-                    </>
+                    </div>
                 }
                 <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/"+typeBox+".png"} />
             </div>
