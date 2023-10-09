@@ -10,44 +10,45 @@ function UniqueBoxV2(props) {
     const [randomNumber, setRandomNumber] = React.useState(null)
     const [max, setMax] = React.useState(null);
     useEffect(() => {
+        if(props.consolePicked == "GB"){
+            setMax(432);
+        }
+        if(props.consolePicked == "GBA"){
+            setMax(424);
+        }
+        if(props.consolePicked == "GBC"){
+            setMax(233);
+        }
+        if(props.consolePicked == "MASTER SYSTEM"){
+            setMax(194);
+        }
+        if(props.consolePicked == "MEGADRIVE"){
+            setMax(400);
+        }
+        if(props.consolePicked == "N64"){
+            setMax(133);
+        }
+        if(props.consolePicked == "NDS"){
+            setMax(488);
+        }
+        if(props.consolePicked == "NES"){
+            setMax(280);
+        }
+        if(props.consolePicked == "NGC"){
+            setMax(234);
+        }
+        if(props.consolePicked == "PS1"){
+            setMax(147);
+        }
+        if(props.consolePicked == "PSP"){
+            setMax(286);
+        }
+        if(props.consolePicked == "SNES"){
+            setMax(458);
+        }
     }, [])
     function openBox(e) {
-        if(props.console == "GB"){
-            setRandomNumber(Math.floor(Math.random() * 432) + 1);
-        }
-        if(props.console == "GBA"){
-            setRandomNumber(Math.floor(Math.random()*424) + 1);
-        }
-        if(props.console == "GBC"){
-            setRandomNumber(Math.floor(Math.random()*233) + 1);
-        }
-        if(props.console == "MASTER SYSTEM"){
-            setRandomNumber(Math.floor(Math.random()*194) + 1);
-        }
-        if(props.console == "MEGADRIVE"){
-            setRandomNumber(Math.floor(Math.random()*400) + 1);
-        }
-        if(props.console == "N64"){
-            setRandomNumber(Math.floor(Math.random()*133) + 1);
-        }
-        if(props.console == "NDS"){
-            setRandomNumber(Math.floor(Math.random()*488) + 1);
-        }
-        if(props.console == "NES"){
-            setRandomNumber(Math.floor(Math.random()*280) + 1);
-        }
-        if(props.console == "NGC"){
-            setRandomNumber(Math.floor(Math.random()*234) + 1);
-        }
-        if(props.console == "PS1"){
-            setRandomNumber(Math.floor(Math.random()*147) + 1);
-        }
-        if(props.console == "PSP"){
-            setRandomNumber(Math.floor(Math.random()*286) + 1);
-        }
-        if(props.console == "SNES"){
-            setRandomNumber(Math.floor(Math.random()*458) + 1);
-        }
+        setRandomNumber(Math.floor(Math.random()*max) + 1);
     }
     return(
         <>
