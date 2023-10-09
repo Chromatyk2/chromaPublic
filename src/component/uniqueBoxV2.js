@@ -8,7 +8,7 @@ import Axios from "axios";
 
 function UniqueBoxV2(props) {
     const [randomNumber, setRandomNumber] = React.useState(null)
-    const [max, setMax] = React.useState(null);
+    const [max, setMax] = React.useState(0);
         if(props.console == "GB"){
             setMax(432);
         }
