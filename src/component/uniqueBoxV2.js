@@ -9,7 +9,6 @@ import Axios from "axios";
 function UniqueBoxV2(props) {
     const [randomNumber, setRandomNumber] = React.useState(null)
     const [max, setMax] = React.useState(null);
-    useEffect(() => {
         if(props.console == "GB"){
             setMax(432);
         }
@@ -46,12 +45,10 @@ function UniqueBoxV2(props) {
         if(props.console == "SNES"){
             setMax(458);
         }
-    }, [])
     function openBox(e) {
         setRandomNumber(Math.floor((Math.random() * max) + 1));
         console.log(randomNumber);
     }
-    console.log(max);
     return(
         <>
             <div className={"gettedBoxContainer"}>
