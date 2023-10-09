@@ -1471,6 +1471,10 @@ object{
     justify-content: center;
     height: 0;
 }
+.getBox{
+    animation:bounceOut 1s;
+    animation-fill-mode: forwards;
+}
 @keyframes bounceIn {
     0% {
         visibility: visible;
