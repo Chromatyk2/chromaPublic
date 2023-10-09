@@ -1491,7 +1491,7 @@ img.gettedBoxImg {
 }
 .gettedGameImg{
     width: 600px;
-    animation: showGame 1s;
+    animation: showGame 2s;
     animation-fill-mode: forwards;
 }
 @keyframes showGame {
