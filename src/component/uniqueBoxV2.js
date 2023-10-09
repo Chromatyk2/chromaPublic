@@ -50,7 +50,7 @@ function UniqueBoxV2(props) {
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
-        document.getElementById("box").toggleAttribute(é)
+        setTypeBox("legendary");
     }
     useEffect(() => {
         if(randomNumber !== null){
