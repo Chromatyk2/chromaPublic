@@ -48,9 +48,10 @@ function UniqueBoxV2(props) {
         }
     }, [])
     function openBox(e) {
-        setRandomNumber(Math.floor(Math.random()*max) + 1);
+        setRandomNumber(Math.floor((Math.random() * max) + 1));
         console.log(randomNumber);
     }
+    console.log(max);
     return(
         <>
             <div className={"gettedBoxContainer"}>
