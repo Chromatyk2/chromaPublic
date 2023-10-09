@@ -36,7 +36,8 @@ function NostalPickV2(props) {
     return(
         <>
             <div className="boxContainer">
-                    {numbers.map((val, key) => {
+                    {consoles &&
+                        numbers.map((val, key) => {
                         var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
                         var consoleIndex = consoles.indexOf(uniqueConsole);
                         consoles.splice(consoleIndex, 1);
