@@ -48,16 +48,13 @@ function UniqueBoxV2(props) {
         }
     }, [])
     function openBox(e) {
-        setTimeout(function(){
-            setRandomNumber(Math.floor(Math.random()*max) + 1);
-            document.getElementById("imgGame"+randomNumber).toggleClass("gettedGameImg");
-        }.bind(this), 800)
+        setRandomNumber(Math.floor(Math.random()*max) + 1);
     }
     return(
         <>
             <div className={"gettedBoxContainer"}>
                 {randomNumber &&
-                    <img id={"imgGame"+randomNumber} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                    <img className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
                 <img onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/basicBox.png"}/>
             </div>
