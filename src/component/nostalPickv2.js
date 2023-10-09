@@ -16,7 +16,7 @@ function NostalPickV2(props) {
                         return (
                             <button className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
-                                <img className={"imgBox"} src={"/basicBox.png"}/>
+                                <img className={"imgBox"} src={"/basicBox.png"} console={uniqueConsole}/>
                             </button>
                         )
                     })}
