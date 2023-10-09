@@ -10,6 +10,7 @@ function UniqueBoxV2(props) {
     const [randomNumber, setRandomNumber] = React.useState(null)
     const [max, setMax] = React.useState(null);
     const [typeBox, setTypeBox] = React.useState("basic");
+    const [finalState, setFinalState] = React.useState("");
     useEffect(() => {
         if(props.consolePicked == "GB"){
             setMax(432);
@@ -74,6 +75,7 @@ function UniqueBoxV2(props) {
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("ultraOpen");
+                            setFinalState("ultra");
                         }.bind(this), 8000)
                     }else{
                         setTimeout(function() {
@@ -88,6 +90,7 @@ function UniqueBoxV2(props) {
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("legendaryOpen");
+                            setFinalState("lgendary");
                         }.bind(this), 6000)
                     }
                 }else{
@@ -100,6 +103,7 @@ function UniqueBoxV2(props) {
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
                         setTypeBox("epicOpen");
+                        setFinalState("epic");
                     }.bind(this), 4000)
                 }
             }else {
@@ -109,20 +113,40 @@ function UniqueBoxV2(props) {
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                     setTypeBox("rareOpen");
+                    setFinalState("rare");
                 }.bind(this), 3000)
             }
         }else{
             setTimeout(function() {
                 document.getElementById("box").classList.toggle("spinBox");
                 setTypeBox("basicOpen");
+                setFinalState("basic");
             }.bind(this), 100)
         }
     }
     useEffect(() => {
-        if(randomNumber !== null){
-            document.getElementById("imgGame"+randomNumber).style.display = "block";
+        if(finalState == "basic"){
+            setTimeout(function() {
+                document.getElementById("imgGame"+randomNumber).style.display = "block";
+            }.bind(this), 100)
+        }else if(finalState == "rare"){
+            setTimeout(function() {
+                document.getElementById("imgGame"+randomNumber).style.display = "block";
+            }.bind(this), 3000)
+        }else if(finalState == "epic"){
+            setTimeout(function() {
+                document.getElementById("imgGame"+randomNumber).style.display = "block";
+            }.bind(this), 4000)
+        }else if(finalState == "legendary"){
+            setTimeout(function() {
+                document.getElementById("imgGame"+randomNumber).style.display = "block";
+            }.bind(this), 6000)
+        }else if(finalState == "ultra"){
+            setTimeout(function() {
+                document.getElementById("imgGame"+randomNumber).style.display = "block";
+            }.bind(this), 8000)
         }
-    }, [randomNumber])
+    }, [finalState])
     return(
         <>
             <div className={"gettedBoxContainer"}>
