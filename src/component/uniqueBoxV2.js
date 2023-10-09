@@ -52,14 +52,15 @@ function UniqueBoxV2(props) {
     }
     useEffect(() => {
         if(randomNumber !== null){
-            var img = document.getElementById("imgGame"+randomNumber).classList.toggle("gettedGameImg");
+            document.getElementById("imgGame"+randomNumber).style.display = "block";
+
         }
     }, [randomNumber])
     return(
         <>
             <div className={"gettedBoxContainer"}>
                 {randomNumber &&
-                    <img className={""} style={{visibility:"hidden"}} id={"imgGame"+randomNumber} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                    <img style={{display:"none"}} id={"imgGame"+randomNumber} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
                 <img onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/basicBox.png"}/>
             </div>
