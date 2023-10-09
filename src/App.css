@@ -1372,8 +1372,18 @@ img.imgBox {
     animation: float 6s ease-in-out infinite;
 }
 .uniqueBoxContainer{
+    max-height: 189px;
+    position: relative;
+    top: -140px;
     border: none;
     background: none;
+}
+p.nbBox {
+    position: relative;
+    top: 194px;
+    z-index: 1;
+    color: white;
+    font-size: 90px;
 }
 object{
 
