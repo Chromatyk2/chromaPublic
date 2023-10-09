@@ -48,10 +48,9 @@ function UniqueBoxV2(props) {
         }
     }, [])
     function openBox(e) {
-        setRandomNumber(Math.floor(Math.random()*max) + 1);
-        var img = document.getElementById("imgGame"+randomNumber);
         setTimeout(function(){
-            img.toggleClass("gettedGameImg");
+            setRandomNumber(Math.floor(Math.random()*max) + 1);
+            document.getElementById("imgGame"+randomNumber).toggleClass("gettedGameImg");
         }.bind(this), 800)
     }
     return(
