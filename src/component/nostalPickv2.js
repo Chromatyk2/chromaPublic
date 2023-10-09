@@ -3,7 +3,7 @@ import '../App.css';
 import UniqueBox from "./UniqueBox";
 import $ from 'jquery';
 import Modal from "react-modal";
-import OpeningBooster from "./openingBooster";
+import UniqueBoxV2 from "./uniqueBoxV2.js";
 import Axios from "axios";
 
 function NostalPickV2(props) {
