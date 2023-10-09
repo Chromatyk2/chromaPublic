@@ -59,14 +59,23 @@ function UniqueBoxV2(props) {
                 if(legendary > 64){
                     var ultra = Math.floor(Math.random() * 100);
                     if(ultra > 94){
-                        setTypeBox("ultra");
-                    }else
-                        setTypeBox("legendary");
+                        setTimeout(function() {
+                            setTypeBox("ultra");
+                        }.bind(this), 5000)
+                    }else{
+                        setTimeout(function() {
+                            setTypeBox("legendary");
+                        }.bind(this), 3000)
+                    }
                 }else{
-                    setTypeBox("epic");
+                    setTimeout(function() {
+                        setTypeBox("epic");
+                    }.bind(this), 2000)
                 }
             }else {
-                setTypeBox("rare");
+                setTimeout(function() {
+                    setTypeBox("rare");
+                }.bind(this), 1000)
             }
         }else{
             setTypeBox("basic");
