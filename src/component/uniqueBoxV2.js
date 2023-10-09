@@ -48,6 +48,7 @@ function UniqueBoxV2(props) {
         }
     }, [])
     function openBox(e) {
+        document.getElementsByClassName("gettedGameImg").style.display = "block";
         setRandomNumber(Math.floor(Math.random()*max) + 1);
     }
     return(

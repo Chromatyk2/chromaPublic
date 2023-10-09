@@ -1490,16 +1490,17 @@ img.gettedBoxImg {
     right: 0;
 }
 .gettedGameImg{
+    display: none;
     width: 600px;
     animation: showGame 2s;
     animation-fill-mode: forwards;
 }
 @keyframes showGame {
     0% {
-        transform:scale(0.0001);
+        transform: scale(.0001) translateX(500px) translateY(500px);
     }
     100% {
-        transform:scale(1);
+        transform: scale(1) translateX(0) translateY(0);
     }
 }
 @keyframes bounceIn {
