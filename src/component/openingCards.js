@@ -9,7 +9,6 @@ import Modal from 'react-modal';
 
 function OpeningCards(props) {
 
-    console.log(props.items);
     const [tenCards, setTenCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
@@ -186,6 +185,7 @@ function OpeningCards(props) {
                     var rarityArray = props.rarities.filter(item => item.stade == 1);
                     const rareArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
                     const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];
+                    console.log(randomRare);
                     Axios.post('/api/addCard',
                         {
                             pseudo:props.user,
