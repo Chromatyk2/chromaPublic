@@ -10,7 +10,7 @@ function UniqueBoxV2(props) {
     const [randomNumber, setRandomNumber] = React.useState(null)
     const [max, setMax] = React.useState(null);
     const [typeBox, setTypeBox] = React.useState("basic");
-    const [finalState, setFinalState] = React.useState("");
+    const [finalState, setFinalState] = React.useState(null);
     useEffect(() => {
         if(props.consolePicked == "GB"){
             setMax(432);
