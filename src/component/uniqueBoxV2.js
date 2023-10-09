@@ -126,7 +126,9 @@ function UniqueBoxV2(props) {
     }
     useEffect(() => {
         if(finalState !== null){
-            document.getElementById("imgGame"+randomNumber).style.display = "block";
+            setTimeout(function() {
+                document.getElementById("imgGame"+randomNumber).style.display = "block";
+            }.bind(this), 500)
         }
     }, [finalState])
     return(
