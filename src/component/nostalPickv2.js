@@ -15,6 +15,7 @@ function NostalPickV2(props) {
                         consoles.splice(consoleIndex, 1);
                         return (
                             <button className={"uniqueBoxContainer"}>
+                                <p>{val}</p>
                                 <img className={"imgBox"} src={"/basicBox.png"}/>
                             </button>
                         )
