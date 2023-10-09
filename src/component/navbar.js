@@ -33,6 +33,16 @@ function NavBar(props) {
                   <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/">Accueil</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">TCG</Link>
+                      {pseudo == "chromatyk" &&
+                                    <>
+                                      {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
+                                      {/*  <Link className="navLink" to="/leaderboard">Classement</Link>*/}
+                                      {/*  <Link className="navLink myTradesLink" to="/myTrades">Mes Echanges {count > 0 && <span className="myCountProposition">{count}</span>}</Link>*/}
+                                      {/*  <Link className="navLink" to="/tradePlace">Place aux echanges</Link>*/}
+                                      {/*<Link className="navLink" to="/aNu5YwZ5X75m5j">Note</Link>*/}
+                                      <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>
+                                    </>
+                      }
                   </Nav>
               </Navbar.Collapse>
           </Container>
