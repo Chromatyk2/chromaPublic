@@ -29,9 +29,10 @@ function NostalPickV2(props) {
         },
     };
     function openModal(e) {
-        console.log(e.target);
-        var uConsole = e.target.getAttribute("uConsole");
-        setPickConsole(uConsole);
+        var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
+        var consoleIndex = consoles.indexOf(uniqueConsole);
+        consoles.splice(consoleIndex, 1);
+        setPickConsole(uniqueConsole);
         setIsOpen(true);
     }
     return(
