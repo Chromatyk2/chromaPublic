@@ -9,8 +9,10 @@ import Axios from "axios";
 function NostalPickV2(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
-    var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES"];
-    var numbers = [1,2,3,4,5,6,7,8,9];
+    useEffect(() => {
+        var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES"];
+        var numbers = [1,2,3,4,5,6,7,8,9];
+    }, []);
     const customStyles = {
         content: {
             position:'initial',
