@@ -15,7 +15,7 @@ function NostalPickV2(props) {
                         consoles.splice(consoleIndex, 1);
                         return (
                             <div className={"uniqueBoxContainer"}>
-                                <img src={"/images/basicBox.png"}/>
+                                <img className={"imgBox"} src={"/basicBox.png"}/>
                             </div>
                         )
                     })}
