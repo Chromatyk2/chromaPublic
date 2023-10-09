@@ -37,7 +37,9 @@ function NostalPickV2(props) {
         var buttonClick = document.getElementById("buttonBox"+uConsole);
         setPickConsole(uConsole);
         buttonClick.classList.toggle("getBox");
-        setIsOpen(true);
+        setTimeout(function() { //Start the timer
+            setIsOpen(true);
+        }.bind(this), 1100)
     }
     return(
         <>
