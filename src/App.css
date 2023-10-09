@@ -1489,6 +1489,22 @@ img.gettedBoxImg {
     bottom: 0;
     right: 0;
 }
+.gettedGameImg{
+    position: absolute;
+    animation: showGame 1s;
+}
+@keyframes showGame {
+    0% {
+        width: 0px;
+        bottom: 0;
+        right: 0;
+    }
+    100% {
+        width: 600px;
+        top: 0;
+        right: 200px;
+    }
+}
 @keyframes bounceIn {
     0% {
         visibility: visible;
