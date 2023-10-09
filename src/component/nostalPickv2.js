@@ -55,9 +55,7 @@ function NostalPickV2(props) {
                     })}
             </div>
             <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Example Modal">
-                <div className={"gettedBoxContainer"}>
-                    <img uConsole={randomConsoles[val]} className={"gettedBoxImg"} src={"/basicBox.png"}/>
-                </div>
+                <UniqueBoxV2 consolePicked = {pickConsole} />
             </Modal>
         </>
     )
