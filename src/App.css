@@ -1475,9 +1475,19 @@ object{
     animation:bounceOut 1s;
     animation-fill-mode: forwards;
 }
-.gettedBoxContainer{
-    animation:bounceIn 1s;
+.gettedBoxContainer {
+    -webkit-animation: bounceIn 1s;
+    animation: bounceIn 1s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    width: 50%;
+    height: 85vh;
+}
+img.gettedBoxImg {
+    width: 350px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 @keyframes bounceIn {
     0% {
