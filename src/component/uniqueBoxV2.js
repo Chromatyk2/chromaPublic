@@ -159,10 +159,10 @@ function UniqueBoxV2(props) {
                         <p className={"textResultBox"}>
                             Tu gagnes
                             {
-                                finalState == 'ultra' ? '10 000 pts' :
-                                    finalState == 'legendary' ? '5 000 pts' :
-                                        finalState == 'epic' ? '1 000pts' :
-                                            finalState == 'rare' ? '500 pts' : 'rien'
+                                finalState == 'ultra' ? ' 10 000 pts' :
+                                    finalState == 'legendary' ? ' 5 000 pts' :
+                                        finalState == 'epic' ? '  000pts' :
+                                            finalState == 'rare' ? ' 500 pts' : ' rien'
                             }
                         </p>
                     </div>
