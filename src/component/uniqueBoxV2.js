@@ -50,6 +50,7 @@ function UniqueBoxV2(props) {
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
+        document.getElementById("box").classList.toggle("spinBox");
         var rare = Math.floor(Math.random() * 100);
         if(rare < 100){
             var epic = Math.floor(Math.random() * 100);
