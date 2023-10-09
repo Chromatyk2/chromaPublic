@@ -50,6 +50,7 @@ function UniqueBoxV2(props) {
         }
     }, [])
     function openBox(e) {
+        $('audio#karateka')[0].play()
         setRandomNumber(Math.floor(Math.random()*max) + 1);
         document.getElementById("box").classList.toggle("spinBox");
         var rare = Math.floor(Math.random() * 100);
@@ -76,6 +77,8 @@ function UniqueBoxV2(props) {
                             document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("ultraOpen");
                             setFinalState("ultra");
+                            $('audio#karateka')[0].pause()
+                            $('audio#karateka')[0].currentTime = 0
                         }.bind(this), 8000)
                     }else{
                         setTimeout(function() {
@@ -91,6 +94,8 @@ function UniqueBoxV2(props) {
                             document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("legendaryOpen");
                             setFinalState("lgendary");
+                            $('audio#karateka')[0].pause()
+                            $('audio#karateka')[0].currentTime = 0
                         }.bind(this), 6000)
                     }
                 }else{
@@ -104,6 +109,8 @@ function UniqueBoxV2(props) {
                         document.getElementById("box").classList.toggle("spinBox");
                         setTypeBox("epicOpen");
                         setFinalState("epic");
+                        $('audio#karateka')[0].pause()
+                        $('audio#karateka')[0].currentTime = 0
                     }.bind(this), 4000)
                 }
             }else {
@@ -114,6 +121,8 @@ function UniqueBoxV2(props) {
                     document.getElementById("box").classList.toggle("spinBox");
                     setTypeBox("rareOpen");
                     setFinalState("rare");
+                    $('audio#karateka')[0].pause()
+                    $('audio#karateka')[0].currentTime = 0
                 }.bind(this), 3000)
             }
         }else{
@@ -121,6 +130,8 @@ function UniqueBoxV2(props) {
                 document.getElementById("box").classList.toggle("spinBox");
                 setTypeBox("basicOpen");
                 setFinalState("basic");
+                $('audio#karateka')[0].pause()
+                $('audio#karateka')[0].currentTime = 0
             }.bind(this), 100)
         }
     }
@@ -142,6 +153,24 @@ function UniqueBoxV2(props) {
                 }
                 <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/"+typeBox+".png"} />
             </div>
+            <audio id="karateka">
+                <source src="sounds/karateka.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="loose">
+                <source src="sounds/Loose.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="greenWin">
+                <source src="sounds/GreenWin.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="blueWin">
+                <source src="sounds/BlueWin.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="orangeWin">
+                <source src="sounds/OrangeWin.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="rainbowWin">
+                <source src="sounds/RainbowWin.mp3" type="audio/mpeg"/>
+            </audio>
         </>
     )
 }
