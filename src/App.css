@@ -1490,6 +1490,7 @@ img.gettedBoxImg {
     right: 0;
 }
 .gettedGameImg{
+    display: block;
     width: 600px;
     animation: showGame 2s;
     animation-fill-mode: forwards;

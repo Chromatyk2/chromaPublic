@@ -52,7 +52,7 @@ function UniqueBoxV2(props) {
     }
     useEffect(() => {
         if(randomNumber !== null){
-            document.getElementById("imgGame"+randomNumber).style.display = "block";
+            document.getElementById("imgGame"+randomNumber).toggleClass("gettedGameImg");
         }
     }, [randomNumber])
     return(
