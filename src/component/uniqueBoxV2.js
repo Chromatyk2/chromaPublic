@@ -125,27 +125,7 @@ function UniqueBoxV2(props) {
         }
     }
     useEffect(() => {
-        if(finalState == "basic"){
-            setTimeout(function() {
-                document.getElementById("imgGame"+randomNumber).style.display = "block";
-            }.bind(this), 100)
-        }else if(finalState == "rare"){
-            setTimeout(function() {
-                document.getElementById("imgGame"+randomNumber).style.display = "block";
-            }.bind(this), 3000)
-        }else if(finalState == "epic"){
-            setTimeout(function() {
-                document.getElementById("imgGame"+randomNumber).style.display = "block";
-            }.bind(this), 4000)
-        }else if(finalState == "legendary"){
-            setTimeout(function() {
-                document.getElementById("imgGame"+randomNumber).style.display = "block";
-            }.bind(this), 6000)
-        }else if(finalState == "ultra"){
-            setTimeout(function() {
-                document.getElementById("imgGame"+randomNumber).style.display = "block";
-            }.bind(this), 8000)
-        }
+        document.getElementById("imgGame"+randomNumber).style.display = "block";
     }, [finalState])
     return(
         <>
