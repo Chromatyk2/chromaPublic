@@ -9,16 +9,16 @@ function NostalPickV2(props) {
     return(
         <>
             <div className="boxContainer">
-                <ul>
                     {numbers.map((val, key) => {
                         var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
                         var consoleIndex = consoles.indexOf(uniqueConsole);
                         consoles.splice(consoleIndex, 1);
                         return (
-                            <UniqueBox number={val} console={uniqueConsole}/>
+                            <div className={"uniqueBoxContainer"}>
+                                <img src={"/images/basicBox.png"}/>
+                            </div>
                         )
                     })}
-                </ul>
             </div>
         </>
     )
