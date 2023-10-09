@@ -49,7 +49,7 @@ function NostalPickV2(props) {
                         return (
                             <button id={"buttonBox"+randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
-                                <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basicBox.png"}/>
+                                <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                         )
                     })}
