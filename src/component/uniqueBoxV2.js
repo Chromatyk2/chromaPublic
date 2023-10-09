@@ -49,11 +49,12 @@ function UniqueBoxV2(props) {
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
+        console.log(randomNumber);
     }
     return(
         <>
             <div className={"gettedBoxContainer"}>
-                {max &&
+                {randomNumber &&
                     <img className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette("+randomNumber+").png"}/>
                 }
                 <img onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/basicBox.png"}/>
