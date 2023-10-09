@@ -22,7 +22,7 @@ function SellCards(props) {
     }
     useEffect(() => {
         Axios
-            .get("/api/getNbCards/"+props.user)
+            .get("/api/getMyNbDouble/"+props.user)
             .then(function(response){
                 setNbCards(response.data);
             })
@@ -43,7 +43,7 @@ function SellCards(props) {
                                 <div className={"containerImgBooster"}>
                                     <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
-                                <p className="pokemonNameTrade">{val.nbCard} carte(s)</p>
+                                <p className="pokemonNameTrade">{val.nbCard} carte(s) en plusieurs éxemplaires</p>
                                 <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                             </div>
                         )
