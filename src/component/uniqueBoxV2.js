@@ -50,7 +50,27 @@ function UniqueBoxV2(props) {
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
-        setTypeBox("legendary");
+        var rare = Math.floor(Math.random() * 100);
+        if(rare < 76){
+            var epic = Math.floor(Math.random() * 100);
+            if(epic > 59) {
+                var legendary = Math.floor(Math.random() * 100);
+                if(legendary > 67){
+                    var ultra = Math.floor(Math.random() * 100);
+                    if(ultra > 89){
+                        setTypeBox("ultra");
+                    }else
+                        setTypeBox("legendary");
+                }
+                }else{
+                    setTypeBox("epic");
+                }
+            }else {
+                setTypeBox("rare");
+            }
+        }else{
+            setTypeBox("basic");
+        }
     }
     useEffect(() => {
         if(randomNumber !== null){
