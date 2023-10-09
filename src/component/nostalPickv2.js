@@ -41,6 +41,9 @@ function NostalPickV2(props) {
             setIsOpen(true);
         }.bind(this), 800)
     }
+    function handleState() {
+        setIsOpen(false);
+    }
     return(
         <>
             <div className="boxContainer">

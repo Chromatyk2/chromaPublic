@@ -131,11 +131,14 @@ function UniqueBoxV2(props) {
             }.bind(this), 300)
         }
     }, [finalState])
+    function handleState() {
+        props.change();
+    }
     return(
         <>
             <div className={"gettedBoxContainer"}>
                 {randomNumber &&
-                    <img style={{display:"none"}} id={"imgGame"+randomNumber} className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                    <img onClick={handleState} style={{display:"none"}} id={"imgGame"+randomNumber} className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
                 <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/"+typeBox+".png"} />
             </div>
