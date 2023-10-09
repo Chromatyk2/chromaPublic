@@ -8,46 +8,46 @@ import Axios from "axios";
 
 function UniqueBoxV2(props) {
     const [randomNumber, setRandomNumber] = React.useState(null)
-    const [max, setMax] = React.useState(0);
+    const [max, setMax] = React.useState(null);
+    useEffect(() => {
+    }, [])
+    function openBox(e) {
         if(props.console == "GB"){
-            setMax(432);
+            setRandomNumber(Math.floor(Math.random() * 432) + 1);
         }
         if(props.console == "GBA"){
-            setMax(424);
+            setRandomNumber(Math.floor(Math.random()*424) + 1);
         }
         if(props.console == "GBC"){
-            setMax(233);
+            setRandomNumber(Math.floor(Math.random()*233) + 1);
         }
         if(props.console == "MASTER SYSTEM"){
-            setMax(194);
+            setRandomNumber(Math.floor(Math.random()*194) + 1);
         }
         if(props.console == "MEGADRIVE"){
-            setMax(400);
+            setRandomNumber(Math.floor(Math.random()*400) + 1);
         }
         if(props.console == "N64"){
-            setMax(133);
+            setRandomNumber(Math.floor(Math.random()*133) + 1);
         }
         if(props.console == "NDS"){
-            setMax(488);
+            setRandomNumber(Math.floor(Math.random()*488) + 1);
         }
         if(props.console == "NES"){
-            setMax(280);
+            setRandomNumber(Math.floor(Math.random()*280) + 1);
         }
         if(props.console == "NGC"){
-            setMax(234);
+            setRandomNumber(Math.floor(Math.random()*234) + 1);
         }
         if(props.console == "PS1"){
-            setMax(147);
+            setRandomNumber(Math.floor(Math.random()*147) + 1);
         }
         if(props.console == "PSP"){
-            setMax(286);
+            setRandomNumber(Math.floor(Math.random()*286) + 1);
         }
         if(props.console == "SNES"){
-            setMax(458);
+            setRandomNumber(Math.floor(Math.random()*458) + 1);
         }
-    function openBox(e) {
-        setRandomNumber(Math.floor((Math.random() * max) + 1));
-        console.log(randomNumber);
     }
     return(
         <>
