@@ -33,9 +33,6 @@ function NostalPick(props) {
       <>
         <ul className="box-list">
           {numbers.map((val, key) => {
-            var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
-            var consoleIndex = consoles.indexOf(uniqueConsole);
-            consoles.splice(consoleIndex, 1);
             return (
               <UniqueBox number={val} console={uniqueConsole}/>
             )
