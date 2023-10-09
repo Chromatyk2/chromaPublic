@@ -50,11 +50,16 @@ function UniqueBoxV2(props) {
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
     }
+    useEffect(() => {
+        if(randomNumber !== null){
+            document.getElementById("imgGame"+randomNumber).style.display = "block";
+        }
+    }, [randomNumber])
     return(
         <>
             <div className={"gettedBoxContainer"}>
                 {randomNumber &&
-                    <img className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                    <img style={{display:"none"}} id={"imgGame"+randomNumber} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
                 <img onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/basicBox.png"}/>
             </div>
