@@ -1484,12 +1484,13 @@ object{
     animation-fill-mode: forwards;
     width: 50%;
     height: 85vh;
+    overflow: hidden;
 }
 img.gettedBoxImg {
-    width: 350px;
+    bottom: 50px;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    right: 50px;
+    width: 350px;
 }
 .gettedGameImg{
     visibility: visible;
