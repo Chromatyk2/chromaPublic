@@ -79,6 +79,7 @@ function UniqueBoxV2(props) {
                             setFinalState("ultra");
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
+                            $('audio#rainbowWin')[0].play()
                         }.bind(this), 8000)
                     }else{
                         setTimeout(function() {
@@ -94,6 +95,7 @@ function UniqueBoxV2(props) {
                             document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("legendaryOpen");
                             setFinalState("lgendary");
+                            $('audio#orangeWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
                         }.bind(this), 6000)
@@ -111,6 +113,7 @@ function UniqueBoxV2(props) {
                         setFinalState("epic");
                         $('audio#karateka')[0].pause()
                         $('audio#karateka')[0].currentTime = 0
+                        $('audio#blueWin')[0].play()
                     }.bind(this), 4000)
                 }
             }else {
@@ -123,6 +126,7 @@ function UniqueBoxV2(props) {
                     setFinalState("rare");
                     $('audio#karateka')[0].pause()
                     $('audio#karateka')[0].currentTime = 0
+                    $('audio#greenWin')[0].play()
                 }.bind(this), 3000)
             }
         }else{
@@ -132,6 +136,7 @@ function UniqueBoxV2(props) {
                 setFinalState("basic");
                 $('audio#karateka')[0].pause()
                 $('audio#karateka')[0].currentTime = 0
+                $('audio#loose')[0].play()
             }.bind(this), 100)
         }
     }
