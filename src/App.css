@@ -1513,6 +1513,9 @@ img.gettedBoxImg {
     color: white;
     text-shadow: 0 0 15px BLACK;
 }
+.imgInBox{
+    width: 600px;
+}
 @keyframes showGame {
     0% {
         transform: scale(.0001) translateX(-1500px) translateY(-1500px);

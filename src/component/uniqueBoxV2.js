@@ -155,7 +155,7 @@ function UniqueBoxV2(props) {
             <div className={"gettedBoxContainer"}>
                 {randomNumber &&
                     <div style={{display:"none"}} className={"gettedGameImg"} onClick={handleState} id={"imgGame"+randomNumber}>
-                        <img src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                        <img className={"imgInBox"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                         <p className={"textResultBox"}>
                             Tu gagnes
                             {
