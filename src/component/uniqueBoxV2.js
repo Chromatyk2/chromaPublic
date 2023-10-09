@@ -7,6 +7,7 @@ import OpeningBooster from "./openingBooster";
 import Axios from "axios";
 
 function UniqueBoxV2(props) {
+    document.getElementById("box").style.backgroundImage = "url(/rareBox.png)";
     const [randomNumber, setRandomNumber] = React.useState(null)
     const [max, setMax] = React.useState(null);
     useEffect(() => {
@@ -53,7 +54,6 @@ function UniqueBoxV2(props) {
     useEffect(() => {
         if(randomNumber !== null){
             document.getElementById("imgGame"+randomNumber).style.display = "block";
-
         }
     }, [randomNumber])
     return(
@@ -62,7 +62,7 @@ function UniqueBoxV2(props) {
                 {randomNumber &&
                     <img style={{display:"none"}} id={"imgGame"+randomNumber} className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
-                <img onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/basicBox.png"}/>
+                <div id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}></div>
             </div>
         </>
     )
