@@ -34,7 +34,9 @@ function NostalPickV2(props) {
     };
     function openModal(e) {
         var uConsole = e.target.getAttribute("uConsole");
+        var buttonClick = document.getElementsById('buttonBox'+uConsole);
         setPickConsole(uConsole);
+        buttonClick.toggleClass("getBox");
         setIsOpen(true);
     }
     return(
@@ -43,7 +45,7 @@ function NostalPickV2(props) {
                     {randomConsoles &&
                         numbers.map((val, key) => {
                         return (
-                            <button onClick={openModal} className={"uniqueBoxContainer"}>
+                            <button id={"buttonBox"+randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
                                 <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basicBox.png"}/>
                             </button>
