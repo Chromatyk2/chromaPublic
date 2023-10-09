@@ -1371,19 +1371,19 @@ img.imgBox {
     width: 226px;
     animation: float 6s ease-in-out infinite;
 }
-.uniqueBoxContainer{
-    max-height: 189px;
-    position: relative;
-    top: -140px;
-    border: none;
+.uniqueBoxContainer {
     background: none;
+    border: none;
+    position: relative;
 }
 p.nbBox {
-    position: relative;
-    top: 194px;
-    z-index: 1;
-    color: white;
+    color: #fff;
     font-size: 90px;
+    position: absolute;
+    top: 86px;
+    z-index: 1;
+    text-align: left;
+    text-shadow: 2px 3px 10px black;
 }
 object{
 
