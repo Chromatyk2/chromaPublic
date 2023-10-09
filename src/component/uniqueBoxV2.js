@@ -53,7 +53,9 @@ function UniqueBoxV2(props) {
     return(
         <>
             <div className={"gettedBoxContainer"}>
-                <img className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette("+randomNumber+").png"}/>
+                {max &&
+                    <img className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette("+randomNumber+").png"}/>
+                }
                 <img onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/basicBox.png"}/>
             </div>
         </>
