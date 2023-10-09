@@ -91,16 +91,18 @@ function UniqueBoxV2(props) {
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                     setTypeBox("rareOpen");
-                }.bind(this), 2000)
+                }.bind(this), 3000)
             }
         }else{
-            setTypeBox("basic");
+            setTimeout(function() {
+                document.getElementById("box").classList.toggle("spinBox");
+                setTypeBox("basicOpen");
+            }.bind(this), 100)
         }
     }
     useEffect(() => {
         if(randomNumber !== null){
             document.getElementById("imgGame"+randomNumber).style.display = "block";
-
         }
     }, [randomNumber])
     return(
