@@ -39,7 +39,7 @@ function NostalPickV2(props) {
         buttonClick.classList.toggle("getBox");
         setTimeout(function() { //Start the timer
             setIsOpen(true);
-        }.bind(this), 1000)
+        }.bind(this), 900)
     }
     return(
         <>
