@@ -27,8 +27,8 @@ function NostalPickV2(props) {
         },
     };
     function openModal(e) {
-        var uniqueConsole = e.target.getDataAttribute("uConsole";)
-        setPickConsole(uniqueConsole);
+        var uConsole = e.target.getAttribute("uConsole");
+        setPickConsole(uConsole);
         setIsOpen(true);
     }
     return(
