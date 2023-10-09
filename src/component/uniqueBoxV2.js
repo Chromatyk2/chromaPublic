@@ -9,6 +9,7 @@ import Axios from "axios";
 function UniqueBoxV2(props) {
     const [randomNumber, setRandomNumber] = React.useState(null)
     const [max, setMax] = React.useState(null);
+    const [typeBox, setTypeBox] = React.useState("basic");
     useEffect(() => {
         if(props.consolePicked == "GB"){
             setMax(432);
@@ -49,11 +50,12 @@ function UniqueBoxV2(props) {
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
-        document.getElementById("box").style.backgroundImage = "url(/rareBox.png)";
+        document.getElementById("box").toggleAttribute(é)
     }
     useEffect(() => {
         if(randomNumber !== null){
             document.getElementById("imgGame"+randomNumber).style.display = "block";
+
         }
     }, [randomNumber])
     return(
@@ -62,7 +64,7 @@ function UniqueBoxV2(props) {
                 {randomNumber &&
                     <img style={{display:"none"}} id={"imgGame"+randomNumber} className={"gettedGameImg"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
                 }
-                <div id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} style={{backgroundImage:`url("/basicBox.png")`}}></div>
+                <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={typeBox == "rare" ? "/rareBox.png" : typeBox == "epic" ? "/epicBox.png" : typeBox == "legendary" ? "/legendaryBox.png" : typeBox == "ultra" ? "/ultraBox.png" : "/basicBox.png"}/>
             </div>
         </>
     )
