@@ -60,6 +60,15 @@ function UniqueBoxV2(props) {
                     var ultra = Math.floor(Math.random() * 100);
                     if(ultra > 94){
                         setTimeout(function() {
+                            setTypeBox("rare");
+                        }.bind(this), 1000)
+                        setTimeout(function() {
+                            setTypeBox("epic");
+                        }.bind(this), 3000)
+                        setTimeout(function() {
+                            setTypeBox("legendary");
+                        }.bind(this), 5000)
+                        setTimeout(function() {
                             setTypeBox("ultra");
                         }.bind(this), 7000)
                         setTimeout(function() {
@@ -67,6 +76,12 @@ function UniqueBoxV2(props) {
                             setTypeBox("ultraOpen");
                         }.bind(this), 8000)
                     }else{
+                        setTimeout(function() {
+                            setTypeBox("rare");
+                        }.bind(this), 1000)
+                        setTimeout(function() {
+                            setTypeBox("epic");
+                        }.bind(this), 3000)
                         setTimeout(function() {
                             setTypeBox("legendary");
                         }.bind(this), 5000)
@@ -76,6 +91,9 @@ function UniqueBoxV2(props) {
                         }.bind(this), 6000)
                     }
                 }else{
+                    setTimeout(function() {
+                        setTypeBox("rare");
+                    }.bind(this), 1000)
                     setTimeout(function() {
                         setTypeBox("epic");
                     }.bind(this), 3000)
