@@ -1493,19 +1493,23 @@ img.gettedBoxImg {
     width: 350px;
 }
 .gettedGameImg{
-    visibility: visible;
-    width: 600px;
+     -webkit-animation: showGame 2s;
     animation: showGame 2s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     position: relative;
+    visibility: visible;
+    width: 600px;
     z-index: 1;
+    margin-left: 400px;
+    bottom: -300px;
 }
 @keyframes showGame {
     0% {
-        transform: scale(.0001) translateX(-500px) translateY(-500px);
+        transform: scale(.0001) translateX(-1500px) translateY(-1500px);
     }
     100% {
-        transform: scale(1) translateX(0) translateY(0);
+        transform: scale(1) translateX(-200px) translateY(-250px);
     }
 }
 @keyframes bounceIn {
