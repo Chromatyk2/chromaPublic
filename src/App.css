@@ -1475,7 +1475,7 @@ object{
     animation:bounceOut 1s;
     animation-fill-mode: forwards;
 }
-.gettedBox{
+.gettedBoxContainer{
     animation:bounceIn 1s;
     animation-fill-mode: forwards;
 }
