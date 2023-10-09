@@ -9,10 +9,11 @@ import Axios from "axios";
 function NostalPickV2(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
+    const [randomConsoles, setRandomConsoles] = React.useState(null);
     useEffect(() => {
         var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES"];
         var numbers = [1,2,3,4,5,6,7,8,9];
-        var consoleArray = consoleArray.sort(() => Math.random() - 0.5);
+        setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
     }, []);
     const customStyles = {
         content: {
@@ -39,11 +40,12 @@ function NostalPickV2(props) {
     return(
         <>
             <div className="boxContainer">
-                    {numbers.map((val, key) => {
+                    {randomConsoles &&
+                        numbers.map((val, key) => {
                         return (
                             <button onClick={openModal} className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
-                                <img uConsole={consoleArray[val]} className={"imgBox"} src={"/basicBox.png"}/>
+                                <img uConsole={randomConsoles} className={"imgBox"} src={"/basicBox.png"}/>
                             </button>
                         )
                     })}
