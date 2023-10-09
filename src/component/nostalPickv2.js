@@ -39,7 +39,7 @@ function NostalPickV2(props) {
         buttonClick.classList.toggle("getBox");
         setTimeout(function() { //Start the timer
             setIsOpen(true);
-        }.bind(this), 1100)
+        }.bind(this), 1000)
     }
     return(
         <>
@@ -55,7 +55,9 @@ function NostalPickV2(props) {
                     })}
             </div>
             <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Example Modal">
-                <p>{pickConsole}</p>
+                <div className={"gettedBoxContainer"}>
+                    <img uConsole={randomConsoles[val]} className={"gettedBoxImg"} src={"/basicBox.png"}/>
+                </div>
             </Modal>
         </>
     )

@@ -1475,6 +1475,10 @@ object{
     animation:bounceOut 1s;
     animation-fill-mode: forwards;
 }
+.gettedBox{
+    animation:bounceIn 1s;
+    animation-fill-mode: forwards;
+}
 @keyframes bounceIn {
     0% {
         visibility: visible;
