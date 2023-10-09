@@ -12,6 +12,7 @@ function NostalPickV2(props) {
     useEffect(() => {
         var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES"];
         var numbers = [1,2,3,4,5,6,7,8,9];
+        var consoleArray = consoleArray.sort(() => Math.random() - 0.5);
     }, []);
     const customStyles = {
         content: {
@@ -39,13 +40,10 @@ function NostalPickV2(props) {
         <>
             <div className="boxContainer">
                     {numbers.map((val, key) => {
-                        var uniqueConsole = consoles[Math.floor(Math.random()*consoles.length)];
-                        var consoleIndex = consoles.indexOf(uniqueConsole);
-                        consoles.splice(consoleIndex, 1);
                         return (
                             <button onClick={openModal} className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
-                                <img uConsole={uniqueConsole} className={"imgBox"} src={"/basicBox.png"}/>
+                                <img uConsole={consoleArray[val]} className={"imgBox"} src={"/basicBox.png"}/>
                             </button>
                         )
                     })}
