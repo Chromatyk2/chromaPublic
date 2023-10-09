@@ -42,8 +42,8 @@ function NostalPickV2(props) {
                         consoles.splice(consoleIndex, 1);
                         return (
                             <button onClick={openModal} className={"uniqueBoxContainer"} value={uniqueConsole}>
-                                <p className={"nbBox"}>{val}</p>
-                                <img className={"imgBox"} src={"/basicBox.png"}/>
+                                <p value={uniqueConsole} className={"nbBox"}>{val}</p>
+                                <img value={uniqueConsole} className={"imgBox"} src={"/basicBox.png"}/>
                             </button>
                         )
                     })}
