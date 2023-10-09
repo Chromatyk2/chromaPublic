@@ -125,7 +125,9 @@ function UniqueBoxV2(props) {
         }
     }
     useEffect(() => {
-        document.getElementById("imgGame"+randomNumber).style.display = "block";
+        if(finalState !== null){
+            document.getElementById("imgGame"+randomNumber).style.display = "block";
+        }
     }, [finalState])
     return(
         <>
