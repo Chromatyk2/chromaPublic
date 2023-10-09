@@ -1502,7 +1502,7 @@ img.gettedBoxImg {
 }
 @keyframes showGame {
     0% {
-        transform: scale(.0001) translateX(500px) translateY(500px);
+        transform: scale(.0001) translateX(-500px) translateY(-500px);
     }
     100% {
         transform: scale(1) translateX(0) translateY(0);

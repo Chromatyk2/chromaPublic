@@ -128,7 +128,7 @@ function UniqueBoxV2(props) {
         if(finalState !== null){
             setTimeout(function() {
                 document.getElementById("imgGame"+randomNumber).style.display = "block";
-            }.bind(this), 500)
+            }.bind(this), 300)
         }
     }, [finalState])
     return(
