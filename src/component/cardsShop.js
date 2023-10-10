@@ -50,7 +50,7 @@ function CardsShop(props) {
                                     Axios
                                         .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
                                         .then(function (response) {
-                                            if (response.data === null) {
+                                            if (response.data == null) {
                                                 Axios.post('/api/addBooster',
                                                     {
                                                         pseudo: props.user,
