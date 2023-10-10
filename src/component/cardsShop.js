@@ -30,6 +30,7 @@ function CardsShop(props) {
     function buyBooster(e) {
         setLoading(true);
         var idBooster = e.target.value;
+        var nbPick = document.getElementById("nbBoosterToBuy"+idBooster).value;
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
@@ -46,15 +47,31 @@ function CardsShop(props) {
                                     setPoints(response.data[0].points);
                                 }).then(
                                 (result) => {
-                                    Axios.post('/api/addBooster',
-                                        {
-                                            pseudo:props.user,
-                                            booster:idBooster
-                                        }).then(
-                                        (result) => {
-                                            setLoading(false);
-                                        }
-                                    )
+                                    Axios
+                                        .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
+                                        .then(function (response) {
+                                            if (response.data === null) {
+                                                Axios.post('/api/addBooster',
+                                                    {
+                                                        pseudo: props.user,
+                                                        booster: idBooster,
+                                                        nbBooster: nbPick
+                                                    }).then(
+                                                    (result) => {
+                                                        setLoading(false);
+                                                    })
+                                            } else {
+                                                Axios.post('/api/updateBooster',
+                                                    {
+                                                        pseudo: props.user,
+                                                        booster: idBooster,
+                                                        nbBooster: nbPick
+                                                    }).then(
+                                                    (result) => {
+                                                        setLoading(false);
+                                                    })
+                                            }
+                                        })
                                 }
                             )
                         }
@@ -206,7 +223,7 @@ return (
                                 :
                                 <button className="guessTradeButton">Card Points manquants</button>
                             }
-                            <input type="number" min="0" max="100" />
+                            <input id={"nbBoosterToBuy"+val.name} type="number" min="0" max="100" />
                         </div>
                     )
                 })
