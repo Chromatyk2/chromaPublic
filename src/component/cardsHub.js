@@ -123,7 +123,9 @@ function CardsHub(props) {
             <div className="leaderBoardSwitch">
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
-                <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
+                {pseudo == "chromatyk" &&
+                    <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
+                }
                 <button value="sellCards" onClick={displayTcgContent}>Echange Doublons</button>
                 {pseudo == "chromatyk" &&
                     <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
@@ -137,7 +139,9 @@ function CardsHub(props) {
                     <option value="">Où souhaitez vous aller ?</option>
                     <option value="myCards">Mes Cartes</option>
                     <option value="myBoosters">Mes Boosters</option>
+                    {pseudo == "chromatyk" &&
                     <option value="cardsShop">Boutique</option>
+                    }
                     <option value="sellCards">Echange Doublons</option>
                 </select>
             </div>
