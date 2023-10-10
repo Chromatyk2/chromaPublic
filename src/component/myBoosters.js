@@ -67,15 +67,17 @@ function MyBoosters(props) {
             <div id={"cardsContainer"}>
                 {boosters &&
                     boosters.map((val, key) => {
-                        return(
-                            <div className="uniqueTradeContainer">
-                                <div className={"containerImgBooster"}>
-                                    <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                        if(val.nbBooster > 0){
+                            return(
+                                <div className="uniqueTradeContainer">
+                                    <div className={"containerImgBooster"}>
+                                        <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>
+                                    <p className="pokemonNameTrade">Possédé(s) : {val.nbBooster}</p>
+                                    <button value={val.booster} onClick={openModal} className="guessTradeButton">Ouvrir</button>
                                 </div>
-                                <p className="pokemonNameTrade">Possédé(s) : {val.nbBooster}</p>
-                                <button value={val.booster} onClick={openModal} className="guessTradeButton">Ouvrir</button>
-                            </div>
-                        )
+                            )
+                        }
                     })
                 }
             </div>
