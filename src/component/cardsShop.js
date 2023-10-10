@@ -88,10 +88,11 @@ function CardsShop(props) {
         var nbPick = document.getElementById("nbBoosterToBuyRandom").value;
         var totalPointsRemove = 500 * nbPick;
         for(var i=0;i<nbPick;i++){
-            if(response.data[0].points - totalPointsRemove >= 0) {
                 Axios
                     .get("/api/getCardsPoint/" + props.user)
                     .then(function (response) {
+
+                        if(response.data[0].points - totalPointsRemove >= 0) {
                             if (response.data[0].points - 500 >= 0) {
                                 Axios.post('/api/removeCardsPointRandom',
                                     {
@@ -137,8 +138,8 @@ function CardsShop(props) {
                                 )
                             }
                         }
+                    }
                     )
-            }
         }
     }
 
