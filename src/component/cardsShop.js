@@ -107,14 +107,15 @@ function CardsShop(props) {
                                                 setPoints(response.data[0].points);
                                             }).then(
                                             (result) => {
+                                                var randomIndex = Math.floor(Math.random() * items.length);
                                                 Axios
-                                                    .get("/api/getMyBoostersByOne/" + props.user + "/" + items[Math.floor(Math.random() * items.length)].name)
+                                                    .get("/api/getMyBoostersByOne/" + props.user + "/" + items[randomIndex].name)
                                                     .then(function (response) {
                                                         if (response.data.length < 1) {
                                                             Axios.post('/api/addBooster',
                                                                 {
                                                                     pseudo: props.user,
-                                                                    booster: items[Math.floor(Math.random() * items.length)].name,
+                                                                    booster: items[randomIndex].name,
                                                                     nbBooster: 1
                                                                 }).then(
                                                                 (result) => {
@@ -124,7 +125,7 @@ function CardsShop(props) {
                                                             Axios.post('/api/updateBooster',
                                                                 {
                                                                     pseudo: props.user,
-                                                                    booster: items[Math.floor(Math.random() * items.length)].name,
+                                                                    booster: items[randomIndex].name,
                                                                     nbBooster: 1
                                                                 }).then(
                                                                 (result) => {
