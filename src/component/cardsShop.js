@@ -86,56 +86,59 @@ function CardsShop(props) {
     function buyBoosterRandom(e) {
         setLoading(true);
         var nbPick = document.getElementById("nbBoosterToBuyRandom").value;
+        var totalPointsRemove = 500 * nbPick;
         for(var i=0;i<nbPick;i++){
-            Axios
-                .get("/api/getCardsPoint/" + props.user)
-                .then(function (response) {
-                        if (response.data[0].points - 500 >= 0) {
-                            Axios.post('/api/removeCardsPointRandom',
-                                {
-                                    user: props.user,
-                                    pointRemove:500
-                                }
-                            ).then(
-                                (result) => {
-                                    Axios
-                                        .get("/api/getCardsPoint/" + props.user)
-                                        .then(function (response) {
-                                            setPoints(response.data[0].points);
-                                        }).then(
-                                        (result) => {
-                                            Axios
-                                                .get("/api/getMyBoostersByOne/" + props.user + "/" + items[Math.floor(Math.random() * items.length)].name)
-                                                .then(function (response) {
-                                                    if (response.data.length < 1) {
-                                                        Axios.post('/api/addBooster',
-                                                            {
-                                                                pseudo: props.user,
-                                                                booster: items[Math.floor(Math.random() * items.length)].name,
-                                                                nbBooster: 1
-                                                            }).then(
-                                                            (result) => {
-                                                                setLoading(false);
-                                                            })
-                                                    } else {
-                                                        Axios.post('/api/updateBooster',
-                                                            {
-                                                                pseudo: props.user,
-                                                                booster: items[Math.floor(Math.random() * items.length)].name,
-                                                                nbBooster: 1
-                                                            }).then(
-                                                            (result) => {
-                                                                setLoading(false);
-                                                            })
-                                                    }
-                                                })
-                                        }
-                                    )
-                                }
-                            )
+            if(response.data[0].points - totalPointsRemove >= 0) {
+                Axios
+                    .get("/api/getCardsPoint/" + props.user)
+                    .then(function (response) {
+                            if (response.data[0].points - 500 >= 0) {
+                                Axios.post('/api/removeCardsPointRandom',
+                                    {
+                                        user: props.user,
+                                        pointRemove: 500
+                                    }
+                                ).then(
+                                    (result) => {
+                                        Axios
+                                            .get("/api/getCardsPoint/" + props.user)
+                                            .then(function (response) {
+                                                setPoints(response.data[0].points);
+                                            }).then(
+                                            (result) => {
+                                                Axios
+                                                    .get("/api/getMyBoostersByOne/" + props.user + "/" + items[Math.floor(Math.random() * items.length)].name)
+                                                    .then(function (response) {
+                                                        if (response.data.length < 1) {
+                                                            Axios.post('/api/addBooster',
+                                                                {
+                                                                    pseudo: props.user,
+                                                                    booster: items[Math.floor(Math.random() * items.length)].name,
+                                                                    nbBooster: 1
+                                                                }).then(
+                                                                (result) => {
+                                                                    setLoading(false);
+                                                                })
+                                                        } else {
+                                                            Axios.post('/api/updateBooster',
+                                                                {
+                                                                    pseudo: props.user,
+                                                                    booster: items[Math.floor(Math.random() * items.length)].name,
+                                                                    nbBooster: 1
+                                                                }).then(
+                                                                (result) => {
+                                                                    setLoading(false);
+                                                                })
+                                                        }
+                                                    })
+                                            }
+                                        )
+                                    }
+                                )
+                            }
                         }
-                    }
-                )
+                    )
+            }
         }
     }
 
