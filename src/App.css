@@ -1360,7 +1360,13 @@ h1 {
 #again {
   display: none;
 }
-
+.nbToBuy{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    border: none;
+    background: #90e5b5;
+}
 .boxContainer {
     display: flex;
     width: 50%;

@@ -85,56 +85,59 @@ function CardsShop(props) {
 
     function buyBoosterRandom(e) {
         setLoading(true);
-        var idBooster = e.target.value;
         var nbPick = document.getElementById("nbBoosterToBuy"+idBooster).value;
-        Axios
-            .get("/api/getCardsPoint/" + props.user)
-            .then(function (response) {
-                    if (response.data[0].points - 500 >= 0) {
-                        return Axios.post('/api/removeCardsPointRandom',
-                            {
-                                user: props.user
-                            }
-                        ).then(
-                            (result) => {
-                                Axios
-                                    .get("/api/getCardsPoint/" + props.user)
-                                    .then(function (response) {
-                                        setPoints(response.data[0].points);
-                                    }).then(
-                                    (result) => {
-                                        Axios
-                                            .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
-                                            .then(function (response) {
-                                                if (response.data === null) {
-                                                    Axios.post('/api/addBooster',
-                                                        {
-                                                            pseudo: props.user,
-                                                            booster: idBooster,
-                                                            nbBooster: nbPick
-                                                        }).then(
-                                                        (result) => {
-                                                            setLoading(false);
-                                                        })
-                                                } else {
-                                                    Axios.post('/api/updateBooster',
-                                                        {
-                                                            pseudo: props.user,
-                                                            booster: idBooster,
-                                                            nbBooster: nbPick
-                                                        }).then(
-                                                        (result) => {
-                                                            setLoading(false);
-                                                        })
-                                                }
-                                            })
-                                    }
-                                )
-                            }
-                        )
+        for(var i=0;i<nbPick;i++){
+            var idBooster = items[Math.floor(Math.random() * items.length)].name;
+            Axios
+                .get("/api/getCardsPoint/" + props.user)
+                .then(function (response) {
+                        if (response.data[0].points - 500 >= 0) {
+                            return Axios.post('/api/removeCardsPointRandom',
+                                {
+                                    user: props.user,
+                                    pointRemove:500
+                                }
+                            ).then(
+                                (result) => {
+                                    Axios
+                                        .get("/api/getCardsPoint/" + props.user)
+                                        .then(function (response) {
+                                            setPoints(response.data[0].points);
+                                        }).then(
+                                        (result) => {
+                                            Axios
+                                                .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
+                                                .then(function (response) {
+                                                    if (response.data === null) {
+                                                        Axios.post('/api/addBooster',
+                                                            {
+                                                                pseudo: props.user,
+                                                                booster: idBooster,
+                                                                nbBooster: 1
+                                                            }).then(
+                                                            (result) => {
+                                                                setLoading(false);
+                                                            })
+                                                    } else {
+                                                        Axios.post('/api/updateBooster',
+                                                            {
+                                                                pseudo: props.user,
+                                                                booster: idBooster,
+                                                                nbBooster: 1
+                                                            }).then(
+                                                            (result) => {
+                                                                setLoading(false);
+                                                            })
+                                                    }
+                                                })
+                                        }
+                                    )
+                                }
+                            )
+                        }
                     }
-                }
-            )
+                )
+        }
     }
 
 function registerCards(e) {
@@ -203,7 +206,10 @@ return (
                     <p className="pokemonNameTrade">500 Points Boutique</p>
                     {points > 499 ?
                         loading === false ?
-                            <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
+                            <>
+                                <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
+                                <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"} min="0" max={Math.floor(points/1000)} />
+                            </>
                             :
                             <button className="guessTradeButton">Chargement</button>
                         :
@@ -223,7 +229,7 @@ return (
                                 loading === false ?
                                     <>
                                         <button value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
-                                        <input id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="0" max={Math.floor(points/1000)} />
+                                        <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="0" max={Math.floor(points/1000)} />
                                     </>
                                     :
                                     <button className="guessTradeButton">Chargement</button>
