@@ -208,7 +208,7 @@ return (
                         loading === false ?
                             <>
                                 <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
-                                <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"} min="0" max={Math.floor(points/1000)} />
+                                <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"} min="0" max={Math.floor(points/500)} />
                             </>
                             :
                             <button className="guessTradeButton">Chargement</button>
