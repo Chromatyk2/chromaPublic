@@ -67,54 +67,54 @@ function CardsShop(props) {
         setLoading(true);
         var idBooster = e.target.value;
         Axios
-            .get("/api/getCardsPoint/"+props.user)
-            .then(function(response){
-                if(response.data[0].points - 500 >= 0){
-                    return Axios.post('/api/removeCardsPointRandom',
-                        {
-                            user:props.user
-                        }
-                    ).then(
-                        (result) => {
-                            Axios
-                                .get("/api/getCardsPoint/"+props.user)
-                                .then(function(response){
-                                    setPoints(response.data[0].points);
-                                }).then(
-                                (result) => {
-                                    Axios
-                                        .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
-                                        .then(function (response) {
-                                            if (reponse.data === null) {
-                                                Axios.post('/api/addBooster',
-                                                    {
-                                                        pseudo: props.user,
-                                                        booster: idBooster,
-                                                        nbBooster:nbPick
-                                                    }).then(
-                                                    (result) => {
-                                                        setLoading(false);
-                                                    })
-                                            } else {
-                                                Axios.post('/api/updateBooster',
-                                                    {
-                                                        pseudo: props.user,
-                                                        booster: idBooster,
-                                                        nbBooster:nbPick
-                                                    }).then(
-                                                    (result) => {
-                                                        setLoading(false);
-                                                    })
-                                            }
-                                        })
-                                }
-                            )
-                        }
-                    )
+            .get("/api/getCardsPoint/" + props.user)
+            .then(function (response) {
+                    if (response.data[0].points - 500 >= 0) {
+                        return Axios.post('/api/removeCardsPointRandom',
+                            {
+                                user: props.user
+                            }
+                        ).then(
+                            (result) => {
+                                Axios
+                                    .get("/api/getCardsPoint/" + props.user)
+                                    .then(function (response) {
+                                        setPoints(response.data[0].points);
+                                    }).then(
+                                    (result) => {
+                                        Axios
+                                            .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
+                                            .then(function (response) {
+                                                if (reponse.data === null) {
+                                                    Axios.post('/api/addBooster',
+                                                        {
+                                                            pseudo: props.user,
+                                                            booster: idBooster,
+                                                            nbBooster: nbPick
+                                                        }).then(
+                                                        (result) => {
+                                                            setLoading(false);
+                                                        })
+                                                } else {
+                                                    Axios.post('/api/updateBooster',
+                                                        {
+                                                            pseudo: props.user,
+                                                            booster: idBooster,
+                                                            nbBooster: nbPick
+                                                        }).then(
+                                                        (result) => {
+                                                            setLoading(false);
+                                                        })
+                                                }
+                                            })
+                                    }
+                                )
+                            }
+                        )
+                    }
                 }
             )
-            }
-    })
+    }
 }
 function registerCards(e) {
     return Axios.post('/api/registerCards',
