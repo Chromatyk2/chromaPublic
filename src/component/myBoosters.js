@@ -34,7 +34,11 @@ function MyBoosters(props) {
     function openModal(e) {
         var id = e.target.value;
         setBoosterId(id);
-        Axios.delete('/api/deleteBooster/'+props.user+'/'+id)
+        Axios.post('/api/removeBooster',
+            {
+                user: props.user,
+                booster:id
+            }
             .then(function(response) {
                 Axios
                     .get("/api/getMyBoosters/"+props.user)
