@@ -92,7 +92,7 @@ function CardsShop(props) {
                 .get("/api/getCardsPoint/" + props.user)
                 .then(function (response) {
                         if (response.data[0].points - 500 >= 0) {
-                            return Axios.post('/api/removeCardsPointRandom',
+                            Axios.post('/api/removeCardsPointRandom',
                                 {
                                     user: props.user,
                                     pointRemove:500
