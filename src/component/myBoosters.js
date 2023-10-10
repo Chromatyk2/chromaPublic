@@ -38,7 +38,7 @@ function MyBoosters(props) {
             {
                 user: props.user,
                 booster:id
-            }
+            })
             .then(function(response) {
                 Axios
                     .get("/api/getMyBoosters/"+props.user)
