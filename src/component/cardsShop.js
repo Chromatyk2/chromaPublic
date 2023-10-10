@@ -223,7 +223,7 @@ return (
                                 loading === false ?
                                     <>
                                         <button value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
-                                        <input id={"nbBoosterToBuy"+val.name} type="number" min="0" max="100" />
+                                        <input id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="0" max={Math.floor(points/1000)} />
                                     </>
                                     :
                                     <button className="guessTradeButton">Chargement</button>
