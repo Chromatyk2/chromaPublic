@@ -85,7 +85,7 @@ function CardsShop(props) {
                                         Axios
                                             .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
                                             .then(function (response) {
-                                                if (reponse.data === null) {
+                                                if (response.data === null) {
                                                     Axios.post('/api/addBooster',
                                                         {
                                                             pseudo: props.user,
@@ -206,6 +206,7 @@ return (
                                 :
                                 <button className="guessTradeButton">Card Points manquants</button>
                             }
+                            <input type="number" min="0" max="100" />
                         </div>
                     )
                 })
