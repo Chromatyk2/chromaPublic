@@ -183,7 +183,6 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
-    console.log(items);
     return (
         <>
 

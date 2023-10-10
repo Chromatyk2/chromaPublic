@@ -183,11 +183,8 @@ function OpeningCards(props) {
                     }
                 }else{
                     var rarityArray = props.rarities.filter(item => item.stade == 1);
-                    console.log(rarityArray);
                     const rareArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
-                    console.log(rareArray);
                     const randomRare = rareArray[Math.floor(Math.random() * rareArray.length)];
-                    console.log(randomRare);
                     Axios.post('/api/addCard',
                         {
                             pseudo:props.user,
