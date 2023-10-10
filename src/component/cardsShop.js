@@ -31,13 +31,15 @@ function CardsShop(props) {
         setLoading(true);
         var idBooster = e.target.value;
         var nbPick = document.getElementById("nbBoosterToBuy"+idBooster).value;
+        var totalPointsRemove = 1000 * nbPick;
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
-                if(response.data[0].points - 1000 >= 0){
+                if(response.data[0].points - totalPointsRemove >= 0){
                     return Axios.post('/api/removeCardsPoint',
                         {
-                            user:props.user
+                            user:props.user,
+                            pointRemove:totalPointsRemove
                         }
                     ).then(
                         (result) => {
