@@ -83,6 +83,7 @@ function CardsShop(props) {
     function buyBoosterRandom(e) {
         setLoading(true);
         var idBooster = e.target.value;
+        var nbPick = document.getElementById("nbBoosterToBuy"+idBooster).value;
         Axios
             .get("/api/getCardsPoint/" + props.user)
             .then(function (response) {
