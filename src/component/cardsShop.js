@@ -85,7 +85,7 @@ function CardsShop(props) {
 
     function buyBoosterRandom(e) {
         setLoading(true);
-        var nbPick = document.getElementById("nbBoosterToBuy"+idBooster).value;
+        var nbPick = document.getElementById("nbBoosterToBuyRandom").value;
         for(var i=0;i<nbPick;i++){
             var idBooster = items[Math.floor(Math.random() * items.length)].name;
             Axios
