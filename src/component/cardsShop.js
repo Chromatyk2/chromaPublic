@@ -219,13 +219,15 @@ return (
                             <p className="pokemonNameTrade">1000 Points Boutique</p>
                             {points > 999 ?
                                 loading === false ?
-                                    <button value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                    <>
+                                        <button value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                        <input id={"nbBoosterToBuy"+val.name} type="number" min="0" max="100" />
+                                    </>
                                     :
                                     <button className="guessTradeButton">Chargement</button>
                                 :
                                 <button className="guessTradeButton">Card Points manquants</button>
                             }
-                            <input id={"nbBoosterToBuy"+val.name} type="number" min="0" max="100" />
                         </div>
                     )
                 })
