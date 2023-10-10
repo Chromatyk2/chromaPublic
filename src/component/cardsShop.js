@@ -108,7 +108,7 @@ function CardsShop(props) {
                                             Axios
                                                 .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
                                                 .then(function (response) {
-                                                    if (response.data === null) {
+                                                    if (response.data.length < 1) {
                                                         Axios.post('/api/addBooster',
                                                             {
                                                                 pseudo: props.user,
