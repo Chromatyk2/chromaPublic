@@ -183,7 +183,6 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
-    console.log(items);
     return (
         <>
 
@@ -216,23 +215,23 @@ function MyCardsSet(props) {
                         {items &&
                             items.sort((a, b) => a.number - b.number).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
-                                    if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof stadeB !== "undefined"){
+                                    if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
                                         var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
                                     }else{
                                         var stadeC = 0;
                                     }
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     return (
-                                        <button style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
+                                        <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
                                             <img stade={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                                                 src={"https://images.pokemoncard.io/images/" + val.set.id + "/" + val.id + "_hiresopt.jpg"}
+                                                 src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
                                                  onError={errorImage}/>
                                         </button>
                                     )
                                 }else if(!onlyMine){
                                     return (
-                                        <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemoncard.io/images/" + val.set.id + "/" + val.id + "_hiresopt.jpg"} onError={errorImage}/>
+                                        <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"} onError={errorImage}/>
                                     )
                                 }
                             })

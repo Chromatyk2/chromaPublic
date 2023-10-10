@@ -114,8 +114,30 @@ function MyCardSell(props) {
                                     setIsLoaded(false);
                                 })
 
+                    }else if(props.idBooster == "swsh10"){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh10tg")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+
                     }else if(props.idBooster == "swsh11"){
                         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh11tg")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+
+                    }else if(props.idBooster == "swsh12"){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh12tg")
                             .then(res => res.json())
                             .then(
                                 (result) => {
@@ -179,7 +201,7 @@ function MyCardSell(props) {
                 if(cardToSell.find((card) => card.card == cardId)){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
-                        if((cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.length < 5) ||  (cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.find((card) => card.card == cardId))) {
+                        if((cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.length < 10) ||  (cardToSell[cartItemIndex].nbToSell + 2 <= cardNb && cardToSell.find((card) => card.card == cardId))) {
                             cardToSell[cartItemIndex] = {
                                 ...cardToSell[cartItemIndex],
                                 nbToSell: cardToSell[cartItemIndex].nbToSell + 1
@@ -206,7 +228,7 @@ function MyCardSell(props) {
                                 }
                             }
                         }
-                }else if(cardNb > 1  && cardToSell.length < 5){
+                }else if(cardNb > 1  && cardToSell.length < 10){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
                     setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
@@ -362,7 +384,7 @@ function MyCardSell(props) {
         <>
 
             {isLoaded === false &&
-                <ProgressBarCard getNb={myCards.length} item={{items}}/>
+                <ProgressBarCard getNb={myCards.length} item={items.length}/>
             }
             {isLoaded === true &&
                 <div className={"loaderPokemon"}>
@@ -384,8 +406,8 @@ function MyCardSell(props) {
                             items &&
                             rarities &&
                                 sellingTime &&
-                                    myCards.map((val, key) => {
-                                        var stadeB =  items.find((myCard) => myCard.id === val.card).rarity;
+                                    myCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
+                                        var stadeB =  items.find((myCard) => myCard.id.toString() == val.card.toString()).rarity;
                                             if(stadeB != "Common" && stadeB != "Uncommon"){
                                                 if(typeof stadeB === "undefined"){
                                                     var stadeC = -1;
@@ -395,6 +417,7 @@ function MyCardSell(props) {
                                             }else{
                                                 var stadeC = 0;
                                             }
+                                            if(val.nbCard > 1){
                                                 return (
                                                     <>
                                                         <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
@@ -415,6 +438,7 @@ function MyCardSell(props) {
                                                         </button>
                                                     </>
                                                 )
+                                            }
                                         }):<p>Attend 2 mins</p>
                         }
                         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
