@@ -115,7 +115,7 @@ function CardsShop(props) {
                 }
             )
     }
-}
+
 function registerCards(e) {
     return Axios.post('/api/registerCards',
         {
