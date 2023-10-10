@@ -88,6 +88,7 @@ function CardsShop(props) {
         var nbPick = document.getElementById("nbBoosterToBuyRandom").value;
         for(var i=0;i<nbPick;i++){
             var randomBooster = Math.floor(Math.random() * items.length);
+            console.log(randomBooster);
             Axios
                 .get("/api/getCardsPoint/" + props.user)
                 .then(function (response) {
