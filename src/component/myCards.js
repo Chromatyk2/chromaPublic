@@ -30,7 +30,6 @@ function MyCards(props) {
                 let sum = (response.data.reduce(function(prev, current) {
                     return prev + +current.nbCard
                 }, 0));
-                console.log(sum);
                 setTotalCardUser(sum);
                 Axios.get("/api/getTotalCard")
                     .then(function(response){
@@ -41,7 +40,7 @@ function MyCards(props) {
     return (
         <>
             {totalCardUser &&
-                <ProgressBarCard getNb={totalCardUser} item={totalCard}/>
+                <ProgressBarCard getNb={totalCardUser} item={totalCard.totalCard}/>
             }
             <div id={"cardsContainer"}>
                 { page ?
