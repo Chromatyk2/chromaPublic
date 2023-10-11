@@ -1114,6 +1114,7 @@ button.deleteTrade {
     font-family: Charge Vector Black;
     width: 100%;
     letter-spacing: 2px;
+    width: 236px;
 }
 .guessTradeButton:hover{
   background: white;
