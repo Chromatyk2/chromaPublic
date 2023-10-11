@@ -39,6 +39,8 @@ function MyCards(props) {
                             return prev + +current.totalCards
                         }, 0));
                         setTotalCard(sumBooster);
+                        console.log(totalCard);
+                        console.log(boosterList);
                     })
             })
     }, [])
