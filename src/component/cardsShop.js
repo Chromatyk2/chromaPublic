@@ -218,7 +218,7 @@ return (
                         loading === false ?
                             <div>
                                 <button disabled = {buyable === false && "disabled"} value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className={"guessTradeButton"}>Acheter</button>
-                                <label>Combien de boosters ?</label>
+                                <label style={{display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
                                 <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"} min="1" max={Math.floor(points/500)}  />
                             </div>
                             :
@@ -238,9 +238,9 @@ return (
                             <p className="pokemonNameTrade">1000 Points Boutique</p>
                             {points > 999 ?
                                 loading === false ?
-                                    <div>
+                                    <div style={{position: "relative",bottom: "-44px"}}>
                                         <button disabled = {buyable === false && "disabled"} value={val.name} onClick={buyBooster} className={"guessTradeButton"}>Acheter</button>
-                                        <label>Combien de boosters ?</label>
+                                        <label style={{display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
                                         <input onChange={nbToBuy} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                     :
