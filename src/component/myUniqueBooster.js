@@ -15,6 +15,9 @@ function MyUniqueBooster(props) {
     }
     return (
                             <div className="uniqueTradeContainer">
+                                {props.maxBooster == props.nbCard.nbCard &&
+                                    <img src={"/done.png"}/>
+                                }
                                 <div className={"containerImgBooster"}>
                                     <img className="fit-picture" src={"https://images.pokemontcg.io/" + props.nbCard.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
