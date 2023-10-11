@@ -14,7 +14,7 @@ function MyUniqueBooster(props) {
         props.change(page,nbCard);
     }
     return (
-                            <div className="uniqueTradeContainer">
+                            <div style={{filter: props.maxBooster == props.nbCard.nbCard && 'drop-shadow(0px 0px 6px orange) drop-shadow(0px 0px 47px yellow)'}} className="uniqueTradeContainer">
                                 {props.maxBooster == props.nbCard.nbCard &&
                                     <img src={"/images/done.png"}/>
                                 }
