@@ -27,14 +27,14 @@ function MyCards(props) {
             .get("/api/getNbCards/"+props.user)
             .then(function(response){
                 setNbCards(response.data);
+                let sum = (response.data.reduce(function(prev, current) {
+                    return prev + +current.nbCard
+                }, 0));
+                console.log(sum);
+                setTotalCardUser(sum);
                 Axios.get("/api/getTotalCard")
                     .then(function(response){
                         setTotalCard(response.data);
-                        let sum = nbCards.reduce(function(prev, current) {
-                            return prev + +current.score
-                        }, 0);
-                        console.log(sum);
-                        setTotalCardUser(sum);
                     })
             })
     }, [])
