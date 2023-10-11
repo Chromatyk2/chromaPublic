@@ -32,7 +32,8 @@ function MyBoosters(props) {
         },
     };
     function openModal(e) {
-        e.currentTarget.disabled = true;
+        var button = e.currentTarget;
+        button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
         Axios.post('/api/removeBooster',
@@ -46,7 +47,7 @@ function MyBoosters(props) {
                     .then(function(response){
                         setBoosters(response.data);
                         setIsOpen(true);
-                        e.currentTarget.disabled = false;
+                        button.disabled = false;
                     })
                 })
     }
