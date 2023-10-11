@@ -41,7 +41,7 @@ function MyCards(props) {
     return (
         <>
             {totalCard &&
-                <ProgressBarCard getNb={totalCardUser} item={totalCard.totalCard}/>
+                <ProgressBarCard getNb={totalCardUser} item={totalCard[0].totalCard}/>
             }
             <div id={"cardsContainer"}>
                 { page ?
