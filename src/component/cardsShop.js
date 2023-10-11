@@ -13,7 +13,6 @@ function CardsShop(props) {
     const [items, setItems] = useState(null);
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
-    const [buyable,setBuyable] = useState(false);
     useEffect(() => {
         Axios
             .get("/api/getBoostersList")
