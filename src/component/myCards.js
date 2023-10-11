@@ -33,7 +33,6 @@ function MyCards(props) {
                 setTotalCardUser(sum);
                 Axios.get("/api/getBoosterTotalCard")
                     .then(function(response){
-                        setBoosterList(response.data);
                         let sumBooster = (response.data.reduce(function(prev, current) {
                             return prev + +current.totalCards
                         }, 0));
