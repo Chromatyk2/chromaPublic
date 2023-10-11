@@ -7,54 +7,10 @@ import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
 import OpeningBooster from "./openingBooster";
+import UniqueBooster from "./uniqueBooster";
 
 function MyBoosters(props) {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
     const [boosters, setBoosters] = useState(null);
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [boosterId, setBoosterId] = React.useState(null);
-    const customStyles = {
-        content: {
-            position:'initial',
-            border: 'none',
-            background: 'none',
-            borderRadius: '4px',
-            width: '100%',
-            height: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        },
-        textModal: {
-            fontSize:'30px',
-            textAlign:'center'
-        },
-    };
-    function openModal(e) {
-        var button = e.currentTarget;
-        button.disabled = true;
-        var id = e.target.value;
-        setBoosterId(id);
-        Axios.post('/api/removeBooster',
-            {
-                user: props.user,
-                booster:id
-            })
-            .then(function(response) {
-                Axios
-                    .get("/api/getMyBoosters/"+props.user)
-                    .then(function(response){
-                        setBoosters(response.data);
-                        setIsOpen(true);
-                        button.disabled = false;
-                    })
-                })
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
     useEffect(() => {
         Axios
             .get("/api/getMyBoosters/"+props.user)
@@ -62,9 +18,6 @@ function MyBoosters(props) {
                 setBoosters(response.data);
             })
     }, [])
-    function handleState() {
-        setIsOpen(false);
-    }
     return (
         <>
             <div id={"cardsContainer"}>
@@ -72,21 +25,12 @@ function MyBoosters(props) {
                     boosters.map((val, key) => {
                         if(val.nbBooster > 0){
                             return(
-                                <div className="uniqueTradeContainer">
-                                    <div className={"containerImgBooster"}>
-                                        <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                                    </div>
-                                    <p className="pokemonNameTrade">Possédé(s) : {val.nbBooster}</p>
-                                    <button value={val.booster} onClick={openModal} className="guessTradeButton">Ouvrir</button>
-                                </div>
+                                <UniqueBooster booster={val}/>
                             )
                         }
                     })
                 }
             </div>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <OpeningBooster change = {handleState} idBooster={boosterId} user={props.user}/>
-            </Modal>
         </>
     )
 }
