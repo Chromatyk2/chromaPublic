@@ -34,6 +34,7 @@ function MyCards(props) {
                 Axios.get("/api/getTotalCard")
                     .then(function(response){
                         setTotalCard(response.data);
+                        console.log(response.data);
                     })
             })
     }, [])
