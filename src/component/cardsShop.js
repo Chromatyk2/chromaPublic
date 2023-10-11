@@ -176,6 +176,11 @@ function selectGen(e) {
             })
     }
 }
+    function nbToBuy(e) {
+        if(e.target.value != null && e.target.value > 0){
+            setBuyable(true);
+        }
+    }
 return (
     <>
         <div>
@@ -211,11 +216,11 @@ return (
                     <p className="pokemonNameTrade">500 Points Boutique</p>
                     {points > 499 ?
                         loading === false ?
-                            <>
-                                <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
+                            <div>
+                                <button {buyable === false && "disabled"} value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
                                 <label>Combien de boosters ?</label>
-                                <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" min="1" max={Math.floor(points/500)}  />
-                            </>
+                                <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"} min="1" max={Math.floor(points/500)}  />
+                            </div>
                             :
                             <button className="guessTradeButton">Chargement</button>
                         :
@@ -233,11 +238,11 @@ return (
                             <p className="pokemonNameTrade">1000 Points Boutique</p>
                             {points > 999 ?
                                 loading === false ?
-                                    <>
-                                        <button value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                    <div>
+                                        <button {buyable === false && "disabled"} value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
                                         <label>Combien de boosters ?</label>
-                                        <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" min="1" max={Math.floor(points/1000)} />
-                                    </>
+                                        <input onChange={nbToBuy} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                    </div>
                                     :
                                     <button className="guessTradeButton">Chargement</button>
                                 :
