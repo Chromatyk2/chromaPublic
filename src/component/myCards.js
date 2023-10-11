@@ -38,7 +38,7 @@ function MyCards(props) {
                         nbCards &&
                             nbCards.map((val, key) => {
                                 return(
-                                    <MyUniqueBooster value={val.booster} change = {displayPage} nbCard={val} />
+                                    <MyUniqueBooster change = {displayPage} nbCard={val} />
                                 )
                             })
                 }
