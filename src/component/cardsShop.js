@@ -13,6 +13,7 @@ function CardsShop(props) {
     const [items, setItems] = useState(null);
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
+    const [buyable,setBuyable] = useState(false);
     useEffect(() => {
         Axios
             .get("/api/getBoostersList")
@@ -212,6 +213,7 @@ return (
                         loading === false ?
                             <>
                                 <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className="guessTradeButton">Acheter</button>
+                                <label>Combien de boosters ?</label>
                                 <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" min="1" max={Math.floor(points/500)}  />
                             </>
                             :
@@ -233,6 +235,7 @@ return (
                                 loading === false ?
                                     <>
                                         <button value={val.name} onClick={buyBooster} className="guessTradeButton">Acheter</button>
+                                        <label>Combien de boosters ?</label>
                                         <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" min="1" max={Math.floor(points/1000)} />
                                     </>
                                     :
