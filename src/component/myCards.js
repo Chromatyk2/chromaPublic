@@ -14,6 +14,7 @@ function MyCards(props) {
     const [nbCard, setNbCard] = useState(null);
     const [totalCard, setTotalCard] = useState(null);
     const [totalCardUser, setTotalCardUser] = useState(null);
+    const [boosterList, setBoosterList] = useState(null);
     const [page, setPage] = useState(null);
     function displayPage(e,f) {
         setPage(e);
@@ -33,6 +34,7 @@ function MyCards(props) {
                 setTotalCardUser(sum);
                 Axios.get("/api/getBoosterTotalCard")
                     .then(function(response){
+                        setBoosterList(response.data);
                         let sumBooster = (response.data.reduce(function(prev, current) {
                             return prev + +current.totalCards
                         }, 0));
@@ -57,7 +59,7 @@ function MyCards(props) {
                         nbCards &&
                             nbCards.map((val, key) => {
                                 return(
-                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} />
+                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.booster.includes(val.booster)).totalCards}/>
                                 )
                             })
                 }
