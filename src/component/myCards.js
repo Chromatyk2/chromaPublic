@@ -33,6 +33,7 @@ function MyCards(props) {
                         let sum = nbCards.reduce(function(prev, current) {
                             return prev + +current.score
                         }, 0);
+                        console.log(sum);
                         setTotalCardUser(sum);
                     })
             })
