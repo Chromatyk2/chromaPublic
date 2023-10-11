@@ -9,9 +9,9 @@ import MyCardsSet from './myCardSet.js';
 
 function MyUniqueBooster(props) {
     function displayPage(e) {
-        props.page();
-        props.card();
-        props.change();
+        var page = e.target.value;
+        var nbCard = e.target.getAttribute("nbCard")
+        props.change(page,nbCard);
     }
     return (
                             <div className="uniqueTradeContainer">
