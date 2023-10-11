@@ -58,11 +58,11 @@ function MyCards(props) {
                     :
                         nbCards &&
                             totalCard &&
-                            nbCards.map((val, key) => {
+                                nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key).map((val, key) => {
                                 return(
                                     <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.name.includes(val.booster)).totalCards}/>
                                 )
-                            })
+                            }))
                 }
             </div>
         </>
