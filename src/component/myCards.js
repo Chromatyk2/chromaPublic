@@ -60,7 +60,7 @@ function MyCards(props) {
                             totalCard &&
                             nbCards.map((val, key) => {
                                 return(
-                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.booster.includes(val.booster)).totalCards}/>
+                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.name.includes(val.booster)).totalCards}/>
                                 )
                             })
                 }
