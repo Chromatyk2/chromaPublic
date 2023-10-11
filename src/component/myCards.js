@@ -62,7 +62,7 @@ function MyCards(props) {
                                 return(
                                     <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.name.includes(val.booster)).totalCards}/>
                                 )
-                            }))
+                            })
                 }
             </div>
         </>
