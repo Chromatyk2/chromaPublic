@@ -6,10 +6,9 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
+import MyUniqueBooster from "./myUniqueBooster";
 
 function MyCards(props) {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
     const [nbCards, setNbCards] = useState(null);
     const [nbCard, setNbCard] = useState(null);
     const [page, setPage] = useState(null);
@@ -39,13 +38,7 @@ function MyCards(props) {
                         nbCards &&
                             nbCards.map((val, key) => {
                                 return(
-                                    <div className="uniqueTradeContainer">
-                                        <div className={"containerImgBooster"}>
-                                            <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                                        </div>
-                                        <p className="pokemonNameTrade">{val.nbCard} carte(s)</p>
-                                        <button value={val.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
-                                    </div>
+                                    <MyUniqueBooster value={val.booster} change = {displayPage} nbCard={val} />
                                 )
                             })
                 }
