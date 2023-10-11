@@ -46,12 +46,12 @@ function MyBoosters(props) {
                     .then(function(response){
                         setBoosters(response.data);
                         setIsOpen(true);
+                        e.target.removeAttribute("disabled");
                     })
                 })
     }
 
     function closeModal() {
-        e.target.removeAttribute("disabled");
         setIsOpen(false);
     }
     useEffect(() => {
@@ -62,7 +62,6 @@ function MyBoosters(props) {
             })
     }, [])
     function handleState() {
-        e.target.removeAttribute("disabled");
         setIsOpen(false);
     }
     return (
