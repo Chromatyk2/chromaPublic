@@ -39,8 +39,6 @@ function MyCards(props) {
                             return prev + +current.totalCards
                         }, 0));
                         setTotalCard(sumBooster);
-                        console.log(totalCard);
-                        console.log(boosterList);
                     })
             })
     }, [])
@@ -59,6 +57,7 @@ function MyCards(props) {
                         </>
                     :
                         nbCards &&
+                            totalCard &&
                             nbCards.map((val, key) => {
                                 return(
                                     <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.booster.includes(val.booster)).totalCards}/>
