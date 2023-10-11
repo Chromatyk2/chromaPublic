@@ -31,10 +31,13 @@ function MyCards(props) {
                     return prev + +current.nbCard
                 }, 0));
                 setTotalCardUser(sum);
-                Axios.get("/api/getTotalCard")
+                Axios.get("/api/getBoosterTotalCard")
                     .then(function(response){
-                        setTotalCard(response.data);
-                        console.log(response.data);
+                        setBoosterList(response.data);
+                        let sumBooster = (response.data.reduce(function(prev, current) {
+                            return prev + +current.totalCards
+                        }, 0));
+                        setTotalCard(sumBooster);
                     })
             })
     }, [])
