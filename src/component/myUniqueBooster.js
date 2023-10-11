@@ -8,26 +8,11 @@ import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
 
 function MyUniqueBooster(props) {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [nbCards, setNbCards] = useState(null);
-    const [nbCard, setNbCard] = useState(null);
-    const [page, setPage] = useState(null);
     function displayPage(e) {
+        props.page();
+        props.card();
         props.change();
-        props.setPage(e.target.value);
-        props.setNbCard(e.target.getAttribute("nbCard"));
     }
-    function backPage() {
-        setPage(null)
-    }
-    useEffect(() => {
-        Axios
-            .get("/api/getNbCards/"+props.user)
-            .then(function(response){
-                setNbCards(response.data);
-            })
-    }, [])
     return (
                             <div className="uniqueTradeContainer">
                                 <div className={"containerImgBooster"}>

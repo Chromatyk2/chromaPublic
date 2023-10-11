@@ -13,8 +13,8 @@ function MyCards(props) {
     const [nbCard, setNbCard] = useState(null);
     const [page, setPage] = useState(null);
     function displayPage(e) {
-        setPage(props.change(page))
-        setNbCard(props.change(nbCard))
+        setPage(props.c)
+        setNbCard(e.target.getAttribute("nbCard"))
     }
     function backPage() {
         setPage(null)
@@ -38,7 +38,7 @@ function MyCards(props) {
                         nbCards &&
                             nbCards.map((val, key) => {
                                 return(
-                                    <MyUniqueBooster setNbCard = {setNbCard(e)} setPage = {setPage(e)} change={displayPage} nbCard={val} />
+                                    <MyUniqueBooster pag={val.booster} change = {displayPage} nbCard={val} />
                                 )
                             })
                 }
