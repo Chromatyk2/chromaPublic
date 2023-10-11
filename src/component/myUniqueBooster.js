@@ -15,8 +15,8 @@ function MyUniqueBooster(props) {
     const [page, setPage] = useState(null);
     function displayPage(e) {
         props.change();
-        props.setPage(e.target.value)
-        props.setNbCard(e.target.getAttribute("nbCard"))
+        props.setPage(e.target.value);
+        props.setNbCard(e.target.getAttribute("nbCard"));
     }
     function backPage() {
         setPage(null)
