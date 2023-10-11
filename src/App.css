@@ -1355,7 +1355,11 @@ h1 {
   max-width: 760px;
   margin: 0 auto;
 }
-
+img.done {
+    position: absolute;
+    margin-left: 192px;
+    margin-top: -27px;
+}
 
 #again {
   display: none;
