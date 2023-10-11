@@ -41,10 +41,12 @@ function MyCards(props) {
     return (
         <>
             {totalCard &&
+                !page &&
                 <ProgressBarCard getNb={totalCardUser} item={totalCard[0].totalCard}/>
             }
             <div id={"cardsContainer"}>
-                { page ?
+                {totalCard &&
+                    page ?
                         <>
                             <button style={{width:"100%",margin:"0",padding:"0"}}onClick={backPage} className="backButton">Retour</button>
                             <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
