@@ -7,10 +7,13 @@ import '../App.css'
 import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
 import MyUniqueBooster from "./myUniqueBooster";
+import ProgressBarCard from "./progressBarCard";
 
 function MyCards(props) {
     const [nbCards, setNbCards] = useState(null);
     const [nbCard, setNbCard] = useState(null);
+    const [totalCard, setTotalCard] = useState(null);
+    const [totalCardUser, setTotalCardUser] = useState(null);
     const [page, setPage] = useState(null);
     function displayPage(e,f) {
         setPage(e);
@@ -24,10 +27,21 @@ function MyCards(props) {
             .get("/api/getNbCards/"+props.user)
             .then(function(response){
                 setNbCards(response.data);
+                Axios.get("/api/getTotalCard")
+                    .then(function(response){
+                        setTotalCard(response.data);
+                        let sum = nbCards.reduce(function(prev, current) {
+                            return prev + +current.score
+                        }, 0);
+                        setTotalCardUser(sum);
+                    })
             })
     }, [])
     return (
         <>
+            {totalCardUser &&
+                <ProgressBarCard getNb={totalCardUser} item={totalCard}/>
+            }
             <div id={"cardsContainer"}>
                 { page ?
                         <>
