@@ -11,18 +11,8 @@ import ProgressBarCard from "./progressBarCard";
 
 function Succes(props) {
     const [nbCards, setNbCards] = useState(null);
-    const [nbCard, setNbCard] = useState(null);
     const [totalCard, setTotalCard] = useState(null);
-    const [totalCardUser, setTotalCardUser] = useState(null);
     const [boosterList, setBoosterList] = useState(null);
-    const [page, setPage] = useState(null);
-    function displayPage(e,f) {
-        setPage(e);
-        setNbCard(f);
-    }
-    function backPage() {
-        setPage(null)
-    }
     useEffect(() => {
         Axios
             .get("/api/getNbCards/"+props.user)
@@ -44,23 +34,13 @@ function Succes(props) {
     }, [])
     return (
         <>
-            {totalCard &&
-                !page &&
-                <ProgressBarCard getNb={totalCardUser} item={totalCard}/>
-            }
             <div id={"cardsContainer"}>
                 {totalCard &&
-                page ?
-                    <>
-                        <button style={{width:"100%",margin:"0",padding:"0"}}onClick={backPage} className="backButton">Retour</button>
-                        <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
-                    </>
-                    :
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                         return(
-                            <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.name.includes(val.booster)).totalCards}/>
+                            <MyUniqueSucces page={val.booster} nbCard={val} maxBooster={boosterList.find((uc) => uc.name.includes(val.booster)).totalCards}/>
                         )
                     })
                 }
