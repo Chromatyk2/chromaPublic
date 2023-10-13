@@ -13,6 +13,8 @@ function NavBar(props) {
   const [stream, setStream] = useState(null);
   const pseudo = props.cookies.user.data[0].login;
   const [expanded, setExpanded] = useState(false);
+    const [supportsPWA, setSupportsPWA] = useState(false);
+    const [promptInstall, setPromptInstall] = useState(null);
   useEffect(() => {
       Axios
         .get("/api/getCountProposition/"+pseudo)
@@ -20,6 +22,29 @@ function NavBar(props) {
             setCount(response.data[0].count);
       })
   }, [])
+
+    useEffect(() => {
+        const handler = e => {
+            e.preventDefault();
+            console.log("we are being triggered :D");
+            setSupportsPWA(true);
+            setPromptInstall(e);
+        };
+        window.addEventListener("beforeinstallprompt", handler);
+
+        return () => window.removeEventListener("transitionend", handler);
+    }, []);
+
+    function openPromp(evt) {
+        evt.preventDefault();
+        if (!promptInstall) {
+            return;
+        }
+        promptInstall.prompt();
+    };
+    if (!supportsPWA) {
+        return null;
+    }
   return (
 
       <Navbar expanded={expanded} bg="light" expand="lg">
@@ -41,6 +66,16 @@ function NavBar(props) {
                                       {/*  <Link className="navLink" to="/tradePlace">Place aux echanges</Link>*/}
                                       {/*<Link className="navLink" to="/aNu5YwZ5X75m5j">Note</Link>*/}
                                       <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>
+
+                                        <button
+                                            className="link-button"
+                                            id="setup_button"
+                                            aria-label="Install app"
+                                            title="Install app"
+                                            onClick={onClick}
+                                        >
+                                            Install
+                                        </button>
                                     </>
                       }
                   </Nav>

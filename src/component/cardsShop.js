@@ -235,7 +235,7 @@ return (
                                     <div style={{position: "relative",bottom: "-44px"}}>
                                         <button value={val.name} onClick={buyBooster} className={"guessTradeButton"}>Acheter</button>
                                         <label style={{display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
-                                        <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                        <inpute className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                     :
                                     <div style={{position: "relative",bottom: "-44px"}}>
