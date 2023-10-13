@@ -8,11 +8,8 @@ function HomePage(props) {
     const [promptInstall, setPromptInstall] = useState(null);
 
     useEffect(() => {
-        const handler = e => {
-            e.preventDefault();
             setSupportsPWA(true);
             setPromptInstall(e);
-        };
     }, []);
 
     function onClick(evt) {
