@@ -35,7 +35,7 @@ function NavBar(props) {
         return () => window.removeEventListener("transitionend", handler);
     }, []);
 
-    function openPromp(evt) {
+    function onClick(evt) {
         evt.preventDefault();
         if (!promptInstall) {
             return;
