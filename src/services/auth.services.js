@@ -48,7 +48,7 @@ function AuthService() {
   const isAuthenticated = () => {
       const params = getUrlParams();
       if(Object.keys(params).length > 0){
-        setCookie('oauth', params.code);
+        setCookie('oauth', params.code,{days:1} );
         Axios.post(
         'https://id.twitch.tv/oauth2/token',
         {
@@ -61,7 +61,7 @@ function AuthService() {
       )
       .then(
         (result) => {
-            setCookie('token', result.data);
+            setCookie('token', result.data,{days:1} );
             Axios.get(
               'https://api.twitch.tv/helix/users',
               {
@@ -73,7 +73,7 @@ function AuthService() {
             )
             .then(
               (result) => {
-                setCookie('user', result.data );
+                setCookie('user', result.data,{days:1} );
               }
             )
           }
