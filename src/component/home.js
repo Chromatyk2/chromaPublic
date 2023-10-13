@@ -19,7 +19,7 @@ function HomePage(props) {
         return () => window.removeEventListener("transitionend", handler);
     }, []);
 
-    function buyBoosterRandom(evt) {
+    function onClick(evt) {
         evt.preventDefault();
         if (!promptInstall) {
             return;
