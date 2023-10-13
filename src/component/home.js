@@ -4,35 +4,8 @@ import '../App.css'
 import PkmList from './pkmList.js'
 
 function HomePage(props) {
-    const [supportsPWA, setSupportsPWA] = useState(false);
-    const [promptInstall, setPromptInstall] = useState(null);
-
-    useEffect(() => {
-            setSupportsPWA(true);
-            setPromptInstall(e);
-    }, []);
-
-    function onClick(evt) {
-        evt.preventDefault();
-        if (!promptInstall) {
-            return;
-        }
-        promptInstall.prompt();
-    };
-    if (!supportsPWA) {
-        return null;
-    }
   return (
     <>
-        <button
-            className="link-button"
-            id="setup_button"
-            aria-label="Install app"
-            title="Install app"
-            onClick={onClick}
-        >
-            Install
-        </button>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
