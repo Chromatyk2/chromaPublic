@@ -58,6 +58,16 @@ function NavBar(props) {
                   <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/">Accueil</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">TCG</Link>
+                      <button
+                          style={{background:"none",border:"none",color:"red"}}
+                          className="link-button"
+                          id="setup_button"
+                          aria-label="Install app"
+                          title="Install app"
+                          onClick={onClick}
+                      >
+                          Télécharger l'appli
+                      </button>
                       {pseudo == "chromatyk" &&
                                     <>
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
@@ -67,15 +77,6 @@ function NavBar(props) {
                                       {/*<Link className="navLink" to="/aNu5YwZ5X75m5j">Note</Link>*/}
                                       <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>
 
-                                        <button
-                                            className="link-button"
-                                            id="setup_button"
-                                            aria-label="Install app"
-                                            title="Install app"
-                                            onClick={onClick}
-                                        >
-                                            Install
-                                        </button>
                                     </>
                       }
                   </Nav>
