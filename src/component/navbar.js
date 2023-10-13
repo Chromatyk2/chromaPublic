@@ -13,8 +13,6 @@ function NavBar(props) {
   const [stream, setStream] = useState(null);
   const pseudo = props.cookies.user.data[0].login;
   const [expanded, setExpanded] = useState(false);
-    const [supportsPWA, setSupportsPWA] = useState(false);
-    const [promptInstall, setPromptInstall] = useState(null);
   useEffect(() => {
       Axios
         .get("/api/getCountProposition/"+pseudo)
@@ -22,29 +20,6 @@ function NavBar(props) {
             setCount(response.data[0].count);
       })
   }, [])
-
-    useEffect(() => {
-        const handler = e => {
-            e.preventDefault();
-            console.log("we are being triggered :D");
-            setSupportsPWA(true);
-            setPromptInstall(e);
-        };
-        window.addEventListener("beforeinstallprompt", handler);
-
-        return () => window.removeEventListener("transitionend", handler);
-    }, []);
-
-    function onClick(evt) {
-        evt.preventDefault();
-        if (!promptInstall) {
-            return;
-        }
-        promptInstall.prompt();
-    };
-    if (!supportsPWA) {
-        return null;
-    }
   return (
 
       <Navbar expanded={expanded} bg="light" expand="lg">
@@ -58,16 +33,6 @@ function NavBar(props) {
                   <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/">Accueil</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">TCG</Link>
-                      <button
-                          style={{background:"none",border:"none",color:"red"}}
-                          className="link-button"
-                          id="setup_button"
-                          aria-label="Install app"
-                          title="Install app"
-                          onClick={onClick}
-                      >
-                          Télécharger l'appli
-                      </button>
                       {pseudo == "chromatyk" &&
                                     <>
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
