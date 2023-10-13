@@ -4,8 +4,42 @@ import '../App.css'
 import PkmList from './pkmList.js'
 
 function HomePage(props) {
+    const [supportsPWA, setSupportsPWA] = useState(false);
+    const [promptInstall, setPromptInstall] = useState(null);
+
+    useEffect(() => {
+        const handler = e => {
+            e.preventDefault();
+            console.log("we are being triggered :D");
+            setSupportsPWA(true);
+            setPromptInstall(e);
+        };
+        window.addEventListener("beforeinstallprompt", handler);
+
+        return () => window.removeEventListener("transitionend", handler);
+    }, []);
+
+    function buyBoosterRandom(evt) {
+        evt.preventDefault();
+        if (!promptInstall) {
+            return;
+        }
+        promptInstall.prompt();
+    };
+    if (!supportsPWA) {
+        return null;
+    }
   return (
     <>
+        <button
+            className="link-button"
+            id="setup_button"
+            aria-label="Install app"
+            title="Install app"
+            onClick={onClick}
+        >
+            Install
+        </button>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
