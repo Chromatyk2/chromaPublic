@@ -865,7 +865,7 @@ p.filterTitle {
 }
 #root{
   min-height: 100vh;
-  background: transparent;
+  /*background: transparent;*/
 }
 .labelStats {
   font-weight: 700;
