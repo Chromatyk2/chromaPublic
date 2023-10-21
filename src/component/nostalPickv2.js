@@ -5,7 +5,7 @@ import $ from 'jquery';
 import Modal from "react-modal";
 import UniqueBoxV2 from "./uniqueBoxV2.js";
 import Axios from "axios";
-import OBSWebSocket from 'obs-web-socket/json'
+import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
 function NostalPickV2(props) {
     async function getObs() {
