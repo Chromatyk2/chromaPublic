@@ -10,7 +10,7 @@ import OBSWebSocket from 'obs-websocket-js';
 function NostalPickV2(props) {
     const obs = new OBSWebSocket();
     obs.connect({ address: process.env.REACT_APP_OBS_URL, password: process.env.REACT_APP_OBS_SECRET });
-    console.log(obs.send("GetSceneList"));
+    console.log(obs);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
     const [randomConsoles, setRandomConsoles] = React.useState(null);
