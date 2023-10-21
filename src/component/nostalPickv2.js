@@ -5,8 +5,12 @@ import $ from 'jquery';
 import Modal from "react-modal";
 import UniqueBoxV2 from "./uniqueBoxV2.js";
 import Axios from "axios";
+import OBSWebSocket from 'obs-websocket-js';
 
 function NostalPickV2(props) {
+    const obs = new OBSWebSocket();
+    obs.connect({ address: process.env.REACT_APP_OBS_URL, password: process.env.REACT_APP_OBS_SECRET });
+    console.log(obs.send("GetSceneList"));
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
     const [randomConsoles, setRandomConsoles] = React.useState(null);
