@@ -11,11 +11,12 @@ function NostalPickV2(props) {
     const obs = new OBSWebSocket();
     useEffect(() => {
         // React advises to declare the async function directly inside useEffect
-
-            obs.connect({ address: "192.168.0.23:4455", password: '96W4bUiEf55vFs' });
-            console.log(obs);
-            console.log(obs.send("GetSceneList"));
-
+        async function getObs() {
+            await obs.connect({ address: "192.168.0.23:4455", password: '96W4bUiEf55vFs' });
+            await console.log(obs);
+            await console.log(obs.send("GetSceneList"));
+        };
+        getObs();
     }, []);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
