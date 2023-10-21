@@ -16,7 +16,6 @@ function NostalPickV2(props) {
             console.log(obs);
             console.log(obs.send("GetSceneList"));
 
-        getObs();
     }, []);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
