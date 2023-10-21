@@ -11,7 +11,7 @@ function NostalPickV2(props) {
     async function getObs() {
         const obs = new OBSWebSocket();
         await obs.connect('ws://127.0.0.1:4455', '96W4bUiEf55vFs');
-        const data = await obs.send("GetSceneList");
+        const data = await obs.call('GetCurrentProgramScene');
         console.log(data);
     };
     getObs();
