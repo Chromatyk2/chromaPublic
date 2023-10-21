@@ -10,7 +10,7 @@ import OBSWebSocket from 'obs-websocket-js';
 function NostalPickV2(props) {
     async function getObs() {
         const obs = new OBSWebSocket();
-        await obs.connect("wss://192.168.0.23:4455", "96W4bUiEf55vFs");
+        await obs.connect("ws://192.168.0.23:4455", "96W4bUiEf55vFs");
         console.log("connecté !");
     };
     getObs();
