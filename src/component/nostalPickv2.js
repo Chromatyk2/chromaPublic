@@ -5,12 +5,12 @@ import $ from 'jquery';
 import Modal from "react-modal";
 import UniqueBoxV2 from "./uniqueBoxV2.js";
 import Axios from "axios";
-import OBSWebSocket from 'obs-websocket-js';
+import OBSWebSocket from 'obs-web-socket/json'
 
 function NostalPickV2(props) {
     async function getObs() {
         const obs = new OBSWebSocket();
-        await obs.connect("192.168.0.23:4455", "96W4bUiEf55vFs");
+        await obs.connect();
         console.log("connecté !");
     };
     getObs();
