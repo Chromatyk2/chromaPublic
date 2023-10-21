@@ -10,8 +10,8 @@ import OBSWebSocket from 'obs-websocket-js';
 function NostalPickV2(props) {
     async function getObs() {
         const obs = new OBSWebSocket();
-        await obs.connect({ address: "192.168.0.23:4455", password: "96W4bUiEf55vFs" });
-        await console.log("connecté !");
+        await obs.connect({ address: "wss://192.168.0.23:4455", password: "96W4bUiEf55vFs" });
+        console.log("connecté !");
     };
     getObs();
     const [modalIsOpen, setIsOpen] = React.useState(false);
