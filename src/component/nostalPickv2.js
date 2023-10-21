@@ -13,8 +13,8 @@ function NostalPickV2(props) {
         // React advises to declare the async function directly inside useEffect
         async function getObs() {
             await obs.connect('wss://127.0.0.1:4455', '96W4bUiEf55vFs');
-            console.log(obs);
-            console.log(obs.send("GetSceneList"));
+            await console.log(obs);
+            await console.log(obs.send("GetSceneList"));
         };
         getObs();
     }, []);
