@@ -7,7 +7,7 @@ import OnStream from "./onStream";
 function HomePage(props) {
   return (
     <>
-      <OnStream cookies={cookies} />
+      <OnStream />
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
