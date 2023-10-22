@@ -1498,7 +1498,7 @@ object{
     overflow: hidden;
 }
 img.gettedBoxImg {
-    bottom: 50px;
+    bottom: 150px;
     position: absolute;
     right: 50px;
     width: 350px;
