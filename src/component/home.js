@@ -2,10 +2,12 @@ import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import '../App.css'
 import PkmList from './pkmList.js'
+import OnStream from "./onStream";
 
 function HomePage(props) {
   return (
     <>
+      <OnStream cookies={cookies} />
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
