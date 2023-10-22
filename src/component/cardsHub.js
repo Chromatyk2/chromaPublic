@@ -122,7 +122,7 @@ function CardsHub(props) {
     }
     return(
         <>
-            <OnStream cookies={cookies} />
+            <OnStream />
             <div className="leaderBoardSwitch">
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
