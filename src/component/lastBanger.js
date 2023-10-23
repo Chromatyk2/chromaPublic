@@ -36,6 +36,7 @@ function LastBanger(props) {
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
+                                        document.getElementById("lastBangerContainer").style.animation = "";
                                         setNewLastCardData(result);
                                     },
                                     (error) => {
@@ -48,7 +49,6 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
-            document.getElementById("lastBangerContainer").style.animation = "";
             document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
         }
     }, [newLastCardData])
