@@ -48,8 +48,8 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
-            document.getElementById("lastBangerContainer").style.animationName = "";
-            document.getElementById("lastBangerContainer").style.animationName = "bounceLastBanger";
+            document.getElementById("lastBangerContainer").style.animation = "";
+            document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
         }
     }, [newLastCardData])
     return (
