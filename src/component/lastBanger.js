@@ -25,14 +25,18 @@ function LastBanger(props) {
                     )
             })
     }, []);
+    useEffect(() =>{
+        setTimeout(()=>{
+            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
+            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
+        }, 9000)
+    }, [])
     useEffect(() => {
         if(lastCardUser !== null){
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         if(lastCardUser.user != response.data[0].user && lastCardUser.card != response.data[0].card){
-                            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
-                            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
                             setLastCardUser(response.data[0])
                             fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
                                 .then(res => res.json())
