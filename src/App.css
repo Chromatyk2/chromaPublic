@@ -1113,7 +1113,7 @@ button.deleteTrade {
 .lastBangerContainer{
     position: absolute;
     left: 580px;
-    animation: bounceLastBanger 1s forwards;
+    animation: bounceLastBanger 9s forwards;
 }
 .lastBangerContainerBounceOut{
     position: absolute;
@@ -1558,8 +1558,15 @@ img.gettedBoxImg {
     0% {
         transform:scale(0);
     }
-    100% {
+    5%{
+        transform:scale(1)
+    }
+    95%{
         transform:scale(1);
+    }
+    100% {
+        display: none;
+        transform:scale(0);
     }
 }
 @keyframes bounceLastBangerOut {
