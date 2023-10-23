@@ -25,11 +25,9 @@ function LastBanger(props) {
                     )
             })
     }, []);
-    useEffect(() => {
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
-                            console.log(lastCardUser);
                             setLastCardUser(response.data[0])
                             fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
                                 .then(res => res.json())
@@ -44,7 +42,6 @@ function LastBanger(props) {
                                 )
                     })
             }, 10000)
-    }, [])
     return (
         <>
             {lastCardData &&
