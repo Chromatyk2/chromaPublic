@@ -32,6 +32,7 @@ function LastBanger(props) {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         response.data.map((val, key) => {
+                            console.log(val.stade);
                             if(val.stade == 4){
                                 setLastCardUser(val)
                                 setNewLastCardUser(val)
