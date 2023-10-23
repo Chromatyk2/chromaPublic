@@ -35,6 +35,11 @@ function LastBanger(props) {
         const intervalId = setInterval(() => {
             Axios.get("/api/getLastCard/")
                 .then(function(response){
+                    console.log(lastCardUser.user);
+                    console.log(response.data[0].user);
+                    console.log(lastCardUser.card);
+                    console.log(response.data[0].card);
+
                     if(lastCardUser.user != response.data[0].user && lastCardUser.card != response.data[0].card){
                         setLastCardUser(response.data[0])
                         fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
