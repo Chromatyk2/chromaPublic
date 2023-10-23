@@ -11,7 +11,7 @@ function LastBanger(props) {
         Axios.get("/api/getLastCard/")
             .then(function(response){
                 console.log(response);
-                fetch("https://api.pokemontcg.io/v2/cards/"+response.card)
+                fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
                     .then(res => res.json())
                     .then(
                         (result) => {
