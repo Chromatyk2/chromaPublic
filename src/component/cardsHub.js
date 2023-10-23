@@ -11,6 +11,7 @@ import MyBoosters from "./myBoosters";
 import ListUserTcg from "./listUserTcg";
 import Countdown from 'react-countdown';
 import SellCards from "./SellCards.js";
+import Succes from "./Succes.js";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
@@ -126,7 +127,10 @@ function CardsHub(props) {
                 <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
                 <button value="sellCards" onClick={displayTcgContent}>Echange Doublons</button>
                 {pseudo == "chromatyk" &&
-                    <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
+                    <>
+                        <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
+                        <button value="succes" onClick={displayTcgContent}>Succés</button>
+                    </>
                 }
                 {pseudo == "kimalwe" &&
                     <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
@@ -221,6 +225,9 @@ function CardsHub(props) {
                     }
                     {page == "sellCards" &&
                         <SellCards user={pseudo}/>
+                    }
+                    {page == "succes" &&
+                        <Succes user={pseudo}/>
                     }
             </div>
         </>

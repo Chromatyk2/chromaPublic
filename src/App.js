@@ -23,6 +23,7 @@ import LastGames from "./component/lastGame.js";
 import BangerOverlay from "./component/BangerOverlay.js";
 import CardsHub from "./component/cardsHub.js";
 import OnStream from "./component/onStream";
+import NostalPickV2 from "./component/nostalPickv2";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -46,7 +47,7 @@ function App() {
           <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGS" element={<NostalPick cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGS" element={<NostalPickV2 cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
