@@ -1559,7 +1559,7 @@ img.gettedBoxImg {
         visibility: visible;
         transform:scale(1);
     }
-    50% {
+    90% {
         transform:scale(1);
     }
     100% {
