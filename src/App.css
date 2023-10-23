@@ -1110,10 +1110,6 @@ button.deleteTrade {
     position: relative;
     top: 80px;
 }
-.lastBangerContainer{
-    position: absolute;
-    left: 580px;
-}
 .lastBangerContainerBounceOut{
     position: absolute;
     left: 580px;
