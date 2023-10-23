@@ -25,15 +25,11 @@ function LastBanger(props) {
                     )
             })
     }, []);
-    useEffect(() =>{
-        setTimeout(()=>{
-            console.log("firstBounceOut");
-            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
-            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
-        }, 9000)
-    }, [])
-    useEffect(() => {
-        if(lastCardUser !== null){
+            setTimeout(()=>{
+                console.log("firstBounceOut");
+                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
+                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
+            }, 9000)
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
@@ -55,8 +51,6 @@ function LastBanger(props) {
                         }
                     })
             }, 10000)
-        }
-    }, [lastCardUser])
     return (
         <>
             {lastCardData &&
