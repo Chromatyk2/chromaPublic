@@ -49,7 +49,6 @@ function LastBangerAlert(props) {
                                             setError(error);
                                         }
                                     )
-                                $('audio#pasmal')[0].play()
                             }else if(val.stade == 3){
                                 setLastCardUser(val)
                                 setNewLastCardUser(val)
@@ -65,16 +64,15 @@ function LastBangerAlert(props) {
                                             setError(error);
                                         }
                                     )
-                                $('audio#omglebanger')[0].play()
                             }
                         })
                     })
             }, 10000)
     }, []);
     useEffect(() => {
-        console.log('test');
         if(newLastCardData != null){
             if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
+                console.log('New')
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
