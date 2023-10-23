@@ -16,6 +16,7 @@ function LastBanger(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
+                            console.log("firstFetch");
                             setLastCardData(result);
                         },
                         (error) => {
@@ -27,7 +28,6 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         const intervalId = setInterval(() => {
-            console.log(lastCardUser);
             document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
             document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
         }, 9000)
@@ -36,10 +36,8 @@ function LastBanger(props) {
         const intervalId = setInterval(() => {
             Axios.get("/api/getLastCard/")
                 .then(function(response){
-                    console.log(lastCardUser);
-                    console.log(response.data[0].user);
-                    console.log(lastCardUser.card);
-                    console.log(response.data[0].card);
+                    console.log(response.data[0]);
+                    console.log(response.data[0]);
 
                     if(lastCardUser.user != response.data[0].user && lastCardUser.card != response.data[0].card){
                         setLastCardUser(response.data[0])
