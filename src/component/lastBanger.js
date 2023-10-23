@@ -48,8 +48,8 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
-            document.getElementById("lasBangerContainer").style.display = "none";
-            document.getElementById("lasBangerContainer").style.display = "block";
+            document.getElementById("lastBangerContainer").style.display = "none";
+            document.getElementById("lastBangerContainer").style.display = "block";
         }
     }, [newLastCardData])
     return (
