@@ -41,7 +41,8 @@ function OpeningCards(props) {
                     {
                         pseudo:props.user,
                         idCard:randomCommon.id,
-                        booster:props.idBooster
+                        booster:props.idBooster,
+                        rarity:randomCommon.rarity
                     })
                 setIsLoaded(true);
                 setTenCards(tenCards => [...tenCards,randomCommon]);
@@ -58,7 +59,8 @@ function OpeningCards(props) {
                             {
                                 pseudo:props.user,
                                 idCard:randomFinal.id,
-                                booster:props.idBooster
+                                booster:props.idBooster,
+                                rarity:randomFinal.rarity
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -71,7 +73,8 @@ function OpeningCards(props) {
                             {
                                 pseudo:props.user,
                                 idCard:randomBonus.id,
-                                booster:props.idBooster
+                                booster:props.idBooster,
+                                rarity:randomBonus.rarity
                             })
                         setTenCards(tenCards => [...tenCards,randomBonus]);
                         setNbCards (nbCards + 1);
@@ -84,7 +87,8 @@ function OpeningCards(props) {
                         {
                             pseudo:props.user,
                             idCard:randomUncommon.id,
-                            booster:props.idBooster
+                            booster:props.idBooster,
+                            rarity:randomUncommon.rarity
                         })
                     setIsLoaded(true);
                     setTenCards(tenCards => [...tenCards,randomUncommon]);
@@ -102,7 +106,8 @@ function OpeningCards(props) {
                             {
                                 pseudo:props.user,
                                 idCard:randomFinal.id,
-                                booster:props.idBooster
+                                booster:props.idBooster,
+                                rarity:randomFinal.rarity
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -115,7 +120,8 @@ function OpeningCards(props) {
                             {
                                 pseudo:props.user,
                                 idCard:randomBonus.id,
-                                booster:props.idBooster
+                                booster:props.idBooster,
+                                rarity:randomBonus.rarity
                             })
                         setTenCards(tenCards => [...tenCards,randomBonus]);
                         setNbCards (nbCards + 1);
@@ -128,7 +134,8 @@ function OpeningCards(props) {
                         {
                             pseudo:props.user,
                             idCard:randomUncommon.id,
-                            booster:props.idBooster
+                            booster:props.idBooster,
+                            rarity:randomUncommon.rarity
                         })
                     setIsLoaded(true);
                     setTenCards(tenCards => [...tenCards,randomUncommon]);
@@ -148,7 +155,8 @@ function OpeningCards(props) {
                                 {
                                     pseudo:props.user,
                                     idCard:randomFinal.id,
-                                    booster:props.idBooster
+                                    booster:props.idBooster,
+                                    rarity:randomFinal.rarity
                                 })
                             setTenCards(tenCards => [...tenCards,randomFinal]);
                             setNbCards (nbCards + 1);
@@ -161,7 +169,8 @@ function OpeningCards(props) {
                                 {
                                     pseudo:props.user,
                                     idCard:randomUltra.id,
-                                    booster:props.idBooster
+                                    booster:props.idBooster,
+                                    rarity:randomUltra.rarity
                                 })
                             setTenCards(tenCards => [...tenCards,randomUltra]);
                             setNbCards (nbCards + 1);
@@ -175,7 +184,8 @@ function OpeningCards(props) {
                             {
                                 pseudo:props.user,
                                 idCard:randomEpic.id,
-                                booster:props.idBooster
+                                booster:props.idBooster,
+                                rarity:randomEpic.rarity
                             })
                         setTenCards(tenCards => [...tenCards,randomEpic]);
                         setNbCards (nbCards + 1);
@@ -189,7 +199,8 @@ function OpeningCards(props) {
                         {
                             pseudo:props.user,
                             idCard:randomRare.id,
-                            booster:props.idBooster
+                            booster:props.idBooster,
+                            rarity:randomRare.rarity
                         })
                     setTenCards(tenCards => [...tenCards,randomRare]);
                     setNbCards (nbCards + 1);
