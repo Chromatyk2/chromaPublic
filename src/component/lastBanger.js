@@ -29,7 +29,7 @@ function LastBanger(props) {
         <>
             {lastCard &&
                 <>
-                    <p>{lastCardUser.user}</p>
+                    <p className={"lastCardUsername"}>{lastCardUser.user}</p>
                     <img src={"https://images.pokemontcg.io/"+setLastCardData.data.set.id+"/"+setLastCardData.data.number+"_hires.png" }/>
                 </>
             }

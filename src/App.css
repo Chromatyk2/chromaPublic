@@ -1101,6 +1101,13 @@ button.deleteTrade {
     font-family: Charge Vector Black;
     letter-spacing: 2px;
 }
+.lastCardUserName{
+    color: #fff;
+    font-size: 90px;
+    text-align: left;
+    text-shadow: 2px 3px 10px #000;
+    z-index: 1;
+}
 .guessTradeButton {
     background: #0a3a2c;
     border-radius: 25px;
