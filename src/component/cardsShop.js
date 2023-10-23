@@ -13,7 +13,6 @@ function CardsShop(props) {
     const [items, setItems] = useState(null);
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
-    const [buyable,setBuyable] = useState(false);
     useEffect(() => {
         Axios
             .get("/api/getBoostersList")
@@ -176,11 +175,6 @@ function selectGen(e) {
             })
     }
 }
-    function nbToBuy(e) {
-        if(e.target.value != null && e.target.value > 0){
-            setBuyable(true);
-        }
-    }
 return (
     <>
         <div>
@@ -217,7 +211,7 @@ return (
                     {points > 499 ?
                         loading === false ?
                             <div>
-                                <button disabled = {buyable === false && "disabled"} value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className={"guessTradeButton"}>Acheter</button>
+                                <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className={"guessTradeButton"}>Acheter</button>
                                 <label style={{display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
                                 <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"} min="1" max={Math.floor(points/500)}  />
                             </div>
@@ -239,21 +233,21 @@ return (
                             {points > 999 ?
                                 loading === false ?
                                     <div style={{position: "relative",bottom: "-44px"}}>
-                                        <button disabled = {buyable === false && "disabled"} value={val.name} onClick={buyBooster} className={"guessTradeButton"}>Acheter</button>
+                                        <button value={val.name} onClick={buyBooster} className={"guessTradeButton"}>Acheter</button>
                                         <label style={{display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
-                                        <input onChange={nbToBuy} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                        <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                     :
                                     <div style={{position: "relative",bottom: "-44px"}}>
                                         <button className="guessTradeButton">Chargement</button>
                                         <label style={{display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
-                                        <input style={{visibility:"hidden"}} onChange={nbToBuy} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                        <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                 :
                                 <div style={{position: "relative",bottom: "-44px"}}>
                                     <button className="guessTradeButton">Card Points manquants</button>
                                     <label style={{display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
-                                    <input style={{visibility:"hidden"}} onChange={nbToBuy} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                    <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                 </div>
                             }
                         </div>

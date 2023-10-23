@@ -1101,6 +1101,24 @@ button.deleteTrade {
     font-family: Charge Vector Black;
     letter-spacing: 2px;
 }
+.lastCardUsername {
+    color: #fff;
+    font-size: 90px;
+    text-align: center;
+    text-shadow: 2px 3px 10px #000;
+    z-index: 1;
+    position: relative;
+    top: 80px;
+}
+.lastBangerContainer{
+    position: absolute;
+    left: 580px;
+}
+.lastBangerContainerBounceOut{
+    position: absolute;
+    left: 580px;
+    animation: bounceLastBangerOut 1s forwards;
+}
 .guessTradeButton {
     background: #0a3a2c;
     border-radius: 25px;
@@ -1498,7 +1516,7 @@ object{
     overflow: hidden;
 }
 img.gettedBoxImg {
-    bottom: 50px;
+    bottom: 200px;
     position: absolute;
     right: 50px;
     width: 350px;
@@ -1533,6 +1551,29 @@ img.gettedBoxImg {
     }
     100% {
         transform: scale(1) translateX(-200px) translateY(-250px);
+    }
+}
+@keyframes bounceLastBanger {
+    0% {
+        transform:scale(0);
+    }
+    5%{
+        transform:scale(1)
+    }
+    95%{
+        transform:scale(1);
+    }
+    100% {
+        display: none;
+        transform:scale(0);
+    }
+}
+@keyframes bounceLastBangerOut {
+    0% {
+        transform:scale(1);
+    }
+    100% {
+        transform:scale(0);
     }
 }
 @keyframes bounceIn {

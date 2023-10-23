@@ -24,6 +24,7 @@ import BangerOverlay from "./component/BangerOverlay.js";
 import CardsHub from "./component/cardsHub.js";
 import OnStream from "./component/onStream";
 import NostalPickV2 from "./component/nostalPickv2";
+import LastBanger from "./component/lastBanger";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -34,7 +35,6 @@ function App() {
       {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
-          <OnStream cookies={cookies} />
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
@@ -52,6 +52,7 @@ function App() {
           <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
       }

@@ -23,7 +23,6 @@ function Succes(props) {
                 let sum = (response.data.reduce(function(prev, current) {
                     return prev + +current.nbCard
                 }, 0));
-                setTotalCardUser(sum);
                 Axios.get("/api/getBoosterTotalCard")
                     .then(function(response){
                         setBoosterList(response.data);
@@ -42,7 +41,7 @@ function Succes(props) {
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                         return(
-                            <MyUniqueSucces page={val.booster} nbCard={val} maxBooster={boosterList.find((uc) => uc.name.includes(val.booster)).totalCards}/>
+                            <p>Oui</p>
                         )
                     })
                 }
