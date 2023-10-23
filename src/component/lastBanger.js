@@ -35,6 +35,7 @@ function LastBanger(props) {
                         .then(
                             (result) => {
                                 setLastCardData(result);
+                                document.getElementsByClassName("lastBangerContainer").style.display = "block";
                             },
                             (error) => {
                                 setIsLoaded(true);

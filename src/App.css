@@ -1564,6 +1564,7 @@ img.gettedBoxImg {
     100% {
         visibility: hidden;
         transform:scale(0);
+        display: none;
     }
 }
 @keyframes bounceIn {
