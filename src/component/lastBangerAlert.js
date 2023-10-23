@@ -75,7 +75,7 @@ function LastBangerAlert(props) {
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBangerAlert 3s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
-                }, 9000);
+                }, 3001);
             }else{
                 setNewLastCardData(null);
             }
