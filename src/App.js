@@ -25,6 +25,7 @@ import CardsHub from "./component/cardsHub.js";
 import OnStream from "./component/onStream";
 import NostalPickV2 from "./component/nostalPickv2";
 import LastBanger from "./component/lastBanger";
+import LastBangerAlert from "./component/lastBangerAlert";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
       }

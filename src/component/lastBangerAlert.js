@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import '../App.css'
+import $ from "jquery";
 
-function LastBanger(props) {
+function LastBangerAlert(props) {
     const [lastCardData, setLastCardData] = useState(null);
     const [lastCardUser, setLastCardUser] = useState(null);
     const [newLastCardData, setNewLastCardData] = useState(null);
@@ -71,6 +72,13 @@ function LastBanger(props) {
     useEffect(() => {
         if(newLastCardData != null){
             if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
+                if(newLastCardUser.stade == 3){
+                    $('audio#pasmal')[0].play()
+
+                }else if(newLastCardUser.stade == 4){
+                    $('audio#omglebanger')[0].play()
+
+                }
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
@@ -89,4 +97,4 @@ function LastBanger(props) {
         </>
     )
 }
-export default LastBanger
+export default LastBangerAlert
