@@ -1393,6 +1393,8 @@ img.done {
     margin: auto;
     justify-content: center;
     gap: 44px;
+    position: relative;
+    top: 80px;
 }
 img.imgBox {
     width: 226px;
