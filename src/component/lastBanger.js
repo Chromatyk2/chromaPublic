@@ -5,6 +5,8 @@ import '../App.css'
 function LastBanger(props) {
     const [lastCardData, setLastCardData] = useState(null);
     const [lastCardUser, setLastCardUser] = useState(null);
+    const [newLastCardData, setNewLastCardData] = useState(null);
+    const [newLastCardUser, setNewLastCardUser] = useState(null);
     const [newCard, setNewCard] = useState(null);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -29,13 +31,12 @@ function LastBanger(props) {
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
-                            setLastCardUser(response.data[0])
+                            setNewLastCardUser(response.data[0])
                             fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
-                                        document.getElementById("lasBangerContainer").style.display = "block";
-                                        setLastCardData(result);
+                                        setNewLastCardData(result);
                                     },
                                     (error) => {
                                         setIsLoaded(true);
@@ -45,9 +46,15 @@ function LastBanger(props) {
                     })
             }, 10000)
     }, []);
+    useEffect(() => {
+        if(newLastCardData != null){
+            document.getElementById("lasBangerContainer").style.display = "none";
+            document.getElementById("lasBangerContainer").style.display = "block";
+        }
+    }, [newLastCardData])
     return (
         <>
-            {lastCardData &&
+            {newLastCardData &&
                 <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
                     <p className={"lastCardUsername"}>{lastCardUser.user}</p>
                     <img style={{width:"450px"}} src={"https://images.pokemontcg.io/"+lastCardData.data.set.id+"/"+lastCardData.data.number+"_hires.png" }/>
