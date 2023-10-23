@@ -51,6 +51,7 @@ function LastBangerAlert(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
+                                            console.log(newLastCardUser);
                                             setNewLastCardUser(result);
                                             setNewLastCardData(result);
                                         },
@@ -67,6 +68,11 @@ function LastBangerAlert(props) {
     useEffect(() => {
         if(newLastCardData != null){
             if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
+                if(lastCardUser.stade == 3){
+                    $('audio#pasmal')[0].play()
+                }else if(lastCardUser.stade == 4){
+                    $('audio#omglebanger')[0].play()
+                }
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
