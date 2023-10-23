@@ -48,6 +48,11 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
+            console.log(lastCardUser.user);
+            console.log(newLastCardUser.user);
+            console.log(lastCardUser.card);
+            console.log(newLastCardUser.card);
+
             if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
