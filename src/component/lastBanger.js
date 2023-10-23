@@ -25,6 +25,7 @@ function LastBanger(props) {
                     )
             })
     }, []);
+    useEffect(() => {
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
@@ -42,6 +43,7 @@ function LastBanger(props) {
                                 )
                     })
             }, 10000)
+    }, [])
     return (
         <>
             {lastCardData &&
