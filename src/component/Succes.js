@@ -7,12 +7,14 @@ import '../App.css'
 import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
 import MyUniqueBooster from "./myUniqueBooster";
+import MyUniqueSucces from "./MyUniqueSucces";
 import ProgressBarCard from "./progressBarCard";
 
 function Succes(props) {
     const [nbCards, setNbCards] = useState(null);
     const [totalCard, setTotalCard] = useState(null);
     const [boosterList, setBoosterList] = useState(null);
+    const [totalCardUser, setTotalCardUser] = useState(null);
     useEffect(() => {
         Axios
             .get("/api/getNbCards/"+props.user)
