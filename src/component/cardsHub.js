@@ -12,6 +12,7 @@ import ListUserTcg from "./listUserTcg";
 import Countdown from 'react-countdown';
 import SellCards from "./SellCards.js";
 import Succes from "./Succes.js";
+import OnStream from "./onStream";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
@@ -121,6 +122,7 @@ function CardsHub(props) {
     }
     return(
         <>
+            <OnStream />
             <div className="leaderBoardSwitch">
                 <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
                 <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>

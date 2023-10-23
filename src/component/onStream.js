@@ -7,17 +7,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
+import {useCookies} from "react-cookie";
 
-function OnStream(props) {
+function OnStream() {
+    const [cookies, setCookie] = useCookies();
     const [count, setCount] = useState(0);
     const [stream, setStream] = useState(null);
-    const pseudo = props.cookies.user.data[0].login;
+    const pseudo = cookies.user.data[0].login;
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/streams?user_login=Chromatyk',
             {
                 headers:{
-                    'Authorization': `Bearer ${props.cookies.token.access_token}`,
+                    'Authorization': `Bearer ${cookies.token.access_token}`,
                     'Client-Id': process.env.REACT_APP_CLIENT_ID
                 }
             }
