@@ -1552,17 +1552,15 @@ img.gettedBoxImg {
 }
 @keyframes bounceLastBanger {
     0% {
-        visibility: visible;
+        display: block;
         transform:scale(0);
     } 5% {
-        visibility: visible;
         transform:scale(1);
     }
     95% {
         transform:scale(1);
     }
     100% {
-        visibility: hidden;
         transform:scale(0);
         display: none;
     }

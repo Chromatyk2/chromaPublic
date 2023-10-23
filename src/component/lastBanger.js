@@ -35,7 +35,7 @@ function LastBanger(props) {
                         .then(
                             (result) => {
                                 setLastCardData(result);
-                                document.getElementsByClassName("lastBangerContainer").style.display = "block";
+                                document.getElementById("lastBangerContainer").style.display = "block";
                             },
                             (error) => {
                                 setIsLoaded(true);
@@ -48,7 +48,7 @@ function LastBanger(props) {
     return (
         <>
             {lastCardData &&
-                <div className={"lastBangerContainer"}>
+                <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
                     <p className={"lastCardUsername"}>{lastCardUser.user}</p>
                     <img style={{width:"450px"}} src={"https://images.pokemontcg.io/"+lastCardData.data.set.id+"/"+lastCardData.data.number+"_hires.png" }/>
                 </div>
