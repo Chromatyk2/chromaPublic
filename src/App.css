@@ -1113,7 +1113,12 @@ button.deleteTrade {
 .lastBangerContainer{
     position: absolute;
     left: 580px;
-    animation: bounceLastBanger 9.5s forwards;
+    animation: bounceLastBanger 1s forwards;
+}
+.lastBangerContainerOut{
+    position: absolute;
+    left: 580px;
+    animation: bounceLastBangerOut 1s forwards;
 }
 .guessTradeButton {
     background: #0a3a2c;
@@ -1551,17 +1556,18 @@ img.gettedBoxImg {
 }
 @keyframes bounceLastBanger {
     0% {
-        display: block;
         transform:scale(0);
-    } 5% {
+    }
+    100% {
         transform:scale(1);
     }
-    95% {
+}
+@keyframes bounceLastBangerOut {
+    0% {
         transform:scale(1);
     }
     100% {
         transform:scale(0);
-        display: none;
     }
 }
 @keyframes bounceIn {

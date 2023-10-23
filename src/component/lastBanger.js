@@ -27,6 +27,12 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         const intervalId = setInterval(() => {
+            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
+            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
+        }, 9000)
+    }, [])
+    useEffect(() => {
+        const intervalId = setInterval(() => {
             Axios.get("/api/getLastCard/")
                 .then(function(response){
                     setLastCardUser(response.data[0])
@@ -35,7 +41,8 @@ function LastBanger(props) {
                         .then(
                             (result) => {
                                 setLastCardData(result);
-                                document.getElementById("lastBangerContainer").style.display = "block";
+                                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
+                                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
                             },
                             (error) => {
                                 setIsLoaded(true);
