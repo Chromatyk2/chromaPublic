@@ -26,11 +26,11 @@ function LastBanger(props) {
             })
     }, []);
     useEffect(() => {
-        setInterval(() => {
-            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
-            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
-        }, 9000)
         if(lastCardUser !== null){
+            setInterval(() => {
+                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
+                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
+            }, 9000)
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
