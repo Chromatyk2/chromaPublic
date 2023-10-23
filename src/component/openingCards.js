@@ -62,7 +62,7 @@ function OpeningCards(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
+                                stade:props.rarities.filter(item => item.rarity == randomFinal.rarity).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -112,7 +112,7 @@ function OpeningCards(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
+                                stade:props.rarities.filter(item => item.rarity == randomFinal.rarity).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
