@@ -25,6 +25,25 @@ function LastBanger(props) {
                     )
             })
     }, []);
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            Axios.get("/api/getLastCard/")
+                .then(function(response){
+                    setLastCardUser(response.data[0])
+                    fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
+                        .then(res => res.json())
+                        .then(
+                            (result) => {
+                                setLastCardData(result);
+                            },
+                            (error) => {
+                                setIsLoaded(true);
+                                setError(error);
+                            }
+                        )
+                })
+        }, 10000)
+    })
     return (
         <>
             {lastCardData &&
