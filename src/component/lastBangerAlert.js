@@ -65,7 +65,7 @@ function LastBangerAlert(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
-            if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
+            if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card){
                 if(lastCardUser.stade == 3){
                     $('audio#pasmal')[0].play()
                 }else if(lastCardUser.stade == 4){
