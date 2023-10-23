@@ -35,7 +35,7 @@ function LastBanger(props) {
         const intervalId = setInterval(() => {
             Axios.get("/api/getLastCard/")
                 .then(function(response){
-                    console.log(lastCardUser.user);
+                    console.log(lastCardUser);
                     console.log(response.data[0].user);
                     console.log(lastCardUser.card);
                     console.log(response.data[0].card);
