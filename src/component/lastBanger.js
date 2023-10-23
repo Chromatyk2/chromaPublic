@@ -32,7 +32,7 @@ function LastBanger(props) {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         response.data.map((val, key) => {
-                            if(val.filter(item => item.rarity == "Hyper Rare" || item.rarity == "Illustration Rare" || item.rarity == "LEGEND" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Ultra" || item.rarity == "Special Illustration Rare" || item.rarity == "Trainer Gallery Rare Holo")){
+                            if(val.stade == 4){
                                 setLastCardUser(val)
                                 setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
@@ -47,7 +47,37 @@ function LastBanger(props) {
                                             setError(error);
                                         }
                                     )
-                            }else if(val.filter(item => item.rarity == " Rare Holo GX" || item.rarity == "Amazing Rare" || item.rarity == "Double Rare" || item.rarity == "Radiant Rare" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Ultra" || item.rarity == "Special Illustration Rare" || item.rarity == "Trainer Gallery Rare Holo")){
+                            }else if(val.stade == 3){
+                                setLastCardUser(val)
+                                setNewLastCardUser(val)
+                                fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
+                                    .then(res => res.json())
+                                    .then(
+                                        (result) => {
+                                            setLastCardData(result);
+                                            setNewLastCardData(result);
+                                        },
+                                        (error) => {
+                                            setIsLoaded(true);
+                                            setError(error);
+                                        }
+                                    )
+                            }else if(val.stade == 2){
+                                setLastCardUser(val)
+                                setNewLastCardUser(val)
+                                fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
+                                    .then(res => res.json())
+                                    .then(
+                                        (result) => {
+                                            setLastCardData(result);
+                                            setNewLastCardData(result);
+                                        },
+                                        (error) => {
+                                            setIsLoaded(true);
+                                            setError(error);
+                                        }
+                                    )
+                            }else{
                                 setLastCardUser(val)
                                 setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
