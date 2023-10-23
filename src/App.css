@@ -1114,7 +1114,7 @@ button.deleteTrade {
     position: absolute;
     left: 580px;
     visibility:hidden ;
-    animation: bounceLastBanger 5s forwards;
+    animation: bounceLastBanger 9.5s forwards;
 }
 .guessTradeButton {
     background: #0a3a2c;
@@ -1554,12 +1554,11 @@ img.gettedBoxImg {
     0% {
         visibility: visible;
         transform:scale(0);
-    }
-    25% {
+    } 5% {
         visibility: visible;
         transform:scale(1);
     }
-    90% {
+    95% {
         transform:scale(1);
     }
     100% {
