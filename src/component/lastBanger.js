@@ -28,14 +28,11 @@ function LastBanger(props) {
     useEffect(() => {
         if(lastCardUser !== null){
             setInterval(() => {
-                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
-                document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
-            }, 9000)
-            setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
-                        console.log(lastCardUser);
                         if(lastCardUser.user != response.data[0].user && lastCardUser.card != response.data[0].card){
+                            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
+                            document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
                             setLastCardUser(response.data[0])
                             fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
                                 .then(res => res.json())
