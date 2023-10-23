@@ -34,13 +34,11 @@ function LastBangerAlert(props) {
                     .then(function(response){
                         response.data.map((val, key) => {
                             if(val.stade == 4){
-                                setLastCardUser(val)
-                                setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setLastCardData(result);
+                                            setNewLastCardUser(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -49,13 +47,11 @@ function LastBangerAlert(props) {
                                         }
                                     )
                             }else if(val.stade == 3){
-                                setLastCardUser(val)
-                                setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setLastCardData(result);
+                                            setNewLastCardUser(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -70,12 +66,8 @@ function LastBangerAlert(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
-            console.log(lastCardUser.user);
-            console.log(newLastCardUser.user);
-            console.log(lastCardUser.card);
-            console.log(newLastCardUser.card);
             if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
-                console.log('New')
+                setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
