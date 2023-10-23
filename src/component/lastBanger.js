@@ -78,7 +78,7 @@ function LastBanger(props) {
                                             setError(error);
                                         }
                                     )
-                            }else{
+                            }else if(val.stade == 1){
                                 setLastCardUser(val)
                                 setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
