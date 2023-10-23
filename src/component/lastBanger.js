@@ -1,9 +1,12 @@
 import React,{useState, useEffect} from 'react';
+import Axios from 'axios'
 import '../App.css'
 
 function LastBanger(props) {
     const [lastCard, setLastCard] = useState(null);
     const [newCard, setNewCard] = useState(null);
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
         Axios.get("/api/getLastCard/")
             .then(function(response){
