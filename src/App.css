@@ -1113,6 +1113,8 @@ button.deleteTrade {
 .lasBangerContainer{
 position: absolute;
     left: 180px;
+    visibility:hidden ;
+    animation: bounceIn 1s forwards;
 }
 .guessTradeButton {
     background: #0a3a2c;
