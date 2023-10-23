@@ -33,7 +33,6 @@ function LastBangerAlert(props) {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         response.data.map((val, key) => {
-                            console.log(val.stade);
                             if(val.stade == 4){
                                 setLastCardUser(val)
                                 setNewLastCardUser(val)
@@ -74,7 +73,7 @@ function LastBangerAlert(props) {
             console.log(lastCardUser.user);
             console.log(newLastCardUser.user);
             console.log(lastCardUser.card);
-            console.log(lnewLastCardUser.card);
+            console.log(newLastCardUser.card);
             if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
                 console.log('New')
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
