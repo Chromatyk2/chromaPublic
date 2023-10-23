@@ -10,7 +10,7 @@ function LastBanger(props) {
     useEffect(() => {
         Axios.get("/api/getLastCard/")
             .then(function(response){
-                fetch("https://api.pokemontcg.io/v2/cards/"+response.data.card)
+                fetch("https://api.pokemontcg.io/v2/cards/"+response.card)
                     .then(res => res.json())
                     .then(
                         (result) => {
