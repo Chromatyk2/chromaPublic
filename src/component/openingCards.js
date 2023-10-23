@@ -62,7 +62,7 @@ function OpeningCards(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:item.stade
+                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -77,7 +77,7 @@ function OpeningCards(props) {
                                 idCard:randomBonus.id,
                                 booster:props.idBooster,
                                 rarity:randomBonus.rarity,
-                                stade:item.stade
+                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomBonus]);
                         setNbCards (nbCards + 1);
@@ -112,7 +112,7 @@ function OpeningCards(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:item.stade
+                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -127,7 +127,7 @@ function OpeningCards(props) {
                                 idCard:randomBonus.id,
                                 booster:props.idBooster,
                                 rarity:randomBonus.rarity,
-                                stade:item.stade
+                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomBonus]);
                         setNbCards (nbCards + 1);
@@ -164,7 +164,7 @@ function OpeningCards(props) {
                                     idCard:randomFinal.id,
                                     booster:props.idBooster,
                                     rarity:randomFinal.rarity,
-                                    stade:item.stade
+                                    stade:4
                                 })
                             setTenCards(tenCards => [...tenCards,randomFinal]);
                             setNbCards (nbCards + 1);
@@ -179,7 +179,7 @@ function OpeningCards(props) {
                                     idCard:randomUltra.id,
                                     booster:props.idBooster,
                                     rarity:randomUltra.rarity,
-                                    stade:item.stade
+                                    stade:3
                                 })
                             setTenCards(tenCards => [...tenCards,randomUltra]);
                             setNbCards (nbCards + 1);
@@ -195,7 +195,7 @@ function OpeningCards(props) {
                                 idCard:randomEpic.id,
                                 booster:props.idBooster,
                                 rarity:randomEpic.rarity,
-                                stade:item.stade
+                                stade:2
                             })
                         setTenCards(tenCards => [...tenCards,randomEpic]);
                         setNbCards (nbCards + 1);
@@ -211,7 +211,7 @@ function OpeningCards(props) {
                             idCard:randomRare.id,
                             booster:props.idBooster,
                             rarity:randomRare.rarity,
-                            stade:item.stade
+                            stade:1
                         })
                     setTenCards(tenCards => [...tenCards,randomRare]);
                     setNbCards (nbCards + 1);
