@@ -49,6 +49,7 @@ function LastBangerAlert(props) {
                                             setError(error);
                                         }
                                     )
+                                $('audio#pasmal')[0].play()
                             }else if(val.stade == 3){
                                 setLastCardUser(val)
                                 setNewLastCardUser(val)
@@ -64,6 +65,7 @@ function LastBangerAlert(props) {
                                             setError(error);
                                         }
                                     )
+                                $('audio#omglebanger')[0].play()
                             }
                         })
                     })
@@ -72,13 +74,6 @@ function LastBangerAlert(props) {
     useEffect(() => {
         if(newLastCardData != null){
             if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
-                if(newLastCardUser.stade == 3){
-                    $('audio#pasmal')[0].play()
-
-                }else if(newLastCardUser.stade == 4){
-                    $('audio#omglebanger')[0].play()
-
-                }
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
