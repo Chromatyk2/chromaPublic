@@ -27,6 +27,7 @@ function LastBanger(props) {
     }, []);
     useEffect(() =>{
         setTimeout(()=>{
+            console.log("firstBounceOut");
             document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
             document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
         }, 9000)
