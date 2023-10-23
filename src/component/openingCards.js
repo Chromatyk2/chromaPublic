@@ -62,7 +62,7 @@ function OpeningCards(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:props.rarities.filter(item => item.rarity == randomFinal.rarity).stade
+                                stade:rarities.find((uc) => uc.rarity.includes(randomFinal.rarity)).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -77,7 +77,7 @@ function OpeningCards(props) {
                                 idCard:randomBonus.id,
                                 booster:props.idBooster,
                                 rarity:randomBonus.rarity,
-                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
+                                stade:rarities.find((uc) => uc.rarity.includes(randomBonus.rarity)).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomBonus]);
                         setNbCards (nbCards + 1);
@@ -112,7 +112,7 @@ function OpeningCards(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:props.rarities.filter(item => item.rarity == randomFinal.rarity).stade
+                                stade:rarities.find((uc) => uc.rarity.includes(randomFinal.rarity)).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -127,7 +127,7 @@ function OpeningCards(props) {
                                 idCard:randomBonus.id,
                                 booster:props.idBooster,
                                 rarity:randomBonus.rarity,
-                                stade:props.rarities.filter(item => item.rarity == randomBonus.rarity).stade
+                                stade:rarities.find((uc) => uc.rarity.includes(randomBonus.rarity)).stade
                             })
                         setTenCards(tenCards => [...tenCards,randomBonus]);
                         setNbCards (nbCards + 1);
