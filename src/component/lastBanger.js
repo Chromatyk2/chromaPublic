@@ -1,0 +1,33 @@
+import React,{useState, useEffect} from 'react';
+import '../App.css'
+
+function LastBanger(props) {
+    const [lastCard, setLastCard] = useState(null);
+    const [newCard, setNewCard] = useState(null);
+    useEffect(() => {
+        Axios.get("/api/getLastCard/")
+            .then(function(response){
+                fetch("https://api.pokemontcg.io/v2/cards/"+response.data.card)
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            setLastCard(result);
+                        },
+                        (error) => {
+                            setIsLoaded(true);
+                            setError(error);
+                        }
+                    )
+            })
+    }, []);
+    return (
+        <>
+            {lastCard &&
+                <>
+                    <img src={"https://images.pokemontcg.io/"+lastCard.data.set.id+"/"+lastCard.data.number+"_hires.png" }/>
+                </>
+            }
+        </>
+    )
+}
+export default LastBanger
