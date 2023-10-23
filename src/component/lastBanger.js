@@ -31,20 +31,39 @@ function LastBanger(props) {
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
-                            setLastCardUser(response.data[0])
-                            setNewLastCardUser(response.data[0])
-                            fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        setLastCardData(result);
-                                        setNewLastCardData(result);
-                                    },
-                                    (error) => {
-                                        setIsLoaded(true);
-                                        setError(error);
-                                    }
-                                )
+                        response.data.map((val, key) => {
+                            if(val.filter(item => item.rarity == "Hyper Rare" || item.rarity == "Illustration Rare" || item.rarity == "LEGEND" || item.rarity == "Rare Holo" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Ultra" || item.rarity == "Special Illustration Rare" || item.rarity == "Trainer Gallery Rare Holo")){
+                                setLastCardUser(val)
+                                setNewLastCardUser(val)
+                                fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
+                                    .then(res => res.json())
+                                    .then(
+                                        (result) => {
+                                            setLastCardData(result);
+                                            setNewLastCardData(result);
+                                        },
+                                        (error) => {
+                                            setIsLoaded(true);
+                                            setError(error);
+                                        }
+                                    )
+                            }else if(val.filter(item => item.rarity == " Rare Holo GX" || item.rarity == "Amazing Rare" || item.rarity == "Double Rare" || item.rarity == "Radiant Rare" || item.rarity == "Rare Holo Star" || item.rarity == "Rare Rainbow" || item.rarity == "Rare Secret" || item.rarity == "Rare Ultra" || item.rarity == "Special Illustration Rare" || item.rarity == "Trainer Gallery Rare Holo")){
+                                setLastCardUser(val)
+                                setNewLastCardUser(val)
+                                fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
+                                    .then(res => res.json())
+                                    .then(
+                                        (result) => {
+                                            setLastCardData(result);
+                                            setNewLastCardData(result);
+                                        },
+                                        (error) => {
+                                            setIsLoaded(true);
+                                            setError(error);
+                                        }
+                                    )
+                            }
+                        })
                     })
             }, 10000)
     }, []);
