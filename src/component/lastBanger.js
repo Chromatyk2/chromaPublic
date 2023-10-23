@@ -43,7 +43,7 @@ function LastBanger(props) {
                         )
                 })
         }, 10000)
-    })
+    }, [])
     return (
         <>
             {lastCardData &&
