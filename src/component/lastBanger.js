@@ -43,6 +43,9 @@ function LastBanger(props) {
                         )
                 })
         }, 10000)
+        setTimeout(() => {
+            document.getElementsByClassName("lastBangerContainer").classListToggle("bounceOutLastBanger");
+        }, 1000);
     }, [])
     return (
         <>
