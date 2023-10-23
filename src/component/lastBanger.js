@@ -36,7 +36,6 @@ function LastBanger(props) {
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
-                                        document.getElementById("lastBangerContainer").style.animation = "";
                                         setNewLastCardData(result);
                                     },
                                     (error) => {
