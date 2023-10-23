@@ -16,7 +16,6 @@ function LastBanger(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            console.log("firstFetch");
                             setLastCardData(result);
                         },
                         (error) => {
@@ -27,37 +26,34 @@ function LastBanger(props) {
             })
     }, []);
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        setInterval(() => {
             document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
             document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
         }, 9000)
-    }, [])
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            Axios.get("/api/getLastCard/")
-                .then(function(response){
-                    console.log(response.data[0]);
-                    console.log(response.data[0]);
-
-                    if(lastCardUser.user != response.data[0].user && lastCardUser.card != response.data[0].card){
-                        setLastCardUser(response.data[0])
-                        fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
-                            .then(res => res.json())
-                            .then(
-                                (result) => {
-                                    setLastCardData(result);
-                                    document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
-                                    document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
-                                },
-                                (error) => {
-                                    setIsLoaded(true);
-                                    setError(error);
-                                }
-                            )
-                    }
-                })
-        }, 10000)
-    }, [])
+        if(lastCardUser !== null){
+            setInterval(() => {
+                Axios.get("/api/getLastCard/")
+                    .then(function(response){
+                        if(lastCardUser.user != response.data[0].user && lastCardUser.card != response.data[0].card){
+                            setLastCardUser(response.data[0])
+                            fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        setLastCardData(result);
+                                        document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainerBounceOut");
+                                        document.getElementById("lastBangerContainer").classList.toggle("lastBangerContainer");
+                                    },
+                                    (error) => {
+                                        setIsLoaded(true);
+                                        setError(error);
+                                    }
+                                )
+                        }
+                    })
+            }, 10000)
+        }
+    }, [lastCardUser])
     return (
         <>
             {lastCardData &&
