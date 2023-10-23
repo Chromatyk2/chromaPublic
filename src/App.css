@@ -1115,7 +1115,7 @@ button.deleteTrade {
     left: 580px;
     animation: bounceLastBanger 1s forwards;
 }
-.lastBangerContainerOut{
+.lastBangerContainerBounceOut{
     position: absolute;
     left: 580px;
     animation: bounceLastBangerOut 1s forwards;
