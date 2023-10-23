@@ -49,6 +49,9 @@ function LastBanger(props) {
     useEffect(() => {
         if(newLastCardData != null){
             document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
+            setTimeout(() => {
+                setNewLastCardData(null);
+            }, 9000);
         }
     }, [newLastCardData])
     return (
