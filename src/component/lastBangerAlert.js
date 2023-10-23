@@ -94,10 +94,10 @@ function LastBangerAlert(props) {
                     <img style={{width:"450px"}} src={"https://images.pokemontcg.io/"+newLastCardData.data.set.id+"/"+newLastCardData.data.number+"_hires.png" }/>
                 </div>
             }
-            <audio id="orangeWin">
+            <audio id="pasmal">
                 <source src="sounds/pasmal.mp3" type="audio/mpeg"/>
             </audio>
-            <audio id="rainbowWin">
+            <audio id="omglebanger">
                 <source src="sounds/omglebanger.mp3" type="audio/mpeg"/>
             </audio>
         </>
