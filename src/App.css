@@ -1113,7 +1113,6 @@ button.deleteTrade {
 .lastBangerContainer{
     position: absolute;
     left: 580px;
-    visibility:hidden ;
     animation: bounceLastBanger 9.5s forwards;
 }
 .guessTradeButton {
