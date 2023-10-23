@@ -84,7 +84,7 @@ function LastBangerAlert(props) {
         <>
             {newLastCardData &&
                 <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                    <p className={"lastCardUsername"}>{newLastCardUser.data.user}</p>
+                    <p className={"lastCardUsername"}>{newLastCardUser[0].user}</p>
                     <img style={{width:"450px"}} src={"https://images.pokemontcg.io/"+newLastCardData.data.set.id+"/"+newLastCardData.data.number+"_hires.png" }/>
                 </div>
             }
