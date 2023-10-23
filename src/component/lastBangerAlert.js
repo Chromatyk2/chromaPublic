@@ -72,7 +72,7 @@ function LastBangerAlert(props) {
                     $('audio#omglebanger')[0].play()
                 }
                 setLastCardUser(newLastCardUser);
-                document.getElementById("lastBangerContainer").style.animation = "bounceLastBangerAlert 9s forwards";
+                document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
                 }, 9000);
