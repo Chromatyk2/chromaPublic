@@ -38,7 +38,6 @@ function LastBangerAlert(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setNewLastCardUser(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -52,7 +51,6 @@ function LastBangerAlert(props) {
                                     .then(
                                         (result) => {
                                             console.log(result);
-                                            setNewLastCardUser(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -62,6 +60,7 @@ function LastBangerAlert(props) {
                                     )
                             }
                         })
+                        setNewLastCardUser(response);
                     })
             }, 10000)
     }, []);
