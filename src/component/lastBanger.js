@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import '../App.css'
+import $ from "jquery";
 
 function LastBanger(props) {
     const [lastCardData, setLastCardData] = useState(null);
@@ -32,15 +33,11 @@ function LastBanger(props) {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         response.data.map((val, key) => {
-                            console.log(val.stade);
                             if(val.stade == 4){
-                                setLastCardUser(val)
-                                setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setLastCardData(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -49,13 +46,10 @@ function LastBanger(props) {
                                         }
                                     )
                             }else if(val.stade == 3){
-                                setLastCardUser(val)
-                                setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setLastCardData(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -64,13 +58,10 @@ function LastBanger(props) {
                                         }
                                     )
                             }else if(val.stade == 2){
-                                setLastCardUser(val)
-                                setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setLastCardData(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -79,13 +70,10 @@ function LastBanger(props) {
                                         }
                                     )
                             }else if(val.stade == 1){
-                                setLastCardUser(val)
-                                setNewLastCardUser(val)
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setLastCardData(result);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -100,11 +88,14 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
-            if(lastCardUser.user != newLastCardUser.user && lastCardUser.card != newLastCardUser.card){
+            if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card){
+                setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
                 }, 9000);
+            }else{
+                setNewLastCardData(null);
             }
         }
     }, [newLastCardData])
