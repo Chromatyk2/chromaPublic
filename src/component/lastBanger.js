@@ -82,8 +82,6 @@ function LastBanger(props) {
                 if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card){
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
-                }else{
-                    setNewLastCardData(null);
                 }
             }
         }
