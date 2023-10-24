@@ -83,11 +83,11 @@ function LastBanger(props) {
                                     )
                             }
                         })
+                        setNewLastCardUser(response);
                     })
             }, 10000)
     }, []);
     useEffect(() => {
-        console.log(newLastCardUser);
         if(newLastCardData != null){
             if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card){
                 setLastCardUser(newLastCardUser);
