@@ -82,6 +82,13 @@ function LastBangerAlert(props) {
     }, [newLastCardData])
     return (
         <>
+            <div className="card">
+            </div>
+            <div className="card">
+            </div>
+            <div className="card">
+            </div>
+            <div className="card"></div>
             {newLastCardData &&
                 <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
                     <p className={"lastCardUsername"}>{newLastCardUser.user}</p>
