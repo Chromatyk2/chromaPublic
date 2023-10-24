@@ -59,9 +59,9 @@ function LastBangerAlert(props) {
                 }
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
-                setTimeout(() => {
-                    setNewLastCardData(null);
-                }, 9000);
+                // setTimeout(() => {
+                //     setNewLastCardData(null);
+                // }, 9000);
             }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
                     if(newLastCardUser.stade == 3){
                         $('audio#pasmal')[0].play()
@@ -70,9 +70,9 @@ function LastBangerAlert(props) {
                     }
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
-                    setTimeout(() => {
-                        setNewLastCardData(null);
-                    }, 9000);
+                    // setTimeout(() => {
+                    //     setNewLastCardData(null);
+                    // }, 9000);
             }else{
 
                 setNewLastCardUser(null);
