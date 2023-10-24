@@ -52,9 +52,9 @@ function LastBangerAlert(props) {
     useEffect(() => {
         if(newLastCardData != null){
             if(lastCardUser == null){
-                if(lastCardUser.stade == 3){
+                if(newLastCardUser.stade == 3){
                     $('audio#pasmal')[0].play()
-                }else if(lastCardUser.stade == 4){
+                }else if(newLastCardUser.stade == 4){
                     $('audio#omglebanger')[0].play()
                 }
                 setLastCardUser(newLastCardUser);
@@ -63,9 +63,9 @@ function LastBangerAlert(props) {
                     setNewLastCardData(null);
                 }, 9000);
             }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
-                    if(lastCardUser.stade == 3){
+                    if(newLastCardUser.stade == 3){
                         $('audio#pasmal')[0].play()
-                    }else if(lastCardUser.stade == 4){
+                    }else if(newLastCardUser.stade == 4){
                         $('audio#omglebanger')[0].play()
                     }
                     setLastCardUser(newLastCardUser);
