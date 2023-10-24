@@ -79,15 +79,16 @@ function LastBanger(props) {
                 setTimeout(() => {
                     setNewLastCardData(null);
                 }, 9000);
-            }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
-                {
+            }else if(lastCardUser.user !== newLastCardUser.user && lastCardUser.card !== newLastCardUser.card){
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                     setTimeout(() => {
                         setNewLastCardData(null);
                     }, 9000);
-                }
-            }
+
+            }else if(lastCardUser.user == newLastCardUser.user && lastCardUser.card !== newLastCardUser.card){
+                    setLastCardUser(newLastCardUser);
+        }
         }
     }, [newLastCardData])
     return (
