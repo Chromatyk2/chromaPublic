@@ -11,8 +11,6 @@ function LastBanger(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
             setInterval(() => {
-                console.log(lastCardUser);
-                console.log(newLastCardUser);
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         response.data.map((val, key) => {
@@ -74,6 +72,8 @@ function LastBanger(props) {
             }, 10000)
     }, []);
     useEffect(() => {
+        console.log(lastCardUser);
+        console.log(newLastCardUser);
         if(newLastCardData != null){
             if(lastCardUser == null){
                 setLastCardUser(newLastCardUser);
