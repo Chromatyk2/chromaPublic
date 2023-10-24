@@ -4,30 +4,11 @@ import '../App.css'
 import $ from "jquery";
 
 function LastBanger(props) {
-    const [lastCardData, setLastCardData] = useState(null);
     const [lastCardUser, setLastCardUser] = useState(null);
     const [newLastCardData, setNewLastCardData] = useState(null);
     const [newLastCardUser, setNewLastCardUser] = useState(null);
-    const [newCard, setNewCard] = useState(null);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    useEffect(() => {
-        Axios.get("/api/getLastCard/")
-            .then(function(response){
-                setLastCardUser(response.data[0])
-                fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            setLastCardData(result);
-                        },
-                        (error) => {
-                            setIsLoaded(true);
-                            setError(error);
-                        }
-                    )
-            })
-    }, []);
     useEffect(() => {
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
@@ -94,7 +75,7 @@ function LastBanger(props) {
         if(newLastCardData != null){
             console.log(lastCardUser.user != newLastCardUser.user);
             console.log(lastCardUser.card != newLastCardUser.card);
-            if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card){
+            if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card ||lastCardUser == null){
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
             }else{
