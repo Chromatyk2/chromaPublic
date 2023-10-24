@@ -73,11 +73,16 @@ function LastBanger(props) {
     }, []);
     useEffect(() => {
         if(newLastCardData != null){
-            if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card ||lastCardUser == null){
+            if(lastCardUser == null){
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
             }else{
-                setNewLastCardData(null);
+                if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card){
+                    setLastCardUser(newLastCardUser);
+                    document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
+                }else{
+                    setNewLastCardData(null);
+                }
             }
         }
     }, [newLastCardData])
