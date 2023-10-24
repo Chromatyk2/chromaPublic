@@ -75,8 +75,8 @@ function LastBangerAlert(props) {
                     // }, 9000);
             }else{
 
-                setNewLastCardUser(null);
-                setNewLastCardData(null);
+                // setNewLastCardUser(null);
+                // setNewLastCardData(null);
             }
         }
     }, [newLastCardData])
