@@ -73,6 +73,10 @@ function LastBangerAlert(props) {
                     setTimeout(() => {
                         setNewLastCardData(null);
                     }, 9000);
+            }else{
+
+                setNewLastCardUser(null);
+                setNewLastCardData(null);
             }
         }
     }, [newLastCardData])
