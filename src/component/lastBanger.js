@@ -76,20 +76,25 @@ function LastBanger(props) {
             if(lastCardUser == null){
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
+                setTimeout(() => {
+                    setNewLastCardData(null);
+                }, 9000);
             }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
                 {
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
+                    setTimeout(() => {
+                        setNewLastCardData(null);
+                    }, 9000);
                 }
             }
         }
-        setNewLastCardUser(null);
     }, [newLastCardData])
     return (
         <>
             {newLastCardData &&
                 <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                    <p className={"lastCardUsername"}>{lastCardUser.user}</p>
+                    <p className={"lastCardUsername"}>{newLastCardUser.user}</p>
                     <img style={{width:"450px"}} src={"https://images.pokemontcg.io/"+newLastCardData.data.set.id+"/"+newLastCardData.data.number+"_hires.png" }/>
                 </div>
             }
