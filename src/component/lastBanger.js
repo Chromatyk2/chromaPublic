@@ -78,8 +78,8 @@ function LastBanger(props) {
             if(lastCardUser == null){
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
-            }else{
-                if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
+            }else if(lastCardUser.user.toString() !== newLastCardUser.user.toString() || lastCardUser.card.toString() !== newLastCardUser.card.toString()){
+                {
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 }
