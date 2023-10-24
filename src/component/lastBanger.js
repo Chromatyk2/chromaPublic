@@ -38,7 +38,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setNewLastCardUser(response);
+                                            setNewLastCardUser(val);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -51,7 +51,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setNewLastCardUser(response);
+                                            setNewLastCardUser(val);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -64,7 +64,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setNewLastCardUser(response);
+                                            setNewLastCardUser(val);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -77,7 +77,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setNewLastCardUser(response);
+                                            setNewLastCardUser(val);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -94,12 +94,9 @@ function LastBanger(props) {
         if(newLastCardData != null){
             console.log(lastCardUser.user != newLastCardUser.user);
             console.log(lastCardUser.card != newLastCardUser.card);
-            if(lastCardUser.user != newLastCardUser.data[0].user || lastCardUser.card != newLastCardUser.data[0].card){
+            if(lastCardUser.user != newLastCardUser.user || lastCardUser.card != newLastCardUser.card){
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
-                setTimeout(() => {
-                    setNewLastCardData(null);
-                }, 9000);
             }else{
                 setNewLastCardData(null);
             }
