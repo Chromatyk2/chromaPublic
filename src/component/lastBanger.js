@@ -72,19 +72,18 @@ function LastBanger(props) {
             }, 10000)
     }, []);
     useEffect(() => {
-        console.log(lastCardUser);
-        console.log(newLastCardUser);
         if(newLastCardData != null){
             if(lastCardUser == null){
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
-            }else if(lastCardUser.user.toString() !== newLastCardUser.user.toString() || lastCardUser.card.toString() !== newLastCardUser.card.toString()){
+            }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
                 {
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBanger 9s forwards";
                 }
             }
         }
+        setNewLastCardUser(null);
     }, [newLastCardData])
     return (
         <>
