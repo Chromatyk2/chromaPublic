@@ -38,6 +38,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
+                                            setNewLastCardUser(response);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -50,6 +51,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
+                                            setNewLastCardUser(response);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -62,6 +64,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
+                                            setNewLastCardUser(response);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -74,6 +77,7 @@ function LastBanger(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
+                                            setNewLastCardUser(response);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -83,7 +87,6 @@ function LastBanger(props) {
                                     )
                             }
                         })
-                        setNewLastCardUser(response);
                     })
             }, 10000)
     }, []);
