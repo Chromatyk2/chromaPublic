@@ -1567,69 +1567,20 @@ img.gettedBoxImg {
     }
 }
 @keyframes bounceLastBangerAlert {
-    0% {
-        transform:scale(0);
-    }
-    5%{
-        transform:scale(1)
+    0%, 10% {
+        transform : scale(0);
     }
     10%{
-        transform:scale(1)
+        transform : scale(1)  ;
     }
-    15%{
-        transform:scale(1)
-    }
-    20%{
-        transform:scale(1)
-    }
-    25%{
-        transform:scale(1)
-    }
-    30%{
-        transform:scale(1)
-    }
-    35%{
-        transform:scale(1)
+    20%, 30% {
+        transform: rotate3d(0, 0, 0, -20deg);
     }
     40%{
-        transform:scale(1)
-    }
-    45%{
-        transform:scale(1)
-    }
-    50%{
-        transform:scale(1)
-    }
-    55%{
-        transform:scale(1)
-    }
-    60%{
-        transform:scale(1)
-    }
-    65%{
-        transform:scale(1)
-    }
-    70%{
-        transform:scale(1)
-    }
-    75%{
-        transform:scale(1)
-    }
-    80%{
-        transform:scale(1)
-    }
-    85%{
-        transform:scale(1)
-    }
-    90%{
-        transform:scale(1);
-    }
-    95%{
-         transform:scale(1);
+        transform: rotate3d(1, 1, 0.2, 30deg);
     }
     100% {
-        display: none;
-        transform:scale(0);
+        transform: rotate3d(0, 0, 0, -20deg);
     }
 }
 @keyframes bounceLastBangerOut {
