@@ -2701,6 +2701,8 @@ img#imgModal {
     100% {
         background-position: 0 0;
     }
+}
+
 @keyframes holoSparkle {
     0% {
         opacity: 1;
