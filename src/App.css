@@ -2653,6 +2653,7 @@ img#imgModal {
     transition-property: transform,-webkit-transform;
     width: 348px;
     will-change: transform;
+    padding:0;
 }
 
 .card:hover {
