@@ -2628,16 +2628,16 @@ img#imgModal {
 
 
 .card {
-    background-color: transparent;
+    background-color: initial;
     background-image: url(https://images.pokemontcg.io/smp/SM156.png);
     background-position: 50%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: contain;
     border-radius: 8px;
-    /* box-shadow: 0 0 6px 2px rgba(255,230,0,.75), 0 35px 25px -15px rgba(0,0,0,.5); */
     display: inline-block;
+    display: block;
     height: 58vh;
-    margin: 20px 10px;
+    margin: auto;
     overflow: hidden;
     position: relative;
     -webkit-transform: translateZ(-400px);
@@ -2648,14 +2648,12 @@ img#imgModal {
     transform-style: preserve-3d;
     transition: -webkit-transform .1s ease;
     transition: transform .1s ease;
-    transition: transform .1s ease, -webkit-transform .1s ease;
+    transition: transform .1s ease,-webkit-transform .1s ease;
     transition-property: -webkit-transform;
     transition-property: transform;
-    transition-property: transform, -webkit-transform;
-    width: 390px;
+    transition-property: transform,-webkit-transform;
+    width: 348px;
     will-change: transform;
-    display: block;
-    margin: auto;
 }
 
 .card:hover {
