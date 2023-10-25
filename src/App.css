@@ -2673,7 +2673,34 @@ img#imgModal {
     top: 0;
     transform: translateZ(0);
 }
+.card:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background-image: linear-gradient( 45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000 );
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    filter: blur(30px);
+    opacity: 0.5;
+    z-index: 1;
+    animation: shadowBanger 20s linear infinite;
 
+}
+@keyframes shadowBanger {
+    0% {
+        background-position: 0 0;
+    }
+    50.01% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 @keyframes holoSparkle {
     0% {
         opacity: 1;
