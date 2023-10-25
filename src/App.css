@@ -1566,6 +1566,21 @@ img.gettedBoxImg {
         transform:scale(0);
     }
 }
+@keyframes bounceLastBangerAlert {
+    0% {
+        transform:scale(0);
+    }
+    5%{
+        transform:scale(1)
+    }
+    95%{
+        transform:scale(1);
+    }
+    100% {
+        display: none;
+        transform:scale(0);
+    }
+}
 @keyframes bounceLastBangerOut {
     0% {
         transform:scale(1);
