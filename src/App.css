@@ -2629,7 +2629,6 @@ img#imgModal {
 
 .card {
     background-color: initial;
-    background-image: url(https://images.pokemontcg.io/smp/SM156.png);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -2674,22 +2673,27 @@ img#imgModal {
     transform: translateZ(0);
 }
 .card:before {
-    content: '';
+    content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    background-image: linear-gradient( 45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000 );
-    top: -8px;
-    left: -8px;
-    width: calc(100% + 16px);
-    height: calc(100% + 16px);
-    filter: blur(30px);
-    opacity: 0.5;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-image: linear-gradient(
+            115deg,
+            transparent 0%,
+            rgb(0, 231, 255) 30%,
+            rgb(255, 0, 231) 70%,
+            transparent 100%
+    );
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 300% 300%;
+    mix-blend-mode: color-dodge;
+    opacity: 0;
     z-index: 1;
-    animation: shadowBanger 20s linear infinite;
-
+    transform: translate3d(0,0,0);
+    animation: holoGradient 15s ease infinite;
 }
 @keyframes shadowBanger {
     0% {
