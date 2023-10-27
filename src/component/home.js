@@ -9,12 +9,12 @@ function HomePage(props) {
     <>
       <OnStream />
         <iframe
-            src="https://player.twitch.tv/?channel=chromatyk&parent=preview--chromatyk.netlify.app&muted=true"
+            src="https://player.twitch.tv/?channel=domingo&parent=preview--chromatyk.netlify.app&muted=true"
             height="720"
             width="1280"
             allowFullScreen>
         </iframe>
-        <iframe src="https://www.twitch.tv/embed/chromatyk/chat?parent=preview--chromatyk.netlify.app"
+        <iframe src="https://www.twitch.tv/embed/domingo/chat?parent=preview--chromatyk.netlify.app"
                 height="720"
                 width="360">
         </iframe>
