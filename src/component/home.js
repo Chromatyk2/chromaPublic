@@ -5,15 +5,15 @@ import PkmList from './pkmList.js'
 import OnStream from "./onStream";
 
 function HomePage(props) {
-     new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
-        channel: "chromatyk"
-    });
   return (
     <>
       <OnStream />
-      <div id="twitch-embed"></div>
+        <iframe
+            src="https://player.twitch.tv/?channel=chromatyk&parent=https://preview--chromatyk.netlify.app/&muted=true"
+            height="720"
+            width="1280"
+            allowFullScreen>
+        </iframe>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
