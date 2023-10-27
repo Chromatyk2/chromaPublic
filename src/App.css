@@ -1566,6 +1566,24 @@ img.gettedBoxImg {
         transform:scale(0);
     }
 }
+@keyframes bounceLastBangerAlert {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1) rotate3d(0, 1, 0, 1080deg);
+
+    }
+    89% {
+        transform: scale(1) rotate3d(0, 1, 0, 1080deg);
+    }
+    95% {
+         transform: scale(1.2) rotate3d(0, 1, 0, 1080deg);
+    }
+    100%{
+        transform: scale(0) rotate3d(0, 1, 0, 1080deg);
+    }
+}
 @keyframes bounceLastBangerOut {
     0% {
         transform:scale(1);
@@ -2141,6 +2159,27 @@ span.navbar-brand {
     position: absolute;
     top: 0;
 }
+
+.twitch .twitch-video {
+    padding-top: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.twitch .twitch-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.twitch .twitch-chat {
+    height: 400px;
+}
+
+.twitch .twitch-chat iframe {
+    width: 100%;
+    height: 100%;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
@@ -2150,6 +2189,28 @@ span.navbar-brand {
     margin: auto;
     width: 88%;
   }
+}
+@media screen and (min-width: 850px) {
+    .twitch {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .twitch .twitch-video {
+        padding-top: 23.1875%;
+        width: 40%;
+        display: block;
+        margin: auto;
+    }
+
+    .twitch .twitch-chat {
+        bottom: 0;
+        height: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30%;
+    }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
     .leaderBoardSwitchMobile{
@@ -2558,4 +2619,129 @@ img#imgModal {
   width: fit-content;
   position: absolute;
   left: 200px;
+}
+
+
+.card {
+    background-color: initial;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 8px;
+    display: inline-block;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    -webkit-transform: translateZ(-400px);
+    transform: translateZ(-400px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: -webkit-transform .1s ease;
+    transition: transform .1s ease;
+    transition: transform .1s ease,-webkit-transform .1s ease;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    width: 348px;
+    will-change: transform;
+    padding:0;
+}
+
+.card:after {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif");
+    background-position: center;
+    background-size: 180%;
+    mix-blend-mode: color-dodge;
+    opacity: 0;
+    z-index: 2;
+    animation: holoSparkle 20s ease infinite;
+    background-repeat: no-repeat;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateZ(0);
+}
+.card:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-image: linear-gradient(
+            115deg,
+            transparent 0%,
+            rgb(0, 231, 255) 30%,
+            rgb(255, 0, 231) 70%,
+            transparent 100%
+    );
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 300% 300%;
+    mix-blend-mode: color-dodge;
+    opacity: 0;
+    z-index: 1;
+    transform: translate3d(0,0,0);
+    animation: holoGradient 15s ease infinite;
+}
+@keyframes shadowBanger {
+    0% {
+        background-position: 0 0;
+    }
+    50.01% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes holoSparkle {
+    0% {
+        opacity: 1;
+    }
+    12% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+}
+
+@keyframes holoGradient {
+    3% {
+        opacity: 0;
+    }
+    5% {
+        background-position: 0% 0%;
+    }
+    7% {
+        opacity: 0.5;
+    }
+    9% {
+        background-position: 100% 100%;
+    }
+    11% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        background-position: 100% 100%;
+    }
+    55% {
+        opacity: 0.3;
+    }
+    70% {
+        opacity: 0;
+        background-position: 0% 0%;
+    }
 }
