@@ -1567,20 +1567,23 @@ img.gettedBoxImg {
     }
 }
 @keyframes bounceLastBangerAlert {
-    0%, 10% {
-        transform : scale(0);
+    0% {
+        transform: scale(0);
     }
-    10%{
-        transform : scale(1)  ;
+    5% {
+        transform: scale(1.2);
     }
-    20%, 30% {
-        transform: rotate3d(0, 0, 0, -20deg);
+    10% {
+        transform: scale(1);
     }
-    40%{
-        transform: rotate3d(1, 1, 0.2, 30deg);
+    30% {
+        transform: scale(1);
     }
-    100% {
-        transform: rotate3d(0, 0, 0, -20deg);
+    95% {
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(0);
     }
 }
 @keyframes bounceLastBangerOut {
