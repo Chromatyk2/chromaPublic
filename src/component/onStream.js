@@ -39,7 +39,7 @@ function OnStream() {
             <div className="twitch">
                 <div className="twitch-video">
                     <iframe
-                        src="https://player.twitch.tv/?channel=chromatyk&parent=preview--chromatyk.netlify.app&autoplay=false"
+                        src="https://player.twitch.tv/?channel=domingo&parent=preview--chromatyk.netlify.app&autoplay=false"
                         frameBorder="0"
                         scrolling="no"
                         allowFullScreen="true"
@@ -51,7 +51,7 @@ function OnStream() {
                     <iframe
                         frameBorder="0"
                         scrolling="no"
-                        src="https://www.twitch.tv/embed/chromatyk/chat?parent=preview--chromatyk.netlify.app"
+                        src="https://www.twitch.tv/embed/domingo/chat?parent=preview--chromatyk.netlify.app"
                         height="100%"
                         width="100%">
                     </iframe>
