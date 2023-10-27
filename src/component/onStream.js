@@ -35,6 +35,28 @@ function OnStream() {
                 :
                     <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
             }
+
+            <div className="twitch">
+                <div className="twitch-video">
+                    <iframe
+                        src="https://player.twitch.tv/?channel=chromatyk&parent=preview--chromatyk.netlify.app&autoplay=false"
+                        frameBorder="0"
+                        scrolling="no"
+                        allowFullScreen="true"
+                        height="720"
+                        width="1280">
+                    </iframe>
+                </div>
+                <div className="twitch-chat">
+                    <iframe
+                        frameBorder="0"
+                        scrolling="no"
+                        src="https://www.twitch.tv/embed/chromatyk/chat?parent=preview--chromatyk.netlify.app"
+                        height="100%"
+                        width="100%">
+                    </iframe>
+                </div>
+            </div>
         </>
 
     );

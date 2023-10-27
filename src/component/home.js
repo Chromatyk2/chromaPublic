@@ -8,27 +8,6 @@ function HomePage(props) {
   return (
     <>
       <OnStream />
-        <div className="twitch">
-            <div className="twitch-video">
-                <iframe
-                    src="https://player.twitch.tv/?channel=chromatyk&parent=preview--chromatyk.netlify.app&autoplay=false"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowFullScreen="true"
-                    height="100%"
-                    width="100%">
-                </iframe>
-            </div>
-            <div className="twitch-chat">
-                <iframe
-                    frameBorder="0"
-                    scrolling="no"
-                    src="https://www.twitch.tv/embed/chromatyk/chat?parent=preview--chromatyk.netlify.app"
-                    height="100%"
-                    width="100%">
-                </iframe>
-            </div>
-        </div>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
