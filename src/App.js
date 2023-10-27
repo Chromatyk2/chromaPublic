@@ -32,10 +32,6 @@ function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
     return <Login />
-  }else{
-    useEffect(()=>{
-      <AuthService />
-    }),[]
   }
   return(
     <>
