@@ -14,6 +14,7 @@ function OnStream() {
     const [count, setCount] = useState(0);
     const [stream, setStream] = useState(null);
     const pseudo = cookies.user.data[0].login;
+    console.log(cookies);
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/streams?user_login=Chromatyk',
