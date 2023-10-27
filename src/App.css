@@ -2159,6 +2159,27 @@ span.navbar-brand {
     position: absolute;
     top: 0;
 }
+
+.twitch .twitch-video {
+    padding-top: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.twitch .twitch-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.twitch .twitch-chat {
+    height: 400px;
+}
+
+.twitch .twitch-chat iframe {
+    width: 100%;
+    height: 100%;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
@@ -2720,24 +2741,4 @@ img#imgModal {
         opacity: 0;
         background-position: 0% 0%;
     }
-}
-.twitch .twitch-video {
-    padding-top: 56.25%;
-    position: relative;
-    height: 0;
-}
-
-.twitch .twitch-video iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-}
-.twitch .twitch-chat {
-    height: 400px;
-}
-
-.twitch .twitch-chat iframe {
-    width: 100%;
-    height: 100%;
 }
