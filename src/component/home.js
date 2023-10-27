@@ -5,9 +5,20 @@ import PkmList from './pkmList.js'
 import OnStream from "./onStream";
 
 function HomePage(props) {
+
+    <!-- Load the Twitch embed JavaScript file -->
+
+     new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "monstercat",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["embed.example.com", "othersite.example.com"]
+    });
   return (
     <>
       <OnStream />
+        <div id="twitch-embed"></div>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
