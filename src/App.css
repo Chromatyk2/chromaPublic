@@ -2193,11 +2193,14 @@ span.navbar-brand {
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
+        margin-bottom: 50px;
     }
 
     .twitch .twitch-video {
-        width: 75%;
-        padding-top: 42.1875%;
+        padding-top: 23.1875%;
+        width: 40%;
+        display: block;
+        margin: auto;
     }
 
     .twitch .twitch-chat {
