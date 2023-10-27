@@ -20,7 +20,7 @@ function OnStream() {
             'https://api.twitch.tv/helix/streams?user_login=Chromatyk',
             {
                 headers:{
-                    'Authorization': `Bearer ${cookies.api_token}`,
+                    'Authorization': `Bearer ${cookies.oauth}`,
                     'Client-Id': process.env.REACT_APP_CLIENT_ID
                 }
             }
