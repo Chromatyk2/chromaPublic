@@ -2764,5 +2764,5 @@ img#imgModal {
     }
 }
 .offline-embeds{
-    background-image: url('../public/backStream.png');
+    background-image: url('../public/backStream.png')!important;
 }
