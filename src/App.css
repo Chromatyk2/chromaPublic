@@ -2638,6 +2638,7 @@ img#imgModal {
 .buttonToDisplayStream button:hover{
     background-color: grey;
     border:none;
+    color:white;
 }
 .card {
     background-color: initial;
