@@ -14,6 +14,10 @@ function HomePage(props) {
             width="1280"
             allowFullScreen>
         </iframe>
+        <iframe src="https://www.twitch.tv/embed/chromatyk/chat?parent=preview--chromatyk.netlify.app"
+                height="<height>"
+                width="<width>">
+        </iframe>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
