@@ -18,7 +18,7 @@ function HomePage(props) {
   return (
     <>
       <OnStream />
-        <div id="twitch-embed"></div>
+      <div id="twitch-embed"></div>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
