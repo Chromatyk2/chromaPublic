@@ -2621,7 +2621,24 @@ img#imgModal {
   left: 200px;
 }
 
+.buttonToDisplayStream {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+.buttonToDisplayStream button{
+    border: solid 2px black;
+    background: none;
+    border-radius: 25px;
+    padding: 5px;
+}
+.buttonToDisplayStream button:hover{
+    background-color: grey;
+    border:none;
+}
 .card {
     background-color: initial;
     background-position: 50%;
