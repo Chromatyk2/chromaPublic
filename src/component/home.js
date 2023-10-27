@@ -8,16 +8,18 @@ function HomePage(props) {
   return (
     <>
       <OnStream />
-        <iframe
-            src="https://player.twitch.tv/?channel=domingo&parent=preview--chromatyk.netlify.app&muted=true"
-            height="720"
-            width="1280"
-            allowFullScreen>
-        </iframe>
-        <iframe src="https://www.twitch.tv/embed/domingo/chat?parent=preview--chromatyk.netlify.app"
+        <div className={"twitchContainer"}>
+            <iframe
+                src="https://player.twitch.tv/?channel=domingo&parent=preview--chromatyk.netlify.app&muted=true"
                 height="720"
-                width="360">
-        </iframe>
+                width="1280"
+                allowFullScreen>
+            </iframe>
+            <iframe src="https://www.twitch.tv/embed/domingo/chat?parent=preview--chromatyk.netlify.app"
+                    height="720"
+                    width="360">
+            </iframe>
+        </div>
       <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
       <div className="socialContainer">
         <p className="myNetworks">Mes reseaux</p>
