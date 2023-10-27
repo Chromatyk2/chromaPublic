@@ -1570,18 +1570,18 @@ img.gettedBoxImg {
     0% {
         transform: scale(0);
     }
-    40% {
+    30% {
         transform: scale(1) rotate3d(0, 1, 0, 1080deg);
 
     }
     89% {
         transform: scale(1) rotate3d(0, 1, 0, 1080deg);
     }
-    99% {
-         transform: scale(1.2);
+    95% {
+         transform: scale(1.2) rotate3d(0, 1, 0, 1080deg);
     }
     100%{
-        transform: scale(0);
+        transform: scale(0) rotate3d(0, 1, 0, 1080deg);
     }
 }
 @keyframes bounceLastBangerOut {
