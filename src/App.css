@@ -4,7 +4,7 @@ src: url('../public/Charge Vector Black.otf') format('truetype');
 }
 @font-face {
 font-family: 'RetroTypo';
-src: url('../public/RetroTypo.ttf') format('truetype');
+
 }
 :root {
     --card-height: 700px;
@@ -2762,4 +2762,7 @@ img#imgModal {
         opacity: 0;
         background-position: 0% 0%;
     }
+}
+.offline-embeds{
+    background-image: url('../public/backStream.png');
 }
