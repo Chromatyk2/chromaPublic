@@ -2738,7 +2738,7 @@ img#imgModal {
 .cardBangerAlertSet:after {
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif");
     background-position: center;
-    background-size: 180%;
+    background-size: 400%;
     mix-blend-mode: color-dodge;
     opacity: 0;
     z-index: 2;
