@@ -4,7 +4,7 @@ src: url('../public/Charge Vector Black.otf') format('truetype');
 }
 @font-face {
 font-family: 'RetroTypo';
-src: url('../public/RetroTypo.ttf') format('truetype');
+
 }
 :root {
     --card-height: 700px;
@@ -2621,7 +2621,25 @@ img#imgModal {
   left: 200px;
 }
 
+.buttonToDisplayStream {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+.buttonToDisplayStream button{
+    border: solid 2px black;
+    background: none;
+    border-radius: 25px;
+    padding: 5px;
+}
+.buttonToDisplayStream button:hover{
+    background-color: grey;
+    border:none;
+    color:white;
+}
 .card {
     background-color: initial;
     background-position: 50%;
@@ -2744,4 +2762,7 @@ img#imgModal {
         opacity: 0;
         background-position: 0% 0%;
     }
+}
+.offline-embeds{
+    background-image: url('../public/backStream.png')!important;
 }

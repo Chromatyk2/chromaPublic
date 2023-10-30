@@ -13,6 +13,8 @@ function OnStream() {
     const [cookies, setCookie] = useCookies();
     const [count, setCount] = useState(0);
     const [stream, setStream] = useState(null);
+    const [displayStream, setDisplayStream] = useState(true);
+
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
         Axios.get(
@@ -27,6 +29,12 @@ function OnStream() {
             setStream(response.data);
         })
     }, [])
+    function displayStreamOff() {
+        setDisplayStream(false);
+    }
+    function displayStreamOn() {
+        setDisplayStream(true);
+    }
     return (
         <>
             {stream &&
@@ -57,6 +65,34 @@ function OnStream() {
                 </>
                 :
                     <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
+            }
+            <div className={"buttonToDisplayStream"}>
+                <button onClick={displayStreamOff}>Cacher le stream</button>
+                <button onClick={displayStreamOn}>Afficher le stream</button>
+            </div>
+            {displayStream === true &&
+                <div className="twitch">
+                    <div className="twitch-video">
+                        <iframe
+                            src="https://player.twitch.tv/?channel=chromatyk&parent=preview--chromatyk.netlify.app&autoplay=false"
+                            frameBorder="0"
+                            scrolling="no"
+                            allowFullScreen="true"
+                            height="720"
+                            width="1280">
+                        </iframe>
+                    </div>
+                    <div className="twitch-chat">
+                        <iframe
+                            frameBorder="0"
+                            scrolling="no"
+                            src="https://www.twitch.tv/embed/chromatyk/chat?parent=preview--chromatyk.netlify.app"
+                            height="100%"
+                            width="100%">
+                        </iframe>
+                    </div>
+                </div>
+
             }
         </>
 
