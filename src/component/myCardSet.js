@@ -163,6 +163,7 @@ function MyCardsSet(props) {
       })
     }, [myCards]);
     function openModal(e) {
+        console.log(e.target);
         setMyCardImage(e.target.getAttribute("image"));
         setMyCardNb(e.target.getAttribute("myCardNb"));
         setPokemonName(e.target.getAttribute("pokemonId"));
