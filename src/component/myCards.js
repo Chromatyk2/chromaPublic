@@ -59,8 +59,6 @@ function MyCards(props) {
                         nbCards &&
                             totalCard &&
                                 nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                                    console.log(boosterList);
-                                    console.log(val.booster);
                                 return(
                                     <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} maxBooster={boosterList.find((uc) => uc.name == val.booster).totalCards}/>
                                 )

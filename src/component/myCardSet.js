@@ -163,6 +163,7 @@ function MyCardsSet(props) {
       })
     }, [myCards]);
     function openModal(e) {
+        console.log(e.target);
         setMyCardImage(e.target.getAttribute("image"));
         setMyCardNb(e.target.getAttribute("myCardNb"));
         setPokemonName(e.target.getAttribute("pokemonId"));
@@ -232,14 +233,32 @@ function MyCardsSet(props) {
                                         var stadeC = 0;
                                     }
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
-                                    return (
-                                        <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                                            <img stade={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                                                 src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}
-                                                 onError={errorImage}/>
-                                        </button>
-                                    )
+                                    if(stadeC == 4){
+                                        return (
+                                        <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                            <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSet">
+                                                <img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>
+                                            </div>
+                                        </div>
+                                        )
+                                    }else if(stadeC == 3){
+                                        return (
+                                            <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} onClick={openModal} style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                                <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSetThree">
+                                                    <img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1.2)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>
+                                                </div>
+                                            </div>
+                                        )
+                                    }else{
+                                        return (
+                                            <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
+                                                <img stade={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                                     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}
+                                                     onError={errorImage}/>
+                                            </button>
+                                        )
+                                    }
                                 }else if(!onlyMine){
                                     return (
                                         <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"} onError={errorImage}/>
