@@ -235,8 +235,8 @@ function MyCardsSet(props) {
                                     if(stadeC == 4){
                                         return (
                                         <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                            <div className="cardBangerAlert">
-                                                <img className={"shadowBangerCard"} style={{width:"350px",filter:"brightness(0.8)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>
+                                            <div className="cardBangerAlertSet">
+                                                <img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(0.8)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>
                                             </div>
                                         </div>
                                         )

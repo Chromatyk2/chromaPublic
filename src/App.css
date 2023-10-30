@@ -2675,7 +2675,7 @@ img#imgModal {
     mix-blend-mode: color-dodge;
     opacity: 0;
     z-index: 2;
-    animation: holoSparkle 20s ease infinite;
+    animation: holoSparkle 36001s ease infinite;
     background-repeat: no-repeat;
     bottom: 0;
     content: "";
@@ -2706,7 +2706,34 @@ img#imgModal {
     opacity: 0;
     z-index: 1;
     transform: translate3d(0,0,0);
-    animation: holoGradient 15s ease infinite;
+    animation: holoGradient 5s ease infinite reverse;
+}
+.cardBangerAlertSet {
+    background-color: initial;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 8px;
+    display: inline-block;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    -webkit-transform: translateZ(-400px);
+    transform: translateZ(-400px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: -webkit-transform .1s ease;
+    transition: transform .1s ease;
+    transition: transform .1s ease,-webkit-transform .1s ease;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    width: 250px;
+    will-change: transform;
 }
 @keyframes shadowBanger {
     0% {
