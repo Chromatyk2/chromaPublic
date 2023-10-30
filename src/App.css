@@ -2825,6 +2825,15 @@ img#imgModal {
     transform: translate3d(0,0,0);
     animation: holoGradient 5s ease infinite reverse;
 }
+.footerContainer{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 183px;
+    background-color: #90e5b5;
+    margin-top: 50px;
+}
 @keyframes shadowBanger {
     0% {
         background-position: 0 0;
