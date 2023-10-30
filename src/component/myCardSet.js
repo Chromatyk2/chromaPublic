@@ -240,6 +240,14 @@ function MyCardsSet(props) {
                                             </div>
                                         </div>
                                         )
+                                    }else if(stadeC == 3){
+                                        return (
+                                            <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                                <div className="cardBangerAlertSetThree">
+                                                    <img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(0.8)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>
+                                                </div>
+                                            </div>
+                                        )
                                     }else{
                                         return (
                                             <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
