@@ -27,6 +27,17 @@ function OpeningBooster(props) {
             .then(
                 (result) => {
                     setItems(result.data);
+                    if(result.data.length == 250){
+                        fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster+"&page=2")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    result.data.map((val, key) => {
+                                        setItems(items => [...items,val]);
+                                    })
+                                    setIsLoaded(false);
+                                })
+                    }
                     if(props.idBooster == "swsh45"){
                         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:swsh45sv")
                             .then(res => res.json())
