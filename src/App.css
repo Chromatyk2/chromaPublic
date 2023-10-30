@@ -2834,6 +2834,14 @@ img#imgModal {
     background-color: #90e5b5;
     margin-top: 50px;
 }
+.mentionsContainer{
+    height: 610px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+}
 @keyframes shadowBanger {
     0% {
         background-position: 0 0;
