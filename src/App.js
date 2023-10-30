@@ -59,8 +59,8 @@ function App() {
           <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
         </Routes>
-      </BrowserRouter>
         <Footer cookies={cookies} />
+      </BrowserRouter>
       }
     </>
   );
