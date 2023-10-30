@@ -26,6 +26,7 @@ import OnStream from "./component/onStream";
 import NostalPickV2 from "./component/nostalPickv2";
 import LastBanger from "./component/lastBanger";
 import LastBangerAlert from "./component/lastBangerAlert";
+import Footer from "./component/footer";
 import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
+        <Footer cookies={cookies} />
       }
     </>
   );
