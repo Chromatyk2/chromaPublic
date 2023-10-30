@@ -234,7 +234,7 @@ function MyCardsSet(props) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     if(stadeC == 4){
                                         return (
-                                        <div onClick={openModal} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                        <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             <div className="cardBangerAlertSet">
                                                 <img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(0.8)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>
                                             </div>
