@@ -26,7 +26,6 @@ import OnStream from "./component/onStream";
 import NostalPickV2 from "./component/nostalPickv2";
 import LastBanger from "./component/lastBanger";
 import LastBangerAlert from "./component/lastBangerAlert";
-import LastBangerAlert from "./component/lastBangerAlert";
 import Mentions from "./component/Mentions";
 import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
