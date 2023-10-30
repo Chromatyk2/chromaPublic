@@ -38,13 +38,13 @@ function OnStream() {
     return (
         <>
             {stream &&
-                stream.data.length > 0 ?
+            stream.data.length > 0 ?
                 <>
                     <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live On <span className={"spanOnair"}>(clique et viens gagner des points)</span></a>
                     <div className="twitch">
                         <div className="twitch-video">
                             <iframe
-                                src="https://player.twitch.tv/?channel=domingo&parent=chromatyk.fr&autoplay=false"
+                                src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=false"
                                 frameBorder="0"
                                 scrolling="no"
                                 allowFullScreen="true"
@@ -56,7 +56,7 @@ function OnStream() {
                             <iframe
                                 frameBorder="0"
                                 scrolling="no"
-                                src="https://www.twitch.tv/embed/domingo/chat?parent=chromatyk.fr"
+                                src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"
                                 height="100%"
                                 width="100%">
                             </iframe>
@@ -64,7 +64,7 @@ function OnStream() {
                     </div>
                 </>
                 :
-                    <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
+                <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
             }
             <div className={"buttonToDisplayStream"}>
                 <button onClick={displayStreamOff}>Cacher le stream</button>
@@ -74,7 +74,7 @@ function OnStream() {
                 <div className="twitch">
                     <div className="twitch-video">
                         <iframe
-                            src="https://player.twitch.tv/?channel=chromatyk&parent=preview--chromatyk.netlify.app&autoplay=false"
+                            src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=false"
                             frameBorder="0"
                             scrolling="no"
                             allowFullScreen="true"
@@ -86,7 +86,7 @@ function OnStream() {
                         <iframe
                             frameBorder="0"
                             scrolling="no"
-                            src="https://www.twitch.tv/embed/chromatyk/chat?parent=preview--chromatyk.netlify.app"
+                            src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"
                             height="100%"
                             width="100%">
                         </iframe>
