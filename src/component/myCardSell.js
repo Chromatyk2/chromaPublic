@@ -331,6 +331,9 @@ function MyCardSell(props) {
             Axios
                 .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
                 .then(function(response){
+                    console.log(val.nbCard);
+                    console.log(response.data.find((uc) => uc.card == val.card).nbCard);
+                    console.log(val.nbCard == response.data.find((uc) => uc.card == val.card).nbCard);
                     if(val.nbCard == response.data.find((uc) => uc.card == val.card).nbCard){
                         var limitNb = parseInt(val.nbToSell);
                         return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
