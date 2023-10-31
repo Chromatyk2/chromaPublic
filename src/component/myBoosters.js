@@ -33,23 +33,26 @@ function MyBoosters(props) {
     };
     function openModal(e) {
         var button = e.currentTarget;
+        var nbBooster = e.target.getDataAttribute("nbBooster");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
-        Axios.post('/api/removeBooster',
-            {
-                user: props.user,
-                booster:id
-            })
-            .then(function(response) {
-                Axios
-                    .get("/api/getMyBoosters/"+props.user)
-                    .then(function(response){
-                        setBoosters(response.data);
-                        setIsOpen(true);
-                        button.disabled = false;
-                    })
+        if(nbBooster - 1 >= 0){
+            Axios.post('/api/removeBooster',
+                {
+                    user: props.user,
+                    booster:id
                 })
+                .then(function(response) {
+                    Axios
+                        .get("/api/getMyBoosters/"+props.user)
+                        .then(function(response){
+                            setBoosters(response.data);
+                            setIsOpen(true);
+                            button.disabled = false;
+                        })
+                })
+        }
     }
 
     function closeModal() {
@@ -77,7 +80,7 @@ function MyBoosters(props) {
                                         <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
                                     <p className="pokemonNameTrade">Possédé(s) : {val.nbBooster}</p>
-                                    <button value={val.booster} onClick={openModal} className="guessTradeButton">Ouvrir</button>
+                                    <button nbBooster={val.nbBooster} value={val.booster} onClick={openModal} className="guessTradeButton">Ouvrir</button>
                                 </div>
                             )
                         }
