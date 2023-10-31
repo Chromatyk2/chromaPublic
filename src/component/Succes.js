@@ -51,7 +51,7 @@ function Succes(props) {
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  49.99 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  99.99){
+                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  49.99 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  99.99){
                             return(
                                 <p>50% {val.booster}</p>
                             )
