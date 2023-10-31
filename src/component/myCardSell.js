@@ -242,7 +242,7 @@ function MyCardSell(props) {
                 }else if(cardNb > 1  && cardToSell.length < 10){
                     e.target.style.opacity = '0.5';
                     document.getElementById("unsellButton"+cardId).style.display = 'flex';
-                    setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1}]);
+                    setCardToSell(cardToSell => [...cardToSell,{card: cardId,nbToSell:1,nbCard:cardNb}]);
                     if(rarities.find((rarity) => rarity.rarity.includes(rarityCard))){
                         if(rarities.find((rarity) => rarity.rarity.includes(rarityCard)).stade == 1){
                             setPointToWin(pointToWin + 25);
@@ -328,13 +328,15 @@ function MyCardSell(props) {
     function confirmSelling(e) {
         setSellingIsLoad(true);
         const requests = cardToSell.map((val, key) => {
-            var limitNb = parseInt(val.nbToSell);
-            return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
-                .then(function(response){
-                    setCardToSell([]);
-                    document.getElementById("unsellButton"+val.card).style.display = 'none';
-                    document.getElementById("card"+val.card).style.opacity = '1';
-                })
+            if(val.nbCard == myCards.find((uc) => uc.card == val.card).nbCard){
+                var limitNb = parseInt(val.nbToSell);
+                return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
+                    .then(function(response){
+                        setCardToSell([]);
+                        document.getElementById("unsellButton"+val.card).style.display = 'none';
+                        document.getElementById("card"+val.card).style.opacity = '1';
+                    })
+            }
         });
 
         return Promise.all(requests).then(() => {
