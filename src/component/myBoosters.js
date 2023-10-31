@@ -37,7 +37,7 @@ function MyBoosters(props) {
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
-        if(nbBooster - 1 >= 0){
+        if(nbBooster - 1 > -1){
             Axios.post('/api/removeBooster',
                 {
                     user: props.user,
