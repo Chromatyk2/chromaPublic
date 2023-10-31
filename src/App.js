@@ -26,6 +26,8 @@ import OnStream from "./component/onStream";
 import NostalPickV2 from "./component/nostalPickv2";
 import LastBanger from "./component/lastBanger";
 import LastBangerAlert from "./component/lastBangerAlert";
+import Mentions from "./component/Mentions";
+import Footer from "./component/footer";
 import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
 function App() {
@@ -57,7 +59,9 @@ function App() {
           <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
+          <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
         </Routes>
+        <Footer cookies={cookies} />
       </BrowserRouter>
       }
     </>
