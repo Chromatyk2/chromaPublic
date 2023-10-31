@@ -40,12 +40,11 @@ function Succes(props) {
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                        if(val.nbCard == totalCard.find((uc) => uc.name == val.booster).totalCards){
-                            <p>100%</p>
+                        if(val.nbCard == boosterList.find((uc) => uc.name == val.booster).totalCards){
+                            return(
+                                    <p>100%</p>
+                                )
                         }
-                        return(
-                            <p>Oui</p>
-                        )
                     })
                 }
             </div>
