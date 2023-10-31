@@ -51,9 +51,9 @@ function Succes(props) {
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  49.99 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  100){
+                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  66.65 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  100){
                             return(
-                                <p>50% {val.booster}</p>
+                                <p>2 tiers {val.booster}</p>
                             )
                         }
                     })
@@ -62,9 +62,9 @@ function Succes(props) {
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  24.99 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  50){
+                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  33.34 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  66.66){
                             return(
-                                <p>50% {val.booster}</p>
+                                <p>1 tier {val.booster}</p>
                             )
                         }
                     })
