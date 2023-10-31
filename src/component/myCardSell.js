@@ -328,15 +328,19 @@ function MyCardSell(props) {
     function confirmSelling(e) {
         setSellingIsLoad(true);
         const requests = cardToSell.map((val, key) => {
-            if(val.nbCard == myCards.find((uc) => uc.card == val.card).nbCard){
-                var limitNb = parseInt(val.nbToSell);
-                return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
-                    .then(function(response){
-                        setCardToSell([]);
-                        document.getElementById("unsellButton"+val.card).style.display = 'none';
-                        document.getElementById("card"+val.card).style.opacity = '1';
-                    })
-            }
+            Axios
+                .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+                .then(function(response){
+                    if(val.nbCard == response.data.find((uc) => uc.card == val.card).nbCard){
+                        var limitNb = parseInt(val.nbToSell);
+                        return Axios.delete("/api/sellCards/"+props.user+"/"+val.card+"/"+limitNb)
+                            .then(function(response){
+                                setCardToSell([]);
+                                document.getElementById("unsellButton"+val.card).style.display = 'none';
+                                document.getElementById("card"+val.card).style.opacity = '1';
+                            })
+                    }
+                })
         });
 
         return Promise.all(requests).then(() => {
