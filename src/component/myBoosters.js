@@ -37,22 +37,26 @@ function MyBoosters(props) {
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
-        if(nbBooster - 1 > -1){
-            Axios.post('/api/removeBooster',
-                {
-                    user: props.user,
-                    booster:id
-                })
-                .then(function(response) {
-                    Axios
-                        .get("/api/getMyBoosters/"+props.user)
-                        .then(function(response){
-                            setBoosters(response.data);
-                            setIsOpen(true);
-                            button.disabled = false;
+        Axios
+            .get("/api/getMyBoosters/"+props.user)
+            .then(function(response){
+                if(nbBooster == response.data.find((uc) => uc.booster == id).nbBooster){
+                    Axios.post('/api/removeBooster',
+                        {
+                            user: props.user,
+                            booster:id
                         })
-                })
-        }
+                        .then(function(response) {
+                            Axios
+                                .get("/api/getMyBoosters/"+props.user)
+                                .then(function(response){
+                                    setBoosters(response.data);
+                                    setIsOpen(true);
+                                    button.disabled = false;
+                                })
+                        })
+                }
+            })
     }
 
     function closeModal() {
