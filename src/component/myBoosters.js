@@ -33,7 +33,7 @@ function MyBoosters(props) {
     };
     function openModal(e) {
         var button = e.currentTarget;
-        var nbBooster = e.target.getDataAttribute("nbBooster");
+        var nbBooster = e.target.getAttribute("nbBooster");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
