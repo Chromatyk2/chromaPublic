@@ -2842,6 +2842,14 @@ img#imgModal {
     width: 75%;
     margin: auto;
 }
+.mentionLink{
+    font-size: 15px;
+}
+.mailButton{
+    border: none;
+    background: none;
+    color: blue;
+}
 @keyframes shadowBanger {
     0% {
         background-position: 0 0;

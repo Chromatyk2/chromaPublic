@@ -12,7 +12,7 @@ function Footer(props) {
     return (
         <>
             <div className={"mentionsContainer"}>
-                <h2>Legal mentions</h2>
+                <h2>Mentions légales</h2>
                 <p>Chromatyk TCG est un site web axé sur le jeu de cartes à jouer et à collectionner Pokémon créé par Nintendo dans le but de faire un lien avec le stream de Chromatyk.</p>
 
                 <p>Fondateur original : Pierre Schuvey (Chromatyk)</p>
@@ -22,10 +22,10 @@ function Footer(props) {
                 <p>« Les informations recueillies font l’objet d’un traitement informatique destiné à :</p>
 
                 <p>
-                    Vous identifier sur le site internet
-                    Afficher publiquement le détail de votre collection, de vos recherches, vos possesions et votre pseudo
-                    Le destinataire des données est le créateur du site. Aucune information personnelle n'est communiquée aux autres membres du site, tel que votre adresse e-mail.
-                    Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant par mail à <button onClick={() => window.location = 'mailto:chromatyk.contact@gmail.com'}>chromatyk.contact@gmail.com</button>
+                    Vous identifier sur le site internet<br/>
+                    Afficher publiquement le détail de votre collection, de vos recherches, vos possesions et votre pseudo<br/>
+                    Le destinataire des données est le créateur du site. Aucune information personnelle n'est communiquée aux autres membres du site, tel que votre adresse e-mail.<br/>
+                    Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant par mail à <button className={"mailButton"} onClick={() => window.location = 'mailto:chromatyk.contact@gmail.com'}>chromatyk.contact@gmail.com</button>
                 </p>
                 <p>Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.</p>
 
