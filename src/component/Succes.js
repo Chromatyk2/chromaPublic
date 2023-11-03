@@ -89,7 +89,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/25succes.png"} className={"backSucces"} />
-                                    <div style={{backgroundImage:`url(/images/${val.booster}.png`}} className={"imgContainerSucces"}>
+                                    <div style={{height:'50px', backgroundImage:`url(/${val.booster}.png`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                             )
