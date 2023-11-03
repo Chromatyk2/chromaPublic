@@ -42,7 +42,10 @@ function Succes(props) {
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                         if(val.nbCard == boosterList.find((uc) => uc.name == val.booster).totalCards){
                             return(
-                                    <p>100% {val.booster}</p>
+                                <div className={"containerBadgeSucces"}>
+                                    <img src={"/images/100succes.png"} className={"backSucces"} />
+                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                </div>
                                 )
                         }
                     })
@@ -51,9 +54,12 @@ function Succes(props) {
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  66.65 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  100){
+                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  74.99 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  100){
                             return(
-                                <p>2 tiers {val.booster}</p>
+                                <div className={"containerBadgeSucces"}>
+                                    <img src={"/images/75succes.png"} className={"backSucces"} />
+                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                </div>
                             )
                         }
                     })
@@ -62,9 +68,26 @@ function Succes(props) {
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  33.34 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  66.66){
+                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) > 49.99 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  75){
                             return(
-                                <p>1 tier {val.booster}</p>
+                                <div className={"containerBadgeSucces"}>
+                                    <img src={"/images/50succes.png"} className={"backSucces"} />
+                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                </div>
+                            )
+                        }
+                    })
+                }
+                {totalCard &&
+                    nbCards &&
+                    totalCard &&
+                    nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
+                        if(parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) >  24.99 && parseFloat(val.nbCard/boosterList.find((uc) => uc.name == val.booster).totalCards*100).toFixed(2) <  50){
+                            return(
+                                <div className={"containerBadgeSucces"}>
+                                    <img src={"/images/25succes.png"} className={"backSucces"} />
+                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                </div>
                             )
                         }
                     })
