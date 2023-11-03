@@ -44,8 +44,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/100succes.png"} className={"backSucces"} />
-                                    <div className={"imgContainerSucces"}>
-                                        <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
+                                    <div style={{backgroundImage:`url(/images/${val.booster}.png`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                                 )
@@ -60,8 +59,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/75succes.png"} className={"backSucces"} />
-                                    <div className={"imgContainerSucces"}>
-                                        <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
+                                    <div style={{backgroundImage:`url(/images/${val.booster}.png`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                             )
@@ -76,8 +74,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/50succes.png"} className={"backSucces"} />
-                                    <div className={"imgContainerSucces"}>
-                                        <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
+                                    <div style={{backgroundImage:`url(/images/${val.booster}.png`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                             )
@@ -92,8 +89,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/25succes.png"} className={"backSucces"} />
-                                    <div className={"imgContainerSucces"}>
-                                        <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
+                                    <div style={{backgroundImage:`url(/images/${val.booster}.png`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                             )
