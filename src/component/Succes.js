@@ -44,7 +44,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/100succes.png"} className={"backSucces"} />
-                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/"${val.booster}"/logo.png)`}} className={"imgContainerSucces"}>
+                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/${val.booster}/logo.png)`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                                 )
@@ -59,7 +59,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/75succes.png"} className={"backSucces"} />
-                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/"${val.booster}"/logo.png)`}} className={"imgContainerSucces"}>
+                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/${val.booster}/logo.png)`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                             )
@@ -74,7 +74,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/50succes.png"} className={"backSucces"} />
-                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/"${val.booster}"/logo.png)`}} className={"imgContainerSucces"}>
+                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/${val.booster}/logo.png)`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                             )
@@ -89,7 +89,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/25succes.png"} className={"backSucces"} />
-                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/"${val.booster}"/logo.png)`}} className={"imgContainerSucces"}>
+                                    <div style={{height:'50px', backgroundImage:`url(https://images.pokemontcg.io/${val.booster}/logo.png)`}} className={"imgContainerSucces"}>
                                     </div>
                                 </div>
                             )
