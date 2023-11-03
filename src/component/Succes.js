@@ -44,7 +44,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/100succes.png"} className={"backSucces"} />
-                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                    <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
                                 </div>
                                 )
                         }
@@ -58,7 +58,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/75succes.png"} className={"backSucces"} />
-                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                    <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
                                 </div>
                             )
                         }
@@ -72,7 +72,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/50succes.png"} className={"backSucces"} />
-                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                    <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
                                 </div>
                             )
                         }
@@ -86,7 +86,7 @@ function Succes(props) {
                             return(
                                 <div className={"containerBadgeSucces"}>
                                     <img src={"/images/25succes.png"} className={"backSucces"} />
-                                    <img src={"/images/base1.png"} className={"symbolSucces"} />
+                                    <img src={"/images/"+val.booster+".png"} className={"symbolSucces"} />
                                 </div>
                             )
                         }
