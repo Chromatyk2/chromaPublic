@@ -61,7 +61,7 @@ function App() {
           <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
           <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
         </Routes>
-        <Footer cookies={cookies} />
+        {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
       }
     </>
