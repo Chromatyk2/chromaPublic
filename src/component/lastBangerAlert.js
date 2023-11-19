@@ -53,7 +53,6 @@ function LastBangerAlert(props) {
         if(newLastCardData != null){
             if(lastCardUser == null){
                 if(newLastCardUser.stade == 3){
-                    $('audio#pasmal')[0].play()
                 }else if(newLastCardUser.stade == 4){
                     $('audio#omglebanger')[0].play()
                 }
@@ -64,7 +63,6 @@ function LastBangerAlert(props) {
                 }, 9000);
             }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
                     if(newLastCardUser.stade == 3){
-                        $('audio#pasmal')[0].play()
                     }else if(newLastCardUser.stade == 4){
                         $('audio#omglebanger')[0].play()
                     }
