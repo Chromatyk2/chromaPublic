@@ -45,7 +45,7 @@ function OnStream() {
                 <div className="twitch">
                     <div className="twitch-video">
                         <iframe
-                            src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true"
+                            src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
                             frameBorder="0"
                             scrolling="no"
                             allowFullScreen="true"
