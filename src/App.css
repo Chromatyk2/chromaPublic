@@ -2834,6 +2834,9 @@ img#imgModal {
     background-color: #90e5b5;
     margin-top: 125px;
 }
+button.uniqueBoxContainer:last-child{
+    display:none;
+}
 .mentionsContainer{
     height: 610px;
     display: flex;
