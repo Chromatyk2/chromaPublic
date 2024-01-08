@@ -156,7 +156,7 @@ function UniqueBoxV2(props) {
                 {randomNumber &&
                     <div style={{display:"none"}} className={"gettedGameImg"} onClick={handleState} id={"imgGame"+randomNumber}>
                         <img className={"imgInBox"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
-                        <p className={"textResultBox"}>
+                        <p className={finalState == 'ultra' ? 'textResultBoxUltra' : finalState == 'legendary' ? 'textResultBoxLegendary' : finalState == 'epic' ? 'textResultBoxEpic' : finalState == 'rare' ? 'textResultBoxRare' : "textResultBoxBasic"}>
                             Tu gagnes
                             {
                                 finalState == 'ultra' ? ' 10 000 pts' :
