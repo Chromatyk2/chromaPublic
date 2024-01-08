@@ -94,7 +94,7 @@ function UniqueBoxV2(props) {
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("legendaryOpen");
-                            setFinalState("lgendary");
+                            setFinalState("legendary");
                             $('audio#orangeWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
@@ -160,9 +160,9 @@ function UniqueBoxV2(props) {
                             Tu gagnes
                             {
                                 finalState == 'ultra' ? ' 10 000 pts' :
-                                    finalState == 'legendary' ? ' 5 000 pts' :
-                                        finalState == 'epic' ? '  1000pts' :
-                                            finalState == 'rare' ? ' 500 pts' : ' Dommage tu as rien'
+                                finalState == 'legendary' ? ' 5 000 pts' :
+                                finalState == 'epic' ? '  1000pts' :
+                                finalState == 'rare' ? ' 500 pts' : ' Dommage tu as rien'
                             }
                         </p>
                     </div>
