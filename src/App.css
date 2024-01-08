@@ -1540,14 +1540,14 @@ img.gettedBoxImg {
     color: white;
     text-shadow: 0 0 15px BLACK;
 }
-.textResultBox::before {
+.gettedGameImg::before {
     position:absolute;
     top:0;
     left:0;
     right:0;
     bottom:0;
     color:transparent;
-    text-shadow:0 0 5px darkgrey;
+    text-shadow:0 0 30px purple;
     animation: orbit-shadow 5s linear infinite;
 }
 /* the 50px is your offset */
