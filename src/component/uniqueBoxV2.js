@@ -58,7 +58,7 @@ function UniqueBoxV2(props) {
             var epic = Math.floor(Math.random() * 100);
             if(epic > 70) {
                 var legendary = Math.floor(Math.random() * 100);
-                if(legendary > 64){
+                if(legendary > 80){
                     var ultra = Math.floor(Math.random() * 100);
                     if(ultra > 94){
                         setTimeout(function() {
@@ -161,8 +161,8 @@ function UniqueBoxV2(props) {
                             {
                                 finalState == 'ultra' ? ' 10 000 pts' :
                                     finalState == 'legendary' ? ' 5 000 pts' :
-                                        finalState == 'epic' ? '  000pts' :
-                                            finalState == 'rare' ? ' 500 pts' : ' rien'
+                                        finalState == 'epic' ? '  1000pts' :
+                                            finalState == 'rare' ? ' 500 pts' : ' Dommage tu as rien'
                             }
                         </p>
                     </div>
