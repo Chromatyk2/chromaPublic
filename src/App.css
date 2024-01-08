@@ -1540,23 +1540,17 @@ img.gettedBoxImg {
     color: white;
     text-shadow: 0 0 15px BLACK;
 }
-.gettedGameImg::before {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    color:transparent;
-    text-shadow:0 0 30px purple;
+.gettedGameImg{
+    filter:drop-shadow(0 0 30px purple);
     animation: orbit-shadow 5s linear infinite;
 }
 /* the 50px is your offset */
 @keyframes orbit-shadow {
     0% {
-        transform:rotate(0deg)   translate(50px) rotate(0deg);
+        filter:drop-shadow(0 0 30px purple);
     }
     100% {
-        transform:rotate(360deg) translate(50px) rotate(-360deg);
+        filter:drop-shadow(0 0 60px purple);
     }
 }
 .imgInBox{
