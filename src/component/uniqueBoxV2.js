@@ -141,6 +141,9 @@ function UniqueBoxV2(props) {
             }
         }else{
             setTimeout(function() {
+                document.getElementById("box").classList.toggle("spinBox");
+            }.bind(this), 1000)
+            setTimeout(function() {
                 setTypeBox("basicOpen");
                 setFinalState("basic");
                 $('audio#karateka')[0].pause()
