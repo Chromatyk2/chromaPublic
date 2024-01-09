@@ -53,11 +53,10 @@ function UniqueBoxV2(props) {
         $('audio#karateka')[0].play()
         setRandomNumber(Math.floor(Math.random()*max) + 1);
         var rare = Math.floor(Math.random() * 100);
+        document.getElementById("box").classList.toggle("spinBox");
         if(rare < 100){
-            document.getElementById("box").classList.toggle("spinBox");
             var epic = Math.floor(Math.random() * 100);
             if(epic < 100) {
-                document.getElementById("box").classList.toggle("spinBox");
                 var legendary = Math.floor(Math.random() * 100);
                 if(legendary < 100){
                     var ultra = Math.floor(Math.random() * 100);
