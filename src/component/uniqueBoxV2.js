@@ -59,7 +59,6 @@ function UniqueBoxV2(props) {
             if(epic < 100) {
                 var legendary = Math.floor(Math.random() * 100);
                 if(legendary < 100){
-                    document.getElementById("box").classList.toggle("spinBox");
                     var ultra = Math.floor(Math.random() * 100);
                     if(ultra < 100){
                         setTimeout(function() {
@@ -75,6 +74,7 @@ function UniqueBoxV2(props) {
                             setTypeBox("ultra");
                         }.bind(this), 7000)
                         setTimeout(function() {
+                            document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("ultraOpen");
                             setFinalState("ultra");
                             $('audio#karateka')[0].pause()
@@ -92,6 +92,7 @@ function UniqueBoxV2(props) {
                             setTypeBox("legendary");
                         }.bind(this), 5000)
                         setTimeout(function() {
+                            document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("legendaryOpen");
                             setFinalState("legendary");
                             $('audio#orangeWin')[0].play()
