@@ -53,7 +53,7 @@ function UniqueBoxV2(props) {
         $('audio#karateka')[0].play()
         setRandomNumber(Math.floor(Math.random()*max) + 1);
         var rare = Math.floor(Math.random() * 100);
-        if(rare > 99){
+        if(rare < 99){
             setTimeout(function() {
                 document.getElementById("box").classList.toggle("spinBox");
             }.bind(this), 1000)
