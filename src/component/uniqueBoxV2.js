@@ -58,7 +58,10 @@ function UniqueBoxV2(props) {
                 document.getElementById("box").classList.toggle("spinBox");
             }.bind(this), 1000)
             var epic = Math.floor(Math.random() * 100);
-            if(epic > 100) {
+            if(epic < 100) {
+                setTimeout(function() {
+                    document.getElementById("box").classList.toggle("spinBox");
+                }.bind(this), 1000)
                 var legendary = Math.floor(Math.random() * 100);
                 if(legendary < 100){
                     var ultra = Math.floor(Math.random() * 100);
@@ -130,9 +133,6 @@ function UniqueBoxV2(props) {
                 setTimeout(function() {
                     setTypeBox("rare");
                 }.bind(this), 1000)
-                setTimeout(function() {
-                    document.getElementById("box").classList.toggle("spinBox");
-                }.bind(this), 3000)
                 setTimeout(function() {
                     setTypeBox("rareOpen");
                     setFinalState("rare");
