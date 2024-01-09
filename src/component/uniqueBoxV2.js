@@ -132,14 +132,14 @@ function UniqueBoxV2(props) {
                 }.bind(this), 1000)
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
-                }.bind(this), 2000)
+                }.bind(this), 3000)
                 setTimeout(function() {
                     setTypeBox("rareOpen");
                     setFinalState("rare");
                     $('audio#karateka')[0].pause()
                     $('audio#karateka')[0].currentTime = 0
                     $('audio#greenWin')[0].play()
-                }.bind(this), 3000)
+                }.bind(this), 5000)
             }
         }else{
             setTimeout(function() {
