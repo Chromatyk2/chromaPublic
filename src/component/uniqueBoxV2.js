@@ -114,6 +114,9 @@ function UniqueBoxV2(props) {
                     }.bind(this), 3000)
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
+                    }.bind(this), 3000)
+                    setTimeout(function() {
+                        document.getElementById("box").classList.toggle("spinBox");
                         setTypeBox("epicOpen");
                         setFinalState("epic");
                         $('audio#karateka')[0].pause()
@@ -125,6 +128,9 @@ function UniqueBoxV2(props) {
                 setTimeout(function() {
                     setTypeBox("rare");
                 }.bind(this), 1000)
+                setTimeout(function() {
+                    document.getElementById("box").classList.toggle("spinBox");
+                }.bind(this), 2000)
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                     setTypeBox("rareOpen");
