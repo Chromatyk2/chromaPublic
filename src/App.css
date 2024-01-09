@@ -786,7 +786,7 @@ box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white, inset 0 0 0 12px blac
 
 }
 .spinBox{
-    animation:spinBall 1.5s infinite ;
+    animation:spinBall 2s infinite reverse ;
 }
 /* Spin Animation */
 @keyframes spinBall {
