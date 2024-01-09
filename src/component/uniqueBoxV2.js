@@ -114,7 +114,7 @@ function UniqueBoxV2(props) {
                     }.bind(this), 3000)
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
-                    }.bind(this), 3000)
+                    }.bind(this), 1000)
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
                         setTypeBox("epicOpen");
@@ -130,7 +130,7 @@ function UniqueBoxV2(props) {
                 }.bind(this), 1000)
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
-                }.bind(this), 2000)
+                }.bind(this), 1000)
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                     setTypeBox("rareOpen");
