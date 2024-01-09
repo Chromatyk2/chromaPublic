@@ -61,6 +61,9 @@ function UniqueBoxV2(props) {
             if(epic < 100) {
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
+                }.bind(this), 3000)
+                setTimeout(function() {
+                    document.getElementById("box").classList.toggle("spinBox");
                 }.bind(this), 5000)
                 var legendary = Math.floor(Math.random() * 100);
                 if(legendary > 100){
@@ -121,7 +124,6 @@ function UniqueBoxV2(props) {
                         document.getElementById("box").classList.toggle("spinBox");
                     }.bind(this), 7000)
                     setTimeout(function() {
-                        document.getElementById("box").classList.toggle("spinBox");
                         setTypeBox("epicOpen");
                         setFinalState("epic");
                         $('audio#karateka')[0].pause()
