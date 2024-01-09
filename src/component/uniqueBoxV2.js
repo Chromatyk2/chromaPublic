@@ -53,8 +53,10 @@ function UniqueBoxV2(props) {
         $('audio#karateka')[0].play()
         setRandomNumber(Math.floor(Math.random()*max) + 1);
         var rare = Math.floor(Math.random() * 100);
-        document.getElementById("box").classList.toggle("spinBox");
-        if(rare < 100){
+        if(rare > 100){
+            setTimeout(function() {
+                document.getElementById("box").classList.toggle("spinBox");
+            }.bind(this), 1000)
             var epic = Math.floor(Math.random() * 100);
             if(epic < 100) {
                 var legendary = Math.floor(Math.random() * 100);
@@ -149,7 +151,7 @@ function UniqueBoxV2(props) {
                 $('audio#karateka')[0].pause()
                 $('audio#karateka')[0].currentTime = 0
                 $('audio#loose')[0].play()
-            }.bind(this), 100)
+            }.bind(this), 1000)
         }
     }
     useEffect(() => {
