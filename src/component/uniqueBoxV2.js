@@ -82,11 +82,8 @@ function UniqueBoxV2(props) {
                             setTypeBox("epic");
                         }.bind(this), 3000)
                         setTimeout(function() {
-                            setTypeBox("legendary");
-                        }.bind(this), 5000)
-                        setTimeout(function() {
                             setTypeBox("ultra");
-                        }.bind(this), 10000)
+                        }.bind(this), 13000)
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
                         }.bind(this), 11000)
@@ -106,7 +103,7 @@ function UniqueBoxV2(props) {
                         }.bind(this), 3000)
                         setTimeout(function() {
                             setTypeBox("legendary");
-                        }.bind(this), 5000)
+                        }.bind(this), 13000)
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
                         }.bind(this), 11000)
