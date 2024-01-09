@@ -77,10 +77,10 @@ function UniqueBoxV2(props) {
                     if(ultra > 100){
                         setTimeout(function() {
                             setTypeBox("rare");
-                        }.bind(this), 1000)
+                        }.bind(this), 2000)
                         setTimeout(function() {
                             setTypeBox("epic");
-                        }.bind(this), 3000)
+                        }.bind(this), 6000)
                         setTimeout(function() {
                             setTypeBox("ultra");
                         }.bind(this), 13000)
@@ -97,10 +97,10 @@ function UniqueBoxV2(props) {
                     }else{
                         setTimeout(function() {
                             setTypeBox("rare");
-                        }.bind(this), 1000)
+                        }.bind(this), 2000)
                         setTimeout(function() {
                             setTypeBox("epic");
-                        }.bind(this), 3000)
+                        }.bind(this), 6000)
                         setTimeout(function() {
                             setTypeBox("legendary");
                         }.bind(this), 13000)
@@ -119,7 +119,7 @@ function UniqueBoxV2(props) {
                 }else{
                     setTimeout(function() {
                         setTypeBox("rare");
-                    }.bind(this), 1000)
+                    }.bind(this), 2000)
                     setTimeout(function() {
                         setTypeBox("epic");
                     }.bind(this), 6000)
