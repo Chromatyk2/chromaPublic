@@ -58,7 +58,7 @@ function UniqueBoxV2(props) {
                 document.getElementById("box").classList.toggle("spinBox");
             }.bind(this), 1000)
             var epic = Math.floor(Math.random() * 100);
-            if(epic > 49) {
+            if(epic > 50) {
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                 }.bind(this), 3000)
@@ -66,7 +66,7 @@ function UniqueBoxV2(props) {
                     document.getElementById("box").classList.toggle("spinBox");
                 }.bind(this), 5000)
                 var legendary = Math.floor(Math.random() * 100);
-                if(legendary > 89){
+                if(legendary > 68){
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
                     }.bind(this), 7000)
@@ -74,7 +74,7 @@ function UniqueBoxV2(props) {
                         document.getElementById("box").classList.toggle("spinBox");
                     }.bind(this), 9000)
                     var ultra = Math.floor(Math.random() * 100);
-                    if(ultra > 94){
+                    if(ultra > 68){
                         setTimeout(function() {
                             setTypeBox("rare");
                         }.bind(this), 2000)
