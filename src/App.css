@@ -1620,13 +1620,12 @@ img.gettedBoxImg {
 
 @-webkit-keyframes neon4 {
     0%{
-        color:#dba62b;
-        filter: blur(40px);
+        filter: blur(10px);
         background-position-x:10240px;
         /*text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px gold, 0 0 70px gold, 0 0 80px gold, 0 0 100px gold, 0 0 150px gold;*/
     }
     to{
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px gold, 0 0 35px gold, 0 0 40px gold, 0 0 50px gold, 0 0 75px gold;
+        text-shadow: 0 0 13px #fff;
         background-position-x:0;
     }
 }
