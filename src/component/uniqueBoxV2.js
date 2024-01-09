@@ -180,8 +180,8 @@ function UniqueBoxV2(props) {
                         <p className={finalState == 'ultra' ? 'textResultBoxUltra' : finalState == 'legendary' ? 'textResultBoxLegendary' : finalState == 'epic' ? 'textResultBoxEpic' : finalState == 'rare' ? 'textResultBoxRare' : "textResultBoxBasic"}>
                             Tu gagnes
                             {
-                                finalState == 'ultra' ? ' 10 000 pts' :
-                                finalState == 'legendary' ? ' 5 000 pts' :
+                                finalState == 'ultra' ? ' 50 000 pts' :
+                                finalState == 'legendary' ? ' 10 000 pts' :
                                 finalState == 'epic' ? '  3 000 pts' :
                                 finalState == 'rare' ? ' 1 000 pts' : " Rien ! Cheh !"
                             }
