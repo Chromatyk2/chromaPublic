@@ -1613,14 +1613,15 @@ img.gettedBoxImg {
     left: -35px;
     color:transparent;
     background: linear-gradient(270deg,#1e5799,#2ce0bf,#76dd2c,#dba62b,#ff1493,#1e5799);
-    animation:neon4 5s cubic-bezier(0, 0.97, 0, 1.67) infinite alternate;
+    animation:neon4 5s ease-in-out infinite alternate;
     background-size: 60% 100%;
     -webkit-background-clip:text;
 }
 
 @-webkit-keyframes neon4 {
     0%{
-        color:white;
+        color:#dba62b;
+        filter: blur(40px);
         background-position-x:10240px;
         /*text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px gold, 0 0 70px gold, 0 0 80px gold, 0 0 100px gold, 0 0 150px gold;*/
     }
@@ -1644,11 +1645,11 @@ img.gettedBoxImg {
 
 @-webkit-keyframes neon5 {
     from {
-        color:#dba62b;
-        filter: blur(40px);
+
         text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px gray, 0 0 35px gray, 0 0 40px gray, 0 0 50px gray, 0 0 75px gray;
     }
     to {
+        color:gray;
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px gray, 0 0 70px gray, 0 0 80px gray, 0 0 100px gray, 0 0 150px gray;
     }
 }
