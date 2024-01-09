@@ -1576,8 +1576,8 @@ img.gettedBoxImg {
 }
 
 .textResultBoxLegendary {
-    -webkit-animation: neon13 1.5s ease-in-out infinite alternate;
-    animation: neon13 1.5s ease-in-out infinite alternate;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
     color: #fff;
     font-size: 65px;
     top: 450px;
