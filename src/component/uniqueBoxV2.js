@@ -58,10 +58,10 @@ function UniqueBoxV2(props) {
                 document.getElementById("box").classList.toggle("spinBox");
             }.bind(this), 1000)
             var epic = Math.floor(Math.random() * 100);
-            if(epic > 100) {
+            if(epic < 100) {
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
-                }.bind(this), 3000)
+                }.bind(this), 5000)
                 var legendary = Math.floor(Math.random() * 100);
                 if(legendary > 100){
                     var ultra = Math.floor(Math.random() * 100);
@@ -116,10 +116,10 @@ function UniqueBoxV2(props) {
                     }.bind(this), 1000)
                     setTimeout(function() {
                         setTypeBox("epic");
-                    }.bind(this), 3000)
+                    }.bind(this), 5000)
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
-                    }.bind(this), 5000)
+                    }.bind(this), 7000)
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
                         setTypeBox("epicOpen");
@@ -127,12 +127,12 @@ function UniqueBoxV2(props) {
                         $('audio#karateka')[0].pause()
                         $('audio#karateka')[0].currentTime = 0
                         $('audio#blueWin')[0].play()
-                    }.bind(this), 7000)
+                    }.bind(this), 9000)
                 }
             }else {
                 setTimeout(function() {
                     setTypeBox("rare");
-                }.bind(this), 1500)
+                }.bind(this), 1100)
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                 }.bind(this), 3000)
