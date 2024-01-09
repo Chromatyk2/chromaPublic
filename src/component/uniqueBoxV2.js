@@ -61,6 +61,7 @@ function UniqueBoxV2(props) {
                 document.getElementById("box").classList.toggle("spinBox");
                 var legendary = Math.floor(Math.random() * 100);
                 if(legendary < 100){
+                    document.getElementById("box").classList.toggle("spinBox");
                     var ultra = Math.floor(Math.random() * 100);
                     if(ultra < 100){
                         setTimeout(function() {
