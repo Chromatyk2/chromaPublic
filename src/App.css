@@ -1613,14 +1613,14 @@ img.gettedBoxImg {
     left: -35px;
     color:transparent;
     background: linear-gradient(270deg,#1e5799,#2ce0bf,#76dd2c,#dba62b,#ff1493,#1e5799);
-    animation:neon4 5s cubic-bezier(0.07, 0, 0, 1.03) infinite alternate;
+    animation:neon4 5s cubic-bezier(0, 0.78, 0, 1.55) infinite alternate;
     background-size: 60% 100%;
     -webkit-background-clip:text;
 }
 
 @-webkit-keyframes neon4 {
     0%{
-        filter: blur(10px);
+        filter: blur(100px);
         background-position-x:10240px;
         /*text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px gold, 0 0 70px gold, 0 0 80px gold, 0 0 100px gold, 0 0 150px gold;*/
     }
