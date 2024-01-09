@@ -119,7 +119,7 @@ function UniqueBoxV2(props) {
                     }.bind(this), 1000)
                     setTimeout(function() {
                         setTypeBox("epic");
-                    }.bind(this), 7100)
+                    }.bind(this), 5100)
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
                     }.bind(this), 7000)
