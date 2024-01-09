@@ -83,7 +83,7 @@ function UniqueBoxV2(props) {
                         }.bind(this), 6000)
                         setTimeout(function() {
                             setTypeBox("ultra");
-                        }.bind(this), 13000)
+                        }.bind(this), 10000)
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
                         }.bind(this), 11000)
@@ -93,7 +93,7 @@ function UniqueBoxV2(props) {
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
                             $('audio#rainbowWin')[0].play()
-                        }.bind(this), 13000)
+                        }.bind(this), 11000)
                     }else{
                         setTimeout(function() {
                             setTypeBox("rare");
@@ -103,10 +103,7 @@ function UniqueBoxV2(props) {
                         }.bind(this), 6000)
                         setTimeout(function() {
                             setTypeBox("legendary");
-                        }.bind(this), 13000)
-                        setTimeout(function() {
-                            document.getElementById("box").classList.toggle("spinBox");
-                        }.bind(this), 11000)
+                        }.bind(this), 10000)
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("legendaryOpen");
@@ -114,7 +111,7 @@ function UniqueBoxV2(props) {
                             $('audio#orangeWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
-                        }.bind(this), 13000)
+                        }.bind(this), 11000)
                     }
                 }else{
                     setTimeout(function() {
