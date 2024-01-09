@@ -98,7 +98,7 @@ function UniqueBoxV2(props) {
                             $('audio#orangeWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
-                        }.bind(this), 10000)
+                        }.bind(this), 8000)
                     }
                 }else{
                     setTimeout(function() {
