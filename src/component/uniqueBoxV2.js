@@ -132,7 +132,7 @@ function UniqueBoxV2(props) {
             }else {
                 setTimeout(function() {
                     setTypeBox("rare");
-                }.bind(this), 1000)
+                }.bind(this), 1500)
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                 }.bind(this), 3000)
