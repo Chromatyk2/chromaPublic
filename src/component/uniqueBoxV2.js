@@ -143,9 +143,6 @@ function UniqueBoxV2(props) {
             }
         }else{
             setTimeout(function() {
-                document.getElementById("box").classList.toggle("spinBox");
-            }.bind(this), 1000)
-            setTimeout(function() {
                 setTypeBox("basicOpen");
                 setFinalState("basic");
                 $('audio#karateka')[0].pause()
@@ -176,7 +173,7 @@ function UniqueBoxV2(props) {
                                 finalState == 'ultra' ? ' 10 000 pts' :
                                 finalState == 'legendary' ? ' 5 000 pts' :
                                 finalState == 'epic' ? '  3 000 pts' :
-                                finalState == 'rare' ? ' 1 000 pts' : ' Dommage tu as rien'
+                                finalState == 'rare' ? ' 1 000 pts' : " rien dommage :'("
                             }
                         </p>
                     </div>
