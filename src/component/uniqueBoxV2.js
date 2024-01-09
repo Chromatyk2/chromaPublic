@@ -73,8 +73,10 @@ function UniqueBoxV2(props) {
                         setTimeout(function() {
                             setTypeBox("ultra");
                         }.bind(this), 10000)
-                        setTimeout(function() {
+                        etTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
+                        }.bind(this), 8000)
+                        setTimeout(function() {
                             setTypeBox("ultraOpen");
                             setFinalState("ultra");
                             $('audio#karateka')[0].pause()
