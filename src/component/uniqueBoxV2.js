@@ -52,7 +52,6 @@ function UniqueBoxV2(props) {
     function openBox(e) {
         $('audio#karateka')[0].play()
         setRandomNumber(Math.floor(Math.random()*max) + 1);
-        document.getElementById("box").classList.toggle("spinBox");
         var rare = Math.floor(Math.random() * 100);
         if(rare < 100){
             document.getElementById("box").classList.toggle("spinBox");
@@ -61,7 +60,6 @@ function UniqueBoxV2(props) {
                 document.getElementById("box").classList.toggle("spinBox");
                 var legendary = Math.floor(Math.random() * 100);
                 if(legendary < 100){
-                    document.getElementById("box").classList.toggle("spinBox");
                     var ultra = Math.floor(Math.random() * 100);
                     if(ultra < 100){
                         setTimeout(function() {
