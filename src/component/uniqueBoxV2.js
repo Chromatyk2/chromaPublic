@@ -56,7 +56,7 @@ function UniqueBoxV2(props) {
         if(rare < 99){
             setTimeout(function() {
                 document.getElementById("box").classList.toggle("spinBox");
-            }.bind(this), 2000)
+            }.bind(this), 1000)
             var epic = Math.floor(Math.random() * 100);
             if(epic > 100) {
                 setTimeout(function() {
