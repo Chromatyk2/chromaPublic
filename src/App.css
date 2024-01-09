@@ -1613,7 +1613,7 @@ img.gettedBoxImg {
     left: -35px;
     color:transparent;
     background: linear-gradient(270deg,#1e5799,#2ce0bf,#76dd2c,#dba62b,#ff1493,#1e5799);
-    animation:neon4 15s linear infinite;
+    animation:neon4 15s ease-in-out infinite alternate;
     background-size: 60% 100%;
     -webkit-background-clip:text;
 }
@@ -1624,6 +1624,7 @@ img.gettedBoxImg {
         background-position-x:0;
     }
     to{
+        color:white;
         background-position-x:10240px;
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px gold, 0 0 70px gold, 0 0 80px gold, 0 0 100px gold, 0 0 150px gold;
     }
