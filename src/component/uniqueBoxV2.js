@@ -106,6 +106,8 @@ function UniqueBoxV2(props) {
                         }.bind(this), 10000)
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
+                        }.bind(this), 11000)
+                        setTimeout(function() {
                             setTypeBox("legendaryOpen");
                             setFinalState("legendary");
                             $('audio#orangeWin')[0].play()
