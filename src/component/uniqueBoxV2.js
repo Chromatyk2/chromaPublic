@@ -95,12 +95,15 @@ function UniqueBoxV2(props) {
                         }.bind(this), 5000)
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
+                        }.bind(this), 7000)
+                        setTimeout(function() {
+                            document.getElementById("box").classList.toggle("spinBox");
                             setTypeBox("legendaryOpen");
                             setFinalState("legendary");
                             $('audio#orangeWin')[0].play()
                             $('audio#karateka')[0].pause()
                             $('audio#karateka')[0].currentTime = 0
-                        }.bind(this), 8000)
+                        }.bind(this), 10000)
                     }
                 }else{
                     setTimeout(function() {
