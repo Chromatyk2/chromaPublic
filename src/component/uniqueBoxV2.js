@@ -119,7 +119,7 @@ function UniqueBoxV2(props) {
                     }.bind(this), 1000)
                     setTimeout(function() {
                         setTypeBox("epic");
-                    }.bind(this), 5100)
+                    }.bind(this), 6000)
                     setTimeout(function() {
                         document.getElementById("box").classList.toggle("spinBox");
                     }.bind(this), 7000)
@@ -134,7 +134,7 @@ function UniqueBoxV2(props) {
             }else {
                 setTimeout(function() {
                     setTypeBox("rare");
-                }.bind(this), 1100)
+                }.bind(this), 2000)
                 setTimeout(function() {
                     document.getElementById("box").classList.toggle("spinBox");
                 }.bind(this), 3000)
