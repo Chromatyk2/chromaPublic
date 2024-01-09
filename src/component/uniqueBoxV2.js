@@ -75,7 +75,7 @@ function UniqueBoxV2(props) {
                         }.bind(this), 10000)
                         setTimeout(function() {
                             document.getElementById("box").classList.toggle("spinBox");
-                        }.bind(this), 8000)
+                        }.bind(this), 7000)
                         setTimeout(function() {
                             setTypeBox("ultraOpen");
                             setFinalState("ultra");
