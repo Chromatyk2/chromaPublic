@@ -56,11 +56,11 @@ function UniqueBoxV2(props) {
         var rare = Math.floor(Math.random() * 100);
         if(rare < 100){
             var epic = Math.floor(Math.random() * 100);
-            if(epic > 70) {
+            if(epic < 100) {
                 var legendary = Math.floor(Math.random() * 100);
-                if(legendary > 80){
+                if(legendary < 100){
                     var ultra = Math.floor(Math.random() * 100);
-                    if(ultra > 94){
+                    if(ultra < 100){
                         setTimeout(function() {
                             setTypeBox("rare");
                         }.bind(this), 1000)
