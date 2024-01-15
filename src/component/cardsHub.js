@@ -127,30 +127,6 @@ function CardsHub(props) {
     return(
         <>
             <OnStream />
-            <div className="leaderBoardSwitch">
-                <button value="myCards" onClick={displayTcgContent}>Mes Cartes</button>
-                <button value="myBoosters" onClick={displayTcgContent}>Mes Boosters</button>
-                <button value="cardsShop" onClick={displayTcgContent}>Boutique</button>
-                <button value="sellCards" onClick={displayTcgContent}>Echange Doublons</button>
-                {pseudo == "chromatyk" &&
-                    <>
-                        <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
-                        <button value="succes" onClick={displayTcgContent}>Succés</button>
-                    </>
-                }
-                {pseudo == "kimalwe" &&
-                    <button value="listuserTcg" onClick={displayTcgContent}>Joueurs</button>
-                }
-            </div>
-            <div className="leaderBoardSwitchMobile">
-                <select className={"selectPage"} onChange={selectPage} id="pet-select">
-                    <option value="">Où souhaitez vous aller ?</option>
-                    <option value="myCards">Mes Cartes</option>
-                    <option value="myBoosters">Mes Boosters</option>
-                    <option value="cardsShop">Boutique</option>
-                    <option value="sellCards">Echange Doublons</option>
-                </select>
-            </div>
             <div className={"allCards"}>
                 <div className={"countdown"}>
                     <p>Prochain drop dans : </p>
