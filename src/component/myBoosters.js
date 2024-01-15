@@ -79,7 +79,7 @@ function MyBoosters(props) {
                     boosters.map((val, key) => {
                         if(val.nbBooster > 0){
                             return(
-                                <div className="uniqueTradeContainer">
+                                <div className="uniqueMyCardContainer">
                                     <div className={"containerImgBooster"}>
                                         <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
