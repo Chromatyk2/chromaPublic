@@ -14,7 +14,6 @@ import SellCards from "./SellCards.js";
 import Succes from "./Succes.js";
 import OnStream from "./onStream";
 function CardsHub(props) {
-    console.log(props);
     const [points,setPoints] = useState(-1);
     const [timer,setTimer] = useState(null);
     const [diff,setDiff] = useState(null);
