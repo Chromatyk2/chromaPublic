@@ -33,10 +33,10 @@ function NavBar(props) {
                   <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/">Accueil</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">TCG</Link>
-                      <Link onClick={() => setExpanded(false)} page={"myCards"} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Mes cartes</Link>
-                      <Link onClick={() => setExpanded(false)} page={"myBoosters"} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Mes boosters</Link>
-                      <Link onClick={() => setExpanded(false)} page={"cardsShop"} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Boutique</Link>
-                      <Link onClick={() => setExpanded(false)} page={"sellCards"} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Echange doublons</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Mes cartes</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Mes boosters</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Boutique</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/29ct92B3ZrvxGT">Echange doublons</Link>
                       {pseudo == "chromatyk" &&
                                     <>
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
