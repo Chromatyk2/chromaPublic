@@ -13,7 +13,7 @@ function OnStream() {
     const [cookies, setCookie] = useCookies();
     const [count, setCount] = useState(0);
     const [stream, setStream] = useState(null);
-    const [displayStream, setDisplayStream] = useState(true);
+    const [displayStream, setDisplayStream] = useState(false);
 
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
