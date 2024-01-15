@@ -30,7 +30,7 @@ import Mentions from "./component/Mentions";
 import Footer from "./component/footer";
 import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
-function App() {
+function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
     return <Login />
@@ -57,11 +57,16 @@ function App() {
           <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
+          <Route path="/tcg/cartes" element={<CardsHub page={"myCards"} cookies={cookies} />} />
+          <Route path="/tcg/boosters" element={<CardsHub page={"myBoosters"} cookies={cookies} />} />
+          <Route path="/tcg/boutique" element={<CardsHub page={"cardsShop"} cookies={cookies} />} />
+          <Route path="/tcg/echange" element={<CardsHub page={"sellCards"} cookies={cookies} />} />
+          <Route path="/tcg" element={<CardsHub cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
           <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
         </Routes>
-        <Footer cookies={cookies} />
+        {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
       }
     </>

@@ -13,7 +13,7 @@ function OnStream() {
     const [cookies, setCookie] = useCookies();
     const [count, setCount] = useState(0);
     const [stream, setStream] = useState(null);
-    const [displayStream, setDisplayStream] = useState(true);
+    const [displayStream, setDisplayStream] = useState(false);
 
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
@@ -37,6 +37,14 @@ function OnStream() {
     }
     return (
         <>
+            {stream &&
+            stream.data.length > 0 ?
+                <>
+                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live On <span className={"spanOnair"}>(clique et viens gagner des points)</span></a>
+                </>
+                :
+                <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
+            }
             <div className={"buttonToDisplayStream"}>
                 <button onClick={displayStreamOff}>Cacher le stream</button>
                 <button onClick={displayStreamOn}>Afficher le stream</button>
