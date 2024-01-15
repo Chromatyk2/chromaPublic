@@ -30,11 +30,12 @@ import Mentions from "./component/Mentions";
 import Footer from "./component/footer";
 import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
-function App() {
+function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
     return <Login />
   }
+  console.log(props);
   return(
     <>
       {cookies.user !== undefined &&
