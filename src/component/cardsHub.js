@@ -51,7 +51,7 @@ function CardsHub(props) {
             }
         }
     }, [timer])
-    const [page, setPage] = useState(null);
+    const [page, setPage] = useState(props.page);
     function displayTcgContent(e) {
         Axios.get("/api/getDateButton/"+pseudo)
             .then(function(response){
