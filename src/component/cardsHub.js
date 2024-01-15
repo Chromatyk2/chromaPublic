@@ -51,20 +51,6 @@ function CardsHub(props) {
             }
         }
     }, [timer])
-    function displayTcgContent(e) {
-        Axios.get("/api/getDateButton/"+pseudo)
-            .then(function(response){
-                setTimer(response.data);
-            })
-        setPage(e.target.value)
-    }
-    function selectPage(e) {
-        Axios.get("/api/getDateButton/"+pseudo)
-            .then(function(response){
-                setTimer(response.data);
-            })
-        setPage(e.target.value)
-    }
     function addPointButton() {
         setCanGetPoint(false);
             if (timer.length == 0) {
@@ -192,22 +178,22 @@ function CardsHub(props) {
                             <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
                         </div>
                 }
-                    {page == "myCards" || props.page == "myCards" &&
+                    {props.page == "myCards" &&
                         <MyCards user={pseudo} />
                     }
-                    {page == "cardsShop" || props.page == "cardsShop" &&
+                    {props.page == "cardsShop" &&
                         <CardsShop user={pseudo} points={points}/>
                     }
-                    {page == "myBoosters" || props.page == "myBoosters" &&
+                    {props.page == "myBoosters" &&
                         <MyBoosters user={pseudo}/>
                     }
-                    {page == "listuserTcg" || props.page == "listuserTcg" &&
+                    {props.page == "listuserTcg" &&
                         <ListUserTcg user={pseudo}/>
                     }
-                    {page == "sellCards" || props.page == "sellCards" &&
+                    {props.page == "sellCards" &&
                         <SellCards user={pseudo}/>
                     }
-                    {page == "succes" || props.page == "succes" &&
+                    {props.page == "succes" &&
                         <Succes user={pseudo}/>
                     }
             </div>
