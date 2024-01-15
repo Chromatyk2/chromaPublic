@@ -35,7 +35,6 @@ function App(props) {
   if(Object.keys(cookies).length == 0) {
     return <Login />
   }
-  console.log(props);
   return(
     <>
       {cookies.user !== undefined &&

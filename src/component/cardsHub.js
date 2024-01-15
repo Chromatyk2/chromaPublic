@@ -213,22 +213,22 @@ function CardsHub(props) {
                             <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
                         </div>
                 }
-                    {page == "myCards" &&
+                    {page == "myCards" || props.page == "myCards" &&
                         <MyCards user={pseudo} />
                     }
-                    {page == "cardsShop" &&
+                    {page == "cardsShop" || props.page == "cardsShop" &&
                         <CardsShop user={pseudo} points={points}/>
                     }
-                    {page == "myBoosters" &&
+                    {page == "myBoosters" || props.page == "myBoosters" &&
                         <MyBoosters user={pseudo}/>
                     }
-                    {page == "listuserTcg" &&
+                    {page == "listuserTcg" || props.page == "listuserTcg" &&
                         <ListUserTcg user={pseudo}/>
                     }
-                    {page == "sellCards" &&
+                    {page == "sellCards" || props.page == "sellCards" &&
                         <SellCards user={pseudo}/>
                     }
-                    {page == "succes" &&
+                    {page == "succes" || props.page == "succes" &&
                         <Succes user={pseudo}/>
                     }
             </div>
