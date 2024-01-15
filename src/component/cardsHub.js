@@ -147,7 +147,7 @@ function CardsHub(props) {
                     {/*    width="<width>"*/}
                     {/*    allowFullScreen>*/}
                     {/*</iframe>*/}
-                    {page === null &&
+                    {props.page === null &&
                         <div className={"introTCGtext"}>
                             <p>
                                 Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !!!<br />
