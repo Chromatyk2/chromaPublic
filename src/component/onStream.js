@@ -49,7 +49,8 @@ function OnStream() {
                 <button onClick={displayStreamOff}>Cacher le stream</button>
                 <button onClick={displayStreamOn}>Afficher le stream</button>
             </div>
-            {displayStream === true || stream.data.length > 0 &&
+            {stream &&
+                displayStream === true || stream.data.length > 0 &&
                 <div className="twitch">
                     <div className="twitch-video">
                         <iframe
