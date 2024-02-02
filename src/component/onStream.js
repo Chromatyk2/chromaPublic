@@ -59,10 +59,13 @@ function OnStream() {
                 :
                 <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
             }
-            <div className={"buttonToDisplayStream"}>
-                <button onClick={displayStreamOff}>Cacher le stream</button>
-                <button onClick={displayStreamOn}>Afficher le stream</button>
-            </div>
+            {stream || meetUp &&
+            stream.data.length > 0 || meetUp.data.length > 0 &&
+                <div className={"buttonToDisplayStream"}>
+                    <button onClick={displayStreamOff}>Cacher le stream</button>
+                    <button onClick={displayStreamOn}>Afficher le stream</button>
+                </div>
+            }
             {displayStream === true &&
                 stream &&
                     stream.data.length > 0 ?
