@@ -57,6 +57,12 @@ function OnStream() {
                     <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live On <span className={"spanOnair"}>(clique et viens gagner des points)</span></a>
                 </>
                 :
+                meetUp &&
+                meetUp.data.length > 0 ?
+                <>
+                    <a className={"linkOnAir"} href={"https://twitch.tv/meetup_tv"} target={"_blank"}>Meet Up est en live<span className={"spanOnair"}>(viens soutenir l'asso !)</span></a>
+                </>
+                    :
                 <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
             }
             {stream || meetUp &&
