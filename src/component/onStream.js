@@ -14,7 +14,7 @@ function OnStream() {
     const [count, setCount] = useState(0);
     const [stream, setStream] = useState(null);
     const [meetUp, setMeetUp] = useState(null);
-    const [displayStream, setDisplayStream] = useState(false);
+    const [displayStream, setDisplayStream] = useState(true);
 
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
@@ -79,7 +79,7 @@ function OnStream() {
                     <button onClick={displayStreamOn}>Afficher le stream</button>
                 </div>
             }
-            {displayStream === true &&
+            {displayStream !== false &&
                 stream &&
                     stream.data.length > 0 ?
                         <div className="twitch">
