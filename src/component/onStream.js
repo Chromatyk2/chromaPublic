@@ -82,7 +82,7 @@ function OnStream() {
             {displayStream !== false &&
                 stream &&
                     stream.data.length > 0 ?
-                        <div className="twitch">
+                        <div style={displayStream === false && {visibility:"hidden", height:0}} className="twitch">
                             <div className="twitch-video">
                                 <iframe
                                     src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
@@ -105,7 +105,7 @@ function OnStream() {
                         </div>
                 : meetUp &&
                     meetUp.data.length > 0 &&
-                        <div className="twitch">
+                        <div style={displayStream === false && {visibility:"hidden", height:0}} className="twitch">
                             <div className="twitch-video">
                                 <iframe
                                     src="https://player.twitch.tv/?channel=meetup_tv&parent=chromatyk.fr&autoplay=true&muted=false"
