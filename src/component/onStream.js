@@ -32,7 +32,7 @@ function OnStream() {
     }, [])
     useEffect(() => {
         Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login=meetup_tv',
+            'https://api.twitch.tv/helix/streams?user_login=ponce',
             {
                 headers:{
                     'Authorization': `Bearer ${cookies.token.access_token}`,
