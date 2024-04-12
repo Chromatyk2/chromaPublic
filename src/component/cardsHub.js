@@ -57,7 +57,7 @@ function CardsHub(props) {
                     Axios.post('/api/addButtonClick',
                         {
                             pseudo: pseudo,
-                            hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0])
+                            hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0]
                         }).then(
                         (result) => {
                             Axios
@@ -85,7 +85,7 @@ function CardsHub(props) {
                             if((new Date(response.data[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
                                 Axios.post('/api/updateButtonTime',
                                     {
-                                        hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0]),
+                                        hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0],
                                         pseudo: pseudo
                                     }
                                 ).then(
