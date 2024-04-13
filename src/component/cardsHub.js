@@ -38,7 +38,7 @@ function CardsHub(props) {
     useEffect(() => {
         if(timer !== null){
             if(timer.length > 0) {
-                console.log(timer);
+                console.log(timer[0].hour.getTime());
                 setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
                 setTwoHour((new Date().getTime() / 1000));
                 setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
