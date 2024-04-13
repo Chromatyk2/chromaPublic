@@ -38,7 +38,6 @@ function CardsHub(props) {
     useEffect(() => {
         if(timer !== null){
             if(timer.length > 0) {
-                console.log((new Date(timer[0].hour).getTime() / 1000)  + 3600);
                 setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
                 setTwoHour((new Date().getTime() / 1000));
                 setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
@@ -151,34 +150,34 @@ function CardsHub(props) {
                             </p>
                         </div>
                     }
-                {/*{timer &&*/}
-                {/*timer.length == 0 ?*/}
-                {/*    canGetPoint === true ?*/}
-                {/*        <div className={"buttonToPointContainer"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-                {/*        </div>*/}
-                {/*        :*/}
-                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-                {/*        </div>*/}
-                {/*    :*/}
-                {/*    canGetPoint === true ?*/}
-                {/*        <div className={"buttonToPointContainer"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-                {/*        </div>*/}
-                {/*        :*/}
-                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-                {/*        </div>*/}
-                {/*}*/}
+                {timer &&
+                timer.length == 0 ?
+                    canGetPoint === true ?
+                        <div className={"buttonToPointContainer"}>
+                            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
+                            <p className={'buttonArrow'}>↓</p>
+                            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
+                        </div>
+                        :
+                        <div className={"buttonToPointContainer disableButtonPoint"}>
+                            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
+                            <p className={'buttonArrow'}>↓</p>
+                            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
+                        </div>
+                    :
+                    canGetPoint === true ?
+                        <div className={"buttonToPointContainer"}>
+                            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
+                            <p className={'buttonArrow'}>↓</p>
+                            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
+                        </div>
+                        :
+                        <div className={"buttonToPointContainer disableButtonPoint"}>
+                            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
+                            <p className={'buttonArrow'}>↓</p>
+                            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
+                        </div>
+                }
                     {props.page == "myCards" &&
                         <MyCards user={pseudo} />
                     }
