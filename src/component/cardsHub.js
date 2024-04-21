@@ -51,7 +51,6 @@ function CardsHub(props) {
             }
         }
     }, [timer])
-    console.log(timer.length);
     function addPointButton() {
         setCanGetPoint(false);
             if (timer.length == 0) {
