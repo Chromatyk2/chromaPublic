@@ -98,12 +98,12 @@ function StreamOnLayout() {
                             </iframe>
                         </div>
                     </div>
-                    <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk">Faire un Don</a>
+                    <a style={{position:"absolute",left:"272px",right:"0",margin:"auto",bottom:"60px"}} className="socialLink" target='_blank' href="https://twitch.tv/chromatyk">Faire un Don</a>
                 </>
                 :
                 <>
                     <img style={{width: "35%"}} src={"images/logoSofk.png"}/>
-                    <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk">Faire un Don</a>
+                    <a style={{position:"absolute",left:"272px",right:"0",margin:"auto",bottom:"60px"}} className="socialLink" target='_blank' href="https://twitch.tv/chromatyk">Faire un Don</a>
                 </>
             }
 
