@@ -38,7 +38,7 @@ function UniqueStreamer(props) {
         <>
             {user &&
                 <>
-                    <div onClick={changeStream} className="uniqueStreamer">
+                    <div className="uniqueStreamer">
                         {props.onStream === true ?
                             <>
                                 <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerOnline"}>
