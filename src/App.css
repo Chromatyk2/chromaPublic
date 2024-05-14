@@ -224,10 +224,6 @@ background: -webkit-linear-gradient(top, #00ff00 21%, #ff00ff 70%);
 color: transparent;
 -webkit-text-stroke: 4px black;
 }
-nav.navbar.navbar-expand-lg.navbar-light {
-background-color: #9ad4df!important;
-margin-bottom: 20px;
-}
 .me-auto.navbar-nav {
     gap: 30px;
     justify-content: center;
@@ -315,14 +311,6 @@ color: #3b6887;
 font-family: "Charge Vector Black";
 font-size: 30px;
 text-align: center;
-}
-a{
-font-size: 50px;
-color: #255748;
-font-family: "Charge Vector Black";
-}
-a:hover{
-color: #0a3a2c;
 }
 .top3Desktop {
 display: flex;
@@ -3037,6 +3025,17 @@ button.uniqueBoxContainer:last-child{
 
 
 
+a{
+    font-size: 50px;
+    color: white;
+    font-family: "Charge Vector Black";
+}
+a:hover{
+    color: #fbfbfb;
+}
+nav.navbar.navbar-expand-lg.navbar-light {
+    background-color: #38617F!important;
+}
 .uniqueStreamer{
     background-color:#38617F;
 }
