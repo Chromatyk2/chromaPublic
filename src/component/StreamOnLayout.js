@@ -16,7 +16,7 @@ function StreamOnLayout() {
     const [loading, stLoading] = useCookies(true);
     const [count, setCount] = useState(0);
     const [team, setTeam] = useState([]);
-    const [onStream, setOnStream] = useState(null);
+    const [onStream, setOnStream] = useState([]);
     const [offStream, setOffStream] = useState([]);
     const [streams,setStreams] = useState([]);
     const [displayStream, setDisplayStream] = useState(true);
@@ -44,7 +44,7 @@ function StreamOnLayout() {
                 ).then(function(response){
                     console.log(response.data);
                     if(response.data.data.length > 0){
-                        setOnStream(oldArrayOn => [...oldArrayOn,response.data.data[0]] );
+                        setOnStream(oldArrayOn => [...oldArrayOn,val.user_name] );
                         console.log(onStream);
                     }else if(response.data.data.length < 1){
                         setOffStream(oldArrayOff => [...oldArrayOff,val.user_name] );
