@@ -28,11 +28,19 @@ function StreamOnLayout() {
             setTeam(response.data);
         })
     }, [])
-    if(team.data){
-        console.log(team[0])
-    }
     return (
-        <p>StreamOn</p>
+        <>
+            {team &&
+                team[0].users.map((val, key) => {
+                    return(
+                        <div className="uniqueMyCardContainer">
+                            <p>test</p>
+                        </div>
+                    )
+                })
+
+            }
+        </>
     );
 }
 
