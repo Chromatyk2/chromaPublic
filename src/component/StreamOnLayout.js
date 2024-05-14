@@ -16,6 +16,7 @@ function StreamOnLayout() {
     const [streamToDisplay, setStreamToDisplay] = useState();
     const [team, setTeam] = useState([]);
     const [onStream, setOnStream] = useState([]);
+    const [orderedOnStream, setOrderedOnStream] = useState([]);
     const [offStream, setOffStream] = useState([]);
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
@@ -48,13 +49,16 @@ function StreamOnLayout() {
             })
         })
     }, [])
+    useEffect(() => {
+        setOrderedOnStream(onStream.sort((a, b) => (a.infos[0].viewer_count < b.infos[0].viewer_count) ? 1 : -1));
+    }, [onStream.length + offStream.length == team.length]);
     function handleDataFromChild(data) {
         setStreamToDisplay(data);
     }
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
-                {onStream.length > 0 &&
+                {orderedOnStream.length > 0 &&
                     onStream.map((val, key) => {
                         return (
                             <UniqueStreamer change={handleDataFromChild} onStream={true} streamer={val}/>
