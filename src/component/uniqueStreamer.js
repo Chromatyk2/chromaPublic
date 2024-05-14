@@ -18,10 +18,14 @@ function UniqueStreamer(props) {
         <>
             <div className="uniqueStreamer">
                 {props.onStream === true ?
-                    <div>
-                        <p>{props.streamer.infos[0].user_name}</p>
-                        <img className={"done"} src={"/images/redCircle.png"}/>
-                        <p>{props.streamer.infos[0].viewer_count}</p>
+                    <div className={"uniqueStreamerOnline"}>
+                        <div className={"uniqueStreamerOnlinePseudo"}>
+                            <p>{props.streamer.infos[0].user_name}</p>
+                        </div>
+                        <div className={"uniqueStreamerOnlineStats"}>
+                            <img className={"done"} src={"/images/redCircle.png"}/>
+                            <p>{props.streamer.infos[0].viewer_count}</p>
+                        </div>
                     </div>
                     :
                     <p>{props.streamer}</p>
