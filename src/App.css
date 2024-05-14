@@ -265,13 +265,19 @@ font-size: 32px;
 .center {
 margin-top: 50px;
 }
-.socialContainer {
+.homeContainer {
 display: flex;
 flex-flow: column;
 gap: 20px;
 justify-content: center;
 align-items: center;
 margin-top: 5%;
+}
+.homeContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
 }
 .loginButton{
 display: flex;
