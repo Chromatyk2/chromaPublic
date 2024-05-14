@@ -43,14 +43,14 @@ function StreamOnLayout() {
                     }
                 ).then(function(response){
                     setStreams(oldArray => [...oldArray,response.data] );
-                    if(streams.length == team.length){
-                        setOnStream(streams.filter((stream) => stream.data.length > 0));
-                        setOffStream(streams.filter((stream) => stream.data.length < 1));
-                    }
                 })
             })
         })
     }, [])
+    useEffect(() => {
+        setOnStream(streams.filter((stream) => stream.data.length > 0));
+        setOffStream(streams.filter((stream) => stream.data.length < 1));
+    }, [streams.length == team.length])
     console.log(streams);
     console.log(onStream);
     console.log(offStream);
