@@ -32,7 +32,7 @@ function UniqueStreamer(props) {
         })
     }, [])
     function changeStream(e) {
-        console.log(e.target.value)
+        console.log(e.target)
     }
     return (
         <>
