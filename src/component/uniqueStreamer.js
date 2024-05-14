@@ -13,6 +13,7 @@ function UniqueStreamer(props) {
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
     const [stream, setStream] = useState(null);
+    console.log(props.streamer+" "+props.onStream);
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/streams?user_login='+props.streamer.user_name,
