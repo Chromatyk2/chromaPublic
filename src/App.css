@@ -3036,6 +3036,8 @@ button.uniqueBoxContainer:last-child{
     width: 300px;
     height: 85vh;
     overflow: overlay;
+    scrollbar-color: #3b6887 transparent;
+    scrollbar-width: thin;
 }
 .uniqueStreamerOnline{
     align-items: center;

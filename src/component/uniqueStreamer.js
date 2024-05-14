@@ -52,8 +52,10 @@ function UniqueStreamer(props) {
                             :
                             <>
                                 <div className={"uniqueStreamerOnline"}>
-                                    <img style={{width: "50px",margin:"0"}} src={user.data[0].profile_image_url}/>
-                                    <p>{props.streamer}</p>
+                                    <div className={"uniqueStreamerProfile"}>
+                                        <img style={{width: "50px",margin:"0"}} src={user.data[0].profile_image_url}/>
+                                        <p>{props.streamer}</p>
+                                    </div>
                                 </div>
                             </>
                         }
