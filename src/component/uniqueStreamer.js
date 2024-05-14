@@ -34,7 +34,6 @@ function UniqueStreamer(props) {
     console.log(user);
     return (
         <>
-            {user.length > 0 &&
                 <>
                     <div className="uniqueStreamer">
                         {props.onStream === true ?
@@ -48,7 +47,6 @@ function UniqueStreamer(props) {
                         }
                     </div>
                 </>
-            }
         </>
     );
 }
