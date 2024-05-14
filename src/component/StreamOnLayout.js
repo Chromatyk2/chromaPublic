@@ -9,6 +9,7 @@ import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 import UniqueStreamer from './uniqueStreamer.js';
+import onStream from "./onStream";
 
 function StreamOnLayout() {
     const [cookies, setCookie] = useCookies();
@@ -41,16 +42,16 @@ function StreamOnLayout() {
                     }
                 ).then(function(response){
                     setStreams(oldArray => [...oldArray,response.data] );
+                    if(streams.length == team.length){
+                        setOnStream(streams.filter((stream) => stream.data.length > 0));
+                    }
                 })
             })
         })
     }, [])
-    if(streams.length == team.length){
-        setOnStream(streams.filter((stream) => stream.data.length > 0));
-    }
     return (
         <>
-            {streams.length == team.length &&
+            {onStream.length > 0 &&
                 onsStream.map((val, key) => {
                     return(
                         <UniqueStreamer streamer={val.user_name} />
