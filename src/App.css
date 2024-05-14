@@ -3094,12 +3094,12 @@ nav.navbar.navbar-expand-lg.navbar-light {
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
-        margin-bottom: 50px;
+        margin-bottom: 160px;
         width:100%;
     }
 
     .twitch .twitch-video {
-        padding-top: 50.1875%;
+        padding-top: 42.95%;
         width: 80%;
     }
 

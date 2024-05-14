@@ -23,27 +23,27 @@ function StreamOnLayout() {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
             {
-                headers:{
+                headers: {
                     'Authorization': `Bearer ${cookies.token.access_token}`,
                     'Client-Id': process.env.REACT_APP_CLIENT_ID
                 }
             }
-        ).then(function(response){
+        ).then(function (response) {
             setTeam(response.data.data[0].users);
             response.data.data[0].users.map((val, key) => {
                 Axios.get(
-                    'https://api.twitch.tv/helix/streams?user_login='+val.user_name,
+                    'https://api.twitch.tv/helix/streams?user_login=' + val.user_name,
                     {
-                        headers:{
+                        headers: {
                             'Authorization': `Bearer ${cookies.token.access_token}`,
                             'Client-Id': process.env.REACT_APP_CLIENT_ID
                         }
                     }
-                ).then(function(response){
-                    if(response.data.data.length > 0){
-                        setOnStream(oldArrayOn => [...oldArrayOn, {infos: response.data.data}] );
-                    }else if(response.data.data.length < 1){
-                        setOffStream(oldArrayOff => [...oldArrayOff,val.user_name] );
+                ).then(function (response) {
+                    if (response.data.data.length > 0) {
+                        setOnStream(oldArrayOn => [...oldArrayOn, {infos: response.data.data}]);
+                    } else if (response.data.data.length < 1) {
+                        setOffStream(oldArrayOff => [...oldArrayOff, val.user_name]);
                     }
                 })
             })
@@ -52,9 +52,11 @@ function StreamOnLayout() {
     useEffect(() => {
         setOrderedOnStream(onStream.sort((a, b) => (a.infos[0].viewer_count < b.infos[0].viewer_count) ? 1 : -1));
     }, [onStream.length + offStream.length == team.length]);
+
     function handleDataFromChild(data) {
         setStreamToDisplay(data);
     }
+
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
@@ -74,35 +76,40 @@ function StreamOnLayout() {
                 }
             </div>
             {streamToDisplay ?
-                <div className="twitch">
-                    <div className="twitch-video">
-                        <iframe
-                            src={"https://player.twitch.tv/?channel=" + streamToDisplay + "&parent=preview--chromatyk.netlify.app&autoplay=true&muted=false"}
-                            frameBorder="0"
-                            scrolling="no"
-                            allowFullScreen="true"
-                            height="720"
-                            width="1280">
-                        </iframe>
+                <>
+                    <div className="twitch">
+                        <div className="twitch-video">
+                            <iframe
+                                src={"https://player.twitch.tv/?channel=" + streamToDisplay + "&parent=preview--chromatyk.netlify.app&autoplay=true&muted=false"}
+                                frameBorder="0"
+                                scrolling="no"
+                                allowFullScreen="true"
+                                height="720"
+                                width="1280">
+                            </iframe>
+                        </div>
+                        <div className="twitch-chat">
+                            <iframe
+                                frameBorder="0"
+                                scrolling="no"
+                                src={"https://www.twitch.tv/embed/" + streamToDisplay + "/chat?parent=preview--chromatyk.netlify.app"}
+                                height="100%"
+                                width="100%">
+                            </iframe>
+                        </div>
                     </div>
-                    <div className="twitch-chat">
-                        <iframe
-                            frameBorder="0"
-                            scrolling="no"
-                            src={"https://www.twitch.tv/embed/" + streamToDisplay + "/chat?parent=preview--chromatyk.netlify.app"}
-                            height="100%"
-                            width="100%">
-                        </iframe>
-                    </div>
-                </div>
+                    <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk">Faire un Don</a>
+                </>
                 :
                 <>
-                    <img style={{width:"35%"}} src={"images/logoSofk.png"}/>
+                    <img style={{width: "35%"}} src={"images/logoSofk.png"}/>
+                    <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk">Faire un Don</a>
                 </>
             }
 
         </div>
-    );
+    )
+        ;
 }
 
 export default StreamOnLayout;
