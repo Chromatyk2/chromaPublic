@@ -20,7 +20,7 @@ function UniqueStreamer(props) {
             var streamerName = props.streamer;
         }
         Axios.get(
-            'https://api.twitch.tv/helix/users?name='+streamerName,
+            'https://api.twitch.tv/helix/users?login='+streamerName,
             {
                 headers:{
                     'Authorization': `Bearer ${cookies.token.access_token}`,
