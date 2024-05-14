@@ -37,6 +37,7 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boosters">Mes boosters</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Boutique</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/echange">Echange doublons</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/StreamOnForKids">StreamOn For Kids</Link>
                       {pseudo == "chromatyk" &&
                                     <>
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
