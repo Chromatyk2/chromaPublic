@@ -17,7 +17,7 @@ function StreamOnLayout() {
     const [count, setCount] = useState(0);
     const [team, setTeam] = useState([]);
     const [onStream, setOnStream] = useState([]);
-    const [offsStream, setOffStream] = useState([]);
+    const [offStream, setOffStream] = useState([]);
     const [streams,setStreams] = useState([]);
     const [displayStream, setDisplayStream] = useState(true);
     const pseudo = cookies.user.data[0].login;
@@ -52,7 +52,8 @@ function StreamOnLayout() {
         })
     }, [])
     console.log(streams);
-    console.log(onsStream);
+    console.log(onStream);
+    console.log(offStream);
     return (
         <>
             {onStream.length > 0 &&
