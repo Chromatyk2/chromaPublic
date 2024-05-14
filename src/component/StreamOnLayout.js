@@ -61,6 +61,7 @@ function StreamOnLayout() {
         <div className={"containerStream"}>
             <div className={"streamersList"}>
                 <p>Streameur.euses</p>
+                <hr />
                 {orderedOnStream.length > 0 &&
                     onStream.map((val, key) => {
                         return (
