@@ -34,7 +34,7 @@ function UniqueStreamer(props, {sendDataToParent}) {
     }, [])
     function changeStream() {
         setData(document.getElementsByClassName('uniqueStreamerOnline')[0].value);
-        sendDataToParent("test");
+        sendDataToParent(data);
     }
     return (
         <>
