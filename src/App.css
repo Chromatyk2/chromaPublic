@@ -3038,9 +3038,34 @@ button.uniqueBoxContainer:last-child{
     overflow: overlay;
 }
 .uniqueStreamerOnline{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    height: 90px;
+}
+.uniqueStreamerProfile {
     display: flex;
     align-items: center;
-    width: 90%;
+    gap: 10px;
+}
+.uniqueStreamerProfile p{
     margin: 0;
-    justify-content: center;
+}
+.uniqueStreamerProfile img{
+    width: 50px;
+    border-radius: 50px;
+}
+.uniqueStreamerStats {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.uniqueStreamerStats img{
+    width: 15px;
+    border-radius: 50px;
+}
+.uniqueStreamerStats p{
+    margin: 0;
 }
