@@ -25,11 +25,11 @@ function StreamOnLayout() {
                 }
             }
         ).then(function(response){
-            setTeam(response);
+            setTeam(response.data);
         })
     }, [])
     if(team.data.length > 0){
-        console.log(team.data[0])
+        console.log(team[0])
     }
     return (
         <p>StreamOn</p>
