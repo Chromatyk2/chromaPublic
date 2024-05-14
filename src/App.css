@@ -3019,6 +3019,7 @@ a:hover{
 }
 nav.navbar.navbar-expand-lg.navbar-light {
     background-color: #38617F!important;
+    border-bottom: black solid 2px;
 }
 .uniqueStreamer{
     background-color:#38617F;

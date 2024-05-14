@@ -32,7 +32,7 @@ function UniqueStreamer(props) {
         })
     }, [])
     function changeStream(e) {
-        console.log(document.getElementsByClassName('uniqueStreamerOnline').value);
+        console.log(document.getElementsByClassName('uniqueStreamerOnline'));
     }
     return (
         <>
