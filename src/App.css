@@ -852,8 +852,13 @@ p.filterTitle {
   font-weight: bold;
 }
 #root{
-  min-height: 100vh;
-  background: transparent;
+    background-image: url("/images/backSofk.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 }
 .labelStats {
   font-weight: 700;
