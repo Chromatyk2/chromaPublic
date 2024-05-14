@@ -32,34 +32,34 @@ function UniqueStreamer(props) {
         })
     }, [])
     function changeStream(e) {
-        console.log(e.target);
+        console.log(e.target.value)
     }
     return (
         <>
             {user &&
                 <>
-                    <div className="uniqueStreamer">
+                    <div onClick={changeStream} className="uniqueStreamer">
                         {props.onStream === true ?
                             <>
-                                <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerOnline"}>
-                                    <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerProfile"}>
+                                <div value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerOnline"}>
+                                    <div className={"uniqueStreamerProfile"}>
                                         <img src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer.infos[0].user_name}</p>
-                                    </button>
-                                    <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerStats"}>
+                                    </div>
+                                    <div className={"uniqueStreamerStats"}>
                                         <img src={"/images/redCircle.png"}/>
                                         <p>{props.streamer.infos[0].viewer_count}</p>
-                                    </button>
-                                </button>
+                                    </div>
+                                </div>
                             </>
                             :
                             <>
-                                <button value={props.streamer} onClick={changeStream} className={"uniqueStreamerOnline"}>
+                                <div value={props.streamer} onClick={changeStream} className={"uniqueStreamerOnline"}>
                                     <div className={"uniqueStreamerProfile"}>
                                         <img style={{width: "50px",margin:"0"}} src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer}</p>
                                     </div>
-                                </button>
+                                </div>
                             </>
                         }
                     </div>
