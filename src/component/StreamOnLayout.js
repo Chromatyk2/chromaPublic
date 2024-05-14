@@ -28,7 +28,7 @@ function StreamOnLayout() {
             setTeam(response.data);
         })
     }, [])
-    console.log(team.data[0]);
+    console.log(team);
     return (
         <>
             {team &&
