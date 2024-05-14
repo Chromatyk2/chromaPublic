@@ -18,7 +18,7 @@ function UniqueStreamer(props) {
         <>
             <div className="uniqueStreamer">
                 {props.onStream === true ?
-                    <p>{props.streamer.user_name}</p>
+                    <p>{props.streamer.infos[0].user_name}</p>
                     :
                     <p>{props.streamer}</p>
                 }
