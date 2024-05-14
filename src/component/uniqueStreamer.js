@@ -28,7 +28,7 @@ function UniqueStreamer(props) {
     }, [])
     return (
         <>
-            <div className="uniqueMyCardContainer">
+            <div className="uniqueStreamer">
                 <p>{props.streamer}</p>
             </div>
         </>

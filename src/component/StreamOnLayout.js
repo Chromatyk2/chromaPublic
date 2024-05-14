@@ -44,7 +44,7 @@ function StreamOnLayout() {
                 ).then(function(response){
                     console.log(response.data);
                     if(response.data.data.length > 0){
-                        setOnStream(oldArrayOn => [...oldArrayOn,val.user_name] );
+                        setOnStream(oldArrayOn => [...oldArrayOn,response.data.data[0]] );
                         console.log(onStream);
                     }else if(response.data.data.length < 1){
                         setOffStream(oldArrayOff => [...oldArrayOff,val.user_name] );
@@ -57,20 +57,22 @@ function StreamOnLayout() {
 
     return (
         <>
-            {onStream.length > 0 &&
-                onStream.map((val, key) => {
-                    return(
-                        <UniqueStreamer streamer={val} />
-                    )
-                })
-            }
-            {offStream.length > 0 &&
-                offStream.map((val, key) => {
-                    return(
-                        <UniqueStreamer streamer={val} />
-                    )
-                })
-            }
+            <div className={"streamersList"}>
+                {onStream.length > 0 &&
+                    onStream.map((val, key) => {
+                        return(
+                            <UniqueStreamer onStream={true} streamer={val} />
+                        )
+                    })
+                }
+                {offStream.length > 0 &&
+                    offStream.map((val, key) => {
+                        return(
+                            <UniqueStreamer onStream={false} streamer={val} />
+                        )
+                    })
+                }
+            </div>
         </>
     );
 }
