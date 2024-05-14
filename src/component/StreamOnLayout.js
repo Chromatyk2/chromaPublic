@@ -42,16 +42,15 @@ function StreamOnLayout() {
                         }
                     }
                 ).then(function(response){
-                    setStreams(oldArray => [...oldArray,response.data] );
+                    if(response.data.data.length > 0){
+                        setOnStream(oldArray => [...oldArray,val] );
+                    }else if(response.data.data.length < 1){
+                        setOffStream(oldArray => [...oldArray,val] );
+                    }
                 })
             })
         })
     }, [])
-    useEffect(() => {
-        setOnStream(streams.filter((stream) => stream.data.length > 0));
-        setOffStream(streams.filter((stream) => stream.data.length < 1));
-    }, [streams.length == team.length])
-    console.log(streams);
     return (
         <>
             {onStream.length > 0 &&
