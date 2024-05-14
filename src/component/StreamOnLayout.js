@@ -32,10 +32,10 @@ function StreamOnLayout() {
     return (
         <>
             {team &&
-                team.users.map((val, key) => {
+                team.map((val, key) => {
                     return(
                         <div className="uniqueMyCardContainer">
-                            <p>{val.user_name}</p>
+                            <p>{val.users}</p>
                         </div>
                     )
                 })
