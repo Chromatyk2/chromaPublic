@@ -43,7 +43,7 @@ function StreamOnLayout() {
                     }
                 ).then(function(response){
                     if(response.data.data.length > 0){
-                        setOnStream(oldArrayOn => [...oldArrayOn,response.data.data] );
+                        setOnStream(oldArrayOn => [...oldArrayOn, {infos: response.data.data}] );
                     }else if(response.data.data.length < 1){
                         setOffStream(oldArrayOff => [...oldArrayOff,val.user_name] );
                     }
