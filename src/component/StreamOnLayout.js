@@ -53,7 +53,7 @@ function StreamOnLayout() {
     }, [])
 
     return (
-        <>
+        <div className={"containerStream"}>
             <div className={"streamersList"}>
                 {onStream.length > 0 &&
                     onStream.map((val, key) => {
@@ -91,7 +91,7 @@ function StreamOnLayout() {
                     </iframe>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
