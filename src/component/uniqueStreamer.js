@@ -34,7 +34,7 @@ function UniqueStreamer(props) {
     }, [])
     function changeStream() {
         setData(document.getElementsByClassName('uniqueStreamerOnline')[0].value);
-        props.change();
+        props.change(data);
     }
     return (
         <>
