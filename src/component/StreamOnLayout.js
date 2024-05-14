@@ -52,7 +52,7 @@ function StreamOnLayout() {
         })
     }, [])
     function handleDataFromChild(data) {
-        setDataFromChild(data);
+        console.log(data);
     }
     return (
         <div className={"containerStream"}>
