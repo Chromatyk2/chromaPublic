@@ -33,7 +33,8 @@ function UniqueStreamer(props, {sendDataToParent}) {
         })
     }, [])
     function changeStream(e) {
-        sendDataToParent(document.getElementsByClassName('uniqueStreamerOnline')[0].value)
+        var nameToDisplay = document.getElementsByClassName('uniqueStreamerOnline')[0].value;
+        sendDataToParent(nameToDisplay);
     }
     return (
         <>
