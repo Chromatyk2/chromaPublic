@@ -31,15 +31,16 @@ function UniqueStreamer(props) {
             setUser(response.data);
         })
     }, [])
-    console.log(user);
     return (
         <>
+            {user &&
                 <>
                     <div className="uniqueStreamer">
                         {props.onStream === true ?
                             <div className={"uniqueStreamerOnline"}>
+                                <img style={{width: "15px"}} src={user.data[0].profile_image_url}/>
                                 <p>{props.streamer.infos[0].user_name}</p>
-                                <img style={{width:"15px"}} src={"/images/redCircle.png"}/>
+                                <img style={{width: "15px"}} src={"/images/redCircle.png"}/>
                                 <p>{props.streamer.infos[0].viewer_count}</p>
                             </div>
                             :
@@ -47,6 +48,7 @@ function UniqueStreamer(props) {
                         }
                     </div>
                 </>
+            }
         </>
     );
 }
