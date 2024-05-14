@@ -43,9 +43,9 @@ function StreamOnLayout() {
                     }
                 ).then(function(response){
                     if(response.data.data.length > 0){
-                        setOnStream(oldArray => [...oldArray,val] );
+                        setOnStream(oldArrayOn => [...oldArrayOn,val] );
                     }else if(response.data.data.length < 1){
-                        setOffStream(oldArray => [...oldArray,val] );
+                        setOffStream(oldArrayOff => [...oldArrayOff,val] );
                     }
                 })
             })
