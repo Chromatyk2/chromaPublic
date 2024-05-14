@@ -26,7 +26,7 @@ function UniqueStreamer(props) {
             setStream(response.data);
         })
     }, [])
-    console.log(props);
+    console.log(props.streamer);
     return (
         <>
             <div className="uniqueMyCardContainer">
