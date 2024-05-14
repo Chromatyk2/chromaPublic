@@ -3032,6 +3032,18 @@ button.uniqueBoxContainer:last-child{
     background-image: url('../public/backStream.png')!important;
 }
 
+
+
+
+
+
+.uniqueStreamer{
+    background-color:#38617F;
+}
+.uniqueStreamer:hover{
+    cursor: pointer;
+    background-color:#5b87a7;
+}
 .streamersList{
     width: 300px;
     height: 85vh;
