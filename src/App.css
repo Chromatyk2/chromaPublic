@@ -3011,11 +3011,20 @@ a{
 a:hover{
     color: #cbcbcb;
 }
+.containerStream {
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+}
 nav.navbar.navbar-expand-lg.navbar-light {
     background-color: #38617F!important;
 }
 .uniqueStreamer{
     background-color:#38617F;
+}
+.uniqueStreamer button{
+    background-color:transparent;
+    border: none;
 }
 .uniqueStreamer:hover{
     cursor: pointer;
@@ -3067,6 +3076,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
     .twitch {
         position: relative;
         margin-bottom: 50px;
+        width:100%;
     }
 
     .twitch .twitch-video {
