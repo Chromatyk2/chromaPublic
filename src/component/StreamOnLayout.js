@@ -13,13 +13,10 @@ import onStream from "./onStream";
 
 function StreamOnLayout() {
     const [cookies, setCookie] = useCookies();
-    const [loading, stLoading] = useCookies(true);
-    const [count, setCount] = useState(0);
+    const [streamToDisplay, setStreamToDisplay] = useState();
     const [team, setTeam] = useState([]);
     const [onStream, setOnStream] = useState([]);
     const [offStream, setOffStream] = useState([]);
-    const [streams,setStreams] = useState([]);
-    const [displayStream, setDisplayStream] = useState(true);
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
         Axios.get(
@@ -60,14 +57,14 @@ function StreamOnLayout() {
                 {onStream.length > 0 &&
                     onStream.map((val, key) => {
                         return (
-                            <UniqueStreamer onStream={true} streamer={val}/>
+                            <UniqueStreamer sendDataToParent={setStreamToDisplay} onStream={true} streamer={val}/>
                         )
                     })
                 }
                 {offStream.length > 0 &&
                     offStream.map((val, key) => {
                         return (
-                            <UniqueStreamer sendDataToParent={handleDataFromChild} onStream={false} streamer={val}/>
+                            <UniqueStreamer setStreamToDisplay={setStreamToDisplay} onStream={false} streamer={val}/>
                         )
                     })
                 }
