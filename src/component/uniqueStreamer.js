@@ -44,7 +44,7 @@ function UniqueStreamer(props) {
                             <>
                                 <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerOnline"}>
                                     <div className={"uniqueStreamerProfile"}>
-                                        <img src={props.streamer.infos[0].profile_image_url}/>
+                                        <img src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer.infos[0].user_name}</p>
                                     </div>
                                     <div className={"uniqueStreamerStats"}>
