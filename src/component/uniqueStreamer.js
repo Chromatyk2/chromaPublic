@@ -12,21 +12,43 @@ import {useCookies} from "react-cookie";
 function UniqueStreamer(props) {
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
-    const [stream, setStream] = useState(null);
-    console.log(props);
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        if(props.onStream === true){
+            var streamerName = props.streamer.infos[0].user_name;
+        }else{
+            var streamerName = props.streamer;
+        }
+        Axios.get(
+            'https://api.twitch.tv/helix/users?name'+streamerName,
+            {
+                headers:{
+                    'Authorization': `Bearer ${cookies.token.access_token}`,
+                    'Client-Id': process.env.REACT_APP_CLIENT_ID
+                }
+            }
+        ).then(function(response){
+            setUser(response.data);
+        })
+    }, [])
+    console.log(user);
     return (
         <>
-            <div className="uniqueStreamer">
-                {props.onStream === true ?
-                    <div className={"uniqueStreamerOnline"}>
-                            <p>{props.streamer.infos[0].user_name}</p>
-                            <img style={{width:"15px"}} src={"/images/redCircle.png"}/>
-                            <p>{props.streamer.infos[0].viewer_count}</p>
+            {user.length > 0 &&
+                <>
+                    <div className="uniqueStreamer">
+                        {props.onStream === true ?
+                            <div className={"uniqueStreamerOnline"}>
+                                <p>{props.streamer.infos[0].user_name}</p>
+                                <img style={{width:"15px"}} src={"/images/redCircle.png"}/>
+                                <p>{props.streamer.infos[0].viewer_count}</p>
+                            </div>
+                            :
+                            <p>{props.streamer}</p>
+                        }
                     </div>
-                    :
-                    <p>{props.streamer}</p>
-                }
-            </div>
+                </>
+            }
         </>
     );
 }
