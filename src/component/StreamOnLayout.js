@@ -43,6 +43,8 @@ function StreamOnLayout() {
             })
         })
     }, [])
+    console.log(streams);
+    console.log(streams.filter((stream) => stream.data.length > 0));
     return (
         <>
             {streams.length > 0 &&
