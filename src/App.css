@@ -2298,28 +2298,6 @@ span.navbar-brand {
     width: 88%;
   }
 }
-@media screen and (min-width: 850px) {
-    .twitch {
-        position: relative;
-        margin-bottom: 50px;
-    }
-
-    .twitch .twitch-video {
-        padding-top: 23.1875%;
-        width: 40%;
-        display: block;
-        margin: auto;
-    }
-
-    .twitch .twitch-chat {
-        bottom: 0;
-        height: auto;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 30%;
-    }
-}
 @media screen and (min-width: 380px) and (max-width: 943px) {
     .leaderBoardSwitchMobile{
         display: flex;
@@ -3083,4 +3061,25 @@ nav.navbar.navbar-expand-lg.navbar-light {
 .uniqueStreamerStats p{
     margin: 0;
     color:white;
+}
+
+@media screen and (min-width: 850px) {
+    .twitch {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .twitch .twitch-video {
+        padding-top: 50.1875%;
+        width: 70%;
+    }
+
+    .twitch .twitch-chat {
+        bottom: 0;
+        height: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30%;
+    }
 }
