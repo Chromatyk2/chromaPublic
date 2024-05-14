@@ -13,6 +13,7 @@ function UniqueStreamer(props, {sendDataToParent}) {
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
     const [user, setUser] = useState(null);
+    const [data, setData] = useState("");
     useEffect(() => {
         if(props.onStream === true){
             var streamerName = props.streamer.infos[0].user_name;
@@ -32,7 +33,7 @@ function UniqueStreamer(props, {sendDataToParent}) {
         })
     }, [])
     function changeStream() {
-        console.log(document.getElementsByClassName('uniqueStreamerOnline')[0].value);
+        setData(document.getElementsByClassName('uniqueStreamerOnline')[0].value);
         sendDataToParent("test");
     }
     return (
