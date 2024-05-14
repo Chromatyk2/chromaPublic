@@ -3066,6 +3066,7 @@ button.uniqueBoxContainer:last-child{
 }
 .uniqueStreamerProfile p{
     margin: 0;
+    color:white;
 }
 .uniqueStreamerProfile img{
     width: 50px;
@@ -3082,4 +3083,5 @@ button.uniqueBoxContainer:last-child{
 }
 .uniqueStreamerStats p{
     margin: 0;
+    color:white;
 }
