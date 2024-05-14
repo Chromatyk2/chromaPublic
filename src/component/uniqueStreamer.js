@@ -32,7 +32,7 @@ function UniqueStreamer(props) {
         })
     }, [])
     function changeStream(e) {
-        console.log(document.getElementsByClassName('uniqueStreamerOnline'));
+        console.log(e.target.value);
     }
     return (
         <>
@@ -42,14 +42,14 @@ function UniqueStreamer(props) {
                         {props.onStream === true ?
                             <>
                                 <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerOnline"}>
-                                    <div className={"uniqueStreamerProfile"}>
+                                    <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerProfile"}>
                                         <img src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer.infos[0].user_name}</p>
-                                    </div>
-                                    <div className={"uniqueStreamerStats"}>
+                                    </button>
+                                    <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerStats"}>
                                         <img src={"/images/redCircle.png"}/>
                                         <p>{props.streamer.infos[0].viewer_count}</p>
-                                    </div>
+                                    </button>
                                 </button>
                             </>
                             :
