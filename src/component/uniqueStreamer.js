@@ -10,6 +10,7 @@ import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 
 function UniqueStreamer(props) {
+    console.log(props);
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
     const [user, setUser] = useState(null);
