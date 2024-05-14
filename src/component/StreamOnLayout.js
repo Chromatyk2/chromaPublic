@@ -51,22 +51,21 @@ function StreamOnLayout() {
         setOnStream(streams.filter((stream) => stream.data.length > 0));
         setOffStream(streams.filter((stream) => stream.data.length < 1));
     }, [streams.length == team.length])
-    console.log(streams);
-    console.log(onStream);
-    console.log(offStream);
     return (
         <>
             {onStream.length > 0 &&
                 onStream.map((val, key) => {
-                    <UniqueStreamer streamer={val} />
+                    return(
+                        <UniqueStreamer streamer={val} />
+                    )
                 })
-
             }
             {offStream.length > 0 &&
                 offStream.map((val, key) => {
+                    return(
                         <UniqueStreamer streamer={val} />
+                    )
                 })
-
             }
         </>
     );
