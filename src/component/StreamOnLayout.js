@@ -12,6 +12,7 @@ import UniqueStreamer from './uniqueStreamer.js';
 
 function StreamOnLayout() {
     const [cookies, setCookie] = useCookies();
+    const [loading, stLoading] = useCookies(true);
     const [count, setCount] = useState(0);
     const [team, setTeam] = useState([]);
     const [streams,setStreams] = useState([]);
@@ -42,11 +43,10 @@ function StreamOnLayout() {
             })
         })
     }, [])
-    console.log(streams)
     return (
         <>
-            {team.length > 0 &&
-                team.map((val, key) => {
+            {streams.length > 0 &&
+                streams.filter((stream) => stream.data.length > 0).map((val, key) => {
                     return(
                         <UniqueStreamer streamer={val} />
                     )
