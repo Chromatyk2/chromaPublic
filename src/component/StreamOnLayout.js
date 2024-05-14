@@ -25,13 +25,14 @@ function StreamOnLayout() {
                 }
             }
         ).then(function(response){
-            setTeam(response.data);
+            console.log(reponse.data)
+            setTeam(response);
         })
     }, [])
     return (
         <>
             {team &&
-                team[0].users.map((val, key) => {
+                team[0].map((val, key) => {
                     return(
                         <div className="uniqueMyCardContainer">
                             <p>test</p>
