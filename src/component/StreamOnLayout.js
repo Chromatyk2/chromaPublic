@@ -28,6 +28,7 @@ function StreamOnLayout() {
                 }
             }
         ).then(function(response){
+            setTeam(response.data.data[0].users);
             response.data.data[0].users.map((val, key) => {
                 Axios.get(
                     'https://api.twitch.tv/helix/streams?user_login='+val.user_name,
@@ -43,14 +44,13 @@ function StreamOnLayout() {
             })
         })
     }, [])
-    console.log(streams);
-    console.log(streams.filter((stream) => stream.data.length > 0));
+
     return (
         <>
-            {streams.length > 0 &&
+            {streams.length == team.length &&
                 streams.filter((stream) => stream.data.length > 0).map((val, key) => {
                     return(
-                        <UniqueStreamer streamer={val} />
+                        <UniqueStreamer streamer={val.user_name} />
                     )
                 })
 
