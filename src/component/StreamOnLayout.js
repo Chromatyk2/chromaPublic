@@ -25,7 +25,7 @@ function StreamOnLayout() {
                 }
             }
         ).then(function(response){
-            setTeam(response.data.data);
+            setTeam(response.data);
         })
     }, [])
     console.log(team);
