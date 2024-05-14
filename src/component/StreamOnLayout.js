@@ -42,7 +42,6 @@ function StreamOnLayout() {
                         }
                     }
                 ).then(function(response){
-                    console.log(val);
                     if(response.data.data.length > 0){
                         setOnStream(oldArray => [...oldArray,val] );
                     }else if(response.data.data.length < 1){
@@ -52,6 +51,10 @@ function StreamOnLayout() {
             })
         })
     }, [])
+
+    console.log(onStream);
+    console.log(offStream);
+
     return (
         <>
             {onStream.length > 0 &&
