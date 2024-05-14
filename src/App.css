@@ -3031,3 +3031,9 @@ button.uniqueBoxContainer:last-child{
 .offline-embeds{
     background-image: url('../public/backStream.png')!important;
 }
+
+.streamersList{
+    width: 300px;
+    height: 85vh;
+    overflow: overlay;
+}
