@@ -51,7 +51,9 @@ function StreamOnLayout() {
             })
         })
     }, [])
-
+    function getDataFromChildHandler(e) {
+        console.log(e)
+    }
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
@@ -65,7 +67,7 @@ function StreamOnLayout() {
                 {offStream.length > 0 &&
                     offStream.map((val, key) => {
                         return (
-                            <UniqueStreamer onStream={false} streamer={val}/>
+                            <UniqueStreamer onDataFromChild={getDataFromChildHandler} onStream={false} streamer={val}/>
                         )
                     })
                 }
