@@ -15,7 +15,7 @@ function UniqueStreamer(props) {
     const [stream, setStream] = useState(null);
     useEffect(() => {
         Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login='+props.user_name,
+            'https://api.twitch.tv/helix/streams?user_login='+props.streamer.user_name,
             {
                 headers:{
                     'Authorization': `Bearer ${cookies.token.access_token}`,
@@ -30,7 +30,7 @@ function UniqueStreamer(props) {
     return (
         <>
             <div className="uniqueMyCardContainer">
-                <p>{props.user_name}</p>
+                <p>{props.streamer.user_name}</p>
             </div>
         </>
     );
