@@ -13,11 +13,6 @@ function UniqueStreamer(props) {
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
     const [stream, setStream] = useState(null);
-    if(props.onStream === true){
-        const [pseudoStreamer, setPse] = useState(props.streamer.user_name);
-    }else{
-        const [pseudoStreamer, setPse] = useState(props.streamer);
-    }
     console.log(props);
     return (
         <>
