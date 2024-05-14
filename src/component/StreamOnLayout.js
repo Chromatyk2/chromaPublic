@@ -31,7 +31,7 @@ function StreamOnLayout() {
     console.log(team);
     return (
         <>
-            {team &&
+            {team.length > 0 &&
                 team.map((val, key) => {
                     return(
                         <div className="uniqueMyCardContainer">
