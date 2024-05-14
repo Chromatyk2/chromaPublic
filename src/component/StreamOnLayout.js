@@ -51,6 +51,7 @@ function StreamOnLayout() {
         setOnStream(streams.filter((stream) => stream.data.length > 0));
         setOffStream(streams.filter((stream) => stream.data.length < 1));
     }, [streams.length == team.length])
+    console.log(streams);
     return (
         <>
             {onStream.length > 0 &&
