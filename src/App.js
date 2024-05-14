@@ -43,29 +43,6 @@ function App(props) {
           <NavBar cookies={cookies} />
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
-          <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
-          <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
-          <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
-          <Route path="/myTrades" element={<MyTradePlace cookies={cookies} />} />
-          <Route path="/tradePlace" element={<TradePlace cookies={cookies} />} />
-          <Route path="/guessTrade/:id" element={<GuessTrade cookies={cookies} />} />
-          <Route path="/guess/:id" element={<Guess cookies={cookies} />} />
-          <Route path="/aNu5YwZ5X75m5j" element={<MyNote cookies={cookies} />} />
-          <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
-          <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGS" element={<NostalPickV2 cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGT" element={<CardsHub cookies={cookies} />} />
-          <Route path="/tcg/cartes" element={<CardsHub page={"myCards"} cookies={cookies} />} />
-          <Route path="/tcg/boosters" element={<CardsHub page={"myBoosters"} cookies={cookies} />} />
-          <Route path="/tcg/boutique" element={<CardsHub page={"cardsShop"} cookies={cookies} />} />
-          <Route path="/tcg/echange" element={<CardsHub page={"sellCards"} cookies={cookies} />} />
-          <Route path="/tcg/liste" element={<CardsHub page={"listuserTcg"} cookies={cookies} />} />
-          <Route path="/tcg" element={<CardsHub page={null} cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
           <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
           <Route path="/StreamOnForKids" element={<StreamOnLayout cookies={cookies} />} />
         </Routes>
