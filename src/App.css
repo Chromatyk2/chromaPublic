@@ -3047,8 +3047,14 @@ nav.navbar.navbar-expand-lg.navbar-light {
     min-width: 300px;
     height: -webkit-calc(100vh - 48px);
     overflow: overlay;
-    scrollbar-color: #3b6887 transparent;
+    scrollbar-color: white transparent;
     scrollbar-width: thin;
+}
+.streamTitle{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 26px;
 }
 .uniqueStreamerOnline{
     align-items: center;
@@ -3057,6 +3063,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
     margin: auto;
     width: 90%;
     height: 90px;
+    position: relative;
 }
 .uniqueStreamerProfile {
     display: flex;
@@ -3087,7 +3094,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 .buttonToDisplayStream{
     height: 90px;
     position: absolute;
-    left: 0;
+    left: -25px;
     width: 300px;
 }
 
