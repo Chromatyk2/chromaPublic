@@ -9,8 +9,7 @@ import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 
-function UniqueStreamer({props}) {
-    console.log(props);
+function UniqueStreamer(props) {
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
     const [user, setUser] = useState(null);
@@ -35,7 +34,6 @@ function UniqueStreamer({props}) {
     }, [])
     function changeStream() {
         setData(document.getElementsByClassName('uniqueStreamerOnline')[0].value);
-        console.log(props.setStreamToDisplay(data));
     }
     return (
         <>
