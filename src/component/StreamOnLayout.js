@@ -16,7 +16,7 @@ function StreamOnLayout() {
     const [loading, stLoading] = useCookies(true);
     const [count, setCount] = useState(0);
     const [team, setTeam] = useState([]);
-    const [onStream, setOnStream] = useState([]);
+    const [onStream, setOnStream] = useState(null);
     const [offStream, setOffStream] = useState([]);
     const [streams,setStreams] = useState([]);
     const [displayStream, setDisplayStream] = useState(true);
