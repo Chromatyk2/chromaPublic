@@ -55,7 +55,7 @@ function StreamOnLayout() {
         <div className={"containerStream"}>
             <div className={"streamersList"}>
                 {onStream.length > 0 &&
-                    onStream.map((val, key) => {
+                    onStream.sort((a, b) => (a.infos[0].viewer_count < b.infos[0].viewer_count) ? 1 : -1).map((val, key) => {
                         return (
                             <UniqueStreamer sendDataToParent={setStreamToDisplay} onStream={true} streamer={val}/>
                         )
