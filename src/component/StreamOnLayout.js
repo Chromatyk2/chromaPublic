@@ -97,7 +97,7 @@ function StreamOnLayout() {
                 </div>
                 :
                 <>
-                    <img src={"images/logoSofk.png"}/>
+                    <img style={{width:"35%"}} src={"images/logoSofk.png"}/>
                 </>
             }
 
