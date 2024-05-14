@@ -3045,7 +3045,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 }
 .streamersList{
     min-width: 300px;
-    height: -webkit-calc(100vh - 60px);
+    height: -webkit-calc(100vh - 48px);
     overflow: overlay;
     scrollbar-color: #3b6887 transparent;
     scrollbar-width: thin;
