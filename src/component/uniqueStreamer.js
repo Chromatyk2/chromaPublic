@@ -30,7 +30,11 @@ function UniqueStreamer(props) {
     return (
         <>
             <div className="uniqueStreamer">
-                <p>{props.streamer}</p>
+                {props.onStream === true ?
+                    <p>{props.streamer.user_name}</p>
+                    :
+                    <p>{props.streamer}</p>
+                }
             </div>
         </>
     );
