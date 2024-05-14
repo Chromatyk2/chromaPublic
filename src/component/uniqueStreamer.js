@@ -33,7 +33,7 @@ function UniqueStreamer(props) {
         })
     }, [])
     function changeStream(e) {
-        props.change(e.target.value);
+        props.change(e.currentTarget.value);
     }
     return (
         <>
