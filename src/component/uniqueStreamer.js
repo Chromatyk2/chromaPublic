@@ -10,7 +10,6 @@ import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 
 function UniqueStreamer(props) {
-    const [data, setData] = useState("");
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
     const [user, setUser] = useState(null);
@@ -34,8 +33,6 @@ function UniqueStreamer(props) {
     }, [])
     function changeStream() {
         console.log(document.getElementsByClassName('uniqueStreamerOnline')[0].value);
-        setData(document.getElementsByClassName('uniqueStreamerOnline')[0].value)
-        props.sendDataToParent(data);
     }
     return (
         <>
