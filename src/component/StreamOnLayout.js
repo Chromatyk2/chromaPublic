@@ -42,6 +42,7 @@ function StreamOnLayout() {
                         }
                     }
                 ).then(function(response){
+                    console.log(response.data);
                     if(response.data.data.length > 0){
                         setOnStream(oldArrayOn => [...oldArrayOn,val] );
                     }else if(response.data.data.length < 1){
