@@ -73,7 +73,7 @@ function StreamOnLayout() {
             <div className="twitch">
                 <div className="twitch-video">
                     <iframe
-                        src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
+                        src="https://player.twitch.tv/?channel=chromatyk&parent=https://preview--chromatyk.netlify.app/&autoplay=true&muted=false"
                         frameBorder="0"
                         scrolling="no"
                         allowFullScreen="true"
@@ -85,7 +85,7 @@ function StreamOnLayout() {
                     <iframe
                         frameBorder="0"
                         scrolling="no"
-                        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"
+                        src="https://www.twitch.tv/embed/chromatyk/chat?parent=https://preview--chromatyk.netlify.app/"
                         height="100%"
                         width="100%">
                     </iframe>
