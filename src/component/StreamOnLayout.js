@@ -45,16 +45,15 @@ function StreamOnLayout() {
                     console.log(response.data);
                     if(response.data.data.length > 0){
                         setOnStream(oldArrayOn => [...oldArrayOn,val] );
+                        console.log(onStream);
                     }else if(response.data.data.length < 1){
                         setOffStream(oldArrayOff => [...oldArrayOff,val] );
+                        console.log(offStream);
                     }
                 })
             })
         })
     }, [])
-
-    console.log(onStream);
-    console.log(offStream);
 
     return (
         <>
