@@ -31,14 +31,17 @@ function UniqueStreamer(props) {
             setUser(response.data);
         })
     }, [])
+    function changeStream(e) {
+        console.log(e.target.value);
+    }
     return (
         <>
             {user &&
                 <>
-                    <div className="uniqueStreamer">
+                    <div onClick={changeStream} className="uniqueStreamer">
                         {props.onStream === true ?
                             <>
-                                <div className={"uniqueStreamerOnline"}>
+                                <button value={props.streamer.infos[0].user_name} onClick={changeStream} className={"uniqueStreamerOnline"}>
                                     <div className={"uniqueStreamerProfile"}>
                                         <img src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer.infos[0].user_name}</p>
@@ -47,16 +50,16 @@ function UniqueStreamer(props) {
                                         <img src={"/images/redCircle.png"}/>
                                         <p>{props.streamer.infos[0].viewer_count}</p>
                                     </div>
-                                </div>
+                                </button>
                             </>
                             :
                             <>
-                                <div className={"uniqueStreamerOnline"}>
+                                <button value={props.streamer} onClick={changeStream} className={"uniqueStreamerOnline"}>
                                     <div className={"uniqueStreamerProfile"}>
                                         <img style={{width: "50px",margin:"0"}} src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer}</p>
                                     </div>
-                                </div>
+                                </button>
                             </>
                         }
                     </div>
