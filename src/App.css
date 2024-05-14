@@ -3102,10 +3102,14 @@ nav.navbar.navbar-expand-lg.navbar-light {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 75%;
+    width: 65%;
+    gap: 100px;
+    margin-bottom: 70px;
 }
 .paragraphHome{
-    color:white;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 .paragraphHome span{
     color: #fcc249 ;
