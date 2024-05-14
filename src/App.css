@@ -3071,7 +3071,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 
     .twitch .twitch-video {
         padding-top: 50.1875%;
-        width: 70%;
+        width: 80%;
     }
 
     .twitch .twitch-chat {
@@ -3080,6 +3080,6 @@ nav.navbar.navbar-expand-lg.navbar-light {
         position: absolute;
         right: 0;
         top: 0;
-        width: 30%;
+        width: 20%;
     }
 }
