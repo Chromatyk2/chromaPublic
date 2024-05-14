@@ -17,7 +17,7 @@ function StreamOnLayout() {
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
         Axios.get(
-            'ttps://api.twitch.tv/helix/teams?name=Stream On For Kids',
+            'https://api.twitch.tv/helix/teams?name=Stream On For Kids',
             {
                 headers:{
                     'Authorization': `Bearer ${cookies.token.access_token}`,
