@@ -8,17 +8,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
-import UniqueStreamer from './uniqueStreamer.js';
 
-function StreamOnLayout() {
+function UniqueStreamer(props) {
     const [cookies, setCookie] = useCookies();
-    const [count, setCount] = useState(0);
-    const [team, setTeam] = useState([]);
-    const [displayStream, setDisplayStream] = useState(true);
     const pseudo = cookies.user.data[0].login;
+    const [stream, setStream] = useState(null);
     useEffect(() => {
         Axios.get(
-            'https://api.twitch.tv/helix/teams?name=streamon',
+            'https://api.twitch.tv/helix/streams?user_login='+props.user_name,
             {
                 headers:{
                     'Authorization': `Bearer ${cookies.token.access_token}`,
@@ -26,22 +23,17 @@ function StreamOnLayout() {
                 }
             }
         ).then(function(response){
-            setTeam(response.data.data[0].users);
+            setStream(response.data);
         })
     }, [])
-    console.log(team);
+    console.log(stream);
     return (
         <>
-            {team.length > 0 &&
-                team.map((val, key) => {
-                    return(
-                        <UniqueStreamer streamer={val} />
-                    )
-                })
-
-            }
+            <div className="uniqueMyCardContainer">
+                <p>{props.user_name}</p>
+            </div>
         </>
     );
 }
 
-export default StreamOnLayout;
+export default UniqueStreamer;
