@@ -50,6 +50,7 @@ function StreamOnLayout() {
     }, [])
     function handleDataFromChild(data) {
         console.log(data);
+        console.log("Y a un baille !");
     }
     return (
         <div className={"containerStream"}>
@@ -57,14 +58,14 @@ function StreamOnLayout() {
                 {onStream.length > 0 &&
                     onStream.sort((a, b) => (a.infos[0].viewer_count < b.infos[0].viewer_count) ? 1 : -1).map((val, key) => {
                         return (
-                            <UniqueStreamer sendDataToParent={setStreamToDisplay} onStream={true} streamer={val}/>
+                            <UniqueStreamer change={handleDataFromChild} onStream={true} streamer={val}/>
                         )
                     })
                 }
                 {offStream.length > 0 &&
                     offStream.map((val, key) => {
                         return (
-                            <UniqueStreamer setStreamToDisplay={setStreamToDisplay} onStream={false} streamer={val}/>
+                            <UniqueStreamer change={handleDataFromChild} onStream={false} streamer={val}/>
                         )
                     })
                 }
