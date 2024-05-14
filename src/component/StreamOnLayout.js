@@ -60,8 +60,10 @@ function StreamOnLayout() {
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
-                <p className={"streamTitle"}>Streameur.euses</p>
-                <hr style={{width: "50%",display: "block",margin: "auto",border: "1px solid #f7bb3e"}} />
+                <div style={{position:"fixed",backgroundColor:"#59889F",zIndex:"20"}}>
+                    <p className={"streamTitle"}>Streameur.euses</p>
+                    <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
+                </div>
                 {orderedOnStream.length > 0 &&
                     onStream.map((val, key) => {
                         return (
