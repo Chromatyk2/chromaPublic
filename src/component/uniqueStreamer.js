@@ -9,7 +9,7 @@ import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 
-function UniqueStreamer(props) {
+function UniqueStreamer(props, {sendDataToParent}) {
     const [onDataFromChild , setOnDataFromChild ] = useCookies();
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
@@ -33,7 +33,7 @@ function UniqueStreamer(props) {
         })
     }, [])
     function changeStream(e) {
-        setOnDataFromChild(document.getElementsByClassName('uniqueStreamerOnline')[0].value)
+        sendDataToParent(document.getElementsByClassName('uniqueStreamerOnline')[0].value)
     }
     return (
         <>
