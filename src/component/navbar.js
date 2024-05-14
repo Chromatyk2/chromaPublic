@@ -31,7 +31,7 @@ function NavBar(props) {
               <Navbar.Collapse id="navbarScroll">
                   <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/">Accueil</Link>
-                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/StreamOnForKids">Streamers</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/StreamOnForKids">Streameur.euses</Link>
                   </Nav>
               </Navbar.Collapse>
           </Container>
