@@ -9,7 +9,7 @@ import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 
-function UniqueStreamer(props) {
+function UniqueStreamer({props}) {
     console.log(props);
     const [cookies, setCookie] = useCookies();
     const pseudo = cookies.user.data[0].login;
