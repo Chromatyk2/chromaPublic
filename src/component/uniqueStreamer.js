@@ -18,20 +18,7 @@ function UniqueStreamer(props) {
     }else{
         const [pseudoStreamer, setPse] = useState(props.streamer);
     }
-
-    useEffect(() => {
-        Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login='+props.streamer.user_name,
-            {
-                headers:{
-                    'Authorization': `Bearer ${cookies.token.access_token}`,
-                    'Client-Id': process.env.REACT_APP_CLIENT_ID
-                }
-            }
-        ).then(function(response){
-            setStream(response.data);
-        })
-    }, [])
+    console.log(props);
     return (
         <>
             <div className="uniqueStreamer">
