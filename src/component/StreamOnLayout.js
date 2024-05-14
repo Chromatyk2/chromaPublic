@@ -35,7 +35,7 @@ function StreamOnLayout() {
                 team.users.map((val, key) => {
                     return(
                         <div className="uniqueMyCardContainer">
-                            <p>{val.user_name}</p>
+                            <p>test</p>
                         </div>
                     )
                 })
