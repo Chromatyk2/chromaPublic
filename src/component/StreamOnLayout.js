@@ -12,7 +12,7 @@ import {useCookies} from "react-cookie";
 function StreamOnLayout() {
     const [cookies, setCookie] = useCookies();
     const [count, setCount] = useState(0);
-    const [team, setTeam] = useState({});
+    const [team, setTeam] = useState();
     const [displayStream, setDisplayStream] = useState(true);
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
@@ -25,10 +25,10 @@ function StreamOnLayout() {
                 }
             }
         ).then(function(response){
-            console.log(response.data)
             setTeam(response.data);
         })
     }, [])
+    console.log(team);
     return (
         <>
             {team &&
