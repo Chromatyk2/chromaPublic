@@ -265,20 +265,6 @@ font-size: 32px;
 .center {
 margin-top: 50px;
 }
-.homeContainer {
-display: flex;
-flex-flow: column;
-gap: 20px;
-justify-content: center;
-align-items: center;
-margin-top: 5%;
-}
-.homeContent{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 75%;
-}
 .loginButton{
 display: flex;
 background-color: #6441a5;
@@ -3104,6 +3090,27 @@ nav.navbar.navbar-expand-lg.navbar-light {
     width: 300px;
 }
 
+.homeContainer {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.homeContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+}
+.paragraphHome{
+    color:white;
+}
+.paragraphHome span{
+    color: #fcc249 ;
+    font-weight: bold;
+}
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
