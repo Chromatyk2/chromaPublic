@@ -852,7 +852,7 @@ p.filterTitle {
   font-weight: bold;
 }
 #root{
-    background-image: url("/images/backSofk.jpg");
+    background-image: url("../public/images/backSofk.jpg");
     min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
