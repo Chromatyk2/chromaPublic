@@ -16,7 +16,8 @@ function StreamOnLayout() {
     const [loading, stLoading] = useCookies(true);
     const [count, setCount] = useState(0);
     const [team, setTeam] = useState([]);
-    const [onsStream, setOnStream] = useState([]);
+    const [onStream, setOnStream] = useState([]);
+    const [offsStream, setOffStream] = useState([]);
     const [streams,setStreams] = useState([]);
     const [displayStream, setDisplayStream] = useState(true);
     const pseudo = cookies.user.data[0].login;
@@ -44,15 +45,26 @@ function StreamOnLayout() {
                     setStreams(oldArray => [...oldArray,response.data] );
                     if(streams.length == team.length){
                         setOnStream(streams.filter((stream) => stream.data.length > 0));
+                        setOffStream(streams.filter((stream) => stream.data.length < 1));
                     }
                 })
             })
         })
     }, [])
+    console.log(streams);
+    console.log(onsStream);
     return (
         <>
             {onStream.length > 0 &&
-                onsStream.map((val, key) => {
+                onStream.map((val, key) => {
+                    return(
+                        <UniqueStreamer streamer={val.user_name} />
+                    )
+                })
+
+            }
+            {offStream.length > 0 &&
+                offStream.map((val, key) => {
                     return(
                         <UniqueStreamer streamer={val.user_name} />
                     )
