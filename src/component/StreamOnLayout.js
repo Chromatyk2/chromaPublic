@@ -58,17 +58,13 @@ function StreamOnLayout() {
         <>
             {onStream.length > 0 &&
                 onStream.map((val, key) => {
-                    return(
-                        <UniqueStreamer streamer={val} />
-                    )
+                    <UniqueStreamer streamer={val} />
                 })
 
             }
             {offStream.length > 0 &&
                 offStream.map((val, key) => {
-                    return(
                         <UniqueStreamer streamer={val} />
-                    )
                 })
 
             }
