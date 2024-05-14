@@ -14,6 +14,7 @@ function StreamOnLayout() {
     const [cookies, setCookie] = useCookies();
     const [count, setCount] = useState(0);
     const [team, setTeam] = useState([]);
+    const [streams,setStreams] = useState([]);
     const [displayStream, setDisplayStream] = useState(true);
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
@@ -26,10 +27,22 @@ function StreamOnLayout() {
                 }
             }
         ).then(function(response){
-            setTeam(response.data.data[0].users);
+            response.data.data[0].users.map((val, key) => {
+                Axios.get(
+                    'https://api.twitch.tv/helix/streams?user_login='+val.user_name,
+                    {
+                        headers:{
+                            'Authorization': `Bearer ${cookies.token.access_token}`,
+                            'Client-Id': process.env.REACT_APP_CLIENT_ID
+                        }
+                    }
+                ).then(function(response){
+                    setStreams(oldArray => [...oldArray,response.data] );
+                })
+            })
         })
     }, [])
-    console.log(team);
+    console.log(streams)
     return (
         <>
             {team.length > 0 &&
