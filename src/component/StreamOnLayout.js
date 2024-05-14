@@ -49,8 +49,7 @@ function StreamOnLayout() {
         })
     }, [])
     function handleDataFromChild(data) {
-        console.log(data);
-        console.log("Y a un baille !");
+        setStreamToDisplay(data);
     }
     return (
         <div className={"containerStream"}>
@@ -70,27 +69,30 @@ function StreamOnLayout() {
                     })
                 }
             </div>
-            <div className="twitch">
-                <div className="twitch-video">
-                    <iframe
-                        src="https://player.twitch.tv/?channel=zor3l&parent=preview--chromatyk.netlify.app&autoplay=true&muted=false"
-                        frameBorder="0"
-                        scrolling="no"
-                        allowFullScreen="true"
-                        height="720"
-                        width="1280">
-                    </iframe>
+            {streamToDisplay &&
+                <div className="twitch">
+                    <div className="twitch-video">
+                        <iframe
+                            src={"https://player.twitch.tv/?channel="+streamToDisplay+"&parent=preview--chromatyk.netlify.app&autoplay=true&muted=false"}
+                            frameBorder="0"
+                            scrolling="no"
+                            allowFullScreen="true"
+                            height="720"
+                            width="1280">
+                        </iframe>
+                    </div>
+                    <div className="twitch-chat">
+                        <iframe
+                            frameBorder="0"
+                            scrolling="no"
+                            src={"https://www.twitch.tv/embed/"+streamToDisplay+"/chat?parent=preview--chromatyk.netlify.app"}
+                            height="100%"
+                            width="100%">
+                        </iframe>
+                    </div>
                 </div>
-                <div className="twitch-chat">
-                    <iframe
-                        frameBorder="0"
-                        scrolling="no"
-                        src="https://www.twitch.tv/embed/zor3l/chat?parent=preview--chromatyk.netlify.app"
-                        height="100%"
-                        width="100%">
-                    </iframe>
-                </div>
-            </div>
+            }
+
         </div>
     );
 }
