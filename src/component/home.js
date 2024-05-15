@@ -23,7 +23,7 @@ function HomePage(props) {
                     </p>
                 </div>
             </div>
-            <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk">Faire un Don</a>
+            <a className="socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
         </div>
     </>
   )
