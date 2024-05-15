@@ -15,7 +15,13 @@ function Items(props) {
                         return (
                             <>
                                 <Link className="clipsLink navLink" to={val.url}>
-                                    <img className={"imgClip"} src={val.thumbnail_url} />
+                                    <p className={"titleCli"}>{val.title}</p>
+                                    <img className={"imgClip"} src={val.thumbnail_url}/>
+                                    <div className={"infoClipContainer"}>
+                                        <p className={"viewsClips"}>{val.view_count} vues</p>
+                                        <p className={"dateClip"}>{moment(val.created_at).utc().format('DD/MM/YYYY')}</p>
+                                    </div>
+
                                     <div className={"infoClipContainer"}>
                                         <p className={"viewsClips"}>{val.view_count} vues</p>
                                         <p className={"dateClip"}>{moment(val.created_at).utc().format('DD/MM/YYYY')}</p>
@@ -29,6 +35,7 @@ function Items(props) {
         </>
     );
 }
+
 function ClipsPaginate(props) {
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.

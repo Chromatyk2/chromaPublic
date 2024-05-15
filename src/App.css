@@ -3118,14 +3118,21 @@ nav.navbar.navbar-expand-lg.navbar-light {
 }
 .infoClipContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 10px;
+    gap: 30px;
 }
 a.clipsLink {
     text-decoration: none;
+    border-radius: 10px;
+}
+a.clipsLink:hover{
+    background-color: white;
+    color:#38617f;
 }
 img.imgClip {
     width: 340px;
+    border-radius: 10px 10px 0 0;
 }
 p.viewsClips {
     font-size: 15px;
