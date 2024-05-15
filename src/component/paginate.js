@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import { Tooltip } from 'react-tooltip'
 import moment from 'moment';
+import { useParams,BrowserRouter, Link } from 'react-router-dom'
 
 function Items(props) {
   const pkmList = props.currentItems;
