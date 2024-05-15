@@ -71,6 +71,7 @@ function ClipsPaginate(props) {
                 nextLabel=">>"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={1}
+                marginPagesDisplayed={1}
                 pageCount={pageCount}
                 previousLabel="<<"
                 renderOnZeroPageCount={null}

@@ -3138,12 +3138,14 @@ p.dateClip {
     padding: 6px;
 }
 ul.paginateLay {
-    margin-top: 30px;
-    margin-bottom: 30px;
     display: flex;
     flex-flow: row;
     justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
     text-align: center;
+    flex-wrap: wrap;
+    width: 100vw;
 }
 .paginateLay li{
     color: white;
