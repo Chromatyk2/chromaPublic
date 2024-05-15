@@ -3159,6 +3159,10 @@ ul.paginateLay {
     color: white;
     margin: 15px;
 }
+.paginateLay li a{
+    color: white;
+    margin: 15px;
+}
 .paginateLay li.selected{
     background-color: white;
     color:#38617f;
