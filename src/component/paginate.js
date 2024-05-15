@@ -1,18 +1,11 @@
 import React,{useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
-import {BrowserRouter, Link} from "react-router-dom";
 import { Tooltip } from 'react-tooltip'
-import { Cookies, useCookies } from 'react-cookie';
-import Axios from 'axios'
 import moment from 'moment';
 
 function Items(props) {
-  const [cookies, setCookie] = useCookies(['oauth']);
-  const [user, setUser] = useCookies(['user']);
   const pkmList = props.currentItems;
   const shinys = pkmList.filter(item => item.shiny == 1);
-  const nbShiny = shinys.length;
-  const nbTotal = pkmList.length;
   return (
     <>
       <div className="pokemonGlobalContainer">

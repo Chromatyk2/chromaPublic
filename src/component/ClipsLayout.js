@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios'
 import {useCookies} from "react-cookie";
+import Pagination from "./paginate";
 
 function ClipsLayout() {
     const [cookies, setCookie] = useCookies();
     const [team, setTeam] = useState([]);
     const [clips, setClips] = useState([]);
+    import ReactPaginate from 'react-paginate';
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
@@ -38,13 +40,10 @@ function ClipsLayout() {
     return (
         <>
             {clips.length > 0 &&
-                clips.map((val, key) => {
-                    return (
-                        <a href={val.url}>
-                            <img style={{width: "35%"}} src={val.thumbnail_url}/>
-                        </a>
-                    )
-                })
+                <Pagination
+                    itemsPerPage={30}
+                    items={clips}
+                />
             }
         </>
     );

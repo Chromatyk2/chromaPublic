@@ -1,0 +1,66 @@
+import React, {useEffect, useState} from "react";
+import ReactPaginate from "react-paginate";
+import moment from "moment/moment";
+import {Tooltip} from "react-tooltip";
+function Items(props) {
+    const clipList = props.currentItems;
+    return (
+        <>
+            <div className="pokemonGlobalContainer">
+                {clipList == [] ? (
+                    <h1>Loading...</h1>
+                ) : (
+                    clipList.map((val, key) => {
+                        return (
+                            <>
+                                <Link className="navLink" to={val.url}>
+                                    <p>Oui</p>
+                                </Link>
+                            </>
+                        )
+                    })
+                )}
+                <Tooltip anchorSelect=".anchorTooltip" />
+            </div>
+        </>
+    );
+}
+function ClipsPaginate(props) {
+    // Here we use item offsets; we could also use page offsets
+    // following the API or data you're working with.
+    const [itemOffset, setItemOffset] = useState(0);
+    const [filteredClips, setFilteredClips] = useState(props.items);
+    useEffect(() => {
+        setFilteredClips(props.items);
+    }, [props.items]);
+    // Simulate fetching items from another resources.
+    // (This could be items from props; or items loaded in a local state
+    // from an API endpoint with useEffect and useState)
+    const endOffset = itemOffset + props.itemsPerPage;
+    const currentItems = filteredClips.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(filteredClips.length / props.itemsPerPage);
+
+    // Invoke when user click to request another page.
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * props.itemsPerPage) % filteredClips.length;
+        setItemOffset(newOffset);
+    };
+
+    return (
+        <>
+            <Items currentItems={currentItems} />
+            <ReactPaginate
+                className="paginateLay"
+                breakLabel="..."
+                nextLabel=">>"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={2}
+                pageCount={pageCount}
+                previousLabel="<<"
+                renderOnZeroPageCount={null}
+            />
+        </>
+    );
+}
+
+export default ClipsPaginate;
