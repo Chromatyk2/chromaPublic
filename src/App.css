@@ -2533,6 +2533,9 @@ a.socialLink {
     }
 }
 @media screen and (max-width: 849px) {
+    .logoSofkOnStreamPage{
+        display: none;
+    }
     .donationLink{
         display: none;
     }
