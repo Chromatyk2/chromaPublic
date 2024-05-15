@@ -17,8 +17,8 @@ function Items(props) {
                                 <Link className="clipsLink navLink" to={val.url}>
                                     <img src={val.thumbnail_url} />
                                     <div>
-                                        <p>{val.view_count} vues</p>
-                                        <p>{moment(val.created_at).utc().format('DD/MM/YYYY')}</p>
+                                        <p className={"viewsClips"}>{val.view_count} vues</p>
+                                        <p className={"dateClip"}>{moment(val.created_at).utc().format('DD/MM/YYYY')}</p>
                                     </div>
                                 </Link>
                             </>
