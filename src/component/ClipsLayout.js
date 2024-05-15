@@ -27,11 +27,12 @@ function ClipsLayout() {
                         }
                     }
                 ).then(function (response) {
-                        console.log(response.data.data)
+                        setClips(oldArrayOn => [...oldArrayOn, response.data.data]);
                 })
             })
         })
     }, [])
+    console.log(clips);
     return (
         <>
             <img style={{width: "35%"}} src={"images/logoSofk.png"}/>
