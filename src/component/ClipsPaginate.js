@@ -14,7 +14,7 @@ function Items(props) {
                     clipList.map((val, key) => {
                         return (
                             <>
-                                <Link className="clipsLink navLink" to={val.url}>
+                                <Link className="clipsLink navLink" to={val.url} target={"_blank"}>
                                     <img className={"imgClip"} src={val.thumbnail_url}/>
                                     <p className={"titleClip"}>{val.title.substring(0, 25) + val.title.length > 25 && "..."}</p>
                                     <div className={"infoClipContainer"}>

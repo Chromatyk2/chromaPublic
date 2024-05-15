@@ -3157,10 +3157,17 @@ ul.paginateLay {
 }
 .paginateLay li{
     color: white;
+    margin: 15px;
+}
+.paginateLay li.selected{
+    background-color: white;
+    color:#38617f;
+    border-radius: 10px;
 }
 .paginateLay li:hover{
     background-color: white;
     color:#38617f;
+    border-radius: 10px;
 }
 @media screen and (min-width: 850px) {
     .twitch {
