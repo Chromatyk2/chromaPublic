@@ -63,20 +63,6 @@ function AuthService() {
       .then(
         (result) => {
             setCookie('token', result.data,{days:1} );
-            Axios.get(
-              'https://api.twitch.tv/helix/users',
-              {
-                headers:{
-                  'Authorization': `Bearer ${result.data.access_token}`,
-                  'Client-Id': CLIENT_ID
-                }
-              }
-            )
-            .then(
-              (result) => {
-                setCookie('user', result.data,{days:1} );
-              }
-            )
           }
         );
       }
@@ -86,13 +72,5 @@ function AuthService() {
   useEffect(() => {
     isAuthenticated();
   }, []);
-
-  return(
-    <div className="loginContainer">
-      <p className="welcome">Bienvenue !</p>
-      <p className="pleaseLogin">Pour commencer connecte toi avec ton compte Twitch !</p>
-      <button className="loginButton" onClick={authentication}><i class="fa-brands fa-twitch"></i>Se connecter avec twitch</button>
-    </div>
-  )
 }
 export default AuthService;

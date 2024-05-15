@@ -11,12 +11,11 @@ import StreamOnLayout from "./component/StreamOnLayout";
 import ClipsLayout from "./component/ClipsLayout";
 function App() {
   const [cookies, setCookie] = useCookies();
-  if(Object.keys(cookies).length == 0) {
-    return <Login />
-  }
+  useEffect(() => {
+    Login.isAuthenticated();
+  }, []);
   return(
     <>
-      {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
         <Routes>
@@ -26,7 +25,6 @@ function App() {
           <Route path="/Clips" element={<ClipsLayout cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
-      }
     </>
   );
 }
