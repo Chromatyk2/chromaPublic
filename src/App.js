@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import './App.css';
@@ -11,11 +11,12 @@ import StreamOnLayout from "./component/StreamOnLayout";
 import ClipsLayout from "./component/ClipsLayout";
 function App() {
   const [cookies, setCookie] = useCookies();
-  useEffect(() => {
-    Login.isAuthenticated();
-  }, []);
+  if(Object.keys(cookies).length == 0) {
+    return <Login />
+  }
   return(
     <>
+      {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
         <Routes>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Clips" element={<ClipsLayout cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
+      }
     </>
   );
 }
