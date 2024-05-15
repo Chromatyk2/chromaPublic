@@ -1,12 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom'
-import Container from 'react-bootstrap/Container';
 import Axios from 'axios'
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import {BrowserRouter, Link} from "react-router-dom";
-import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 
 function UniqueStreamer(props) {

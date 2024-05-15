@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import './App.css';
@@ -8,7 +8,8 @@ import NavBar from './component/navbar.js';
 import Login from './services/auth.services.js';
 import Mentions from "./component/Mentions";
 import StreamOnLayout from "./component/StreamOnLayout";
-function App(props) {
+import Clips from "./component/Clips";
+function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
     return <Login />
@@ -21,9 +22,9 @@ function App(props) {
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
-          <Route path="/StreamOnForKids" element={<StreamOnLayout cookies={cookies} />} />
+          <Route path="/Streams" element={<StreamOnLayout cookies={cookies} />} />
+          <Route path="/Clips" element={<Clips cookies={cookies} />} />
         </Routes>
-        {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
       }
     </>
