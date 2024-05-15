@@ -27,7 +27,9 @@ function ClipsLayout() {
                         }
                     }
                 ).then(function (response) {
-                    setClips(oldArrayOn => [...oldArrayOn, {clips: response.data.data}]);
+                    if(response.data != null){
+                        setClips(oldArrayOn => [...oldArrayOn, {clips: response.data.data}]);
+                    }
                 })
             })
         })
