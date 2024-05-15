@@ -91,12 +91,12 @@ function StreamOnLayout() {
                             </iframe>
                         </div>
                     </div>
-                    <a style={{position:"absolute",left:"285px",right:"0",margin:"auto",bottom:"60px"}} className="socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
+                    <a style={{position:"absolute",left:"0",right:"0",margin:"auto",bottom:"60px"}} className="socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
                 </>
                 :
                 <>
                     <img style={{width: "35%"}} src={"images/logoSofk.png"}/>
-                    <a style={{position:"absolute",left:"285px",right:"0",margin:"auto",bottom:"60px"}} className="socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
+                    <a style={{position:"absolute",left:"0",right:"0",margin:"auto",bottom:"60px"}} className="socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
                 </>
             }
 
