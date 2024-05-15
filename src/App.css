@@ -3129,6 +3129,12 @@ a.clipsLink {
 a.clipsLink:hover{
     background-color: white;
     color:#38617f;
+    p.viewsClips {
+        border: 1px #38617f solid;
+    }
+    p.dateClip {
+        border: 1px #38617f solid;
+    }
 }
 p.titleClip {
     font-size: 20px;
