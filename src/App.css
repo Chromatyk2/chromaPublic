@@ -3173,6 +3173,9 @@ ul.paginateLay {
     color:#38617f;
     border-radius: 10px;
 }
+.paginateLay li a:hover{
+    color:#38617f;
+}
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
