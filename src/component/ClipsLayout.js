@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios'
 import {useCookies} from "react-cookie";
-import Pagination from "./paginate";
+import ClipsPaginate from "./ClipsPaginate";
 
 function ClipsLayout() {
     const [cookies, setCookie] = useCookies();
@@ -39,7 +39,7 @@ function ClipsLayout() {
     return (
         <>
             {clips.length > 0 &&
-                <Pagination
+                <ClipsPaginate
                     itemsPerPage={30}
                     items={clips}
                 />
