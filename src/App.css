@@ -1332,17 +1332,6 @@ body, html {
     align-items: center;
     flex-wrap: wrap;
 }
-
-h1 {
-  flex: 1 0 100%;
-  text-align: center;
-  color: #fff;
-  font-size: 6rem;
-  margin-bottom: 0;
-  z-index:1;
-  margin-bottom:50px;
-  font-family: 'Common Pixel', sans-serif;
-}
 .content-width {
   max-width: 760px;
   margin: 0 auto;
