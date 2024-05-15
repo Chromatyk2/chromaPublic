@@ -2555,6 +2555,7 @@ a.socialLink {
         border-radius: 75px;
         font-size: 33px;
         color: #38617f;
+        display: block;
     }
     .streamersListMobile{display: block}
     .logoSofkOnStreamPage{
