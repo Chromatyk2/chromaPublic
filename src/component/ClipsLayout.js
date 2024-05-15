@@ -40,7 +40,7 @@ function ClipsLayout() {
         <>
             {clips.length > 0 &&
                 <ClipsPaginate
-                    itemsPerPage={30}
+                    itemsPerPage={32}
                     items={clips}
                 />
             }
