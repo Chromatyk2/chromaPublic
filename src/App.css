@@ -3150,6 +3150,7 @@ ul.paginateLay {
 .paginateLay li{
     color: white;
     margin: 15px;
+    width: auto;
 }
 .paginateLay li a{
     color: white;
