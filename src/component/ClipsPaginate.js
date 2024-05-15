@@ -15,7 +15,7 @@ function Items(props) {
                         return (
                             <>
                                 <Link className="clipsLink navLink" to={val.url}>
-                                    <p className={"titleCli"}>{val.title}</p>
+                                    <p className={"titleClip"}>{val.title.substring(0,20)+"..."}</p>
                                     <img className={"imgClip"} src={val.thumbnail_url}/>
                                     <div className={"infoClipContainer"}>
                                         <p className={"viewsClips"}>{val.view_count} vues</p>

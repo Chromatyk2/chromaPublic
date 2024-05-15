@@ -3130,6 +3130,10 @@ a.clipsLink:hover{
     background-color: white;
     color:#38617f;
 }
+p.titleClip {
+    font-size: 20px;
+    text-align: center;
+}
 img.imgClip {
     width: 340px;
     border-radius: 10px 10px 0 0;
