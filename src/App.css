@@ -3077,8 +3077,9 @@ nav.navbar.navbar-expand-lg.navbar-light {
     align-items: center;
     justify-content: center;
     width: 65%;
-    gap: 100px;
+    gap: 30px;
     margin-bottom: 70px;
+    flex-wrap: wrap;
 }
 .paragraphHome{
     color: #fff;
@@ -3169,6 +3170,7 @@ h1.titleEdition {
     font-family: Charge Vector Black;
     color: white;
     margin-top: 100px;
+    text-align: center;
 }
 .editionsInfosContainer {
     display: flex;
