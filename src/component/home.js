@@ -25,6 +25,24 @@ function HomePage(props) {
             </div>
             <a className="socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
             <h1>Editions précédentes</h1>
+            <div>
+                <div>
+                    <p>1ére édition</p>
+                    <p>2 800 €</p>
+                </div>
+                <div>
+                    <p>2éme édition</p>
+                    <p>8 238 €</p>
+                </div>
+                <div>
+                    <p>3éme édition</p>
+                    <p>17 414 €</p>
+                </div>
+                <div>
+                    <p>4éme édition</p>
+                    <p>A vous d'entrer dans la légende !</p>
+                </div>
+            </div>
         </div>
     </>
   )
