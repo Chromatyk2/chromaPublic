@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import ReactPaginate from "react-paginate";
+import { useParams,BrowserRouter, Link } from 'react-router-dom'
 import {Tooltip} from "react-tooltip";
 function Items(props) {
     const clipList = props.currentItems;
