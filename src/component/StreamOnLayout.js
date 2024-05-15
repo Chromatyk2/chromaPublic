@@ -1,15 +1,7 @@
 import React,{useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom'
-import Container from 'react-bootstrap/Container';
 import Axios from 'axios'
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import {BrowserRouter, Link} from "react-router-dom";
-import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 import UniqueStreamer from './uniqueStreamer.js';
-import onStream from "./onStream";
 
 function StreamOnLayout() {
     const [cookies, setCookie] = useCookies();
@@ -18,7 +10,6 @@ function StreamOnLayout() {
     const [onStream, setOnStream] = useState([]);
     const [orderedOnStream, setOrderedOnStream] = useState([]);
     const [offStream, setOffStream] = useState([]);
-    const pseudo = cookies.user.data[0].login;
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
@@ -30,23 +21,23 @@ function StreamOnLayout() {
             }
         ).then(function (response) {
             setTeam(response.data.data[0].users);
-            response.data.data[0].users.map((val, key) => {
-                Axios.get(
-                    'https://api.twitch.tv/helix/streams?user_login=' + val.user_name,
-                    {
-                        headers: {
-                            'Authorization': `Bearer ${cookies.token.access_token}`,
-                            'Client-Id': process.env.REACT_APP_CLIENT_ID
-                        }
-                    }
-                ).then(function (response) {
-                    if (response.data.data.length > 0) {
-                        setOnStream(oldArrayOn => [...oldArrayOn, {infos: response.data.data}]);
-                    } else if (response.data.data.length < 1) {
-                        setOffStream(oldArrayOff => [...oldArrayOff, val.user_name]);
-                    }
-                })
-            })
+            // response.data.data[0].users.map((val, key) => {
+            //     Axios.get(
+            //         'https://api.twitch.tv/helix/streams?user_login=' + val.user_name,
+            //         {
+            //             headers: {
+            //                 'Authorization': `Bearer ${cookies.token.access_token}`,
+            //                 'Client-Id': process.env.REACT_APP_CLIENT_ID
+            //             }
+            //         }
+            //     ).then(function (response) {
+            //         if (response.data.data.length > 0) {
+            //             setOnStream(oldArrayOn => [...oldArrayOn, {infos: response.data.data}]);
+            //         } else if (response.data.data.length < 1) {
+            //             setOffStream(oldArrayOff => [...oldArrayOff, val.user_name]);
+            //         }
+            //     })
+            // })
         })
     }, [])
     useEffect(() => {
