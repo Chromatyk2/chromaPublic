@@ -2546,22 +2546,23 @@ a.socialLink {
         display: none;
     }
     .twitch {
-        position: relative;
         margin-bottom: 0;
-        width:100%;
+        position: relative;
+        width: 100%;
     }
 
     .twitch .twitch-video {
-        padding-top: 42.95%;
-        width: 80%;
+        padding-top: 0;
+        width: 100%;
     }
 
     .twitch .twitch-chat {
         bottom: 0;
         height: auto;
-        position: absolute;
+        position: relative;
         right: 0;
         top: 0;
-        width: 20%;
+        width: 100%;
+        height: 450px;
     }
 }
