@@ -913,14 +913,6 @@ p.filterTitle {
     padding: 15px;
 }
 
-.pokemonGlobalContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-  width: 50%;
-  gap: 10px;
-}
 .inputPseudo{
   background-color: hsla(0,0%,100%,.9);
   border-radius: 25px;
@@ -2286,7 +2278,7 @@ span.navbar-brand {
     height: 100%;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
-  .pokemonGlobalContainer {
+  .clipsGlobalContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -3114,6 +3106,36 @@ nav.navbar.navbar-expand-lg.navbar-light {
 .paragraphHome span{
     color: #fcc249 ;
     font-weight: bold;
+}
+
+.clipsGlobalContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 75%;
+    gap: 20px;
+}
+.infoClipContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+a.clipsLink {
+    text-decoration: none;
+}
+img.imgClip {
+    width: 340px;
+}
+p.viewsClips {
+    font-size: 15px;
+    border: 1px white solid;
+    padding: 6px;
+}
+p.dateClip {
+    font-size: 15px;
+    border: 1px white solid;
+    padding: 6px;
 }
 @media screen and (min-width: 850px) {
     .twitch {
