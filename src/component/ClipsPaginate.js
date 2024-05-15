@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import ReactPaginate from "react-paginate";
 import { useParams,BrowserRouter, Link } from 'react-router-dom'
 import {Tooltip} from "react-tooltip";
+import moment from "moment/moment";
 function Items(props) {
     const clipList = props.currentItems;
     return (
@@ -13,14 +14,17 @@ function Items(props) {
                     clipList.map((val, key) => {
                         return (
                             <>
-                                <Link className="navLink" to={val.url}>
+                                <Link className="clipsLink navLink" to={val.url}>
                                     <img src={val.thumbnail_url} />
+                                    <div>
+                                        <p>{val.view_count} vues</p>
+                                        <p>{moment(val.created_at).utc().format('DD/MM/YYYY')}</p>
+                                    </div>
                                 </Link>
                             </>
                         )
                     })
                 )}
-                <Tooltip anchorSelect=".anchorTooltip" />
             </div>
         </>
     );
@@ -48,7 +52,6 @@ function ClipsPaginate(props) {
 
     return (
         <>
-            <Items currentItems={currentItems} />
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."
@@ -59,6 +62,7 @@ function ClipsPaginate(props) {
                 previousLabel="<<"
                 renderOnZeroPageCount={null}
             />
+            <Items currentItems={currentItems} />
         </>
     );
 }
