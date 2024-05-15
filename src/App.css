@@ -265,10 +265,6 @@ font-size: 32px;
 .center {
 margin-top: 50px;
 }
-.loginButton:hover {
-background-color: #64428F;
-filter: drop-shadow(0px 0px 6px #644290);
-}
 .loginButton i{
 margin-right:25px;
 }
@@ -3199,6 +3195,9 @@ p.totalEdition {
     border-radius: 30px;
     line-height: 22px;
     font-size: 25px;
+}
+.loginButton:hover {
+    filter: drop-shadow(0px 0px 6px white);
 }
 @media screen and (min-width: 850px) {
     .twitch {
