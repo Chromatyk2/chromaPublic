@@ -11,15 +11,7 @@ import env from "react-dotenv";
 function NavBar(props) {
   const [count, setCount] = useState(0);
   const [stream, setStream] = useState(null);
-  const pseudo = props.cookies.user.data[0].login;
   const [expanded, setExpanded] = useState(false);
-  useEffect(() => {
-      Axios
-        .get("/api/getCountProposition/"+pseudo)
-        .then(function(response){
-            setCount(response.data[0].count);
-      })
-  }, [])
   return (
 
       <Navbar expanded={expanded} bg="light" expand="lg">
