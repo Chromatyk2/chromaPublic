@@ -2514,7 +2514,7 @@ a.socialLink {
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
-        margin-bottom: 160px;
+        margin-bottom: 0;
         width:100%;
     }
 
