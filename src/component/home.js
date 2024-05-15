@@ -40,7 +40,7 @@ function HomePage(props) {
                 </div>
                 <div className={"editionsContainer"}>
                     <p className={"nbEdition"}>4éme édition</p>
-                    <p className={"totalEdition"}>A vous d'entrer dans la légende !</p>
+                    <p className={"totalEdition"}>?</p>
                 </div>
             </div>
         </div>
