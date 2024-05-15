@@ -27,19 +27,19 @@ function HomePage(props) {
             <h1 className={"titleEdition"}>Editions précédentes</h1>
             <div className={"editionsInfosContainer"}>
                 <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>1ére édition 2021</p>
+                    <p className={"nbEdition"}>Edition 2021</p>
                     <p className={"totalEdition"}>2 800 €</p>
                 </div>
                 <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>2éme édition 2022</p>
+                    <p className={"nbEdition"}>Edition 2022</p>
                     <p className={"totalEdition"}>8 238 €</p>
                 </div>
                 <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>3éme édition 2023</p>
+                    <p className={"nbEdition"}>Edition 2023</p>
                     <p className={"totalEdition"}>17 414 €</p>
                 </div>
                 <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>4éme édition 2024</p>
+                    <p className={"nbEdition"}>Edition 2024</p>
                     <p className={"totalEdition"}>?</p>
                 </div>
             </div>
