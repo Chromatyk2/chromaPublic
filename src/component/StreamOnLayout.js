@@ -47,6 +47,9 @@ function StreamOnLayout() {
     function handleDataFromChild(data) {
         setStreamToDisplay(data);
     }
+    function disableStream() {
+        setStreamToDisplay(null);
+    }
 
     return (
         <div className={"containerStream"}>
@@ -71,7 +74,7 @@ function StreamOnLayout() {
 
             {streamToDisplay ?
                 <>
-                    <button className={"disableStream"}>X</button>
+                    <button onClick={disableStream} className={"disableStream"}>X</button>
                     <div className="twitch">
                         <div className="twitch-video">
                             <iframe
