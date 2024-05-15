@@ -16,7 +16,7 @@ function Items(props) {
                             <>
                                 <Link className="clipsLink navLink" to={val.url}>
                                     <img className={"imgClip"} src={val.thumbnail_url}/>
-                                    <p className={"titleClip"}>{val.title.substring(0, 20) + "..."}</p>
+                                    <p className={"titleClip"}>{val.title.substring(0, 25) + val.title.length > 25 && "..."}</p>
                                     <div className={"infoClipContainer"}>
                                         <p className={"viewsClips"}>{val.view_count} vues</p>
                                         <p className={"dateClip"}>{moment(val.created_at).utc().format('DD/MM/YYYY')}</p>

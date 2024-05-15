@@ -1208,15 +1208,8 @@ li svg{
   background: white;
   color: #0a3a2c;
 }
-ul.paginateLay {
-    display: flex;
-    justify-content: center;
-    flex-flow: row;
-    text-align: center;
-}
-.paginateLay li:hover {
-    background: none;
-}
+
+
 span.myCountProposition {
     background-color: red;
     color: white;
@@ -3153,6 +3146,21 @@ p.dateClip {
     font-size: 15px;
     border: 1px white solid;
     padding: 6px;
+}
+ul.paginateLay {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    text-align: center;
+}
+.paginateLay li{
+    color: white;
+}
+.paginateLay li:hover{
+    background-color: white;
+    color:#38617f;
 }
 @media screen and (min-width: 850px) {
     .twitch {
