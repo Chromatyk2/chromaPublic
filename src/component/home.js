@@ -24,6 +24,7 @@ function HomePage(props) {
                 </div>
             </div>
             <a className="socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
+            <h1>Editions précédentes</h1>
         </div>
     </>
   )
