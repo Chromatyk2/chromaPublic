@@ -2555,7 +2555,7 @@ a.socialLink {
     }
 
     .twitch .twitch-video {
-        padding-top: 0;
+        padding-top: 30vh;
         width: 100%;
     }
 

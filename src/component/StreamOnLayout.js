@@ -71,6 +71,7 @@ function StreamOnLayout() {
 
             {streamToDisplay ?
                 <>
+                    <button className={"disableStream"}>X</button>
                     <div className="twitch">
                         <div className="twitch-video">
                             <iframe
