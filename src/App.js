@@ -8,7 +8,6 @@ import NavBar from './component/navbar.js';
 import Login from './services/auth.services.js';
 import Mentions from "./component/Mentions";
 import StreamOnLayout from "./component/StreamOnLayout";
-import Clips from "./component/Clips";
 import ClipsLayout from "./component/ClipsLayout";
 function App() {
   const [cookies, setCookie] = useCookies();
