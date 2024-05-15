@@ -2533,6 +2533,9 @@ a.socialLink {
     }
 }
 @media screen and (max-width: 849px) {
+    .donationLink{
+        display: none;
+    }
     .containerStream {
         display: block;
         flex-flow: row;
