@@ -5,7 +5,7 @@ import {useCookies} from "react-cookie";
 function ClipsLayout() {
     const [cookies, setCookie] = useCookies();
     const [team, setTeam] = useState([]);
-    const [clips, setClips] = useState(null);
+    const [clips, setClips] = useState([]);
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
@@ -27,9 +27,7 @@ function ClipsLayout() {
                         }
                     }
                 ).then(function (response) {
-                    if(response.data != null){
                         setClips(oldArrayOn => [...oldArrayOn, {clips: response.data.data}]);
-                    }
                 })
             })
         })
