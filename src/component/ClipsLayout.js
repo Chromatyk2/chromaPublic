@@ -5,6 +5,7 @@ import {useCookies} from "react-cookie";
 function ClipsLayout() {
     const [cookies, setCookie] = useCookies();
     const [team, setTeam] = useState([]);
+    const [clips, setClips] = useState(null);
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
@@ -16,25 +17,22 @@ function ClipsLayout() {
             }
         ).then(function (response) {
             setTeam(response.data.data[0].users);
-            // response.data.data[0].users.map((val, key) => {
-            //     Axios.get(
-            //         'https://api.twitch.tv/helix/streams?user_login=' + val.user_name,
-            //         {
-            //             headers: {
-            //                 'Authorization': `Bearer ${cookies.token.access_token}`,
-            //                 'Client-Id': process.env.REACT_APP_CLIENT_ID
-            //             }
-            //         }
-            //     ).then(function (response) {
-            //         if (response.data.data.length > 0) {
-            //             setOnStream(oldArrayOn => [...oldArrayOn, {infos: response.data.data}]);
-            //         } else if (response.data.data.length < 1) {
-            //             setOffStream(oldArrayOff => [...oldArrayOff, val.user_name]);
-            //         }
-            //     })
-            // })
+            response.data.data[0].users.map((val, key) => {
+                Axios.get(
+                    'https://api.twitch.tv/helix/clips?broadcaster_id='+val.user_id,
+                    {
+                        headers: {
+                            'Authorization': `Bearer ${cookies.token.access_token}`,
+                            'Client-Id': process.env.REACT_APP_CLIENT_ID
+                        }
+                    }
+                ).then(function (response) {
+                    setClips(response.data);
+                })
+            })
         })
     }, [])
+    console.log(clips);
     return (
         <>
             <img style={{width: "35%"}} src={"images/logoSofk.png"}/>
