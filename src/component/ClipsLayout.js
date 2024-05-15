@@ -19,7 +19,7 @@ function ClipsLayout() {
             setTeam(response.data.data[0].users);
             response.data.data[0].users.map((val, key) => {
                 Axios.get(
-                    'https://api.twitch.tv/helix/clips?broadcaster_id='+val.user_id,
+                    'https://api.twitch.tv/helix/clips?first=100&broadcaster_id='+val.user_id,
                     {
                         headers: {
                             'Authorization': `Bearer ${cookies.token.access_token}`,
