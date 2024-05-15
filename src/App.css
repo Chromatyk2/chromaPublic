@@ -2511,6 +2511,13 @@ a.socialLink {
     width: 320px;
     font-size: 35px;
 }
+.Layout-sc-1xcs6mc-0.kclbMN.consent-banner {
+    overflow: overlay;
+    height: 100vh;
+}
+.streamersListMobile{
+    display: none;
+}
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
@@ -2533,6 +2540,7 @@ a.socialLink {
     }
 }
 @media screen and (max-width: 849px) {
+    .streamersListMobile{display: block}
     .logoSofkOnStreamPage{
         display: none;
     }
