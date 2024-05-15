@@ -3165,6 +3165,35 @@ ul.paginateLay {
 .paginateLay li a:hover{
     color:#38617f;
 }
+h1.titleEdition {
+    font-family: Charge Vector Black;
+    color: white;
+    margin-top: 100px;
+}
+.editionsInfosContainer {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.editionsContainer {
+     width: 303px;
+     border: solid 2px white;
+     padding: 30px;
+     border-radius: 10px;
+     display: flex;
+     flex-flow: column;
+ }
+p.nbEdition {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+p.totalEdition {
+    font-size: 50px;
+    text-align: center;
+    color: #fcc249;
+}
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
