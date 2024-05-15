@@ -16,7 +16,6 @@ function App() {
   }
   return(
     <>
-      {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
         <Routes>
@@ -26,7 +25,6 @@ function App() {
           <Route path="/Clips" element={<ClipsLayout cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
-      }
     </>
   );
 }
