@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Axios from 'axios'
 import {useCookies} from "react-cookie";
 import ClipsPaginate from "./ClipsPaginate";
-import UniqueStreamer from "./uniqueStreamer";
 
 function ClipsLayout() {
     const [cookies, setCookie] = useCookies();
@@ -39,32 +38,12 @@ function ClipsLayout() {
 
     return (
         <>
-            <div className={"containerStream"}>
-                <div className={"streamersList"}>
-                    <p className={"streamTitle"}>Streameur.euses</p>
-                    <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
-                    {orderedOnStream.length > 0 &&
-                        onStream.map((val, key) => {
-                            return (
-                                <UniqueStreamer change={handleDataFromChild} onStream={true} streamer={val}/>
-                            )
-                        })
-                    }
-                    {offStream.length > 0 &&
-                        offStream.map((val, key) => {
-                            return (
-                                <UniqueStreamer change={handleDataFromChild} onStream={false} streamer={val}/>
-                            )
-                        })
-                    }
-                </div>
-                {clips.length > 0 &&
-                    <ClipsPaginate
-                        itemsPerPage={32}
-                        items={clips}
-                    />
-                }
-            </div>
+            {clips.length > 0 &&
+                <ClipsPaginate
+                    itemsPerPage={32}
+                    items={clips}
+                />
+            }
         </>
     );
 }
