@@ -2586,11 +2586,10 @@ a.socialLink {
 
     .twitch .twitch-chat {
         bottom: 0;
-        height: auto;
+        height: 100vh;
         position: relative;
         right: 0;
         top: 0;
         width: 100%;
-        height: 450px;
     }
 }
