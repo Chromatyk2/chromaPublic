@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import ReactPaginate from "react-paginate";
-import moment from "moment/moment";
 import {Tooltip} from "react-tooltip";
 function Items(props) {
     const clipList = props.currentItems;

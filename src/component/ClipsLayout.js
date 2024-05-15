@@ -7,7 +7,6 @@ function ClipsLayout() {
     const [cookies, setCookie] = useCookies();
     const [team, setTeam] = useState([]);
     const [clips, setClips] = useState([]);
-    import ReactPaginate from 'react-paginate';
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
