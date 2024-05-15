@@ -14,7 +14,7 @@ function Items(props) {
                         return (
                             <>
                                 <Link className="navLink" to={val.url}>
-                                    <p>Oui</p>
+                                    <img src={val.thumbnail_url} />
                                 </Link>
                             </>
                         )
