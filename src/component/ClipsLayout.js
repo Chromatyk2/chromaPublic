@@ -34,10 +34,18 @@ function ClipsLayout() {
             })
         })
     }, [])
-    console.log(clips);
+
     return (
         <>
-            <img style={{width: "35%"}} src={"images/logoSofk.png"}/>
+            {clips.length > 0 &&
+                clips.map((val, key) => {
+                    return (
+                        <a href={val.url}>
+                            <img style={{width: "35%"}} src={val.thumbnail_url}/>
+                        </a>
+                    )
+                })
+            }
         </>
     );
 }
