@@ -31,7 +31,7 @@ function UniqueStreamerMozaique(props) {
         <>
             {user &&
                 <>
-                    <div onClick={changeStream} className="uniqueStreamer">
+                    <div onClick={changeStream} className="uniqueStreamerMozaique">
                         {props.onStream === true ?
                             <>
                                 <div className={"uniqueStreamerOnlineMozaique"}>
