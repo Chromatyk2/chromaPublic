@@ -86,6 +86,10 @@ function ClipsLayout() {
                 })
             })
     }
+
+    useEffect(() => {
+        setOrderedOnStream(onStream.sort((a, b) => (a.infos[0].viewer_count < b.infos[0].viewer_count) ? 1 : -1));
+    }, [onStream.length + offStream.length == team.length]);
     return (
         <>
             <div className={"streamersListClips"}>
