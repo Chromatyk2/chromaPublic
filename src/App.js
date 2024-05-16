@@ -6,7 +6,6 @@ import 'react-tooltip/dist/react-tooltip.css'
 import HomePage from './component/home.js';
 import NavBar from './component/navbar.js';
 import Login from './services/auth.services.js';
-import Mentions from "./component/Mentions";
 import StreamOnLayout from "./component/StreamOnLayout";
 import ClipsLayout from "./component/ClipsLayout";
 import Footer from "./component/footer";
