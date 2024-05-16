@@ -2610,6 +2610,15 @@ button.buttonToDisplayStreamMozaique {
     flex-wrap: wrap;
     gap: 50px;
 }
+.streamHomeContainer{
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+.streamHomeContainer p{
+    color: white;
+    text-align: center;
+}
 .streamHomeContainer a {
     border-radius: 10px;
     -webkit-filter: drop-shadow(2px 4px 6px #000);
