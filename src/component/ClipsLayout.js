@@ -95,9 +95,11 @@ function ClipsLayout() {
     }, [onStream.length + offStream.length == team.length]);
     return (
         <>
-            <div onClick={handleStreamerList} className={"showStreamerListButton"}>
-                <i className="fa-solid fa-people-group"></i>
-            </div>
+            {showStreamerList === false &&
+                    <div onClick={handleStreamerList} className={"showStreamerListButton"}>
+                        <i className="fa-solid fa-people-group"></i>
+                    </div>
+                }
             {showStreamerList === true &&
                 <div className={"streamersListClips"}>
                     {orderedOnStream.length > 0 &&
