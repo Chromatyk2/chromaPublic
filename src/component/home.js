@@ -92,6 +92,7 @@ console.log(user);
                         return (
                             <a href={"https://twitch.tv/"+val.infos[0].login} target={"_blank"}>
                                 <img src={val.infos[0].profile_image_url}/>
+                                <p style={{textAlign:"center"}}>{val.infos[0].login}</p>
                             </a>
                         )
                     })

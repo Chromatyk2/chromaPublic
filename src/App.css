@@ -2613,9 +2613,9 @@ button.buttonToDisplayStreamMozaique {
 .streamListHome a {
     padding: 10px;
     border-radius: 10px;
-    filter: drop-shadow(2px 4px 6px black);
 }
 .streamListHome a :hover{
+    filter: drop-shadow(2px 4px 6px black);
     background-color: #38617F;
 }
 @media screen and (min-width: 850px) {
