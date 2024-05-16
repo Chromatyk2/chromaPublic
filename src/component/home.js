@@ -1,4 +1,6 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
+import Axios from 'axios'
+import {useCookies} from "react-cookie";
 import '../App.css'
 import UniqueStreamerClip from "./uniqueStreamerClip";
 
@@ -19,7 +21,7 @@ function HomePage(props) {
             setTeam(response.data.data[0].users);
             response.data.data[0].users.map((val, key) => {
                 Axios.get(
-                    'https://api.twitch.tv/helix/users?login='+streamerName,
+                    'https://api.twitch.tv/helix/users?login='+response.data.data[0].users.pseudo,
                     {
                         headers:{
                             'Authorization': `Bearer ${cookies.token.access_token}`,
