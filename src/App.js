@@ -9,6 +9,7 @@ import Login from './services/auth.services.js';
 import Mentions from "./component/Mentions";
 import StreamOnLayout from "./component/StreamOnLayout";
 import ClipsLayout from "./component/ClipsLayout";
+import Footer from "./component/footer";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Streams" element={<StreamOnLayout cookies={cookies} />} />
           <Route path="/Clips" element={<ClipsLayout cookies={cookies} />} />
         </Routes>
+          <Footer cookies={cookies} />
       </BrowserRouter>
     </>
   );
