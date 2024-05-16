@@ -2518,6 +2518,10 @@ a.socialLink {
     display: none;
 
 }
+.streamerMozaique{
+    display: flex;
+    flex-wrap: wrap;
+}
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;
