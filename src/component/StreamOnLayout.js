@@ -59,7 +59,7 @@ function StreamOnLayout() {
     function disableStream() {
         setStreamToDisplay(null);
     }
-    console.log(charity)
+    console.log(charityTeam)
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
