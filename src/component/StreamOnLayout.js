@@ -62,7 +62,7 @@ function StreamOnLayout() {
     function disableStream() {
         setStreamToDisplay(null);
     }
-    console.log(charityTeam.find((person) => person.infos.slug === mrvikingbear));
+    console.log(charityTeam.find((person) => person.infos.display_name === "mrvikingbear"));
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
@@ -110,7 +110,7 @@ function StreamOnLayout() {
                     </div>
                     <a style={{position: "absolute", left: "0", right: "0", margin: "auto", bottom: "60px"}}
                        className="donationLink socialLink" target='_blank'
-                       href={"https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member="+charityTeam.find((person) => person.infos.slug === streamToDisplay).infos.id+"&l=fr-FR"}>Faire
+                       href={"https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member="+charityTeam.find((person) => person.infos.display_name === streamToDisplay).infos.id+"&l=fr-FR"}>Faire
                         un Don</a>
                 </>
                 :
