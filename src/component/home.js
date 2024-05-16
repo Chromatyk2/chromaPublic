@@ -6,7 +6,7 @@ import UniqueStreamerClip from "./uniqueStreamerClip";
 
 function HomePage(props) {
     const [cookies, setCookie] = useCookies();
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState([]);
     const [team, setTeam] = useState([]);
 
     useEffect(() => {
@@ -87,7 +87,7 @@ console.log(user);
             </div>
             <h1 className={"titleEdition"}>Streamer.euses 2024</h1>
             <div className={"streamListHome"}>
-                {user &&
+                {user.length > 0 &&
                     user.data.map((val, key) => {
                         return (
                             <a href={"https://twitch.tv/"+val.login} target={"_blank"}>
