@@ -2625,6 +2625,10 @@ button.buttonToDisplayStreamMozaique {
     }
 }
 @media screen and (max-width: 849px) {
+    .streamersListClips{
+        width: 100%;
+
+    }
     .paginateLay li{
         color: white;
         margin: -5px;
