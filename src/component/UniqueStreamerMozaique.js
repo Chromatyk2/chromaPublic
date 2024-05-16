@@ -48,7 +48,7 @@ function UniqueStreamerMozaique(props) {
                             </>
                             :
                             <>
-                                <divstyle={{backgroundRepeat:"no-repeat",backgroundImage:"url("+user.data[0].offline_image_url ? user.data[0].offline_image_url : user.data[0].profile_image_url+")" }} className={"uniqueStreamerOnlineMozaique"}>
+                                <div { user.data[0].offline_image_url ? { backgroundImage:user.data[0].offline_image_url,backgroundRepeat:"no-repeat" } : {backgroundImage : user.data[0].profile_image_url,backgroundRepeat:"no-repeat"} } className={"uniqueStreamerOnlineMozaique"}>
                                     <button className={"buttonToDisplayStreamMozaique"} value={props.streamer} onClick={changeStream}></button>
                                     <div className={"uniqueStreamerProfileMozaique"}>
                                         <img style={{width: "50px", margin: "0"}} src={user.data[0].profile_image_url}/>
