@@ -72,6 +72,7 @@ function ClipsLayout() {
         })
     }, [])
     function handleDataFromChild(data) {
+        setShowStreamerList(false);
         setClips([]);
             Axios.get(
                 'https://api.twitch.tv/helix/clips?first=100&broadcaster_id='+data,
