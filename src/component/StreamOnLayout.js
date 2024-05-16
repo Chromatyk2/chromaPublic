@@ -62,7 +62,7 @@ function StreamOnLayout() {
     function disableStream() {
         setStreamToDisplay(null);
     }
-    console.log(charityTeam)
+    console.log(charityTeam.find((person) => person.infos.display_name === "Sshinato"))
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
