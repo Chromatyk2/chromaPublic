@@ -2665,6 +2665,13 @@ button.buttonToDisplayStreamMozaique {
     }
 }
 @media screen and (max-width: 849px) {
+    .streamListHome {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
     .streamersListClips{
         width: 100%;
 
