@@ -34,7 +34,7 @@ function UniqueStreamerMozaique(props) {
                     <div onClick={changeStream} className="uniqueStreamerMozaique">
                         {props.onStream === true ?
                             <>
-                                <div className={"uniqueStreamerOnlineMozaique"}>
+                                <div style={{backgroundImage:"url("+props.streamer.infos[0].thumbnail_url+")"}} className={"uniqueStreamerOnlineMozaique"}>
                                     <button className={"buttonToDisplayStreamMozaique"} value={props.streamer.infos[0].user_name} onClick={changeStream}></button>
                                     <div className={"uniqueStreamerProfile"}>
                                         <img src={user.data[0].profile_image_url}/>
