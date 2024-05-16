@@ -12,6 +12,7 @@ function ClipsLayout() {
     const [onStream, setOnStream] = useState([]);
     const [orderedOnStream, setOrderedOnStream] = useState([]);
     const [offStream, setOffStream] = useState([]);
+    const [showStreamerList, setShowStreamerList] = useState(flase);
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
@@ -86,30 +87,38 @@ function ClipsLayout() {
                 })
             })
     }
-
+    function handleStreamerList() {
+        setShowStreamerList(true);
+    }
     useEffect(() => {
         setOrderedOnStream(onStream.sort((a, b) => (a.infos[0].viewer_count < b.infos[0].viewer_count) ? 1 : -1));
     }, [onStream.length + offStream.length == team.length]);
     return (
         <>
-            <div className={"streamersListClips"}>
-                <p className={"streamTitle"}>Streameur.euses</p>
-                <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
-                {orderedOnStream.length > 0 &&
-                    onStream.map((val, key) => {
-                        return (
-                            <UniqueStreamerClip change={handleDataFromChild} onStream={true} streamer={val}/>
-                        )
-                    })
-                }
-                {offStream.length > 0 &&
-                    offStream.map((val, key) => {
-                        return (
-                            <UniqueStreamerClip change={handleDataFromChild} onStream={false} streamer={val}/>
-                        )
-                    })
-                }
+            <div onClick={handleStreamerList} className={"showStreamerListButton"}>
+                <i className="fa-solid fa-people-group"></i>
             </div>
+            {showStreamerList === true &&
+                <div className={"streamersListClips"}>
+                    <p className={"streamTitle"}>Streameur.euses</p>
+                    <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
+                    {orderedOnStream.length > 0 &&
+                        onStream.map((val, key) => {
+                            return (
+                                <UniqueStreamerClip change={handleDataFromChild} onStream={true} streamer={val}/>
+                            )
+                        })
+                    }
+                    {offStream.length > 0 &&
+                        offStream.map((val, key) => {
+                            return (
+                                <UniqueStreamerClip change={handleDataFromChild} onStream={false} streamer={val}/>
+                            )
+                        })
+                    }
+                </div>
+
+            }
             {clips.length > 0 &&
                 <ClipsPaginate
                     itemsPerPage={32}
