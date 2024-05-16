@@ -20,7 +20,6 @@ function App() {
           <NavBar cookies={cookies} />
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
-          <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
           <Route path="/Streams" element={<StreamOnLayout cookies={cookies} />} />
           <Route path="/Clips" element={<ClipsLayout cookies={cookies} />} />
         </Routes>
