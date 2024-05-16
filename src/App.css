@@ -2299,7 +2299,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 }
 .streamersList{
     min-width: 300px;
-    height: -webkit-calc(100vh - 48px);
+    height: -webkit-calc(100vh - 55px);
     overflow: overlay;
     scrollbar-color: white transparent;
     scrollbar-width: thin;
@@ -2588,7 +2588,7 @@ button.buttonToDisplayStreamMozaique {
 }
 .streamersListClips{
     min-width: 300px;
-    height: -webkit-calc(100vh - 48px);
+    height: -webkit-calc(100vh - 55px);
     overflow: overlay;
     scrollbar-color: white transparent;
     scrollbar-width: thin;
