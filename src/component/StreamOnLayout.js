@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import {useCookies} from "react-cookie";
 import UniqueStreamer from './uniqueStreamer.js';
+import UniqueStreamerMozaique from './UniqueStreamerMozaique.js';
 
 function StreamOnLayout() {
     const [cookies, setCookie] = useCookies();
