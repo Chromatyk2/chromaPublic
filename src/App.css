@@ -2602,7 +2602,7 @@ button.buttonToDisplayStreamMozaique {
 @media screen and (max-width: 849px) {
     .paginateLay li{
         color: white;
-        margin: 5px;
+        margin: -5px;
         width: auto;
     }
     .streamerMozaique{
