@@ -71,7 +71,6 @@ function ClipsLayout() {
         })
     }, [])
     function handleDataFromChild(data) {
-        useEffect(() => {
         setClips([]);
             Axios.get(
                 'https://api.twitch.tv/helix/clips?first=100&broadcaster_id='+data,
@@ -86,7 +85,6 @@ function ClipsLayout() {
                     setClips(oldArrayOn => [...oldArrayOn, val]);
                 })
             })
-        }, [])
     }
     return (
         <>
