@@ -2521,6 +2521,7 @@ a.socialLink {
 .streamerMozaique{
     display: flex;
     flex-wrap: wrap;
+    overflow: overlay;
 }
 .uniqueStreamerMozaique {
     width: 496px;
