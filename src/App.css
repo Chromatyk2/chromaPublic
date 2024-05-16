@@ -2531,11 +2531,8 @@ a.socialLink {
 .uniqueStreamerMozaique {
     width: 496px;
     height: 279px;
-}
-.uniqueStreamerMozaique {
-    width: 496px;
-    height: 279px;
     position: relative;
+    filter: drop-shadow(2px 4px 6px black);
 }
 button.buttonToDisplayStreamMozaique {
     width: 100%;
@@ -2577,6 +2574,9 @@ button.buttonToDisplayStreamMozaique {
 }
 .uniqueStreamerOnlineMozaique {
     height: inherit;
+}
+.uniqueStreamerOnlineMozaique:hover{
+    filter: inherit;
 }
 @media screen and (min-width: 850px) {
     .twitch {
