@@ -103,26 +103,47 @@ function StreamOnLayout() {
                 </>
                 :
                 <>
-                <div className={"streamersListMobile"}>
-                    <p className={"streamTitle"}>Streameur.euses</p>
-                    <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
-                    {orderedOnStream.length > 0 &&
-                        onStream.map((val, key) => {
-                            return (
-                                <UniqueStreamer change={handleDataFromChild} onStream={true} streamer={val}/>
-                            )
-                        })
-                    }
-                    {offStream.length > 0 &&
-                        offStream.map((val, key) => {
-                            return (
-                                <UniqueStreamer change={handleDataFromChild} onStream={false} streamer={val}/>
-                            )
-                        })
-                    }
-                </div>
-                 <img className={"logoSofkOnStreamPage"} style={{width: "35%", position: "absolute", left: "0", right: "0", top: "100px"}} src={"images/logoSofk.png"}/>
-                 <a style={{position: "absolute", left: "0", right: "0", margin: "auto", bottom: "60px"}} className="donationLink socialLink" target='_blank' href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire un Don</a>
+                    <div className={"streamerMozaique"}>
+                        {orderedOnStream.length > 0 &&
+                            onStream.map((val, key) => {
+                                return (
+                                    <UniqueStreamerMozaique change={handleDataFromChild} onStream={true} streamer={val}/>
+                                )
+                            })
+                        }
+                        {offStream.length > 0 &&
+                            offStream.map((val, key) => {
+                                return (
+                                    <UniqueStreamerMozaique change={handleDataFromChild} onStream={false} streamer={val}/>
+                                )
+                            })
+                        }
+                    </div>
+                    <div className={"streamersListMobile"}>
+                        <p className={"streamTitle"}>Streameur.euses</p>
+                        <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
+                        {orderedOnStream.length > 0 &&
+                            onStream.map((val, key) => {
+                                return (
+                                    <UniqueStreamer change={handleDataFromChild} onStream={true} streamer={val}/>
+                                )
+                            })
+                        }
+                        {offStream.length > 0 &&
+                            offStream.map((val, key) => {
+                                return (
+                                    <UniqueStreamer change={handleDataFromChild} onStream={false} streamer={val}/>
+                                )
+                            })
+                        }
+                    </div>
+                    <img className={"logoSofkOnStreamPage"}
+                         style={{width: "35%", position: "absolute", left: "0", right: "0", top: "100px"}}
+                         src={"images/logoSofk.png"}/>
+                    <a style={{position: "absolute", left: "0", right: "0", margin: "auto", bottom: "60px"}}
+                       className="donationLink socialLink" target='_blank'
+                       href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire
+                        un Don</a>
                 </>
             }
 
