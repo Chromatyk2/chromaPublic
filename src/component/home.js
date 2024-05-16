@@ -19,11 +19,9 @@ function HomePage(props) {
                 }
             }
         ).then(function (response) {
-            setTeam(response.data.data[0].users);
-            console.log(response.data.data[0].users);
             response.data.data[0].users.map((val, key) => {
                 Axios.get(
-                    'https://api.twitch.tv/helix/users?login='+response.data.data[0].users.user_name,
+                    'https://api.twitch.tv/helix/users?login='+val.user_name,
                     {
                         headers:{
                             'Authorization': `Bearer ${cookies.token.access_token}`,
