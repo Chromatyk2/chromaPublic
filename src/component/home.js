@@ -1,7 +1,38 @@
 import React from 'react';
 import '../App.css'
+import UniqueStreamerClip from "./uniqueStreamerClip";
 
 function HomePage(props) {
+    const [user, setUser] = useState(null);
+    const [team, setTeam] = useState([]);
+
+    useEffect(() => {
+        Axios.get(
+            'https://api.twitch.tv/helix/teams?name=streamon',
+            {
+                headers: {
+                    'Authorization': `Bearer ${cookies.token.access_token}`,
+                    'Client-Id': process.env.REACT_APP_CLIENT_ID
+                }
+            }
+        ).then(function (response) {
+            setTeam(response.data.data[0].users);
+            response.data.data[0].users.map((val, key) => {
+                Axios.get(
+                    'https://api.twitch.tv/helix/users?login='+streamerName,
+                    {
+                        headers:{
+                            'Authorization': `Bearer ${cookies.token.access_token}`,
+                            'Client-Id': process.env.REACT_APP_CLIENT_ID
+                        }
+                    }
+                ).then(function(response){
+                    setUser(response.data);
+                })
+            })
+        })
+    }, [])
+
   return (
     <>
         <div className="homeContainer">
@@ -53,6 +84,17 @@ function HomePage(props) {
                 </div>
             </div>
             <h1 className={"titleEdition"}>Streamer.euses 2024</h1>
+            <div className={"streamListHome"}>
+                {user.length > 0 &&
+                    user.map((val, key) => {
+                        return (
+                            <a href={val.data[0].url}>
+                                <img src={val.data[0].profile_image_url}/>
+                            </a>
+                        )
+                    })
+                }
+            </div>
         </div>
     </>
   )
