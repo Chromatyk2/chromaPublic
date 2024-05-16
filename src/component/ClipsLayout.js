@@ -9,6 +9,9 @@ function ClipsLayout() {
     const [cookies, setCookie] = useCookies();
     const [team, setTeam] = useState([]);
     const [clips, setClips] = useState([]);
+    const [onStream, setOnStream] = useState([]);
+    const [orderedOnStream, setOrderedOnStream] = useState([]);
+    const [offStream, setOffStream] = useState([]);
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
