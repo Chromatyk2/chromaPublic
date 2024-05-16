@@ -31,11 +31,11 @@ function UniqueStreamerClip(props) {
         <>
             {user &&
                 <>
-                    <div onClick={changeStream} className="uniqueStreamer">
+                    <div className="uniqueStreamer">
                         {props.onStream === true ?
                             <>
                                 <div className={"uniqueStreamerOnline"}>
-                                    <button className={"buttonToDisplayStream"} value={props.streamer.infos[0].id}></button>
+                                    <button className={"buttonToDisplayStream"} value={props.streamer.infos[0].id} onClick={changeStream}></button>
                                     <div className={"uniqueStreamerProfile"}>
                                         <img src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer.infos[0].user_name}</p>
