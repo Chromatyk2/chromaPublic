@@ -2525,6 +2525,8 @@ a.socialLink {
     justify-content: center;
     gap: 20px;
     margin: 20px;
+    scrollbar-color: white transparent;
+    scrollbar-width: thin;
 }
 .uniqueStreamerMozaique {
     width: 496px;
