@@ -90,7 +90,7 @@ function HomePage(props) {
                 {user &&
                     user.data.map((val, key) => {
                         return (
-                            <a href={"https://twitch.tv/"+login} target={"_blank"}>
+                            <a href={"https://twitch.tv/"+val.login} target={"_blank"}>
                                 <img src={val.profile_image_url}/>
                             </a>
                         )
