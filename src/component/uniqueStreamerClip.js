@@ -24,11 +24,14 @@ function UniqueStreamerClip(props) {
             setUser(response.data);
         })
     }, [])
-    function changeStream(e) {
+    const changeStream = (e) => {
         console.log(e);
         e.preventDefault();
         props.change(e.target.value);
     }
+    useEffect(() => {
+        changeStream();
+    }, []);
     return (
         <>
             {user &&
