@@ -22,7 +22,7 @@ function HomePage(props) {
             setTeam(response.data.data[0].users);
             response.data.data[0].users.map((val, key) => {
                 Axios.get(
-                    'https://api.twitch.tv/helix/users?login='+response.data.data[0].users.pseudo,
+                    'https://api.twitch.tv/helix/users?login='+response.data.data[0].users.user_name,
                     {
                         headers:{
                             'Authorization': `Bearer ${cookies.token.access_token}`,
