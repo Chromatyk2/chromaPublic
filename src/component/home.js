@@ -29,7 +29,7 @@ function HomePage(props) {
                         }
                     }
                 ).then(function(response){
-                    setUser(response.data);
+                    setUser(oldArrayOn => [...oldArrayOn, response.data]);
                 })
             })
         })
