@@ -2610,17 +2610,17 @@ button.buttonToDisplayStreamMozaique {
     flex-wrap: wrap;
     gap: 50px;
 }
-.streamListHome a {
+.streamHomeContainer a {
     border-radius: 10px;
     -webkit-filter: drop-shadow(2px 4px 6px #000);
     filter: drop-shadow(2px 4px 6px black);
     border: solid 2px #38617f;
 }
-.streamListHome a img {
+.streamHomeContainer a img {
     padding: 10px;
     border-radius: 10px;
 }
-.streamListHome a :hover{
+.streamHomeContainer a :hover{
     filter: drop-shadow(2px 4px 6px black);
     background-color: #38617F;
 }
