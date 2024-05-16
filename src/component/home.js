@@ -90,8 +90,8 @@ console.log(user);
                 {user.length > 0 &&
                     user.data.map((val, key) => {
                         return (
-                            <a href={"https://twitch.tv/"+val.login} target={"_blank"}>
-                                <img src={val.profile_image_url}/>
+                            <a href={"https://twitch.tv/"+val.infos[0].login} target={"_blank"}>
+                                <img src={val.infos[0].profile_image_url}/>
                             </a>
                         )
                     })
