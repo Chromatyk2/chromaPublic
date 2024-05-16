@@ -25,8 +25,6 @@ function UniqueStreamerClip(props) {
         })
     }, [])
     const changeStream = (e) => {
-        console.log(e);
-        e.preventDefault();
         props.change(e.target.value);
     }
     useEffect(() => {
