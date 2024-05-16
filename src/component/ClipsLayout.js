@@ -100,8 +100,6 @@ function ClipsLayout() {
             </div>
             {showStreamerList === true &&
                 <div className={"streamersListClips"}>
-                    <p className={"streamTitle"}>Streameur.euses</p>
-                    <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
                     {orderedOnStream.length > 0 &&
                         onStream.map((val, key) => {
                             return (
