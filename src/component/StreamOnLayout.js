@@ -16,8 +16,10 @@ function StreamOnLayout() {
         Axios.get(
             'https://streamlabscharity.com/api/v1/teams/643437249115068091'
         ).then(function (response) {
-            console.log(response);
-            setCharityTeam(oldArrayOn => [...oldArrayOn, {infos: response.data.members[1]}]);
+            console.log(response.data.members);
+            response.data.members.map((val, key) => {
+                setCharityTeam(oldArrayOn => [...oldArrayOn, {infos: val.user}]);
+            })
         })
     }, []);
     useEffect(() => {
