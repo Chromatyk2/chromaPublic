@@ -12,7 +12,7 @@ function ClipsLayout() {
     const [onStream, setOnStream] = useState([]);
     const [orderedOnStream, setOrderedOnStream] = useState([]);
     const [offStream, setOffStream] = useState([]);
-    const [showStreamerList, setShowStreamerList] = useState(flase);
+    const [showStreamerList, setShowStreamerList] = useState(false);
     useEffect(() => {
         Axios.get(
             'https://api.twitch.tv/helix/teams?name=streamon',
