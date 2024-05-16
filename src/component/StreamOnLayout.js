@@ -11,11 +11,12 @@ function StreamOnLayout() {
     const [onStream, setOnStream] = useState([]);
     const [orderedOnStream, setOrderedOnStream] = useState([]);
     const [offStream, setOffStream] = useState([]);
+    const [charityTeam, setCharityTeam] = useState([]);
     useEffect(() => {
         Axios.get(
             'https://streamlabscharity.com/api/v1/teams/643437249115068091'
         ).then(function (response) {
-            console.log(response);
+            setCharityTeam(oldArrayOn => [...oldArrayOn, {infos: response.data.members[1]}]);
         })
     }, []);
     useEffect(() => {
@@ -58,7 +59,7 @@ function StreamOnLayout() {
     function disableStream() {
         setStreamToDisplay(null);
     }
-
+    console.log(charity)
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
@@ -106,7 +107,7 @@ function StreamOnLayout() {
                     </div>
                     <a style={{position: "absolute", left: "0", right: "0", margin: "auto", bottom: "60px"}}
                        className="donationLink socialLink" target='_blank'
-                       href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire
+                       href={"https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member="+charityTeam.find((person) => person.user.display_name === streamToDisplay).id+"&l=fr-FR"}>Faire
                         un Don</a>
                 </>
                 :
