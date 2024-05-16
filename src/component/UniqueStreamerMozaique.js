@@ -34,7 +34,7 @@ function UniqueStreamerMozaique(props) {
                     <div onClick={changeStream} className="uniqueStreamerMozaique">
                         {props.onStream === true ?
                             <>
-                                <div style={{backgroundRepeat:"no-repeat",backgroundImage:"url(https://static-cdn.jtvnw.net/previews-ttv/live_user_"+props.streamer.infos[0].user_name+"-496x279.jpg)"}} className={"uniqueStreamerOnlineMozaique"}>
+                                <div style={{backgroundRepeat:"no-repeat",backgroundImage:"url(https://static-cdn.jtvnw.net/previews-ttv/live_user_"+props.streamer.infos[0].user_name.toLowerCase()+"-496x279.jpg)"}} className={"uniqueStreamerOnlineMozaique"}>
                                     <button className={"buttonToDisplayStreamMozaique"} value={props.streamer.infos[0].user_name} onClick={changeStream}></button>
                                     <div className={"uniqueStreamerProfile"}>
                                         <img src={user.data[0].profile_image_url}/>
