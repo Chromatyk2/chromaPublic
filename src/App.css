@@ -2578,6 +2578,15 @@ button.buttonToDisplayStreamMozaique {
 .uniqueStreamerOnlineMozaique:hover{
     filter: inherit;
 }
+.streamersListClips{
+    min-width: 300px;
+    height: -webkit-calc(100vh - 48px);
+    overflow: overlay;
+    scrollbar-color: white transparent;
+    scrollbar-width: thin;
+    position: fixed;
+
+}
 @media screen and (min-width: 850px) {
     .twitch {
         position: relative;

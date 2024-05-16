@@ -71,6 +71,7 @@ function ClipsLayout() {
         })
     }, [])
     function handleDataFromChild(data) {
+        setClips([]);
             Axios.get(
                 'https://api.twitch.tv/helix/clips?first=100&broadcaster_id='+data,
                 {
@@ -87,7 +88,7 @@ function ClipsLayout() {
     }
     return (
         <>
-            <div className={"streamersList"}>
+            <div className={"streamersListClips"}>
                 <p className={"streamTitle"}>Streameur.euses</p>
                 <hr style={{width: "50%", display: "block", margin: "auto", border: "1px solid #f7bb3e"}}/>
                 {orderedOnStream.length > 0 &&
