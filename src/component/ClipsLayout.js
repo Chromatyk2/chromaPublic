@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Axios from 'axios'
 import {useCookies} from "react-cookie";
 import ClipsPaginate from "./ClipsPaginate";
-import UniqueStreamer from "./uniqueStreamer";
+import UniqueStreamerClip from "./uniqueStreamerClip";
 import UniqueStreamerMozaique from "./UniqueStreamerMozaique";
 
 function ClipsLayout() {
@@ -67,6 +67,21 @@ function ClipsLayout() {
             })
         })
     }, [])
+    function handleDataFromChild(data) {
+            Axios.get(
+                'https://api.twitch.tv/helix/clips?first=100&broadcaster_id='+data,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${cookies.token.access_token}`,
+                        'Client-Id': process.env.REACT_APP_CLIENT_ID
+                    }
+                }
+            ).then(function (response) {
+                response.data.data.map((val, key) => {
+                    setClips(oldArrayOn => [...oldArrayOn, val]);
+                })
+            })
+    }
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
@@ -75,14 +90,14 @@ function ClipsLayout() {
                 {orderedOnStream.length > 0 &&
                     onStream.map((val, key) => {
                         return (
-                            <UniqueStreamer change={handleDataFromChild} onStream={true} streamer={val}/>
+                            <UniqueStreamerClip change={handleDataFromChild} onStream={true} streamer={val}/>
                         )
                     })
                 }
                 {offStream.length > 0 &&
                     offStream.map((val, key) => {
                         return (
-                            <UniqueStreamer change={handleDataFromChild} onStream={false} streamer={val}/>
+                            <UniqueStreamerClip change={handleDataFromChild} onStream={false} streamer={val}/>
                         )
                     })
                 }
