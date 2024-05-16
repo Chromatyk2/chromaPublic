@@ -5,6 +5,7 @@ import '../App.css'
 import UniqueStreamerClip from "./uniqueStreamerClip";
 
 function HomePage(props) {
+    const [cookies, setCookie] = useCookies();
     const [user, setUser] = useState(null);
     const [team, setTeam] = useState([]);
 
