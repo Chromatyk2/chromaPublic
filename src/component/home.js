@@ -90,11 +90,13 @@ console.log(user);
                 {user.length > 0 &&
                     user.map((val, key) => {
                         return (
-                            <a href={"https://twitch.tv/"+val.infos[0].login} target={"_blank"}>
-                                <img src={val.infos[0].profile_image_url}/>
-                                <p style={{textAlign:"center"}}>{val.infos[0].login}</p>
-                            </a>
-                        )
+                            <div>
+                                <a href={"https://twitch.tv/" + val.infos[0].login} target={"_blank"}>
+                                    <img src={val.infos[0].profile_image_url}/>
+                                </a>
+                                <p style={{textAlign: "center"}}>{val.infos[0].login}</p>
+                            </div>
+                    )
                     })
                 }
             </div>
