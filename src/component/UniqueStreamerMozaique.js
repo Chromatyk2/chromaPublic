@@ -36,11 +36,11 @@ function UniqueStreamerMozaique(props) {
                             <>
                                 <div style={{backgroundRepeat:"no-repeat",backgroundImage:"url(https://static-cdn.jtvnw.net/previews-ttv/live_user_"+props.streamer.infos[0].user_name.toLowerCase()+"-496x279.jpg)"}} className={"uniqueStreamerOnlineMozaique"}>
                                     <button className={"buttonToDisplayStreamMozaique"} value={props.streamer.infos[0].user_name} onClick={changeStream}></button>
-                                    <div className={"uniqueStreamerProfile"}>
+                                    <div className={"uniqueStreamerProfileMozaique"}>
                                         <img src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer.infos[0].user_name}</p>
                                     </div>
-                                    <div className={"uniqueStreamerStats"}>
+                                    <div className={"uniqueStreamerStatsMozaique"}>
                                         <img src={"/images/redCircle.png"}/>
                                         <p>{props.streamer.infos[0].viewer_count}</p>
                                     </div>
@@ -50,7 +50,7 @@ function UniqueStreamerMozaique(props) {
                             <>
                                 <div className={"uniqueStreamerOnlineMozaique"}>
                                     <button className={"buttonToDisplayStreamMozaique"} value={props.streamer} onClick={changeStream}></button>
-                                    <div className={"uniqueStreamerProfile"}>
+                                    <div className={"uniqueStreamerProfileMozaique"}>
                                         <img style={{width: "50px", margin: "0"}} src={user.data[0].profile_image_url}/>
                                         <p>{props.streamer}</p>
                                     </div>
