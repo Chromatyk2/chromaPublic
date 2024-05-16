@@ -20,6 +20,7 @@ function HomePage(props) {
             }
         ).then(function (response) {
             setTeam(response.data.data[0].users);
+            console.log(team);
             response.data.data[0].users.map((val, key) => {
                 Axios.get(
                     'https://api.twitch.tv/helix/users?login='+response.data.data[0].users.user_name,
