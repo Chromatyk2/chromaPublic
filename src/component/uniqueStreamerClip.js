@@ -25,6 +25,7 @@ function UniqueStreamerClip(props) {
         })
     }, [])
     function changeStream(e) {
+        console.log(e);
         e.preventDefault();
         props.change(e.target.value);
     }
