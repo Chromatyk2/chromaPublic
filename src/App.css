@@ -2614,7 +2614,7 @@ button.buttonToDisplayStreamMozaique {
     display: flex;
     flex-flow: column;
     gap: 10px;
-    width: 100px;  
+    width: 100px;
 
 }
 .streamHomeContainer p{

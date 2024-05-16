@@ -91,6 +91,9 @@ function ClipsLayout() {
     function handleStreamerList() {
         setShowStreamerList(true);
     }
+    function disableStreamerList() {
+        setShowStreamerList(false);
+    }
     useEffect(() => {
         setOrderedOnStream(onStream.sort((a, b) => (a.infos[0].viewer_count < b.infos[0].viewer_count) ? 1 : -1));
     }, [onStream.length + offStream.length == team.length]);
@@ -103,6 +106,7 @@ function ClipsLayout() {
                 }
             {showStreamerList === true &&
                 <div className={"streamersListClips"}>
+                    <button className={"disableStreamerListButton"} onClick={disableStreamerList}>X</button>
                     {orderedOnStream.length > 0 &&
                         onStream.map((val, key) => {
                             return (
