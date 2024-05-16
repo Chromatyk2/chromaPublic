@@ -2433,7 +2433,7 @@ ul.paginateLay {
     margin-top: 30px;
     text-align: center;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 99vw;
 }
 .paginateLay li{
     color: white;
@@ -2586,6 +2586,22 @@ button.buttonToDisplayStreamMozaique {
     scrollbar-width: thin;
     position: fixed;
 
+}
+.showStreamerListButton{
+    color: #38617f;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 75px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+.showStreamerListButton:hover{
+    cursor: pointer;
 }
 @media screen and (min-width: 850px) {
     .twitch {
