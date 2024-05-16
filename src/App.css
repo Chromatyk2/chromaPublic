@@ -2600,6 +2600,14 @@ button.buttonToDisplayStreamMozaique {
     }
 }
 @media screen and (max-width: 849px) {
+    .paginateLay li{
+        color: white;
+        margin: 5px;
+        width: auto;
+    }
+    .streamerMozaique{
+        display: none;
+    }
     .disableStream{
         position: absolute;
         right: 20px;
