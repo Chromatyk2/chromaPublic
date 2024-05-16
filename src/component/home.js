@@ -88,11 +88,11 @@ function HomePage(props) {
             </div>
             <h1 className={"titleEdition"}>Streamer.euses 2024</h1>
             <div className={"streamListHome"}>
-                {user.length > 0 &&
-                    user.map((val, key) => {
+                {user &&
+                    user.data.map((val, key) => {
                         return (
-                            <a href={val.data[0].url}>
-                                <img src={val.data[0].profile_image_url}/>
+                            <a href={val.url}>
+                                <img src={val.profile_image_url}/>
                             </a>
                         )
                     })
