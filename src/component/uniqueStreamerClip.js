@@ -27,10 +27,6 @@ function UniqueStreamerClip(props) {
     function changeStream(e) {
         props.change(e.target.value);
     }
-
-    useEffect(() => {
-        changeStream()
-    }, []);
     return (
         <>
             {user &&
