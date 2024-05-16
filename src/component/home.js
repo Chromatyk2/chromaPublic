@@ -88,7 +88,7 @@ console.log(user);
             <h1 className={"titleEdition"}>Streamer.euses 2024</h1>
             <div className={"streamListHome"}>
                 {user.length > 0 &&
-                    user.data.map((val, key) => {
+                    user.map((val, key) => {
                         return (
                             <a href={"https://twitch.tv/"+val.infos[0].login} target={"_blank"}>
                                 <img src={val.infos[0].profile_image_url}/>
