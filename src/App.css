@@ -2611,6 +2611,12 @@ button.buttonToDisplayStreamMozaique {
     gap: 50px;
 }
 .streamListHome a {
+    border-radius: 10px;
+    -webkit-filter: drop-shadow(2px 4px 6px #000);
+    filter: drop-shadow(2px 4px 6px black);
+    border: solid 2px #38617f;
+}
+.streamListHome a img {
     padding: 10px;
     border-radius: 10px;
 }
