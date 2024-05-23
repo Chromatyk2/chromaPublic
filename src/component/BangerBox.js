@@ -45,7 +45,7 @@ function BangerBox(props) {
     function displayNormalLaderboard(e) {
         Axios.post('/api/addCurrentImage',
         {
-            image:"/images/Banger/"+props.console+"/Jaquette ("+randomNumber+").png"
+            image:"/images/jaquettes/"+props.console+"/Jaquette ("+randomNumber+").png"
         })
         var console = props.console;
         var nbJaquette = randomNumber;
