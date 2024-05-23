@@ -62,7 +62,6 @@ function StreamOnLayout() {
     function disableStream() {
         setStreamToDisplay(null);
     }
-    console.log(charityTeam.find((person) => person.infos.display_name === "mrvikingbear"));
     return (
         <div className={"containerStream"}>
             <div className={"streamersList"}>
