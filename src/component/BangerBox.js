@@ -203,6 +203,7 @@ function BangerBox(props) {
 
     return(
         <>
+
             <div className="boxContainer">
                 <button id={"buttonBox" + randomConsoles[val]} onClick={openModal}
                         className={"uniqueBoxContainer"}>
