@@ -11,7 +11,7 @@ function BangerOverlay(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
     const [randomConsoles, setRandomConsoles] = React.useState(null);
-    var numbers = [1,2,3,4,5,6,7,8,9,10];
+    var numbers = [1];
     useEffect(() => {
         var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
@@ -48,16 +48,20 @@ function BangerOverlay(props) {
     return(
         <>
             <div className="boxContainer">
-                <button id={"buttonBox" + randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
-                    <p className={"nbBox"}>{val}</p>
-                    <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
-                </button>
+                {randomConsoles &&
+                    numbers.map((val, key) => {
+                        return (
+                            <button id={"buttonBox"+randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
+                                <p className={"nbBox"}>{val}</p>
+                                <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
+                            </button>
+                        )
+                    })}
             </div>
             <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Example Modal">
-                <UniqueBoxV2 consolePicked={pickConsole} change={handleState}/>
+                <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
             </Modal>
         </>
     )
 }
-
 export default BangerOverlay
