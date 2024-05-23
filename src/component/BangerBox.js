@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import Axios from 'axios';
 import '../App.css';
 import $ from 'jquery';
+import UniqueBoxV2 from "./uniqueBoxV2";
 
 function BangerBox(props) {
 
@@ -202,13 +203,18 @@ function BangerBox(props) {
 
     return(
         <>
-            <li onClick={displayNormalLaderboard} className={"uniqueBox"} id={props.number === 5 ? 'centerBox' : 'otherBox'}>
-                <div id="one" className="button2">
-                <p id="consoleBanger">{props.console}</p>
-                    <div type="button" className={"button2 box closed"}  id={"bangerBox"}></div>
-                </div>
-            </li>
+            <div className="boxContainer">
+                <button id={"buttonBox" + randomConsoles[val]} onClick={openModal}
+                        className={"uniqueBoxContainer"}>
+                    <p className={"nbBox"}>{val}</p>
+                    <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
+                </button>
+            </div>
+            <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Example Modal">
+                <UniqueBoxV2 consolePicked={pickConsole} change={handleState}/>
+            </Modal>
         </>
     )
 }
+
 export default BangerBox
