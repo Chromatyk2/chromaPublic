@@ -2789,6 +2789,7 @@ span.navbar-brand {
 .pkmn.exit .mon:before {
     -webkit-animation-name: mon-poof;
     animation-name: mon-poof;
+    left: -50px;
 }
 
 .pkmn.exit:nth-child(2) .mon:before {
