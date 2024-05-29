@@ -2302,11 +2302,11 @@ span.navbar-brand {
     height: 100%;
 }
 .pokeball {
+    transform: translateX(0) rotate(0);
     display: block;
     width: 192px;
     height: 192px;
-    background: radial-gradient(
-            white 16px,
+    background: radial-gradient(white 16px,
             black 17px 18px,
             white 19px 24px,
             black 25px 32px,
