@@ -45,7 +45,7 @@ function SpawnPokemon(props) {
                               </span>
                             </span>
                         </div>
-                        <div style={{backgroundImage : 'url('+ pokemon.sprites.other.home.front_default+')'}} className="mon"></div>
+                        <div style={customStyles} className="mon"></div>
                         <div className="explode"></div>
                     </div>
                 </>
