@@ -2316,7 +2316,7 @@ span.navbar-brand {
     border-radius: 50%;
     border: 8px solid black;
     box-shadow: inset -16px -8px 0 0 rgba(0, 0, 0, 0.2);
-    animation: fall 0.5s ease-in-out 1s,
+    animation: fall 0s ease-in-out 1s,
     shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3,
     catch 0.5s ease-out 5.25s forwards;
 }
