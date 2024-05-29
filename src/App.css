@@ -3477,7 +3477,14 @@ span.navbar-brand {
     grid-column: 13;
 }
 
-
+.pkmn.exit.left {
+    left: -200px;
+    top: 300px;
+}
+.pkmn.exit.right {
+    left: 300px;
+    top: 300px;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;

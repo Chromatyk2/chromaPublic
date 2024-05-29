@@ -66,19 +66,6 @@ function SpawnPokemon(props) {
                             <div className="explode"></div>
                         </div>
                     </div>
-                    <div style={{position: "absolute", left: "0", top: "0", right: "0", bottom: "0", margin: "auto"}}
-                         className="pkmn exit left">
-                        <div className="poke ball">
-                            <span className="x">
-                              <span className="y">
-                                <span className="sprite">
-                                </span>
-                              </span>
-                            </span>
-                        </div>
-                        <div style={customStyles} className="mon"></div>
-                        <div className="explode"></div>
-                    </div>
                 </>
             }
         </>
