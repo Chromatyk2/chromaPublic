@@ -37,6 +37,7 @@ function SpawnPokemon(props) {
             }
         }
     }
+    console.log(balls[Math.floor(Math.random() * balls.length)]);
     return (
         <>
             {isLoaded === false &&
