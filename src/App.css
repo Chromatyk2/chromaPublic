@@ -2750,6 +2750,7 @@ span.navbar-brand {
     background-position: center bottom;
     transform-origin: center 125px;
     background-image: var(--backGgroundImage);
+    background-size: contain;
 }
 
 .pkmn .ball {

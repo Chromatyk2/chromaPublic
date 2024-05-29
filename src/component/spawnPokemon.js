@@ -10,7 +10,7 @@ function SpawnPokemon(props) {
     const [isLoaded, setIsLoaded] = useState(true);
     const { id } = useParams()
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon/150")
+        fetch("https://pokeapi.co/api/v2/pokemon/"+ Math.floor((Math.random() * 1025) + 1))
             .then(res => res.json())
             .then(
                 (result) => {
