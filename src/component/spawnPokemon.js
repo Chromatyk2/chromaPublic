@@ -27,8 +27,18 @@ function SpawnPokemon(props) {
         <>
             {isLoaded === false &&
                 <>
-                    <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
-                    <div className="pokeball"></div>
+                    <div className="pkmn exit left">
+                        <div className="poke ball">
+                            <span className="x">
+                              <span className="y">
+                                <span className="sprite">
+                                </span>
+                              </span>
+                            </span>
+                        </div>
+                        <div className="mon"></div>
+                        <div className="explode"></div>
+                    </div>
                 </>
             }
         </>
