@@ -25,7 +25,7 @@ function SpawnPokemon(props) {
     }, [])
     const customStyles = {
         ':before' :{
-            backgroundImage : 'url("https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif")'
+            backgroundImage : 'url('+ pokemon.sprites.other.home.front_default+')'
          }
     };
     return (
