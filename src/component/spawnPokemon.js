@@ -15,11 +15,11 @@ function SpawnPokemon(props) {
                     if(Math.floor((Math.random() * 100) + 1) == 1){
                         setIsLoaded(false);
                         let root = document.querySelector(':root');
-                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.other.home.front_shiny+')');
+                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
                     }else{
                         setIsLoaded(false);
                         let root = document.querySelector(':root');
-                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.other.home.front_default+')');
+                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
                     }
                 },
                 (error) => {
