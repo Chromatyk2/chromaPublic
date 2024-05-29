@@ -2790,12 +2790,16 @@ span.navbar-brand {
     -webkit-animation-name: mon-poof;
     animation-name: mon-poof;
     left: -50px;
-    back
+    background-size: cover;
+    background-position: center;
 }
 
 .pkmn.exit:nth-child(2) .mon:before {
     -webkit-animation-name: mon-poof-2;
     animation-name: mon-poof-2;
+    left: -20px;
+    background-size: cover;
+    background-position: center;
 }
 
 .pkmn.left .mon {
