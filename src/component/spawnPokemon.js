@@ -23,6 +23,11 @@ function SpawnPokemon(props) {
                 }
             )
     }, [])
+    const customStyles = {
+        ':before' :{
+            backgroundImage : 'url("https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif")'
+         }
+    };
     return (
         <>
             {isLoaded === false &&
@@ -36,7 +41,7 @@ function SpawnPokemon(props) {
                               </span>
                             </span>
                         </div>
-                        <div className="mon"></div>
+                        <div style={customStyles} className="mon"></div>
                         <div className="explode"></div>
                     </div>
                 </>
