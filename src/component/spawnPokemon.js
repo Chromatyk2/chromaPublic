@@ -40,7 +40,7 @@ function SpawnPokemon(props) {
         <>
             {isLoaded === false &&
                 <>
-                    <div className="pokemon">
+                    <div className="pokemonContent">
                         <div className="pkmn exit left">
                             <div className="poke ball">
                                 <span className="x">
