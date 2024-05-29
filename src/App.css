@@ -2721,6 +2721,7 @@ span.navbar-brand {
 /* pokemon throw/exit animation code */
 :root {
     --backGgroundImage: url("https://img.pokemondb.net/sprites/black-white/anim/normal/eevee.gif");
+    --backGgroundImage: url("https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif");
 }
 
 .pkmn {
@@ -2750,7 +2751,10 @@ span.navbar-brand {
     background-position: center bottom;
     transform-origin: center 125px;
     background-image: var(--backGgroundImage);
-    background-size: contain;
+}
+
+.pkmn:nth-child(2) .mon:before {
+    background-image: var(--backGgroundImage);
 }
 
 .pkmn .ball {
@@ -2808,7 +2812,7 @@ span.navbar-brand {
 @-webkit-keyframes mon-poof {
     0% {
         opacity: 0;
-        transform: scale(0);
+        transform: scale(3);
         filter: blur(9px) contrast(0.25) brightness(0.65) sepia(1) saturate(3) hue-rotate(-90deg) contrast(2.2) brightness(5) blur(9px);
     }
     30% {
@@ -2847,8 +2851,8 @@ span.navbar-brand {
 @-webkit-keyframes mon-poof-2 {
     0% {
         opacity: 0;
-        transform: scale(0);
-        filter: blur(9px) contrast(0.3) brightness(0.7) sepia(1) saturate(4) hue-rotate(500deg) contrast(2.2) brightness(6) blur(9px);
+        transform: scale(3);
+        filter: blur(9px) contrast(0.3) brightness(0.7) sepia(1) saturate(4) hue-rotate(140deg) contrast(2.2) brightness(6) blur(9px);
     }
     30% {
         opacity: 1;
@@ -2866,8 +2870,8 @@ span.navbar-brand {
 @keyframes mon-poof-2 {
     0% {
         opacity: 0;
-        transform: scale(0);
-        filter: blur(9px) contrast(0.3) brightness(0.7) sepia(1) saturate(4) hue-rotate(500deg) contrast(2.2) brightness(6) blur(9px);
+        transform: scale(3);
+        filter: blur(9px) contrast(0.3) brightness(0.7) sepia(1) saturate(4) hue-rotate(140deg) contrast(2.2) brightness(6) blur(9px);
     }
     30% {
         opacity: 1;
@@ -3434,6 +3438,10 @@ span.navbar-brand {
         opacity: 0;
     }
 }
+/* ui code, unrelated */
+#app {
+    padding: 20px;
+}
 
 .pokemon {
     display: flex;
@@ -3462,6 +3470,7 @@ span.navbar-brand {
 .balls:nth-of-type(2) .ball:nth-last-child(6) {
     grid-column: 13;
 }
+
 
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
