@@ -25,7 +25,7 @@ function SpawnPokemon(props) {
     }, [])
     return (
         <>
-            {isLoaded === true &&
+            {isLoaded === false &&
                 <>
                     <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
                     <div className="pokeball"></div>
