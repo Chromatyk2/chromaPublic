@@ -4,20 +4,23 @@ import {useParams} from "react-router-dom";
 function SpawnPokemon(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([]);
-    const [name, setName] = useState([]);
-    const [captures, setCaptures] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
-    const { id } = useParams()
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon/"+ Math.floor((Math.random() * 1025) + 1))
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(false);
                     setPokemon(result);
-                    let root = document.querySelector(':root');
-                    root.style.setProperty('--backGgroundImage', 'url('+result.sprites.other.home.front_default+')');
+                    if(Math.floor((Math.random() * 1025) + 1) == 1){
+                        setIsLoaded(false);
+                        let root = document.querySelector(':root');
+                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.other.home.front_shiny+')');
+                    }else{
+                        setIsLoaded(false);
+                        let root = document.querySelector(':root');
+                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.other.home.front_default+')');
+                    }
                 },
                 (error) => {
                     setIsLoaded(true);
