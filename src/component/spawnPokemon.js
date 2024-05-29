@@ -26,8 +26,10 @@ function SpawnPokemon(props) {
     return (
         <>
             {pokemon &&
-                <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
-                <div className="pokeball"></div>
+                <>
+                    <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
+                    <div className="pokeball"></div>
+                </>
             }
         </>
     );
