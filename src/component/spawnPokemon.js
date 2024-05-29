@@ -3,7 +3,8 @@ import '../App.css'
 import {useParams} from "react-router-dom";
 function SpawnPokemon(props) {
     const pseudo = props.cookies.user.data[0].login;
-    const [pokemon, setPokemon] = useState([]);
+    const [pokemon, setPokemon] = useState([])
+    const [balls, setBalls] = useState(['poke','great','ultra','safari','premier','sport','net','dive','nest','repeat','timer','luxury','dusk','heal','quick','fast','level','lure','heavy','love','friend','moon','park','dream','beast','cherish','master']);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
     useEffect(() => {
@@ -42,7 +43,7 @@ function SpawnPokemon(props) {
                 <>
                     <div className="pokemonContent">
                         <div className="pkmn exit left">
-                            <div className="poke ball">
+                            <div className={balls[Math.floor(Math.random() * balls.length)]+" ball"}>
                                 <span className="x">
                                   <span className="y">
                                     <span className="sprite">
@@ -54,7 +55,7 @@ function SpawnPokemon(props) {
                             <div className="explode"></div>
                         </div>
                         <div className="pkmn exit right">
-                            <div className="premier ball">
+                            <div className={balls[Math.floor(Math.random() * balls.length)] + " ball"}>
                                 <span className="x">
                                   <span className="y">
                                     <span className="sprite">
