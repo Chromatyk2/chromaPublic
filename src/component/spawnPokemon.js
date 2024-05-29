@@ -7,14 +7,14 @@ function SpawnPokemon(props) {
     const [name, setName] = useState([]);
     const [captures, setCaptures] = useState([]);
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(true);
     const { id } = useParams()
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon/150")
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                     setPokemon(result);
                 },
                 (error) => {
@@ -25,7 +25,7 @@ function SpawnPokemon(props) {
     }, [])
     return (
         <>
-            {pokemon.length > 0 &&
+            {isLoaded === true &&
                 <>
                     <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
                     <div className="pokeball"></div>
