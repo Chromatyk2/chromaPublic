@@ -2302,7 +2302,7 @@ span.navbar-brand {
     height: 100%;
 }
 .pokeball {
-    transform: translateX(0) rotate(0);
+    transform: translateY(-200%);
     display: block;
     width: 192px;
     height: 192px;
