@@ -2357,7 +2357,7 @@ span.navbar-brand {
 }
 @keyframes catch {
     to {
-        filter: saturate(0.8) brightness(0.8);
+        filter: contrast(0);
     }
 }
 
