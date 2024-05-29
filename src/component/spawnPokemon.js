@@ -23,6 +23,15 @@ function SpawnPokemon(props) {
                 }
             )
     }, [])
+    if(isLoaded === false){
+        const customStyles = {
+            '.mon':{
+                '&::before': {
+                    backgroundImage : 'url("https://img.pokemondb.net/sprites/black-white/anim/normal/dratini.gif")'
+                }
+            }
+        }
+    }
     return (
         <>
             {isLoaded === false &&
