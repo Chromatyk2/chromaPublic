@@ -23,11 +23,6 @@ function SpawnPokemon(props) {
                 }
             )
     }, [])
-    const customStyles = {
-        ':before' :{
-            backgroundImage : 'url('+ pokemon.sprites.other.home.front_default+')'
-         }
-    };
     return (
         <>
             {isLoaded === false &&
@@ -41,7 +36,7 @@ function SpawnPokemon(props) {
                               </span>
                             </span>
                         </div>
-                        <div style={customStyles} className="mon"></div>
+                        <div style={{backgroundImage : 'url('+ pokemon.sprites.other.home.front_default+')'}} className="mon"></div>
                         <div className="explode"></div>
                     </div>
                 </>
