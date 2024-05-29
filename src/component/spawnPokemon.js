@@ -37,7 +37,7 @@ function SpawnPokemon(props) {
         <>
             {isLoaded === false &&
                 <>
-                    <div style={{position:"absolute",left:"50%",top:"50%",transform:"translate(-50%,-50%)"}} className="pkmn exit left">
+                    <div style={{position:"absolute",left:"0",top:"0",right:"0",bottom:"0",margin:"auto"}} className="pkmn exit left">
                         <div className="poke ball">
                             <span className="x">
                               <span className="y">
