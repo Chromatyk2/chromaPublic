@@ -25,7 +25,7 @@ function SpawnPokemon(props) {
     }, [])
     return (
         <>
-            {pokemon &&
+            {pokemon.length > 0 &&
                 <>
                     <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
                     <div className="pokeball"></div>
