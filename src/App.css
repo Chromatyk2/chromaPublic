@@ -2720,8 +2720,7 @@ span.navbar-brand {
 }
 /* pokemon throw/exit animation code */
 :root {
-    --poke1: url("https://img.pokemondb.net/sprites/black-white/anim/normal/eevee.gif");
-    --poke2: url("https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif");
+    --backGgroundImage: url("https://img.pokemondb.net/sprites/black-white/anim/normal/eevee.gif");
 }
 
 .pkmn {
@@ -2750,6 +2749,7 @@ span.navbar-brand {
     background-repeat: no-repeat;
     background-position: center bottom;
     transform-origin: center 125px;
+    background-image: var(--backGgroundImage);
 }
 
 .pkmn .ball {

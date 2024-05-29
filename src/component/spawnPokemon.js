@@ -16,6 +16,8 @@ function SpawnPokemon(props) {
                 (result) => {
                     setIsLoaded(false);
                     setPokemon(result);
+                    let root = document.querySelector(':root');
+                    root.style.setProperty('--backGgroundImage', 'url('+result.sprites.other.home.front_default+')');
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -23,12 +25,11 @@ function SpawnPokemon(props) {
                 }
             )
     }, [])
-    if(isLoaded === false){
-        const customStyles = {
-            '.mon':{
-                '&::before': {
-                    backgroundImage : 'url("https://img.pokemondb.net/sprites/black-white/anim/normal/dratini.gif")'
-                }
+
+    const customStyles = {
+        '.mon':{
+            '&::before': {
+                backgroundImage : 'url("https://img.pokemondb.net/sprites/black-white/anim/normal/dratini.gif")'
             }
         }
     }
