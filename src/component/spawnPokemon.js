@@ -12,7 +12,7 @@ function SpawnPokemon(props) {
             .then(
                 (result) => {
                     setPokemon(result);
-                    if(Math.floor((Math.random() * 1025) + 1) == 1){
+                    if(Math.floor((Math.random() * 1) + 1) == 1){
                         setIsLoaded(false);
                         let root = document.querySelector(':root');
                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.other.home.front_shiny+')');
