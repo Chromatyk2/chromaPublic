@@ -67,7 +67,7 @@ function App(props) {
           <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
           <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGS" element={<SpawnPokemon cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGSp" element={<SpawnPokemon cookies={cookies} />} />
         </Routes>
         {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
