@@ -4220,9 +4220,9 @@ button.uniqueBoxContainer:last-child{
     position: absolute;
     width: 1rem;
     fill: #FFAC33;
-    -webkit-animation: star 4s linear;
-    animation: star 4s linear;
-    animation-delay: 2.5s;
+    -webkit-animation: star 2s linear;
+    animation: star 2s linear;
+    animation-delay: 2.2s;
     transform: scale(0);
     left: -50px;
 }
@@ -4230,9 +4230,9 @@ button.uniqueBoxContainer:last-child{
     position: absolute;
     width: 2rem;
     fill: #FFAC33;
-    -webkit-animation: star 4s linear;
-    animation: star 4s linear;
-    animation-delay: 2.7s;
+    -webkit-animation: star 2s linear;
+    animation: star 2s linear;
+    animation-delay: 2.4s;
     transform: scale(0);
     right: 50px;
 }
@@ -4240,9 +4240,9 @@ button.uniqueBoxContainer:last-child{
     position: absolute;
     width: 3rem;
     fill: #FFAC33;
-    -webkit-animation: star 4s linear;
-    animation: star 4s linear;
-    animation-delay: 2.9s;
+    -webkit-animation: star 2s linear;
+    animation: star 2s linear;
+    animation-delay: 2.6s;
     transform: scale(0);
     bottom: 0;
 }
