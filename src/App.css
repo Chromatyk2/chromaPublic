@@ -4220,10 +4220,11 @@ button.uniqueBoxContainer:last-child{
     position: absolute;
     width: 5rem;
     fill: #FFAC33;
-    -webkit-animation: star 4s infinite linear;
-    animation: star 4s infinite linear;
-    animation-delay: 10s;
+    -webkit-animation: star 4s linear;
+    animation: star 4s linear;
+    animation-delay: 2.5s;
     z-index: -1;
+    display: none;
 }
 .fav-round {
     position: absolute;
@@ -4234,7 +4235,7 @@ button.uniqueBoxContainer:last-child{
     border: 2.5rem solid #FFAC33;
     -webkit-animation: round 4s infinite linear;
     animation: round 4s infinite linear;
-    animation-delay: 10s;
+    animation-delay: 2.5s;
     z-index: -1;
 }
 .fav-sparkle {
@@ -4243,7 +4244,7 @@ button.uniqueBoxContainer:last-child{
     height: 5rem;
     -webkit-animation: sparkle 4s infinite linear;
     animation: sparkle 4s infinite linear;
-    animation-delay: 10s;
+    animation-delay: 2.5s;
     z-index: -1;
 }
 .fav-sparkle-i {
@@ -4255,7 +4256,7 @@ button.uniqueBoxContainer:last-child{
     transform-origin: 0 0;
     -webkit-animation: sparkles 4s infinite linear;
     animation: sparkles 4s infinite linear;
-    animation-delay: 10s;
+    animation-delay: 2.5s;
     z-index: -1;
 }
 .fav-sparkle-i:nth-child(1) {
@@ -4319,6 +4320,8 @@ button.uniqueBoxContainer:last-child{
 }
 @-webkit-keyframes star {
     0% {
+
+        display: block;
         transform: scale(0);
     }
     17% {
@@ -4348,6 +4351,7 @@ button.uniqueBoxContainer:last-child{
 }
 @keyframes star {
     0% {
+        display: block;
         transform: scale(0);
     }
     17% {
