@@ -4224,7 +4224,7 @@ button.uniqueBoxContainer:last-child{
     animation: star 4s linear;
     animation-delay: 2.5s;
     z-index: -1;
-    display: none;
+    transform: scale(0);
 }
 .fav-round {
     position: absolute;
@@ -4237,6 +4237,7 @@ button.uniqueBoxContainer:last-child{
     animation: round 4s infinite linear;
     animation-delay: 2.5s;
     z-index: -1;
+    transform: scale(0);
 }
 .fav-sparkle {
     position: absolute;
