@@ -10,7 +10,7 @@ function SpawnPokemon(props) {
     const [reloadFetch, setReloadFetch] = useState(0);
     const [shiny, setShiny] = useState(false);
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
+        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 251) + 1))
             .then(res => res.json())
             .then(
                 (result) => {
@@ -31,11 +31,11 @@ function SpawnPokemon(props) {
                                                     case 1 :
                                                         setIsLoaded(false);
                                                         setShiny(true);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.versions.generation-ii.crystal.front_shiny+')');
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.versions.generation-ii.crystal.front_default+')');
                                                 }
                                             },
                                             (error) => {
