@@ -28,6 +28,7 @@ function SpawnPokemon(props) {
                                         .then(res => res.json())
                                         .then(
                                             (result) => {
+                                                console.log(result.names);
                                                 let root = document.querySelector(':root');
                                                 switch (isShiny){
                                                     case 1 :
@@ -63,6 +64,7 @@ function SpawnPokemon(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
+                                                        console.log(result.names);
                                                         let root = document.querySelector(':root');
                                                         switch (isShiny){
                                                             case 1 :
@@ -95,6 +97,7 @@ function SpawnPokemon(props) {
                                         .then(
                                             (result) => {
                                                 let root = document.querySelector(':root');
+                                                console.log(result.names);
                                                 switch (isShiny){
                                                     case 1 :
                                                         setIsLoaded(false);
