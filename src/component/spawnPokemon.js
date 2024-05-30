@@ -8,6 +8,7 @@ function SpawnPokemon(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
     const [reloadFetch, setReloadFetch] = useState(0);
+    const [shiny, setShiny] = useState(false);
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
             .then(res => res.json())
@@ -29,6 +30,7 @@ function SpawnPokemon(props) {
                                                 switch (isShiny){
                                                     case 1 :
                                                         setIsLoaded(false);
+                                                        setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
                                                         break;
                                                     default :
@@ -61,6 +63,7 @@ function SpawnPokemon(props) {
                                                         switch (isShiny){
                                                             case 1 :
                                                                 setIsLoaded(false);
+                                                                setShiny(true);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
                                                                 break;
                                                             default :
@@ -89,6 +92,7 @@ function SpawnPokemon(props) {
                                                 switch (isShiny){
                                                     case 1 :
                                                         setIsLoaded(false);
+                                                        setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
                                                         break;
                                                     default :
@@ -124,7 +128,9 @@ function SpawnPokemon(props) {
                                   </span>
                                 </span>
                             </div>
-                            <div className="mon"></div>
+                            <div className="mon">
+                                {shiny === true && <canvas id="sparkles" width="256" height="256"></canvas> }
+                            </div>
                             <div className="explode"></div>
                         </div>
                         <div className="pkmn exit right">
@@ -136,7 +142,9 @@ function SpawnPokemon(props) {
                                   </span>
                                 </span>
                             </div>
-                            <div className="mon"></div>
+                            <div className="mon">
+                                {shiny === true && <canvas id="sparkles" width="256" height="256"></canvas> }
+                            </div>
                             <div className="explode"></div>
                         </div>
                     </div>
