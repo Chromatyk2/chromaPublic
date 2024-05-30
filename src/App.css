@@ -4216,17 +4216,6 @@ button.uniqueBoxContainer:last-child{
 .offline-embeds{
     background-image: url('../public/backStream.png')!important;
 }
-.fav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.fav {
-    background: #F6FAFC;
-    width: 100vw;
-    height: 100vh;
-}
 .fav-star {
     position: absolute;
     width: 5rem;
