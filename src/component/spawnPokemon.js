@@ -7,8 +7,9 @@ function SpawnPokemon(props) {
     const [useBall, setUseBall] = useState(null);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
+    const [reloadFetch, setReloadFetch] = useState(true);
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon-species/150")
+        fetch("https://pokeapi.co/api/v2/pokemon-species/150"+Math.floor((Math.random() * 1025) + 1))
             .then(res => res.json())
             .then(
                 (result) => {
@@ -43,6 +44,7 @@ function SpawnPokemon(props) {
                                     break;
                                 default:
                                     console.log("Légendaire Refusé")
+                                    setReloadFetch(true);
                             }
                             break;
                         default :
@@ -74,6 +76,7 @@ function SpawnPokemon(props) {
                                             break;
                                         default :
                                             console.log("Mythique non Autorisé !")
+                                            setReloadFetch(true);
                                     }
                                     break;
                                 default:
@@ -106,7 +109,7 @@ function SpawnPokemon(props) {
                     setError(error);
                 }
             )
-    }, [])
+    }, [reloadFetch])
     return (
         <>
             {isLoaded === false &&
