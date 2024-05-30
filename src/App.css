@@ -4342,13 +4342,16 @@ button.uniqueBoxContainer:last-child{
         transform: scale(1);
     }
     79% {
+        transform: scale(1);
         fill: #FFAC33;
     }
     80% {
-        fill: #DEE0E0;
+        transform: scale(1);
+        fill: #FFAC33;
     }
     100% {
-        fill: #DEE0E0;
+        transform: scale(1);
+        fill: #FFAC33;
     }
 }
 @keyframes star {
@@ -4372,13 +4375,16 @@ button.uniqueBoxContainer:last-child{
         transform: scale(1);
     }
     79% {
+        transform: scale(1);
         fill: #FFAC33;
     }
     80% {
-        fill: #DEE0E0;
+        transform: scale(1);
+        fill: #FFAC33;
     }
     100% {
-        fill: #DEE0E0;
+        transform: scale(1);
+        fill: #FFAC33;
     }
 }
 @-webkit-keyframes sparkle {
