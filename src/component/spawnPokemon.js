@@ -33,6 +33,8 @@ function SpawnPokemon(props) {
                                         case 1 :
                                             console.log("Mythique Autorisé");
                                             setUseBall("cherish")
+                                        default :
+                                            console.log("Mythique non Autorisé" !)
                                     }
                                     console.log("mythique");
                                     break;
