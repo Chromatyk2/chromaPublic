@@ -4216,3 +4216,11 @@ button.uniqueBoxContainer:last-child{
 .offline-embeds{
     background-image: url('../public/backStream.png')!important;
 }
+#sparkles {
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    top:48px;
+    left:calc(50% - 128px);
+    pointer-events: none;
+}
