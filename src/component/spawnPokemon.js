@@ -11,8 +11,16 @@ function SpawnPokemon(props) {
             .then(res => res.json())
             .then(
                 (result) => {
+                    const isLegendary = Math.floor((Math.random() * 1) + 1);
                     switch (result.is_legendary){
                         case true:
+                            switch (isLegendary){
+                                case 1 :
+                                    console.log("Légendaire Autorisé");
+                                    break;
+                                default:
+                                    console.log("Légendaire Refusé")
+                            }
                             console.log("légendaire");
                             break;
                         default :
