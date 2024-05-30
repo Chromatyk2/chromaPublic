@@ -14,6 +14,7 @@ const pseudo = props.cookies.user.data[0].login;
           setList(response.data);
       })
     }, [])
+    console.log(list);
     return (
       <>
         <div>
