@@ -25,7 +25,7 @@ function NavBar(props) {
               <Navbar.Collapse id="navbarScroll">
                   <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/">Accueil</Link>
-                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/profil">Profil</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pokedex">Pokedex</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boosters">Mes boosters</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Boutique TCG</Link>
