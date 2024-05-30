@@ -12,59 +12,88 @@ function SpawnPokemon(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    const isLegendary = Math.floor((Math.random() * 1) + 1);
-                    const isMythical = Math.floor((Math.random() * 1) + 1);
+                    const isLegendary = Math.floor((Math.random() * 2) + 1);
+                    const isMythical = Math.floor((Math.random() * 2) + 1);
                     switch (result.is_legendary){
                         case true:
                             switch (isLegendary){
                                 case 1 :
-                                    console.log("Légendaire Autorisé");
                                     setUseBall("master")
+                                    fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                if(Math.floor((Math.random() * 100) + 1) == 1){
+                                                    setIsLoaded(false);
+                                                    let root = document.querySelector(':root');
+                                                    root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_shiny+')');
+                                                }else{
+                                                    setIsLoaded(false);
+                                                    let root = document.querySelector(':root');
+                                                    root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_default+')');
+                                                }
+                                            },
+                                            (error) => {
+                                                setIsLoaded(true);
+                                                setError(error);
+                                            }
+                                        )
                                     break;
                                 default:
                                     console.log("Légendaire Refusé")
                             }
-                            console.log("légendaire");
                             break;
                         default :
                             switch (result.is_mythical){
                                 case true:
                                     switch (isMythical){
                                         case 1 :
-                                            console.log("Mythique Autorisé");
                                             setUseBall("cherish")
+                                            fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                                .then(res => res.json())
+                                                .then(
+                                                    (result) => {
+                                                        if(Math.floor((Math.random() * 100) + 1) == 1){
+                                                            setIsLoaded(false);
+                                                            let root = document.querySelector(':root');
+                                                            root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_shiny+')');
+                                                        }else{
+                                                            setIsLoaded(false);
+                                                            let root = document.querySelector(':root');
+                                                            root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_default+')');
+                                                        }
+                                                    },
+                                                    (error) => {
+                                                        setIsLoaded(true);
+                                                        setError(error);
+                                                    }
+                                                )
                                         default :
-                                            console.log("Mythique non Autorisé" !)
+                                            console.log("Mythique non Autorisé !")
                                     }
-                                    console.log("mythique");
                                     break;
                                 default:
-                                    console.log("Ce Pokémon est normal !")
+                                    fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                if(Math.floor((Math.random() * 100) + 1) == 1){
+                                                    setIsLoaded(false);
+                                                    let root = document.querySelector(':root');
+                                                    root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_shiny+')');
+                                                }else{
+                                                    setIsLoaded(false);
+                                                    let root = document.querySelector(':root');
+                                                    root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_default+')');
+                                                }
+                                            },
+                                            (error) => {
+                                                setIsLoaded(true);
+                                                setError(error);
+                                            }
+                                        )
                             }
                     }
-                    // setPokemon(result);
-                    // fetch("https://pokeapi.co/api/v2/pokemon-species/"+idPkm)
-                    //     .then(res => res.json())
-                    //     .then(
-                    //         (result) => {
-                    //             if(Math.floor((Math.random() * 100) + 1) == 1){
-                    //
-                    //             }
-                    //             if(Math.floor((Math.random() * 100) + 1) == 1){
-                    //                 setIsLoaded(false);
-                    //                 let root = document.querySelector(':root');
-                    //                 root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_shiny+')');
-                    //             }else{
-                    //                 setIsLoaded(false);
-                    //                 let root = document.querySelector(':root');
-                    //                 root.style.setProperty('--backGgroundImage', 'url('+pokemon.sprites.front_default+')');
-                    //             }
-                    //         },
-                    //         (error) => {
-                    //             setIsLoaded(true);
-                    //             setError(error);
-                    //         }
-                    //     )
                 },
                 (error) => {
                     setIsLoaded(true);
