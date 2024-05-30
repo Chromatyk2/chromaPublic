@@ -8,12 +8,13 @@ function SpawnPokemon(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
+        fetch("https://pokeapi.co/api/v2/pokemon-species/150")
             .then(res => res.json())
             .then(
                 (result) => {
                     const isLegendary = Math.floor((Math.random() * 2) + 1);
                     const isMythical = Math.floor((Math.random() * 2) + 1);
+                    const isShiny = Math.floor((Math.random() * 100) + 1);
                     switch (result.is_legendary){
                         case true:
                             switch (isLegendary){
@@ -23,14 +24,15 @@ function SpawnPokemon(props) {
                                         .then(res => res.json())
                                         .then(
                                             (result) => {
-                                                if(Math.floor((Math.random() * 100) + 1) == 1){
-                                                    setIsLoaded(false);
-                                                    let root = document.querySelector(':root');
-                                                    root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                }else{
-                                                    setIsLoaded(false);
-                                                    let root = document.querySelector(':root');
-                                                    root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                let root = document.querySelector(':root');
+                                                switch (isShiny){
+                                                    case 1 :
+                                                        setIsLoaded(false);
+                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        break;
+                                                    default :
+                                                        setIsLoaded(false);
+                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
                                                 }
                                             },
                                             (error) => {
@@ -53,14 +55,15 @@ function SpawnPokemon(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        if(Math.floor((Math.random() * 100) + 1) == 1){
-                                                            setIsLoaded(false);
-                                                            let root = document.querySelector(':root');
-                                                            root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                        }else{
-                                                            setIsLoaded(false);
-                                                            let root = document.querySelector(':root');
-                                                            root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                        let root = document.querySelector(':root');
+                                                        switch (isShiny){
+                                                            case 1 :
+                                                                setIsLoaded(false);
+                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                                break;
+                                                            default :
+                                                                setIsLoaded(false);
+                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
                                                         }
                                                     },
                                                     (error) => {
@@ -79,14 +82,15 @@ function SpawnPokemon(props) {
                                         .then(res => res.json())
                                         .then(
                                             (result) => {
-                                                if(Math.floor((Math.random() * 100) + 1) == 1){
-                                                    setIsLoaded(false);
-                                                    let root = document.querySelector(':root');
-                                                    root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                }else{
-                                                    setIsLoaded(false);
-                                                    let root = document.querySelector(':root');
-                                                    root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                let root = document.querySelector(':root');
+                                                switch (isShiny){
+                                                    case 1 :
+                                                        setIsLoaded(false);
+                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        break;
+                                                    default :
+                                                        setIsLoaded(false);
+                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
                                                 }
                                             },
                                             (error) => {
