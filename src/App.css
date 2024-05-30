@@ -4232,7 +4232,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 4s linear;
     animation: star 4s linear;
-    animation-delay: 3.5s;
+    animation-delay: 2.7s;
     z-index: -1;
     transform: scale(0);
 }
@@ -4242,7 +4242,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 4s linear;
     animation: star 4s linear;
-    animation-delay: 4.5s;
+    animation-delay: 2.9s;
     z-index: -1;
     transform: scale(0);
 }
