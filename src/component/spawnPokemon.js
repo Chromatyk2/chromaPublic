@@ -6,9 +6,8 @@ function SpawnPokemon(props) {
     const [balls, setBalls] = useState(['poke','great','ultra','safari','premier','sport','net','dive','nest','repeat','timer','luxury','dusk','heal','quick','fast','level','lure','heavy','love','friend','moon','park','dream','beast','cherish','master']);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
-    const [idPkm, setIdPkm] = useState(null);
     useEffect(() => {
-        setIdPkm(Math.floor((Math.random() * 1025) + 1));
+        const idPkm = Math.floor((Math.random() * 1025) + 1);
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+idPkm)
             .then(res => res.json())
             .then(
