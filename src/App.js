@@ -32,6 +32,7 @@ import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
 import SpawnPokemonRob from "./component/spawnPokemonRob";
 import SpawnPokemon from "./component/spawnPokemon";
+import Profil from "./component/profil";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -70,6 +71,7 @@ function App(props) {
           <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSp" element={<SpawnPokemonRob cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies} />} />
+          <Route path="/profil" element={<Profil cookies={cookies} />} />
         </Routes>
         {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
