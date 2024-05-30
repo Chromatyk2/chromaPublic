@@ -1,32 +1,13 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useCookies } from 'react-cookie';
-import $ from "jquery";
 import './App.css';
 import 'react-tooltip/dist/react-tooltip.css'
 import HomePage from './component/home.js';
-import Pokedex from './component/pokedex.js';
-import LaderBoard from './component/laderboard.js';
 import NavBar from './component/navbar.js';
 import Login from './services/auth.services.js';
-import PokemonPage from './component/pokemonPage.js';
-import MyTradePlace from './component/myTradePlace.js';
-import TradePlace from './component/tradePlace.js';
-import GuessTrade from './component/guessTrade.js';
-import Guess from './component/guess.js';
-import MyNote from './component/myNote.js';
-import AllNotes from './component/allNotes.js';
-import ViewersNote from './component/viewersNote.js';
-import NostalPick from './component/nostalPick.js';
-import CurrentGameImage from "./component/currentGameImage.js";
-import LastGames from "./component/lastGame.js";
-import BangerOverlay from "./component/BangerOverlay.js";
-import CardsHub from "./component/cardsHub.js";
-import OnStream from "./component/onStream";
-import NostalPickV2 from "./component/nostalPickv2";
-import LastBanger from "./component/lastBanger";
-import LastBangerAlert from "./component/lastBangerAlert";
-import Mentions from "./component/Mentions";
+import StreamOnLayout from "./component/StreamOnLayout";
+import ClipsLayout from "./component/ClipsLayout";
 import Footer from "./component/footer";
 import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
@@ -39,7 +20,6 @@ function App(props) {
   }
   return(
     <>
-      {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
         <Routes>
@@ -71,9 +51,8 @@ function App(props) {
           <Route path="/29ct92B3ZrvxGSp" element={<SpawnPokemonRob cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies} />} />
         </Routes>
-        {/*<Footer cookies={cookies} />*/}
+          <Footer cookies={cookies} />
       </BrowserRouter>
-      }
     </>
   );
 }

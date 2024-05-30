@@ -11,20 +11,11 @@ import env from "react-dotenv";
 function NavBar(props) {
   const [count, setCount] = useState(0);
   const [stream, setStream] = useState(null);
-  const pseudo = props.cookies.user.data[0].login;
   const [expanded, setExpanded] = useState(false);
-  useEffect(() => {
-      Axios
-        .get("/api/getCountProposition/"+pseudo)
-        .then(function(response){
-            setCount(response.data[0].count);
-      })
-  }, [])
   return (
 
       <Navbar expanded={expanded} bg="light" expand="lg">
           <Container fluid>
-              <Navbar.Brand><a href={"https://twitch.tv/chromatyk"}><img src={"/logo.png"} /></a></Navbar.Brand>
               <Navbar.Toggle
                   aria-controls="navbarScroll"
                   onClick={() => setExpanded(!expanded)}
@@ -52,27 +43,6 @@ function NavBar(props) {
               </Navbar.Collapse>
           </Container>
       </Navbar>
-    // <Navbar expand="lg">
-    //   <Container>
-    //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    //     <Navbar.Collapse id="basic-navbar-nav">
-    //       <Nav className="me-auto">
-    //         <Link className="navLink" to="/">Accueil</Link>
-    //           <Link className="navLink" to="/29ct92B3ZrvxGT">TCG</Link>
-    //         {pseudo == "chromatyk" &&
-    //           <>
-    //               <Link className="navLink" to="/pokedex">Pokedex</Link>
-    //               <Link className="navLink" to="/leaderboard">Classement</Link>
-    //               <Link className="navLink myTradesLink" to="/myTrades">Mes Echanges {count > 0 && <span className="myCountProposition">{count}</span>}</Link>
-    //               <Link className="navLink" to="/tradePlace">Place aux echanges</Link>
-    //             <Link className="navLink" to="/aNu5YwZ5X75m5j">Note</Link>
-    //             <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>
-    //           </>
-    //         }
-    //       </Nav>
-    //     </Navbar.Collapse>
-    //   </Container>
-    // </Navbar>
   );
 }
 
