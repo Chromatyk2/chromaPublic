@@ -4223,7 +4223,6 @@ button.uniqueBoxContainer:last-child{
     -webkit-animation: star 4s linear;
     animation: star 4s linear;
     animation-delay: 2.5s;
-    z-index: -1;
     transform: scale(0);
 }
 .fav-star2 {
@@ -4233,7 +4232,6 @@ button.uniqueBoxContainer:last-child{
     -webkit-animation: star 4s linear;
     animation: star 4s linear;
     animation-delay: 2.7s;
-    z-index: -1;
     transform: scale(0);
 }
 .fav-star3 {
@@ -4243,7 +4241,6 @@ button.uniqueBoxContainer:last-child{
     -webkit-animation: star 4s linear;
     animation: star 4s linear;
     animation-delay: 2.9s;
-    z-index: -1;
     transform: scale(0);
 }
 .fav-round {
