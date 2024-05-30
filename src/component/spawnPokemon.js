@@ -2,16 +2,14 @@ import React, {useEffect, useState} from 'react';
 import '../App.css'
 function SpawnPokemon(props) {
 
-    var sparkle = document.getElementById("sparkle");
-    var sparkles = document.getElementById("sparkles");
-    var ctx = sparkles.getContext("2d");
-    var particles = [];
+    useEffect(() => {
+        var sparkle = document.getElementById("sparkle");
+        var sparkles = document.getElementById("sparkles");
+        var ctx = sparkles.getContext("2d");
+        var particles = [];
 
-    function addSparkles(){
         for (var i = 0; i < 8; i++) particles.push({ "scale": 1, "radius": 60, "angle": 45 * i });
-    }
 
-    function drawSparkles(){
         ctx.clearRect(0, 0, 256, 256);
         for (p of particles){
             var x = 128 + p.radius * Math.cos(p.angle * Math.PI / 180);
@@ -23,7 +21,9 @@ function SpawnPokemon(props) {
             p.angle -= 5;
             p.radius += 5;
         }
-    }
+    }, [reloadFetch])
+
+
 
 
     const pseudo = props.cookies.user.data[0].login;
