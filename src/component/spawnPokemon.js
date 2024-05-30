@@ -9,7 +9,7 @@ function SpawnPokemon(props) {
     const [isLoaded, setIsLoaded] = useState(true);
     const [reloadFetch, setReloadFetch] = useState(0);
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon-species/150")
+        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
             .then(res => res.json())
             .then(
                 (result) => {
