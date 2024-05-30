@@ -4233,8 +4233,8 @@ button.uniqueBoxContainer:last-child{
     height: 5rem;
     border-radius: 50%;
     border: 2.5rem solid #FFAC33;
-    -webkit-animation: round 4s infinite linear;
-    animation: round 4s infinite linear;
+    -webkit-animation: round 4s  linear;
+    animation: round 4s  linear;
     animation-delay: 2.5s;
     z-index: -1;
     transform: scale(0);
@@ -4243,10 +4243,11 @@ button.uniqueBoxContainer:last-child{
     position: absolute;
     width: 5rem;
     height: 5rem;
-    -webkit-animation: sparkle 4s infinite linear;
-    animation: sparkle 4s infinite linear;
+    -webkit-animation: sparkle 4s linear;
+    animation: sparkle 4s  linear;
     animation-delay: 2.5s;
     z-index: -1;
+    transform: scale(0);
 }
 .fav-sparkle-i {
     position: absolute;
@@ -4255,8 +4256,8 @@ button.uniqueBoxContainer:last-child{
     border-radius: 125px;
     background: #FB610F;
     transform-origin: 0 0;
-    -webkit-animation: sparkles 4s infinite linear;
-    animation: sparkles 4s infinite linear;
+    -webkit-animation: sparkles 4s  linear;
+    animation: sparkles 4s  linear;
     animation-delay: 2.5s;
     z-index: -1;
 }
