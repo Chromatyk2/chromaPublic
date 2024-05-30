@@ -4224,6 +4224,7 @@ button.uniqueBoxContainer:last-child{
     animation: star 4s linear;
     animation-delay: 2.5s;
     transform: scale(0);
+    left: -50px;
 }
 .fav-star2 {
     position: absolute;
@@ -4233,6 +4234,7 @@ button.uniqueBoxContainer:last-child{
     animation: star 4s linear;
     animation-delay: 2.7s;
     transform: scale(0);
+    right: 50px;
 }
 .fav-star3 {
     position: absolute;
@@ -4242,6 +4244,7 @@ button.uniqueBoxContainer:last-child{
     animation: star 4s linear;
     animation-delay: 2.9s;
     transform: scale(0);
+    bottom: 0;
 }
 .fav-round {
     position: absolute;
