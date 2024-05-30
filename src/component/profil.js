@@ -4,7 +4,9 @@ function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     return (
         <>
-            <p>{pseudo}</p>
+            <div className={"profilContainer"}>
+                <p>{pseudo}</p>
+            </div>
         </>
     );
 }
