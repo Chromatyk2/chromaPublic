@@ -4218,11 +4218,31 @@ button.uniqueBoxContainer:last-child{
 }
 .fav-star {
     position: absolute;
-    width: 5rem;
+    width: 1rem;
     fill: #FFAC33;
     -webkit-animation: star 4s linear;
     animation: star 4s linear;
     animation-delay: 2.5s;
+    z-index: -1;
+    transform: scale(0);
+}
+.fav-star2 {
+    position: absolute;
+    width: 2rem;
+    fill: #FFAC33;
+    -webkit-animation: star 4s linear;
+    animation: star 4s linear;
+    animation-delay: 3.5s;
+    z-index: -1;
+    transform: scale(0);
+}
+.fav-star3 {
+    position: absolute;
+    width: 3rem;
+    fill: #FFAC33;
+    -webkit-animation: star 4s linear;
+    animation: star 4s linear;
+    animation-delay: 4.5s;
     z-index: -1;
     transform: scale(0);
 }
