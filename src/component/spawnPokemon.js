@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css'
 import Axios from "axios";
+import moment from "moment/moment";
 function SpawnPokemon(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([])
@@ -35,12 +36,12 @@ function SpawnPokemon(props) {
                                                         setIsLoaded(false);
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:new Date()})
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:new Date()})
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                 }
                                             },
                                             (error) => {
@@ -70,12 +71,12 @@ function SpawnPokemon(props) {
                                                                 setIsLoaded(false);
                                                                 setShiny(true);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:new Date()})
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                 break;
                                                             default :
                                                                 setIsLoaded(false);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:new Date()})
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         }
                                                     },
                                                     (error) => {
@@ -101,12 +102,12 @@ function SpawnPokemon(props) {
                                                         setIsLoaded(false);
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:new Date()})
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:new Date()})
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                 }
                                             },
                                             (error) => {
