@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css'
-function SpawnPokemon(props) {
+function SpawnPokemonRob(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([])
     const [balls, setBalls] = useState(['poke','great','ultra','safari','premier','sport','net','dive','nest','repeat','timer','luxury','dusk','heal','quick','fast','level','lure','heavy','love','friend','moon','park','dream','beast']);
@@ -10,7 +10,7 @@ function SpawnPokemon(props) {
     const [reloadFetch, setReloadFetch] = useState(0);
     const [shiny, setShiny] = useState(false);
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
+        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 251) + 1))
             .then(res => res.json())
             .then(
                 (result) => {
@@ -31,11 +31,11 @@ function SpawnPokemon(props) {
                                                     case 1 :
                                                         setIsLoaded(false);
                                                         setShiny(true);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/'+result.id+'.png")');
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/'+result.id+'.png")');
                                                 }
                                             },
                                             (error) => {
@@ -64,11 +64,11 @@ function SpawnPokemon(props) {
                                                             case 1 :
                                                                 setIsLoaded(false);
                                                                 setShiny(true);
-                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                                root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/'+result.id+'.png")');
                                                                 break;
                                                             default :
                                                                 setIsLoaded(false);
-                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                                root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/'+result.id+'.png")');
                                                         }
                                                     },
                                                     (error) => {
@@ -93,11 +93,11 @@ function SpawnPokemon(props) {
                                                     case 1 :
                                                         setIsLoaded(false);
                                                         setShiny(true);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/'+result.id+'.png")');
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/'+result.id+'.png")');
                                                 }
                                             },
                                             (error) => {
@@ -204,4 +204,4 @@ function SpawnPokemon(props) {
     );
 }
 
-export default SpawnPokemon
+export default SpawnPokemonRob
