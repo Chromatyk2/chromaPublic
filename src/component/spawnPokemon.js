@@ -4,6 +4,7 @@ function SpawnPokemon(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([])
     const [balls, setBalls] = useState(['poke','great','ultra','safari','premier','sport','net','dive','nest','repeat','timer','luxury','dusk','heal','quick','fast','level','lure','heavy','love','friend','moon','park','dream','beast','cherish','master']);
+    const [useBall, setUseBall] = useState(null);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
     useEffect(() => {
@@ -12,11 +13,13 @@ function SpawnPokemon(props) {
             .then(
                 (result) => {
                     const isLegendary = Math.floor((Math.random() * 1) + 1);
+                    const isMythical = Math.floor((Math.random() * 1) + 1);
                     switch (result.is_legendary){
                         case true:
                             switch (isLegendary){
                                 case 1 :
                                     console.log("Légendaire Autorisé");
+                                    setUseBall("master")
                                     break;
                                 default:
                                     console.log("Légendaire Refusé")
@@ -24,7 +27,18 @@ function SpawnPokemon(props) {
                             console.log("légendaire");
                             break;
                         default :
-                            console.log("pas légendaire")
+                            switch (result.is_mythical){
+                                case true:
+                                    switch (isMythical){
+                                        case 1 :
+                                            console.log("Mythique Autorisé");
+                                            setUseBall("cherish")
+                                    }
+                                    console.log("mythique");
+                                    break;
+                                default:
+                                    console.log("Ce Pokémon est normal !")
+                            }
                     }
                     // setPokemon(result);
                     // fetch("https://pokeapi.co/api/v2/pokemon-species/"+idPkm)
