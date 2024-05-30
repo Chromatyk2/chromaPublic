@@ -16,7 +16,7 @@ function SpawnPokemon(props) {
                 (result) => {
                     const isLegendary = Math.floor((Math.random() * 2) + 1);
                     const isMythical = Math.floor((Math.random() * 2) + 1);
-                    const isShiny = Math.floor((Math.random() * 1) + 1);
+                    const isShiny = Math.floor((Math.random() * 100) + 1);
                     switch (result.is_legendary){
                         case true:
                             switch (isLegendary){
