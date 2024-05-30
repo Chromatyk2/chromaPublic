@@ -64,11 +64,11 @@ function SpawnPokemon(props) {
                                                             case 1 :
                                                                 setIsLoaded(false);
                                                                 setShiny(true);
-                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                                root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/'+result.id+'.png")');
                                                                 break;
                                                             default :
                                                                 setIsLoaded(false);
-                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                                root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/'+result.id+'.png")');
                                                         }
                                                     },
                                                     (error) => {
@@ -93,11 +93,11 @@ function SpawnPokemon(props) {
                                                     case 1 :
                                                         setIsLoaded(false);
                                                         setShiny(true);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/'+result.id+'.png")');
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                        root.style.setProperty('--backGgroundImage', 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/'+result.id+'.png")');
                                                 }
                                             },
                                             (error) => {
