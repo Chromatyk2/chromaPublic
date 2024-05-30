@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css'
+import Axios from "axios";
 function SpawnPokemon(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([])
@@ -16,8 +17,8 @@ function SpawnPokemon(props) {
                 (result) => {
                     const isLegendary = Math.floor((Math.random() * 2) + 1);
                     const isMythical = Math.floor((Math.random() * 2) + 1);
+                    const queryParameters = new URLSearchParams(window.location.search)
                     const isShiny = Math.floor((Math.random() * 100) + 1);
-                    console.log(isShiny);
                     switch (result.is_legendary){
                         case true:
                             switch (isLegendary){
@@ -33,10 +34,12 @@ function SpawnPokemon(props) {
                                                         setIsLoaded(false);
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: result.names.find((element) => element.language.name == "fr").name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:new Date()})
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: result.names.find((element) => element.language.name == "fr").name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:new Date()})
                                                 }
                                             },
                                             (error) => {
@@ -66,10 +69,12 @@ function SpawnPokemon(props) {
                                                                 setIsLoaded(false);
                                                                 setShiny(true);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: result.names.find((element) => element.language.name == "fr").name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:new Date()})
                                                                 break;
                                                             default :
                                                                 setIsLoaded(false);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: result.names.find((element) => element.language.name == "fr").name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:new Date()})
                                                         }
                                                     },
                                                     (error) => {
@@ -95,10 +100,12 @@ function SpawnPokemon(props) {
                                                         setIsLoaded(false);
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: result.names.find((element) => element.language.name == "fr").name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:new Date()})
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: result.names.find((element) => element.language.name == "fr").name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:new Date()})
                                                 }
                                             },
                                             (error) => {
