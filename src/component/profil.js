@@ -21,16 +21,7 @@ function Profil(props) {
                 borderRadius: '50px',
                 margin:'auto',
                 marginBottom: '15px'
-            },
-            intBar: {
-                width: parseFloat(profil[0].xp/(profil[0].level * 1000) *100).toFixed(2)+"%",
-                position: 'relative',
-                background: '#0a3a2c',
-                textWrap: 'nowrap',
-                color: 'white',
-                padding: '15px',
-                borderRadius: '50px 0 0 50px'
-            },
+            }
         };
     return (
         <>
