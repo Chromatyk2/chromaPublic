@@ -20,7 +20,9 @@ function Profil(props) {
                 zIndex: '1',
                 borderRadius: '50px',
                 margin:'auto',
-                marginBottom: '15px'
+                marginBottom: '15px',
+                height:'30px',
+                width:'300px'
             }
         };
     return (
@@ -36,8 +38,8 @@ function Profil(props) {
                                 background: '#74fbcf',
                                 textWrap: 'nowrap',
                                 color: 'black',
-                                padding: '15px',
-                                borderRadius: '50px 0 0 50px'
+                                borderRadius: '50px 0 0 50px',
+                                height:'30px'
                             }}>
                             {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
                         </div>
