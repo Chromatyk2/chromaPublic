@@ -202,19 +202,23 @@ function Profil(props) {
                 </div>
             }
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <p style={{textAlign:"center"}}>Choisis ton Skin</p>
-                {skins &&
-                    skins.map((val, key) => {
-                        return (
-                            <button style={{border:"solid",borderRadius:"25px",padding:"20px"}} onClick={changeSkin} className={"uniqueBoxContainer"}>
-                                <img style={{width:"100%"}} className={"imgBox"} src={"/images/Trainers/Trainer ("+val.skin+").png"}/>
-                            </button>
-                        )
-                    })
-                }
+                <p style={{textAlign: "center"}}>Choisis ton Skin</p>
+                <div style={{display:"flex",gap:"10px",flexWrap:"wrap",flexFlow:"row"}}>
+                    {skins &&
+                        skins.map((val, key) => {
+                            return (
+                                <button style={{border: "solid", borderRadius: "25px", padding: "20px"}}
+                                        onClick={changeSkin} className={"uniqueBoxContainer"}>
+                                    <img style={{width: "100%"}} className={"imgBox"}
+                                         src={"/images/Trainers/Trainer (" + val.skin + ").png"}/>
+                                </button>
+                            )
+                        })
+                    }
+                < /div>
             </Modal>
         </>
-    );
+);
 }
 
 export default Profil
