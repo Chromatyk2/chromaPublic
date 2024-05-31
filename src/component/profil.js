@@ -220,10 +220,11 @@ function Profil(props) {
                 <div style={{display:"flex",gap:"10px",flexWrap:"wrap",flexFlow:"row"}}>
                     {skins &&
                         skins.map((val, key) => {
- )                           return (
-                                <button value={val.skin} style={{backgroundImage:`url(/image/Trainers/Trainer (${val.skin}.png)`, border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}} onClick={changeSkin}></button>
-                            )
-                        })
+                            return (
+                                    <button value={val.skin} style={{backgroundImage:`url(/image/Trainers/Trainer (${val.skin}.png)`, border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}} onClick={changeSkin}></button>
+                                )
+                            }
+                        )
                     }
                 < /div>
             </Modal>
