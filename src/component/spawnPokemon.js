@@ -37,11 +37,23 @@ function SpawnPokemon(props) {
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                        Axios.post('/api/addXp',
+                                                            {
+                                                                user: pseudo,
+                                                                win: 1000
+                                                            }
+                                                        )
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                        Axios.post('/api/addXp',
+                                                            {
+                                                                user: pseudo,
+                                                                win: 500
+                                                            }
+                                                        )
                                                 }
                                             },
                                             (error) => {
@@ -72,11 +84,23 @@ function SpawnPokemon(props) {
                                                                 setShiny(true);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
                                                                 Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                Axios.post('/api/addXp',
+                                                                    {
+                                                                        user: pseudo,
+                                                                        win: 1000
+                                                                    }
+                                                                )
                                                                 break;
                                                             default :
                                                                 setIsLoaded(false);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
                                                                 Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                Axios.post('/api/addXp',
+                                                                    {
+                                                                        user: pseudo,
+                                                                        win: 500
+                                                                    }
+                                                                )
                                                         }
                                                     },
                                                     (error) => {
@@ -103,11 +127,23 @@ function SpawnPokemon(props) {
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                        Axios.post('/api/addXp',
+                                                            {
+                                                                user: pseudo,
+                                                                win: 500
+                                                            }
+                                                        )
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                        Axios.post('/api/addXp',
+                                                            {
+                                                                user: pseudo,
+                                                                win: 100
+                                                            }
+                                                        )
                                                 }
                                             },
                                             (error) => {
