@@ -3506,7 +3506,7 @@ span.navbar-brand {
     gap: 10px;
     justify-content: center;
     margin: auto;
-    width: 88%;
+    width: 60%;
   }
 }
 @media screen and (min-width: 850px) {
@@ -3601,6 +3601,9 @@ span.navbar-brand {
     }
 }
 @media screen and (max-width: 379px) {
+  .filtersContainer {
+        display: none;
+  }
   .pokemonGlobalContainer {
     display: flex;
     flex-wrap: wrap;
