@@ -3,6 +3,7 @@ import '../App.css'
 import Axios from "axios";
 import moment from "moment/moment";
 import OpeningBooster from "./openingBooster";
+import Modal from 'react-modal';
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -29,6 +30,9 @@ function Profil(props) {
         };
     function handleProfileImage() {
         setIsOpen(true);
+    }
+    function closeModal() {
+        setIsOpen(false);
     }
     return (
         <>
