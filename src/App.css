@@ -927,6 +927,19 @@ p.filterTitle {
     gap: 30px;
     justify-content: center;
 }
+.openSkinBox{
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 25px;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    display: block;
+    background-color: transparent;
+    margin: auto;
+}
 .uniquePokemonContainer {
     background-position: 50%;
     background-repeat: no-repeat;
