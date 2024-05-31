@@ -60,30 +60,32 @@ function Profil(props) {
         })
     }
     function openSkin(e) {
-        Axios.post('/api/removeBoxSkin',
-            {
-                user:pseudo
-            }
-        )
-            .then(function(response){
-                Axios.post('/api/addSkin',
-                    {
-                        user:pseudo,
-                        skin:Math.floor((Math.random() * 734) + 1)
-                    }
-                )
-                    .then(function(response){
-                        Axios.get("/api/getProfil/"+pseudo)
-                            .then(function(response){
-                                setProfil(response.data);
-                                Axios
-                                    .get("/api/getSkins/"+pseudo)
-                                    .then(function(response){
-                                        setSkins(response.data);
-                                    })
+        if(profil[0].box - 1 > -1){
+            Axios.post('/api/removeBoxSkin',
+                {
+                    user:pseudo
+                }
+            )
+                .then(function(response){
+                    Axios.post('/api/addSkin',
+                        {
+                            user:pseudo,
+                            skin:Math.floor((Math.random() * 734) + 1)
+                        }
+                    )
+                        .then(function(response){
+                            Axios.get("/api/getProfil/"+pseudo)
+                                .then(function(response){
+                                    setProfil(response.data);
+                                    Axios
+                                        .get("/api/getSkins/"+pseudo)
+                                        .then(function(response){
+                                            setSkins(response.data);
+                                        })
+                                })
                         })
-                    })
-            })
+                })
+        }
     }
     return (
         <>
