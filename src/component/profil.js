@@ -191,7 +191,7 @@ function Profil(props) {
                 </div>
             }
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <p>Test</p>
+                <p style={{textAlign:"center"}}>Choisis ton Skin</p>
             </Modal>
         </>
     );
