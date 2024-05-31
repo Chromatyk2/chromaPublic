@@ -842,22 +842,24 @@ li{
     top: 177px;
     left: 4%;
     gap: 10px;
+    color:white
 }
 button.filterButton {
     background: none;
+    border: 4px solid white;
+    border-radius: 20px;
     font-size: 20px;
     padding: 10px;
     width: 100px;
-    border-radius: 20px;
-    border:solid 4px #255748
+    color: white;
 }
 button.filterButton:hover {
-    background: #255748;
+    background: white;
+    border-radius: 20px;
+    color: rgba(18, 7, 71, 1);
     font-size: 20px;
     padding: 10px;
     width: 100px;
-    border-radius: 20px;
-    color: white;
 }
 p.filterTitle {
     font-size: 35px;
@@ -874,7 +876,7 @@ p.filterTitle {
   line-height: 28px;
   text-align: center;
   font-family: 'Charge Vector Black';
-  color: #255748;
+  color: white;
   font-size: 30px;
 }
 .valueStats {
@@ -890,6 +892,7 @@ p.filterTitle {
   padding: 10px;
   text-align: center;
   font-size: 20px;
+  color: rgba(18, 7, 71, 1);
 }
 .infoPkm{
   position: absolute;
@@ -905,6 +908,7 @@ p.filterTitle {
   font-weight: bold;
   text-align: center;
   font-size: 18px;
+  color: #007bb3;
 }
 .infoShiny{
     left: 90px;
@@ -914,6 +918,7 @@ p.filterTitle {
     height: 25px;
     background-color: white;
     border-radius: 50%;
+    color: #007bb3;
 }
 .stats {
     display: flex;
@@ -1194,12 +1199,13 @@ ul{
 li{
   font-size: 25px;
   width: 300px;
-  color: #255748;
+  color: white;
   font-family: Charge Vector Black;
 }
 li:hover{
   cursor: pointer;
   background-color: #eee;
+    color:#74fbd0;
 }
 li svg{
   display: none;
