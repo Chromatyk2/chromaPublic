@@ -54,7 +54,7 @@ function Profil(props) {
                     <div className={"profilVisuals"}>
                         <div className={"profilPicture"}>
                             {profil[0].profile_picture ?
-                                <img src={"/images/trainer/" + profil[0].profile_picture}/>
+                                <img src={"/images/trainer/Trainer ("+profil[0].profile_picture+").png"}/>
                                 :
                                 <img src={"/images/random.png"} />
                             }
@@ -106,7 +106,6 @@ function Profil(props) {
                     </div>
                 </div>
                 :
-
                 <div className={"contentContainer"}>
                     <p className={"pseudoProfil"}>Capture ton premier pokémon pour débuter ton profil !</p>
                     <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"} target={"_blank"}>Chromatyk</a> quand il est en live !</p>
