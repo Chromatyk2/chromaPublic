@@ -204,7 +204,7 @@ function Profil(props) {
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                 <p style={{textAlign:"center"}}>Choisis ton Skin</p>
                 {skins &&
-                    skins.map((skin, key) => {
+                    skins.map((val, key) => {
                         return (
                             <button onClick={changeSkin} className={"uniqueBoxContainer"}>
                                 <img className={"imgBox"} src={"/images/Trainers/Trainer ("+val.skin+").png"}/>
