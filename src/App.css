@@ -1031,6 +1031,8 @@ p.titleMyCaptures {
     font-family: Charge Vector Black;
     overflow: overlay;
     height: 500px;
+    scrollbar-color: #fff transparent;
+    scrollbar-width: thin;
 }
 
 .myCaptureItem {
