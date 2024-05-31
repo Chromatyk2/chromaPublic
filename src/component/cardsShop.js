@@ -184,7 +184,7 @@ return (
                 </div>
                 :
                 <div className="myPointsDisplay">
-                    <p>Points Boutique : {points}</p>
+                    <p style={{color:"white",}}>Points Boutique : {points}</p>
                 </div>
             }
         </div>
@@ -234,19 +234,19 @@ return (
                                 loading === false ?
                                     <div style={{position: "relative",bottom: "-44px"}}>
                                         <button value={val.name} onClick={buyBooster} className={"guessTradeButton"}>Acheter</button>
-                                        <label style={{display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
+                                        <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
                                         <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                     :
                                     <div style={{position: "relative",bottom: "-44px"}}>
                                         <button className="guessTradeButton">Chargement</button>
-                                        <label style={{display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
+                                        <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
                                         <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                 :
                                 <div style={{position: "relative",bottom: "-44px"}}>
                                     <button className="guessTradeButton">Card Points manquants</button>
-                                    <label style={{display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
+                                    <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
                                     <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                 </div>
                             }

@@ -212,9 +212,10 @@ function MyCardsSet(props) {
             }
             {isLoaded === false &&
                 <>
-                    <div style={{display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
+                    <div style={{color:"white",display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
                         <label htmlFor="subscribe">
                             <input
+                                style={{marginRight:"10px"}}
                                 type="checkbox"
                                 onChange={handleChangeOnlyMine}
                                 id="subscribe"
