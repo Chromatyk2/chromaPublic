@@ -22,7 +22,6 @@ function MyCaptures(props) {
                 :
                 <div  className="myCaptureItem">
                   <p className="myCapturesList">{val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}</p>
-                  <CreateTrade idMainCapture={val.id}/>
                 </div>
               })
           }
