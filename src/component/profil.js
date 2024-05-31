@@ -41,6 +41,8 @@ function Profil(props) {
                                 borderRadius: '50px 0 0 50px',
                                 height:'30px'
                             }}>
+                        </div>
+                        <div>
                             {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
                         </div>
                     </div>
