@@ -48,8 +48,7 @@ function Profil(props) {
                             {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
                         </div>
                     </div>
-                    <div>
-                        <p></p>
+                    <div className={"titleTeam"}>
                         <p>Team</p>
                     </div>
                     <div className={"profilVisuals"}>

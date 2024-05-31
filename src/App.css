@@ -3530,10 +3530,17 @@ span.navbar-brand {
 .levelProfil{
     color: #fff;
     font-family: Charge Vector Black;
-    font-size: 27px;
+    font-size: 30px;
     margin: 0;
     text-align: center;
     text-transform: uppercase;
+}
+.titleTeam{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Charge Vector Black';
 }
 .pourcentLevel{
     position: absolute;
