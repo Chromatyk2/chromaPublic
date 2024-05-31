@@ -59,6 +59,9 @@ function Profil(props) {
                 })
         })
     }
+    function openSkin(e) {
+        console.log("Done !")
+    }
     return (
         <>
             {profil &&
@@ -217,7 +220,10 @@ function Profil(props) {
             }
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                 <p style={{textAlign: "center"}}>Choisis ton Skin</p>
-                <div style={{display:"flex",gap:"10px",flexWrap:"wrap",flexFlow:"row"}}>
+                <div>
+                    <button onClick={openSkin} style={{backgroundPosition:"center", backgroundRepeat:"no-repeat", backgroundImage:"url(/basic.png)", border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}}></button>
+                </div>
+                <div style={{overflow:"overlay", display:"flex",gap:"10px",flexWrap:"wrap",flexFlow:"row"}}>
                     {skins &&
                         skins.map((val, key) => {
                             return (
