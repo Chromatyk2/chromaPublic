@@ -7,9 +7,9 @@ import OnStream from "./onStream";
 function HomePage(props) {
   return (
     <>
-        <div>
+        <div className={"contentContainer"}>
             <OnStream />
-            <p style={{textAlign:"center"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
+            <p style={{textAlign:"center",color:"white"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
             <div className="socialContainer">
                 <p className="myNetworks">Mes reseaux</p>
                 <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i class="fa-brands fa-discord"></i>Discord</a>

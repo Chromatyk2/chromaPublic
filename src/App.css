@@ -225,7 +225,9 @@ color: transparent;
 -webkit-text-stroke: 4px black;
 }
 nav.navbar.navbar-expand-lg.navbar-light {
-background-color: #90E5B5!important;
+    background-color: rgba(18, 7, 71, 0.1) !important;
+    position: fixed;
+    width: 100%;
 }
 .me-auto.navbar-nav {
     gap: 30px;
@@ -301,7 +303,7 @@ line-height: 33px;
 text-align: center;
 }
 a.socialLink {
-border: 4px solid #255748;
+border: 4px solid white;
 border-radius: 35px;
 padding: 10px;
 text-align: center;
@@ -310,7 +312,7 @@ width: 320px;
 font-size: 35px;
 }
 p.myNetworks {
-color: #255748;
+color: white;
 font-family: "Charge Vector Black";
 font-size: 30px;
 text-align: center;
@@ -321,7 +323,7 @@ color: #255748;
 font-family: "Charge Vector Black";
 }
 a:hover{
-color: #0a3a2c;
+color: #74FBD0;
 }
 .top3Desktop {
 display: flex;
@@ -1958,6 +1960,11 @@ a.linkOnAirOff {
     padding: 10px;
     background: gray;
     margin-top: 50px;
+}
+.contentContainer{
+    min-height: 100vh;
+    padding-top: 100px;
+    background: linear-gradient(140deg, rgba(18, 7, 71, 1) 0%, rgba(3, 80, 120, 1) 100%);
 }
 .countdown {
     width: 100%;
