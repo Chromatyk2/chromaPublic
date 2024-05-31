@@ -61,7 +61,16 @@ useEffect(() => {
          <div className={"contentContainer"}>
              <div className="pokemonPageContainer">
                 <div>
-                  <img className="imgPokemonPage" src={pokemon.sprites.front_default} onMouseOver={this.src = require(pokemon.sprites.front_shiny)} onMouseOut={this.src = require(pokemon.sprites.front_default)}></img>
+                  <img
+                      className="imgPokemonPage"
+                      src={pokemon.sprites.front_default}
+                      onMouseOver={() => {
+                          this.current.src = pokemon.sprites.front_shiny;
+                      }}
+                      onMouseOut={() => {
+                          this.current.src= pokemon.sprites.front_default;
+                      }}
+                  />
                   <p className="numberPokemonPage"># {pokemon.id}</p>
                   <p className="namePokemonPage">{name[4].name}</p>
                   <div className="pokemonTypeContainer">
