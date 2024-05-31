@@ -3555,6 +3555,8 @@ span.navbar-brand {
     flex-flow: row;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .profilPicture{
     width: 400px;
@@ -3564,6 +3566,8 @@ span.navbar-brand {
     flex-wrap: wrap;
     width: 400px;
     justify-content: center;
+    width: 440px;
+    gap: 20px;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
