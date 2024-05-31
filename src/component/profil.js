@@ -48,6 +48,10 @@ function Profil(props) {
                             {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
                         </div>
                     </div>
+                    <div>
+                        <p></p>
+                        <p>Team</p>
+                    </div>
                     <div className={"profilVisuals"}>
                         <div className={"profilPicture"}>
                             {profil[0].profile_picture ?
@@ -106,9 +110,7 @@ function Profil(props) {
 
                 <div className={"contentContainer"}>
                     <p className={"pseudoProfil"}>Capture ton premier pokémon pour débuter ton profil !</p>
-                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"}
-                                                                                           target={"_blank"}>Chromatyk</a> quand
-                        il est en live !</p>
+                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"} target={"_blank"}>Chromatyk</a> quand il est en live !</p>
                 </div>
             }
         </>
