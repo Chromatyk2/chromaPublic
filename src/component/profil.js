@@ -53,9 +53,11 @@ function Profil(props) {
                     </div>
                     <div className={"profilVisuals"}>
                         <div style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
+                            {profil[0].box > 0 &&
                             <div className="infoPkm">
-                                {profil[0].box > 0 ? <div className="infoNbCapture">{profil[0].box}</div> : <div></div>}
+                                <div className="infoNbCapture">{profil[0].box}</div>
                             </div>
+                            }
                             {profil[0].profil_picture ?
                                 <img style={{width: "100%"}}
                                      src={"/images/Trainers/Trainer (" + profil[0].profil_picture + ").png"}/>
