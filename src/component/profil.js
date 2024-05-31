@@ -26,6 +26,7 @@ function Profil(props) {
             }
         };
     console.log(pseudo);
+    console.log(profil);
     return (
         <>
             {profil &&
@@ -52,7 +53,7 @@ function Profil(props) {
                     <div className={"titleTeam"}>
                         <p>Team</p>
                     </div>
-                    {profil[0].pseudo == pseudo ?
+                    {profil[0].pseudo != pseudo ?
                         <div className={"profilVisuals"}>
                             <div style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].box > 0 &&
@@ -113,7 +114,6 @@ function Profil(props) {
                             </div>
                         </div>
                         :
-
                         <div className={"profilVisuals"}>
                             <button style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].box > 0 &&
