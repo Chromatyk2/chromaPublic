@@ -5,7 +5,7 @@ function Profil(props) {
     return (
         <>
             <div className={"contentContainer"}>
-                <p style={{marginTop:"50px", textAlign:"center",fontSize:"60px",textTransform:"uppercase"}}>{pseudo}</p>
+                <p className={"pseudoProfil"}>{pseudo}</p>
             </div>
         </>
     );

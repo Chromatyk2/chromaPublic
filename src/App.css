@@ -3519,6 +3519,14 @@ span.navbar-brand {
     left: 300px;
     top: 300px;
 }
+.pseudoProfil{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-family: 'Charge Vector Black';
+    color: white;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
