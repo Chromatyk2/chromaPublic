@@ -14,6 +14,7 @@ const [name, setName] = useState([]);
 const [captures, setCaptures] = useState([]);
 const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
+const [isShiny, setIsShiny] = useState(false);
 const { id } = useParams()
 useEffect(() => {
  fetch("https://pokeapi.co/api/v2/pokemon/"+id)
@@ -50,6 +51,13 @@ useEffect(() => {
         setCaptures(response.data);
   })
 }, [])
+    function changeSprite() {
+        if(isShiny === true){
+            setIsShiny(false)
+        }else{
+            setIsShiny(true)
+        }
+    }
  if (error) {
    return <div>Error: {error.message}</div>;
  } else if (!isLoaded) {
@@ -61,16 +69,7 @@ useEffect(() => {
          <div className={"contentContainer"}>
              <div className="pokemonPageContainer">
                 <div>
-                  <img
-                      className="imgPokemonPage"
-                      src={pokemon.sprites.front_default}
-                      onMouseOver={() => {
-                          this.current.src = pokemon.sprites.front_shiny;
-                      }}
-                      onMouseOut={() => {
-                          this.current.src= pokemon.sprites.front_default;
-                      }}
-                  />
+                  <img onClick={changeSprite} className="imgPokemonPage" src={isShiny === false ? pokemon.sprites.other.home.front_default : pokemon.sprites.other.home.front_shiny}></img>
                   <p className="numberPokemonPage"># {pokemon.id}</p>
                   <p className="namePokemonPage">{name[4].name}</p>
                   <div className="pokemonTypeContainer">
