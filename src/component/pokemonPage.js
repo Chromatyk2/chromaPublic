@@ -58,23 +58,25 @@ useEffect(() => {
    if(name[4] !== undefined && pokemon.sprites !== undefined){
    return (
      <>
-     <div className="pokemonPageContainer">
-        <div>
-          <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
-          <p className="numberPokemonPage"># {pokemon.id}</p>
-          <p className="namePokemonPage">{name[4].name}</p>
-          <div className="pokemonTypeContainer">
-            <img src={`/images/${pokemon.types[0].type.name}.png`}></img>
-            {pokemon.types[1] &&
-              <img src={`/images/${pokemon.types[1].type.name}.png`}></img>
-            }
-          </div>
-          <MyCaptures captures={captures} />
-        </div>
-        <div>
-          <OtherCaptures pkmId={id} />
-        </div>
-      </div>
+         <div className={"contentContainer"}>
+             <div className="pokemonPageContainer">
+                <div>
+                  <img className="imgPokemonPage" src={pokemon.sprites.other.home.front_default}></img>
+                  <p className="numberPokemonPage"># {pokemon.id}</p>
+                  <p className="namePokemonPage">{name[4].name}</p>
+                  <div className="pokemonTypeContainer">
+                    <img src={`/images/${pokemon.types[0].type.name}.png`}></img>
+                    {pokemon.types[1] &&
+                      <img src={`/images/${pokemon.types[1].type.name}.png`}></img>
+                    }
+                  </div>
+                  <MyCaptures captures={captures} />
+                </div>
+                <div>
+                  <OtherCaptures pkmId={id} />
+                </div>
+              </div>
+         </div>
      </>
    );
   }
