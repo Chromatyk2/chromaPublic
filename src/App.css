@@ -934,7 +934,7 @@ p.filterTitle {
     border-radius: 25%;
     -webkit-filter: drop-shadow(0 0 12px #000);
     filter: drop-shadow(0 0 12px black);
-    padding: 15px;
+    padding: 10px;
 }
 
 .pokemonGlobalContainer {
