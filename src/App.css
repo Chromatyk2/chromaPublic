@@ -3535,6 +3535,13 @@ span.navbar-brand {
     text-align: center;
     text-transform: uppercase;
 }
+.pourcentLevel{
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    line-height: 30px;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
