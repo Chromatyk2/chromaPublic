@@ -52,11 +52,11 @@ function Profil(props) {
                         <p>Team</p>
                     </div>
                     <div className={"profilVisuals"}>
-                        <div className="anchorTooltip uniquePokemonContainer">
+                        <div style={{width:"200px"}} className="anchorTooltip uniquePokemonContainer">
                             {profil[0].profil_picture ?
-                                <img src={"/images/Trainers/Trainer (" + profil[0].profil_picture + ").png"}/>
+                                <img style={{width:"100%"}} src={"/images/Trainers/Trainer (" + profil[0].profil_picture + ").png"}/>
                                 :
-                                <img src={"/images/random.png"}/>
+                                <img style={{width:"100%"}} src={"/images/random.png"}/>
                             }
                         </div>
                         <div className={"profilTeam"}>
