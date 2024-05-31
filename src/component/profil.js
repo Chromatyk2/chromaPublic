@@ -7,12 +7,20 @@ import Modal from 'react-modal';
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
+    const [skins, setSkins] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
             .then(function(response){
                 setProfil(response.data);
+            })
+    }, [])
+    useEffect(() => {
+        Axios
+            .get("/api/getSkins/"+pseudo)
+            .then(function(response){
+                setSkins(response.data);
             })
     }, [])
 
@@ -192,6 +200,15 @@ function Profil(props) {
             }
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                 <p style={{textAlign:"center"}}>Choisis ton Skin</p>
+                {skins &&
+                    skins.map((skin, key) => {
+                        return (
+                            <button onClick={changeSkin} className={"uniqueBoxContainer"}>
+                                <img className={"imgBox"} src={"/images/Trainers/Trainer ("+val.skin+").png"}/>
+                            </button>
+                        )
+                    })
+                }
             </Modal>
         </>
     );
