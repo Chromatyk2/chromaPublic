@@ -40,7 +40,16 @@ function Profil(props) {
                     <p className={"pseudoProfil"}>Niveau {profil[0].level}</p>
                     <div style={customStyles.extBar} className="fullProgressBar">
                         <div
-                            style={customStyles.intBar}>{profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}</div>
+                            style={{width: parseFloat(profil[0].xp/(profil[0].level * 1000) *100).toFixed(2)+"%",
+                                position: 'relative',
+                                background: '#0a3a2c',
+                                textWrap: 'nowrap',
+                                color: 'white',
+                                padding: '15px',
+                                borderRadius: '50px 0 0 50px'
+                            }}>
+                            {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
+                        </div>
                     </div>
                 </div>
             }
