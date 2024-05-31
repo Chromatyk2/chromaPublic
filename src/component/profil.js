@@ -95,7 +95,7 @@ function Profil(props) {
                                 }
                                 {profil[0].profil_picture ?
                                     <img style={{width: "100%"}}
-                                         src={"/images/Trainers/Trainer (" + profil[0].profil_picture + ").png"}/>
+                                         src={"/images/Trainers/Trainer"+profil[0].profil_picture+".png"}/>
                                     :
                                     <img style={{width: "100%"}} src={"/images/random.png"}/>
                                 }
@@ -155,7 +155,7 @@ function Profil(props) {
                                 }
                                 {profil[0].profil_picture ?
                                     <img style={{width: "100%"}}
-                                         src={"/images/Trainers/Trainer"+profil[0].profil_picture+").png"}/>
+                                         src={"/images/Trainers/Trainer"+profil[0].profil_picture+".png"}/>
                                     :
                                     <img style={{width: "100%"}} src={"/images/random.png"}/>
                                 }
