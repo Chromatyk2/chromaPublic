@@ -1023,11 +1023,14 @@ p.titleMyCaptures {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    align-items: center;
 }
 .myCapturesContainer {
     text-align: center;
     color: #255748;
     font-family: Charge Vector Black;
+    overflow: overlay;
+    height: 500px;
 }
 
 .myCaptureItem {
