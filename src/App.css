@@ -3527,6 +3527,14 @@ span.navbar-brand {
     font-family: 'Charge Vector Black';
     color: white;
 }
+.levelProfil{
+    color: #fff;
+    font-family: Charge Vector Black;
+    font-size: 27px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;

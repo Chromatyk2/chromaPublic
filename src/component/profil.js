@@ -30,7 +30,7 @@ function Profil(props) {
             {profil &&
                 <div className={"contentContainer"}>
                     <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
-                    <p className={"pseudoProfil"}>Niveau {profil[0].level}</p>
+                    <p className={"levelProfil"}>Niveau {profil[0].level}</p>
                     <div style={customStyles.extBar} className="fullProgressBar">
                         <div
                             style={{width: parseFloat(profil[0].xp/(profil[0].level * 1000) *100).toFixed(2)+"%",
