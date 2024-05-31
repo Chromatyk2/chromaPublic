@@ -111,6 +111,7 @@ function CardsHub(props) {
     }
     return(
         <>
+            <div className={"contentContainer"}>
             <OnStream />
             <div className={"allCards"}>
                 <div className={"countdown"}>
@@ -196,6 +197,7 @@ function CardsHub(props) {
                     {props.page == "succes" &&
                         <Succes user={pseudo}/>
                     }
+            </div>
             </div>
         </>
     );
