@@ -3549,14 +3549,18 @@ span.navbar-brand {
     width: 100%;
     line-height: 30px;
 }
-.profilVisuals{
-    display: flex;
-    justify-content: center;
-    flex-flow: row;
-    width: 100%;
+.profilVisuals {
     align-items: center;
+    display: flex;
+    flex-flow: row;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    border-radius: 50px;
 }
 .profilPicture{
     width: 400px;
