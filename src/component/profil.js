@@ -60,7 +60,25 @@ function Profil(props) {
         })
     }
     function openSkin(e) {
-        console.log("Done !")
+        Axios.post('/api/removeBoxSkin',
+            {
+                user:pseudo
+            }
+        )
+            .then(function(response){
+                Axios.post('/api/addSkin',
+                    {
+                        user:pseudo,
+                        skin:Math.floor((Math.random() * 734) + 1)
+                    }
+                )
+                    .then(function(response){
+                        Axios.get("/api/getProfil/"+pseudo)
+                            .then(function(response){
+                                setProfil(response.data);
+                        })
+                    })
+            })
     }
     return (
         <>
