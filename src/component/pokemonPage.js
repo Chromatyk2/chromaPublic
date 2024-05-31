@@ -66,7 +66,7 @@ useEffect(() => {
    if(name[4] !== undefined && pokemon.sprites !== undefined){
    return (
      <>
-         <div className={"contentContainer"}>
+         <div className={"pagePokemonContainer"}>
              <div className="pokemonPageContainer">
                 <div>
                   <img onClick={changeSprite} className="imgPokemonPage" src={isShiny === false ? pokemon.sprites.other.home.front_default : pokemon.sprites.other.home.front_shiny}></img>

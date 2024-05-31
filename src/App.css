@@ -1024,6 +1024,7 @@ p.titleMyCaptures {
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
+    width:100%;
 }
 .myCapturesContainer {
     text-align: center;
@@ -1975,6 +1976,15 @@ a.linkOnAirOff {
     padding: 10px;
     background: gray;
     margin-top: 50px;
+}
+.pagePokemonContainer{
+    min-height: 100vh;
+    padding-top: 100px;
+    background: linear-gradient(140deg, rgba(18, 7, 71, 1) 0%, rgba(3, 80, 120, 1) 100%);
+    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 .contentContainer{
     min-height: 100vh;
