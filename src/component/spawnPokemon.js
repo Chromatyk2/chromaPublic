@@ -39,7 +39,7 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         Axios.post('/api/addXp',
                                                             {
-                                                                user: pseudo,
+                                                                user: queryParameters.get("pseudo"),
                                                                 win: 1000,
                                                                 wins: 1000
                                                             }
@@ -51,7 +51,7 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         Axios.post('/api/addXp',
                                                             {
-                                                                user: pseudo,
+                                                                user: queryParameters.get("pseudo"),
                                                                 win: 500,
                                                                 wins: 500
                                                             }
@@ -88,7 +88,7 @@ function SpawnPokemon(props) {
                                                                 Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                 Axios.post('/api/addXp',
                                                                     {
-                                                                        user: pseudo,
+                                                                        user: queryParameters.get("pseudo"),
                                                                         win: 1000,
                                                                         wins: 1000
                                                                     }
@@ -100,7 +100,7 @@ function SpawnPokemon(props) {
                                                                 Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                 Axios.post('/api/addXp',
                                                                     {
-                                                                        user: pseudo,
+                                                                        user: queryParameters.get("pseudo"),
                                                                         win: 500,
                                                                         wins: 500
                                                                     }
@@ -133,7 +133,7 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         Axios.post('/api/addXp',
                                                             {
-                                                                user: pseudo,
+                                                                user: queryParameters.get("pseudo"),
                                                                 win: 500,
                                                                 wins: 500
                                                             }
@@ -145,7 +145,7 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         Axios.post('/api/addXp',
                                                             {
-                                                                user: pseudo,
+                                                                user: queryParameters.get("pseudo"),
                                                                 win: 100,
                                                                 wins: 100
                                                             }
