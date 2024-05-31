@@ -12,7 +12,6 @@ function Profil(props) {
             })
     }, [])
 
-    if(profil !== null){
         const customStyles = {
             extBar: {
                 width: '75%',
@@ -33,7 +32,6 @@ function Profil(props) {
                 borderRadius: '50px 0 0 50px'
             },
         };
-    }
     return (
         <>
             {profil &&
