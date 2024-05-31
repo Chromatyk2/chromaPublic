@@ -17,7 +17,7 @@ const pseudo = props.cookies.user.data[0].login;
     console.log(list);
     return (
       <>
-        <div>
+        <div style={{paddingTop:"30px"}}>
           <PkmList list={list}/>
         </div>
       </>
