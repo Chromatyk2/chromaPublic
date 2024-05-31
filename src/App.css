@@ -3532,6 +3532,9 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
+    .filtersContainer {
+        display: none;
+    }
     .leaderBoardSwitchMobile{
         display: flex;
     }
