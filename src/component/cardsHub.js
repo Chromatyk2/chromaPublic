@@ -114,25 +114,6 @@ function CardsHub(props) {
             <div className={"contentContainer"}>
             <OnStream />
             <div className={"allCards"}>
-                <div className={"countdown"}>
-                    <p>Prochain drop dans : </p>
-                    {diff &&
-                        <Countdown date={Date.now() + diff}>
-                            <p>Points disponibles!</p>
-                        </Countdown>
-                    }
-                </div>
-                    {/*<iframe id="twitch-chat-embed"*/}
-                    {/*        src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"*/}
-                    {/*        height="500"*/}
-                    {/*        width="350">*/}
-                    {/*</iframe>*/}
-                    {/*<iframe*/}
-                    {/*    src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr"*/}
-                    {/*    height="<height>"*/}
-                    {/*    width="<width>"*/}
-                    {/*    allowFullScreen>*/}
-                    {/*</iframe>*/}
                     {props.page === null &&
                         <div className={"introTCGtext"}>
                             <p>
@@ -151,34 +132,6 @@ function CardsHub(props) {
                             </p>
                         </div>
                     }
-                {/*{timer &&*/}
-                {/*timer.length == 0 ?*/}
-                {/*    canGetPoint === true ?*/}
-                {/*        <div className={"buttonToPointContainer"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-                {/*        </div>*/}
-                {/*        :*/}
-                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-                {/*        </div>*/}
-                {/*    :*/}
-                {/*    canGetPoint === true ?*/}
-                {/*        <div className={"buttonToPointContainer"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-                {/*        </div>*/}
-                {/*        :*/}
-                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-                {/*        </div>*/}
-                {/*}*/}
                     {props.page == "myCards" &&
                         <MyCards user={pseudo} />
                     }

@@ -1086,7 +1086,7 @@ p.titleMyCaptures{
 }
 .pokemonNameTrade{
   text-align: center;
-  color: #255748;
+  color: white;
   font-family: Charge Vector Black;
   font-size: 15px;
   margin-top: 5px;
@@ -1129,9 +1129,9 @@ button.deleteTrade {
     animation: bounceLastBangerOut 1s forwards;
 }
 .guessTradeButton {
-    background: #0a3a2c;
+    background: white;
     border-radius: 25px;
-    color: #fff;
+    color: #120747;
     font-size: 15px;
     padding: 10px;
     text-decoration: none;
@@ -1145,8 +1145,8 @@ button.deleteTrade {
     margin:auto;
 }
 .guessTradeButton:hover{
-  background: white;
-  color: #0a3a2c;
+  background: #120747;
+  color: white;
 }
 .tradeHub {
     display: flex;
