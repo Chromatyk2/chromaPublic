@@ -3600,6 +3600,9 @@ span.navbar-brand {
      width: 30px;
      top: 60px;
 }
+.infoNbBoxSkin:hover{
+    background-image: url('../public/basicOpen.png')
+}
 .profilPicture{
     width: 400px;
 }
