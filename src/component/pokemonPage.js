@@ -78,10 +78,9 @@ useEffect(() => {
                       <img src={`/images/${pokemon.types[1].type.name}.png`}></img>
                     }
                   </div>
-                  <MyCaptures captures={captures} />
                 </div>
                 <div>
-                  <OtherCaptures pkmId={id} />
+                    <MyCaptures captures={captures} />
                 </div>
               </div>
          </div>
