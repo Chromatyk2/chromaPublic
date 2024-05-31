@@ -16,11 +16,11 @@ const pseudo = props.cookies.user.data[0].login;
     }, [])
     console.log(list);
     return (
-      <>
-        <div style={{paddingTop:"30px"}}>
-          <PkmList list={list}/>
-        </div>
-      </>
+        <>
+            <div className={"contentContainer"}>
+                <PkmList list={list}/>
+            </div>
+        </>
     )
 }
 
