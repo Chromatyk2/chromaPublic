@@ -980,11 +980,11 @@ img.imgPokemonPage {
 p.numberPokemonPage {
     text-align: center;
     font-size: 50px;
-    color: #255748;
+    color: white;
     font-family: Charge Vector Black;
 }
 p.namePokemonPage {
-    color: #255748;
+    color: white;
     font-family: Charge Vector Black;
     font-size: 50px;
     text-align: center;
@@ -1016,6 +1016,7 @@ p.namePokemonPage {
 p.titleMyCaptures {
     font-size: 35px;
     margin-top: 20px;
+    color: white;
 }
 
 .pokemonPageContainer {
@@ -1048,7 +1049,7 @@ p.shinyPokemonList{
   color:gold;
 }
 p.titleMyCaptures{
-  color: #255748;
+  color: white;
     font-family: Charge Vector Black;
     font-size: 20px;
     text-align: center;
