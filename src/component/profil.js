@@ -52,11 +52,11 @@ function Profil(props) {
                         <p>Team</p>
                     </div>
                     <div className={"profilVisuals"}>
-                        <div className={"profilPicture"}>
+                        <div className="anchorTooltip uniquePokemonContainer">
                             {profil[0].profil_picture ?
-                                <img src={"/images/Trainers/Trainer ("+profil[0].profil_picture+").png"}/>
+                                <img src={"/images/Trainers/Trainer (" + profil[0].profil_picture + ").png"}/>
                                 :
-                                <img src={"/images/random.png"} />
+                                <img src={"/images/random.png"}/>
                             }
                         </div>
                         <div className={"profilTeam"}>
@@ -64,42 +64,42 @@ function Profil(props) {
                                 {profil[0].first_pokemon ?
                                     <img src={profil[0].first_pokemon}/>
                                     :
-                                    <img src={"/images/random.png"} />
+                                    <img src={"/images/random.png"}/>
                                 }
                             </div>
                             <div className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].second_pokemon ?
                                     <img src={profil[0].second_pokemon}/>
                                     :
-                                    <img src={"/images/random.png"} />
+                                    <img src={"/images/random.png"}/>
                                 }
                             </div>
                             <div className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].third_pokemon ?
                                     <img src={profil[0].third_pokemon}/>
                                     :
-                                    <img src={"/images/random.png"} />
+                                    <img src={"/images/random.png"}/>
                                 }
                             </div>
                             <div className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].fourth_pokemon ?
                                     <img src={profil[0].fourth_pokemon}/>
                                     :
-                                    <img src={"/images/random.png"} />
+                                    <img src={"/images/random.png"}/>
                                 }
                             </div>
                             <div className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].fifth_pokemon ?
                                     <img src={profil[0].fifth_pokemon}/>
                                     :
-                                    <img src={"/images/random.png"} />
+                                    <img src={"/images/random.png"}/>
                                 }
                             </div>
                             <div className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].sixth_pokemon ?
                                     <img src={profil[0].sixth_pokemon}/>
                                     :
-                                    <img src={"/images/random.png"} />
+                                    <img src={"/images/random.png"}/>
                                 }
                             </div>
                         </div>
@@ -108,7 +108,9 @@ function Profil(props) {
                 :
                 <div className={"contentContainer"}>
                     <p className={"pseudoProfil"}>Capture ton premier pokémon pour débuter ton profil !</p>
-                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"} target={"_blank"}>Chromatyk</a> quand il est en live !</p>
+                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"}
+                                                                                           target={"_blank"}>Chromatyk</a> quand
+                        il est en live !</p>
                 </div>
             }
         </>
