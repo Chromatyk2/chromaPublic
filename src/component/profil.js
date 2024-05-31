@@ -26,25 +26,32 @@ function Profil(props) {
         };
     return (
         <>
-            {profil &&
+            {profil ?
                 <div className={"contentContainer"}>
                     <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
                     <p className={"levelProfil"}>Niveau {profil[0].level}</p>
                     <div style={customStyles.extBar} className="fullProgressBar">
                         <div
-                            style={{width: parseFloat(profil[0].xp/(profil[0].level * 1000) *100).toFixed(2)+"%",
+                            style={{
+                                width: parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%",
                                 position: 'relative',
                                 background: '#74fbcf',
                                 textWrap: 'nowrap',
                                 color: 'black',
                                 borderRadius: '50px 0 0 50px',
-                                height:'30px'
+                                height: '30px'
                             }}>
                         </div>
                         <div className={"pourcentLevel"}>
                             {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
                         </div>
                     </div>
+                </div>
+                :
+
+                <div className={"contentContainer"}>
+                    <p className={"pseudoProfil"}>Capture ton premier pokémon pour débuter ton profil !</p>
+                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"} target={"_blank"}>Chromatyk</a> quand il est en live !</p>
                 </div>
             }
         </>
