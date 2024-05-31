@@ -53,7 +53,7 @@ function Profil(props) {
                     </div>
                     <div className={"profilVisuals"}>
                         <div className={"profilPicture"}>
-                            {profil[0].profile_picture ?
+                            {profil[0].profil_picture ?
                                 <img src={"/images/trainer/Trainer ("+profil[0].profile_picture+").png"}/>
                                 :
                                 <img src={"/images/random.png"} />
