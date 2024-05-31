@@ -15,7 +15,7 @@ function PkmList(props) {
           <p className="labelStats">Total<br/><span className="valueStats">{nbTotal}</span></p>
         </div>
           <Pagination
-            itemsPerPage={30}
+            itemsPerPage={32}
             items={props.list}
           />
         </>
