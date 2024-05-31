@@ -3542,6 +3542,21 @@ span.navbar-brand {
     width: 100%;
     line-height: 30px;
 }
+.profilVisuals{
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    width: 100%;
+    align-items: center;
+}
+.profilPicture{
+    width: 400px;
+}
+.profilTeam{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;

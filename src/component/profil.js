@@ -56,7 +56,7 @@ function Profil(props) {
                                 <img src={"/images/random.png"} />
                             }
                         </div>
-                        <div>
+                        <div className={"profilTeam"}>
                             <div className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].first_pokemon ?
                                     <img src={profil[0].first_pokemon}/>
