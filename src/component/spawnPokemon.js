@@ -44,6 +44,18 @@ function SpawnPokemon(props) {
                                                                 wins: 1000
                                                             }
                                                         )
+                                                        .then(function(response){
+                                                            Axios.get("/api/getProfil/"+pseudo)
+                                                            .then(function(response){
+                                                                if(response[0].xp >= response[0].level * 1000){
+                                                                    Axios.post('/api/levelUp',
+                                                                        {
+                                                                            pseudo: queryParameters.get("pseudo")
+                                                                        }
+                                                                    )
+                                                                }
+                                                            })
+                                                        })
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
@@ -56,6 +68,18 @@ function SpawnPokemon(props) {
                                                                 wins: 500
                                                             }
                                                         )
+                                                            .then(function(response){
+                                                                Axios.get("/api/getProfil/"+pseudo)
+                                                                    .then(function(response){
+                                                                        if(response[0].xp >= response[0].level * 1000){
+                                                                            Axios.post('/api/levelUp',
+                                                                                {
+                                                                                    pseudo: queryParameters.get("pseudo")
+                                                                                }
+                                                                            )
+                                                                        }
+                                                                    })
+                                                            })
                                                 }
                                             },
                                             (error) => {
@@ -93,6 +117,18 @@ function SpawnPokemon(props) {
                                                                         wins: 1000
                                                                     }
                                                                 )
+                                                                    .then(function(response){
+                                                                        Axios.get("/api/getProfil/"+pseudo)
+                                                                            .then(function(response){
+                                                                                if(response[0].xp >= response[0].level * 1000){
+                                                                                    Axios.post('/api/levelUp',
+                                                                                        {
+                                                                                            pseudo: queryParameters.get("pseudo")
+                                                                                        }
+                                                                                    )
+                                                                                }
+                                                                            })
+                                                                    })
                                                                 break;
                                                             default :
                                                                 setIsLoaded(false);
@@ -105,6 +141,18 @@ function SpawnPokemon(props) {
                                                                         wins: 500
                                                                     }
                                                                 )
+                                                                    .then(function(response){
+                                                                        Axios.get("/api/getProfil/"+pseudo)
+                                                                            .then(function(response){
+                                                                                if(response[0].xp >= response[0].level * 1000){
+                                                                                    Axios.post('/api/levelUp',
+                                                                                        {
+                                                                                            pseudo: queryParameters.get("pseudo")
+                                                                                        }
+                                                                                    )
+                                                                                }
+                                                                            })
+                                                                    })
                                                         }
                                                     },
                                                     (error) => {
@@ -138,6 +186,18 @@ function SpawnPokemon(props) {
                                                                 wins: 500
                                                             }
                                                         )
+                                                            .then(function(response){
+                                                                Axios.get("/api/getProfil/"+pseudo)
+                                                                    .then(function(response){
+                                                                        if(response[0].xp >= response[0].level * 1000){
+                                                                            Axios.post('/api/levelUp',
+                                                                                {
+                                                                                    pseudo: queryParameters.get("pseudo")
+                                                                                }
+                                                                            )
+                                                                        }
+                                                                    })
+                                                            })
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
@@ -150,6 +210,18 @@ function SpawnPokemon(props) {
                                                                 wins: 100
                                                             }
                                                         )
+                                                            .then(function(response){
+                                                                Axios.get("/api/getProfil/"+pseudo)
+                                                                    .then(function(response){
+                                                                        if(response[0].xp >= response[0].level * 1000){
+                                                                            Axios.post('/api/levelUp',
+                                                                                {
+                                                                                    pseudo: queryParameters.get("pseudo")
+                                                                                }
+                                                                            )
+                                                                        }
+                                                                    })
+                                                            })
                                                 }
                                             },
                                             (error) => {

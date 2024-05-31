@@ -14,7 +14,6 @@ function Profil(props) {
 
         const customStyles = {
             extBar: {
-                width: '75%',
                 backgroundColor: '#fc72a1',
                 position: 'relative',
                 zIndex: '1',
