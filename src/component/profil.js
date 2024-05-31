@@ -42,6 +42,9 @@ function Profil(props) {
     function closeModal() {
         setIsOpen(false);
     }
+    function changeSkin(e) {
+        console.log("oui");
+    }
     return (
         <>
             {profil &&
