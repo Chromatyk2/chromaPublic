@@ -221,7 +221,7 @@ function Profil(props) {
                     {skins &&
                         skins.map((val, key) => {
                             return (
-                                    <button value={val.skin} style={{backgroundImage:`url(/images/Trainers/Trainer (1).png)`, border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}} onClick={changeSkin}></button>
+                                    <button value={val.skin} style={{backgroundImage:`url(images/Trainers/Trainer (1).png)`, border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}} onClick={changeSkin}></button>
                                 )
                             }
                         )
