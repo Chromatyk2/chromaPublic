@@ -3556,6 +3556,7 @@ span.navbar-brand {
     display: flex;
     flex-wrap: wrap;
     width: 400px;
+    justify-content: center;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
