@@ -276,7 +276,7 @@ flex-flow: column;
 gap: 20px;
 justify-content: center;
 align-items: center;
-margin-top: 5%;
+margin-top: 3%;
 }
 .loginButton{
 display: flex;
