@@ -26,7 +26,7 @@ function Profil(props) {
         };
     return (
         <>
-            {profil ?
+            {profil.length > 0 ?
                 <div className={"contentContainer"}>
                     <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
                     <p className={"levelProfil"}>Niveau {profil[0].level}</p>
@@ -50,8 +50,8 @@ function Profil(props) {
                 :
 
                 <div className={"contentContainer"}>
-                    <p className={"pseudoProfil"}>Capture ton premier pokémon pour débuter ton profil !</p>
-                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"} target={"_blank"}>Chromatyk</a> quand il est en live !</p>
+                    <p>Capture ton premier pokémon pour débuter ton profil !</p>
+                    <p>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"} target={"_blank"}>Chromatyk</a> quand il est en live !</p>
                 </div>
             }
         </>
