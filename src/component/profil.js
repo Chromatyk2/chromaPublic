@@ -155,7 +155,7 @@ function Profil(props) {
                                 }
                                 {profil[0].profil_picture ?
                                     <img style={{width: "100%"}}
-                                         src={"/images/Trainers/Trainer (" + profil[0].profil_picture + ").png"}/>
+                                         src={"/images/Trainers/Trainer"+profil[0].profil_picture+").png"}/>
                                     :
                                     <img style={{width: "100%"}} src={"/images/random.png"}/>
                                 }
@@ -221,7 +221,7 @@ function Profil(props) {
                     {skins &&
                         skins.map((val, key) => {
                             return (
-                                    <button value={val.skin} style={{backgroundImage:"url(/images/Trainers/Trainer"+val.skin+".png)", border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}} onClick={changeSkin}></button>
+                                    <button value={val.skin} style={{backgroundPosition:"center", backgroundRepeat:"no-repeat", backgroundImage:"url(/images/Trainers/Trainer"+val.skin+".png)", border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}} onClick={changeSkin}></button>
                                 )
                             }
                         )
