@@ -43,6 +43,7 @@ function Profil(props) {
         setIsOpen(false);
     }
     function changeSkin(e) {
+        const skin = e.target.value;
         Axios.post('/api/updateSkin',
             {
                 user:pseudo,
@@ -220,11 +221,7 @@ function Profil(props) {
                     {skins &&
                         skins.map((val, key) => {
                             return (
-                                <button value={val.skin} style={{border: "solid", borderRadius: "25px", padding: "20px"}}
-                                        onClick={changeSkin} className={"uniqueBoxContainer"}>
-                                    <img style={{width: "100%"}} className={"imgBox"}
-                                         src={"/images/Trainers/Trainer (" + val.skin + ").png"}/>
-                                </button>
+                                <button value={val.skin} style={{backgroundSize:"75px", backgroundPosition:"center", backgroundRepeat:"no-repeat", backgroundImage:"url('/images/Trainers/Trainer ("+val.skin+").png')"border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"}} onClick={changeSkin} className={"uniqueBoxContainer"}></button>
                             )
                         })
                     }
