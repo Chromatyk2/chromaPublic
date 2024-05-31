@@ -11,6 +11,7 @@ function Profil(props) {
                 setProfil(response.data);
             })
     }, [])
+    console.log(profil);
     return (
         <>
             {profil &&
