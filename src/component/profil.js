@@ -206,8 +206,8 @@ function Profil(props) {
                 {skins &&
                     skins.map((val, key) => {
                         return (
-                            <button onClick={changeSkin} className={"uniqueBoxContainer"}>
-                                <img className={"imgBox"} src={"/images/Trainers/Trainer ("+val.skin+").png"}/>
+                            <button style={{border:"solid",borderRadius:"25px",padding:"20px"}} onClick={changeSkin} className={"uniqueBoxContainer"}>
+                                <img style={{width:"100%"}} className={"imgBox"} src={"/images/Trainers/Trainer ("+val.skin+").png"}/>
                             </button>
                         )
                     })
