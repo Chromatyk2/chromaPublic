@@ -872,6 +872,8 @@ p.filterTitle {
   background: transparent;
 }
 .labelStats {
+    display: flex;
+    flex-flow: column;
   font-weight: 700;
   line-height: 28px;
   text-align: center;
