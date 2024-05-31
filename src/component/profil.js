@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css'
 import Axios from "axios";
+import moment from "moment/moment";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -47,12 +48,67 @@ function Profil(props) {
                             {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
                         </div>
                     </div>
+                    <div className={"profilVisuals"}>
+                        <div className={"profilPicture"}>
+                            {profil[0].profile_picture ?
+                                <img src={"/images/trainer/" + profil[0].profile_picture}/>
+                                :
+                                <img src={"/images/random.png"} />
+                            }
+                        </div>
+                        <div>
+                            <div className="anchorTooltip uniquePokemonContainer">
+                                {profil[0].first_pokemon ?
+                                    <img src={profil[0].first_pokemon}/>
+                                    :
+                                    <img src={"/images/random.png"} />
+                                }
+                            </div>
+                            <div className="anchorTooltip uniquePokemonContainer">
+                                {profil[0].second_pokemon ?
+                                    <img src={profil[0].second_pokemon}/>
+                                    :
+                                    <img src={"/images/random.png"} />
+                                }
+                            </div>
+                            <div className="anchorTooltip uniquePokemonContainer">
+                                {profil[0].third_pokemon ?
+                                    <img src={profil[0].third_pokemon}/>
+                                    :
+                                    <img src={"/images/random.png"} />
+                                }
+                            </div>
+                            <div className="anchorTooltip uniquePokemonContainer">
+                                {profil[0].fourth_pokemon ?
+                                    <img src={profil[0].fourth_pokemon}/>
+                                    :
+                                    <img src={"/images/random.png"} />
+                                }
+                            </div>
+                            <div className="anchorTooltip uniquePokemonContainer">
+                                {profil[0].fifth_pokemon ?
+                                    <img src={profil[0].fifth_pokemon}/>
+                                    :
+                                    <img src={"/images/random.png"} />
+                                }
+                            </div>
+                            <div className="anchorTooltip uniquePokemonContainer">
+                                {profil[0].sixth_pokemon ?
+                                    <img src={profil[0].sixth_pokemon}/>
+                                    :
+                                    <img src={"/images/random.png"} />
+                                }
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 :
 
                 <div className={"contentContainer"}>
                     <p className={"pseudoProfil"}>Capture ton premier pokémon pour débuter ton profil !</p>
-                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"} target={"_blank"}>Chromatyk</a> quand il est en live !</p>
+                    <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"}
+                                                                                           target={"_blank"}>Chromatyk</a> quand
+                        il est en live !</p>
                 </div>
             }
         </>
