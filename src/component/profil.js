@@ -35,7 +35,7 @@ function Profil(props) {
                                 position: 'relative',
                                 background: '#a74667',
                                 textWrap: 'nowrap',
-                                color: 'rgb(144, 229, 181)',
+                                color: '#74fbcf',
                                 padding: '15px',
                                 borderRadius: '50px 0 0 50px'
                             }}>
