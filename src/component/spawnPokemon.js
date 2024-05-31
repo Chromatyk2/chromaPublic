@@ -36,7 +36,7 @@ function SpawnPokemon(props) {
                                                         setIsLoaded(false);
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
@@ -71,7 +71,7 @@ function SpawnPokemon(props) {
                                                                 setIsLoaded(false);
                                                                 setShiny(true);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                 break;
                                                             default :
                                                                 setIsLoaded(false);
@@ -102,7 +102,7 @@ function SpawnPokemon(props) {
                                                         setIsLoaded(false);
                                                         setShiny(true);
                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                         break;
                                                     default :
                                                         setIsLoaded(false);
