@@ -3562,6 +3562,18 @@ span.navbar-brand {
     padding: 50px;
     border-radius: 50px;
 }
+.infoNbBox{
+    background-color: #fff;
+    border-radius: 50%;
+    color: #007bb3;
+    height: 50px;
+    position: absolute;
+    width: 50px;
+    font-size: 35px;
+    font-weight: 700;
+    left: -19px;
+    text-align: center;
+}
 .profilPicture{
     width: 400px;
 }

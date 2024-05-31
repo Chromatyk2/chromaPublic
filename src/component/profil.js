@@ -56,7 +56,7 @@ function Profil(props) {
                         <div style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
                             {profil[0].box > 0 &&
                             <div className="infoPkm">
-                                <div className="infoNbCapture">{profil[0].box}</div>
+                                <div className="infoNbBox">{profil[0].box}</div>
                             </div>
                             }
                             {profil[0].profil_picture ?
