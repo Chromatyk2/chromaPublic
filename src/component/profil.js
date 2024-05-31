@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import '../App.css'
 import Axios from "axios";
 import moment from "moment/moment";
+import OpeningBooster from "./openingBooster";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
@@ -25,8 +27,9 @@ function Profil(props) {
                 width:'300px'
             }
         };
-    console.log(pseudo);
-    console.log(profil);
+    function handleProfileImage() {
+        setIsOpen(true);
+    }
     return (
         <>
             {profil &&
@@ -115,7 +118,7 @@ function Profil(props) {
                         </div>
                         :
                         <div className={"profilVisuals"}>
-                            <button style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
+                            <button onClick={handleProfileImage} style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
                                 {profil[0].box > 0 &&
                                     <div className="infoPkm">
                                         <div className="infoNbBox">{profil[0].box}</div>
@@ -183,6 +186,9 @@ function Profil(props) {
                         il est en live !</p>
                 </div>
             }
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                <p>Test</p>
+            </Modal>
         </>
     );
 }
