@@ -40,7 +40,8 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/addXp',
                                                             {
                                                                 user: pseudo,
-                                                                win: 1000
+                                                                win: 1000,
+                                                                wins: 1000
                                                             }
                                                         )
                                                         break;
@@ -51,7 +52,8 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/addXp',
                                                             {
                                                                 user: pseudo,
-                                                                win: 500
+                                                                win: 500,
+                                                                wins: 500
                                                             }
                                                         )
                                                 }
@@ -87,7 +89,8 @@ function SpawnPokemon(props) {
                                                                 Axios.post('/api/addXp',
                                                                     {
                                                                         user: pseudo,
-                                                                        win: 1000
+                                                                        win: 1000,
+                                                                        wins: 1000
                                                                     }
                                                                 )
                                                                 break;
@@ -98,7 +101,8 @@ function SpawnPokemon(props) {
                                                                 Axios.post('/api/addXp',
                                                                     {
                                                                         user: pseudo,
-                                                                        win: 500
+                                                                        win: 500,
+                                                                        wins: 500
                                                                     }
                                                                 )
                                                         }
@@ -130,7 +134,8 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/addXp',
                                                             {
                                                                 user: pseudo,
-                                                                win: 500
+                                                                win: 500,
+                                                                wins: 500
                                                             }
                                                         )
                                                         break;
@@ -141,7 +146,8 @@ function SpawnPokemon(props) {
                                                         Axios.post('/api/addXp',
                                                             {
                                                                 user: pseudo,
-                                                                win: 100
+                                                                win: 100,
+                                                                wins: 100
                                                             }
                                                         )
                                                 }
