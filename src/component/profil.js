@@ -25,6 +25,7 @@ function Profil(props) {
                 width:'300px'
             }
         };
+    console.log(profil);
     return (
         <>
             {profil &&
