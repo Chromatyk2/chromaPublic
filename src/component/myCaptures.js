@@ -17,7 +17,6 @@ function MyCaptures(props) {
               return val.shiny == 1 ?
                 <div className="myCaptureItem">
                   <p className="myCapturesList shinyPokemonList">{val.pkmName+"(shiny) - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}</p>
-                  <CreateTrade idMainCapture={val.id}/>
                 </div>
                 :
                 <div  className="myCaptureItem">
