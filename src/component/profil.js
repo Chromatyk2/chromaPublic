@@ -255,13 +255,14 @@ function Profil(props) {
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                 {modalGoal == "skin" ?
                     <p style={{textAlign: "center"}}>Choisis ton Skin</p>
-                    profil &&
-                    profil[0].box > 0 &&
-                    <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/basic.png)"}}>
-                        <div className="infoPkm">
-                            <div className="infoNbBoxSkin">{profil[0].box}</div>
-                        </div>
-                    </button>
+                    {profil &&
+                        profil[0].box > 0 &&
+                            <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/basic.png)"}}>
+                                <div className="infoPkm">
+                                    <div className="infoNbBoxSkin">{profil[0].box}</div>
+                                </div>
+                            </button>
+                    }
                     <div style={{overflow: "overlay", display: "flex", gap: "10px", flexWrap: "wrap", flexFlow: "row",flexWrap:"wrap"}}>
                         {skins &&
                             skins.map((val, key) => {
