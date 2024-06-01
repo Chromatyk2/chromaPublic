@@ -9,7 +9,7 @@ function Profil(props) {
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [modalGoal, setModalGoal] = React.useState("");
+    const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState(0);
     useEffect(() => {
         Axios
@@ -39,14 +39,15 @@ function Profil(props) {
             }
         };
     function handleProfileImage() {
-        setModalGoal("skin");
         setIsOpen(true);
     }
     function handleTeam(e) {
         const teamToUpdate = e.target.value;
         setTeamToHandle(teamToUpdate);
-        setModalGoal("team");
-        setIsOpen(true);
+        setIsOpenTeam(true);
+    }
+    function closeModalTeam() {
+        setIsOpenTeam(false);
     }
     function closeModal() {
         setIsOpen(false);
@@ -253,33 +254,32 @@ function Profil(props) {
                 </div>
             }
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                {modalGoal == "skin" ?
-                    <p style={{textAlign: "center"}}>Choisis ton Skin</p>
-                    {profil &&
-                        profil[0].box > 0 &&
-                            <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/basic.png)"}}>
-                                <div className="infoPkm">
-                                    <div className="infoNbBoxSkin">{profil[0].box}</div>
-                                </div>
-                            </button>
-                    }
-                    <div style={{overflow: "overlay", display: "flex", gap: "10px", flexWrap: "wrap", flexFlow: "row",flexWrap:"wrap"}}>
-                        {skins &&
-                            skins.map((val, key) => {
-                                return (
-                                    <button value={val.skin} style={{
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundImage: "url(/images/Trainers/Trainer" + val.skin + ".png)",
-                                        border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"
-                                    }} onClick={changeSkin}></button>
-                                )
-                            })
-                        }
-                    < /div>
-                :
-                    <p>Test</p>
+                <p style={{textAlign: "center"}}>Choisis ton Skin</p>
+                {profil &&
+                    profil[0].box > 0 &&
+                    <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/basic.png)"}}>
+                        <div className="infoPkm">
+                            <div className="infoNbBoxSkin">{profil[0].box}</div>
+                        </div>
+                    </button>
                 }
+                <div style={{overflow: "overlay", display: "flex", gap: "10px", flexWrap: "wrap", flexFlow: "row",flexWrap:"wrap"}}>
+                    {skins &&
+                        skins.map((val, key) => {
+                            return (
+                                <button value={val.skin} style={{
+                                    backgroundPosition: "center",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundImage: "url(/images/Trainers/Trainer" + val.skin + ".png)",
+                                    border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"
+                                }} onClick={changeSkin}></button>
+                            )
+                        })
+                    }
+                < /div>
+            </Modal>
+            <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles} contentLabel="Example Modal">
+                <p style={{textAlign: "center"}}>Choisis ton Skin</p>
             </Modal>
         </>
     )
