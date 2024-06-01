@@ -34,15 +34,7 @@ function Items(props) {
                     pkmList.map((val, key) => {
                         return (
                             <>
-                                <button onClick={updateTeam} value={val.pkmImage} style={{background:"none",border:"none"}} className="navLink">
-                                    <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
-                                        <div className="infoPkm">
-                                            {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
-                                            {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
-                                        </div>
-                                        <img src={val.pkmImage}></img>
-                                    </div>
-                                </button>
+                                <button onClick={updateTeam} value={val.pkmImage} style={{backgroundImage:"url("+val.pkmImage+")"background:"none",border:"none"}} className="navLink"></button>
                             </>
                         )
                     })
