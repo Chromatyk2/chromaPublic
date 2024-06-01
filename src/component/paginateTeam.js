@@ -41,8 +41,9 @@ function Items(props) {
                                     value={val.pkmImage}
                                     style={{
                                         backgroundImage:"url("+val.pkmImage+")",
-                                        background:"none",
-                                        border:"none"
+                                        height:"100px",
+                                        width:"100px",
+                                        border:"none",
                                     }}
                                     lassName="navLink">
                                 </button>
