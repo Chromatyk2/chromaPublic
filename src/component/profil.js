@@ -9,6 +9,8 @@ function Profil(props) {
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalGoal, setModalGoal] = React.useState("");
+    const [teamToHandle, setTeamToHandle] = React.useState(0);
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
@@ -37,6 +39,13 @@ function Profil(props) {
             }
         };
     function handleProfileImage() {
+        setModalGoal("skin");
+        setIsOpen(true);
+    }
+    function handleTeam(e) {
+        const teamToUpdate = e.target.value;
+        setTeamToHandle(teamToUpdate);
+        setModalGoal("team");
         setIsOpen(true);
     }
     function closeModal() {
@@ -189,42 +198,42 @@ function Profil(props) {
                                 }
                             </button>
                             <div className={"profilTeam"}>
-                                <button className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={1} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].first_pokemon ?
                                         <img src={profil[0].first_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={2} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].second_pokemon ?
                                         <img src={profil[0].second_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={3} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].third_pokemon ?
                                         <img src={profil[0].third_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={4} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].fourth_pokemon ?
                                         <img src={profil[0].fourth_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={5} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].fifth_pokemon ?
                                         <img src={profil[0].fifth_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={6} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].sixth_pokemon ?
                                         <img src={profil[0].sixth_pokemon}/>
                                         :
@@ -244,35 +253,35 @@ function Profil(props) {
                 </div>
             }
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <p style={{textAlign: "center"}}>Choisis ton Skin</p>
-                {profil &&
+                {modalGoal == "skin" ?
+                    <p style={{textAlign: "center"}}>Choisis ton Skin</p>
+                    profil &&
                     profil[0].box > 0 &&
                     <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/basic.png)"}}>
                         <div className="infoPkm">
                             <div className="infoNbBoxSkin">{profil[0].box}</div>
                         </div>
                     </button>
-                }
-                <div>
-            </div>
-            <div style={{overflow: "overlay", display: "flex", gap: "10px", flexWrap: "wrap", flexFlow: "row",flexWrap:"wrap"}}>
-                {skins &&
-                    skins.map((val, key) => {
-                            return (
-                                <button value={val.skin} style={{
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundImage: "url(/images/Trainers/Trainer" + val.skin + ".png)",
-                                    border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"
-                                }} onClick={changeSkin}></button>
+                    <div style={{overflow: "overlay", display: "flex", gap: "10px", flexWrap: "wrap", flexFlow: "row",flexWrap:"wrap"}}>
+                        {skins &&
+                            skins.map((val, key) => {
+                                return (
+                                    <button value={val.skin} style={{
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundImage: "url(/images/Trainers/Trainer" + val.skin + ".png)",
+                                        border: "solid", borderRadius: "25px", padding: "20px", width:"100px", height:"100px"
+                                    }} onClick={changeSkin}></button>
                                 )
-                            }
-                        )
-                    }
-                < /div>
+                            })
+                        }
+                    < /div>
+                :
+                    <p>Test</p>
+                }
             </Modal>
         </>
-);
+    )
 }
 
 export default Profil
