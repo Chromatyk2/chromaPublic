@@ -11,7 +11,7 @@ function Profil(props) {
     const [skins, setSkins] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
-    const [teamToHandle, setTeamToHandle] = React.useState(0);
+    const [teamToHandle, setTeamToHandle] = React.useState("");
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
