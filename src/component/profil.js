@@ -239,6 +239,7 @@ function Profil(props) {
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                 <p style={{textAlign: "center"}}>Choisis ton Skin</p>
                 {profil &&
+                    profil.length > 0 &&
                     profil[0].box > 0 &&
                     <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/basic.png)"}}>
                         <div className="infoPkm">
