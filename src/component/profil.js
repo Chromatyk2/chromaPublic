@@ -98,6 +98,9 @@ function Profil(props) {
                 })
         }
     }
+    function handleState() {
+        setIsOpenTeam(false);
+    }
     return (
         <>
             {profil &&
@@ -250,7 +253,7 @@ function Profil(props) {
                 < /div>
             </Modal>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles} contentLabel="Example Modal">
-                <PokedexTeam pkmToUpdate={teamToHandle} cookies={props.cookies} />
+                <PokedexTeam change={handleState} pkmToUpdate={teamToHandle} cookies={props.cookies} />
             </Modal>
         </>
     )

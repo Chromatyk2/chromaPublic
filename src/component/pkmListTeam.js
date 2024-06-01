@@ -8,6 +8,9 @@ function PkmListTeam(props) {
     const shinys = pkmList.filter(item => item.shiny == 1);
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
+    function handleState() {
+        props.change();
+    }
     return (
         <>
             <div className="stats">
@@ -15,6 +18,7 @@ function PkmListTeam(props) {
                 <p className="labelStats">Total<br/><span className="valueStats">{nbTotal}</span></p>
             </div>
             <PaginationTeam
+                change={handleState}
                 pkmToUpdate={props.pkmToUpdate}
                 itemsPerPage={32}
                 items={props.list}

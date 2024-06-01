@@ -14,10 +14,13 @@ function PokedexTeam(props) {
                 setList(response.data);
             })
     }, [])
+    function handleState() {
+        props.change();
+    }
     return (
         <>
             <div  style={{paddingTop:"15px",minHeight:"100%"}} className={"contentContainer"}>
-                <PkmListTeam pkmToUpdate={props.pkmToUpdate} list={list}/>
+                <PkmListTeam change={handleState} pkmToUpdate={props.pkmToUpdate} list={list}/>
             </div>
         </>
     )
