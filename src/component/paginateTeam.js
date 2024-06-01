@@ -13,6 +13,9 @@ function Items(props) {
     const shinys = pkmList.filter(item => item.shiny == 1);
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
+    function updateTeam() {
+        console.log("Done !")
+    }
     return (
         <>
             <div className="pokemonGlobalContainer">
@@ -22,7 +25,7 @@ function Items(props) {
                     pkmList.map((val, key) => {
                         return (
                             <>
-                                <button style={{background:"none",border:"none"}} className="navLink">
+                                <button onClick={updateTeam} value={val.pkmImage} style={{background:"none",border:"none"}} className="navLink">
                                     <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
                                         <div className="infoPkm">
                                             {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
