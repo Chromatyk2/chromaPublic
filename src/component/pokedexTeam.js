@@ -16,7 +16,7 @@ function PokedexTeam(props) {
     }, [])
     return (
         <>
-            <div  style={{paddingTop:"15px",height:"100%"}} className={"contentContainer"}>
+            <div  style={{paddingTop:"15px",minHeight:"100%"}} className={"contentContainer"}>
                 <PkmListTeam list={list}/>
             </div>
         </>
