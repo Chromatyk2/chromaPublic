@@ -3512,6 +3512,8 @@ span.navbar-brand {
     margin-bottom: 60px;
     margin-top: -40px;
     justify-content: center;
+    height:100vh;
+    background-color:#ff101010;
 }
 
 .pkmn {
