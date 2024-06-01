@@ -99,7 +99,16 @@ function Profil(props) {
         }
     }
     function handleState() {
-        setIsOpenTeam(false);
+        Axios.get("/api/getProfil/"+pseudo)
+            .then(function(response){
+                setProfil(response.data);
+                Axios
+                    .get("/api/getSkins/"+pseudo)
+                    .then(function(response){
+                        setSkins(response.data);
+                        setIsOpenTeam(false);
+                    })
+            })
     }
     return (
         <>
