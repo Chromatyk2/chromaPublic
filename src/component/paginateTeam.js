@@ -9,14 +9,14 @@ import moment from 'moment';
 function Items(props) {
     const [cookies, setCookie] = useCookies(['oauth']);
     const [user, setUser] = useCookies(['user']);
+    const [pkmToUpdate, setPkmToUpdate] = useState(props.pkmToUpdate)
     const pkmList = props.currentItems;
     const shinys = pkmList.filter(item => item.shiny == 1);
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
     function updateTeam(e) {
-        console.log(props);
         const imgToAdd = e.target.value;
-        const pkToUpdate = props.pkmToUpdate;
+        const pkToUpdate = pkmToUpdate;
         Axios.post('/api/updatePokemonTeam',
             {
                 pkm:pkToUpdate,
