@@ -38,7 +38,7 @@ function Items(props) {
                                     onClick={updateTeam}
                                     value={val.pkmImage}
                                     style={{
-                                        backgroundImage: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png)",
+                                        backgroundImage: 'url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")',
                                         background:"none",
                                         border:"none"
                                     }}
