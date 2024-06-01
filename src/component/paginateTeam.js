@@ -17,8 +17,8 @@ function Items(props) {
         const imgToAdd = e.target.value;
         Axios.post('/api/updatePokemonTeam',
             {
-                pkm:props.pkmToUpdate,
-                image:imgToAdd,
+                pkm:"oui",
+                image:"test",
                 user:user.user.data[0].login
             }
         )
