@@ -19,7 +19,7 @@ function Items(props) {
             {
                 pkm:props.pkmToUpdate,
                 image:imgToAdd,
-                user:user
+                user:user.user.data[0].login
             }
         )
     }
