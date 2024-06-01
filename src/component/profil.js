@@ -200,42 +200,42 @@ function Profil(props) {
                                 }
                             </button>
                             <div className={"profilTeam"}>
-                                <button onClick={handleTeam} value={"first_pokemon"} className="anchorTooltip uniquePokemonContainer">
+                                <button style={{backgroundImage: profil[0].first_pokemon ? 'url('+profil[0].first_pokemon+')' : 'url(/images/random.png)'}} onClick={handleTeam} value={"first_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].first_pokemon ?
                                         <img src={profil[0].first_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={"second_pokemon"} className="anchorTooltip uniquePokemonContainer">
+                                <button style={{backgroundImage: profil[0].second_pokemon ? 'url('+profil[0].second_pokemon+')' : 'url(/images/random.png)'}} onClick={handleTeam} value={"second_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].second_pokemon ?
                                         <img src={profil[0].second_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={"third_pokemon"} className="anchorTooltip uniquePokemonContainer">
+                                <button style={{backgroundImage: profil[0].third_pokemon ? 'url('+profil[0].third_pokemon+')' : 'url(/images/random.png)'}} onClick={handleTeam} value={"third_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].third_pokemon ?
                                         <img src={profil[0].third_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={"fourth_pokemon"} className="anchorTooltip uniquePokemonContainer">
+                                <button style={{backgroundImage: profil[0].fourth_pokemon ? 'url('+profil[0].fourth_pokemon+')' : 'url(/images/random.png)'}} onClick={handleTeam} value={"fourth_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].fourth_pokemon ?
                                         <img src={profil[0].fourth_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={"fifth_pokemon"} className="anchorTooltip uniquePokemonContainer">
+                                <button style={{backgroundImage: profil[0].fifth_pokemon ? 'url('+profil[0].fifth_pokemon+')' : 'url(/images/random.png)'}} onClick={handleTeam} value={"fifth_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].fifth_pokemon ?
                                         <img src={profil[0].fifth_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={"sixth_pokemon"} className="anchorTooltip uniquePokemonContainer">
+                                <button style={{backgroundImage: profil[0].sixth_pokemon ? 'url('+profil[0].sixth_pokemon+')' : 'url(/images/random.png)'}}  onClick={handleTeam} value={"sixth_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].sixth_pokemon ?
                                         <img src={profil[0].sixth_pokemon}/>
                                         :

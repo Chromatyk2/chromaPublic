@@ -21,7 +21,7 @@ function Items(props) {
         const pkToUpdate = pkmToUpdate;
         Axios.post('/api/updatePokemonTeam',
             {
-                pkm:pkToUpdate,
+                pkm:${$pkToUpdate},
                 image:imgToAdd,
                 user:user.user.data[0].login
             }
