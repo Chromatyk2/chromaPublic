@@ -13,8 +13,15 @@ function Items(props) {
     const shinys = pkmList.filter(item => item.shiny == 1);
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
-    function updateTeam() {
-        console.log("Done !")
+    function updateTeam(e) {
+        const imgToAdd = e.target.value;
+        Axios.post('/api/addSkin',
+            {
+                pkm:props.pkmToUpdate,
+                image:imgToAdd,
+                user:user
+            }
+        )
     }
     return (
         <>
@@ -82,7 +89,7 @@ function PaginationTeam(props) {
                     <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
                 </div>
             }
-            <Items currentItems={currentItems} />
+            <Items pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."

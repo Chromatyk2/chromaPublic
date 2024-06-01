@@ -200,42 +200,42 @@ function Profil(props) {
                                 }
                             </button>
                             <div className={"profilTeam"}>
-                                <button onClick={handleTeam} value={1} className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={"first_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].first_pokemon ?
                                         <img src={profil[0].first_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={2} className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={"second_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].second_pokemon ?
                                         <img src={profil[0].second_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={3} className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={"third_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].third_pokemon ?
                                         <img src={profil[0].third_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={4} className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={"fourth_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].fourth_pokemon ?
                                         <img src={profil[0].fourth_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={5} className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={"fifth_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].fifth_pokemon ?
                                         <img src={profil[0].fifth_pokemon}/>
                                         :
                                         <img src={"/images/random.png"}/>
                                     }
                                 </button>
-                                <button onClick={handleTeam} value={6} className="anchorTooltip uniquePokemonContainer">
+                                <button onClick={handleTeam} value={"sixth_pokemon"} className="anchorTooltip uniquePokemonContainer">
                                     {profil[0].sixth_pokemon ?
                                         <img src={profil[0].sixth_pokemon}/>
                                         :
@@ -280,7 +280,7 @@ function Profil(props) {
                 < /div>
             </Modal>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles} contentLabel="Example Modal">
-                <PokedexTeam cookies={props.cookies} />
+                <PokedexTeam pkmToUpdate={teamToHandle} cookies={props.cookies} />
             </Modal>
         </>
     )
