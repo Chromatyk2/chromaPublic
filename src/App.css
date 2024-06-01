@@ -959,6 +959,7 @@ p.filterTitle {
     padding: 10px;
     height: 100px;
     width: 100px;
+    background-size: cover;
 }
 .pokemonGlobalContainer {
   display: flex;
