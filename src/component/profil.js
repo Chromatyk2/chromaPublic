@@ -186,7 +186,7 @@ function Profil(props) {
                         </div>
                         :
                         <div className={"profilVisuals"}>
-                            <button onClick={handleProfileImage} style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
+                            <button onClick={handleProfileImage} style={{width: "200px"}} className="anchorTooltip uniquePokemonContainerTeam">
                                 {profil[0].box > 0 &&
                                     <div className="infoPkm">
                                         <div className="infoNbBox">{profil[0].box}</div>

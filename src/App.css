@@ -949,7 +949,17 @@ p.filterTitle {
     filter: drop-shadow(0 0 12px black);
     padding: 10px;
 }
-
+.uniquePokemonContainerTeam {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background: rgba(37,87,72,.2);
+    border-radius: 25%;
+    -webkit-filter: drop-shadow(0 0 12px #000);
+    filter: drop-shadow(0 0 12px black);
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+}
 .pokemonGlobalContainer {
   display: flex;
   flex-wrap: wrap;
