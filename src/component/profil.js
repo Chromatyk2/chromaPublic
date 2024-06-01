@@ -18,13 +18,6 @@ function Profil(props) {
                 setProfil(response.data);
             })
     }, [])
-    useEffect(() => {
-        Axios
-            .get("/api/getSkins/"+pseudo)
-            .then(function(response){
-                setSkins(response.data);
-            })
-    }, [])
 
         const customStyles = {
             extBar: {
@@ -39,7 +32,14 @@ function Profil(props) {
             }
         };
     function handleProfileImage() {
-        setIsOpen(true);
+        useEffect(() => {
+            Axios
+                .get("/api/getSkins/"+pseudo)
+                .then(function(response){
+                    setSkins(response.data);
+                    setIsOpen(true);
+                })
+        }, [])
     }
     function handleTeam(e) {
         const teamToUpdate = e.target.value;
