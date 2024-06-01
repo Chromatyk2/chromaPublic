@@ -4,6 +4,7 @@ import Axios from "axios";
 import moment from "moment/moment";
 import OpeningBooster from "./openingBooster";
 import Modal from 'react-modal';
+import Pokedex from "./pokedex";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -279,7 +280,7 @@ function Profil(props) {
                 < /div>
             </Modal>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles} contentLabel="Example Modal">
-                <p style={{textAlign: "center"}}>Choisis ton Skin</p>
+                <Pokedex cookies={props.cookies} />
             </Modal>
         </>
     )
