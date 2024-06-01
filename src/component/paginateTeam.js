@@ -34,7 +34,7 @@ function Items(props) {
                     pkmList.map((val, key) => {
                         return (
                             <>
-                                <button onClick={updateTeam} value={val.pkmImage} style={{backgroundImage:"url("+val.pkmImage+")", background:"none",border:"none"}} className="navLink"></button>
+                                <button onClick={updateTeam} value={val.pkmImage} style={{backgroundImage:`url(${val.pkmImage}`, background:"none", border:"none"}} className="navLink"></button>
                             </>
                         )
                     })
