@@ -15,10 +15,11 @@ function Items(props) {
     const nbTotal = pkmList.length;
     function updateTeam(e) {
         const imgToAdd = e.target.value;
+        const pkToUpdate = props.pkmToUpdate;
         Axios.post('/api/updatePokemonTeam',
             {
-                pkm:"oui",
-                image:"test",
+                pkm:pkToUpdate,
+                image:imgToAdd,
                 user:user.user.data[0].login
             }
         )
