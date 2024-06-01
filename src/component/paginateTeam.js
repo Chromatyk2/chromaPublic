@@ -15,6 +15,8 @@ function Items(props) {
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
     function updateTeam(e) {
+        console.log(props.pkmToUpdate);
+        console.log(pkmToUpdate);
         const imgToAdd = e.target.value;
         const pkToUpdate = pkmToUpdate;
         Axios.post('/api/updatePokemonTeam',
