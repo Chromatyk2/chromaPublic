@@ -15,7 +15,7 @@ function Items(props) {
     const nbTotal = pkmList.length;
     function updateTeam(e) {
         const imgToAdd = e.target.value;
-        Axios.post('/api/addSkin',
+        Axios.post('/api/updatePokemonTeam',
             {
                 pkm:props.pkmToUpdate,
                 image:imgToAdd,
