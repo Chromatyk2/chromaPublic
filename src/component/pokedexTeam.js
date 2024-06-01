@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { Cookies, useCookies } from 'react-cookie';
 import Axios from 'axios'
 import '../App.css'
-import PkmList from './pkmList.js'
+import PkmListTeam from './pkmListTeam.js'
 
 function PokedexTeam(props) {
     const [list,setList] = useState([]);
@@ -17,7 +17,7 @@ function PokedexTeam(props) {
     return (
         <>
             <div className={"contentContainer"}>
-                <PkmList list={list}/>
+                <PkmListTeam list={list}/>
             </div>
         </>
     )
