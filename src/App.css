@@ -3655,6 +3655,14 @@ span.navbar-brand {
     justify-content: center;
     width: 100%;
 }
+.closePokemonProfilList{
+    width:130px;
+    height:130px;
+}
+.middlePokemonProfilList{
+    width:115px;
+    height:115px;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
