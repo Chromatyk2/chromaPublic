@@ -33,7 +33,10 @@ function RandomProfil(props) {
                         margin: "auto",
                         background: "rgba(0,0,0,.5)",
                         borderRadius: "50px",
-                        padding: "20px"
+                        padding: "20px",
+                        position:"absolute",
+                        left:"300px",
+                        top:"300px"
                     }}>
                         <p className={"pseudoProfilList"}>{allProfil[randomIndex].pseudo}</p>
                         <p className={"levelProfilList"}>Niveau {allProfil[randomIndex].level}
