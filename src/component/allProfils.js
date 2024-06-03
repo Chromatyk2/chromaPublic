@@ -14,7 +14,6 @@ function AllProfils(props) {
                 setAllProfil(response.data);
             })
     }, [])
-    console.log(allProfil);
     return (
         <>
             <div className={"contentContainer"}>
