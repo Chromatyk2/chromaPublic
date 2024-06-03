@@ -4743,6 +4743,9 @@ button.uniqueBoxContainer:last-child{
         height: 0.25rem;
     }
 }
+button.navbar-toggler {
+    background: aliceblue;
+}
 button.navbar-toggler.collapsed {
-    background: white;
+    background: aliceblue;
 }
