@@ -24,7 +24,7 @@ function RandomProfil(props) {
         return () => {
             clearInterval(interval);
         };
-    }, [allProfil.length > 0]);
+    }, []);
     console.log(allProfil);
     console.log(randomIndex);
     return (
