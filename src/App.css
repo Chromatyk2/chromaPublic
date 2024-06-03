@@ -3709,6 +3709,9 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
+    .profilVisualsList{
+        display: none;
+    }
     .filtersContainer {
         display: none;
     }
@@ -3781,6 +3784,9 @@ span.navbar-brand {
     }
 }
 @media screen and (max-width: 379px) {
+    .profilVisualsList{
+        display: none;
+    }
   .filtersContainer {
         display: none;
   }
