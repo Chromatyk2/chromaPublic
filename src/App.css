@@ -3676,6 +3676,9 @@ span.navbar-brand {
     width:115px;
     height:115px;
 }
+.profilVisualsMobile{
+    display: none;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
@@ -3709,7 +3712,13 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
+    .profilVisualsMobile{
+        display: block;
+    }
     .profilVisualsList{
+        display: none;
+    }
+    .profilVisuals{
         display: none;
     }
     .filtersContainer {
@@ -3784,6 +3793,12 @@ span.navbar-brand {
     }
 }
 @media screen and (max-width: 379px) {
+    .profilVisualsMobile{
+        display: block;
+    }
+    .profilVisuals{
+        display: none;
+    }
     .profilVisualsList{
         display: none;
     }
