@@ -3635,6 +3635,26 @@ span.navbar-brand {
     width:133px;
     height:133px;
 }
+.profilVisualsList{
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 50px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: auto;
+    padding: 50px;
+    width: 100%;
+}
+.profilTeamList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;

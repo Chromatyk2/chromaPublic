@@ -17,8 +17,8 @@ function Items(props) {
                     profilList.map((val, key) => {
                         return (
                             <>
-                                <div className={"profilVisuals"}>
-                                    <div className={"profilTeam"}>
+                                <div className={"profilVisualsList"}>
+                                    <div className={"profilTeamList"}>
                                         <div className="anchorTooltip uniquePokemonContainer">
                                             {val.first_pokemon ?
                                                 <img src={val.first_pokemon}/>
