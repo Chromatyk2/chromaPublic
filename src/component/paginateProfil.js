@@ -17,38 +17,48 @@ function Items(props) {
                     profilList.map((val, key) => {
                         return (
                             <>
-                                <div className={"profilVisualsList"}>
-                                    <div
-                                        style={{backgroundImage: val.first_pokemon ? 'url(' + val.first_pokemon + ')' : 'url(/images/random.png)'}} value={"first_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
-                                    </div>
-                                    <div
-                                        style={{backgroundImage: val.second_pokemon ? 'url(' + val.second_pokemon + ')' : 'url(/images/random.png)'}} value={"second_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
-                                    </div>
-                                    <div
-                                        style={{backgroundImage: val.third_pokemon ? 'url(' + val.third_pokemon + ')' : 'url(/images/random.png)'}} value={"third_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
-                                    </div>
-                                    <div style={{width: "150px"}} className="anchorTooltip uniquePokemonContainer">
-                                        {val.profil_picture ?
-                                            <img style={{width: "100%"}}
-                                                 src={"/images/Trainers/Trainer" + val.profil_picture + ".png"}/>
-                                            :
-                                            <img style={{width: "100%"}} src={"/images/random.png"}/>
-                                        }
-                                    </div>
-                                    <div
-                                        style={{backgroundImage: val.fourth_pokemon ? 'url(' + val.fourth_pokemon + ')' : 'url(/images/random.png)'}} value={"fourth_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
-                                    </div>
-                                    <div
-                                        style={{backgroundImage: val.fifth_pokemon ? 'url(' + val.fifth_pokemon + ')' : 'url(/images/random.png)'}} value={"fifth_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
-                                    </div>
-                                    <div
-                                        style={{backgroundImage: val.sixth_pokemon ? 'url(' + val.sixth_pokemon + ')' : 'url(/images/random.png)'}} value={"sixth_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
+                                <div>
+                                    <p className={"pseudoProfil"}>{val.pseudo}</p>
+                                    <p className={"levelProfil"}>Niveau {val.level}</p>
+                                    <div className={"profilVisualsList"}>
+                                        <div
+                                            style={{backgroundImage: val.first_pokemon ? 'url(' + val.first_pokemon + ')' : 'url(/images/random.png)'}}
+                                            value={"first_pokemon"}
+                                            className="anchorTooltip uniquePokemonContainerTeam">
+                                        </div>
+                                        <div
+                                            style={{backgroundImage: val.second_pokemon ? 'url(' + val.second_pokemon + ')' : 'url(/images/random.png)'}}
+                                            value={"second_pokemon"}
+                                            className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
+                                        </div>
+                                        <div
+                                            style={{backgroundImage: val.third_pokemon ? 'url(' + val.third_pokemon + ')' : 'url(/images/random.png)'}}
+                                            value={"third_pokemon"}
+                                            className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
+                                        </div>
+                                        <div style={{width: "150px"}} className="anchorTooltip uniquePokemonContainer">
+                                            {val.profil_picture ?
+                                                <img style={{width: "100%"}}
+                                                     src={"/images/Trainers/Trainer" + val.profil_picture + ".png"}/>
+                                                :
+                                                <img style={{width: "100%"}} src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                        <div
+                                            style={{backgroundImage: val.fourth_pokemon ? 'url(' + val.fourth_pokemon + ')' : 'url(/images/random.png)'}}
+                                            value={"fourth_pokemon"}
+                                            className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
+                                        </div>
+                                        <div
+                                            style={{backgroundImage: val.fifth_pokemon ? 'url(' + val.fifth_pokemon + ')' : 'url(/images/random.png)'}}
+                                            value={"fifth_pokemon"}
+                                            className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
+                                        </div>
+                                        <div
+                                            style={{backgroundImage: val.sixth_pokemon ? 'url(' + val.sixth_pokemon + ')' : 'url(/images/random.png)'}}
+                                            value={"sixth_pokemon"}
+                                            className="anchorTooltip uniquePokemonContainerTeam">
+                                        </div>
                                     </div>
                                 </div>
                             </>
