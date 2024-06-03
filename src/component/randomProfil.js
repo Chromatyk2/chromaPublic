@@ -25,6 +25,7 @@ function RandomProfil(props) {
             clearInterval(interval);
         };
     }, [allProfil.length > 0]);
+    console.log(allProfil);
     return (
         <>
             <div className={"contentContainer"}>
