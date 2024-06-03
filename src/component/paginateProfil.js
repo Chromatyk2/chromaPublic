@@ -61,6 +61,7 @@ function Items(props) {
                                         </div>
                                     </div>
                                 </div>
+                                <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img src={"/images/pokedex.png"}/></Link>
                             </>
                         )
                     })
