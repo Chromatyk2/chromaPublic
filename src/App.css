@@ -3653,15 +3653,12 @@ span.navbar-brand {
 }
 .profilVisualsList{
     align-items: center;
-    background: rgba(0, 0, 0, .5);
-    border-radius: 50px;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin: auto;
-    padding: 50px;
     width: 100%;
 }
 .profilTeamList{
