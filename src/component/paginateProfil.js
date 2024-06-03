@@ -17,9 +17,9 @@ function Items(props) {
                     profilList.map((val, key) => {
                         return (
                             <>
-                                <div>
-                                    <p className={"pseudoProfil"}>{val.pseudo}</p>
-                                    <p className={"levelProfil"}>Niveau {val.level}</p>
+                                <div style={{background:"rgba(0,0,0,.5)",borderRadius:"50px"}}>
+                                    <p className={"pseudoProfilList"}>{val.pseudo}</p>
+                                    <p className={"levelProfilList"}>Niveau {val.level}</p>
                                     <div className={"profilVisualsList"}>
                                         <div
                                             style={{backgroundImage: val.first_pokemon ? 'url(' + val.first_pokemon + ')' : 'url(/images/random.png)'}}
