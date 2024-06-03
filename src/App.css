@@ -225,9 +225,10 @@ color: transparent;
 -webkit-text-stroke: 4px black;
 }
 nav.navbar.navbar-expand-lg.navbar-light {
-    background-color: rgba(18, 7, 71, 0.1) !important;
+    background-color: rgba(18, 7, 71, 1) !important;
     position: fixed;
     width: 100%;
+    z-index: 2;
 }
 .me-auto.navbar-nav {
     gap: 30px;
