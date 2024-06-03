@@ -17,12 +17,65 @@ function Items(props) {
                     profilList.map((val, key) => {
                         return (
                             <>
-                                <p>{val.pseudo}</p>
+                                <div className={"profilVisuals"}>
+                                    <div className={"profilTeam"}>
+                                        <div className="anchorTooltip uniquePokemonContainer">
+                                            {val.first_pokemon ?
+                                                <img src={val.first_pokemon}/>
+                                                :
+                                                <img src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                        <div className="anchorTooltip uniquePokemonContainer">
+                                            {val.second_pokemon ?
+                                                <img src={val.second_pokemon}/>
+                                                :
+                                                <img src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                        <div className="anchorTooltip uniquePokemonContainer">
+                                            {val.third_pokemon ?
+                                                <img src={val.third_pokemon}/>
+                                                :
+                                                <img src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                        <div style={{width: "100px"}} className="anchorTooltip uniquePokemonContainer">
+                                            {val.profil_picture ?
+                                                <img style={{width: "100%"}}
+                                                     src={"/images/Trainers/Trainer" + val.profil_picture + ".png"}/>
+                                                :
+                                                <img style={{width: "100%"}} src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                        <div className="anchorTooltip uniquePokemonContainer">
+                                            {val.fourth_pokemon ?
+                                                <img src={val.fourth_pokemon}/>
+                                                :
+                                                <img src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                        <div className="anchorTooltip uniquePokemonContainer">
+                                            {val.fifth_pokemon ?
+                                                <img src={val.fifth_pokemon}/>
+                                                :
+                                                <img src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                        <div className="anchorTooltip uniquePokemonContainer">
+                                            {val.sixth_pokemon ?
+                                                <img src={val.sixth_pokemon}/>
+                                                :
+                                                <img src={"/images/random.png"}/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
                             </>
                         )
                     })
                 )}
-                <Tooltip anchorSelect=".anchorTooltip" />
+                <Tooltip anchorSelect=".anchorTooltip"/>
             </div>
         </>
     );
@@ -33,7 +86,7 @@ function PaginationProfil(props) {
     // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + props.itemsPerPage;
-    const currentItems =props.items.slice(itemOffset, endOffset);
+    const currentItems = props.items.slice(itemOffset, endOffset);
     const pageCount = Math.ceil(props.items.length / props.itemsPerPage);
 
     // Invoke when user click to request another page.
@@ -44,7 +97,7 @@ function PaginationProfil(props) {
 
     return (
         <>
-            <Items currentItems={currentItems} />
+            <Items currentItems={currentItems}/>
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."
