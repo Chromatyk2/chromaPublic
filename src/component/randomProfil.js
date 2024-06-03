@@ -30,7 +30,6 @@ function RandomProfil(props) {
     return (
         <>
             {allProfil.length > 0 &&
-                <div className={"contentContainer"}>
                     <div style={{
                         width: "65%",
                         margin: "auto",
@@ -86,7 +85,6 @@ function RandomProfil(props) {
                             </div>
                         </div>
                     </div>
-                </div>
             }
         </>
     )
