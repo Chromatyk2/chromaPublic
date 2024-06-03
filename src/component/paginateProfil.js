@@ -60,8 +60,8 @@ function Items(props) {
                                             className="anchorTooltip uniquePokemonContainerTeam">
                                         </div>
                                     </div>
+                                    <Link className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img src={"/images/pokedex.png"}/></Link>
                                 </div>
-                                <Link className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img src={"/images/pokedex.png"}/></Link>
                             </>
                         )
                     })
