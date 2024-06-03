@@ -34,6 +34,7 @@ import SpawnPokemonRob from "./component/spawnPokemonRob";
 import SpawnPokemon from "./component/spawnPokemon";
 import Profil from "./component/profil";
 import AllProfils from "./component/allProfils";
+import OtherDex from "./component/otherDex";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -47,6 +48,7 @@ function App(props) {
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
+          <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies} />} />
           <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
           <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
           <Route path="/myTrades" element={<MyTradePlace cookies={cookies} />} />
