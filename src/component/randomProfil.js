@@ -31,10 +31,18 @@ function RandomProfil(props) {
         <>
             {allProfil.length > 0 &&
                 <div className={"contentContainer"}>
-                    <div style={{width:"65%",margin:"auto",background: "rgba(0,0,0,.5)", borderRadius: "50px", padding: "20px"}}>
+                    <div style={{
+                        width: "65%",
+                        margin: "auto",
+                        background: "rgba(0,0,0,.5)",
+                        borderRadius: "50px",
+                        padding: "20px"
+                    }}>
                         <p className={"pseudoProfilList"}>{allProfil[randomIndex].pseudo}</p>
                         <p className={"levelProfilList"}>Niveau {allProfil[randomIndex].level}
-                            <small>( {allProfil[randomIndex].xp} xp )</small></p>
+                            <small> ( {allProfil[randomIndex].xp} xp )</small>
+                        </p>
+                        <small> Rang : {randomIndex + 1}</small>
                         <div className={"profilVisualsList"}>
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].first_pokemon ? 'url(' + allProfil[randomIndex].first_pokemon + ')' : 'url(/images/random.png)'}}
