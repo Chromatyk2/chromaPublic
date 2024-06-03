@@ -19,7 +19,7 @@ function RandomProfil(props) {
     }, [])
     useEffect(() => {
         const interval = setInterval(
-            () => setRandomIndex(Math.floor(Math.random() * allProfil.length)), 10000
+            () => setRandomIndex(Math.floor(Math.random() * allProfil.length)), 5000
         );
         return () => {
             clearInterval(interval);
