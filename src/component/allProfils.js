@@ -3,6 +3,7 @@ import { Cookies, useCookies } from 'react-cookie';
 import Axios from 'axios'
 import '../App.css'
 import PkmList from './pkmList.js'
+import ProfilList from "./profilList";
 
 function AllProfils(props) {
     const [allProfil,setAllProfil] = useState([]);
@@ -16,7 +17,7 @@ function AllProfils(props) {
     console.log(allProfil);
     return (
         <>
-            <p>Profils</p>
+            <ProfilList list={allProfil}/>
         </>
     )
 }
