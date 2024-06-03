@@ -3627,6 +3627,14 @@ span.navbar-brand {
     width: 440px;
     gap: 20px;
 }
+.closePokemonProfil{
+    width:166px;
+    height:166px;
+}
+.middlePokemonProfil{
+    width:133px;
+    height:133px;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
