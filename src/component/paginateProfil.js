@@ -33,12 +33,12 @@ function PaginationProfil(props) {
     // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + props.itemsPerPage;
-    const currentItems = (props.items.slice(itemOffset, endOffset));
-    const pageCount = Math.ceil((props.items.length / props.itemsPerPage);
+    const currentItems =(props.items.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(props.items.length / props.itemsPerPage);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
-        const newOffset = (event.selected * props.itemsPerPage) % (props.items.length;
+        const newOffset = (event.selected * props.itemsPerPage) % props.items.length;
         setItemOffset(newOffset);
     };
 
