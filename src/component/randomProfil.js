@@ -9,7 +9,7 @@ import allProfils from "./allProfils";
 
 function RandomProfil(props) {
     const [allProfil,setAllProfil] = useState([]);
-    const [randomIndex,setRandomIndex] = useState(null);
+    const [randomIndex,setRandomIndex] = useState(0);
     useEffect(() => {
         Axios
             .get("/api/getAllProfil")
@@ -27,8 +27,7 @@ function RandomProfil(props) {
     }, [allProfil.length > 0]);
     return (
         <>
-            {randomIndex &&
-                randomIndex > -1 &&
+            {allProfil.length > 0 &&
                     <div style={{
                         width: "65%",
                         margin: "auto",
