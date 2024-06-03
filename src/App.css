@@ -3712,8 +3712,12 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
-    .profilVisualsMobile{
-        display: block;
+    .profilVisualsMobile {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
     }
     .profilVisualsList{
         display: none;
@@ -3793,8 +3797,12 @@ span.navbar-brand {
     }
 }
 @media screen and (max-width: 379px) {
-    .profilVisualsMobile{
-        display: block;
+    .profilVisualsMobile {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
     }
     .profilVisuals{
         display: none;
