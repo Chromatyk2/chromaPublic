@@ -67,74 +67,74 @@ function OtherProfil(props) {
                         <p>Team</p>
                     </div>
                     <div className={"profilVisuals"}>
-                        <button
+                        <div
                             style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}} value={"first_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}} value={"second_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfil">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'}} value={"third_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam closePokemonProfil">
-                        </button>
-                        <button style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
+                        </div>
+                        <div style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
                             {profil[0].profil_picture ?
                                 <img style={{width: "100%"}}
                                      src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
                                 :
                                 <img style={{width: "100%"}} src={"/images/random.png"}/>
                             }
-                        </button>
+                        </div>
 
-                        <button
+                        <div
                             style={{backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'}} value={"fourth_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam closePokemonProfil">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}} value={"fifth_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfil">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}} value={"sixth_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam">
-                        </button>
+                        </div>
                     </div>
                     <div className={"profilVisualsMobile"}>
-                        <button style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
+                        <div style={{width: "200px"}} className="anchorTooltip uniquePokemonContainer">
                             {profil[0].profil_picture ?
                                 <img style={{width: "100%"}}
                                      src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
                                 :
                                 <img style={{width: "100%"}} src={"/images/random.png"}/>
                             }
-                        </button>
+                        </div>
 
-                        <button
+                        <div
                             style={{backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'}} value={"third_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam closePokemonProfil">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'}} value={"fourth_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam closePokemonProfil">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}} value={"second_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfil">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}} value={"fifth_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfil">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}} value={"first_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam">
-                        </button>
-                        <button
+                        </div>
+                        <div
                             style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}} value={"sixth_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam">
-                        </button>
+                        </div>
                     </div>
                 </div>
                 :
