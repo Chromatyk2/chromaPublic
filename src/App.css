@@ -3688,6 +3688,9 @@ span.navbar-brand {
     align-items: center;
     gap: 10px;
 }
+.allPokemonTeam{
+    display: flex;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
