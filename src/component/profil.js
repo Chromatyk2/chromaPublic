@@ -5,6 +5,7 @@ import moment from "moment/moment";
 import OpeningBooster from "./openingBooster";
 import Modal from 'react-modal';
 import PokedexTeam from "./pokedexTeam";
+import {useParams} from "react-router-dom";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -319,8 +320,7 @@ function Profil(props) {
                     display: "flex",
                     gap: "10px",
                     flexWrap: "wrap",
-                    flexFlow: "row",
-                    flexWrap: "wrap"
+                    flexFlow: "row"
                 }}>
                     {skins &&
                         skins.map((val, key) => {
