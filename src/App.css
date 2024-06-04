@@ -3714,24 +3714,11 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
-    .profilVisualsMobile {
-        display: flex;
-        flex-flow: row;
-        width: 100%;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .closePokemonProfil{
         width:120px;
         height:120px;
     }
     .profilVisualsList{
-        display: none;
-    }
-    .profilVisuals{
         display: none;
     }
     .filtersContainer {
@@ -3806,22 +3793,10 @@ span.navbar-brand {
     }
 }
 @media screen and (max-width: 379px) {
-    .profilVisualsMobile {
-        display: flex;
-        flex-flow: row;
-        width: 100%;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 
     .closePokemonProfil{
         width:120px;
         height:120px;
-    }
-    .profilVisuals{
-        display: none;
     }
     .profilVisualsList{
         display: none;
