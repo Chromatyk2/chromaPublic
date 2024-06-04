@@ -25,18 +25,18 @@ function RandomProfil(props) {
             clearInterval(interval);
         };
     }, [allProfil.length > 0]);
-    console.log(allProfil);
-    console.log(randomIndex);
     return (
         <>
             {allProfil.length > 0 &&
-                <div className={"contentContainer"}>
                     <div style={{
                         width: "65%",
                         margin: "auto",
                         background: "rgba(0,0,0,.5)",
                         borderRadius: "50px",
-                        padding: "20px"
+                        padding: "20px",
+                        position:"absolute",
+                        left:"300px",
+                        top:"300px"
                     }}>
                         <p className={"pseudoProfilList"}>{allProfil[randomIndex].pseudo}</p>
                         <p className={"levelProfilList"}>Niveau {allProfil[randomIndex].level}
@@ -86,7 +86,6 @@ function RandomProfil(props) {
                             </div>
                         </div>
                     </div>
-                </div>
             }
         </>
     )
