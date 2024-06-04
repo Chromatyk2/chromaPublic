@@ -4787,3 +4787,7 @@ button.navbar-toggler {
 button.navbar-toggler.collapsed {
     background: aliceblue;
 }
+.ReactModal__Content.ReactModal__Content--after-open {
+    background: linear-gradient(140deg, #120747, #035078) !important;
+    color: white;
+}
