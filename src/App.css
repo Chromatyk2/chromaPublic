@@ -3632,7 +3632,7 @@ span.navbar-brand {
      top: 60px;
 }
 .openSkinBox:hover{
-    background-image: url('../public/basicOpen.png')!important;
+    background-image: url('../public/images/skinOpen.png')!important;
 }
 .profilPicture{
     width: 400px;

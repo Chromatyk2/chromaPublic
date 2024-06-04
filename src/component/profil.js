@@ -196,7 +196,7 @@ function Profil(props) {
                 {profil &&
                     profil.length > 0 &&
                     profil[0].box > 0 &&
-                    <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/basic.png)"}}>
+                    <button className={"openSkinBox"} onClick={openSkin} style={{backgroundImage: "url(/images/skinClose.png)"}}>
                         <div className="infoPkm">
                             <div className="infoNbBoxSkin">{profil[0].box}</div>
                         </div>
