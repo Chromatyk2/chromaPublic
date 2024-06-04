@@ -3720,6 +3720,7 @@ span.navbar-brand {
         align-items: center;
         gap: 10px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .closePokemonProfil{
@@ -3811,6 +3812,7 @@ span.navbar-brand {
         align-items: center;
         gap: 10px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .closePokemonProfil{
