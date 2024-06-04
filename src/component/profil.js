@@ -206,8 +206,9 @@ function Profil(props) {
                     overflow: "overlay",
                     display: "flex",
                     gap: "10px",
-                    flexWrap: "wrap",
-                    flexFlow: "row"
+                    flexFlow: "row",
+                    flexWrap:"wrap",
+                    justifyContent:"center"
                 }}>
                     {skins &&
                         skins.map((val, key) => {
