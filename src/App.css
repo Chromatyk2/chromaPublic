@@ -3686,7 +3686,7 @@ span.navbar-brand {
     justify-content: center;
     height: 100px;
     align-items: center;
-    gap: 50px;
+    gap: 10px;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
@@ -3744,10 +3744,6 @@ span.navbar-brand {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-    }
-    .closePokemonProfil{
-        width:120px;
-        height:120px;
     }
     .profilVisualsList{
         display: none;
@@ -3846,10 +3842,6 @@ span.navbar-brand {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-    }
-    .closePokemonProfil{
-        width:120px;
-        height:120px;
     }
     .profilVisualsList{
         display: none;
