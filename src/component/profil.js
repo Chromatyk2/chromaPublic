@@ -117,7 +117,6 @@ function Profil(props) {
         profil.length > 0 ?
             <div className={"contentContainer"}>
                 <div className={"profilVisuals"}>
-                    <div className={"profilStats"}>
                         <button onClick={handleProfileImage} style={{width: "200px",display:"block",margin:"auto"}}
                                 className="anchorTooltip uniquePokemonContainer">
                             {profil[0].box > 0 &&
@@ -181,7 +180,6 @@ function Profil(props) {
                             className="anchorTooltip uniquePokemonContainerTeam">
                         </button>
                     </div>
-                </div>
             </div>
             :
             <div className={"contentContainer"}>
