@@ -149,7 +149,7 @@ function Profil(props) {
                                 {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
                             </div>
                         </div>
-                    <div>
+                    <div className={"allPokemonTeam"}>
                         <button
                             style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
                             onClick={handleTeam} value={"first_pokemon"}

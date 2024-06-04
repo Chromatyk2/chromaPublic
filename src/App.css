@@ -3727,6 +3727,17 @@ span.navbar-brand {
         padding: 50px;
         width: 100%;
     }
+    button.anchorTooltip.uniquePokemonContainerTeam {
+        width: 100px;
+        height: 100px;
+    }
+
+    .allPokemonTeam{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
     .closePokemonProfil{
         width:120px;
         height:120px;
@@ -3818,6 +3829,16 @@ span.navbar-brand {
         margin: auto;
         padding: 50px;
         width: 100%;
+    }
+    button.anchorTooltip.uniquePokemonContainerTeam {
+        width: 100px;
+        height: 100px;
+    }
+    .allPokemonTeam{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
     .closePokemonProfil{
         width:120px;
