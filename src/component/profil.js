@@ -118,7 +118,7 @@ function Profil(props) {
             <div className={"contentContainer"}>
                 <div className={"profilVisuals"}>
                     <div className={"profilStats"}>
-                        <button onClick={handleProfileImage} style={{width: "200px"}}
+                        <button onClick={handleProfileImage} style={{width: "200px",display:"block",margin:"auto"}}
                                 className="anchorTooltip uniquePokemonContainer">
                             {profil[0].box > 0 &&
                                 <div className="infoPkm">
