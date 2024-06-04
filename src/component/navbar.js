@@ -31,6 +31,7 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boosters">Mes boosters</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Boutique TCG</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/echange">Echange doublons TCG</Link>
                       {pseudo == "chromatyk" &&
                                     <>
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
@@ -38,7 +39,6 @@ function NavBar(props) {
                                       {/*  <Link className="navLink myTradesLink" to="/myTrades">Mes Echanges {count > 0 && <span className="myCountProposition">{count}</span>}</Link>*/}
                                       {/*  <Link className="navLink" to="/tradePlace">Place aux echanges</Link>*/}
                                       {/*<Link className="navLink" to="/aNu5YwZ5X75m5j">Note</Link>*/}
-                                        <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/echange">Echange doublons</Link>
                                       {/*  <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>*/}
                                       {/*<Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/liste">Liste</Link>*/}
                                     </>

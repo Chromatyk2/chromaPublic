@@ -341,6 +341,7 @@ function MyCardSell(props) {
                                 setCardToSell([]);
                                 document.getElementById("unsellButton"+val.card).style.display = 'none';
                                 document.getElementById("card"+val.card).style.opacity = '1';
+                                Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
                             })
                     }
                 })
