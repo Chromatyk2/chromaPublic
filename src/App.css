@@ -3681,6 +3681,13 @@ span.navbar-brand {
 .profilVisualsMobile{
     display: none;
 }
+.linkList{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    gap: 50px;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
