@@ -118,6 +118,20 @@ function Profil(props) {
             <div className={"contentContainer"}>
                 <div className={"profilVisuals"}>
                     <div className={"profilStats"}>
+                        <button onClick={handleProfileImage} style={{width: "200px"}}
+                                className="anchorTooltip uniquePokemonContainer">
+                            {profil[0].box > 0 &&
+                                <div className="infoPkm">
+                                    <div className="infoNbBox">{profil[0].box}</div>
+                                </div>
+                            }
+                            {profil[0].profil_picture ?
+                                <img style={{width: "100%"}}
+                                     src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
+                                :
+                                <img style={{width: "100%"}} src={"/images/random.png"}/>
+                            }
+                        </button>
                         <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
                         <p className={"levelProfil"}>Niveau {profil[0].level}</p>
                         <div style={customStyles.extBar} className="fullProgressBar">
@@ -165,22 +179,6 @@ function Profil(props) {
                             style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}}
                             onClick={handleTeam} value={"sixth_pokemon"}
                             className="anchorTooltip uniquePokemonContainerTeam">
-                        </button>
-                    </div>
-                    <div className={"profilImg"}>
-                        <button onClick={handleProfileImage} style={{width: "200px"}}
-                                className="anchorTooltip uniquePokemonContainer">
-                            {profil[0].box > 0 &&
-                                <div className="infoPkm">
-                                    <div className="infoNbBox">{profil[0].box}</div>
-                                </div>
-                            }
-                            {profil[0].profil_picture ?
-                                <img style={{width: "100%"}}
-                                     src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
-                                :
-                                <img style={{width: "100%"}} src={"/images/random.png"}/>
-                            }
                         </button>
                     </div>
                 </div>
