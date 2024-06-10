@@ -9,7 +9,7 @@ import allProfils from "./allProfils";
 
 function RandomProfil(props) {
     const [allProfil,setAllProfil] = useState([]);
-    const [randomIndex,setRandomIndex] = useState(0);
+    const [randomIndex,setRandomIndex] = useState();
     useEffect(() => {
         Axios
             .get("/api/getAllProfil")
@@ -25,23 +25,9 @@ function RandomProfil(props) {
             clearInterval(interval);
         };
     }, [allProfil.length > 0]);
-    useEffect(() => {
-        const interval = setInterval(
-            () =>
-                Axios
-                    .get("/api/getAllProfil")
-                    .then(function(response){
-                        setAllProfil(response.data);
-                    })
-                    , 1800000
-        );
-        return () => {
-            clearInterval(interval);
-        };
-    }, [allProfil.length > 0]);
     return (
         <>
-            {randomIndex > 0 &&
+            {allProfil.length > 0 &&
                     <div style={{
                         width: "65%",
                         margin: "auto",
