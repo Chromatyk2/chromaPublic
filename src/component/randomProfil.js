@@ -27,7 +27,7 @@ function RandomProfil(props) {
     }, [allProfil.length > 0]);
     return (
         <>
-            {allProfil.length > 0 &&
+            {randomIndex > 0 &&
                     <div style={{
                         width: "65%",
                         margin: "auto",
