@@ -25,6 +25,20 @@ function RandomProfil(props) {
             clearInterval(interval);
         };
     }, [allProfil.length > 0]);
+    useEffect(() => {
+        const interval = setInterval(
+            () =>
+                Axios
+                    .get("/api/getAllProfil")
+                    .then(function(response){
+                        setAllProfil(response.data);
+                    })
+                    , 1800000
+        );
+        return () => {
+            clearInterval(interval);
+        };
+    }, [allProfil.length > 0]);
     return (
         <>
             {randomIndex > 0 &&
