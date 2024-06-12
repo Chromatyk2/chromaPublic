@@ -5,7 +5,6 @@ import '../App.css'
 import PkmListTeam from './pkmListTeam.js'
 
 function PokedexTeam(props) {
-    const [list,setList] = useState([]);
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
@@ -20,7 +19,7 @@ function PokedexTeam(props) {
     return (
         <>
             <div  style={{paddingTop:"15px",minHeight:"100%"}} className={"contentContainer"}>
-                <PkmListTeam change={handleState} pkmToUpdate={props.pkmToUpdate} list={list}/>
+                <PkmListTeam change={handleState} pkmToUpdate={props.pkmToUpdate} list={props.list}/>
             </div>
         </>
     )

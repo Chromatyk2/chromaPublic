@@ -12,7 +12,7 @@ function ProgressBarCard(props) {
         width: '75%',
         backgroundColor: '#90e5b5',
         position: 'relative',
-        zIndex: '-1',
+        zIndex: '1',
         borderRadius: '50px',
         margin:'auto',
         marginBottom: '15px'

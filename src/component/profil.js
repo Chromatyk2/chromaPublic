@@ -13,11 +13,17 @@ function Profil(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState("");
+    const [list,setList] = useState([]);
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
             .then(function(response){
                 setProfil(response.data);
+                    Axios
+                        .get("/api/getByUser/"+pseudo)
+                        .then(function(response){
+                            setList(response.data);
+                        })
             })
     }, [])
     useEffect(() => {
@@ -230,7 +236,7 @@ function Profil(props) {
             </Modal>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles}
                    contentLabel="Example Modal">
-                <PokedexTeam change={handleState} pkmToUpdate={teamToHandle} cookies={props.cookies}/>
+                <PokedexTeam list={list} change={handleState} pkmToUpdate={teamToHandle} cookies={props.cookies}/>
             </Modal>
         </>
     )
