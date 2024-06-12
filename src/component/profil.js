@@ -127,7 +127,7 @@ function Profil(props) {
             <div className={"contentContainer"}>
                 <div className={"profilVisuals"}>
 
-                    <div style={{display: "flex", width: "100%", justifyContent: "flex-start"}}>
+                    <div style={{display: "flex", width: "800px", justifyContent: "flex-start"}}>
 
                         <div style={{margin: "0", width: "10%", display: pourcent >= 10 ? "block" : "none"}}
                              className="anchorTooltip uniquePokemonContainer"
