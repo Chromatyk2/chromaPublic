@@ -122,51 +122,52 @@ function Profil(props) {
         {profil &&
         profil.length > 0 ?
             <div className={"contentContainer"}>
-                <div>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                    <img src={"/images/star.png"}/>
-                </div>
                 <div className={"profilVisuals"}>
-                <button onClick={handleProfileImage} style={{width: "200px",display:"block",margin:"auto"}}
-                                className="anchorTooltip uniquePokemonContainer">
-                            {profil[0].box > 0 &&
-                                <div className="infoPkm">
-                                    <div className="infoNbBox">{profil[0].box}</div>
-                                </div>
-                            }
-                            {profil[0].profil_picture ?
-                                <img style={{width: "100%"}}
-                                     src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
-                                :
-                                <img style={{width: "100%"}} src={"/images/random.png"}/>
-                            }
-                        </button>
-                        <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
-                        <p className={"levelProfil"}>Niveau {profil[0].level}</p>
-                        <div style={customStyles.extBar} className="fullProgressBar">
-                            <div
-                                style={{
-                                    width: parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%",
-                                    position: 'relative',
-                                    background: '#74fbcf',
-                                    textWrap: 'nowrap',
-                                    color: 'black',
-                                    borderRadius: '50px 0 0 50px',
-                                    height: '30px'
-                                }}>
+
+                    <div style={{display:"flex"}}>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                        <img src={"/images/star.png"}/>
+                    </div>
+                    <button onClick={handleProfileImage} style={{width: "200px", display: "block", margin: "auto"}}
+                            className="anchorTooltip uniquePokemonContainer">
+                        {profil[0].box > 0 &&
+                            <div className="infoPkm">
+                                <div className="infoNbBox">{profil[0].box}</div>
                             </div>
-                            <div className={"pourcentLevel"}>
-                                {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
-                            </div>
+                        }
+                        {profil[0].profil_picture ?
+                            <img style={{width: "100%"}}
+                                 src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
+                            :
+                            <img style={{width: "100%"}} src={"/images/random.png"}/>
+                        }
+                    </button>
+                    <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
+                    <p className={"levelProfil"}>Niveau {profil[0].level}</p>
+                    <div style={customStyles.extBar} className="fullProgressBar">
+                        <div
+                            style={{
+                                width: parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%",
+                                position: 'relative',
+                                background: '#74fbcf',
+                                textWrap: 'nowrap',
+                                color: 'black',
+                                borderRadius: '50px 0 0 50px',
+                                height: '30px'
+                            }}>
                         </div>
+                        <div className={"pourcentLevel"}>
+                            {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
+                        </div>
+                    </div>
                     <div className={"allPokemonTeam"}>
                         <button
                             style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
