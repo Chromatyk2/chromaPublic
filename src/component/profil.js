@@ -6,6 +6,7 @@ import OpeningBooster from "./openingBooster";
 import Modal from 'react-modal';
 import PokedexTeam from "./pokedexTeam";
 import {useParams} from "react-router-dom";
+import {Tooltip} from "react-tooltip";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -126,18 +127,71 @@ function Profil(props) {
             <div className={"contentContainer"}>
                 <div className={"profilVisuals"}>
 
-                    <div style={{display:"flex",width:"100%",justifyContent:"flex-start"}}>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 10 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 20 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 30 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 40 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 50 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 60 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 70 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 80 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 90 ? "block" : "none"}} src={"/images/star.png"}/>
-                        <img style={{margin:"0",width:"50px", display: pourcent >= 100 ? "block" : "none"}} src={"/images/star.png"}/>
+                    <div style={{display: "flex", width: "100%", justifyContent: "flex-start"}}>
+
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 10 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="10% du pokédex complété">
+                            <img src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 20 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="20% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 30 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="30% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 40 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="40% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 50 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="50% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 60 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="60% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 70 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="70% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 80 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="80% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 90 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="90% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
+                        <div style={{margin: "0", width: "50px", display: pourcent >= 100 ? "block" : "none"}}
+                             className="anchorTooltip uniquePokemonContainer"
+                             data-tooltip-content="100% du pokédex complété">
+                            <img
+                                 src={"/images/star.png"}/>
+                        </div>
                     </div>
+
+                    <Tooltip anchorSelect=".anchorTooltip"/>
+
                     <button onClick={handleProfileImage} style={{width: "200px", display: "block", margin: "auto"}}
                             className="anchorTooltip uniquePokemonContainer">
                         {profil[0].box > 0 &&
