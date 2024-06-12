@@ -122,8 +122,20 @@ function Profil(props) {
         {profil &&
         profil.length > 0 ?
             <div className={"contentContainer"}>
+                <div>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                    <img src={"/images/star.png"}/>
+                </div>
                 <div className={"profilVisuals"}>
-                        <button onClick={handleProfileImage} style={{width: "200px",display:"block",margin:"auto"}}
+                <button onClick={handleProfileImage} style={{width: "200px",display:"block",margin:"auto"}}
                                 className="anchorTooltip uniquePokemonContainer">
                             {profil[0].box > 0 &&
                                 <div className="infoPkm">
