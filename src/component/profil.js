@@ -190,7 +190,7 @@ function Profil(props) {
                         </div>
                     </div>
 
-                    <Tooltip anchorSelect=".anchorTooltip"/>
+                    <Tooltip style={{zIndex:"1"}} anchorSelect=".anchorTooltip"/>
 
                     <button onClick={handleProfileImage} style={{width: "200px", display: "block", margin: "auto"}}
                             className="anchorTooltip uniquePokemonContainer">
