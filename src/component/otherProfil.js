@@ -14,6 +14,7 @@ function OtherProfil(props) {
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState("");
     const { pseudo } = useParams()
+    const [list,setList] = useState([]);
     const [pourcent, setPourcent] = useState();
     useEffect(() => {
         Axios
