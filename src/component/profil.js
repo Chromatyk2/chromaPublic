@@ -14,6 +14,7 @@ function Profil(props) {
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState("");
     const [list,setList] = useState([]);
+    const [pourcent, setPourcent] = useState();
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
@@ -23,6 +24,7 @@ function Profil(props) {
                         .get("/api/getByUser/"+pseudo)
                         .then(function(response){
                             setList(response.data);
+                            setPourcent(Math.round((response.data.length / 1025) * 100));
                         })
             })
     }, [])
@@ -124,17 +126,17 @@ function Profil(props) {
             <div className={"contentContainer"}>
                 <div className={"profilVisuals"}>
 
-                    <div style={{display:"flex"}}>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
-                        <img src={"/images/star.png"}/>
+                    <div style={{display:"flex",width:"100%",justifyContent:"flex-start"}}>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 10 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 20 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 30 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 40 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 50 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 60 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 70 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 80 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 90 ? "block" : "none"}} src={"/images/star.png"}/>
+                        <img style={{margin:"0",width:"50px", display: pourcent >= 100 ? "block" : "none"}} src={"/images/star.png"}/>
                     </div>
                     <button onClick={handleProfileImage} style={{width: "200px", display: "block", margin: "auto"}}
                             className="anchorTooltip uniquePokemonContainer">
