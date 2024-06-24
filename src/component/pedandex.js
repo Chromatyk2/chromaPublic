@@ -26,6 +26,7 @@ function Pedandex(props) {
             var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
             const element = document.createElement("span");
+            console.log(word)
             if(word != "'" || word != ",")
             {// create element "span"
                 element.innerText = word.replace(/[^.]/g,'x');
@@ -44,7 +45,6 @@ function Pedandex(props) {
         words.map((val, key) => {
             if(val.toLowerCase() == inputRef.current.value.toLowerCase()){
                 var id = key;
-                console.log(key);
                 document.getElementById(id).innerText = val;
                 document.getElementById(id).style.background = 'none';
             }
