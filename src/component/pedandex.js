@@ -11,6 +11,7 @@ function Pedandex(props) {
         var id = 0;
         var div = document.getElementById("descriptionPedandex");
         description.split(' ').forEach(word => {
+            console.log(word);
             setWords(words => [...words,word]);
             const element = document.createElement("span");  // create element "span"
             element.innerText = word;
