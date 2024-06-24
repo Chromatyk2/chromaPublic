@@ -31,8 +31,9 @@ function Pedandex(props) {
             if(word === "'"){
                 element.innerText = word;
                 element.style.background = 'none';
+            }else{
+                element.innerText = word.replace(/[^.]/g,'x');
             }
-            element.innerText = word.replace(/[^.]/g,'x');
             element.setAttribute("class", "itemDescription");
             id++;
             div.appendChild(element);
