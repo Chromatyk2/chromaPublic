@@ -20,7 +20,7 @@ function Pedandex(props) {
             "(": " ( ",
             ")": " ) ",
             "/": " / ",
-            ".": " . "
+            ".": " ."
         };
         description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
             const correction2 = {
