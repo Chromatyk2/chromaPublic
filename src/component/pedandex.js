@@ -37,7 +37,7 @@ function Pedandex(props) {
             element.setAttribute("id", id);
             if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
 
-                element.innerText = word.replace(/,|\?|\/|\:|\'|\./g, matched => correction2[matched]);
+                element.innerText = word.trim();
                 element.style.background = 'none';
             }else{
                 element.innerText = word.replace(/[^.]/g,'x');
