@@ -27,8 +27,8 @@ function Pedandex(props) {
     return (
             <div className={"itemDescription"}>
                 <div>
-                    <h1 className={""} id={0}>{name}</h1>
                     <div id={"descriptionPedandex"}>
+                        <h1 className={""} id={0}>{name}</h1>
                     </div>
                 </div>
             </div>
