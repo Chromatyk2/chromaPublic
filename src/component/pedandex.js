@@ -14,7 +14,7 @@ function Pedandex(props) {
             var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
             const element = document.createElement("span");  // create element "span"
-            element.innerText = word.replace(regex, ' ');
+            element.innerText = word.replace(/[^.]/g,' ');
             element.style.marginRight = '10px';
             element.setAttribute("id", id);
             element.setAttribute("class", "itemDescription");
