@@ -4,6 +4,16 @@ import '../App.css'
 import $ from 'jquery';
 
 function Pedandex() {
+    useEffect(() => {
+        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result);
+                    const name = result.names.find((element) => element.language.name == "fr").name;
+                    const description = result.names.find((element) => element.language.name == "fr").name;
+                })
+    }, []);
         return (
             <>
                 <div>
