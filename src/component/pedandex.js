@@ -24,8 +24,8 @@ function Pedandex(props) {
     }, []);
     console.log(words);
     return (
-            <div className={"itemDescription"}>
-                <div>
+            <div className={"contentContainer"}>
+                <div className={"itemDescription"}>
                     <div id={"descriptionPedandex"}>
                         <p style={{width:"100%",fontSize:"50px",textAlign:"center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
                     </div>
