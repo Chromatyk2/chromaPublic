@@ -33,12 +33,14 @@ function Pedandex(props) {
                 element.style.marginRight = '10px';
                 element.setAttribute("id", id);
                 element.setAttribute("class", "itemDescription");
+                id++;
+                div.appendChild(element);
             }else{
                 element.innerText = word;
                 element.style.background = 'none';
+                id++;
+                div.appendChild(element);
             }
-            id++;
-            div.appendChild(element);
         });
     }, []);
     const handleSubmit = (event) => {
