@@ -10,11 +10,11 @@ function Pedandex(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    const name = result.names.find((element) => element.language.name == "fr").name;
-                    const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
+                    const name = "Wailord";
+                    const description = "Wailord est un imposant Pokémon marin inspiré de la baleine bleue (et non du cachalot comme le suggère le Pokédex). Son corps fusiforme est à mi-chemin entre un sous-marin, un dirigeable et une torpille géante. La moitié supérieure de son corps est bleue, la moitié inférieure blanche. Il a de petits yeux noirs, une large bouche, quatre taches blanches le long de son dos et une gorge striée de rainures. Il se meut avec deux paires de nageoires latérales, une paire de nageoires pelviennes et une nageoire caudale horizontale.";
                     var id = 1;
                     var div = document.getElementById("descriptionPedandex");
-                    description.replace(/(\r\n|\n|\r)/gm," ").split([' ','</br>']).forEach(word => {                  // loop over every word
+                    description.split(' ').forEach(word => {                  // loop over every word
                         const element = document.createElement("span");  // create element "span"
                         element.innerText = word;
                         element.style.marginRight = '10px';
@@ -25,7 +25,6 @@ function Pedandex(props) {
                     });
                 })
     }, []);
-    console.log(description);
     return (
             <div className={"contentContainer"}>
                 <div>
