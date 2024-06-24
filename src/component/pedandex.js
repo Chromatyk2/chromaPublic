@@ -14,7 +14,7 @@ function Pedandex(props) {
                     const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
                     var id = 1;
                     var div = document.getElementById("descriptionPedandex");
-                    description.split([' ','</br>']).forEach(word => {                  // loop over every word
+                    description.replace(/(\r\n|\n|\r)/gm," ").split([' ','</br>']).forEach(word => {                  // loop over every word
                         const element = document.createElement("span");  // create element "span"
                         element.innerText = word;
                         element.style.marginRight = '10px';
