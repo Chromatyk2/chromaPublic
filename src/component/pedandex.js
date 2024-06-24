@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import '../App.css'
-import $ from 'jquery';
 
 function Pedandex() {
     useEffect(() => {
