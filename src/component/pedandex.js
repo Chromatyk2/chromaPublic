@@ -8,6 +8,7 @@ function Pedandex(props) {
     const [words, setWords] = useState([]);
     const inputRef = useRef();
     useEffect(() => {
+        document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
         const description = "Wailord est un imposant Pokémon marin inspiré de la baleine bleue (et non du cachalot comme le suggère le Pokédex). Son corps fusiforme est à mi-chemin entre un sous-marin, un dirigeable et une torpille géante. La moitié supérieure de son corps est bleue, la moitié inférieure blanche. Il a de petits yeux noirs, une large bouche, quatre taches blanches le long de son dos et une gorge striée de rainures. Il se meut avec deux paires de nageoires latérales, une paire de nageoires pelviennes et une nageoire caudale horizontale.";
         var id = 0;
         var div = document.getElementById("descriptionPedandex");
@@ -32,7 +33,10 @@ function Pedandex(props) {
                 document.getElementById(id).style.background = 'none';
             }
         })
-        console.log(words.find((element) => element == inputRef.current.value));
+        if(inputRef.current.value == name){
+            document.getElementById("padandexName").innerText = name
+            document.getElementById("padandexName").style.background = 'none'
+        }
         event.preventDefault();
     };
     return (
@@ -48,8 +52,7 @@ function Pedandex(props) {
                     </button>
                 </form>
                 <div id={"descriptionPedandex"}>
-                    <p style={{width: "100%", fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
-                       id={"padandexName"}>{name}</p>
+                    <p style={{width: "100%", fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
                 </div>
             </div>
         </>
