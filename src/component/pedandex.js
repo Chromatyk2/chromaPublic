@@ -53,7 +53,7 @@ function Pedandex(props) {
                 </form>
                 <div id={"descriptionPedandex"}>
                     <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
-                    <div id{"textToGuess"}>
+                    <div id={"textToGuess"}>
 
                     </div>
                 </div>
