@@ -25,7 +25,7 @@ function Pedandex(props) {
     return (
         <>
                 <div className={"descriptionPedandex"}>
-                    <p>{description}</p>
+                    <p>test</p>
                 </div>
         </>
     );
