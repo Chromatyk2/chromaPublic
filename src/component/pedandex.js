@@ -26,9 +26,13 @@ function Pedandex(props) {
             var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
             const element = document.createElement("span");
-            element.innerText = word.replace(/[^.]/g,'x');
             element.style.marginRight = '10px';
             element.setAttribute("id", id);
+            if(word === "'"){
+                element.innerText = word;
+                element.style.background = 'none';
+            }
+            element.innerText = word.replace(/[^.]/g,'x');
             element.setAttribute("class", "itemDescription");
             id++;
             div.appendChild(element);
