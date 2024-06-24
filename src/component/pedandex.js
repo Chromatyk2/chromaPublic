@@ -12,13 +12,15 @@ function Pedandex(props) {
                 (result) => {
                     const name = result.names.find((element) => element.language.name == "fr").name;
                     const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
+                    var id = 1;
                     description.split(' ').forEach(word => {                  // loop over every word
                         const element = document.createElement("span");  // create element "span"
-                        var id = description.index + 1;
                         element.innerText = word;
                         element.style.marginRight = '10px';
                         element.setAttribute("id", id);
-                        document.body.appendChild(element);
+                        const div = document.getElementsByClassName("descriptionPedandex");
+                        div.innerHTML += element;
+                        id++;
                     });
                 })
     }, []);
