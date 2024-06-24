@@ -14,10 +14,9 @@ function Pedandex(props) {
                     const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
                     description.split(' ').forEach(word => {                  // loop over every word
                         const element = document.createElement("span");  // create element "span"
-                        element.innerText = word;                        // set its content to word
-                        element.onclick = () =>                          // onclick handler
-                            element.style.background = '#000';             // action
-                        document.body.appendChild(element);              // add element to dom
+                        element.innerText = word;
+                        element.style.marginRight = '10px';
+                        document.body.appendChild(element);
                     });
                     setDescription(description)
                 })
@@ -25,7 +24,9 @@ function Pedandex(props) {
     return (
         <>
             {description &&
-                <p>{description}</p>
+                <div>
+                    <p>{description}</p>
+                </div>
             }
         </>
     );
