@@ -37,6 +37,7 @@ function Pedandex(props) {
             document.getElementById("padandexName").innerText = name
             document.getElementById("padandexName").style.background = 'none'
         }
+        inputRef.current.value = "";
         event.preventDefault();
     };
     return (
