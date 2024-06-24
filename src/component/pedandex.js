@@ -36,10 +36,13 @@ function Pedandex(props) {
             element.style.marginRight = '10px';
             element.setAttribute("id", id);
             if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
-
                 element.innerText = word.trim();
                 element.style.background = 'none';
-            }else{
+                element.style.marginLeft = '-20px';
+            }else if(word === " "){
+                element.style.display = "none";
+            }
+            else{
                 element.innerText = word.replace(/[^.]/g,'x');
             }
             element.setAttribute("class", "itemDescription");
