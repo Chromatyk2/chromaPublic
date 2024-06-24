@@ -4,7 +4,7 @@ import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
 function Pedandex(props) {
-    const [name, setName] = useState("Mustébouée");
+    const [name, setName] = useState("Terrakium");
     const [words, setWords] = useState([]);
     const inputRef = useRef();
     useEffect(() => {
