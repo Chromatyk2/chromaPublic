@@ -15,7 +15,7 @@ function RandomProfil(props) {
             .get("/api/getAllProfil")
             .then(function(response){
                 setAllProfil(response.data);
-                setRandomIndex(Math.floor(Math.random() * allProfil.length));
+                setRandomIndex(Math.floor(Math.random() * response.data.length));
             })
     }, [])
     useEffect(() => {
