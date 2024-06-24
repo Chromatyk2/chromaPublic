@@ -26,14 +26,14 @@ function Pedandex(props) {
     }, []);
     const handleSubmit = (event) => {
         words.map((val, key) => {
-            if(val == inputRef.current.value){
+            if(val.toLowerCase() == inputRef.current.value.toLowerCase()){
                 var id = key;
                 console.log(key);
                 document.getElementById(id).innerText = val;
                 document.getElementById(id).style.background = 'none';
             }
         })
-        if(inputRef.current.value == name){
+        if(inputRef.current.value.toLowerCase() == name.toLowerCase()){
             document.getElementById("padandexName").innerText = name
             document.getElementById("padandexName").style.background = 'none'
         }
