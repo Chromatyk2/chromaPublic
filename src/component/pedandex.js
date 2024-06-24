@@ -18,6 +18,7 @@ function Pedandex(props) {
                         element.innerText = word;
                         element.style.marginRight = '10px';
                         element.setAttribute("id", id);
+                        element.setAttribute("class", "itemDescription");
                         id++;
                         console.log(element);
                     });
