@@ -36,6 +36,11 @@ function Pedandex(props) {
         if(inputRef.current.value.toLowerCase() == name.toLowerCase()){
             document.getElementById("padandexName").innerText = name
             document.getElementById("padandexName").style.background = 'none'
+            words.map((val, key) => {
+                var id = key;
+                document.getElementById(id).innerText = val;
+                document.getElementById(id).style.background = 'none';
+            })
         }
         inputRef.current.value = "";
         event.preventDefault();
