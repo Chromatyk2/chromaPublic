@@ -14,20 +14,19 @@ function Pedandex(props) {
                     const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
                     description.split(' ').forEach(word => {                  // loop over every word
                         const element = document.createElement("span");  // create element "span"
+                        var id = description.index + 1;
                         element.innerText = word;
                         element.style.marginRight = '10px';
-                        document.getElementById("descriptionPedandex").appendChild(element);
+                        element.setAttribute("id", {id});
+                        document.body.appendChild(element);
                     });
-
                 })
     }, []);
     return (
         <>
-            {description &&
-                <div id={"descriptionPedandex"}>
+                <div className={"descriptionPedandex"}>
                     <p>{description}</p>
                 </div>
-            }
         </>
     );
 }
