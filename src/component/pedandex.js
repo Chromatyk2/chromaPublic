@@ -13,8 +13,8 @@ function Pedandex(props) {
         var id = 0;
         var div = document.getElementById("textToGuess");
         const correction = {
-            ",": " ,",
-            "?": " ?",
+            ",": " , ",
+            "?": " ? ",
             ":": " : ",
             "'": " ' ",
             "(": " ( ",
