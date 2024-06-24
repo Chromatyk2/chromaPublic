@@ -16,7 +16,7 @@ function Pedandex(props) {
                         const element = document.createElement("span");  // create element "span"
                         element.innerText = word;
                         element.style.marginRight = '10px';
-                        setDescription(element)
+                        document.getElementById("descriptionPedandex").appendChild(element);
                     });
 
                 })
@@ -24,7 +24,7 @@ function Pedandex(props) {
     return (
         <>
             {description &&
-                <div className={"descriptionPedandex"}>
+                <div id={"descriptionPedandex"}>
                     <p>{description}</p>
                 </div>
             }
