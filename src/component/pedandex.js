@@ -11,7 +11,7 @@ function Pedandex(props) {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
         const description = "Il utilise la bouée autour de son cou pour passer la tête hors de l'eau et observer les alentours. L'organe de flottaison sur son cou gonfle comme une bouée lorsqu'il le remplit d'air. Quand il flotte, il garde la tête hors de l'eau. Il nage en faisant tournoyer ses deux queues comme une hélice. Son organe de flottaison se dégonfle quand il plonge.";
         var id = 0;
-        var div = document.getElementById("descriptionPedandex");
+        var div = document.getElementById("textToGuess");
         description.split(' ').forEach(word => {
             var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
@@ -52,7 +52,10 @@ function Pedandex(props) {
                     </button>
                 </form>
                 <div id={"descriptionPedandex"}>
-                    <p style={{width: "100%", fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
+                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
+                    <div id{"textToGuess"}>
+
+                    </div>
                 </div>
             </div>
         </>
