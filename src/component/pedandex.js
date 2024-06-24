@@ -23,7 +23,7 @@ function Pedandex(props) {
             ".": " . "
         };
         description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
-            const correction = {
+            const correction2 = {
                 " , ": ", ",
                 " ? ": " ?",
                 " : ": " : ",
@@ -37,7 +37,7 @@ function Pedandex(props) {
             element.setAttribute("id", id);
             if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
 
-                element.innerText = word.replace(/,|\?|\/|\:|\'|\./g, matched => correction[matched]);
+                element.innerText = word.replace(/,|\?|\/|\:|\'|\./g, matched => correction2[matched]);
                 element.style.background = 'none';
             }else{
                 element.innerText = word.replace(/[^.]/g,'x');
