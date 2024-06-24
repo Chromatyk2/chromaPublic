@@ -30,6 +30,9 @@ function Pedandex(props) {
                 element.style.marginRight = '10px';
                 element.setAttribute("id", id);
                 element.setAttribute("class", "itemDescription");
+            }else{
+                element.innerText = element;
+                element.style.background = 'none';
             }
             id++;
             div.appendChild(element);
