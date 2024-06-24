@@ -24,7 +24,7 @@ function Pedandex(props) {
     return (
         <>
             {description &&
-                <div>
+                <div className={"descriptionPedandex"}>
                     <p>{description}</p>
                 </div>
             }
