@@ -34,7 +34,7 @@ function Pedandex(props) {
                 element.setAttribute("id", id);
                 element.setAttribute("class", "itemDescription");
             }else{
-                element.innerText = element;
+                element.innerText = word;
                 element.style.background = 'none';
             }
             id++;
