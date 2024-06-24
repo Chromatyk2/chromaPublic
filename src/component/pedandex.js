@@ -9,9 +9,10 @@ function Pedandex(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
                     const name = result.names.find((element) => element.language.name == "fr").name;
-                    const description = result.names.find((element) => element.language.name == "fr").name;
+                    const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
+                    console.log(name);
+                    console.log(description);
                 })
     }, []);
     return (
