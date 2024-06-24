@@ -37,7 +37,6 @@ function Pedandex(props) {
             if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
                 element.innerText = word.trim();
                 element.style.background = 'none';
-                element.style.marginLeft = '-20px';
                 element.style.marginRight = '0';
             }else if(word === ""){
                 element.style.display = "none";
