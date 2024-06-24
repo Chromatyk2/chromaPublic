@@ -26,21 +26,12 @@ function Pedandex(props) {
             var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
             const element = document.createElement("span");
-            console.log(word !== "'" || word !== ",")
-            if(word !== "'")
-            {// create element "span"
-                element.innerText = word.replace(/[^.]/g,'x');
-                element.style.marginRight = '10px';
-                element.setAttribute("id", id);
-                element.setAttribute("class", "itemDescription");
-                id++;
-                div.appendChild(element);
-            }else{
-                element.innerText = word;
-                element.style.background = 'none';
-                id++;
-                div.appendChild(element);
-            }
+            element.innerText = word.replace(/[^.]/g,'x');
+            element.style.marginRight = '10px';
+            element.setAttribute("id", id);
+            element.setAttribute("class", "itemDescription");
+            id++;
+            div.appendChild(element);
         });
     }, []);
     const handleSubmit = (event) => {
