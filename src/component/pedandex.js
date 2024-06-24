@@ -26,7 +26,7 @@ function Pedandex(props) {
             var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
             const element = document.createElement("span");
-            console.log(word)
+            console.log(word != " ' ")
             if(word != " ' " || word != " , ")
             {// create element "span"
                 element.innerText = word.replace(/[^.]/g,'x');
