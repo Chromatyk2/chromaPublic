@@ -20,16 +20,24 @@ function Pedandex(props) {
             "(": " ( ",
             ")": " ) ",
             "/": " / ",
-            ".": " ."
+            ".": " . "
         };
         description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
-            var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
+            const correction = {
+                " , ": ", ",
+                " ? ": " ?",
+                " : ": " : ",
+                " ' ": "'",
+                " / ": "/",
+                ".": ". "
+            };
             setWords(words => [...words,word]);
             const element = document.createElement("span");
             element.style.marginRight = '10px';
             element.setAttribute("id", id);
             if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
-                element.innerText = word;
+
+                element.innerText = word.replace(/,|\?|\/|\:|\'|\./g, matched => correction[matched]);
                 element.style.background = 'none';
             }else{
                 element.innerText = word.replace(/[^.]/g,'x');
