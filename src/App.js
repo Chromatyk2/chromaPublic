@@ -37,6 +37,7 @@ import AllProfils from "./component/allProfils";
 import OtherDex from "./component/otherDex";
 import RandomProfil from "./component/randomProfil";
 import OtherProfil from "./component/otherProfil";
+import Pedandex from "./component/pedandex";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
