@@ -13,6 +13,7 @@ function Pedandex(props) {
                     const name = result.names.find((element) => element.language.name == "fr").name;
                     const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
                     var id = 1;
+                    var div = document.getElementById("descriptionPedandex");
                     description.split(' ').forEach(word => {                  // loop over every word
                         const element = document.createElement("span");  // create element "span"
                         element.innerText = word;
@@ -20,16 +21,14 @@ function Pedandex(props) {
                         element.setAttribute("id", id);
                         element.setAttribute("class", "itemDescription");
                         id++;
-                        const div = document.getElementsByClassName("descriptionPedandex");
                         div.appendChild(element);
-                        console.log(element);
                     });
                 })
     }, []);
     console.log(description);
     return (
         <>
-                <div className={"descriptionPedandex"}>
+                <div id={"descriptionPedandex"}>
                 </div>
         </>
     );
