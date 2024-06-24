@@ -22,7 +22,7 @@ function Pedandex(props) {
             "/": " / ",
             ".": " . "
         };
-        description.replace(/,|\?|\/|\\|\:|\(|\)|\'/g, matched => correction[matched]).split(" ").forEach(word => {
+        description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
             var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
             const element = document.createElement("span");
