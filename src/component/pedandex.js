@@ -21,7 +21,7 @@ function Pedandex(props) {
                         element.setAttribute("class", "itemDescription");
                         id++;
                         const div = document.getElementsByClassName("descriptionPedandex");
-                        document.div.appendChild(element);
+                        div.appendChild(element);
                         console.log(element);
                     });
                 })
