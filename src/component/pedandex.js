@@ -27,10 +27,10 @@ function Pedandex(props) {
     }, []);
     console.log(description);
     return (
-        <>
+            <div className={"contentContainer"}>
                 <div id={"descriptionPedandex"}>
                 </div>
-        </>
+            </div>
     );
 }
 
