@@ -26,7 +26,10 @@ function Pedandex(props) {
     const handleSubmit = (event) => {
         words.map((val, key) => {
             if(val == inputRef.current.value){
+                var id = key;
                 console.log(key);
+                document.getElementById(id).innerText = val;
+                document.getElementById(id).style.background = 'none';
             }
         })
         console.log(words.find((element) => element == inputRef.current.value));
