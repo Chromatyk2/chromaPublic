@@ -19,7 +19,7 @@ function Pedandex(props) {
                         element.style.marginRight = '10px';
                         element.setAttribute("id", id);
                         id++;
-                        setDescription(word => [...word,element]);
+                        console.log(element);
                     });
                 })
     }, []);
