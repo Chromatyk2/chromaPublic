@@ -12,7 +12,7 @@ function Pedandex(props) {
                     console.log(result);
                     const name = result.names.find((element) => element.language.name == "fr").name;
                     console.log(name);
-                    const description = result.flavor_text_entries.find((element) => element.language.name == "fr").flavor_text;
+                    const description = result.flavor_text_entries.find((element) => element.language.name == "fr");
                     console.log(description);
                 })
     }, []);
