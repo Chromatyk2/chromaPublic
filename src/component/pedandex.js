@@ -18,16 +18,15 @@ function Pedandex(props) {
                         element.innerText = word;
                         element.style.marginRight = '10px';
                         element.setAttribute("id", id);
-                        const div = document.getElementsByClassName("descriptionPedandex");
-                        div.innerHTML += element;
                         id++;
+                        setDescription(word => [...word,element]);
                     });
                 })
     }, []);
+    console.log(description);
     return (
         <>
                 <div className={"descriptionPedandex"}>
-                    <p>test</p>
                 </div>
         </>
     );
