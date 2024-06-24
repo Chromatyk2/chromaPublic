@@ -22,15 +22,28 @@ function Pedandex(props) {
             div.appendChild(element);
         });
     }, []);
-    console.log(words);
+    const handleSubmit = (event) => {
+        alert('A name was submitted: ' + inputRef.current.value);
+        event.preventDefault();
+    };
     return (
+        <>
+            <form onSubmit={handleSubmit} style={{margin: '20px'}}>
+                <label style={{marginRight: '10px'}}>
+                    Name:
+                    <input type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
+                </label>
+                <button type="submit" style={{display: 'block', marginTop: '10px'}}>
+                    Submit
+                </button>
+            </form>
             <div className={"contentContainer"}>
-                <div className={"itemDescription"}>
-                    <div id={"descriptionPedandex"}>
-                        <p style={{width:"100%",fontSize:"50px",textAlign:"center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
-                    </div>
+                <div id={"descriptionPedandex"}>
+                    <p style={{width: "100%", fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
+                       id={"padandexName"}>{name}</p>
                 </div>
             </div>
+        </>
     );
 }
 
