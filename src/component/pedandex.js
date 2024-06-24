@@ -16,9 +16,9 @@ function Pedandex(props) {
                         const element = document.createElement("span");  // create element "span"
                         element.innerText = word;
                         element.style.marginRight = '10px';
-                        document.body.appendChild(element);
+                        setDescription(element)
                     });
-                    setDescription(description)
+
                 })
     }, []);
     return (
