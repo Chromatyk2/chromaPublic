@@ -24,7 +24,12 @@ function Pedandex(props) {
         });
     }, []);
     const handleSubmit = (event) => {
-        console.log( words.findIndex(obj => obj === inputRef.current.value))
+        words.map((val, key) => {
+            if(val == inputRef.current.value){
+                console.log(number);
+            }
+        })
+        console.log(words.find((element) => element == inputRef.current.value));
         event.preventDefault();
     };
     return (
