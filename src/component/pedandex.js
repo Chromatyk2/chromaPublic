@@ -44,7 +44,7 @@ function Pedandex(props) {
             <div className={"contentContainer"}>
                 <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
                     <label style={{marginRight: '10px'}}>
-                        <input value={""} type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
+                        <input defaultValue={""} type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
                     </label>
                     <button type="submit" style={{display: 'block', marginTop: '10px'}}>
                         Valider
