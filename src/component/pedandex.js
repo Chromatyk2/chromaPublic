@@ -11,10 +11,10 @@ function Pedandex(props) {
         var id = 0;
         var div = document.getElementById("descriptionPedandex");
         description.split(' ').forEach(word => {
-            console.log(word);
+            var regex = /\b(Basic|Standard|Superior|Deluxe|Private)\b/gi
             setWords(words => [...words,word]);
             const element = document.createElement("span");  // create element "span"
-            element.innerText = word;
+            element.innerText = word.replace(regex, ' ');
             element.style.marginRight = '10px';
             element.setAttribute("id", id);
             element.setAttribute("class", "itemDescription");
@@ -27,7 +27,7 @@ function Pedandex(props) {
             <div className={"itemDescription"}>
                 <div>
                     <div id={"descriptionPedandex"}>
-                        <p className={"itemDescription"} id={"padandexName"}>{name}</p>
+                        <p style={{width:"100%",fontSize:"50px",textAlign:"center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
                     </div>
                 </div>
             </div>
