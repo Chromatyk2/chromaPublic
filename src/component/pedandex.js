@@ -3,6 +3,13 @@ import Axios from 'axios'
 import '../App.css'
 
 function Pedandex() {
+    useEffect(() => {
+        var words = $("p").text().split(" ");
+        $("p").empty();
+        $.each(words, function(i, v) {
+            $("p").append($("<span>").text(v));
+        });
+    }, []);
         return (
             <>
                 <div>
