@@ -26,7 +26,7 @@ function Pedandex(props) {
     const handleSubmit = (event) => {
         words.map((val, key) => {
             if(val == inputRef.current.value){
-                console.log(number);
+                console.log(key);
             }
         })
         console.log(words.find((element) => element == inputRef.current.value));
