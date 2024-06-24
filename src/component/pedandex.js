@@ -11,7 +11,7 @@ function Pedandex(props) {
         var id = 0;
         var div = document.getElementById("descriptionPedandex");
         description.split(' ').forEach(word => {
-            setWords(words => [...wors,word]);
+            setWords(words => [...words,word]);
             const element = document.createElement("span");  // create element "span"
             element.innerText = word;
             element.style.marginRight = '10px';
@@ -26,7 +26,7 @@ function Pedandex(props) {
             <div className={"itemDescription"}>
                 <div>
                     <div id={"descriptionPedandex"}>
-                        <p className={""} id={"padandexName"}>{name}</p>
+                        <p className={"itemDescription"} id={"padandexName"}>{name}</p>
                     </div>
                 </div>
             </div>
