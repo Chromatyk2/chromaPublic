@@ -29,16 +29,16 @@ function Pedandex(props) {
     };
     return (
         <>
-            <form onSubmit={handleSubmit} style={{margin: '20px'}}>
-                <label style={{marginRight: '10px'}}>
-                    Name:
-                    <input type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
-                </label>
-                <button type="submit" style={{display: 'block', marginTop: '10px'}}>
-                    Submit
-                </button>
-            </form>
             <div className={"contentContainer"}>
+                <form onSubmit={handleSubmit} style={{margin: '20px'}}>
+                    <label style={{marginRight: '10px'}}>
+                        Name:
+                        <input type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
+                    </label>
+                    <button type="submit" style={{display: 'block', marginTop: '10px'}}>
+                        Submit
+                    </button>
+                </form>
                 <div id={"descriptionPedandex"}>
                     <p style={{width: "100%", fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
                        id={"padandexName"}>{name}</p>
