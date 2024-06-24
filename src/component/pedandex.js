@@ -40,7 +40,7 @@ function Pedandex(props) {
                 element.style.background = 'none';
                 element.style.marginLeft = '-20px';
                 element.style.marginRight = '0';
-            }else if(word === " "){
+            }else if(word === ""){
                 element.style.display = "none";
             }
             else{
