@@ -9,13 +9,7 @@ function Pedandex(props) {
     const inputRef = useRef();
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
-        const description = "Pokémon de type Roche/Combat.\n" +
-            "\n" +
-            "Terrakium représente Porthos des Trois Mosquetaires, et donc la force.\n" +
-            "\n" +
-            "C'est un Pokémon quadrupède gris possédant une forte musculature et dont la physionomie pourrait être inspirée de celle du bélier, animal également connu pour ses charges puissantes.\n" +
-            "\n" +
-            "Il possède des protections sur les pattes ainsi que sur les épaules. Son large visage menaçant est surmonté d'une couronne noire, formant deux larges cornes plates vers l'avant, et se prolongeant le long du dos comme deux courtes crêtes.";
+        const description = "Pokémon de type Roche/Combat.Terrakium représente Porthos des Trois Mosquetaires, et donc la force.C'est un Pokémon quadrupède gris possédant une forte musculature et dont la physionomie pourrait être inspirée de celle du bélier, animal également connu pour ses charges puissantes.Il possède des protections sur les pattes ainsi que sur les épaules. Son large visage menaçant est surmonté d'une couronne noire, formant deux larges cornes plates vers l'avant, et se prolongeant le long du dos comme deux courtes crêtes.";
         var id = 0;
         var div = document.getElementById("textToGuess");
         const correction = {
