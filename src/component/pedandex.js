@@ -142,7 +142,6 @@ function Pedandex(props) {
                                     Axios.get("/api/getMyTokens/"+pseudo)
                                         .then(function(response){
                                             setTokens(response.data[0].token)
-                                            setIsOpenToken(true);
                                         })
                                 })
                         })
