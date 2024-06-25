@@ -183,7 +183,10 @@ function Pedandex(props) {
 
             <div className={"contentContainer"}>
                 <div style={{display:"flex",flexFlow:"row",gap:"20px",justifyContent:"center",flexWrap:"wrap",width:"100%"}}>
-                    <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                    {leaderBoard &&
+                        leaderBoard.length > 0 &&
+                        <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                    }
                     {tokens &&
 
                         <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
