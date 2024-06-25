@@ -3734,7 +3734,7 @@ span.navbar-brand {
     -webkit-animation: popWin 0.2s linear forwards;
     bottom: 0;
     display: flex;
-    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    font-family: 'Charge Vector Black';
     font-size: 50px;
     font-weight: 900;
     height: 0;
@@ -3744,6 +3744,7 @@ span.navbar-brand {
     transform: scale(0);
     width: 230px;
     height: 35%;
+    letter-spacing: 5px;
 }
 
 .b, .o, .u, .n, .c, .e {
