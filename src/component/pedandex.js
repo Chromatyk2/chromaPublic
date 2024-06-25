@@ -138,6 +138,9 @@ function Pedandex(props) {
     function openLeaderboard() {
         setIsOpen(true);
     }
+    function closeModal() {
+        setIsOpen(false);
+    }
     return (
         <>
 
@@ -191,7 +194,7 @@ function Pedandex(props) {
                             </div>
                         </div>
                     </div>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
                 <>
                     <table>
                         <tbody>
