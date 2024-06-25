@@ -3720,11 +3720,18 @@ span.navbar-brand {
     color: white;
 }
 .bouncing-text {
-    position: relative;
     display: flex;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     font-size: 70px;
     font-weight: 900;
-    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 335px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 24vh;
 }
 
 .b, .o, .u, .n, .c, .e {
