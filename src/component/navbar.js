@@ -31,6 +31,7 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boosters">Mes boosters</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Boutique TCG</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pedandex">Boutique TCG</Link>
                       {pseudo == "chromatyk" &&
                                     <>
                                         <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/echange">Echange doublons TCG</Link>
