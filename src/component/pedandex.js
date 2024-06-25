@@ -35,9 +35,13 @@ function Pedandex(props) {
                         setLeaderBoard(response.data)
                         if(response.data.find((uc) => uc.pseudo === pseudo)){
                             setCanPlay(false)
+                            description.split(" ").forEach(word => {
+                                    element.innerText = word.trim();
+                                    element.style.background = 'none';
+                                    element.style.marginRight = '0';
+                            });
                         }else{
                             setCanPlay(true)
-
                             description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
                                 const correction2 = {
                                     " , ": ", ",
@@ -146,8 +150,7 @@ function Pedandex(props) {
                             </>
                         }
                         <div id={"descriptionPedandex"}>
-                            <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
-                               id={"padandexName"}>{name}</p>
+                            <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
                             <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                             </div>
                         </div>
