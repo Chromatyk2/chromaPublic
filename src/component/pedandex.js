@@ -160,7 +160,7 @@ function Pedandex(props) {
         Axios.get("/api/getMyTokens/"+pseudo)
             .then(function(response){
                 if(response.data[0].token > 0){
-                    Axios.post('/api/removeBoxSkin',
+                    Axios.post('/api/removeToken',
                         {
                             user:pseudo
                         }
