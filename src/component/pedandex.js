@@ -42,8 +42,11 @@ function Pedandex(props) {
                                     element.innerText = word.trim();
                                     element.style.background = 'none';
                                     element.style.marginRight = '0';
+                                    document.getElementById("winContentId").style.display = 'block'
                                     document.getElementById("padandexName").innerText = name
                                     document.getElementById("padandexName").style.background = 'none'
+                                    document.getElementById("inputPedandex").disabled = true;
+                                    document.getElementById("buttonPedandex").disabled = true;
                                     element.setAttribute("class", "itemDescription");
                                     id++;
                                     div.appendChild(element);
