@@ -3721,8 +3721,8 @@ span.navbar-brand {
 }
 .winContent{
     transform: scale(0);
-    animation: scale 1s linear forwards;
-    -webkit-animation: scale 1s linear forwards;
+    animation: popWin 1s linear forwards;
+    -webkit-animation: popWin 1s linear forwards;
 }
 .winBackground{
     position: absolute;
