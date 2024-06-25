@@ -158,7 +158,7 @@ function Pedandex(props) {
     function openToken() {
         setIsOpenToken(true);
     }
-    function closeToken() {
+    function closeModalToken() {
         setIsOpenToken(false);
     }
     return (
