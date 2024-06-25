@@ -15,6 +15,7 @@ function Pedandex(props) {
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const customStyles = {
         content: {
             width:"300px",
@@ -154,11 +155,25 @@ function Pedandex(props) {
     function closeModal() {
         setIsOpen(false);
     }
+    function openToken() {
+        setIsOpenToken(true);
+    }
+    function closeToken() {
+        setIsOpenToken(false);
+    }
     return (
         <>
 
             <div className={"contentContainer"}>
                 <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                {tokens &&
+
+                    <button className={"buttonPedandex"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
+                        <div className="infoPkm">
+                            <div className="infoNbBoxSkin">{tokens}</div>
+                        </div>
+                    </button>
+                }
                 {canplay === true &&
                     <>
                         <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
@@ -229,6 +244,11 @@ function Pedandex(props) {
                         }
                         </tbody>
                     </table>
+                </>
+            </Modal>
+            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
+                <>
+                    <p style={{textAlign:"center"}}>Token</p>
                 </>
             </Modal>
         </>
