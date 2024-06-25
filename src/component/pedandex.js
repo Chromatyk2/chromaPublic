@@ -15,6 +15,17 @@ function Pedandex(props) {
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const customStyles = {
+        content: {
+            width:"300px",
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        },
+    };
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
         const description = "Pokémon de type Roche/Combat de cinquième génération. Terrakium représente Porthos des Trois Mousquetaires, et donc la force. C'est un Pokémon quadrupède gris possédant une forte musculature et dont la physionomie pourrait être inspirée de celle du bélier, animal également connu pour ses charges puissantes. Il possède des protections sur les pattes ainsi que sur les épaules. Son large visage menaçant est surmonté d'une couronne noire, formant deux larges cornes plates vers l'avant, et se prolongeant le long du dos comme deux courtes crêtes.";
@@ -194,7 +205,7 @@ function Pedandex(props) {
                             </div>
                         </div>
                     </div>
-            <Modal style={{width:"300px"}} isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
+            <Modal style={customStyles.content} isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
                 <>
                     <p style={{textAlign:"center"}}>Classement du jour</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
