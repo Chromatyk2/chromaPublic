@@ -157,7 +157,23 @@ function Pedandex(props) {
         setIsOpen(false);
     }
     function openToken() {
-        setIsOpenToken(true);
+        Axios.get("/api/getMyTokens/"+pseudo)
+            .then(function(response){
+                if(response.data[0].token > 0){
+                    Axios.post('/api/removeBoxSkin',
+                        {
+                            user:pseudo
+                        }
+                    )
+                    .then(function(response){
+                        Axios.get("/api/getMyTokens/"+pseudo)
+                            .then(function(response){
+                                setTokens(response.data[0].token)
+                                setIsOpenToken(true);
+                            })
+                    })
+                }
+            })
     }
     function closeModalToken() {
         setIsOpenToken(false);
