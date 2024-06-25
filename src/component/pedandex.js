@@ -198,7 +198,8 @@ function Pedandex(props) {
                 <>
                     <table>
                         <tbody>
-                        {leaderBoard.map((val, key) => {
+                        {leaderBoard &&
+                            leaderBoard.map((val, key) => {
                                 return (
                                     <tr>
                                         <th scope="row">{key + 1}</th>
@@ -206,7 +207,8 @@ function Pedandex(props) {
                                         <td>{val.tries}</td>
                                     </tr>
                                 )
-                            })}
+                            })
+                        }
                         </tbody>
                     </table>
                 </>
