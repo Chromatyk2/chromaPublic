@@ -56,7 +56,7 @@ function Pedandex(props) {
         Axios.get("/api/getMyTokens/"+pseudo)
             .then(function(response){
                 setTokens(response.data[0].token)
-                Axios.get("/api/getPedandex")
+                Axios.get("/api/getPedandexWin")
                     .then(function(response){
                         setLeaderBoard(response.data)
                         if(response.data.find((uc) => uc.pseudo === pseudo)){
