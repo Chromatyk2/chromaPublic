@@ -80,6 +80,7 @@ function Pedandex(props) {
                         Valider
                     </button>
                 </form>
+                <p>Trouvez le pokémon du jour, ATTENTION les accents comptent !</p>
                 <div id={"descriptionPedandex"}>
                     <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
                     <div style={{display:"flex",flexWrap:"wrap",gap:"10px"}} id={"textToGuess"}>
