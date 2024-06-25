@@ -36,6 +36,9 @@ function Pedandex(props) {
                         if(response.data.find((uc) => uc.pseudo === pseudo)){
                             setCanPlay(false)
                             description.split(" ").forEach(word => {
+                                    setWords(words => [...words,word]);
+                                    const element = document.createElement("span");
+                                    element.setAttribute("id", id);
                                     element.innerText = word.trim();
                                     element.style.background = 'none';
                                     element.style.marginRight = '0';
