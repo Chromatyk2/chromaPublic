@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
+import Modal from "react-modal";
 function Pedandex(props) {
     const [name, setName] = useState("Terrakium");
     const [words, setWords] = useState([]);
@@ -13,6 +14,7 @@ function Pedandex(props) {
     const [triesWin, setTriesWin] = useState(0);
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
+    const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
         const description = "Pokémon de type Roche/Combat de cinquième génération. Terrakium représente Porthos des Trois Mousquetaires, et donc la force. C'est un Pokémon quadrupède gris possédant une forte musculature et dont la physionomie pourrait être inspirée de celle du bélier, animal également connu pour ses charges puissantes. Il possède des protections sur les pattes ainsi que sur les épaules. Son large visage menaçant est surmonté d'une couronne noire, formant deux larges cornes plates vers l'avant, et se prolongeant le long du dos comme deux courtes crêtes.";
@@ -133,6 +135,9 @@ function Pedandex(props) {
     const displayWinContent = (event) => {
         document.getElementById("winContentId").style.display = 'none'
     };
+    function openModal() {
+        setIsOpen(true);
+    }
     return (
         <>
 
@@ -155,11 +160,16 @@ function Pedandex(props) {
                                 <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
                             </>
                         }
+                        {canplay === false &&
+                            <button  onClick={openModal} className={"uniqueBoxContainer"}>
+                                <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/trophee.webp"}/>
+                            </button>
+                        }
                         <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
                              className={"winContent"}>
                             <div className={"winBackground"}></div>
                             <div className="bouncing-text">
-                                <div className="b">G</div>
+                            <div className="b">G</div>
                                 <div className="o">A</div>
                                 <div className="u">G</div>
                                 <div className="n">N</div>
@@ -182,8 +192,25 @@ function Pedandex(props) {
                             </div>
                         </div>
                     </div>
-            </>
-    );
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                <>
+                    <table>
+                        <tbody>
+                        {leaderBoard.map((val, key) => {
+                                return (
+                                    <tr>
+                                        <th scope="row">{key + 1}</th>
+                                        <td>{val.pseudo}</td>
+                                        <td>{val.tries}</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                </>
+            </Modal>
+        </>
+);
 }
 
 export default Pedandex
