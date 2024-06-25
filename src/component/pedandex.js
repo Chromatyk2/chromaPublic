@@ -119,7 +119,7 @@ function Pedandex(props) {
     };
     return (
         <>
-                <>
+
                     <div className={"contentContainer"}>
                         {canplay === true &&
                             <>
@@ -137,37 +137,36 @@ function Pedandex(props) {
                                     les accents
                                     comptent !</p>
                                 <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
-                                <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
-                                     className={"winContent"}>
-                                    <div className={"winBackground"}></div>
-                                    <div className="bouncing-text">
-                                        <div className="b">G</div>
-                                        <div className="o">A</div>
-                                        <div className="u">G</div>
-                                        <div className="n">N</div>
-                                        <div className="c">E</div>
-                                        <div className="e">R</div>
-                                        <div className="shadow"></div>
-                                        <div className="shadow-two"></div>
-                                    </div>
-                                    <p style={{
-                                        position: "absolute",
-                                        textAlign: "center",
-                                        margin: "auto",
-                                        width: "100%",
-                                        color: "white"
-                                    }}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
-                                </div>
                             </>
                         }
+                        <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
+                             className={"winContent"}>
+                            <div className={"winBackground"}></div>
+                            <div className="bouncing-text">
+                                <div className="b">G</div>
+                                <div className="o">A</div>
+                                <div className="u">G</div>
+                                <div className="n">N</div>
+                                <div className="c">E</div>
+                                <div className="e">R</div>
+                                <div className="shadow"></div>
+                                <div className="shadow-two"></div>
+                            </div>
+                            <p style={{
+                                position: "absolute",
+                                textAlign: "center",
+                                margin: "auto",
+                                width: "100%",
+                                color: "white"
+                            }}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
+                        </div>
                         <div id={"descriptionPedandex"}>
                             <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
                             <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                             </div>
                         </div>
                     </div>
-                </>
-        </>
+            </>
     );
 }
 
