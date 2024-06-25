@@ -47,8 +47,6 @@ function Pedandex(props) {
                                     document.getElementById("winContentId").style.display = 'block'
                                     document.getElementById("padandexName").innerText = name
                                     document.getElementById("padandexName").style.background = 'none'
-                                    document.getElementById("inputPedandex").disabled = true;
-                                    document.getElementById("buttonPedandex").disabled = true;
                                     element.setAttribute("class", "itemDescription");
                                     id++;
                                     div.appendChild(element);
@@ -98,6 +96,8 @@ function Pedandex(props) {
             document.getElementById("winContentId").style.display = 'block'
             document.getElementById("padandexName").innerText = name
             document.getElementById("padandexName").style.background = 'none'
+            document.getElementById("inputPedandex").disabled = true;
+            document.getElementById("buttonPedandex").disabled = true;
             words.map((val, key) => {
                 var id = key;
                 document.getElementById(id).innerText = val;
