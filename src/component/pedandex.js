@@ -80,10 +80,22 @@ function Pedandex(props) {
                         Valider
                     </button>
                 </form>
-                <p style={{color:"white",textAlign:"center"}}>Trouvez le pokémon du jour, ATTENTION les accents comptent !</p>
+                <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION les accents
+                    comptent !</p>
+                <div style={{display:"none"}} className="bouncing-text">
+                    <div className="b">B</div>
+                    <div className="o">O</div>
+                    <div className="u">U</div>
+                    <div className="n">N</div>
+                    <div className="c">C</div>
+                    <div className="e">E</div>
+                    <div className="shadow"></div>
+                    <div className="shadow-two"></div>
+                </div>
                 <div id={"descriptionPedandex"}>
-                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
-                    <div style={{display:"flex",flexWrap:"wrap",gap:"10px"}} id={"textToGuess"}>
+                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
+                       id={"padandexName"}>{name}</p>
+                    <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
 
                     </div>
                 </div>
