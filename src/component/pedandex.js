@@ -27,32 +27,6 @@ function Pedandex(props) {
             "/": " / ",
             ".": " ."
         };
-        description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
-            const correction2 = {
-                " , ": ", ",
-                " ? ": " ?",
-                " : ": " : ",
-                " ' ": "'",
-                " / ": "/",
-                ".": ". "
-            };
-            setWords(words => [...words,word]);
-            const element = document.createElement("span");
-            element.setAttribute("id", id);
-            if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
-                element.innerText = word.trim();
-                element.style.background = 'none';
-                element.style.marginRight = '0';
-            }else if(word === ""){
-                element.style.display = "none";
-            }
-            else{
-                element.innerText = word.replace(/[^.]/g,'x');
-            }
-            element.setAttribute("class", "itemDescription");
-            id++;
-            div.appendChild(element);
-        });
         Axios.get("/api/getMyTokens/"+pseudo)
             .then(function(response){
                 setTokens(response.data[0].token)
@@ -63,6 +37,33 @@ function Pedandex(props) {
                             setCanPlay(false)
                         }else{
                             setCanPlay(true)
+
+                            description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
+                                const correction2 = {
+                                    " , ": ", ",
+                                    " ? ": " ?",
+                                    " : ": " : ",
+                                    " ' ": "'",
+                                    " / ": "/",
+                                    ".": ". "
+                                };
+                                setWords(words => [...words,word]);
+                                const element = document.createElement("span");
+                                element.setAttribute("id", id);
+                                if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
+                                    element.innerText = word.trim();
+                                    element.style.background = 'none';
+                                    element.style.marginRight = '0';
+                                }else if(word === ""){
+                                    element.style.display = "none";
+                                }
+                                else{
+                                    element.innerText = word.replace(/[^.]/g,'x');
+                                }
+                                element.setAttribute("class", "itemDescription");
+                                id++;
+                                div.appendChild(element);
+                            });
                         }
                     })
             })
@@ -105,7 +106,6 @@ function Pedandex(props) {
         <>
                 <>
                     <div className={"contentContainer"}>
-
                         {canplay === true &&
                             <>
                                 <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
