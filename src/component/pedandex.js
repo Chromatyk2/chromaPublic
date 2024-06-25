@@ -166,15 +166,17 @@ function Pedandex(props) {
         <>
 
             <div className={"contentContainer"}>
-                <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
-                {tokens &&
+                <div style={{display:"flex",flexFlow:"row",gap:"20px",justifyContent:"center",flexWrap:"wrap",width:"100%"}}>
+                    <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                    {tokens &&
 
-                    <button className={"buttonPedandex"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
-                        <div className="infoPkm">
-                            <div className="infoNbBoxSkin">{tokens}</div>
-                        </div>
-                    </button>
-                }
+                        <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
+                            <div className="infoPkm">
+                                <div className="infoNbBoxSkin">{tokens}</div>
+                            </div>
+                        </button>
+                    }
+                </div>
                 {canplay === true &&
                     <>
                         <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
