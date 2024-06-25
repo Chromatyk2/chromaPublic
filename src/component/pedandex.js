@@ -42,6 +42,9 @@ function Pedandex(props) {
                                     element.innerText = word.trim();
                                     element.style.background = 'none';
                                     element.style.marginRight = '0';
+                                    element.setAttribute("class", "itemDescription");
+                                    id++;
+                                    div.appendChild(element);
                             });
                         }else{
                             setCanPlay(true)
