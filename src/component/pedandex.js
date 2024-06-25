@@ -17,6 +17,30 @@ function Pedandex(props) {
         const description = "Pokémon de type Roche/Combat de cinquième génération. Terrakium représente Porthos des Trois Mousquetaires, et donc la force. C'est un Pokémon quadrupède gris possédant une forte musculature et dont la physionomie pourrait être inspirée de celle du bélier, animal également connu pour ses charges puissantes. Il possède des protections sur les pattes ainsi que sur les épaules. Son large visage menaçant est surmonté d'une couronne noire, formant deux larges cornes plates vers l'avant, et se prolongeant le long du dos comme deux courtes crêtes.";
         var id = 0;
         var div = document.getElementById("textToGuess");
+        Axios.get("/api/getMyTokens/"+pseudo)
+            .then(function(response){
+                setTokens(response.data[0].token)
+                Axios.get("/api/getPedandexWin")
+                    .then(function(response){
+                        setLeaderBoard(response.data)
+                        if(response.data.find((uc) => uc.pseudo === pseudo)){
+                            description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
+                                const element = document.createElement("span");
+                                element.innerText = word.trim();
+                                element.style.background = 'none';
+                                element.style.marginRight = '0';
+                                element.setAttribute("class", "itemDescription");
+                                id++;
+                                div.appendChild(element);
+                            })
+                            setCanPlay(false)
+                        }else{
+                            setCanPlay(true)
+                        }
+                    })
+            })
+    }, []);
+    useEffect(() => {
         const correction = {
             ",": " , ",
             "?": " ? ",
@@ -53,20 +77,7 @@ function Pedandex(props) {
             id++;
             div.appendChild(element);
         });
-        Axios.get("/api/getMyTokens/"+pseudo)
-            .then(function(response){
-                setTokens(response.data[0].token)
-                Axios.get("/api/getPedandexWin")
-                    .then(function(response){
-                        setLeaderBoard(response.data)
-                        if(response.data.find((uc) => uc.pseudo === pseudo)){
-                            setCanPlay(false)
-                        }else{
-                            setCanPlay(true)
-                        }
-                    })
-            })
-    }, []);
+    }, [canplay === true]);
     const handleSubmit = (event) => {
         setTries(tries + 1);
         words.map((val, key) => {
