@@ -103,13 +103,29 @@ function Pedandex(props) {
                 document.getElementById(id).innerText = val;
                 document.getElementById(id).style.background = 'none';
             })
-            Axios.post('/api/addToken',
-                {
-                    user: pseudo,
-                    win: 1,
-                    wins: 1
-                }
-            )
+            if(!leaderBoard.find((uc) => uc.pseudo === pseudo)){
+                Axios.post('/api/addToken',
+                    {
+                        user: pseudo,
+                        win: 1,
+                        wins: 1
+                    }
+                )
+                .then(function(response){
+                    Axios.post('/api/addPedandexWin',
+                        {
+                            user: pseudo,
+                            tries: tries
+                        }
+                    )
+                        .then(function(response){
+                            Axios.get("/api/getPedandexWin")
+                                .then(function(response) {
+                                    setLeaderBoard(response.data)
+                                })
+                        })
+                })
+            }
         }
         inputRef.current.value = "";
         event.preventDefault();
