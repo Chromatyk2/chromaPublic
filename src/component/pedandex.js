@@ -72,6 +72,9 @@ function Pedandex(props) {
         inputRef.current.value = "";
         event.preventDefault();
     };
+    const displayWinContent = (event) => {
+        document.getElementById("winContentId").style.display = 'none'
+    };
     return (
         <>
             <div className={"contentContainer"}>
@@ -86,7 +89,8 @@ function Pedandex(props) {
                 <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION les accents
                     comptent !</p>
                 <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
-                <div id={"winContentId"} style={{display: "none"}} className={"winContent"}>
+                <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}} className={"winContent"}>
+                <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}} className={"winContent"}>
                     <div className={"winBackground"}></div>
                     <div className="bouncing-text">
                         <div className="b">G</div>
