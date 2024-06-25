@@ -155,57 +155,63 @@ function Pedandex(props) {
     return (
         <>
 
-                    <div className={"contentContainer"}>
-                        {canplay === true &&
-                            <>
-                                <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
-                                    <label style={{marginRight: '10px'}}>
-                                        <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef}
-                                               style={{marginLeft: '5px'}}/>
-                                    </label>
-                                    <button id={"buttonPedandex"} type="submit"
-                                            style={{display: 'block', marginTop: '10px'}}>
-                                        Valider
-                                    </button>
-                                </form>
-                                <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION
-                                    les accents
-                                    comptent !</p>
-                                <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
-                            </>
-                        }
-                        <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
-                        <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
-                             className={"winContent"}>
-                            <div className={"winBackground"}></div>
-                            <div className="bouncing-text">
-                                <div className="b">G</div>
-                                <div className="o">A</div>
-                                <div className="u">G</div>
-                                <div className="n">N</div>
-                                <div className="c">E</div>
-                                <div className="e">R</div>
-                                <div className="shadow"></div>
-                                <div className="shadow-two"></div>
-                            </div>
-                            <p style={{
-                                position: "absolute",
-                                textAlign: "center",
-                                margin: "auto",
-                                width: "100%",
-                                color: "white"
-                            }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
-                        </div>
-                        <div id={"descriptionPedandex"}>
-                            <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
-                               id={"padandexName"}>{name}</p>
-                            <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
-                            </div>
-                        </div>
+            <div className={"contentContainer"}>
+                <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                {canplay === true &&
+                    <>
+                        <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
+                            <label style={{marginRight: '10px'}}>
+                                <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef}
+                                       style={{marginLeft: '5px'}}/>
+                            </label>
+                            <button id={"buttonPedandex"} type="submit"
+                                    style={{display: 'block', marginTop: '10px'}}>
+                                Valider
+                            </button>
+                        </form>
+                        <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION
+                            les accents
+                            comptent !</p>
+                        <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
+                    </>
+                }
+                {canplay === false &&
+                    <>
+                        <p style={{fontSize:"30px;", color: "white", textAlign: "center"}}>Vous avez déjà términè le Pedandex du jour revenz demain !</p>
+                    </>
+                }
+                <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
+                     className={"winContent"}>
+                    <div className={"winBackground"}></div>
+                    <div className="bouncing-text">
+                        <div className="b">G</div>
+                        <div className="o">A</div>
+                        <div className="u">G</div>
+                        <div className="n">N</div>
+                        <div className="c">E</div>
+                        <div className="e">R</div>
+                        <div className="shadow"></div>
+                        <div className="shadow-two"></div>
                     </div>
-            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
+                    <p style={{
+                        position: "absolute",
+                        textAlign: "center",
+                        margin: "auto",
+                        width: "100%",
+                        color: "white"
+                    }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
+                </div>
+                <div id={"descriptionPedandex"}>
+                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
+                       id={"padandexName"}>{name}</p>
+                    <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
+                    </div>
+                </div>
+            </div>
+            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal}
+                   contentLabel="Example Modal">
                 <>
-                    <p style={{textAlign:"center"}}>Classement du jour</p>
+                <p style={{textAlign:"center"}}>Classement du jour</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
                         {leaderBoard &&
