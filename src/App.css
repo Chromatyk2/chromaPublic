@@ -3746,7 +3746,7 @@ span.navbar-brand {
     top: 0;
     bottom: 0;
     margin: auto;
-    height: 24vh;
+    height: 0;
 }
 
 .b, .o, .u, .n, .c, .e {
