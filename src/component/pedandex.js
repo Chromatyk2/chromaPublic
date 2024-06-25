@@ -8,6 +8,7 @@ function Pedandex(props) {
     const [words, setWords] = useState([]);
     const [tries, setTries] = useState(0);
     const inputRef = useRef();
+    const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
         const description = "Pokémon de type Roche/Combat de cinquième génération. Terrakium représente Porthos des Trois Mousquetaires, et donc la force. C'est un Pokémon quadrupède gris possédant une forte musculature et dont la physionomie pourrait être inspirée de celle du bélier, animal également connu pour ses charges puissantes. Il possède des protections sur les pattes ainsi que sur les épaules. Son large visage menaçant est surmonté d'une couronne noire, formant deux larges cornes plates vers l'avant, et se prolongeant le long du dos comme deux courtes crêtes.";
@@ -70,6 +71,13 @@ function Pedandex(props) {
                 document.getElementById(id).innerText = val;
                 document.getElementById(id).style.background = 'none';
             })
+            Axios.post('/api/addToken',
+                {
+                    user: pseudo,
+                    win: 1,
+                    wins: 1
+                }
+            )
         }
         inputRef.current.value = "";
         event.preventDefault();
