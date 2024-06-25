@@ -135,7 +135,7 @@ function Pedandex(props) {
     const displayWinContent = (event) => {
         document.getElementById("winContentId").style.display = 'none'
     };
-    function openModal() {
+    function openLeaderboard() {
         setIsOpen(true);
     }
     return (
@@ -161,8 +161,7 @@ function Pedandex(props) {
                             </>
                         }
                         {canplay === false &&
-                            <button  onClick={openModal} className={"uniqueBoxContainer"}>
-                                <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/trophee.webp"}/>
+                            <button className={"openSkinBox"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}>
                             </button>
                         }
                         <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
