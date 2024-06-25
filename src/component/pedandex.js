@@ -216,7 +216,7 @@ function Pedandex(props) {
                 }
                 {canplay === false &&
                     <>
-                        <p style={{fontSize:"30px;", color: "white", textAlign: "center"}}>T'as déjà términè le Pedandex du jour reviens demain !</p>
+                        <p style={{fontSize:"30px;", color: "white", textAlign: "center"}}>Tu as déjà fini le Pedandex du jour reviens demain !</p>
                     </>
                 }
                 <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
