@@ -3719,6 +3719,11 @@ span.navbar-brand {
     align-items: baseline;
     color: white;
 }
+.winContent{
+    transform: scale(0);
+    animation: scale 1s linear forwards;
+    -webkit-animation: scale 1s linear forwards;
+}
 .winBackground{
     position: absolute;
     left: 0;
@@ -3853,6 +3858,24 @@ span.navbar-brand {
     50% {transform: scaleX(1);}
     75% {transform: scaleX(0.9);}
     100% {transform: scaleX(1);}
+}
+
+@keyframes popWin {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes popWin {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 .bouncing-text:after {
