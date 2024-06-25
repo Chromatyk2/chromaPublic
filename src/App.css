@@ -964,8 +964,7 @@ p.filterTitle {
     background-size: contain;
     display: block;
     background-color: transparent;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 .uniquePokemonContainer {
     background-position: 50%;
