@@ -4,6 +4,7 @@ import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
 import Modal from "react-modal";
+import SpawnPokemonToken from "./spawnPokemonToken";
 function Pedandex(props) {
     const [name, setName] = useState("Terrakium");
     const [words, setWords] = useState([]);
@@ -247,9 +248,7 @@ function Pedandex(props) {
                 </>
             </Modal>
             <Modal className={"modalLeaderBoard"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
-                <>
-                    <p style={{textAlign:"center"}}>Token</p>
-                </>
+                <SpawnPokemonToken pseudo={pseudo}/>
             </Modal>
         </>
 );
