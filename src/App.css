@@ -3608,6 +3608,13 @@ span.navbar-brand {
     font-family: 'Charge Vector Black';
     color: white;
 }
+.ReactModal__Overlay.ReactModal__Overlay--after-open.overlayModalToken {
+    background-color: #101010;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
 .pseudoProfilList{
     margin:0;
     text-align: center;
