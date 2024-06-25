@@ -3730,8 +3730,8 @@ span.navbar-brand {
     background: rgba(0, 0, 0, 0.8);
 }
 .bouncing-text {
-    animation: popWin 1s linear forwards;
-    -webkit-animation: popWin 1s linear forwards;
+    animation: popWin 0.2s linear forwards;
+    -webkit-animation: popWin 0.2s linear forwards;
     bottom: 0;
     display: flex;
     font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;

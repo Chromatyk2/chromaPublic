@@ -98,13 +98,11 @@ function Pedandex(props) {
                         <div className="shadow"></div>
                         <div className="shadow-two"></div>
                     </div>
-                    <p style={{color: "white", textAlign: "center"}}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
+                    <p style={{position:"absolute", textAlign:"center", margin:"auto", width:"100%", color: "white"}}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
                 </div>
                 <div id={"descriptionPedandex"}>
-                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
-                       id={"padandexName"}>{name}</p>
+                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
                     <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
-
                     </div>
                 </div>
             </div>
