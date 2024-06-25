@@ -3745,6 +3745,7 @@ span.navbar-brand {
     width: 230px;
     height: 35%;
     letter-spacing: 5px;
+    margin-top: 50px;
 }
 
 .b, .o, .u, .n, .c, .e {
