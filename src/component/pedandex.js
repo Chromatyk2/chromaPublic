@@ -58,6 +58,7 @@ function Pedandex(props) {
             }
         })
         if(inputRef.current.value.toLowerCase() == name.toLowerCase()){
+            document.getElementById("winContentId").style.display = 'block'
             document.getElementById("padandexName").innerText = name
             document.getElementById("padandexName").style.background = 'none'
             words.map((val, key) => {
@@ -82,7 +83,7 @@ function Pedandex(props) {
                 </form>
                 <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION les accents
                     comptent !</p>
-                <div style={{display: "none"}} className={"winContent"}>
+                <div id={"winContentId"} style={{display: "none"}} className={"winContent"}>
                     <div className={"winBackground"}></div>
                     <div  className="bouncing-text">
                         <div className="b">G</div>
