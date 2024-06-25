@@ -42,6 +42,8 @@ function Pedandex(props) {
                                     element.innerText = word.trim();
                                     element.style.background = 'none';
                                     element.style.marginRight = '0';
+                                    document.getElementById("padandexName").innerText = name
+                                    document.getElementById("padandexName").style.background = 'none'
                                     element.setAttribute("class", "itemDescription");
                                     id++;
                                     div.appendChild(element);
