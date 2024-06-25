@@ -249,7 +249,7 @@ function Pedandex(props) {
                     </table>
                 </>
             </Modal>
-            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
+            <Modal className={"modalToken"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
                 <SpawnPokemonToken pseudo={pseudo}/>
             </Modal>
         </>
