@@ -139,6 +139,11 @@ function Pedandex(props) {
                             Axios.get("/api/getPedandexWin")
                                 .then(function(response) {
                                     setLeaderBoard(response.data)
+                                    Axios.get("/api/getMyTokens/"+pseudo)
+                                        .then(function(response){
+                                            setTokens(response.data[0].token)
+                                            setIsOpenToken(true);
+                                        })
                                 })
                         })
                 })
