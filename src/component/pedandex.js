@@ -182,7 +182,7 @@ function Pedandex(props) {
                              className={"winContent"}>
                             <div className={"winBackground"}></div>
                             <div className="bouncing-text">
-                            <div className="b">G</div>
+                                <div className="b">G</div>
                                 <div className="o">A</div>
                                 <div className="u">G</div>
                                 <div className="n">N</div>
@@ -198,9 +198,14 @@ function Pedandex(props) {
                                 width: "100%",
                                 color: "white"
                             }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
+
+                            <button className={"openLeaderBoardButton"} onClick={openLeaderboard}
+                                    style={{backgroundImage: "url(/trophee.webp)"}}>
+                            </button>
                         </div>
                         <div id={"descriptionPedandex"}>
-                            <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
+                            <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
+                               id={"padandexName"}>{name}</p>
                             <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                             </div>
                         </div>
