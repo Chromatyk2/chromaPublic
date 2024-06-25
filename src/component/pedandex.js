@@ -63,6 +63,8 @@ function Pedandex(props) {
             document.getElementById("winContentId").style.display = 'block'
             document.getElementById("padandexName").innerText = name
             document.getElementById("padandexName").style.background = 'none'
+            document.getElementById("inputPedandex").disabled = true;
+            document.getElementById("buttonPedandex").disabled = true;
             words.map((val, key) => {
                 var id = key;
                 document.getElementById(id).innerText = val;
@@ -80,9 +82,9 @@ function Pedandex(props) {
             <div className={"contentContainer"}>
                 <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
                     <label style={{marginRight: '10px'}}>
-                        <input defaultValue={""} type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
+                        <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
                     </label>
-                    <button type="submit" style={{display: 'block', marginTop: '10px'}}>
+                    <button id={"buttonPedandex"} type="submit" style={{display: 'block', marginTop: '10px'}}>
                         Valider
                     </button>
                 </form>
