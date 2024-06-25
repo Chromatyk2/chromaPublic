@@ -90,7 +90,6 @@ function Pedandex(props) {
                     comptent !</p>
                 <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
                 <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}} className={"winContent"}>
-                <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}} className={"winContent"}>
                     <div className={"winBackground"}></div>
                     <div className="bouncing-text">
                         <div className="b">G</div>
