@@ -10,6 +10,7 @@ function Pedandex(props) {
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
     const [tries, setTries] = useState(0);
+    const [triesWin, setTriesWin] = useState(0);
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
@@ -35,6 +36,7 @@ function Pedandex(props) {
                         setLeaderBoard(response.data)
                         if(response.data.find((uc) => uc.pseudo === pseudo)){
                             setCanPlay(false)
+                            setTriesWin(response.data.find((uc) => uc.pseudo === pseudo).tries)
                             description.split(" ").forEach(word => {
                                     setWords(words => [...words,word]);
                                     const element = document.createElement("span");
@@ -156,7 +158,7 @@ function Pedandex(props) {
                                 margin: "auto",
                                 width: "100%",
                                 color: "white"
-                            }}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
+                            }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
                         </div>
                         <div id={"descriptionPedandex"}>
                             <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
