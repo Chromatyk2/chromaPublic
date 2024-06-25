@@ -3730,21 +3730,20 @@ span.navbar-brand {
     background: rgba(0, 0, 0, 0.3);
 }
 .bouncing-text {
-    display: flex;
-    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
-    font-size: 70px;
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 335px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 0;
-    transform: scale(0);
     animation: popWin 1s linear forwards;
     -webkit-animation: popWin 1s linear forwards;
+    bottom: 0;
+    display: flex;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    height: 0;
+    margin: auto;
+    right: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    width: 230px;
+    height: 35%;
 }
 
 .b, .o, .u, .n, .c, .e {

@@ -6,6 +6,7 @@ import '../App.css'
 function Pedandex(props) {
     const [name, setName] = useState("Terrakium");
     const [words, setWords] = useState([]);
+    const [tries, setTries] = useState(0);
     const inputRef = useRef();
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
@@ -50,6 +51,7 @@ function Pedandex(props) {
         });
     }, []);
     const handleSubmit = (event) => {
+        setTries(tries + 1);
         words.map((val, key) => {
             if(val.toLowerCase() == inputRef.current.value.toLowerCase()){
                 var id = key;
@@ -83,9 +85,10 @@ function Pedandex(props) {
                 </form>
                 <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION les accents
                     comptent !</p>
+                <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
                 <div id={"winContentId"} style={{display: "none"}} className={"winContent"}>
                     <div className={"winBackground"}></div>
-                    <div  className="bouncing-text">
+                    <div className="bouncing-text">
                         <div className="b">G</div>
                         <div className="o">A</div>
                         <div className="u">G</div>
@@ -95,6 +98,7 @@ function Pedandex(props) {
                         <div className="shadow"></div>
                         <div className="shadow-two"></div>
                     </div>
+                    <p style={{color: "white", textAlign: "center"}}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
                 </div>
                 <div id={"descriptionPedandex"}>
                     <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
