@@ -3707,8 +3707,10 @@ span.navbar-brand {
     color: white;
     font-size: 30px;
 }
-.itemDescription{
-    background-color:white;
+.itemDescription {
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
 }
 .formPed{
     margin: 20px;
