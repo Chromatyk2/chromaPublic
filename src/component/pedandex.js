@@ -6,7 +6,7 @@ import '../App.css'
 import Modal from "react-modal";
 import SpawnPokemonToken from "./spawnPokemonToken";
 function Pedandex(props) {
-    const [name, setName] = useState("Terrakium");
+    const [name, setName] = useState("Cryptéro");
     const [words, setWords] = useState([]);
     const [tokens, setTokens] = useState(null);
     const [leaderBoard, setLeaderBoard] = useState(null);
@@ -30,7 +30,8 @@ function Pedandex(props) {
     };
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
-        const description = "Pokémon de type Roche/Combat de cinquième génération. Terrakium représente Porthos des Trois Mousquetaires, et donc la force. C'est un Pokémon quadrupède gris possédant une forte musculature et dont la physionomie pourrait être inspirée de celle du bélier, animal également connu pour ses charges puissantes. Il possède des protections sur les pattes ainsi que sur les épaules. Son large visage menaçant est surmonté d'une couronne noire, formant deux larges cornes plates vers l'avant, et se prolongeant le long du dos comme deux courtes crêtes.";
+        const description = "Pokémon de type Vol / Psy, Cryptéro ressemble au colibri dessiné dans les géoglyphes de Nazca. Son corps sphérique présente plusieurs bandes colorées, de haut en bas : jaune, blanche, noire, verte à motif segmenté, blanche en dents de scie, noire à l'équateur, puis de nouveau blanche en dents de scie et enfin verte. La large bande noire centrale comporte deux disques bleus faisant penser à des yeux, et de celle-ci partent également deux courtes et larges pattes noires en forme de \"E\". On peut noter deux petits pics latéraux sur la bande verte inférieure. Ses ailes et sa queue, jaunes, possèdent chacune quatre ramifications se terminant par des anneaux bleu, rouge et encore bleu. Sa tête en cône, noire, comporte un œil unique bleu, sans bouche ni autre détail.";
+
         var id = 0;
         var div = document.getElementById("textToGuess");
         const correction = {
