@@ -51,7 +51,7 @@ function Pedandex(props) {
             id++;
             div.appendChild(element);
         });
-        Axios.get("/api/getMyTokens/"+user)
+        Axios.get("/api/getMyTokens/"+pseudo)
             .then(function(response){
                 setTokens(response.data[0])
             })
