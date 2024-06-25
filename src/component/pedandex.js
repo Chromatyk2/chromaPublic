@@ -174,10 +174,7 @@ function Pedandex(props) {
                                 <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
                             </>
                         }
-                        {canplay === false &&
-                            <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}>
-                            </button>
-                        }
+                        <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
                         <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
                              className={"winContent"}>
                             <div className={"winBackground"}></div>
@@ -198,10 +195,6 @@ function Pedandex(props) {
                                 width: "100%",
                                 color: "white"
                             }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
-
-                            <button className={"openLeaderBoardButton"} onClick={openLeaderboard}
-                                    style={{backgroundImage: "url(/trophee.webp)"}}>
-                            </button>
                         </div>
                         <div id={"descriptionPedandex"}>
                             <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
