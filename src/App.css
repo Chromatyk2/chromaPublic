@@ -3736,38 +3736,43 @@ span.navbar-brand {
 
 .b, .o, .u, .n, .c, .e {
     position: relative;
-    color: #4cc9f0;
     text-shadow: 0 3px #4361ee, 0 5px #4361ee, 0 7px #4361ee;
 }
 
 .b {
     animation: bounce 1s ease infinite;
     -webkit-animation: bounce 1s ease infinite;
+    color: #e81416;
 }
 
 .o {
     animation: bounce 1s ease infinite .1s;
     -webkit-animation: bounce 1s ease infinite .1s;
+    color: #ffa500;
 }
 
 .u {
     animation: bounce 1s ease infinite .2s;
     -webkit-animation: bounce 1s ease infinite .2s;
+    color: #faeb36;
 }
 
 .n {
     animation: bounce 1s ease infinite .3s;
     -webkit-animation: bounce 1s ease infinite .3s;
+    color: #79c314;
 }
 
 .c {
     animation: bounce 1s ease infinite .4s;
     -webkit-animation: bounce 1s ease infinite .4s;
+    color: #487de7;
 }
 
 .e {
     animation: bounce 1s ease infinite .5s;
     -webkit-animation: bounce 1s ease infinite .5s;
+    color: #4b369d;
 }
 
 @keyframes bounce {

@@ -82,15 +82,18 @@ function Pedandex(props) {
                 </form>
                 <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION les accents
                     comptent !</p>
-                <div style={{display:"none"}} className="bouncing-text">
-                    <div className="b">G</div>
-                    <div className="o">A</div>
-                    <div className="u">G</div>
-                    <div className="n">N</div>
-                    <div className="c">E</div>
-                    <div className="e">R</div>
-                    <div className="shadow"></div>
-                    <div className="shadow-two"></div>
+                <div className={"winContent"}>
+                    <div className={"winBackground"}></div>
+                    <div style={{display: "none"}} className="bouncing-text">
+                        <div className="b">G</div>
+                        <div className="o">A</div>
+                        <div className="u">G</div>
+                        <div className="n">N</div>
+                        <div className="c">E</div>
+                        <div className="e">R</div>
+                        <div className="shadow"></div>
+                        <div className="shadow-two"></div>
+                    </div>
                 </div>
                 <div id={"descriptionPedandex"}>
                     <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
