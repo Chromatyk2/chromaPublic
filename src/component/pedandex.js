@@ -6,6 +6,7 @@ import '../App.css'
 function Pedandex(props) {
     const [name, setName] = useState("Terrakium");
     const [words, setWords] = useState([]);
+    const [tokens, setTokens] = useState(null);
     const [tries, setTries] = useState(0);
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
@@ -50,6 +51,10 @@ function Pedandex(props) {
             id++;
             div.appendChild(element);
         });
+        Axios.get("/api/getMyTokens/"+props.user)
+            .then(function(response){
+                setTokens(response.data[0])
+            })
     }, []);
     const handleSubmit = (event) => {
         setTries(tries + 1);
