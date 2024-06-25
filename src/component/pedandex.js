@@ -43,7 +43,9 @@ function Pedandex(props) {
         };
         Axios.get("/api/getMyTokens/"+pseudo)
             .then(function(response){
-                setTokens(response.data[0].token)
+                if(response.data.length > 0){
+                    setTokens(response.data[0].token)
+                }
                 Axios.get("/api/getPedandexWin")
                     .then(function(response){
                         setLeaderBoard(response.data)
