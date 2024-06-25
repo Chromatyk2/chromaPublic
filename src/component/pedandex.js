@@ -132,7 +132,7 @@ function Pedandex(props) {
                     Axios.post('/api/addPedandexWin',
                         {
                             user: pseudo,
-                            tries: tries
+                            tries: tries + 1
                         }
                     )
                         .then(function(response){
