@@ -7,6 +7,7 @@ function Pedandex(props) {
     const [name, setName] = useState("Terrakium");
     const [words, setWords] = useState([]);
     const [tokens, setTokens] = useState(null);
+    const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
     const [tries, setTries] = useState(0);
     const inputRef = useRef();
@@ -57,6 +58,7 @@ function Pedandex(props) {
                 setTokens(response.data[0].token)
                 Axios.get("/api/getPedandex")
                     .then(function(response){
+                        setLeaderBoard(response.data)
                         if(response.data.find((uc) => uc.pseudo === pseudo)){
                             setCanPlay(false)
                         }else{
@@ -101,42 +103,56 @@ function Pedandex(props) {
     };
     return (
         <>
-            {canplay === true &&
                 <>
                     <div className={"contentContainer"}>
-                        <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
-                            <label style={{marginRight: '10px'}}>
-                                <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef} style={{marginLeft: '5px'}}/>
-                            </label>
-                            <button id={"buttonPedandex"} type="submit" style={{display: 'block', marginTop: '10px'}}>
-                                Valider
-                            </button>
-                        </form>
-                        <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION les accents
-                            comptent !</p>
-                        <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
-                        <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}} className={"winContent"}>
-                            <div className={"winBackground"}></div>
-                            <div className="bouncing-text">
-                                <div className="b">G</div>
-                                <div className="o">A</div>
-                                <div className="u">G</div>
-                                <div className="n">N</div>
-                                <div className="c">E</div>
-                                <div className="e">R</div>
-                                <div className="shadow"></div>
-                                <div className="shadow-two"></div>
-                            </div>
-                            <p style={{position:"absolute", textAlign:"center", margin:"auto", width:"100%", color: "white"}}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
-                        </div>
+
+                        {canplay === true &&
+                            <>
+                                <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
+                                    <label style={{marginRight: '10px'}}>
+                                        <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef}
+                                               style={{marginLeft: '5px'}}/>
+                                    </label>
+                                    <button id={"buttonPedandex"} type="submit"
+                                            style={{display: 'block', marginTop: '10px'}}>
+                                        Valider
+                                    </button>
+                                </form>
+                                <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION
+                                    les accents
+                                    comptent !</p>
+                                <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
+                                <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
+                                     className={"winContent"}>
+                                    <div className={"winBackground"}></div>
+                                    <div className="bouncing-text">
+                                        <div className="b">G</div>
+                                        <div className="o">A</div>
+                                        <div className="u">G</div>
+                                        <div className="n">N</div>
+                                        <div className="c">E</div>
+                                        <div className="e">R</div>
+                                        <div className="shadow"></div>
+                                        <div className="shadow-two"></div>
+                                    </div>
+                                    <p style={{
+                                        position: "absolute",
+                                        textAlign: "center",
+                                        margin: "auto",
+                                        width: "100%",
+                                        color: "white"
+                                    }}>Tu as trouvé en {tries} éssais ! GG, reviens demain !</p>
+                                </div>
+                            </>
+                        }
                         <div id={"descriptionPedandex"}>
-                            <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}>{name}</p>
+                            <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
+                               id={"padandexName"}>{name}</p>
                             <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                             </div>
                         </div>
                     </div>
                 </>
-            }
         </>
     );
 }
