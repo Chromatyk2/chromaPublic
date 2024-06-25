@@ -164,7 +164,7 @@ function Pedandex(props) {
                             </>
                         }
                         {canplay === false &&
-                            <button className={"openSkinBox"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}>
+                            <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}>
                             </button>
                         }
                         <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
