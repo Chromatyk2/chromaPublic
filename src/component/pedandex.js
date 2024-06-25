@@ -53,7 +53,7 @@ function Pedandex(props) {
         });
         Axios.get("/api/getMyTokens/"+pseudo)
             .then(function(response){
-                setTokens(response.data[0])
+                setTokens(response.data.token)
             })
     }, []);
     const handleSubmit = (event) => {
@@ -90,6 +90,7 @@ function Pedandex(props) {
     const displayWinContent = (event) => {
         document.getElementById("winContentId").style.display = 'none'
     };
+    console.log(tokens);
     return (
         <>
             <div className={"contentContainer"}>
