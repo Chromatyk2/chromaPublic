@@ -205,7 +205,7 @@ function Pedandex(props) {
                             </div>
                         </div>
                     </div>
-            <Modal style={customStyles.content} isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
+            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
                 <>
                     <p style={{textAlign:"center"}}>Classement du jour</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
