@@ -213,7 +213,7 @@ function Pedandex(props) {
                         {leaderBoard &&
                             leaderBoard.map((val, key) => {
                                 return (
-                                    <tr style={{display:"flex",gap:"50px"}}>
+                                    <tr style={{justifyContent: "space-between",display:"flex",gap:"50px"}}>
                                         <th scope="row">{key + 1}</th>
                                         <td>{val.pseudo}</td>
                                         <td>{val.tries}</td>

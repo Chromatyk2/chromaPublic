@@ -942,6 +942,17 @@ p.filterTitle {
     margin: auto;
     margin-bottom: 20px;
 }
+.ReactModal__Content.ReactModal__Content--after-open.modalLeaderBoard {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 30px;
+}
 .openLeaderBoardButton{
     background-position: center center;
     background-repeat: no-repeat;
