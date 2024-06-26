@@ -36,6 +36,7 @@ function Pedandex(props) {
                 setName(response.data[0].name);
             })
     }, []);
+
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
         const description = dailyGame.description;
@@ -107,7 +108,7 @@ function Pedandex(props) {
                         }
                     })
             })
-    }, [dailyGame !== null]);
+    }, [dailyGame !== null && name !== null]);
     const handleSubmit = (event) => {
         setTries(tries + 1);
         words.map((val, key) => {
