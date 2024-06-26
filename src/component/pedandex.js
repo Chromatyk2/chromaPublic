@@ -218,6 +218,7 @@ function Pedandex(props) {
                 {canplay === true &&
                     <div>
                         <div>
+                            <p style={{textAlign:"center"}}>Historique</p>
                             {history.map((val, key) => {
                                     return (
                                         <p>{val}</p>
@@ -226,6 +227,8 @@ function Pedandex(props) {
                             }
                         </div>
                         <div>
+                            <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour</p>
+                            <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
                             <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
                                 <label style={{marginRight: '10px'}}>
                                     <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef}
@@ -236,8 +239,6 @@ function Pedandex(props) {
                                     Valider
                                 </button>
                             </form>
-                            <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour</p>
-                            <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
                         </div>
                     </div>
                 }
