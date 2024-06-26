@@ -32,11 +32,11 @@ function Pedandex(props) {
     useEffect(() => {
         Axios.get("/api/getCurrentDailyGame/")
             .then(function(response){
+                console.log(response.data);
                 setDailyGame(response.data[0])
                 setName(response.data[0].name);
             })
     }, []);
-
     useEffect(() => {
         document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
         const description = dailyGame.description;
