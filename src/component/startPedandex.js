@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import '../App.css'
-import * as CryptoJS from "crypto-js";
 
 function StartPedandex(props) {
     const [allDailyGames, setAllDailyGames] = useState(null)
@@ -3256,8 +3255,6 @@ function StartPedandex(props) {
         }
     ]
     useEffect(() => {
-        let keyUtf8 = "";
-        console.log(CryptoJS.AES.encrypt("Pikachu", keyUtf8, CryptoJS.enc.Utf8.parse("asdasdasdasdas")));
         Axios.get("/api/getAllDailyGames")
             .then(function(response){
                 setAllDailyGames(response.data);
