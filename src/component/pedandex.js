@@ -234,6 +234,7 @@ function Pedandex(props) {
                             overflow: "overlay"
                         }}>
                             <p style={{textAlign:"center"}}>Historique</p>
+                            <hr />
                             <div>
                                 {history.map((val, key) => {
                                     return (
