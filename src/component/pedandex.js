@@ -33,12 +33,12 @@ function Pedandex(props) {
         Axios.get("/api/getCurrentDailyGame/")
             .then(function(response){
                 setDailyGame(response.data[0])
+                setName(response.data[0].name);
             })
     }, []);
     useEffect(() => {
         document.getElementById("padandexName").innerText = dailyGame.name.replace(/[^.]/g,'x');;
         const description = dailyGame.description;
-        setName(dailyGame.name);
         var id = 0;
         var div = document.getElementById("textToGuess");
         const correction = {
