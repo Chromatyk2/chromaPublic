@@ -3256,10 +3256,26 @@ function StartPedandex(props) {
         }
     ]
     console.log(pedandex);
+    useEffect(() => {
+        Axios.get("/api/getAllDailyGames")
+            .then(function(response){
+                setAllDailyGames(response.data);
+            })
+    }, []);
+    function addPedandexGame() {
+        const index = pedandex[Math.floor(Math.random()*pedandex.length)];
+        Axios.post('/api/addDailyGame',
+            {
+                name: pedandex[index].name,
+                description: pedandex[index].description ,
+                day : allDailyGames.length + 1;
+            }
+        )
+    }
     return (
         <div className={"contentContainer"}>
             <div className="socialContainer">
-                <button>Valider</button>
+                <button onClick={addPedandexGame}>Valider</button>
             </div>
         </div>
     )
