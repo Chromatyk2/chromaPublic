@@ -61,7 +61,7 @@ function Pedandex(props) {
                                 if(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day)){
                                     setCanPlay(false)
                                     setTriesWin(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day).tries)
-                                    description.replace(/^[^\.]*\./, '').split(" ").forEach(word => {
+                                    description.split(" ").forEach(word => {
                                         setWords(words => [...words,word]);
                                         const element = document.createElement("span");
                                         element.setAttribute("id", id);
@@ -77,7 +77,7 @@ function Pedandex(props) {
                                     });
                                 }else{
                                     setCanPlay(true)
-                                    description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
+                                    description.substring(description.indexOf('.')+1).replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
                                         const correction2 = {
                                             " , ": ", ",
                                             " ? ": " ?",
