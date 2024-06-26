@@ -1,0 +1,118 @@
+[
+  {
+    "nom": "Ouistempo",
+    "description": "Ouistempo est un Pokémon Singe Vert. Il possède une branche de bois qu'il utilise pour faire des farces."
+  },
+  {
+    "nom": "Badabouin",
+    "description": "Badabouin est un Pokémon Singe Vert. Il utilise des branches pour défendre son territoire."
+  },
+  {
+    "nom": "Gorythmic",
+    "description": "Gorythmic est un Pokémon Singe Vert. Il utilise son corps musclé et sa force pour vaincre ses ennemis."
+  },
+  {
+    "nom": "Flambino",
+    "description": "Flambino est un Pokémon Lapin Feu. Il possède une grande énergie et de grandes oreilles qui lui permettent de capturer les sons environnants."
+  },
+  {
+    "nom": "Lapyro",
+    "description": "Lapyro est un Pokémon Lapin Feu. Il peut sauter très haut et brûler ses ennemis avec son souffle de feu."
+  },
+  {
+    "nom": "Pyrobut",
+    "description": "Pyrobut est un Pokémon Lapin Feu. Il peut courir plus vite que le vent et cracher du feu de sa bouche."
+  },
+  {
+    "nom": "Larméléon",
+    "description": "Larméléon est un Pokémon Lézard Eau. Il possède une peau élastique et une queue très agile."
+  },
+  {
+    "nom": "Arrozard",
+    "description": "Arrozard est un Pokémon Lézard Eau. Il peut nager à une vitesse incroyable et attaquer ses ennemis avec sa queue tranchante."
+  },
+  {
+    "nom": "Lézargus",
+    "description": "Lézargus est un Pokémon Lézard Eau. Il peut créer des tornades sous-marines et contrôler les vagues."
+  },
+  {
+    "nom": "Rongourmand",
+    "description": "Rongourmand est un Pokémon Écureuil Normal. Il aime grignoter et cacher des baies."
+  },
+  {
+    "nom": "Rongrigou",
+    "description": "Rongrigou est un Pokémon Écureuil Normal. Il utilise sa queue pour se défendre et stocker des provisions."
+  },
+  {
+    "nom": "Rongiflon",
+    "description": "Rongiflon est un Pokémon Écureuil Normal. Il peut tourner sur lui-même très rapidement pour repousser ses ennemis."
+  },
+  {
+    "nom": "Minisange",
+    "description": "Minisange est un Pokémon Oiseau Combat. Il possède des plumes tranchantes sur ses ailes et peut voler très rapidement."
+  },
+  {
+    "nom": "Bleuseille",
+    "description": "Bleuseille est un Pokémon Méduse. Il a une forme globuleuse et la capacité de contrôler l'eau autour de lui."
+  },
+  {
+    "nom": "Corvaillus",
+    "description": "Corvaillus est un Pokémon de type Vol/Acier. Il se déplace à grande vitesse dans le ciel grâce à ses ailes robustes et son corps métallique. Corvaillus utilise son bec tranchant pour fendre l'air et attaquer ses ennemis avec des attaques de type Vol et Acier. Il est connu pour sa loyauté envers son dresseur et sa capacité à protéger son territoire avec une vigilance aérienne."
+  },
+  {
+    "nom": "Larvadar",
+    "description": "Larvadar est un Pokémon de type Insecte. Il vit dans les forêts denses et se nourrit de feuilles et de petits insectes. Larvadar est connu pour sa carapace robuste qui le protège des prédateurs et pour sa capacité à se camoufler parfaitement parmi les feuilles mortes."
+  },
+  {
+    "nom": "Coléodôme",
+    "description": "Coléodôme est un Pokémon de type Insecte/Acier. Il possède une carapace métallique très résistante qui le protège des attaques ennemies. Coléodôme utilise ses puissantes mandibules pour broyer des pierres et des rochers, ce qui en fait un excellent creuseur de tunnels."
+  },
+  {
+    "nom": "Astronelle",
+    "description": "Astronelle est un Pokémon de type Roche/Électrik. Il possède une queue lumineuse qui brille dans l'obscurité et attire les proies. Astronelle utilise l'électricité générée par son corps pour créer des champs magnétiques qui le protègent des attaques ennemies."
+  },
+  {
+    "nom": "Goupilou",
+    "description": "Goupilou est un Pokémon de type Feu. Il possède une fourrure enflammée qui brûle avec une chaleur intense. Goupilou utilise des attaques de type Feu pour créer des boules de feu et brûler ses ennemis."
+  },
+  {
+    "nom": "Roublenard",
+    "description": "Roublenard est un Pokémon de type Feu. Il est la forme évoluée de Goupilou. Roublenard est connu pour sa ruse et sa capacité à manipuler le feu avec précision. Il utilise des attaques de type Feu pour défendre son territoire et protéger ses proies."
+  },
+  {
+    "nom": "Tournicoton",
+    "description": "Tournicoton est un Pokémon de type Plante. Il possède des pétales délicats qui tournent comme une hélice pour lui permettre de flotter dans l'air. Tournicoton utilise des attaques de type Plante pour libérer des spores toxiques et paralyser ses ennemis."
+  },
+  {
+    "nom": "Blancoton",
+    "description": "Blancoton est un Pokémon de type Plante. Il est la forme évoluée de Tournicoton. Blancoton possède des pétales blancs qui libèrent un pollen apaisant dans l'air. Il utilise des attaques de type Plante pour défendre son territoire et guérir les blessures de ses alliés."
+  },
+  {
+    "nom": "Moumouflon",
+    "description": "Moumouflon est un Pokémon de type Normal. Il est connu pour sa laine douce et épaisse qui le protège du froid. Moumouflon utilise des attaques de type Normal pour se défendre contre les prédateurs et protéger les membres de son troupeau."
+  },
+  {
+    "nom": "Moumouton",
+    "description": "Moumouton est un Pokémon de type Normal. Il est la forme évoluée de Moumouflon. Moumouton continue de protéger son troupeau avec sa laine dense et utilise des attaques de type Normal pour défendre son territoire et guider les membres de sa famille."
+  },
+  {
+    "nom": "Khélocrok",
+    "description": "Khélocrok est un Pokémon de type Eau/Acier. Il possède une peau dure comme l'acier et des écailles acérées qui le protègent des attaques ennemies. Khélocrok utilise des attaques de type Eau pour nager rapidement et des attaques de type Acier pour attaquer ses ennemis avec une force redoutable."
+  },
+  {
+    "nom": "Torgamord",
+    "description": "Torgamord est un Pokémon de type Eau/Acier. Il est la forme évoluée de Khélocrok. Torgamord est connu pour sa morsure puissante qui peut briser même les objets les plus durs. Il utilise des attaques de type Eau pour contrôler les vagues et des attaques de type Acier pour défendre son territoire."
+  },
+  {
+    "nom": "Voltoutou",
+    "description": "Voltoutou est un Pokémon de type Électrik. Il possède une fourrure chargée d'électricité statique qui le protège des attaques de type Électrik. Voltoutou utilise des attaques de type Électrik pour paralyser ses ennemis et défendre son territoire."
+  },
+  {
+    "nom": "Fulgudog",
+    "description": "Fulgudog est un Pokémon de type Électrik. Il est la forme évoluée de Voltoutou. Fulgudog peut générer de puissantes décharges électriques qui parcourent son corps. Il utilise des attaques de type Électrik pour attaquer ses ennemis avec une énergie électrique dévastatrice."
+  },
+  {
+    "nom": "Charbi",
+    "description": "Charbi est un Pokémon de type Roche. Il est recouvert d'une épaisse carapace rocheuse qui le protège des attaques ennemies. Charbi utilise des attaques de type Roche pour défendre son territoire et repousser les prédateurs."
+  }
+]
