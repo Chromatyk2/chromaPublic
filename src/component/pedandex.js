@@ -8,6 +8,7 @@ import SpawnPokemonToken from "./spawnPokemonToken";
 function Pedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
+    const [history, setHistory] = useState([]);
     const [tokens, setTokens] = useState(null);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
@@ -109,15 +110,16 @@ function Pedandex(props) {
     }, []);
 
     const handleSubmit = (event) => {
+        setHistory(history => [...history,inputRef.current.value]);
         setTries(tries + 1);
         words.map((val, key) => {
-            if(val.toLowerCase() == inputRef.current.value.toLowerCase()){
+            if(val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
                 var id = key;
                 document.getElementById(id).innerText = val;
                 document.getElementById(id).style.background = 'none';
             }
         })
-        if(inputRef.current.value.toLowerCase() == name.toLowerCase()){
+        if(inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == name.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
             document.getElementById("winContentId").style.display = 'block'
             document.getElementById("padandexName").innerText = name
             document.getElementById("padandexName").style.background = 'none'
@@ -211,26 +213,37 @@ function Pedandex(props) {
                     }
                 </div>
                 {canplay === true &&
-                    <>
-                        <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
-                            <label style={{marginRight: '10px'}}>
-                                <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef}
-                                       style={{marginLeft: '5px'}}/>
-                            </label>
-                            <button id={"buttonPedandex"} type="submit"
-                                    style={{display: 'block', marginTop: '10px'}}>
-                                Valider
-                            </button>
-                        </form>
-                        <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION
-                            les accents
-                            comptent !</p>
-                        <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
-                    </>
+                    <div>
+                        <div>
+                            {history.map((val, key) => {
+                                    return (
+                                        <p>{val}</p>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div>
+                            <form className={"formPed"} onSubmit={handleSubmit} style={{margin: '20px'}}>
+                                <label style={{marginRight: '10px'}}>
+                                    <input id={"inputPedandex"} defaultValue={""} type="text" ref={inputRef}
+                                           style={{marginLeft: '5px'}}/>
+                                </label>
+                                <button id={"buttonPedandex"} type="submit"
+                                        style={{display: 'block', marginTop: '10px'}}>
+                                    Valider
+                                </button>
+                            </form>
+                            <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION
+                                les accents
+                                comptent !</p>
+                            <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
+                        </div>
+                    </div>
                 }
                 {canplay === false &&
                     <>
-                        <p style={{fontSize:"30px;", color: "white", textAlign: "center"}}>Tu as déjà fini le Pedandex du jour reviens demain !</p>
+                        <p style={{fontSize: "30px;", color: "white", textAlign: "center"}}>Tu as déjà fini le Pedandex
+                            du jour reviens demain !</p>
                     </>
                 }
                 <div onClick={displayWinContent} id={"winContentId"} style={{display: "none"}}
