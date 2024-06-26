@@ -219,7 +219,9 @@ function Pedandex(props) {
                         </button>
                     }
                 </div>
-                <p style={{textAlign:"center", textTransform:"uppercase"}}>Jour {dailyGame.day}</p>
+                {dailyGame &&
+                    <p style={{textAlign: "center", textTransform: "uppercase"}}>Jour {dailyGame.day}</p>
+                }
                 {canplay === true &&
                     <div style={{
                         display: "flex",
