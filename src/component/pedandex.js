@@ -36,9 +36,9 @@ function Pedandex(props) {
             })
     }, []);
     useEffect(() => {
-        document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');;
-        const description = response.data[0].description;
-        setName(response.data[0].name);
+        document.getElementById("padandexName").innerText = dailyGame.name.replace(/[^.]/g,'x');;
+        const description = dailyGame.description;
+        setName(dailyGame.name);
         var id = 0;
         var div = document.getElementById("textToGuess");
         const correction = {
