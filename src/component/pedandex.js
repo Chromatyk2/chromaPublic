@@ -231,13 +231,15 @@ function Pedandex(props) {
                             borderRadius: "15px",
                             height: "200px",
                             padding: "10px",
-                            overflow: "overlay"
+                            overflow: "overlay",
+                            scrollbarColor: "#fff transparent",
+                            scrollbarWidth: "thin"
                         }}>
                             <p style={{textAlign:"center"}}>Historique</p>
                             <hr />
                             <div style={{
-                                display: "flex";
-                                flexFlow: "column-reverse";
+                                display: "flex",
+                                flexFlow: "column-reverse"
                             }}>
                                 {history.map((val, key) => {
                                     return (
