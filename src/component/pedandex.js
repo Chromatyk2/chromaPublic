@@ -61,7 +61,7 @@ function Pedandex(props) {
                                 if(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day)){
                                     setCanPlay(false)
                                     setTriesWin(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day).tries)
-                                    description.split(" ").forEach(word => {
+                                    description.substring(str.indexOf('.')+1).split(" ").forEach(word => {
                                         setWords(words => [...words,word]);
                                         const element = document.createElement("span");
                                         element.setAttribute("id", id);
@@ -213,6 +213,9 @@ function Pedandex(props) {
                     {tokens &&
                         tokens > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
+                            <div className="infoPkm">
+                                <div className="infoNbBoxSkin">{tokens > 0 && tokens}</div>
+                            </div>
                         </button>
                     }
                 </div>
