@@ -6,6 +6,7 @@ import Pagination from './paginate.js';
 import CreateTrade from './createTrade.js';
 import '../App.css'
 import moment from 'moment';
+import OnStream from "./onStream";
 
 function StartPedandex(props) {
     const [allDailyGames, setAllDailyGames] = useState(null)
@@ -3268,7 +3269,12 @@ function StartPedandex(props) {
     console.log(pedandex[Math.floor(Math.random() * pedandex.length)])
     console.log(allDailyGames)
         return (
-            <button>Valider</button>
+            <div className={"contentContainer"}>
+                <div className="socialContainer">
+                    <button>Valider</button>
+                </div>
+            </div>
         )
 }
+
 export default StartPedandex
