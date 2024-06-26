@@ -32,10 +32,10 @@ function Pedandex(props) {
     useEffect(() => {
         Axios.get("/api/getCurrentDailyGame/")
             .then(function(response){
+                document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');
                 const name = response.data[0].name;
                 setDailyGame(response.data[0]);
                 setName(response.data[0].name);
-                document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');
                 const description = response.data[0].description;
                 var id = 0;
                 var div = document.getElementById("textToGuess");
@@ -255,8 +255,7 @@ function Pedandex(props) {
                     }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
                 </div>
                 <div id={"descriptionPedandex"}>
-                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"}
-                       id={"padandexName"}>{name}</p>
+                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
                     <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                     </div>
                 </div>
