@@ -235,7 +235,10 @@ function Pedandex(props) {
                         }}>
                             <p style={{textAlign:"center"}}>Historique</p>
                             <hr />
-                            <div>
+                            <div style={{
+                                display: "flex";
+                                flexFlow: "column-reverse";
+                            }}>
                                 {history.map((val, key) => {
                                     return (
                                         <p>{val}</p>
