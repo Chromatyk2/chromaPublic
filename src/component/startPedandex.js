@@ -1,14 +1,9 @@
 import React,{useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom'
-import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
-import Pagination from './paginate.js';
-import CreateTrade from './createTrade.js';
 import '../App.css'
-import moment from 'moment';
-import OnStream from "./onStream";
 
 function StartPedandex(props) {
+    const [allDailyGames, setAllDailyGames] = useState(null)
     const pedandex = [
         {
             "nom": "Bulbizarre",
@@ -2293,7 +2288,8 @@ function StartPedandex(props) {
         {
             "nom": "Zorua",
             "description": "Zorua est un Pokémon de type Ténèbres. Il a une grande agilité et la capacité de se transformer en d'autres Pokémon. Zorua utilise des attaques de type Ténèbres pour tromper ses ennemis et se fondre dans l'ombre."
-        }.,
+
+        },
         {
             "nom": "Zoroark",
             "description": "Zoroark est un Pokémon de type Ténèbres. Évolué à partir de Zorua avec une grande ruse, il a la capacité de créer des illusions réalistes. Zoroark utilise des attaques de type Ténèbres pour désorienter ses ennemis et les attaquer avec force."
