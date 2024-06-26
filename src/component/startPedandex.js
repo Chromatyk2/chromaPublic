@@ -3268,7 +3268,7 @@ function StartPedandex(props) {
             {
                 name: pedandex[index].name,
                 description: pedandex[index].description ,
-                day : allDailyGames.length + 1;
+                day :allDailyGames.length + 1
             }
         )
     }
