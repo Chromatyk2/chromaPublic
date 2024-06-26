@@ -33,7 +33,7 @@ function Pedandex(props) {
         Axios.get("/api/getCurrentDailyGame/")
             .then(function(response){
                 setDailyGame(response.data[0])
-                document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
+                document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');;
                 const description = response.data[0].description;
                 setName(response.data[0].name);
                 var id = 0;
