@@ -194,6 +194,7 @@ function Pedandex(props) {
     function closeModalToken() {
         setIsOpenToken(false);
     }
+    console.log(history);
     return (
         <>
 
