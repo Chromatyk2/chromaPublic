@@ -6,12 +6,13 @@ import '../App.css'
 import Modal from "react-modal";
 import SpawnPokemonToken from "./spawnPokemonToken";
 function Pedandex(props) {
-    const [name, setName] = useState(process.env.REACT_APP_POKEMON);
+    const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
     const [tokens, setTokens] = useState(null);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
     const [tries, setTries] = useState(0);
+    const [dailyGame, setDailyGame] = useState(null);
     const [triesWin, setTriesWin] = useState(0);
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
@@ -29,77 +30,82 @@ function Pedandex(props) {
         },
     };
     useEffect(() => {
-        document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
-        const description = process.env.REACT_APP_DESCRIPTION;
-
-        var id = 0;
-        var div = document.getElementById("textToGuess");
-        const correction = {
-            ",": " , ",
-            "?": " ? ",
-            ":": " : ",
-            "'": " ' ",
-            "(": " ( ",
-            ")": " ) ",
-            "/": " / ",
-            ".": " ."
-        };
-        Axios.get("/api/getMyTokens/"+pseudo)
+        Axios.get("/api/getCurrentDailyGame/")
             .then(function(response){
-                if(response.data.length > 0){
-                    setTokens(response.data[0].token)
-                }
-                Axios.get("/api/getPedandexWin")
+                setDailyGame(response.data[0])
+                document.getElementById("padandexName").innerText = name.replace(/[^.]/g,'x');;
+                const description = response.data[0].description;
+                setName(response.data[0].name);
+                var id = 0;
+                var div = document.getElementById("textToGuess");
+                const correction = {
+                    ",": " , ",
+                    "?": " ? ",
+                    ":": " : ",
+                    "'": " ' ",
+                    "(": " ( ",
+                    ")": " ) ",
+                    "/": " / ",
+                    ".": " ."
+                };
+                Axios.get("/api/getMyTokens/"+pseudo)
                     .then(function(response){
-                        setLeaderBoard(response.data)
-                        if(response.data.find((uc) => uc.pseudo === pseudo)){
-                            setCanPlay(false)
-                            setTriesWin(response.data.find((uc) => uc.pseudo === pseudo).tries)
-                            description.split(" ").forEach(word => {
-                                    setWords(words => [...words,word]);
-                                    const element = document.createElement("span");
-                                    element.setAttribute("id", id);
-                                    element.innerText = word.trim();
-                                    element.style.background = 'none';
-                                    element.style.marginRight = '0';
-                                    document.getElementById("winContentId").style.display = 'block'
-                                    document.getElementById("padandexName").innerText = name
-                                    document.getElementById("padandexName").style.background = 'none'
-                                    element.setAttribute("class", "itemDescription");
-                                    id++;
-                                    div.appendChild(element);
-                            });
-                        }else{
-                            setCanPlay(true)
-                            description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
-                                const correction2 = {
-                                    " , ": ", ",
-                                    " ? ": " ?",
-                                    " : ": " : ",
-                                    " ' ": "'",
-                                    " / ": "/",
-                                    ".": ". "
-                                };
-                                setWords(words => [...words,word]);
-                                const element = document.createElement("span");
-                                element.setAttribute("id", id);
-                                if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
-                                    element.innerText = word.trim();
-                                    element.style.background = 'none';
-                                    element.style.marginRight = '0';
-                                }else if(word === ""){
-                                    element.style.display = "none";
-                                }
-                                else{
-                                    element.innerText = word.replace(/[^.]/g,'x');
-                                }
-                                element.setAttribute("class", "itemDescription");
-                                id++;
-                                div.appendChild(element);
-                            });
+                        if(response.data.length > 0){
+                            setTokens(response.data[0].token)
                         }
+                        Axios.get("/api/getPedandexWin")
+                            .then(function(response){
+                                setLeaderBoard(response.data)
+                                if(response.data.find((uc) => uc.pseudo === pseudo && uc.day === dailyGame.day)){
+                                    setCanPlay(false)
+                                    setTriesWin(response.data.find((uc) => uc.pseudo === pseudo && uc.day === dailyGame.day).tries)
+                                    description.split(" ").forEach(word => {
+                                        setWords(words => [...words,word]);
+                                        const element = document.createElement("span");
+                                        element.setAttribute("id", id);
+                                        element.innerText = word.trim();
+                                        element.style.background = 'none';
+                                        element.style.marginRight = '0';
+                                        document.getElementById("winContentId").style.display = 'block'
+                                        document.getElementById("padandexName").innerText = name
+                                        document.getElementById("padandexName").style.background = 'none'
+                                        element.setAttribute("class", "itemDescription");
+                                        id++;
+                                        div.appendChild(element);
+                                    });
+                                }else{
+                                    setCanPlay(true)
+                                    description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
+                                        const correction2 = {
+                                            " , ": ", ",
+                                            " ? ": " ?",
+                                            " : ": " : ",
+                                            " ' ": "'",
+                                            " / ": "/",
+                                            ".": ". "
+                                        };
+                                        setWords(words => [...words,word]);
+                                        const element = document.createElement("span");
+                                        element.setAttribute("id", id);
+                                        if(word === "'" || word ==="." || word ==="," || word ==="?" || word ===":" || word ==="(" || word ===")" || word ==="/"){
+                                            element.innerText = word.trim();
+                                            element.style.background = 'none';
+                                            element.style.marginRight = '0';
+                                        }else if(word === ""){
+                                            element.style.display = "none";
+                                        }
+                                        else{
+                                            element.innerText = word.replace(/[^.]/g,'x');
+                                        }
+                                        element.setAttribute("class", "itemDescription");
+                                        id++;
+                                        div.appendChild(element);
+                                    });
+                                }
+                            })
                     })
             })
+
     }, []);
     const handleSubmit = (event) => {
         setTries(tries + 1);
@@ -121,7 +127,7 @@ function Pedandex(props) {
                 document.getElementById(id).innerText = val;
                 document.getElementById(id).style.background = 'none';
             })
-            if(!leaderBoard.find((uc) => uc.pseudo === pseudo)){
+            if(!leaderBoard.find((uc) => uc.pseudo === pseudo && uc.day === dailyGame.day)){
                 Axios.post('/api/addToken',
                     {
                         user: pseudo,
