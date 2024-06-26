@@ -2,7 +2,6 @@ import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import {useCookies} from "react-cookie";
 import '../App.css'
-import UniqueStreamerClip from "./uniqueStreamerClip";
 
 function HomePage(props) {
     const [cookies, setCookie] = useCookies();
