@@ -1096,17 +1096,7 @@ function StartPedandex(props) {
         {
             "nom": "Papinox",
             "description": "Papinox est un Pokémon de type Insecte/Vol. Évolué à partir de Blindalys, il a des antennes sensibles et un corps robuste. Papinox utilise des attaques de type Insecte et Vol pour chasser la nuit et se défendre contre les menaces nocturnes."
-        }
-    ]
-    Ces descriptions sont basées sur les caractéristiques typiques de chaque Pokémon dans la série Pokémon.
-
-        Reprend de nénupiot
-    ChatGPT
-    Voici la suite à partir de Nénupiot :
-
-        json
-    Copier le code
-        [
+        },
         {
             "nom": "Nénupiot",
             "description": "Nénupiot est un Pokémon de type Eau/Plante. Il a une petite tête verte et un corps semblable à une tige. Nénupiot utilise des attaques de type Eau et Plante pour nager gracieusement et se nourrir de la végétation aquatique."
@@ -3267,25 +3257,10 @@ function StartPedandex(props) {
             "nom": "Melmetal",
             "description": "Melmetal est un Pokémon de type Acier. Évolué à partir de Meltan avec une grande stature, il a une force incroyable et la capacité de manipuler le métal. Melmetal utilise des attaques de type Acier pour plier et façonner son environnement, défendant son territoire avec une puissance inébranlable."
         }
-        ]
+    ]
     console.log(pedandex);
         return (
-            <>
-                <div className="myCapturesContainer">
-                    <p className="titleMyCaptures">Mes Captures</p>
-                    {props.captures.map((val, key) => {
-                        return val.shiny == 1 ?
-                            <div className="myCaptureItem">
-                                <p className="myCapturesList shinyPokemonList">{val.pkmName+"(shiny) - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}</p>
-                            </div>
-                            :
-                            <div  className="myCaptureItem">
-                                <p className="myCapturesList">{val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}</p>
-                            </div>
-                    })
-                    }
-                </div>
-            </>
-        );
+            <button>Valider</button>
+        )
 }
 export default StartPedandex
