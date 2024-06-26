@@ -61,7 +61,7 @@ function Pedandex(props) {
                                 if(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day)){
                                     setCanPlay(false)
                                     setTriesWin(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day).tries)
-                                    description.substring(description.indexOf('.')+1).split(" ").forEach(word => {
+                                    description.replace(/^[^\.]*\./, '').split(" ").forEach(word => {
                                         setWords(words => [...words,word]);
                                         const element = document.createElement("span");
                                         element.setAttribute("id", id);
