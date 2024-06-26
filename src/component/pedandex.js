@@ -164,6 +164,10 @@ function Pedandex(props) {
             }
             inputRef.current.value = "";
             event.preventDefault();
+        }else{
+            setHistory(history => [...history,guess]);
+            inputRef.current.value = "";
+            event.preventDefault();
         }
     };
     const displayWinContent = (event) => {
