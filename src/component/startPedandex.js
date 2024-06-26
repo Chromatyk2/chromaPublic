@@ -1,11 +1,7 @@
 import React,{useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom'
-import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
-import Pagination from './paginate.js';
-import CreateTrade from './createTrade.js';
 import '../App.css'
-import moment from 'moment';
+import * as CryptoJS from "crypto-js";
 
 function StartPedandex(props) {
     const [allDailyGames, setAllDailyGames] = useState(null)
@@ -3260,6 +3256,8 @@ function StartPedandex(props) {
         }
     ]
     useEffect(() => {
+        let keyUtf8 = "";
+        console.log(CryptoJS.AES.encrypt("Pikachu", keyUtf8, CryptoJS.enc.Utf8.parse("asdasdasdasdas")));
         Axios.get("/api/getAllDailyGames")
             .then(function(response){
                 setAllDailyGames(response.data);
