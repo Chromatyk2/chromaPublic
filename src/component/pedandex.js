@@ -111,59 +111,60 @@ function Pedandex(props) {
 
     const handleSubmit = (event) => {
         const guess = inputRef.current.value.toString()
-        console.log(inputRef.current.value.toString());
-        setHistory(history => [...history,guess]);
-        setTries(tries + 1);
-        words.map((val, key) => {
-            if(val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
-                var id = key;
-                document.getElementById(id).innerText = val;
-                document.getElementById(id).style.background = 'none';
-            }
-        })
-        if(inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == name.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
-            document.getElementById("winContentId").style.display = 'block'
-            document.getElementById("padandexName").innerText = name
-            document.getElementById("padandexName").style.background = 'none'
-            document.getElementById("inputPedandex").disabled = true;
-            document.getElementById("buttonPedandex").disabled = true;
+        if(!history.find((uc) => uc === guess)){
+            setHistory(history => [...history,guess]);
+            setTries(tries + 1);
             words.map((val, key) => {
-                var id = key;
-                document.getElementById(id).innerText = val;
-                document.getElementById(id).style.background = 'none';
+                if(val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
+                    var id = key;
+                    document.getElementById(id).innerText = val;
+                    document.getElementById(id).style.background = 'none';
+                }
             })
-            if(!leaderBoard.find((uc) => uc.pseudo === pseudo && uc.day === dailyGame.day)){
-                Axios.post('/api/addToken',
-                    {
-                        user: pseudo,
-                        win: 1,
-                        wins: 1
-                    }
-                )
-                .then(function(response){
-                    Axios.post('/api/addPedandexWin',
+            if(inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == name.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
+                document.getElementById("winContentId").style.display = 'block'
+                document.getElementById("padandexName").innerText = name
+                document.getElementById("padandexName").style.background = 'none'
+                document.getElementById("inputPedandex").disabled = true;
+                document.getElementById("buttonPedandex").disabled = true;
+                words.map((val, key) => {
+                    var id = key;
+                    document.getElementById(id).innerText = val;
+                    document.getElementById(id).style.background = 'none';
+                })
+                if(!leaderBoard.find((uc) => uc.pseudo === pseudo && uc.day === dailyGame.day)){
+                    Axios.post('/api/addToken',
                         {
                             user: pseudo,
-                            tries: tries + 1,
-                            day: dailyGame.day,
-                            answer: dailyGame.name
+                            win: 1,
+                            wins: 1
                         }
                     )
                         .then(function(response){
-                            Axios.get("/api/getPedandexWin")
-                                .then(function(response) {
-                                    setLeaderBoard(response.data)
-                                    Axios.get("/api/getMyTokens/"+pseudo)
-                                        .then(function(response){
-                                            setTokens(response.data[0].token)
+                            Axios.post('/api/addPedandexWin',
+                                {
+                                    user: pseudo,
+                                    tries: tries + 1,
+                                    day: dailyGame.day,
+                                    answer: dailyGame.name
+                                }
+                            )
+                                .then(function(response){
+                                    Axios.get("/api/getPedandexWin")
+                                        .then(function(response) {
+                                            setLeaderBoard(response.data)
+                                            Axios.get("/api/getMyTokens/"+pseudo)
+                                                .then(function(response){
+                                                    setTokens(response.data[0].token)
+                                                })
                                         })
                                 })
                         })
-                })
+                }
             }
+            inputRef.current.value = "";
+            event.preventDefault();
         }
-        inputRef.current.value = "";
-        event.preventDefault();
     };
     const displayWinContent = (event) => {
         document.getElementById("winContentId").style.display = 'none'
@@ -196,7 +197,6 @@ function Pedandex(props) {
     function closeModalToken() {
         setIsOpenToken(false);
     }
-    console.log(history);
     return (
         <>
 
@@ -243,7 +243,7 @@ function Pedandex(props) {
                             }}>
                                 {history.map((val, key) => {
                                     return (
-                                        <p>{val}</p>
+                                        <p className={"guessItem"}>{val}</p>
                                     )
                                 })
                                 }
