@@ -1,603 +1,126 @@
 [
   {
     "nom": "Bulbizarre",
-    "description": "Type : Plante/Poison. Bulbizarre est un Pokémon quadrupède ressemblant à un dinosaure qui porte une grande graine sur son dos. En grandissant, cette graine éclot pour devenir une belle fleur."
+    "description": "Plante / Poison - Bulbizarre, le Pokémon graine. Il porte une graine sur son dos depuis la naissance. Il est connu pour ses attaques végétales puissantes."
   },
   {
     "nom": "Herbizarre",
-    "description": "Type : Plante/Poison. Herbizarre est un Pokémon quadrupède à la peau bleue avec des taches sombres. La graine sur son dos s'est développée en un bourgeon qui grandit lentement."
+    "description": "Plante / Poison - Herbizarre est l'évolution de Bulbizarre. Il possède un bulbe qui fleurit lorsqu'il atteint sa maturité. Il maîtrise des attaques végétales puissantes."
   },
   {
     "nom": "Florizarre",
-    "description": "Type : Plante/Poison. Florizarre est un grand Pokémon quadrupède qui ressemble à un dinosaure, avec un arbre qui pousse sur son dos. Cette fleur émet un parfum apaisant et peut libérer des spores."
+    "description": "Plante / Poison - Florizarre est le stade final d'évolution de Bulbizarre. Sa grande fleur sur le dos dégage un parfum envoûtant. Sa graine est extrêmement toxique."
   },
   {
-    "nom": "Salamèche",
-    "description": "Type : Feu. Salamèche est un petit Pokémon bipède semblable à un dinosaure, avec une flamme brûlant au bout de sa queue. Cette flamme est un indicateur de sa santé et de ses émotions."
+    "nom": "Salameche",
+    "description": "Feu - Salameche, le Pokémon lézard. Il possède une petite flamme sur la pointe de sa queue, qu'il utilise pour se défendre."
   },
   {
     "nom": "Reptincel",
-    "description": "Type : Feu. Reptincel est un Pokémon bipède ressemblant à un dinosaure, avec une flamme brûlant au bout de sa queue. Il est plus agressif que Salamèche et se bat avec une grande intensité."
+    "description": "Feu - Reptincel est l'évolution de Salameche. Sa flamme brûle plus intensément lorsqu'il est excité. Il peut projeter des flammes sur ses ennemis."
   },
   {
     "nom": "Dracaufeu",
-    "description": "Type : Feu/Vol. Dracaufeu est un grand Pokémon bipède et draconique, avec de grandes ailes et une flamme brûlant au bout de sa queue. Il vole à travers le ciel à la recherche d'adversaires puissants."
+    "description": "Feu / Vol - Dracaufeu est le stade final d'évolution de Salameche. Ses ailes puissantes lui permettent de voler à grande vitesse. Il crache des flammes ardentes lorsqu'il est en colère."
   },
   {
     "nom": "Carapuce",
-    "description": "Type : Eau. Carapuce est un petit Pokémon tortue avec une carapace dure qui lui sert de protection. Il peut rétracter ses membres à l'intérieur pour se défendre et utiliser des attaques d'eau."
+    "description": "Eau - Carapuce, le Pokémon tortue. Sa carapace dure le protège des attaques ennemies. Il peut utiliser ses pattes pour nager rapidement."
   },
   {
     "nom": "Carabaffe",
-    "description": "Type : Eau. Carabaffe est un Pokémon tortue avec une carapace plus grande et des oreilles pointues. Il est très fier de sa queue qui est souvent couverte de mousse épaisse."
+    "description": "Eau - Carabaffe est l'évolution de Carapuce. Il possède deux canons à eau sur son dos qu'il utilise pour se défendre et pour attaquer ses ennemis."
   },
   {
     "nom": "Tortank",
-    "description": "Type : Eau. Tortank est un grand Pokémon tortue avec des canons à eau montés sur sa carapace. Ces canons sont capables de tirer de puissants jets d'eau pour attaquer ses ennemis."
+    "description": "Eau - Tortank est le stade final d'évolution de Carapuce. Il a une carapace très solide qui peut résister à de puissantes attaques. Ses canons à eau peuvent percer des métaux épais."
   },
   {
     "nom": "Chenipan",
-    "description": "Type : Insecte. Chenipan est un petit Pokémon chenille avec une peau verte et une corne orange sur le front. Il mange des feuilles en grande quantité pour grandir et évoluer rapidement."
+    "description": "Insecte - Chenipan est un petit Pokémon chenille. Il se nourrit de feuilles et devient plus fort en évoluant."
   },
   {
     "nom": "Chrysacier",
-    "description": "Type : Insecte. Chrysacier est un Pokémon cocon vert et dur qui attend patiemment d'évoluer en Papilusion. Il se cache immobile pour éviter les prédateurs."
+    "description": "Insecte - Chrysacier est l'évolution de Chenipan. Son corps est dur comme de l'acier. Il peut endure des attaques sans broncher."
   },
   {
     "nom": "Papilusion",
-    "description": "Type : Insecte/Vol. Papilusion est un Pokémon papillon avec de grandes ailes colorées et des yeux composés. Il utilise ses ailes pour disperser des poudres de différentes sortes."
+    "description": "Insecte / Vol - Papilusion est le stade final d'évolution de Chenipan. Ses ailes colorées lui permettent de voler gracieusement. Il répand de la poudre dorée qui endort ses ennemis."
   },
   {
     "nom": "Aspicot",
-    "description": "Type : Insecte/Poison. Aspicot est un petit Pokémon larve avec un dard empoisonné sur la tête. Il est constamment à la recherche de feuilles à manger."
+    "description": "Insecte / Poison - Aspicot est un Pokémon insecte qui peut paralyser ses proies avec son poison. Il est souvent trouvé dans les forêts humides."
   },
   {
     "nom": "Coconfort",
-    "description": "Type : Insecte/Poison. Coconfort est un Pokémon cocon jaune et dur qui se cache immobile en attendant d'évoluer en Dardargnan. Sa carapace est très résistante."
+    "description": "Insecte / Poison - Coconfort est l'évolution d'Aspicot. Il se cache dans un cocon protecteur et peut paralyser ses ennemis avec son poison puissant."
   },
   {
     "nom": "Dardargnan",
-    "description": "Type : Insecte/Poison. Dardargnan est un Pokémon abeille avec des bras en forme de dard et un dard empoisonné à l'abdomen. Il vole rapidement pour attaquer ses ennemis avec ses dards."
+    "description": "Insecte / Poison - Dardargnan est le stade final d'évolution d'Aspicot. Ses ailes lui permettent de voler rapidement et il peut infliger de douloureuses piqûres empoisonnées."
   },
   {
     "nom": "Roucool",
-    "description": "Type : Normal/Vol. Roucool est un petit Pokémon oiseau avec un plumage beige et brun. Il est très docile et facile à apprivoiser, souvent utilisé comme messager."
+    "description": "Normal / Vol - Roucool est un Pokémon oiseau. Il est rapide et agile en vol. Il émet un cri distinctif pour avertir ses alliés en cas de danger."
   },
   {
     "nom": "Roucoups",
-    "description": "Type : Normal/Vol. Roucoups est un Pokémon oiseau plus grand avec des plumes plus foncées. Il défend son territoire avec des attaques puissantes et rapides."
+    "description": "Normal / Vol - Roucoups est l'évolution de Roucool. Il est plus grand et plus fort, capable de voler à des vitesses élevées et de transporter de petits objets."
   },
   {
     "nom": "Roucarnage",
-    "description": "Type : Normal/Vol. Roucarnage est un grand Pokémon oiseau avec un plumage majestueux. Il utilise ses puissantes ailes pour créer des rafales de vent."
+    "description": "Normal / Vol - Roucarnage est le stade final d'évolution de Roucool. Ses serres acérées lui permettent de capturer sa proie avec précision. Il peut voler très haut dans le ciel."
   },
   {
     "nom": "Rattata",
-    "description": "Type : Normal. Rattata est un petit Pokémon rongeur avec de grandes dents. Il est extrêmement rapide et se reproduit très rapidement, colonisant de nombreux habitats."
+    "description": "Normal - Rattata est un petit Pokémon rongeur. Il est connu pour sa vitesse et son agilité. Il est actif la nuit pour éviter les prédateurs."
   },
   {
     "nom": "Rattatac",
-    "description": "Type : Normal. Rattatac est un Pokémon rongeur plus grand avec des dents encore plus puissantes. Il est très territorial et utilise ses dents pour attaquer."
+    "description": "Normal - Rattatac est l'évolution de Rattata. Il a une mâchoire puissante et des dents tranchantes. Il est un prédateur redoutable dans son environnement."
   },
   {
     "nom": "Piafabec",
-    "description": "Type : Normal/Vol. Piafabec est un petit Pokémon oiseau avec un bec pointu et des plumes brunes. Il est très bruyant et utilise son cri pour éloigner les intrus."
+    "description": "Normal / Vol - Piafabec est un Pokémon oiseau. Il communique avec ses congénères en émettant des cris distincts. Il construit des nids dans les hautes herbes."
   },
   {
     "nom": "Rapasdepic",
-    "description": "Type : Normal/Vol. Rapasdepic est un grand Pokémon oiseau avec un long bec. Il est très agressif et utilise son bec pour percer les carapaces des insectes."
+    "description": "Normal / Vol - Rapasdepic est l'évolution de Piafabec. Il est territorial et défend agressivement son territoire. Il peut infliger des coups de bec redoutables à ses ennemis."
   },
   {
     "nom": "Abo",
-    "description": "Type : Poison. Abo est un Pokémon serpent avec un corps violet et des motifs sur le ventre. Il utilise ses capacités de constriction pour immobiliser ses proies."
+    "description": "Poison - Abo est un Pokémon serpent. Il se faufile silencieusement pour attaquer sa proie. Il est venimeux et peut paralyser ses ennemis avec son poison."
   },
   {
     "nom": "Arbok",
-    "description": "Type : Poison. Arbok est un grand Pokémon serpent avec des motifs menaçants sur le ventre. Il peut étirer son corps pour paraître plus grand et effrayer ses ennemis."
+    "description": "Poison - Arbok est l'évolution d'Abo. Il a une morsure venimeuse et peut infliger des blessures graves avec ses crocs. Son motif de cobra sur le ventre effraie ses adversaires."
   },
   {
     "nom": "Pikachu",
-    "description": "Type : Électrik. Pikachu est un petit Pokémon souris avec des joues électriques rouges. Il stocke de l'électricité dans ses joues et peut libérer des décharges électriques."
+    "description": "Électrik - Pikachu est le Pokémon souris. Il stocke de l'électricité dans ses joues et peut la décharger pour attaquer ses ennemis. Sa popularité en fait un symbole des Pokémon."
   },
   {
     "nom": "Raichu",
-    "description": "Type : Électrik. Raichu est un Pokémon souris plus grand avec une queue en forme d'éclair. Il peut libérer des décharges électriques encore plus puissantes que Pikachu."
+    "description": "Électrik - Raichu est l'évolution de Pikachu. Il a une queue qui génère de l'électricité statique. Il peut lancer des décharges électriques puissantes."
   },
   {
     "nom": "Sabelette",
-    "description": "Type : Sol. Sabelette est un petit Pokémon pangolin avec une peau jaune et une carapace dure. Il utilise ses griffes pour creuser des tunnels et se cacher des prédateurs."
+    "description": "Sol - Sabelette est un petit Pokémon taupe. Il creuse des terriers dans le sable pour se cacher et se protéger des prédateurs."
   },
   {
     "nom": "Sablaireau",
-    "description": "Type : Sol. Sablaireau est un Pokémon pangolin plus grand avec une carapace encore plus dure. Il utilise ses griffes puissantes pour se défendre et attaquer."
+    "description": "Sol - Sablaireau est l'évolution de Sabelette. Il a des griffes acérées qui lui permettent de creuser à travers le sol dur. Il est territorial et défend son territoire avec agressivité."
   },
   {
     "nom": "Nidoran♀",
-    "description": "Type : Poison. Nidoran♀ est un petit Pokémon rongeur avec des épines venimeuses. Elle est plus défensive que son homologue masculin, utilisant ses épines pour se protéger."
+    "description": "Poison - Nidoran♀ est un Pokémon de type Poison. Elle a une corne toxique sur la tête qu'elle utilise pour se défendre contre les prédateurs."
   },
   {
     "nom": "Nidorina",
-    "description": "Type : Poison. Nidorina est un Pokémon rongeur plus grand avec des épines venimeuses. Elle est très protectrice envers ses petits et devient agressive si elle sent une menace."
+    "description": "Poison - Nidorina est l'évolution de Nidoran♀. Elle a des épines venimeuses sur tout son corps. Elle est douce mais peut être très agressive pour défendre ses petits."
   },
   {
     "nom": "Nidoqueen",
-    "description": "Type : Poison/Sol. Nidoqueen est un grand Pokémon bipède avec une armure bleue et des épines venimeuses. Elle utilise son corps puissant pour défendre son territoire et ses petits."
-  },
-  {
-    "nom": "Nidoran♂",
-    "description": "Type : Poison. Nidoran♂ est un petit Pokémon rongeur avec des épines venimeuses. Il est plus offensif que son homologue féminin, utilisant ses épines pour attaquer."
-  },
-  {
-    "nom": "Nidorino",
-    "description": "Type : Poison. Nidorino est un Pokémon rongeur plus grand avec des épines venimeuses. Il est très agressif et utilise ses épines pour attaquer ses ennemis."
-  },
-  {
-    "nom": "Nidoking",
-    "description": "Type : Poison/Sol. Nidoking est un grand Pokémon bipède avec une armure violette et des épines venimeuses. Il utilise sa force brute pour dominer ses adversaires."
-  },
-  {
-    "nom": "Mélofée",
-    "description": "Type : Fée. Mélofée est un petit Pokémon humanoïde avec des ailes de fée et une peau rose. Elle utilise ses pouvoirs magiques pour créer des illusions et se défendre."
-  },
-  {
-    "nom": "Mélodelfe",
-    "description": "Type : Fée. Mélodelfe est un Pokémon humanoïde plus grand avec des ailes de fée. Elle est très rare et utilise ses pouvoirs magiques pour vivre en paix et loin des humains."
-  },
-  {
-    "nom": "Goupix",
-    "description": "Type : Feu. Goupix est un petit Pokémon renard avec une fourrure orange et six queues. Il peut cracher des flammes et utilise ses queues pour créer des feux mystiques."
-  },
-  {
-    "nom": "Feunard",
-    "description": "Type : Feu. Feunard est un grand Pokémon renard avec une fourrure dorée et neuf queues. Il est dit que chaque queue possède des pouvoirs magiques."
-  },
-  {
-    "nom": "Rondoudou",
-    "description": "Type : Normal/Fée. Rondoudou est un petit Pokémon ballon avec une peau rose et des yeux grands et ronds. Il utilise son chant mélodieux pour endormir ses ennemis."
-  },
-  {
-    "nom": "Grodoudou",
-    "description": "Type : Normal/Fée. Grodoudou est un Pokémon ballon plus grand avec une peau rose. Il peut gonfler son corps pour intimider ses ennemis et les attaquer."
-  },
-  {
-    "nom": "Nosferapti",
-    "description": "Type : Poison/Vol. Nosferapti est un petit Pokémon chauve-souris avec une peau bleue et des ailes membraneuses. Il utilise l'écholocation pour se déplacer dans l'obscurité."
-  },
-  {
-    "nom": "Nosferalto",
-    "description": "Type : Poison/Vol. Nosferalto est un grand Pokémon chauve-souris avec une peau bleue et des ailes plus grandes. Il utilise ses crocs empoisonnés pour mordre ses ennemis."
-  },
-  {
-    "nom": "Mystherbe",
-    "description": "Type : Plante/Poison. Mystherbe est un petit Pokémon plante avec une fleur sur la tête. Il libère des spores empoisonnées pour se défendre et se nourrit d'énergie solaire."
-  },
-  {
-    "nom": "Ortide",
-    "description": "Type : Plante/Poison. Ortide est un Pokémon plante plus grand avec une fleur en éclosion. Il libère une odeur nauséabonde pour repousser ses ennemis."
-  },
-  {
-    "nom": "Rafflesia",
-    "description": "Type : Plante/Poison. Rafflesia est un grand Pokémon plante avec une fleur épanouie. Il libère des spores toxiques pour attaquer ses ennemis et se protéger."
-  },
-  {
-    "nom": "Paras",
-    "description": "Type : Insecte/Plante. Paras est un petit Pokémon insecte avec des champignons parasitaires sur son dos. Il utilise ses champignons pour se défendre et attaquer."
-  },
-  {
-    "nom": "Parasect",
-    "description": "Type : Insecte/Plante. Parasect est un grand Pokémon insecte entièrement contrôlé par ses champignons parasitaires. Il utilise ses griffes pour attaquer ses ennemis."
-  },
-  {
-    "nom": "Mimitoss",
-    "description": "Type : Insecte/Poison. Mimitoss est un petit Pokémon insecte avec une fourrure violette et de grands yeux. Il utilise ses poils empoisonnés pour se défendre."
-  },
-  {
-    "nom": "Aéromite",
-    "description": "Type : Insecte/Poison. Aéromite est un grand Pokémon papillon avec des ailes violettes et des yeux composés. Il libère des poudres toxiques pour attaquer."
-  },
-  {
-    "nom": "Taupiqueur",
-    "description": "Type : Sol. Taupiqueur est un petit Pokémon taupe qui vit sous terre. Il utilise ses griffes pour creuser des tunnels et éviter les prédateurs."
-  },
-  {
-    "nom": "Triopikeur",
-    "description": "Type : Sol. Triopikeur est un Pokémon composé de trois Taupiqueur. Il creuse des tunnels encore plus rapidement et peut provoquer des tremblements de terre."
-  },
-  {
-    "nom": "Miaouss",
-    "description": "Type : Normal. Miaouss est un petit Pokémon chat qui aime collectionner des objets brillants. Il est très agile et utilise ses griffes pour attaquer."
-  },
-  {
-    "nom": "Persian",
-    "description": "Type : Normal. Persian est un grand Pokémon chat avec une fourrure lisse et un joyau sur le front. Il est très élégant et utilise ses griffes pour se battre."
-  },
-  {
-    "nom": "Psykokwak",
-    "description": "Type : Eau. Psykokwak est un petit Pokémon canard qui souffre de maux de tête constants. Il utilise ses pouvoirs psychiques de manière inconsciente."
-  },
-  {
-    "nom": "Akwakwak",
-    "description": "Type : Eau. Akwakwak est un grand Pokémon canard avec des griffes palmées. Il utilise ses pouvoirs psychiques de manière plus contrôlée et est un excellent nageur."
-  },
-  {
-    "nom": "Férosinge",
-    "description": "Type : Combat. Férosinge est un petit Pokémon singe très agressif. Il attaque quiconque le dérange et est difficile à calmer."
-  },
-  {
-    "nom": "Colossinge",
-    "description": "Type : Combat. Colossinge est un grand Pokémon singe encore plus agressif. Il est capable de déchaîner une force incroyable quand il est en colère."
-  },
-  {
-    "nom": "Caninos",
-    "description": "Type : Feu. Caninos est un petit Pokémon chien très loyal et courageux. Il protège son territoire avec des attaques de feu."
-  },
-  {
-    "nom": "Arcanin",
-    "description": "Type : Feu. Arcanin est un grand Pokémon chien avec une fourrure majestueuse. Il est très rapide et utilise des attaques de feu dévastatrices."
-  },
-  {
-    "nom": "Ptitard",
-    "description": "Type : Eau. Ptitard est un petit Pokémon têtard avec une spirale sur le ventre. Il est un excellent nageur et utilise ses capacités aquatiques pour se défendre."
-  },
-  {
-    "nom": "Têtarte",
-    "description": "Type : Eau. Têtarte est un Pokémon têtard plus grand avec des membres développés. Il utilise ses capacités aquatiques et ses attaques de type eau pour combattre."
-  },
-  {
-    "nom": "Tartard",
-    "description": "Type : Eau/Combat. Tartard est un grand Pokémon têtard bipède avec une force incroyable. Il utilise ses poings puissants pour se battre et peut vivre aussi bien sur terre que dans l'eau."
-  },
-  {
-    "nom": "Abra",
-    "description": "Type : Psy. Abra est un petit Pokémon télépathe qui passe la majorité de son temps à dormir. Il utilise ses pouvoirs psychiques pour se téléporter en cas de danger."
-  },
-  {
-    "nom": "Kadabra",
-    "description": "Type : Psy. Kadabra est un Pokémon télépathe plus grand avec une cuillère qu'il utilise pour canaliser ses pouvoirs psychiques. Il est capable de plier des objets avec son esprit."
-  },
-  {
-    "nom": "Alakazam",
-    "description": "Type : Psy. Alakazam est un Pokémon télépathe très puissant avec deux cuillères pour amplifier ses pouvoirs. Il possède une intelligence exceptionnelle et peut résoudre des problèmes complexes."
-  },
-  {
-    "nom": "Machoc",
-    "description": "Type : Combat. Machoc est un petit Pokémon musclé qui s'entraîne constamment pour devenir plus fort. Il rêve de devenir le plus puissant des Pokémon."
-  },
-  {
-    "nom": "Machopeur",
-    "description": "Type : Combat. Machopeur est un Pokémon musclé plus grand qui utilise sa force pour effectuer des travaux lourds. Il porte une ceinture pour contrôler sa puissance."
-  },
-  {
-    "nom": "Mackogneur",
-    "description": "Type : Combat. Mackogneur est un grand Pokémon musclé avec quatre bras. Il est capable d'exécuter des mouvements de combat complexes et de lancer ses adversaires au loin."
-  },{
-  "nom": "Chétiflor",
-  "description": "Type : Plante/Poison. Chétiflor est un petit Pokémon plante avec une grande bouche. Il utilise des attaques de type plante pour immobiliser ses ennemis et les digérer."
-},
-  {
-    "nom": "Boustiflor",
-    "description": "Type : Plante/Poison. Boustiflor est un Pokémon plante avec une grande bouche. Il attire ses proies avec un parfum doux avant de les digérer lentement."
-  },
-  {
-    "nom": "Empiflor",
-    "description": "Type : Plante/Poison. Empiflor est un grand Pokémon plante avec une grande bouche remplie de dents acérées. Il est capable de dévorer des proies plus grosses que lui en un seul coup."
-  },
-  {
-    "nom": "Tentacool",
-    "description": "Type : Eau/Poison. Tentacool est un petit Pokémon méduse avec des tentacules. Il flotte à la surface de l'eau et utilise ses tentacules pour attraper des proies."
-  },
-  {
-    "nom": "Tentacruel",
-    "description": "Type : Eau/Poison. Tentacruel est un grand Pokémon méduse avec de longs tentacules. Il est très territorial et utilise son poison pour repousser les intrus."
-  },
-  {
-    "nom": "Racaillou",
-    "description": "Type : Roche/Sol. Racaillou est un petit Pokémon roche avec une peau dure. Il vit dans les montagnes et utilise son corps solide pour se protéger des prédateurs."
-  },
-  {
-    "nom": "Gravalanch",
-    "description": "Type : Roche/Sol. Gravalanch est un Pokémon roche encore plus grand et plus dur. Il roule sur ses ennemis pour les écraser avec son corps solide."
-  },
-  {
-    "nom": "Grolem",
-    "description": "Type : Roche/Sol. Grolem est un grand Pokémon roche bipède. Il est très fort et peut soulever des montagnes pour protéger son territoire."
-  },
-  {
-    "nom": "Ponyta",
-    "description": "Type : Feu. Ponyta est un petit Pokémon poney avec une crinière enflammée. Il peut courir à des vitesses incroyables et utilise ses sabots en feu pour attaquer."
-  },
-  {
-    "nom": "Galopa",
-    "description": "Type : Feu. Galopa est un grand Pokémon cheval avec une crinière enflammée. Il est très rapide et utilise ses sabots en feu pour brûler ses ennemis."
-  },
-  {
-    "nom": "Ramoloss",
-    "description": "Type : Eau. Ramoloss est un petit Pokémon amphibie avec une peau rose. Il est lent et utilise ses capacités psychiques pour se défendre et attaquer."
-  },
-  {
-    "nom": "Flagadoss",
-    "description": "Type : Eau/Psy. Flagadoss est un grand Pokémon amphibie avec une peau rose. Il est plus intelligent que Ramoloss et utilise ses pouvoirs psychiques pour contrôler l'eau."
-  },
-  {
-    "nom": "Magnéti",
-    "description": "Type : Électrik/Acier. Magnéti est un petit Pokémon aimanté avec des aimants sur ses côtés. Il utilise l'électricité pour attaquer ses ennemis et se défendre."
-  },
-  {
-    "nom": "Magnéton",
-    "description": "Type : Électrik/Acier. Magnéton est un Pokémon aimanté avec plusieurs aimants flottants autour de lui. Il génère de puissants champs magnétiques pour attaquer."
-  },
-  {
-    "nom": "Canarticho",
-    "description": "Type : Normal/Vol. Canarticho est un Pokémon oiseau avec une longue tige sur sa tête. Il utilise cette tige pour attaquer ses ennemis avec précision."
-  },
-  {
-    "nom": "Doduo",
-    "description": "Type : Normal/Vol. Doduo est un petit Pokémon à deux têtes qui court très rapidement. Chaque tête a sa propre personnalité et elles se coordonnent pour attaquer."
-  },
-  {
-    "nom": "Dodrio",
-    "description": "Type : Normal/Vol. Dodrio est un grand Pokémon à trois têtes avec des jambes puissantes. Chaque tête a une personnalité différente et elles peuvent attaquer de différentes directions."
-  },
-  {
-    "nom": "Otaria",
-    "description": "Type : Eau. Otaria est un petit Pokémon otarie avec une fourrure blanche. Il utilise ses membres palmés pour nager et attraper des proies."
-  },
-  {
-    "nom": "Lamantine",
-    "description": "Type : Eau/Glace. Lamantine est un grand Pokémon lamantin avec une épaisse couche de graisse. Il vit dans les eaux froides et utilise ses défenses pour se protéger."
-  },
-  {
-    "nom": "Tadmorv",
-    "description": "Type : Poison. Tadmorv est un petit Pokémon poison avec une peau violette et des bras dégoulinants. Il utilise ses déchets toxiques pour attaquer et se défendre."
-  },
-  {
-    "nom": "Grotadmorv",
-    "description": "Type : Poison. Grotadmorv est un Pokémon poison plus grand avec un corps dégoulinant. Il est très toxique et utilise ses déchets pour polluer l'environnement de ses ennemis."
-  },
-  {
-    "nom": "Kokiyas",
-    "description": "Type : Eau. Kokiyas est un petit Pokémon tortue avec une carapace solide. Il utilise sa carapace pour se protéger des attaques et se cache souvent sous l'eau."
-  },
-  {
-    "nom": "Crustabri",
-    "description": "Type : Eau. Crustabri est un grand Pokémon crabe avec une carapace dure. Il utilise ses pinces pour attaquer et sa carapace pour se protéger des prédateurs."
-  },
-  {
-    "nom": "Fantominus",
-    "description": "Type : Spectre/Poison. Fantominus est un petit Pokémon spectre avec un corps gaz. Il peut traverser les murs et absorber l'énergie vitale de ses victimes."
-  },
-  {
-    "nom": "Spectrum",
-    "description": "Type : Spectre/Poison. Spectrum est un Pokémon spectre plus grand avec des bras gaz. Il utilise ses pouvoirs psychiques pour effrayer ses ennemis et les faire fuir."
-  },
-  {
-    "nom": "Ectoplasma",
-    "description": "Type : Spectre/Poison. Ectoplasma est un grand Pokémon spectre avec un corps gaz. Il se nourrit de rêves et de cauchemars des humains et des Pokémon."
-  },
-  {
-    "nom": "Onix",
-    "description": "Type : Roche/Sol. Onix est un grand Pokémon serpent de roche. Il creuse des tunnels sous terre et attaque ses ennemis avec sa masse corporelle imposante."
-  },
-  {
-    "nom": "Soporifik",
-    "description": "Type : Psy. Soporifik est un petit Pokémon télépathe qui dort constamment. Il utilise ses pouvoirs psychiques pour hypnotiser ses ennemis."
-  },
-  {
-    "nom": "Hypnomade",
-    "description": "Type : Psy. Hypnomade est un grand Pokémon télépathe qui utilise des ondes cérébrales pour contrôler ses ennemis. Il peut entrer dans les rêves des autres."
-  },
-  {
-    "nom": "Krabby",
-    "description": "Type : Eau. Krabby est un petit Pokémon crabe avec une pince solide. Il utilise ses pinces pour attraper des proies et se défendre des prédateurs."
-  },
-  {
-    "nom": "Krabboss",
-    "description": "Type : Eau. Krabboss est un grand Pokémon crabe avec de très grandes pinces. Il est très territorial et utilise ses pinces pour écraser ses ennemis."
-  },
-  {
-    "nom": "Voltorbe",
-    "description": "Type : Électrik. Voltorbe est un Pokémon sphérique avec des yeux rouges. Il se charge d'électricité et peut exploser à tout moment."
-  },{
-  "nom": "Électrode",
-  "description": "Type : Électrik. Électrode est un Pokémon sphérique encore plus grand que Voltorbe. Il stocke une quantité énorme d'électricité et peut causer des explosions dévastatrices."
-},
-  {
-    "nom": "Noeunoeuf",
-    "description": "Type : Plante/Psy. Noeunoeuf est un Pokémon œuf avec des graines sur le dos. Il utilise ses pouvoirs psychiques pour se protéger et attaquer."
-  },
-  {
-    "nom": "Noadkoko",
-    "description": "Type : Plante/Psy. Noadkoko est un Pokémon cocotier avec plusieurs têtes. Il est très intelligent et utilise ses pouvoirs psychiques pour contrôler les plantes autour de lui."
-  },
-  {
-    "nom": "Osselait",
-    "description": "Type : Sol. Osselait est un petit Pokémon crâne avec un os qu'il tient dans sa patte. Il utilise l'os comme arme et se bat avec agressivité."
-  },
-  {
-    "nom": "Ossatueur",
-    "description": "Type : Sol. Ossatueur est un grand Pokémon crâne avec un os solide qu'il utilise comme massue. Il est très territorial et défend ses proches avec détermination."
-  },
-  {
-    "nom": "Kicklee",
-    "description": "Type : Combat. Kicklee est un Pokémon humanoïde avec des jambes très musclées. Il excelle dans les arts martiaux et peut donner des coups de pied puissants."
-  },
-  {
-    "nom": "Tygnon",
-    "description": "Type : Combat. Tygnon est un Pokémon humanoïde avec des bras musclés. Il utilise ses poings pour attaquer ses ennemis avec une force dévastatrice."
-  },
-  {
-    "nom": "Excelangue",
-    "description": "Type : Normal. Excelangue est un Pokémon avec une langue extrêmement longue. Il utilise sa langue pour capturer des proies hors de portée et pour nettoyer sa fourrure."
-  },
-  {
-    "nom": "Smogo",
-    "description": "Type : Poison. Smogo est un petit Pokémon gaz toxique. Il flotte dans l'air et libère des gaz nocifs pour se défendre."
-  },
-  {
-    "nom": "Smogogo",
-    "description": "Type : Poison. Smogogo est un Pokémon gaz toxique plus grand et plus toxique que Smogo. Il peut créer des nuages de smog pour camoufler ses mouvements et attaquer ses ennemis."
-  },
-  {
-    "nom": "Rhinocorne",
-    "description": "Type : Sol/Roche. Rhinocorne est un Pokémon rhinocéros avec une peau épaisse et des cornes acérées. Il utilise ses cornes pour se défendre et pour charger ses ennemis."
-  },
-  {
-    "nom": "Rhinoféros",
-    "description": "Type : Sol/Roche. Rhinoféros est un Pokémon rhinocéros encore plus grand et plus robuste que Rhinocorne. Il est capable de démolir des bâtiments avec ses cornes."
-  },
-  {
-    "nom": "Leveinard",
-    "description": "Type : Normal. Leveinard est un Pokémon avec un corps en forme d'œuf. Il est très gentil et utilise ses pouvoirs de guérison pour aider les Pokémon blessés."
-  },
-  {
-    "nom": "Saquedeneu",
-    "description": "Type : Plante. Saquedeneu est un Pokémon plante avec des lianes et des feuilles. Il utilise ses tentacules pour capturer des proies et les absorber pour l'énergie."
-  },
-  {
-    "nom": "Kangourex",
-    "description": "Type : Normal. Kangourex est un grand Pokémon kangourou avec une poche ventrale. Il garde ses petits dans sa poche et les protège avec ses griffes puissantes."
-  },
-  {
-    "nom": "Hypotrempe",
-    "description": "Type : Eau/Dragon. Hypotrempe est un petit Pokémon serpent de mer avec des branchies. Il utilise ses nageoires pour nager gracieusement dans l'eau."
-  },
-  {
-    "nom": "Hypocéan",
-    "description": "Type : Eau/Dragon. Hypocéan est un Pokémon serpent de mer plus grand avec des branchies. Il peut cracher de l'eau à haute pression et utiliser ses nageoires pour se défendre."
-  },
-  {
-    "nom": "Poissirène",
-    "description": "Type : Eau. Poissirène est un petit Pokémon sirène avec une voix enchanteresse. Elle utilise son chant pour attirer les marins et les Pokémon vers elle."
-  },
-  {
-    "nom": "Poissoroy",
-    "description": "Type : Eau. Poissoroy est un grand Pokémon sirène avec une voix magnifique. Elle utilise son chant pour manipuler les courants marins et capturer ses proies."
-  },
-  {
-    "nom": "Stari",
-    "description": "Type : Eau. Stari est un petit Pokémon étoile de mer avec des appendices. Il peut régénérer ses membres perdus et utilise ses appendices pour se défendre."
-  },
-  {
-    "nom": "Staross",
-    "description": "Type : Eau/Psy. Staross est un grand Pokémon étoile de mer avec de puissants pouvoirs psychiques. Il peut contrôler ses ennemis avec ses attaques mentales."
-  },
-  {
-    "nom": "M. Mime",
-    "description": "Type : Psy/Fée. M. Mime est un Pokémon mime avec une peau blanche et invisible. Il utilise ses barrières psychiques pour se protéger et ses compétences de mime pour distraire ses ennemis."
-  },
-  {
-    "nom": "Insécateur",
-    "description": "Type : Insecte/Vol. Insécateur est un Pokémon insecte bipède avec des lames tranchantes sur ses membres. Il peut voler silencieusement et découper ses ennemis en morceaux."
-  },
-  {
-    "nom": "Lippoutou",
-    "description": "Type : Glace/Psy. Lippoutou est un Pokémon danseur avec un corps bleu et des cheveux jaunes. Elle utilise ses pouvoirs psychiques pour contrôler la glace et ses mouvements gracieux pour éviter les attaques."
-  },
-  {
-    "nom": "Élektek",
-    "description": "Type : Électrik. Élektek est un Pokémon bipède avec des bras et des jambes musclés. Il génère de l'électricité à partir de ses prises et utilise des attaques électriques pour paralyser ses ennemis."
-  },
-  {
-    "nom": "Magmar",
-    "description": "Type : Feu. Magmar est un Pokémon bipède avec une peau rouge et des flammes sur la tête. Il peut produire des flammes extrêmement chaudes et utiliser ses bras pour attaquer."
-  },
-  {
-    "nom": "Scarabrute",
-    "description": "Type : Insecte. Scarabrute est un grand Pokémon scarabée avec une carapace dure. Il utilise ses griffes et ses mandibules pour se battre et défendre son territoire."
-  },
-  {
-    "nom": "Tauros",
-    "description": "Type : Normal. Tauros est un Pokémon taureau avec une attitude très agressive. Il charge ses ennemis avec ses cornes acérées et protège son troupeau avec détermination."
-  },
-  {
-    "nom": "Magicarpe",
-    "description": "Type : Eau. Magicarpe est un petit Pokémon poisson avec des écailles dorées. Il est faible au combat mais peut évoluer en un Pokémon puissant s'il est suffisamment entraîné."
-  },
-  {
-    "nom": "Léviator",
-    "description": "Type : Eau/Vol. Léviator est un grand Pokémon poisson dragon avec des écailles bleues. Il est extrêmement puissant et utilise ses crocs acérés pour déchirer ses ennemis."
-  },{
-  "nom": "Lokhlass",
-  "description": "Type : Eau/Glace. Lokhlass est un grand Pokémon qui ressemble à une loutre marine avec une carapace bleue. Il nage gracieusement dans l'eau et utilise son corps pour briser la glace."
-},
-  {
-    "nom": "Métamorph",
-    "description": "Type : Normal. Métamorph est un Pokémon capable de prendre l'apparence de n'importe quel autre Pokémon. Il utilise cette capacité pour se camoufler et échapper à ses ennemis."
-  },
-  {
-    "nom": "Évoli",
-    "description": "Type : Normal. Évoli est un petit Pokémon renard avec une fourrure évolutive. Il peut évoluer en plusieurs Pokémon différents en fonction des conditions de l'environnement."
-  },
-  {
-    "nom": "Aquali",
-    "description": "Type : Eau. Aquali est l'une des évolutions d'Évoli. Il a une fourrure bleue et des capacités aquatiques exceptionnelles, utilisant l'eau pour attaquer et se défendre."
-  },
-  {
-    "nom": "Voltali",
-    "description": "Type : Électrik. Voltali est l'une des évolutions d'Évoli. Il a une fourrure jaune et des capacités électriques puissantes, générant des décharges pour attaquer ses ennemis."
-  },
-  {
-    "nom": "Pyroli",
-    "description": "Type : Feu. Pyroli est l'une des évolutions d'Évoli. Il a une fourrure rouge et une capacité de contrôler le feu, utilisant des attaques de feu pour brûler ses adversaires."
-  },
-  {
-    "nom": "Porygon",
-    "description": "Type : Normal. Porygon est un Pokémon virtuel créé par des scientifiques. Il est capable de se déplacer dans l'espace numérique et d'utiliser des attaques basées sur des programmes informatiques."
-  },
-  {
-    "nom": "Amonita",
-    "description": "Type : Roche/Eau. Amonita est un Pokémon fossile ressemblant à un ammonite. Il a une coquille dure et utilise des tentacules pour capturer ses proies."
-  },
-  {
-    "nom": "Amonistar",
-    "description": "Type : Roche/Eau. Amonistar est l'évolution d'Amonita. Il a une coquille encore plus dure et utilise ses tentacules pour attraper ses ennemis et les broyer."
-  },
-  {
-    "nom": "Kabuto",
-    "description": "Type : Roche/Eau. Kabuto est un Pokémon fossile ressemblant à un trilobite. Il a une carapace dure et utilise ses pinces pour se défendre des prédateurs."
-  },
-  {
-    "nom": "Kabutops",
-    "description": "Type : Roche/Eau. Kabutops est l'évolution de Kabuto. Il a des lames tranchantes sur ses bras et ses pattes, et il est capable de découper ses ennemis avec une grande agilité."
-  },
-  {
-    "nom": "Ptéra",
-    "description": "Type : Roche/Vol. Ptéra est un grand Pokémon fossile ressemblant à un ptérodactyle. Il a une envergure impressionnante et utilise ses crocs pour attraper des proies en vol."
-  },
-  {
-    "nom": "Ronflex",
-    "description": "Type : Normal. Ronflex est un Pokémon paresseux avec un gros ventre. Il passe la majorité de son temps à dormir et à manger, mais il peut devenir redoutable lorsqu'il est provoqué."
-  },
-  {
-    "nom": "Artikodin",
-    "description": "Type : Glace/Vol. Artikodin est un Pokémon légendaire avec des pouvoirs de glace. Il vit dans des régions glaciales et peut créer des tempêtes de neige pour se défendre."
-  },
-  {
-    "nom": "Électhor",
-    "description": "Type : Électrik/Vol. Électhor est un Pokémon légendaire avec des pouvoirs électriques. Il contrôle les éclairs et utilise des attaques électriques pour protéger son territoire."
-  },
-  {
-    "nom": "Sulfura",
-    "description": "Type : Feu/Vol. Sulfura est un Pokémon légendaire avec des pouvoirs de feu. Il habite dans des volcans et utilise des attaques de feu pour défendre son territoire."
-  },
-  {
-    "nom": "Minidraco",
-    "description": "Type : Dragon. Minidraco est un petit Pokémon dragon avec des ailes sous-développées. Il aspire à devenir un dragon mature et puissant."
-  },
-  {
-    "nom": "Draco",
-    "description": "Type : Dragon. Draco est l'évolution de Minidraco. Il a des ailes puissantes et peut voler à des altitudes élevées. Il utilise sa queue pour attaquer ses ennemis."
-  },
-  {
-    "nom": "Dracolosse",
-    "description": "Type : Dragon/Vol. Dracolosse est l'évolution finale de Minidraco. Il a une envergure impressionnante et une force incroyable. Il est respecté pour sa sagesse et sa puissance."
-  },
-  {
-    "nom": "Mewtwo",
-    "description": "Type : Psy. Mewtwo est un Pokémon légendaire créé par la manipulation génétique. Il est extrêmement intelligent et possède des pouvoirs psychiques surpuissants."
-  },
-  {
-    "nom": "Mew",
-    "description": "Type : Psy. Mew est un Pokémon légendaire considéré comme l'ancêtre de tous les Pokémon. Il a la capacité de se transformer et d'apprendre n'importe quelle attaque."
+    "description": "Poison / Sol - Nidoqueen est le stade final d'évolution de Nidoran♀. Elle a une peau dure comme le roc et une queue puissante qu'elle utilise pour attaquer ses ennemis."
   }
 ]

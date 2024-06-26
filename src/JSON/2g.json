@@ -1,0 +1,318 @@
+[
+  {
+    "name": "Germignon",
+    "description": "Plante. Germignon, le Pokémon bourgeon. Il se nourrit de lumière solaire pour renforcer ses pousses."
+  },
+  {
+    "name": "Macronium",
+    "description": "Plante. Macronium, le Pokémon feuillage. Il utilise ses feuilles tranchantes pour se protéger des prédateurs."
+  },
+  {
+    "name": "Méganium",
+    "description": "Plante. Méganium, le Pokémon herbe. Il répand un doux parfum apaisant pour calmer les esprits agités."
+  },
+  {
+    "name": "Héricendre",
+    "description": "Feu. Héricendre, le Pokémon souris. Il enflamme son dos pour se protéger des attaques ennemies."
+  },
+  {
+    "name": "Feurisson",
+    "description": "Feu. Feurisson, le Pokémon feu. Il peut lancer des flammes ardentes grâce aux feux sur son dos."
+  },
+  {
+    "name": "Typhlosion",
+    "description": "Feu. Typhlosion, le Pokémon volcan. Il déclenche des éruptions de feu qui peuvent brûler tout sur leur passage."
+  },
+  {
+    "name": "Kaiminus",
+    "description": "Eau. Kaiminus, le Pokémon crocodile. Il attaque ses ennemis avec ses mâchoires puissantes et acérées."
+  },
+  {
+    "name": "Crocrodil",
+    "description": "Eau. Crocrodil, le Pokémon croc. Il peut mordre à travers des rochers et des aciers sans effort."
+  },
+  {
+    "name": "Aligatueur",
+    "description": "Eau. Aligatueur, le Pokémon grand mâchoire. Il est connu pour son incroyable force de morsure."
+  },
+  {
+    "name": "Fouinette",
+    "description": "Normal. Fouinette, le Pokémon raton. Il est curieux de nature et explore constamment son environnement."
+  },
+  {
+    "name": "Fouinar",
+    "description": "Normal. Fouinar, le Pokémon raton. Il est intelligent et utilise ses astuces pour échapper aux situations dangereuses."
+  },
+  {
+    "name": "Hoothoot",
+    "description": "Normal / Vol. Hoothoot, le Pokémon hibou. Il a la capacité de tourner la tête à 360 degrés pour surveiller les environs."
+  },
+  {
+    "name": "Noarfang",
+    "description": "Normal / Vol. Noarfang, le Pokémon chouette. Il possède une vision nocturne et peut repérer une souris à des kilomètres."
+  },
+  {
+    "name": "Coxy",
+    "description": "Insecte. Coxy, le Pokémon ver. Il se nourrit de feuilles et de petits insectes qu'il trouve dans les bois."
+  },
+  {
+    "name": "Coxyclaque",
+    "description": "Insecte / Vol. Coxyclaque, le Pokémon papillon. Il peut créer des poudres toxiques pour se défendre des prédateurs."
+  },
+  {
+    "name": "Mimigal",
+    "description": "Insecte / Poison. Mimigal, le Pokémon araignée. Il tisse des toiles pour piéger ses proies avant de les dévorer."
+  },
+  {
+    "name": "Migalos",
+    "description": "Insecte / Poison. Migalos, le Pokémon araignée. Il peut paralyser ses proies avec son venin puissant."
+  },
+  {
+    "name": "Nostenfer",
+    "description": "Poison / Vol. Nostenfer, le Pokémon chauve-souris. Il attaque ses ennemis en volant silencieusement dans l'obscurité."
+  },
+  {
+    "name": "Loupio",
+    "description": "Eau / Electrique. Loupio, le Pokémon poisson. Il génère de l'électricité pour paralyser ses proies avant de les mordre."
+  },
+  {
+    "name": "Lanturn",
+    "description": "Eau / Electrique. Lanturn, le Pokémon lumière. Il émet de la lumière sous-marine grâce à ses organes bioluminescents."
+  },
+  {
+    "name": "Pichu",
+    "description": "Electrique. Pichu, le Pokémon petite souris. Il joue souvent avec des étincelles d'électricité qu'il génère involontairement."
+  },
+  {
+    "name": "Mélo",
+    "description": "Fée. Mélo, le Pokémon musical. Il produit des notes mélodieuses qui apaisent les cœurs les plus agités."
+  },
+  {
+    "name": "Toudoudou",
+    "description": "Normal / Fée. Toudoudou, le Pokémon ballon. Il chante des mélodies douces pour endormir ses ennemis."
+  },
+  {
+    "name": "Togepi",
+    "description": "Fée. Togepi, le Pokémon œuf. Il protège son corps fragile en utilisant sa carapace dure."
+  },
+  {
+    "name": "Togetic",
+    "description": "Fée / Vol. Togetic, le Pokémon bonheur. Il répand de l'amour et du bonheur autour de lui grâce à ses ailes colorées."
+  },
+  {
+    "name": "Natu",
+    "description": "Psy / Vol. Natu, le Pokémon mystique. Il prévoit l'avenir en observant les mouvements des étoiles."
+  },
+  {
+    "name": "Xatu",
+    "description": "Psy / Vol. Xatu, le Pokémon mystique. Il connaît l'avenir et le passé grâce à ses pouvoirs psychiques."
+  },
+  {
+    "name": "Wattouat",
+    "description": "Electrique. Wattouat, le Pokémon mouton. Il stocke de l'électricité dans sa laine pour se protéger des prédateurs."
+  },
+  {
+    "name": "Lainergie",
+    "description": "Electrique. Lainergie, le Pokémon laine. Il crée des champs électriques en frottant ses pattes ensemble."
+  },
+  {
+    "name": "Pharamp",
+    "description": "Electrique. Pharamp, le Pokémon ampoule. Il génère de puissantes décharges électriques en utilisant ses nageoires."
+  },
+  {
+    "name": "Joliflor",
+    "description": "Plante. Joliflor, le Pokémon fleur. Il attire les insectes avec son parfum enivrant avant de les capturer pour se nourrir."
+  },
+  {
+    "name": "Marill",
+    "description": "Eau / Fée. Marill, le Pokémon aquatique. Il peut flotter sur l'eau grâce à ses petites ailes."
+  },
+  {
+    "name": "Azumarill",
+    "description": "Eau / Fée. Azumarill, le Pokémon aquatique. Il possède une force incroyable qui lui permet de soulever des rochers."
+  },
+  {
+    "name": "Simularbre",
+    "description": "Roche. Simularbre, le Pokémon arbre. Il se fond parfaitement dans les forêts en imitant les arbres autour de lui."
+  },
+  {
+    "name": "Tarpaud",
+    "description": "Eau. Tarpaud, le Pokémon son. Il utilise ses sacs vocaux pour émettre des ondes sonores puissantes."
+  },
+  {
+    "name": "Granivol",
+    "description": "Plante / Vol. Granivol, le Pokémon graine. Il se propage dans les vents pour polliniser les plantes à grande distance."
+  },
+  {
+    "name": "Floravol",
+    "description": "Plante / Vol. Floravol, le Pokémon fleur. Il libère un parfum enivrant qui endort ses ennemis avant de les attaquer."
+  },
+  {
+    "name": "Cotovol",
+    "description": "Plante / Vol. Cotovol, le Pokémon coton. Il vole gracieusement dans les airs en libérant des spores pour se défendre."
+  },
+  {
+    "name": "Capumain",
+    "description": "Normal. Capumain, le Pokémon singe. Il utilise sa queue comme une main supplémentaire pour attraper des objets."
+  },
+  {
+    "name": "Tournegrin",
+    "description": "Plante. Tournegrin, le Pokémon tournesol. Il suit la trajectoire du soleil tout au long de la journée."
+  },
+  {
+    "name": "Héliatronc",
+    "description": "Plante. Héliatronc, le Pokémon soleil. Il absorbe la lumière du soleil pour augmenter sa vitalité et sa puissance."
+  },
+  {
+    "name": "Yanma",
+    "description": "Insecte / Vol. Yanma, le Pokémon libellule. Il vole à des vitesses incroyables en battant ses ailes très rapidement."
+  },
+  {
+    "name": "Axoloto",
+    "description": "Eau. Axoloto, le Pokémon axolotl. Il peut régénérer ses membres perdus grâce à ses capacités de guérison."
+  },
+  {
+    "name": "Maraiste",
+    "description": "Eau. Maraiste, le Pokémon vase. Il se cache dans la boue pour éviter d'être vu par ses prédateurs."
+  },
+  {
+    "name": "Mentali",
+    "description": "Psy. Mentali, le Pokémon émotions. Il utilise ses pouvoirs psychiques pour lire et manipuler les émotions des autres."
+  },
+  {
+    "name": "Noctali",
+    "description": "Ténèbres. Noctali, le Pokémon nocturne. Il se fond dans l'ombre pour attaquer ses ennemis avec une précision mortelle."
+  },
+  {
+    "name": "Cornebre",
+    "description": "Ténèbres / Vol. Cornebre, le Pokémon corbeau. Il est connu pour voler des objets brillants pour les garder dans son nid."
+  },
+  {
+    "name": "Roigada",
+    "description": "Eau / Psy. Roigada, le Pokémon baleine. Il utilise son sonar pour naviguer dans les océans les plus sombres."
+  },
+  {
+    "name": "Feuforêve",
+    "description": "Spectre. Feuforêve, le Pokémon rêve. Il se nourrit des rêves des autres, laissant derrière lui des cauchemars."
+  },
+  {
+    "name": "Zarbi",
+    "description": "Psy. Zarbi, le Pokémon symbole. Il communique en formant des symboles mystérieux avec son corps."
+  },
+  {
+    "name": "Qulbutoké",
+    "description": "Psy. Qulbutoké, le Pokémon enjôleur. Il utilise des tours de passe-passe psychiques pour échapper à ses ennemis."
+  },
+  {
+    "name": "Girafarig",
+    "description": "Normal / Psy. Girafarig, le Pokémon girafe. Sa deuxième tête est capable de mordre avec une force incroyable."
+  },
+  {
+    "name": "Pomdepik",
+    "description": "Normal. Pomdepik, le Pokémon piquant. Il lance ses piquants sur les ennemis qui menacent son territoire."
+  },
+  {
+    "name": "Foretress",
+    "description": "Insecte / Acier. Foretress, le Pokémon forteresse. Il se roule en boule pour se protéger des attaques ennemies."
+  },
+  {
+    "name": "Insolourdo",
+    "description": "Normal. Insolourdo, le Pokémon bêta. Il est connu pour être extrêmement maladroit dans ses mouvements."
+  },
+  {
+    "name": "Scorplane",
+    "description": "Insecte / Vol. Scorplane, le Pokémon scorpion. Il utilise son dard empoisonné pour paralyser ses proies."
+  },
+  {
+    "name": "Steelix",
+    "description": "Acier / Sol. Steelix, le Pokémon fer. Il est si dur qu'aucune attaque ne peut le pénétrer."
+  },
+  {
+    "name": "Snubbull",
+    "description": "Fée. Snubbull, le Pokémon renfrogné. Il utilise sa mâchoire puissante pour mordre tout ce qui s'approche trop près."
+  },
+  {
+    "name": "Granbull",
+    "description": "Fée. Granbull, le Pokémon mâchoire. Sa mâchoire est si forte qu'elle peut mordre à travers du métal."
+  },
+  {
+    "name": "Qwilfish",
+    "description": "Eau / Poison. Qwilfish, le Pokémon ballon. Il gonfle son corps pour devenir plus gros et plus intimidant en face de ses ennemis."
+  },
+  {
+    "name": "Cizayox",
+    "description": "Insecte / Acier. Cizayox, le Pokémon pince. Il découpe ses ennemis avec ses pinces acérées en un éclair."
+  },
+  {
+    "name": "Caratroc",
+    "description": "Roche. Caratroc, le Pokémon roche. Il se cache dans les crevasses des rochers pour surprendre ses proies."
+  },
+  {
+    "name": "Scarhino",
+    "description": "Insecte / Combat. Scarhino, le Pokémon scarabée. Il est connu pour sa force brute et ses capacités de combat."
+  },
+  {
+    "name": "Farfuret",
+    "description": "Ténèbres / Glace. Farfuret, le Pokémon mauvais. Il utilise la glace pour piéger ses ennemis avant de les attaquer."
+  },
+  {
+    "name": "Teddiursa",
+    "description": "Normal. Teddiursa, le Pokémon ourson. Il cherche constamment du miel et est attiré par son odeur sucrée."
+  },
+  {
+    "name": "Ursaring",
+    "description": "Normal. Ursaring, le Pokémon hibernation. Il devient extrêmement agressif si quelqu'un ose perturber son sommeil."
+  },
+  {
+    "name": "Limagma",
+    "description": "Feu. Limagma, le Pokémon lave. Il laisse une traînée de lave fondue partout où il va."
+  },
+  {
+    "name": "Volcaropod",
+    "description": "Feu. Volcaropod, le Pokémon volcan. Il peut provoquer des éruptions volcaniques massives en battant des ailes."
+  },
+  {
+    "name": "Marcacrin",
+    "description": "Glace. Marcacrin, le Pokémon porcelet. Il utilise la glace pour se protéger des prédateurs en créant un bouclier glacé."
+  },
+  {
+    "name": "Cochignon",
+    "description": "Glace / Sol. Cochignon, le Pokémon truie. Il peut survivre dans des conditions extrêmement froides grâce à sa fourrure épaisse."
+  },
+  {
+    "name": "Corayon",
+    "description": "Eau / Roche. Corayon, le Pokémon corail. Il construit des récifs coralliens en utilisant des matériaux trouvés dans l'océan."
+  },
+  {
+    "name": "Rémoraid",
+    "description": "Eau. Rémoraid, le Pokémon canon. Il tire des jets d'eau avec une grande précision pour attaquer ses proies."
+  },
+  {
+    "name": "Octillery",
+    "description": "Eau. Octillery, le Pokémon pieuvre. Il est capable de tirer des jets d'eau avec une force incroyable."
+  },
+  {
+    "name": "Cadoizo",
+    "description": "Eau / Vol. Cadoizo, le Pokémon pingouin. Il nage avec grâce sous l'eau et vole habilement dans les airs."
+  },
+  {
+    "name": "Démanta",
+    "description": "Eau / Vol. Démanta, le Pokémon raie. Il peut transporter de petits Pokémon sur son dos à travers les mers."
+  },
+  {
+    "name": "Airmure",
+    "description": "Acier / Vol. Airmure, le Pokémon armure. Il vole à des vitesses élevées tout en résistant aux attaques ennemies."
+  },
+  {
+    "name": "Malosse",
+    "description": "Ténèbres / Feu. Malosse, le Pokémon chiot. Il utilise des flammes ardentes pour brûler ses ennemis."
+  },
+  {
+    "name": "Démolosse",
+    "description": "Ténèbres / Feu. Démolosse, le Pokémon chien. Il possède une force et une vitesse incroyables."
+  },
+  {
+    "name": "Hyporoi",
+    "description": "Eau / Dragon. Hyporoi, le Pokémon dragon royal. Il est respecté pour sa grâce et sa puissance dans l'eau."
+  }
+]

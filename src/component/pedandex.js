@@ -77,7 +77,7 @@ function Pedandex(props) {
                                     });
                                 }else{
                                     setCanPlay(true)
-                                    description.substring(description.indexOf('.')+1).replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
+                                    description.replace(/,|\?|\/|\\|\:|\(|\)|\'|\./g, matched => correction[matched]).split(" ").forEach(word => {
                                         const correction2 = {
                                             " , ": ", ",
                                             " ? ": " ?",
