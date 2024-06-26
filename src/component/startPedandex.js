@@ -3263,7 +3263,7 @@ function StartPedandex(props) {
             })
     }, []);
     function addPedandexGame() {
-        const index = pedandex[Math.floor(Math.random()*pedandex.length)];
+        const index = Math.floor(Math.random()*pedandex.length);
         Axios.post('/api/addDailyGame',
             {
                 name: pedandex[index].nom,
