@@ -3258,7 +3258,7 @@ function StartPedandex(props) {
             "description": "Melmetal est un Pokémon de type Acier. Évolué à partir de Meltan avec une grande stature, il a une force incroyable et la capacité de manipuler le métal. Melmetal utilise des attaques de type Acier pour plier et façonner son environnement, défendant son territoire avec une puissance inébranlable."
         }
     ]
-    console.log(pedandex);
+    console.log(pedandex[Math.floor(Math.random() * pedandex.length)])
         return (
             <button>Valider</button>
         )
