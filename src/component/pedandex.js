@@ -139,7 +139,9 @@ function Pedandex(props) {
                     Axios.post('/api/addPedandexWin',
                         {
                             user: pseudo,
-                            tries: tries + 1
+                            tries: tries + 1,
+                            day: dailyGame.day,
+                            answer: dailyGame.answer
                         }
                     )
                         .then(function(response){
