@@ -35,7 +35,7 @@ function Pedandex(props) {
                 setDailyGame(response.data[0])
                 setName(response.data[0].name);
                 document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');;
-                const description = dailyGame.description;
+                const description = response.data[0].description;
                 var id = 0;
                 var div = document.getElementById("textToGuess");
                 const correction = {
@@ -49,16 +49,16 @@ function Pedandex(props) {
                     ".": " ."
                 };
                 Axios.get("/api/getMyTokens/"+pseudo)
-                    .then(function(response){
-                        if(response.data.length > 0){
-                            setTokens(response.data[0].token)
+                    .then(function(answer){
+                        if(answer.data.length > 0){
+                            setTokens(answer.data[0].token)
                         }
                         Axios.get("/api/getPedandexWin")
-                            .then(function(response){
-                                setLeaderBoard(response.data)
-                                if(response.data.find((uc) => uc.pseudo === pseudo && uc.day === dailyGame.day)){
+                            .then(function(info){
+                                setLeaderBoard(info.data)
+                                if(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day)){
                                     setCanPlay(false)
-                                    setTriesWin(response.data.find((uc) => uc.pseudo === pseudo && uc.day === dailyGame.day).tries)
+                                    setTriesWin(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day).tries)
                                     description.split(" ").forEach(word => {
                                         setWords(words => [...words,word]);
                                         const element = document.createElement("span");
