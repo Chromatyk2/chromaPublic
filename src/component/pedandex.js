@@ -141,7 +141,7 @@ function Pedandex(props) {
                             user: pseudo,
                             tries: tries + 1,
                             day: dailyGame.day,
-                            answer: dailyGame.answer
+                            answer: dailyGame.name
                         }
                     )
                         .then(function(response){
