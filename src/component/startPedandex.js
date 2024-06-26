@@ -8,6 +8,7 @@ import '../App.css'
 import moment from 'moment';
 
 function StartPedandex(props) {
+    const [allDailyGames, setAllDailyGames] = useState(null)
     const pedandex = [
         {
             "nom": "Bulbizarre",
@@ -3258,7 +3259,14 @@ function StartPedandex(props) {
             "description": "Melmetal est un Pokémon de type Acier. Évolué à partir de Meltan avec une grande stature, il a une force incroyable et la capacité de manipuler le métal. Melmetal utilise des attaques de type Acier pour plier et façonner son environnement, défendant son territoire avec une puissance inébranlable."
         }
     ]
+    useEffect(() => {
+        Axios.get("/api/getAllDailyGames")
+            .then(function(response){
+                setAllDailyGames(response.data);
+            })
+    }, []);
     console.log(pedandex[Math.floor(Math.random() * pedandex.length)])
+    console.log(allDailyGames)
         return (
             <button>Valider</button>
         )
