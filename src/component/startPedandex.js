@@ -3266,7 +3266,7 @@ function StartPedandex(props) {
         const index = pedandex[Math.floor(Math.random()*pedandex.length)];
         Axios.post('/api/addDailyGame',
             {
-                name: pedandex[index].name,
+                name: pedandex[index].nom,
                 description: pedandex[index].description ,
                 day :allDailyGames.length + 1
             }
