@@ -32,7 +32,6 @@ function Pedandex(props) {
     useEffect(() => {
         Axios.get("/api/getCurrentDailyGame/")
             .then(function(response){
-                console.log(response.data);
                 setDailyGame(response.data[0])
                 setName(response.data[0].name);
             })
@@ -108,7 +107,7 @@ function Pedandex(props) {
                         }
                     })
             })
-    }, [dailyGame]);
+    }, [dailyGame !== null]);
     const handleSubmit = (event) => {
         setTries(tries + 1);
         words.map((val, key) => {
