@@ -110,8 +110,9 @@ function Pedandex(props) {
     }, []);
 
     const handleSubmit = (event) => {
-        console.log(inputRef.current.value);
-        setHistory(history => [...history,inputRef.current.value.toString()]);
+        const guess = inputRef.current.value.toString()
+        console.log(inputRef.current.value.toString());
+        setHistory(history => [...history,guess]);
         setTries(tries + 1);
         words.map((val, key) => {
             if(val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
