@@ -216,15 +216,32 @@ function Pedandex(props) {
                     }
                 </div>
                 {canplay === true &&
-                    <div>
-                        <div>
+                    <div style={{
+                        display: "flex",
+                        flexFlow: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: "15px",
+                        margin: "20px"
+                    }}>
+                        <div style={{
+                            color: "white",
+                            width: "200px",
+                            border: "solid",
+                            borderRadius: "15px",
+                            height: "200px",
+                            padding: "10px",
+                            overflow: "overlay"
+                        }}>
                             <p style={{textAlign:"center"}}>Historique</p>
-                            {history.map((val, key) => {
+                            <div>
+                                {history.map((val, key) => {
                                     return (
                                         <p>{val}</p>
                                     )
                                 })
-                            }
+                                }
+                            </div>
                         </div>
                         <div>
                             <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour</p>
