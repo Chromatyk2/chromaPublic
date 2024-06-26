@@ -110,6 +110,7 @@ function Pedandex(props) {
     }, []);
 
     const handleSubmit = (event) => {
+        console.log(inputRef.current.value);
         setHistory(history => [...history,inputRef.current.value]);
         setTries(tries + 1);
         words.map((val, key) => {
@@ -234,9 +235,7 @@ function Pedandex(props) {
                                     Valider
                                 </button>
                             </form>
-                            <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour, ATTENTION
-                                les accents
-                                comptent !</p>
+                            <p style={{color: "white", textAlign: "center"}}>Trouvez le pokémon du jour</p>
                             <p style={{color: "white", textAlign: "center"}}>Nombre d'essais : {tries}</p>
                         </div>
                     </div>
