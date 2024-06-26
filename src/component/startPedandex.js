@@ -2292,7 +2292,7 @@ function StartPedandex(props) {
         {
             "nom": "Zorua",
             "description": "Zorua est un Pokémon de type Ténèbres. Il a une grande agilité et la capacité de se transformer en d'autres Pokémon. Zorua utilise des attaques de type Ténèbres pour tromper ses ennemis et se fondre dans l'ombre."
-        }.,
+        },
         {
             "nom": "Zoroark",
             "description": "Zoroark est un Pokémon de type Ténèbres. Évolué à partir de Zorua avec une grande ruse, il a la capacité de créer des illusions réalistes. Zoroark utilise des attaques de type Ténèbres pour désorienter ses ennemis et les attaquer avec force."
