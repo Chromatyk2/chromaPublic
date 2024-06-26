@@ -34,7 +34,7 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pedandex">Pedandex</Link>
                       {pseudo == "chromatyk" &&
                                     <>
-                                        <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/echange">Echange doublons TCG</Link>
+                                        <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/49Vs5sWVS2e7qs">Générateur</Link>
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
                                       {/*  <Link className="navLink" to="/leaderboard">Classement</Link>*/}
                                       {/*  <Link className="navLink myTradesLink" to="/myTrades">Mes Echanges {count > 0 && <span className="myCountProposition">{count}</span>}</Link>*/}
