@@ -13,6 +13,12 @@ import authServices from "./services/auth.services.js";
 import AuthService from "./services/auth.services.js";
 import SpawnPokemonRob from "./component/spawnPokemonRob";
 import SpawnPokemon from "./component/spawnPokemon";
+import Profil from "./component/profil";
+import AllProfils from "./component/allProfils";
+import OtherDex from "./component/otherDex";
+import RandomProfil from "./component/randomProfil";
+import OtherProfil from "./component/otherProfil";
+import Pedandex from "./component/pedandex";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -25,6 +31,7 @@ function App(props) {
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
+          <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies} />} />
           <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
           <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
           <Route path="/myTrades" element={<MyTradePlace cookies={cookies} />} />
@@ -44,12 +51,16 @@ function App(props) {
           <Route path="/tcg/boutique" element={<CardsHub page={"cardsShop"} cookies={cookies} />} />
           <Route path="/tcg/echange" element={<CardsHub page={"sellCards"} cookies={cookies} />} />
           <Route path="/tcg/liste" element={<CardsHub page={"listuserTcg"} cookies={cookies} />} />
-          <Route path="/tcg" element={<CardsHub page={null} cookies={cookies} />} />
+          <Route path="/profil" element={<Profil cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGP" element={<LastBanger cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
           <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSp" element={<SpawnPokemonRob cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies} />} />
+          <Route path="/profil/:pseudo" element={<OtherProfil cookies={cookies} />} />
+          <Route path="/allProfils" element={<AllProfils cookies={cookies} />} />
+          <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies} />} />
+          <Route path="/pedandex" element={<Pedandex cookies={cookies} />} />
         </Routes>
           <Footer cookies={cookies} />
       </BrowserRouter>

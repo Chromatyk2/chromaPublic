@@ -1,0 +1,290 @@
+[
+  {
+    "nom": "Marisson",
+    "description": "Marisson est un Pokémon de type Plante. Il a un corps petit et la capacité de faire pousser des plantes. Marisson utilise des attaques de type Plante pour défendre son territoire et aider ses amis avec ses pouvoirs de guérison."
+  },
+  {
+    "nom": "Boguérisse",
+    "description": "Boguérisse est un Pokémon de type Plante. Évolué à partir de Marisson avec une grande agilité, il a des feuilles tranchantes et la capacité de se camoufler dans la végétation. Boguérisse utilise des attaques de type Plante pour traquer ses proies et défendre son territoire avec une précision mortelle."
+  },
+  {
+    "nom": "Blindépique",
+    "description": "Blindépique est un Pokémon de type Plante/Combat. Évolué à partir de Boguérisse avec une grande défense, il a des épines acérées et la capacité de lancer des attaques puissantes. Blindépique utilise des attaques de type Plante et Combat pour défendre son territoire avec une force implacable."
+  },
+  {
+    "nom": "Feunnec",
+    "description": "Feunnec est un Pokémon de type Feu. Il a une fourrure enflammée et la capacité de contrôler le feu. Feunnec utilise des attaques de type Feu pour se protéger du froid et chasser ses proies avec des flammes brûlantes."
+  },
+  {
+    "nom": "Roussil",
+    "description": "Roussil est un Pokémon de type Feu. Évolué à partir de Feunnec avec une grande chaleur, il a une queue enflammée et la capacité de créer des explosions de feu. Roussil utilise des attaques de type Feu pour incinérer ses ennemis et protéger son territoire avec une intensité redoutable."
+  },
+  {
+    "nom": "Goupelin",
+    "description": "Goupelin est un Pokémon de type Feu/Psy. Évolué à partir de Roussil avec une grande sagesse, il a des pouvoirs psychiques et la capacité de manipuler les flammes. Goupelin utilise des attaques de type Feu et Psy pour méditer sur ses ennemis et atteindre la victoire avec une force mystique."
+  },
+  {
+    "nom": "Grenousse",
+    "description": "Grenousse est un Pokémon de type Eau. Il a une peau lisse et la capacité de nager rapidement. Grenousse utilise des attaques de type Eau pour chasser dans les rivières et se défendre contre les prédateurs avec agilité."
+  },
+  {
+    "nom": "Croâporal",
+    "description": "Croâporal est un Pokémon de type Eau. Évolué à partir de Grenousse avec une grande agilité, il a des jambes puissantes et la capacité de sauter loin. Croâporal utilise des attaques de type Eau pour capturer ses proies et défendre son territoire avec une vitesse impressionnante."
+  },
+  {
+    "nom": "Amphinobi",
+    "description": "Amphinobi est un Pokémon de type Eau/Ténèbres. Évolué à partir de Croâporal avec une grande discrétion, il a des attaques rapides et la capacité de se fondre dans l'ombre. Amphinobi utilise des attaques de type Eau et Ténèbres pour attaquer ses ennemis avec ruse et protéger son territoire avec une agilité furtive."
+  },
+  {
+    "nom": "Sapereau",
+    "description": "Sapereau est un Pokémon de type Normal. Il a une petite taille et la capacité de creuser des tunnels. Sapereau utilise des attaques de type Normal pour se cacher dans les terriers et éviter les prédateurs avec une furtivité remarquable."
+  },
+  {
+    "nom": "Excavarenne",
+    "description": "Excavarenne est un Pokémon de type Normal/Sol. Évolué à partir de Sapereau avec une grande force, il a des griffes acérées et la capacité de creuser des galeries souterraines. Excavarenne utilise des attaques de type Normal et Sol pour construire des tunnels complexes et se protéger des dangers du sol."
+  },
+  {
+    "nom": "Passerouge",
+    "description": "Passerouge est un Pokémon de type Normal/Vol. Il a des ailes légères et la capacité de chanter avec grâce. Passerouge utilise des attaques de type Normal et Vol pour voler dans les cieux et attaquer ses ennemis avec des cris mélodieux."
+  },
+  {
+    "nom": "Braisillon",
+    "description": "Braisillon est un Pokémon de type Normal/Vol. Évolué à partir de Passerouge avec une grande élégance, il a des plumes brillantes et la capacité de réchauffer l'atmosphère. Braisillon utilise des attaques de type Normal et Vol pour éclaircir les nuages et défendre son territoire avec une grâce aérienne."
+  },
+  {
+    "nom": "Flambusard",
+    "description": "Flambusard est un Pokémon de type Feu/Vol. Évolué à partir de Braisillon avec une grande majesté, il a des ailes enflammées et la capacité de créer des tornades de feu. Flambusard utilise des attaques de type Feu et Vol pour brûler ses ennemis et défendre son territoire avec une force incandescente."
+  },
+  {
+    "nom": "Lépidonille",
+    "description": "Lépidonille est un Pokémon de type Insecte/Vol. Il a des ailes colorées et la capacité de voler avec grâce. Lépidonille utilise des attaques de type Insecte et Vol pour polliniser les fleurs et échapper aux prédateurs avec une agilité aérienne."
+  },
+  {
+    "nom": "Pérégrain",
+    "description": "Pérégrain est un Pokémon de type Insecte/Vol. Évolué à partir de Lépidonille avec une grande vitesse, il a des ailes tranchantes et la capacité de voler rapidement. Pérégrain utilise des attaques de type Insecte et Vol pour traquer ses proies et défendre son territoire avec une agressivité aérienne."
+  },
+  {
+    "nom": "Prismillon",
+    "description": "Prismillon est un Pokémon de type Insecte/Vol. Évolué à partir de Pérégrain avec une grande beauté, il a des ailes colorées et la capacité de créer des motifs éblouissants. Prismillon utilise des attaques de type Insecte et Vol pour éblouir ses ennemis et défendre son territoire avec une grâce aérienne."
+  },
+  {
+    "nom": "Hélionceau",
+    "description": "Hélionceau est un Pokémon de type Feu/Normal. Il a une crinière ardente et la capacité de rugir avec force. Hélionceau utilise des attaques de type Feu et Normal pour chasser ses proies et protéger sa meute avec une puissance impressionnante."
+  },
+  {
+    "nom": "Némélios",
+    "description": "Némélios est un Pokémon de type Feu/Normal. Évolué à partir d'Hélionceau avec une grande majesté, il a une crinière brillante et la capacité de créer des flammes brillantes. Némélios utilise des attaques de type Feu et Normal pour défendre son territoire et attaquer ses ennemis avec une chaleur éclatante."
+  },
+  {
+    "nom": "Flabébé",
+    "description": "Flabébé est un Pokémon de type Fée. Il a une petite taille et la capacité de manipuler des fleurs. Flabébé utilise des attaques de type Fée pour collecter le nectar et protéger les jardins avec une douceur florale."
+  },
+  {
+    "nom": "Floette",
+    "description": "Floette est un Pokémon de type Fée. Évolué à partir de Flabébé avec une grande grâce, il a des pétales colorés et la capacité de créer des parfums envoûtants. Floette utilise des attaques de type Fée pour soigner les blessures et protéger la flore avec une énergie bienfaisante."
+  },
+  {
+    "nom": "Florges",
+    "description": "Florges est un Pokémon de type Fée. Évolué à partir de Floette avec une grande beauté, il a une robe élégante et la capacité de contrôler la nature. Florges utilise des attaques de type Fée pour défendre les fleurs et protéger son territoire avec une grâce florale."
+  },
+  {
+    "nom": "Cabriolaine",
+    "description": "Cabriolaine est un Pokémon de type Fée. Il a une fourrure douce et la capacité de sauter avec légèreté. Cabriolaine utilise des attaques de type Fée pour jouer avec ses amis et éviter les prédateurs avec une agilité bondissante."
+  },
+  {
+    "nom": "Chevroum",
+    "description": "Chevroum est un Pokémon de type Fée. Évolué à partir de Cabriolaine avec une grande élégance, il a des cornes majestueuses et la capacité de créer des illusions. Chevroum utilise des attaques de type Fée pour protéger ses amis et confondre ses ennemis avec une grâce mystique."
+  },
+  {
+    "nom": "Pandespiègle",
+    "description": "Pandespiègle est un Pokémon de type Normal. Il a une allure espiègle et la capacité de jouer des tours. Pandespiègle utilise des attaques de type Normal pour divertir ses amis et éviter les conflits avec une malice amusante."
+  },
+  {
+    "nom": "Pandarbare",
+    "description": "Pandarbare est un Pokémon de type Normal. Évolué à partir de Pandespiègle avec une grande force, il a des griffes acérées et la capacité de frapper avec puissance. Pandarbare utilise des attaques de type Normal pour défendre son territoire et attaquer ses ennemis avec une vigueur impressionnante."
+  },
+  {
+    "nom": "Couafarel",
+    "description": "Couafarel est un Pokémon de type Normal/Eau. Il a une fourrure douce et la capacité de nager avec grâce. Couafarel utilise des attaques de type Normal et Eau pour chasser dans les rivières et défendre son territoire avec une agilité aquatique."
+  },
+  {
+    "nom": "Psystigri",
+    "description": "Psystigri est un Pokémon de type Psy. Il a une fourrure psychique et la capacité de prédire l'avenir. Psystigri utilise des attaques de type Psy pour lire les pensées et protéger ses amis avec une intuition remarquable."
+  },
+  {
+    "nom": "Mistigrix",
+    "description": "Mistigrix est un Pokémon de type Psy. Évolué à partir de Psystigri avec une grande élégance, il a des pouvoirs psychiques et la capacité de manipuler les esprits. Mistigrix utilise des attaques de type Psy pour contrôler ses ennemis et défendre son territoire avec une force mentale."
+  },
+  {
+    "nom": "Monorpale",
+    "description": "Monorpale est un Pokémon de type Spectre/Acier. Il a une lame tranchante et la capacité de se mouvoir sans bruit. Monorpale utilise des attaques de type Spectre et Acier pour pourfendre ses ennemis avec précision et protéger son honneur avec une force inébranlable."
+  },
+  {
+    "nom": "Dimoclès",
+    "description": "Dimoclès est un Pokémon de type Spectre/Acier. Évolué à partir de Monorpale avec une grande agilité, il a deux lames acérées et la capacité de créer des illusions. Dimoclès utilise des attaques de type Spectre et Acier pour désorienter ses ennemis et défendre son territoire avec une précision mortelle."
+  },
+  {
+    "nom": "Exagide",
+    "description": "Exagide est un Pokémon de type Spectre/Acier. Évolué à partir de Dimoclès avec une grande force, il a une armure solide et la capacité de parer les attaques. Exagide utilise des attaques de type Spectre et Acier pour contrer ses ennemis avec une défense impénétrable et une riposte redoutable."
+  },
+  {
+    "nom": "Fluvetin",
+    "description": "Fluvetin est un Pokémon de type Insecte/Plante. Il a une apparence florale et la capacité de manipuler la nature. Fluvetin utilise des attaques de type Insecte et Plante pour défendre les fleurs et protéger son habitat avec une énergie végétale."
+  },
+  {
+    "nom": "Cocotine",
+    "description": "Cocotine est un Pokémon de type Insecte/Plante. Évolué à partir de Fluvetin avec une grande beauté, il a des pétales colorés et la capacité de créer des parfums envoûtants. Cocotine utilise des attaques de type Insecte et Plante pour soigner les blessures et protéger la flore avec une énergie bienfaisante."
+  },
+  {
+    "nom": "Sucroquin",
+    "description": "Sucroquin est un Pokémon de type Fée. Il a un corps sucré et la capacité de créer des bonbons. Sucroquin utilise des attaques de type Fée pour répandre la joie et défendre son territoire avec une douceur délicieuse."
+  },
+  {
+    "nom": "Cupcanaille",
+    "description": "Cupcanaille est un Pokémon de type Fée. Évolué à partir de Sucroquin avec une grande gourmandise, il a des dents pointues et la capacité de créer des sucreries. Cupcanaille utilise des attaques de type Fée pour ravir les enfants et protéger ses bonbons avec une détermination sucrée."
+  },
+  {
+    "nom": "Sepiatop",
+    "description": "Sepiatop est un Pokémon de type Ténèbres/Psy. Il a une encre sombre et la capacité de créer des illusions. Sepiatop utilise des attaques de type Ténèbres et Psy pour manipuler l'esprit de ses ennemis et défendre son territoire avec une ruse impénétrable."
+  },
+  {
+    "nom": "Sepiatroce",
+    "description": "Sepiatroce est un Pokémon de type Ténèbres/Psy. Évolué à partir de Sepiatop avec une grande malice, il a des tentacules redoutables et la capacité de créer des illusions déconcertantes. Sepiatroce utilise des attaques de type Ténèbres et Psy pour semer la confusion et défendre son territoire avec une tactique sournoise."
+  },
+  {
+    "nom": "Opermine",
+    "description": "Opermine est un Pokémon de type Roche. Il a une carapace dure et la capacité de rouler à grande vitesse. Opermine utilise des attaques de type Roche pour se défendre contre les prédateurs et protéger son territoire avec une résistance minérale."
+  },
+  {
+    "nom": "Golgopathe",
+    "description": "Golgopathe est un Pokémon de type Roche. Évolué à partir d'Opermine avec une grande robustesse, il a des piques tranchantes et la capacité de lancer des rochers. Golgopathe utilise des attaques de type Roche pour détruire les obstacles et défendre son territoire avec une puissance brute."
+  },
+  {
+    "nom": "Venalgue",
+    "description": "Venalgue est un Pokémon de type Poison/Eau. Il a une peau visqueuse et la capacité de sécréter des toxines. Venalgue utilise des attaques de type Poison et Eau pour contaminer ses ennemis et défendre son territoire avec une venimosité corrosive."
+  },
+  {
+    "nom": "Kravarech",
+    "description": "Kravarech est un Pokémon de type Poison/Eau. Évolué à partir de Venalgue avec une grande ruse, il a des crocs acérés et la capacité de mordre avec venin. Kravarech utilise des attaques de type Poison et Eau pour empoisonner ses ennemis et défendre son territoire avec une stratégie vicieuse."
+  },
+  {
+    "nom": "Flingouste",
+    "description": "Flingouste est un Pokémon de type Eau. Il a une pince puissante et la capacité de nager rapidement. Flingouste utilise des attaques de type Eau pour chasser dans les mers et se défendre contre les prédateurs avec une agilité aquatique."
+  },
+  {
+    "nom": "Gamblast",
+    "description": "Gamblast est un Pokémon de type Eau. Évolué à partir de Flingouste avec une grande force, il a des jets d'eau puissants et la capacité de créer des tourbillons. Gamblast utilise des attaques de type Eau pour éclabousser ses ennemis et défendre son territoire avec une puissance océanique."
+  },
+  {
+    "nom": "Galvaran",
+    "description": "Galvaran est un Pokémon de type Dragon/Normal. Il a des écailles résistantes et la capacité de se mouvoir silencieusement. Galvaran utilise des attaques de type Dragon et Normal pour attaquer ses ennemis avec force et défendre son territoire avec une robustesse impressionnante."
+  },
+  {
+    "nom": "Iguolta",
+    "description": "Iguolta est un Pokémon de type Dragon/Normal. Évolué à partir de Galvaran avec une grande agilité, il a des griffes acérées et la capacité de bondir avec vitesse. Iguolta utilise des attaques de type Dragon et Normal pour chasser ses proies et défendre son territoire avec une précision mortelle."
+  },
+  {
+    "nom": "Ptyranidur",
+    "description": "Ptyranidur est un Pokémon de type Roche/Dragon. Il a une carapace dure et la capacité de créer des tremblements de terre. Ptyranidur utilise des attaques de type Roche et Dragon pour terrasser ses ennemis et défendre son territoire avec une résistance inébranlable."
+  },
+  {
+    "nom": "Rexillius",
+    "description": "Rexillius est un Pokémon de type Roche/Dragon. Évolué à partir de Ptyranidur avec une grande robustesse, il a des griffes tranchantes et la capacité de déchirer la terre. Rexillius utilise des attaques de type Roche et Dragon pour écraser ses ennemis et défendre son territoire avec une force titanesque."
+  },
+  {
+    "nom": "Amagara",
+    "description": "Amagara est un Pokémon de type Roche/Glace. Il a un corps fossilisé et la capacité de contrôler la glace. Amagara utilise des attaques de type Roche et Glace pour se défendre contre les prédateurs et protéger son territoire avec une résistance antique."
+  },
+  {
+    "nom": "Dragmara",
+    "description": "Dragmara est un Pokémon de type Roche/Glace. Évolué à partir d'Amagara avec une grande prestance, il a des cristaux tranchants et la capacité de créer des stalactites de glace. Dragmara utilise des attaques de type Roche et Glace pour geler ses ennemis et défendre son territoire avec une froideur glaciale."
+  },
+  {
+    "nom": "Nymphali",
+    "description": "Nymphali est un Pokémon de type Fée/Vol. Évolué à partir d'Évoli avec une grande grâce, il a des ailes délicates et la capacité de créer des arcs-en-ciel. Nymphali utilise des attaques de type Fée et Vol pour répandre la joie et défendre son territoire avec une élégance aérienne."
+  },
+  {
+    "nom": "Brutalibré",
+    "description": "Brutalibré est un Pokémon de type Combat/Vol. Il a des poings puissants et la capacité de voler avec agilité. Brutalibré utilise des attaques de type Combat et Vol pour combattre ses ennemis avec force et défendre son territoire avec une bravoure martiale."
+  },
+  {
+    "nom": "Dedenne",
+    "description": "Dedenne est un Pokémon de type Électrik/Fée. Il a une queue électrique et la capacité de stocker de l'énergie. Dedenne utilise des attaques de type Électrik et Fée pour défendre les jardins et protéger ses amis avec une électricité bienveillante."
+  },
+  {
+    "nom": "Strassie",
+    "description": "Strassie est un Pokémon de type Fée. Il a un corps lumineux et la capacité de générer des étincelles. Strassie utilise des attaques de type Fée pour éclairer les cavernes et protéger les cristaux avec une lueur mystique."
+  },
+  {
+    "nom": "Mucuscule",
+    "description": "Mucuscule est un Pokémon de type Poison. Il a une peau visqueuse et la capacité de sécréter des toxines. Mucuscule utilise des attaques de type Poison pour empoisonner ses ennemis et défendre son territoire avec une venimosité corrosive."
+  },
+  {
+    "nom": "Colimucus",
+    "description": "Colimucus est un Pokémon de type Poison. Évolué à partir de Mucuscule avec une grande agilité, il a des tentacules visqueux et la capacité de se camoufler dans la boue. Colimucus utilise des attaques de type Poison pour désorienter ses ennemis et défendre son territoire avec une ruse sournoise."
+  },
+  {
+    "nom": "Muplodocus",
+    "description": "Muplodocus est un Pokémon de type Poison/Dragon. Il a une peau résistante et la capacité de cracher du venin. Muplodocus utilise des attaques de type Poison et Dragon pour empoisonner ses ennemis et défendre son territoire avec une force toxique."
+  },
+  {
+    "nom": "Trousselin",
+    "description": "Trousselin est un Pokémon de type Spectre/Fée. Il a une allure espiègle et la capacité de jouer des tours. Trousselin utilise des attaques de type Spectre et Fée pour embrouiller ses ennemis et défendre son territoire avec une malice amusante."
+  },
+  {
+    "nom": "Brocélôme",
+    "description": "Brocélôme est un Pokémon de type Plante. Il a une tête en forme de feuille et la capacité de manipuler les plantes. Brocélôme utilise des attaques de type Plante pour cultiver des jardins et protéger la flore avec une énergie végétale."
+  },
+  {
+    "nom": "Desséliande",
+    "description": "Desséliande est un Pokémon de type Plante. Évolué à partir de Brocélôme avec une grande sagesse, il a des racines profondes et la capacité de canaliser l'énergie. Desséliande utilise des attaques de type Plante pour nourrir les arbres et protéger la forêt avec une force naturelle."
+  },
+  {
+    "nom": "Pitrouille",
+    "description": "Pitrouille est un Pokémon de type Spectre/Plante. Il a une tête sculptée et la capacité de créer des illusions. Pitrouille utilise des attaques de type Spectre et Plante pour semer la confusion et défendre son territoire avec une ruse fantomatique."
+  },
+  {
+    "nom": "Banshitrouye",
+    "description": "Banshitrouye est un Pokémon de type Spectre/Plante. Évolué à partir de Pitrouille avec une grande malice, il a des yeux brillants et la capacité de hanter les jardins. Banshitrouye utilise des attaques de type Spectre et Plante pour effrayer ses ennemis et défendre son territoire avec une présence sinistre."
+  },
+  {
+    "nom": "Grelaçon",
+    "description": "Grelaçon est un Pokémon de type Glace. Il a une apparence glaciale et la capacité de créer des cristaux de glace. Grelaçon utilise des attaques de type Glace pour geler ses ennemis et défendre son territoire avec une froideur implacable."
+  },
+  {
+    "nom": "Séracrawl",
+    "description": "Séracrawl est un Pokémon de type Glace. Évolué à partir de Grelaçon avec une grande prestance, il a des pics de glace tranchants et la capacité de grimper sur les parois glacées. Séracrawl utilise des attaques de type Glace pour escalader les sommets enneigés et protéger son territoire avec une résistance gelée."
+  },
+  {
+    "nom": "Sonistrelle",
+    "description": "Sonistrelle est un Pokémon de type Poison/Vol. Il a une allure sinistre et la capacité de voler silencieusement. Sonistrelle utilise des attaques de type Poison et Vol pour empoisonner ses ennemis et défendre son territoire avec une ruse aérienne."
+  },
+  {
+    "nom": "Bruyverne",
+    "description": "Bruyverne est un Pokémon de type Poison/Vol. Évolué à partir de Sonistrelle avec une grande agilité, il a des serres acérées et la capacité de planer dans les airs. Bruyverne utilise des attaques de type Poison et Vol pour attaquer ses proies et défendre son territoire avec une précision mortelle."
+  },
+  {
+    "nom": "Xerneas",
+    "description": "Xerneas est un Pokémon de type Fée. C'est un Pokémon légendaire connu pour sa beauté et sa puissance. Xerneas utilise des attaques de type Fée pour apporter la vie et protéger l'équilibre de la nature avec une grâce divine."
+  },
+  {
+    "nom": "Yveltal",
+    "description": "Yveltal est un Pokémon de type Ténèbres/Vol. C'est un Pokémon légendaire connu pour absorber l'énergie vitale. Yveltal utilise des attaques de type Ténèbres et Vol pour semer la destruction et défendre son territoire avec une force sombre et implacable."
+  },
+  {
+    "nom": "Zygarde",
+    "description": "Zygarde est un Pokémon de type Dragon/Terre. C'est un Pokémon légendaire connu pour réguler l'équilibre écologique. Zygarde utilise des attaques de type Dragon et Terre pour protéger l'environnement et défendre son territoire avec une force tranquille mais puissante."
+  },
+  {
+    "nom": "Diancie",
+    "description": "Diancie est un Pokémon de type Roche/Fée. C'est un Pokémon légendaire connu pour sa beauté et ses pouvoirs de création de diamants. Diancie utilise des attaques de type Roche et Fée pour défendre ses joyaux et protéger ses amis avec une grâce cristalline."
+  },
+  {
+    "nom": "Hoopa",
+    "description": "Hoopa est un Pokémon de type Psy/Spectre. C'est un Pokémon légendaire capable de manipuler l'espace. Hoopa utilise des attaques de type Psy et Spectre pour créer des portails dimensionnels et défendre son territoire avec une stratégie mystique."
+  },
+  {
+    "nom": "Volcanion",
+    "description": "Volcanion est un Pokémon de type Feu/Eau. C'est un Pokémon légendaire capable de produire de la vapeur et de l'eau bouillante. Volcanion utilise des attaques de type Feu et Eau pour protéger son territoire et défendre les habitats aquatiques avec une puissance thermique."
+  }
+]

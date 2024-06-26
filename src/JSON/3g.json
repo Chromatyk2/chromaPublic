@@ -1,0 +1,564 @@
+[
+  {
+    "nom": "Arcko",
+    "description": "Arcko est un Pokémon de type Plante. Il a une queue préhensile et des écailles vertes qui le camouflent dans les buissons. Arcko utilise des attaques de type Plante pour grimper aux arbres et surprendre ses ennemis."
+  },
+  {
+    "nom": "Massko",
+    "description": "Massko est un Pokémon de type Plante. Évolué à partir d'Arcko, il a des griffes acérées et une agilité remarquable. Massko utilise des attaques de type Plante pour se fondre dans l'environnement et attaquer furtivement."
+  },
+  {
+    "nom": "Jungko",
+    "description": "Jungko est un Pokémon de type Plante. Évolué à partir de Massko, il a une stature imposante et des crocs tranchants. Jungko utilise des attaques de type Plante pour défendre son territoire et attaquer avec puissance."
+  },
+  {
+    "nom": "Poussifeu",
+    "description": "Poussifeu est un Pokémon de type Feu. Il a des ailes courtes et une crête enflammée sur la tête. Poussifeu utilise des attaques de type Feu pour brûler ses ennemis et se défendre contre les prédateurs."
+  },
+  {
+    "nom": "Galifeu",
+    "description": "Galifeu est un Pokémon de type Feu. Évolué à partir de Poussifeu, il a des ailes plus grandes et une queue enflammée. Galifeu utilise des attaques de type Feu pour voler avec agilité et se défendre contre les prédateurs."
+  },
+  {
+    "nom": "Braségali",
+    "description": "Braségali est un Pokémon de type Feu/Combat. Évolué à partir de Galifeu, il a des jambes puissantes et une force brute incroyable. Braségali utilise des attaques de type Feu et Combat pour combattre ses ennemis avec fureur."
+  },
+  {
+    "nom": "Gobou",
+    "description": "Gobou est un Pokémon de type Eau. Il a une peau épaisse et une queue large qui lui sert de gouvernail. Gobou utilise des attaques de type Eau pour nager rapidement et se défendre contre les prédateurs."
+  },
+  {
+    "nom": "Flobio",
+    "description": "Flobio est un Pokémon de type Eau. Évolué à partir de Gobou, il a des nageoires plus grandes et une queue plus puissante. Flobio utilise des attaques de type Eau pour créer des vagues et repousser les ennemis."
+  },
+  {
+    "nom": "Laggron",
+    "description": "Laggron est un Pokémon de type Eau/Sol. Évolué à partir de Flobio, il a une peau dure et une stature imposante. Laggron utilise des attaques de type Eau et Sol pour nager dans les mers profondes et se défendre contre les prédateurs."
+  },
+  {
+    "nom": "Medhyèna",
+    "description": "Medhyèna est un Pokémon de type Ténèbres. Il a une fourrure noire et des crocs acérés. Medhyèna utilise des attaques de type Ténèbres pour chasser la nuit et se défendre contre les intrus."
+  },
+  {
+    "nom": "Grahyèna",
+    "description": "Grahyèna est un Pokémon de type Ténèbres. Évolué à partir de Medhyèna, il a une musculature robuste et des crocs encore plus tranchants. Grahyèna utilise des attaques de type Ténèbres pour intimider ses ennemis et protéger son territoire."
+  },
+  {
+    "nom": "Zigzaton",
+    "description": "Zigzaton est un Pokémon de type Normal. Il a une allure effilée et une queue en zigzag. Zigzaton utilise des attaques de type Normal pour courir sur de longues distances et chercher de la nourriture."
+  },
+  {
+    "nom": "Lineon",
+    "description": "Lineon est un Pokémon de type Normal. Évolué à partir de Zigzaton, il a une musculature développée et une vitesse impressionnante. Lineon utilise des attaques de type Normal pour chasser et défendre son territoire."
+  },
+  {
+    "nom": "Chenipotte",
+    "description": "Chenipotte est un Pokémon de type Insecte. Il a un corps petit et des antennes sensibles. Chenipotte utilise des attaques de type Insecte pour chercher de la nourriture et éviter les prédateurs."
+  },
+  {
+    "nom": "Armulys",
+    "description": "Armulys est un Pokémon de type Insecte/Poison. Évolué à partir de Chenipotte, il a des ailes et une queue venimeuse. Armulys utilise des attaques de type Insecte et Poison pour voler avec agilité et empoisonner ses ennemis."
+  },
+  {
+    "nom": "Charmillon",
+    "description": "Charmillon est un Pokémon de type Insecte/Vol. Il a des ailes légères et colorées qui scintillent au soleil. Charmillon utilise des attaques de type Insecte et Vol pour voler gracieusement et collecter le nectar des fleurs."
+  },
+  {
+    "nom": "Blindalys",
+    "description": "Blindalys est un Pokémon de type Insecte/Vol. Évolué à partir de Charmillon, il a des ailes plus grandes et une capacité à voler avec rapidité. Blindalys utilise des attaques de type Insecte et Vol pour défendre son territoire et éviter les prédateurs."
+  },
+  {
+    "nom": "Papinox",
+    "description": "Papinox est un Pokémon de type Insecte/Vol. Évolué à partir de Blindalys, il a des antennes sensibles et un corps robuste. Papinox utilise des attaques de type Insecte et Vol pour chasser la nuit et se défendre contre les menaces nocturnes."
+  },
+  {
+    "nom": "Charmillon",
+    "description": "Charmillon est un Pokémon de type Insecte/Vol. Il a des ailes légères et colorées qui scintillent au soleil. Charmillon utilise des attaques de type Insecte et Vol pour voler gracieusement et collecter le nectar des fleurs."
+  },
+  {
+    "nom": "Blindalys",
+    "description": "Blindalys est un Pokémon de type Insecte/Vol. Évolué à partir de Charmillon, il a des ailes plus grandes et une capacité à voler avec rapidité. Blindalys utilise des attaques de type Insecte et Vol pour défendre son territoire et éviter les prédateurs."
+  },
+  {
+    "nom": "Papinox",
+    "description": "Papinox est un Pokémon de type Insecte/Vol. Évolué à partir de Blindalys, il a des antennes sensibles et un corps robuste. Papinox utilise des attaques de type Insecte et Vol pour chasser la nuit et se défendre contre les menaces nocturnes."
+  }
+]
+Ces descriptions sont basées sur les caractéristiques typiques de chaque Pokémon dans la série Pokémon.
+
+Reprend de nénupiot
+ChatGPT
+Voici la suite à partir de Nénupiot :
+
+json
+Copier le code
+[
+{
+"nom": "Nénupiot",
+"description": "Nénupiot est un Pokémon de type Eau/Plante. Il a une petite tête verte et un corps semblable à une tige. Nénupiot utilise des attaques de type Eau et Plante pour nager gracieusement et se nourrir de la végétation aquatique."
+},
+{
+"nom": "Lombre",
+"description": "Lombre est un Pokémon de type Eau/Plante. Évolué à partir de Nénupiot, il a des feuilles plus grandes et une queue aquatique. Lombre utilise des attaques de type Eau et Plante pour naviguer dans les étangs et se protéger des prédateurs."
+},
+{
+"nom": "Ludicolo",
+"description": "Ludicolo est un Pokémon de type Eau/Plante. Évolué à partir de Lombre, il a une stature plus imposante et une danse joyeuse. Ludicolo utilise des attaques de type Eau et Plante pour apaiser les esprits et danser sous la pluie."
+},
+{
+"nom": "Grainipiot",
+"description": "Grainipiot est un Pokémon de type Plante. Il a un corps vert et des graines sur la tête. Grainipiot utilise des attaques de type Plante pour germer et croître dans les jardins."
+},
+{
+"nom": "Pifeuil",
+"description": "Pifeuil est un Pokémon de type Plante. Évolué à partir de Grainipiot, il a des feuilles plus grandes et des épines protectrices. Pifeuil utilise des attaques de type Plante pour absorber la lumière du soleil et se nourrir de nutriments."
+},
+{
+"nom": "Tengalice",
+"description": "Tengalice est un Pokémon de type Plante/Poison. Évolué à partir de Pifeuil, il a des tentacules vénéneux et une capacité à piéger ses proies. Tengalice utilise des attaques de type Plante et Poison pour capturer ses ennemis et se défendre dans les marais."
+},
+{
+"nom": "Nirondelle",
+"description": "Nirondelle est un Pokémon de type Normal/Vol. Il a un bec pointu et des ailes larges. Nirondelle utilise des attaques de type Normal et Vol pour voler à des vitesses élevées et se nourrir en plein vol."
+},
+{
+"nom": "Hélédelle",
+"description": "Hélédelle est un Pokémon de type Normal/Vol. Évolué à partir de Nirondelle, il a des plumes colorées et une envergure impressionnante. Hélédelle utilise des attaques de type Normal et Vol pour défendre son territoire et voler avec élégance."
+},
+{
+"nom": "Goélise",
+"description": "Goélise est un Pokémon de type Eau/Vol. Il a des plumes blanches et un bec pointu. Goélise utilise des attaques de type Eau et Vol pour pêcher dans les mers et voler au-dessus des vagues."
+},
+{
+"nom": "Bekipan",
+"description": "Bekipan est un Pokémon de type Eau/Vol. Évolué à partir de Goélise, il a une envergure majestueuse et une capacité à plonger pour attraper du poisson. Bekipan utilise des attaques de type Eau et Vol pour naviguer sur les océans et chasser ses proies."
+},
+{
+"nom": "Tarsal",
+"description": "Tarsal est un Pokémon de type Psy. Il a de grands yeux bleus et une aura mystique. Tarsal utilise des attaques de type Psy pour lire les émotions et protéger ses amis."
+},
+{
+"nom": "Kirlia",
+"description": "Kirlia est un Pokémon de type Psy. Évolué à partir de Tarsal, elle a une grâce féminine et une puissance psychique accrue. Kirlia utilise des attaques de type Psy pour canaliser ses émotions et prévenir les conflits."
+},
+{
+"nom": "Gardevoir",
+"description": "Gardevoir est un Pokémon de type Psy. Évolué à partir de Kirlia, elle a une silhouette élégante et une sensibilité profonde. Gardevoir utilise des attaques de type Psy pour protéger ses dresseurs et combattre le mal."
+},
+{
+"nom": "Arakdo",
+"description": "Arakdo est un Pokémon de type Insecte/Eau. Il a des pattes agiles et une carapace dure. Arakdo utilise des attaques de type Insecte et Eau pour nager dans les rivières et capturer ses proies."
+},
+{
+"nom": "Maskadra",
+"description": "Maskadra est un Pokémon de type Insecte/Vol. Évolué à partir d'Arakdo, il a des ailes fines et une capacité à voler avec grâce. Maskadra utilise des attaques de type Insecte et Vol pour polliniser les fleurs et se défendre contre les prédateurs."
+},
+{
+"nom": "Balignon",
+"description": "Balignon est un Pokémon de type Plante. Il a une tête en forme de graine et des feuilles qui lui permettent de se fondre dans la végétation. Balignon utilise des attaques de type Plante pour se camoufler et se défendre contre les prédateurs."
+},
+{
+"nom": "Chapignon",
+"description": "Chapignon est un Pokémon de type Plante/Poison. Évolué à partir de Balignon, il a des spores toxiques et une allure menaçante. Chapignon utilise des attaques de type Plante et Poison pour éloigner les ennemis et se défendre dans la forêt."
+},
+{
+"nom": "Parecool",
+"description": "Parecool est un Pokémon de type Normal. Il a une queue préhensile et une capacité à s'accrocher aux branches. Parecool utilise des attaques de type Normal pour se balancer dans les arbres et se défendre contre les prédateurs."
+},
+{
+"nom": "Vigoroth",
+"description": "Vigoroth est un Pokémon de type Normal. Évolué à partir de Parecool, il a une musculature puissante et une endurance incroyable. Vigoroth utilise des attaques de type Normal pour grimper et se battre avec énergie."
+},
+{
+"nom": "Monaflèmit",
+"description": "Monaflèmit est un Pokémon de type Normal. Évolué à partir de Vigoroth, il a des griffes acérées et une agressivité accrue. Monaflèmit utilise des attaques de type Normal pour marquer son territoire et défendre ses proies."
+},
+{
+"nom": "Ningale",
+"description": "Ningale est un Pokémon de type Normal/Vol. Il a une voix mélodieuse et une capacité à imiter les sons environnants. Ningale utilise des attaques de type Normal et Vol pour chanter et se défendre contre les prédateurs."
+},
+{
+"nom": "Ninjask",
+"description": "Ninjask est un Pokémon de type Insecte/Vol. Évolué à partir de Ningale, il a une vitesse de vol exceptionnelle et une agilité remarquable. Ninjask utilise des attaques de type Insecte et Vol pour esquiver les attaques et contre-attaquer avec précision."
+},
+{
+"nom": "Munja",
+"description": "Munja est un Pokémon de type Insecte. Évolué à partir de Ninjask, il a une bande rouge et noire autour du corps. Munja utilise des attaques de type Insecte pour se protéger et contre-attaquer en utilisant son exosquelette résistant."
+},
+{
+"nom": "Chuchmur",
+"description": "Chuchmur est un Pokémon de type Normal. Il a une fourrure épaisse et des yeux expressifs. Chuchmur utilise des attaques de type Normal pour communiquer et se défendre contre les menaces."
+},
+{
+"nom": "Ramboum",
+"description": "Ramboum est un Pokémon de type Normal. Évolué à partir de Chuchmur, il a des cornes impressionnantes et une voix puissante. Ramboum utilise des attaques de type Normal pour marquer son territoire et protéger ses amis."
+},
+{
+"nom": "Brouhabam",
+"description": "Brouhabam est un Pokémon de type Combat. Évolué à partir de Makuhita, il a des poings puissants et une endurance incroyable. Brouhabam utilise des attaques de type Combat pour s'entraîner dur et affronter ses adversaires avec force."
+},
+{
+"nom": "Makuhita",
+"description": "Makuhita est un Pokémon de type Combat. Il a une peau épaisse et une musculature impressionnante. Makuhita utilise des attaques de type Combat pour s'entraîner et renforcer ses muscles."
+},
+{
+"nom": "Hariyama",
+"description": "Hariyama est un Pokémon de type Combat. Évolué à partir de Makuhita, il a une taille imposante et une force colossale. Hariyama utilise des attaques de type Combat pour maîtriser ses adversaires et défendre son territoire."
+},
+{
+"nom": "Azurill",
+"description": "Azurill est un Pokémon de type Normal/Fée. Il a une petite queue en forme de boule et une peau douce. Azurill utilise des attaques de type Normal et Fée pour jouer avec ses amis et se protéger des prédateurs."
+},
+{
+"nom": "Tarinor",
+"description": "Tarinor est un Pokémon de type Normal. Il a une armure dure et une constitution robuste. Tarinor utilise des attaques de type Normal pour charger ses adversaires et défendre son territoire."
+},
+{
+"nom": "Skitty",
+"description": "Skitty est un Pokémon de type Normal. Il a une queue touffue et des yeux expressifs. Skitty utilise des attaques de type Normal pour jouer et communiquer avec d'autres Pokémon."
+},
+{
+"nom": "Delcatty",
+"description": "Delcatty est un Pokémon de type Normal. Évolué à partir de Skitty, il a une grâce féline et une agilité accrue. Delcatty utilise des attaques de type Normal pour se déplacer silencieusement et éviter les conflits."
+},
+{
+"nom": "Ténéfix",
+"description": "Ténéfix est un Pokémon de type Ténèbres. Il a un corps noir et une aura mystérieuse. Ténéfix utilise des attaques de type Ténèbres pour manipuler les ombres et effrayer ses ennemis."
+},
+{
+"nom": "Mysdibule",
+"description": "Mysdibule est un Pokémon de type Ténèbres/Acier. Il a une mâchoire puissante et une capacité à mordre avec force. Mysdibule utilise des attaques de type Ténèbres et Acier pour protéger son territoire et défendre ses proies."
+},
+{
+"nom": "Galekid",
+"description": "Galekid est un Pokémon de type Acier. Il a un corps robuste et des aimants pour attirer le métal. Galekid utilise des attaques de type Acier pour se protéger des attaques physiques et collecter des objets métalliques."
+},
+{
+"nom": "Galegon",
+"description": "Galegon est un Pokémon de type Acier. Évolué à partir de Galekid, il a une armure plus épaisse et une capacité à résister aux chocs. Galegon utilise des attaques de type Acier pour construire des structures et se défendre dans les environnements industriels."
+},
+{
+"nom": "Galeking",
+"description": "Galeking est un Pokémon de type Acier. Évolué à partir de Galegon, il a une stature imposante et une force brute. Galeking utilise des attaques de type Acier pour commander aux autres Pokémon et protéger ses alliés."
+},
+{
+"nom": "Méditikka",
+"description": "Méditikka est un Pokémon de type Psy/Combat. Il a une méditation constante et une discipline mentale. Méditikka utilise des attaques de type Psy et Combat pour augmenter sa concentration et combattre avec stratégie."
+},
+{
+"nom": "Charmina",
+"description": "Charmina est un Pokémon de type Psy/Combat. Évolué à partir de Méditikka, il a une force mentale accrue et une capacité à manipuler l'énergie psychique. Charmina utilise des attaques de type Psy et Combat pour défendre ses amis et méditer en paix."
+},
+{
+"nom": "Dynavolt",
+"description": "Dynavolt est un Pokémon de type Électrik. Il a des crêtes électriques et une capacité à générer de l'électricité. Dynavolt utilise des attaques de type Électrik pour charger ses adversaires et alimenter les machines."
+},
+{
+"nom": "Élecsprint",
+"description": "Élecsprint est un Pokémon de type Électrik. Évolué à partir de Dynavolt, il a une vitesse de déplacement impressionnante et une puissance électrique accrue. Élecsprint utilise des attaques de type Électrik pour parcourir de longues distances et défendre son territoire."
+},
+{
+"nom": "Posipi",
+"description": "Posipi est un Pokémon de type Électrik. Il a une queue en forme de foudre et une énergie électrique constante. Posipi utilise des attaques de type Électrik pour jouer avec son partenaire et créer des étincelles."
+},
+{
+"nom": "Negapi",
+"description": "Negapi est un Pokémon de type Électrik. Il a une queue en forme de foudre et une énergie électrique constante. Negapi utilise des attaques de type Électrik pour jouer avec son partenaire et créer des étincelles."
+},
+{
+"nom": "Muciole",
+"description": "Muciole est un Pokémon de type Insecte/Vol. Il a une queue lumineuse et des ailes délicates. Muciole utilise des attaques de type Insecte et Vol pour naviguer dans l'obscurité et attirer ses proies avec sa lumière."
+},
+{
+"nom": "Lumivole",
+"description": "Lumivole est un Pokémon de type Insecte/Vol. Évolué à partir de Muciole, il a une lumière intense et une capacité à éblouir ses ennemis. Lumivole utilise des attaques de type Insecte et Vol pour guider ses alliés et repousser les prédateurs."
+},
+{
+"nom": "Rosélia",
+"description": "Rosélia est un Pokémon de type Plante/Poison. Il a des épines empoisonnées et une fragrance enivrante. Rosélia utilise des attaques de type Plante et Poison pour défendre son jardin et soigner ses amis avec ses pétales guérisseurs."
+},
+{
+"nom": "Gloupti",
+"description": "Gloupti est un Pokémon de type Poison. Il a un corps visqueux et une capacité à digérer presque tout. Gloupti utilise des attaques de type Poison pour dissoudre ses proies et défendre son territoire des intrus."
+},
+{
+"nom": "Avaltout",
+"description": "Avaltout est un Pokémon de type Poison. Évolué à partir de Gloupti, il a une taille impressionnante et une force digestive décuplée. Avaltout utilise des attaques de type Poison pour neutraliser les toxines et défendre son écosystème."
+},
+{
+"nom": "Carvanha",
+"description": "Carvanha est un Pokémon de type Eau/Ténèbres. Il a des dents acérées et une agressivité naturelle. Carvanha utilise des attaques de type Eau et Ténèbres pour chasser en groupe et terroriser les autres Pokémon aquatiques."
+},
+{
+"nom": "Sharpedo",
+"description": "Sharpedo est un Pokémon de type Eau/Ténèbres. Évolué à partir de Carvanha, il a une vitesse de nage élevée et une mâchoire redoutable. Sharpedo utilise des attaques de type Eau et Ténèbres pour traquer ses proies et défendre son territoire sous-marin."
+},
+{
+"nom": "Wailmer",
+"description": "Wailmer est un Pokémon de type Eau. Il a une taille imposante et une capacité à stocker de l'eau dans son corps. Wailmer utilise des attaques de type Eau pour communiquer avec les autres Wailmer et se défendre contre les prédateurs marins."
+},
+{
+"nom": "Wailord",
+"description": "Wailord est un Pokémon de type Eau. Évolué à partir de Wailmer, il a une taille gigantesque et une masse corporelle impressionnante. Wailord utilise des attaques de type Eau pour créer des vagues énormes et défendre son territoire océanique."
+},
+{
+"nom": "Chamallot",
+"description": "Chamallot est un Pokémon de type Feu. Il a une crinière enflammée et une agilité remarquable. Chamallot utilise des attaques de type Feu pour se protéger des prédateurs et éclairer les endroits sombres avec sa queue ardente."
+},
+{
+"nom": "Camerupt",
+"description": "Camerupt est un Pokémon de type Feu/Sol. Évolué à partir de Chamallot, il a des éruptions volcaniques et une puissance brute. Camerupt utilise des attaques de type Feu et Sol pour provoquer des tremblements de terre et défendre son territoire dans les régions volcaniques."
+},
+{
+"nom": "Chartor",
+"description": "Chartor est un Pokémon de type Feu. Il a une carapace enflammée et une endurance impressionnante. Chartor utilise des attaques de type Feu pour renforcer sa carapace et repousser les attaques ennemies."
+},
+{
+"nom": "Spoink",
+"description": "Spoink est un Pokémon de type Psy. Il a un ressort sur sa tête et une capacité à sauter sans fin. Spoink utilise des attaques de type Psy pour méditer et maintenir son équilibre mental."
+},
+{
+"nom": "Groret",
+"description": "Groret est un Pokémon de type Psy. Évolué à partir de Spoink, il a un ressort plus puissant et une concentration psychique accrue. Groret utilise des attaques de type Psy pour manipuler l'énergie mentale et renforcer son pouvoir de méditation."
+},
+{
+"nom": "Spinda",
+"description": "Spinda est un Pokémon de type Normal. Il a des taches uniques et un comportement erratique. Spinda utilise des attaques de type Normal pour désorienter ses adversaires et se déplacer avec agilité malgré sa démarche hésitante."
+},
+{
+"nom": "Kraknoix",
+"description": "Kraknoix est un Pokémon de type Sol. Il a des griffes acérées et une capacité à creuser des tunnels. Kraknoix utilise des attaques de type Sol pour renforcer ses griffes et terrasser ses adversaires avec des coups de queue."
+},
+{
+"nom": "Vibraninf",
+"description": "Vibraninf est un Pokémon de type Sol. Évolué à partir de Kraknoix, il a des mâchoires puissantes et une capacité à sentir les vibrations du sol. Vibraninf utilise des attaques de type Sol pour creuser des pièges et défendre son territoire souterrain."
+},
+{
+"nom": "Libégon",
+"description": "Libégon est un Pokémon de type Sol/Vol. Évolué à partir de Vibraninf, il a des ailes robustes et une force incroyable. Libégon utilise des attaques de type Sol et Vol pour créer des tempêtes de sable et surveiller son territoire aérien."
+},
+{
+"nom": "Cacnea",
+"description": "Cacnea est un Pokémon de type Plante. Il a des piquants acérés et une capacité à survivre dans les déserts arides. Cacnea utilise des attaques de type Plante pour stocker de l'eau dans son corps et se défendre contre les prédateurs."
+},
+{
+"nom": "Cacturne",
+"description": "Cacturne est un Pokémon de type Plante/Ténèbres. Évolué à partir de Cacnea, il a des épines toxiques et une capacité à se fondre dans l'ombre. Cacturne utilise des attaques de type Plante et Ténèbres pour piéger ses proies et se camoufler dans les environnements désertiques."
+},
+{
+"nom": "Tylton",
+"description": "Tylton est un Pokémon de type Normal/Vol. Il a des plumes douces et une capacité à voler avec légèreté. Tylton utilise des attaques de type Normal et Vol pour construire des nids dans les hauteurs et repérer les intrus."
+},
+{
+"nom": "Altaria",
+"description": "Altaria est un Pokémon de type Dragon/Vol. Évolué à partir de Tylton, il a des ailes majestueuses et une voix mélodieuse. Altaria utilise des attaques de type Dragon et Vol pour protéger ses proches et voyager à travers les cieux."
+},
+{
+"nom": "Mangriff",
+"description": "Mangriff est un Pokémon de type Ténèbres. Il a des griffes acérées et une capacité à chasser silencieusement. Mangriff utilise des attaques de type Ténèbres pour traquer ses proies et défendre son territoire."
+},
+{
+"nom": "Séviper",
+"description": "Séviper est un Pokémon de type Poison. Il a des crocs venimeux et une rivalité ancestrale avec Zangoose. Séviper utilise des attaques de type Poison pour paralyser ses proies et défendre sa réputation."
+},
+{
+"nom": "Séléroc",
+"description": "Séléroc est un Pokémon de type Roche/Psy. Il a une aura mystérieuse et une capacité à contrôler les énergies psychiques. Séléroc utilise des attaques de type Roche et Psy pour méditer et manipuler la gravité."
+},
+{
+"nom": "Solaroc",
+"description": "Solaroc est un Pokémon de type Roche/Psy. Évolué à partir de Séléroc, il a une connexion avec le soleil et une force psychique intense. Solaroc utilise des attaques de type Roche et Psy pour absorber l'énergie solaire et repousser les attaques ennemies."
+},
+{
+"nom": "Barpau",
+"description": "Barpau est un Pokémon de type Eau. Il a une apparence étrange et une capacité à évoluer sous certaines conditions. Barpau utilise des attaques de type Eau pour nager dans les rivières et se camoufler parmi les plantes aquatiques."
+},
+{
+"nom": "Milobellus",
+"description": "Milobellus est un Pokémon de type Eau. Évolué à partir de Barpau, il a une beauté gracieuse et une nage élégante. Milobellus utilise des attaques de type Eau pour apaiser les conflits et guider les autres Pokémon aquatiques."
+},
+{
+"nom": "Morphéo",
+"description": "Morphéo est un Pokémon de type Normal. Il a la capacité unique de changer de forme en fonction des conditions météorologiques. Morphéo utilise des attaques de type Normal pour s'adapter à son environnement et interagir avec d'autres Pokémon."
+},
+{
+"nom": "Kecleon",
+"description": "Kecleon est un Pokémon de type Normal. Il a la capacité spéciale de changer de couleur pour se camoufler. Kecleon utilise des attaques de type Normal pour se fondre dans le décor et surprendre ses adversaires."
+},
+{
+"nom": "Polichombr",
+"description": "Polichombr est un Pokémon de type Spectre. Il a une apparence fantomatique et une capacité à se cacher dans l'ombre. Polichombr utilise des attaques de type Spectre pour effrayer ses ennemis et manipuler les esprits."
+},
+{
+"nom": "Branette",
+"description": "Branette est un Pokémon de type Spectre. Évolué à partir de Polichombr, il a une puissance psychique et une volonté de vengeance. Branette utilise des attaques de type Spectre pour hanter ses adversaires et les tourmenter dans leurs cauchemars."
+},
+{
+"nom": "Skelenox",
+"description": "Skelenox est un Pokémon de type Spectre. Évolué à partir de Branette, il a une ossature flottante et une capacité à effrayer même les Pokémon les plus courageux. Skelenox utilise des attaques de type Spectre pour manipuler les âmes et défendre son domaine."
+},
+{
+"nom": "Teraclope",
+"description": "Teraclope est un Pokémon de type Spectre. Il a un corps colossal et une force terrifiante. Teraclope utilise des attaques de type Spectre pour créer des illusions et protéger les sanctuaires hantés."
+},
+{
+"nom": "Tropius",
+"description": "Tropius est un Pokémon de type Plante/Vol. Il a des feuilles comestibles et une envergure impressionnante. Tropius utilise des attaques de type Plante et Vol pour fournir de la nourriture aux autres Pokémon et surveiller les jungles luxuriantes."
+},
+{
+"nom": "Éoko",
+"description": "Éoko est un Pokémon de type Psy/Vol. Il a une queue en forme de ruban et une connexion psychique avec les astres. Éoko utilise des attaques de type Psy et Vol pour méditer dans les hauteurs et prédire les événements cosmiques."
+},
+{
+"nom": "Absol",
+"description": "Absol est un Pokémon de type Ténèbres. Il a la capacité de détecter les catastrophes naturelles imminentes. Absol utilise des attaques de type Ténèbres pour prévenir les dangers et protéger les Pokémon vulnérables."
+},
+{
+"nom": "Okéoké",
+"description": "Okéoké est un Pokémon de type Normal. Il a une apparence clownesque et une capacité à distraire ses adversaires. Okéoké utilise des attaques de type Normal pour divertir les autres Pokémon et apaiser les tensions."
+},
+{
+"nom": "Stalgamin",
+"description": "Stalgamin est un Pokémon de type Glace/Acier. Il a une carapace de glace et une résistance aux attaques physiques. Stalgamin utilise des attaques de type Glace et Acier pour créer des sculptures gelées et se défendre dans les régions polaires."
+},
+{
+"nom": "Oniglali",
+"description": "Oniglali est un Pokémon de type Glace/Acier. Évolué à partir de Stalgamin, il a une vitesse accrue et une maîtrise de la glace. Oniglali utilise des attaques de type Glace et Acier pour patiner sur la glace et trancher ses adversaires avec ses lames gelées."
+},
+{
+"nom": "Obalie",
+"description": "Obalie est un Pokémon de type Glace/Eau. Il a un corps rond et une peau douce comme la neige. Obalie utilise des attaques de type Glace et Eau pour flotter sur les eaux gelées et jouer avec les flocons de neige."
+},
+{
+"nom": "Phogleur",
+"description": "Phogleur est un Pokémon de type Glace/Eau. Évolué à partir d'Obalie, il a une taille imposante et une force de nage exceptionnelle. Phogleur utilise des attaques de type Glace et Eau pour briser la glace et défendre son territoire marin."
+},
+{
+"nom": "Kaimorse",
+"description": "Kaimorse est un Pokémon de type Glace/Eau. Évolué à partir de Phogleur, il a une peau épaisse et une endurance incroyable au froid. Kaimorse utilise des attaques de type Glace et Eau pour créer des vagues gelées et protéger les créatures marines."
+},
+{
+"nom": "Coquiperl",
+"description": "Coquiperl est un Pokémon de type Eau. Il a une coquille brillante et une perle précieuse. Coquiperl utilise des attaques de type Eau pour nager dans les océans et collecter des perles rares."
+},
+{
+"nom": "Serpang",
+"description": "Serpang est un Pokémon de type Eau. Évolué à partir de Coquiperl, il a une mâchoire puissante et une capacité à chasser en eaux profondes. Serpang utilise des attaques de type Eau pour traquer ses proies et défendre son territoire marin."
+},
+{
+"nom": "Rosabyss",
+"description": "Rosabyss est un Pokémon de type Eau. Évolué à partir de Serpang, il a une beauté gracieuse et une capacité à contrôler l'eau. Rosabyss utilise des attaques de type Eau pour guider les autres Pokémon marins et protéger les récifs coralliens."
+},
+{
+"nom": "Relicanth",
+"description": "Relicanth est un Pokémon de type Eau/Roche. Il a une apparence préhistorique et une longévité exceptionnelle. Relicanth utilise des attaques de type Eau et Roche pour explorer les fonds marins et survivre dans des environnements extrêmes."
+},
+{
+"nom": "Lovdisc",
+"description": "Lovdisc est un Pokémon de type Eau. Il a une forme de cœur et une capacité à nager gracieusement. Lovdisc utilise des attaques de type Eau pour jouer avec d'autres Pokémon et rechercher des partenaires."
+},
+{
+"nom": "Barloche",
+"description": "Barloche est un Pokémon de type Eau. Il a une forme de poisson et une capacité à nager avec agilité. Barloche utilise des attaques de type Eau pour explorer les rivières et échapper aux prédateurs aquatiques."
+},
+{
+"nom": "Barbicha",
+"description": "Barbicha est un Pokémon de type Eau/Sol. Évolué à partir de Barloche, il a une barbe ressemblant à un fouet et une force physique impressionnante. Barbicha utilise des attaques de type Eau et Sol pour creuser des tunnels et se défendre sous l'eau."
+},
+{
+"nom": "Écrapince",
+"description": "Écrapince est un Pokémon de type Eau. Il a une pince puissante et une agressivité naturelle. Écrapince utilise des attaques de type Eau pour capturer ses proies et défendre son territoire côtier."
+},
+{
+"nom": "Colhomard",
+"description": "Colhomard est un Pokémon de type Eau/Ténèbres. Évolué à partir d'Écrapince, il a des pinces tranchantes et une stratégie de chasse nocturne. Colhomard utilise des attaques de type Eau et Ténèbres pour subjuguer ses rivaux et défendre son banc."
+},
+{
+"nom": "Balbuto",
+"description": "Balbuto est un Pokémon de type Sol/Ténèbres. Il a une forme de sphinx et une capacité à manipuler les ombres. Balbuto utilise des attaques de type Sol et Ténèbres pour contrôler les tempêtes de sable et égarer ses adversaires."
+},
+{
+"nom": "Kaorine",
+"description": "Kaorine est un Pokémon de type Sol/Ténèbres. Évolué à partir de Balbuto, il a une connexion avec le désert et une sagesse ancestrale. Kaorine utilise des attaques de type Sol et Ténèbres pour protéger les oasis et guider les voyageurs perdus."
+},
+{
+"nom": "Lilia",
+"description": "Lilia est un Pokémon de type Plante. Il a une apparence de lys et une capacité à fleurir au printemps. Lilia utilise des attaques de type Plante pour absorber la lumière du soleil et enrichir le sol de ses pétales."
+},
+{
+"nom": "Vacilys",
+"description": "Vacilys est un Pokémon de type Plante. Évolué à partir de Lilia, il a des fleurs lumineuses et une fragrance enivrante. Vacilys utilise des attaques de type Plante pour protéger ses bourgeons et revitaliser les jardins."
+},
+{
+"nom": "Anorith",
+"description": "Anorith est un Pokémon de type Roche/Insecte. Il a une carapace fossilisée et une capacité à se camoufler parmi les rochers. Anorith utilise des attaques de type Roche et Insecte pour défendre son territoire et chasser ses proies."
+},
+{
+"nom": "Armaldo",
+"description": "Armaldo est un Pokémon de type Roche/Insecte. Évolué à partir d'Anorith, il a des griffes puissantes et une agilité surprenante. Armaldo utilise des attaques de type Roche et Insecte pour grimper sur les falaises et combattre les ennemis."
+},
+{
+"nom": "Draby",
+"description": "Draby est un Pokémon de type Dragon. Il a une queue pointue et une capacité à voler à grande vitesse. Draby utilise des attaques de type Dragon pour marquer son territoire et chasser des proies."
+},
+{
+"nom": "Drackhaus",
+"description": "Drackhaus est un Pokémon de type Dragon. Évolué à partir de Draby, il a des écailles dures et une force physique impressionnante. Drackhaus utilise des attaques de type Dragon pour protéger son territoire et affronter ses rivaux."
+},
+{
+"nom": "Drattak",
+"description": "Drattak est un Pokémon de type Dragon/Vol. Évolué à partir de Drackhaus, il a des ailes puissantes et une envergure imposante. Drattak utilise des attaques de type Dragon et Vol pour planer dans les cieux et plonger sur ses ennemis."
+},
+{
+"nom": "Terhal",
+"description": "Terhal est un Pokémon de type Acier/Roche. Il a un corps solide et une résistance aux attaques physiques. Terhal utilise des attaques de type Acier et Roche pour creuser des tunnels et défendre son territoire souterrain."
+},
+{
+"nom": "Métang",
+"description": "Métang est un Pokémon de type Acier/Psy. Évolué à partir de Terhal, il a une intelligence artificielle et une capacité à flotter grâce à son champ magnétique. Métang utilise des attaques de type Acier et Psy pour calculer les trajectoires et analyser les environnements."
+},
+{
+"nom": "Métalosse",
+"description": "Métalosse est un Pokémon de type Acier/Psy. Évolué à partir de Métang, il a une puissance psychique et une résistance aux attaques mentales. Métalosse utilise des attaques de type Acier et Psy pour créer des champs de force et défendre ses alliés."
+},
+{
+"nom": "Regirock",
+"description": "Regirock est un Pokémon de type Roche. Il a un corps solide et une origine légendaire. Regirock utilise des attaques de type Roche pour créer des formations rocheuses et protéger les reliques antiques."
+},
+{
+"nom": "Regice",
+"description": "Regice est un Pokémon de type Glace. Il a une peau glacée et une capacité à contrôler la température. Regice utilise des attaques de type Glace pour geler l'air ambiant et créer des barrières de glace infranchissables."
+},
+{
+"nom": "Registeel",
+"description": "Registeel est un Pokémon de type Acier. Il a une structure métallique et une résistance hors du commun. Registeel utilise des attaques de type Acier pour renforcer sa carapace et repousser les attaques physiques."
+},
+{
+"nom": "Latias",
+"description": "Latias est un Pokémon de type Dragon/Psy. Elle a une agilité aérienne et une empathie profonde. Latias utilise des attaques de type Dragon et Psy pour lire les émotions des autres et défendre les zones sacrées."
+},
+{
+"nom": "Latios",
+"description": "Latios est un Pokémon de type Dragon/Psy. Il a une vitesse de vol impressionnante et une capacité à détecter les mouvements à distance. Latios utilise des attaques de type Dragon et Psy pour protéger son territoire et assurer la sécurité de son habitat."
+},
+{
+"nom": "Kyogre",
+"description": "Kyogre est un Pokémon de type Eau. Il a le pouvoir de contrôler les océans et les mers. Kyogre utilise des attaques de type Eau pour provoquer des tempêtes et maintenir l'équilibre des écosystèmes marins."
+},
+{
+"nom": "Groudon",
+"description": "Groudon est un Pokémon de type Sol. Il a le pouvoir de manipuler la terre et les roches. Groudon utilise des attaques de type Sol pour créer des tremblements de terre et remodeler les paysages selon sa volonté."
+},
+{
+"nom": "Rayquaza",
+"description": "Rayquaza est un Pokémon de type Dragon/Vol. Il a le pouvoir de voler à travers les cieux et de contrôler les tempêtes atmosphériques. Rayquaza utilise des attaques de type Dragon et Vol pour maintenir l'équilibre entre Kyogre et Groudon et protéger la paix sur Terre."
+},
+{
+"nom": "Jirachi",
+"description": "Jirachi est un Pokémon de type Acier/Psy. Il a le pouvoir d'exaucer les vœux de ceux qui le réveillent. Jirachi utilise des attaques de type Acier et Psy pour protéger ses rêves et apporter la chance à ceux qui croient en lui."
+},
+{
+"nom": "Deoxys",
+"description": "Deoxys est un Pokémon de type Psy. Il a la capacité de changer de forme pour s'adapter à son environnement. Deoxys utilise des attaques de type Psy pour manipuler l'espace-temps et défendre son territoire."
+}
+]

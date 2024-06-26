@@ -37,68 +37,15 @@ function HomePage(props) {
 console.log(user);
   return (
     <>
-        <div className="homeContainer">
-            <div className={"homeContent"}>
-                <img style={{width: "300px"}} src={"images/logoSofk.png"}/>
-                <div>
-                    <p className={"paragraphHome"}>
-                        Le <span>Stream On for Kids</span> est un évènement caritatif en ligne se déroulant chaque année
-                        à l’occasion
-                        de la <span>Journée Internationale des Enfants Disparus</span> pour collecter des dons en faveur
-                        du <span>116 000 Enfants
-                        Disparus</span>. Ce numéro d’urgence gratuit, disponible <span>24h/24 et 7j7</span>, accompagne
-                        les familles
-                        confrontées à la disparition de leur enfant.
-                    </p>
-                    <p className={"paragraphHome"}>
-                        Créé à l’initiative de <span>Vaykhin</span> en 2021, le <span>Stream On for Kids</span> se
-                        déroule sur Twitch, une
-                        plateforme de vidéos en direct sur laquelle des streamers diffusent du contenu en interagissant
-                        avec leurs
-                        spectateurs. L’événement a permis de collecter près de <span>30 000 €</span> en faveur du numéro
-                        d’urgence
-                        lors de ses trois premières éditions et permet également d’accroitre la notoriété du
-                        numéro <span>116 000</span>
-                        auprès du public.
-                    </p>
-                </div>
-            </div>
-            <a className="socialLink" target='_blank'
-               href="https://streamlabscharity.com/teams/@stream-on-for-kids-2024/stream-on-for-kids-2024?member=643451324922470142&l=fr-FR">Faire
-                un Don</a>
-            <h1 className={"titleEdition"}>Editions précédentes</h1>
-            <div className={"editionsInfosContainer"}>
-                <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>Edition 2021</p>
-                    <p className={"totalEdition"}>2 800 €</p>
-                </div>
-                <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>Edition 2022</p>
-                    <p className={"totalEdition"}>8 238 €</p>
-                </div>
-                <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>Edition 2023</p>
-                    <p className={"totalEdition"}>17 414 €</p>
-                </div>
-                <div className={"editionsContainer"}>
-                    <p className={"nbEdition"}>Edition 2024</p>
-                    <p className={"totalEdition"}>?</p>
-                </div>
-            </div>
-            <h1 className={"titleEdition"}>Streamer.euses 2024</h1>
-            <div className={"streamListHome"}>
-                {user.length > 0 &&
-                    user.map((val, key) => {
-                        return (
-                            <div className={"streamHomeContainer"}>
-                                <a href={"https://twitch.tv/" + val.infos[0].login} target={"_blank"}>
-                                    <img src={val.infos[0].profile_image_url}/>
-                                </a>
-                                <p style={{textAlign: "center"}}>{val.infos[0].login}</p>
-                            </div>
-                    )
-                    })
-                }
+        <div className={"contentContainer"}>
+            <OnStream />
+            <p style={{textAlign:"center",color:"white"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
+            <div className="socialContainer">
+                <p className="myNetworks">Mes reseaux</p>
+                <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i class="fa-brands fa-discord"></i>Discord</a>
+                <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk"><i class="fa-brands fa-twitch"></i>Twitch</a>
+                <a className="socialLink" target='_blank' href="https://twitter.com/Chromatyk_"><i class="fa-brands fa-twitter"></i>Twitter</a>
+                <a className="socialLink" target='_blank' href="https://www.instagram.com/chromatyk_/"><i class="fa-brands fa-instagram"></i>Instagram</a>
             </div>
         </div>
     </>

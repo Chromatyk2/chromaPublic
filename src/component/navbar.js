@@ -23,18 +23,21 @@ function NavBar(props) {
               <Navbar.Collapse id="navbarScroll">
                   <Nav className="me-auto my-2 my-lg-0" navbarScroll>
                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/">Accueil</Link>
-                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg">TCG</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/profil">Profil</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pokedex">Pokedex</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/allProfils">Classement</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boosters">Mes boosters</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Boutique TCG</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pedandex">Pedandex</Link>
                       {pseudo == "chromatyk" &&
                                     <>
+                                        <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/echange">Echange doublons TCG</Link>
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
                                       {/*  <Link className="navLink" to="/leaderboard">Classement</Link>*/}
                                       {/*  <Link className="navLink myTradesLink" to="/myTrades">Mes Echanges {count > 0 && <span className="myCountProposition">{count}</span>}</Link>*/}
                                       {/*  <Link className="navLink" to="/tradePlace">Place aux echanges</Link>*/}
                                       {/*<Link className="navLink" to="/aNu5YwZ5X75m5j">Note</Link>*/}
-                                      {/*  <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/echange">Echange doublons</Link>*/}
                                       {/*  <Link className="navLink" to="/29ct92B3ZrvxGS">NostalPick</Link>*/}
                                       {/*<Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/liste">Liste</Link>*/}
                                     </>
