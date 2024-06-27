@@ -319,7 +319,7 @@ function Pedandex(props) {
                             })}
                             </div>
                     :
-                        <button onClick={handleIndice}><img src={"/images/" + val.name + ".png"}></img></button>
+                        <button onClick={handleIndice}><img src={"/images/random.png"}></img></button>
                     }
                     <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                     </div>
