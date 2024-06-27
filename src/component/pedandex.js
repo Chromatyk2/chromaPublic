@@ -239,7 +239,8 @@ function Pedandex(props) {
                         justifyContent: "center",
                         alignItems: "center",
                         gap: "15px",
-                        margin: "20px"
+                        margin: "20px",
+                        flexWrap:"wrap"
                     }}>
                         <div style={{
                             color: "white",
