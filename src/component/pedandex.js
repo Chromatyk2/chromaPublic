@@ -314,9 +314,9 @@ function Pedandex(props) {
                     {types .length > 0 ?
                         types.map((val, key) => {
                             <div className="pokemonTypeContainer">
-                                <img src={`/images/${val[0].name}.png`}></img>
+                                <img src={"/images/"+val[0].name+".png"}></img>
                                 {val[1] &&
-                                    <img src={`/images/${val[1].name}.png`}></img>
+                                    <img src={"/images/"+val[1].name+".png"}></img>
                                 }
                             </div>
                         })
