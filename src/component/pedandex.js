@@ -307,7 +307,7 @@ function Pedandex(props) {
             <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal}
                    contentLabel="Example Modal">
                 <>
-                <p style={{textAlign:"center"}}>Classement du jour</p>
+                <p style={{textAlign:"center"}}>Classement du jour {dailyGame.day}</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
                         {leaderBoard &&
