@@ -12,7 +12,7 @@ function Pedandex(props) {
     const [tokens, setTokens] = useState(null);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
-    const [types, setTypes] = useState(null);
+    const [types, setTypes] = useState([]);
     const [tries, setTries] = useState(0);
     const [dailyGame, setDailyGame] = useState(null);
     const [triesWin, setTriesWin] = useState(0);
@@ -207,7 +207,6 @@ function Pedandex(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result)
                     setTypes(result.types);
                 }
             )
@@ -312,7 +311,7 @@ function Pedandex(props) {
                 </div>
                 <div id={"descriptionPedandex"}>
                     <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
-                    {types ?
+                    {types .length > 0 ?
                         types.map((val, key) => {
                             <div className="pokemonTypeContainer">
                                 <img src={`/images/${val[0].name}.png`}></img>
