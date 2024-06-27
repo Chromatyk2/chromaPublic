@@ -311,8 +311,8 @@ function Pedandex(props) {
                     }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
                 </div>
                 <div id={"descriptionPedandex"}>
-                    <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
-                        <p style={{margin:"0",fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
+                    <div style={{gap:"50px", margin:"20px",display:"flex",justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
+                        <p style={{ margin:"0",fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
                         {types.length > 0 ?
                             <div style={{display:"flex",flexFlow:"column"}} className="pokemonTypeContainer">
                                 {types.map((val, key) => {
