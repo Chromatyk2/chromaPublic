@@ -1,318 +1,402 @@
 [
   {
-    "name": "Germignon",
-    "description": "Plante. Germignon, le Pokémon bourgeon. Il se nourrit de lumière solaire pour renforcer ses pousses."
+    "nom": "Germignon",
+    "description": "Lorsqu'il se bat, Germignon secoue sa feuille pour tenir son ennemi \u00e0 distance. Un doux parfum s'en d\u00e9gage \u00e9galement, apaisant les Pok\u00e9mon qui se battent et cr\u00e9ant une atmosph\u00e8re agr\u00e9able et amicale."
   },
   {
-    "name": "Macronium",
-    "description": "Plante. Macronium, le Pokémon feuillage. Il utilise ses feuilles tranchantes pour se protéger des prédateurs."
+    "nom": "Macronium",
+    "description": "Le cou de Macronium est entour\u00e9 de nombreuses feuilles. Dans chacune d'elles se trouve une pousse d'arbre. Le parfum de cette pousse donne la p\u00eache aux personnes qui le sentent."
   },
   {
-    "name": "Méganium",
-    "description": "Plante. Méganium, le Pokémon herbe. Il répand un doux parfum apaisant pour calmer les esprits agités."
+    "nom": "M\u00e9ganium",
+    "description": "Le parfum de la fleur de M\u00e9ganium apaise et calme les esprits. Pendant les combats, ce Pok\u00e9mon \u00e9met son parfum relaxant pour att\u00e9nuer l'agressivit\u00e9 de l'ennemi."
   },
   {
-    "name": "Héricendre",
-    "description": "Feu. Héricendre, le Pokémon souris. Il enflamme son dos pour se protéger des attaques ennemies."
+    "nom": "H\u00e9ricendre",
+    "description": "H\u00e9ricendre se prot\u00e8ge en faisant jaillir des flammes de son dos. Ces flammes peuvent \u00eatre violentes si le Pok\u00e9mon est en col\u00e8re. Cependant, s'il est fatigu\u00e9, seules quelques flamm\u00e8ches vacillent laborieusement."
   },
   {
-    "name": "Feurisson",
-    "description": "Feu. Feurisson, le Pokémon feu. Il peut lancer des flammes ardentes grâce aux feux sur son dos."
+    "nom": "Feurisson",
+    "description": "Feurisson garde ses ennemis \u00e0 distance gr\u00e2ce \u00e0 l'intensit\u00e9 de ses flammes et \u00e0 des rafales d'air br\u00fblant. Ce Pok\u00e9mon utilise son incroyable agilit\u00e9 pour \u00e9viter les attaques, tout en enflammant ses ennemis."
   },
   {
-    "name": "Typhlosion",
-    "description": "Feu. Typhlosion, le Pokémon volcan. Il déclenche des éruptions de feu qui peuvent brûler tout sur leur passage."
+    "nom": "Typhlosion",
+    "description": "Typhlosion se cache derri\u00e8re un chatoyant nuage de chaleur qu'il cr\u00e9e en attisant ses flammes intenses. Ce Pok\u00e9mon peut g\u00e9n\u00e9rer des rafales explosives qui r\u00e9duisent tout en cendres."
   },
   {
-    "name": "Kaiminus",
-    "description": "Eau. Kaiminus, le Pokémon crocodile. Il attaque ses ennemis avec ses mâchoires puissantes et acérées."
+    "nom": "Kaiminus",
+    "description": "Malgr\u00e9 son tout petit corps, la m\u00e2choire de Kaiminus est tr\u00e8s puissante. Parfois, ce Pok\u00e9mon mordille les gens pour jouer, sans se rendre compte que sa morsure peut gravement blesser quelqu'un."
   },
   {
-    "name": "Crocrodil",
-    "description": "Eau. Crocrodil, le Pokémon croc. Il peut mordre à travers des rochers et des aciers sans effort."
+    "nom": "Crocrodil",
+    "description": "Une fois que Crocrodil a referm\u00e9 sa m\u00e2choire sur son ennemi, il est impossible de le faire l\u00e2cher prise. Ses crocs sont recourb\u00e9s comme des hame\u00e7ons et ne peuvent pas \u00eatre retir\u00e9s une fois enfonc\u00e9s."
   },
   {
-    "name": "Aligatueur",
-    "description": "Eau. Aligatueur, le Pokémon grand mâchoire. Il est connu pour son incroyable force de morsure."
+    "nom": "Aligatueur",
+    "description": "Aligatueur impressionne ses ennemis en ouvrant son \u00e9norme gueule. Pendant les combats, il pi\u00e9tine le sol de ses puissantes pattes arri\u00e8re avant de charger ses adversaires \u00e0 pleine vitesse."
   },
   {
-    "name": "Fouinette",
-    "description": "Normal. Fouinette, le Pokémon raton. Il est curieux de nature et explore constamment son environnement."
+    "nom": "Fouinette",
+    "description": "Lorsqu'un Fouinette dort, un autre monte la garde. La sentinelle r\u00e9veille les autres au moindre signe de danger. Si un de ces Pok\u00e9mon est s\u00e9par\u00e9 de sa meute, il arr\u00eate de dormir, car il a peur."
   },
   {
-    "name": "Fouinar",
-    "description": "Normal. Fouinar, le Pokémon raton. Il est intelligent et utilise ses astuces pour échapper aux situations dangereuses."
+    "nom": "Fouinar",
+    "description": "Fouinar est tr\u00e8s mince. Lorsqu'il est attaqu\u00e9, il peut s'enfuir en se faufilant habilement dans les recoins \u00e9troits. Malgr\u00e9 ses pattes courtes, ce Pok\u00e9mon est tr\u00e8s agile et rapide."
   },
   {
-    "name": "Hoothoot",
-    "description": "Normal / Vol. Hoothoot, le Pokémon hibou. Il a la capacité de tourner la tête à 360 degrés pour surveiller les environs."
+    "nom": "Hoothoot",
+    "description": "Hoothoot est dot\u00e9 d'un organe interne qui ressent et suit la rotation de la terre. Gr\u00e2ce \u00e0 cet organe peu ordinaire, ce Pok\u00e9mon commence \u00e0 hululer tous les jours exactement \u00e0 la m\u00eame heure."
   },
   {
-    "name": "Noarfang",
-    "description": "Normal / Vol. Noarfang, le Pokémon chouette. Il possède une vision nocturne et peut repérer une souris à des kilomètres."
+    "nom": "Noarfang",
+    "description": "Dans l'obscurit\u00e9, Noarfang ne rate jamais une proie. Il le doit \u00e0 sa vision surd\u00e9velopp\u00e9e qui lui permet de tout voir, m\u00eame avec une lueur tr\u00e8s faible, ainsi qu'\u00e0 ses ailes tr\u00e8s souples et silencieuses."
   },
   {
-    "name": "Coxy",
-    "description": "Insecte. Coxy, le Pokémon ver. Il se nourrit de feuilles et de petits insectes qu'il trouve dans les bois."
+    "nom": "Coxy",
+    "description": "Coxy s\u00e9cr\u00e8te un fluide aromatis\u00e9 sortant des articulations de ses pattes. Ce fluide lui permet de communiquer avec ses cong\u00e9n\u00e8res. Ce Pok\u00e9mon exprime ses sentiments en modifiant l'odeur de ce fluide."
   },
   {
-    "name": "Coxyclaque",
-    "description": "Insecte / Vol. Coxyclaque, le Pokémon papillon. Il peut créer des poudres toxiques pour se défendre des prédateurs."
+    "nom": "Coxyclaque",
+    "description": "On dit que dans les pays o\u00f9 le ciel est d\u00e9gag\u00e9 et o\u00f9 les \u00e9toiles illuminent les cieux, vivent d'innombrables quantit\u00e9s de Coxyclaque. La raison en est simple\u00a0: l'\u00e9nergie de ce Pok\u00e9mon provient de la lumi\u00e8re des \u00e9toiles."
   },
   {
-    "name": "Mimigal",
-    "description": "Insecte / Poison. Mimigal, le Pokémon araignée. Il tisse des toiles pour piéger ses proies avant de les dévorer."
+    "nom": "Mimigal",
+    "description": "La toile tiss\u00e9e par Mimigal peut \u00eatre compar\u00e9e \u00e0 un second syst\u00e8me nerveux. On raconte que ce Pok\u00e9mon peut d\u00e9terminer quel type de proie touche sa toile gr\u00e2ce aux infimes vibrations des fils."
   },
   {
-    "name": "Migalos",
-    "description": "Insecte / Poison. Migalos, le Pokémon araignée. Il peut paralyser ses proies avec son venin puissant."
+    "nom": "Migalos",
+    "description": "\u00c0 l'extr\u00e9mit\u00e9 des pattes de Migalos, on trouve de petits crochets qui lui permettent de cavaler sur les surfaces verticales et au plafond. Ce Pok\u00e9mon peut pi\u00e9ger ses ennemis dans sa solide toile de soie."
   },
   {
-    "name": "Nostenfer",
-    "description": "Poison / Vol. Nostenfer, le Pokémon chauve-souris. Il attaque ses ennemis en volant silencieusement dans l'obscurité."
+    "nom": "Nostenfer",
+    "description": "Lorsque Nostenfer vole depuis longtemps, il utilise ses ailes ant\u00e9rieures ou post\u00e9rieures en alternance. Il peut ais\u00e9ment changer de paire d'ailes lorsqu'il est fatigu\u00e9."
   },
   {
-    "name": "Loupio",
-    "description": "Eau / Electrique. Loupio, le Pokémon poisson. Il génère de l'électricité pour paralyser ses proies avant de les mordre."
+    "nom": "Loupio",
+    "description": "Loupio rel\u00e2che des charges \u00e9lectriques positives et n\u00e9gatives de ses deux antennes pour mettre sa proie K.O. Ce Pok\u00e9mon illumine ses ampoules \u00e9lectriques pour communiquer avec ses cong\u00e9n\u00e8res."
   },
   {
-    "name": "Lanturn",
-    "description": "Eau / Electrique. Lanturn, le Pokémon lumière. Il émet de la lumière sous-marine grâce à ses organes bioluminescents."
+    "nom": "Lanturn",
+    "description": "On surnomme Lanturn \u00ab\u00a0l'\u00e9toile des profondeurs\u00a0\u00bb \u00e0 cause de son antenne lumineuse. Ce Pok\u00e9mon produit de la lumi\u00e8re en provoquant une r\u00e9action chimique entre des bact\u00e9ries et les fluides corporels de son antenne."
   },
   {
-    "name": "Pichu",
-    "description": "Electrique. Pichu, le Pokémon petite souris. Il joue souvent avec des étincelles d'électricité qu'il génère involontairement."
+    "nom": "Pichu",
+    "description": "Pichu se charge plus facilement en \u00e9lectricit\u00e9 les jours d'orage ou lorsque l'air est tr\u00e8s sec. On peut entendre le cr\u00e9pitement de l'\u00e9lectricit\u00e9 statique g\u00e9n\u00e9r\u00e9e par ce Pok\u00e9mon."
   },
   {
-    "name": "Mélo",
-    "description": "Fée. Mélo, le Pokémon musical. Il produit des notes mélodieuses qui apaisent les cœurs les plus agités."
+    "nom": "M\u00e9lo",
+    "description": "Les nuits o\u00f9 il y a des \u00e9toiles filantes, on peut voir des M\u00e9lo danser en cercle. Ils dansent toute la nuit et ne s'arr\u00eatent qu'\u00e0 l'aube. Ces Pok\u00e9mon se d\u00e9salt\u00e8rent alors avec la ros\u00e9e du matin."
   },
   {
-    "name": "Toudoudou",
-    "description": "Normal / Fée. Toudoudou, le Pokémon ballon. Il chante des mélodies douces pour endormir ses ennemis."
+    "nom": "Toudoudou",
+    "description": "Les cordes vocales de Toudoudou ne sont pas assez d\u00e9velopp\u00e9es. S'il devait chanter trop longtemps, il se ferait mal \u00e0 la gorge. Ce Pok\u00e9mon se gargarise souvent avec de l'eau fra\u00eeche puis\u00e9e dans un ruisseau clair."
   },
   {
-    "name": "Togepi",
-    "description": "Fée. Togepi, le Pokémon œuf. Il protège son corps fragile en utilisant sa carapace dure."
+    "nom": "Togepi",
+    "description": "L'\u00e9nergie de Togepi provient des \u00e9motions positives et du plaisir exprim\u00e9 par les gens et les Pok\u00e9mon. Ce Pok\u00e9mon accumule les sentiments de bonheur dans sa coquille, puis les partage avec les autres."
   },
   {
-    "name": "Togetic",
-    "description": "Fée / Vol. Togetic, le Pokémon bonheur. Il répand de l'amour et du bonheur autour de lui grâce à ses ailes colorées."
+    "nom": "Togetic",
+    "description": "On raconte que Togetic est un Pok\u00e9mon qui porte chance. Si ce Pok\u00e9mon remarque quelqu'un dot\u00e9 d'un c\u0153ur pur, il appara\u00eet et partage son bonheur avec la personne en question."
   },
   {
-    "name": "Natu",
-    "description": "Psy / Vol. Natu, le Pokémon mystique. Il prévoit l'avenir en observant les mouvements des étoiles."
+    "nom": "Natu",
+    "description": "Natu ne peut pas voler, car ses ailes n'ont pas encore fini de grandir. Si ses yeux croisent le regard de quelqu'un d'autre, il reste immobile et concentr\u00e9. Mais si la personne en question d\u00e9tourne son regard, il s'enfuit en lieu s\u00fbr."
   },
   {
-    "name": "Xatu",
-    "description": "Psy / Vol. Xatu, le Pokémon mystique. Il connaît l'avenir et le passé grâce à ses pouvoirs psychiques."
+    "nom": "Xatu",
+    "description": "Xatu se tient debout et immobile toute la journ\u00e9e. Certains pensent que ce Pok\u00e9mon a adopt\u00e9 cette position \u00e0 cause de la terreur qu'il a ressentie en pr\u00e9voyant l'avenir."
   },
   {
-    "name": "Wattouat",
-    "description": "Electrique. Wattouat, le Pokémon mouton. Il stocke de l'électricité dans sa laine pour se protéger des prédateurs."
+    "nom": "Wattouat",
+    "description": "L'\u00e9paisse fourrure cotonneuse de Wattouat se charge d'\u00e9lectricit\u00e9 statique lorsqu'on la frotte. Plus elle est charg\u00e9e, plus l'ampoule au bout de sa queue est lumineuse."
   },
   {
-    "name": "Lainergie",
-    "description": "Electrique. Lainergie, le Pokémon laine. Il crée des champs électriques en frottant ses pattes ensemble."
+    "nom": "Lainergie",
+    "description": "La qualit\u00e9 de la laine de Lainergie se modifie pour g\u00e9n\u00e9rer un maximum d'\u00e9lectricit\u00e9 statique avec un minimum de laine. Les sections glabres de sa peau sont r\u00e9sistantes \u00e0 l'\u00e9lectricit\u00e9."
   },
   {
-    "name": "Pharamp",
-    "description": "Electrique. Pharamp, le Pokémon ampoule. Il génère de puissantes décharges électriques en utilisant ses nageoires."
+    "nom": "Pharamp",
+    "description": "Pharamp est si lumineux qu'on peut le voir de l'espace. Jadis, les gens utilisaient la lumi\u00e8re de ce Pok\u00e9mon pour communiquer et s'envoyer des signaux \u00e0 grande distance."
   },
   {
-    "name": "Joliflor",
-    "description": "Plante. Joliflor, le Pokémon fleur. Il attire les insectes avec son parfum enivrant avant de les capturer pour se nourrir."
+    "nom": "Joliflor",
+    "description": "Lorsque Joliflor reste expos\u00e9 \u00e0 la lumi\u00e8re du soleil, les feuilles autour de son corps se mettent \u00e0 tournoyer. La danse de ce Pok\u00e9mon est tr\u00e8s c\u00e9l\u00e8bre dans les r\u00e9gions du sud."
   },
   {
-    "name": "Marill",
-    "description": "Eau / Fée. Marill, le Pokémon aquatique. Il peut flotter sur l'eau grâce à ses petites ailes."
+    "nom": "Marill",
+    "description": "La queue remplie d'huile de Marill lui sert de gilet de sauvetage. Parfois, on peut voir sa queue flotter \u00e0 la surface. On peut en d\u00e9duire que ce Pok\u00e9mon a plong\u00e9 sous l'eau pour se nourrir de plantes aquatiques."
   },
   {
-    "name": "Azumarill",
-    "description": "Eau / Fée. Azumarill, le Pokémon aquatique. Il possède une force incroyable qui lui permet de soulever des rochers."
+    "nom": "Azumarill",
+    "description": "Les longues oreilles d'Azumarill sont des capteurs indispensables. Lorsqu'il se concentre pour \u00e9couter, ce Pok\u00e9mon peut identifier les proies aux alentours, m\u00eame dans les cours d'eau \u00e0 fort courant ou les rapides."
   },
   {
-    "name": "Simularbre",
-    "description": "Roche. Simularbre, le Pokémon arbre. Il se fond parfaitement dans les forêts en imitant les arbres autour de lui."
+    "nom": "Simularbre",
+    "description": "Simularbre se camoufle en arbre pour \u00e9viter d'\u00eatre attaqu\u00e9 par ses ennemis. Mais \u00e9tant donn\u00e9 que ses pattes restent vertes toute l'ann\u00e9e, ce Pok\u00e9mon est facile \u00e0 rep\u00e9rer pendant l'hiver."
   },
   {
-    "name": "Tarpaud",
-    "description": "Eau. Tarpaud, le Pokémon son. Il utilise ses sacs vocaux pour émettre des ondes sonores puissantes."
+    "nom": "Tarpaud",
+    "description": "Le cheveu boucl\u00e9 sur la t\u00eate de Tarpaud est la preuve de son statut de roi. On raconte que plus son cheveu est long et boucl\u00e9, plus ce Pok\u00e9mon est respect\u00e9 par ses semblables."
   },
   {
-    "name": "Granivol",
-    "description": "Plante / Vol. Granivol, le Pokémon graine. Il se propage dans les vents pour polliniser les plantes à grande distance."
+    "nom": "Granivol",
+    "description": "Ce Pok\u00e9mon flotte \u00e0 la d\u00e9rive, port\u00e9 par le vent. S'il sent qu'un vent tr\u00e8s fort approche, Granivol attache ses feuilles aux autres Granivol pour ne pas \u00eatre emport\u00e9 par la bourrasque."
   },
   {
-    "name": "Floravol",
-    "description": "Plante / Vol. Floravol, le Pokémon fleur. Il libère un parfum enivrant qui endort ses ennemis avant de les attaquer."
+    "nom": "Floravol",
+    "description": "La fleur de Floravol \u00e9clot lorsque la temp\u00e9rature atteint 18 degr\u00e9s. L'ouverture de la fleur change en fonction de la temp\u00e9rature. Certaines personnes se servent de ce Pok\u00e9mon comme d'un thermom\u00e8tre."
   },
   {
-    "name": "Cotovol",
-    "description": "Plante / Vol. Cotovol, le Pokémon coton. Il vole gracieusement dans les airs en libérant des spores pour se défendre."
+    "nom": "Cotovol",
+    "description": "Cotovol traverse la mer, port\u00e9 par les vents, pour d\u00e9couvrir de nouveaux territoires. Ce Pok\u00e9mon se rapproche du sol quand le vent est trop froid."
   },
   {
-    "name": "Capumain",
-    "description": "Normal. Capumain, le Pokémon singe. Il utilise sa queue comme une main supplémentaire pour attraper des objets."
+    "nom": "Capumain",
+    "description": "L'extr\u00e9mit\u00e9 de la queue de Capumain ressemble \u00e0 une main et peut \u00eatre utilis\u00e9e de fa\u00e7on ing\u00e9nieuse. Malheureusement, ce Pok\u00e9mon utilise tellement sa queue que ses v\u00e9ritables mains sont devenues tr\u00e8s maladroites."
   },
   {
-    "name": "Tournegrin",
-    "description": "Plante. Tournegrin, le Pokémon tournesol. Il suit la trajectoire du soleil tout au long de la journée."
+    "nom": "Tournegrin",
+    "description": "Tournegrin essaie de bouger le moins possible. C'est parce qu'il veut conserver tous les nutriments qu'il stocke dans son corps pour son \u00e9volution. Il ne mange pas, ne subsistant que gr\u00e2ce \u00e0 la ros\u00e9e matinale."
   },
   {
-    "name": "Héliatronc",
-    "description": "Plante. Héliatronc, le Pokémon soleil. Il absorbe la lumière du soleil pour augmenter sa vitalité et sa puissance."
+    "nom": "H\u00e9liatronc",
+    "description": "H\u00e9liatronc convertit l'\u00e9nergie solaire en nutriments. Il remue activement pendant la journ\u00e9e, quand il fait chaud. Il redevient immobile d\u00e8s que le soleil se couche."
   },
   {
-    "name": "Yanma",
-    "description": "Insecte / Vol. Yanma, le Pokémon libellule. Il vole à des vitesses incroyables en battant ses ailes très rapidement."
+    "nom": "Yanma",
+    "description": "Yanma a un champ de vision de 360 degr\u00e9s sans avoir besoin de bouger les yeux. Il vole incroyablement bien et peut faire des figures acrobatiques. Ce Pok\u00e9mon descend en piqu\u00e9 sur ses proies."
   },
   {
-    "name": "Axoloto",
-    "description": "Eau. Axoloto, le Pokémon axolotl. Il peut régénérer ses membres perdus grâce à ses capacités de guérison."
+    "nom": "Axoloto",
+    "description": "Axoloto vit g\u00e9n\u00e9ralement dans l'eau. Mais de temps en temps, il vient sur terre pour chercher \u00e0 manger. \u00c0 terre, il recouvre son corps d'un voile visqueux et toxique."
   },
   {
-    "name": "Maraiste",
-    "description": "Eau. Maraiste, le Pokémon vase. Il se cache dans la boue pour éviter d'être vu par ses prédateurs."
+    "nom": "Maraiste",
+    "description": "Maraiste trouve sa nourriture en laissant sa bouche ouverte dans l'eau, il attend que ses proies y p\u00e9n\u00e8trent sans faire attention. Comme ce Pok\u00e9mon est inactif, il n'a jamais tr\u00e8s faim."
   },
   {
-    "name": "Mentali",
-    "description": "Psy. Mentali, le Pokémon émotions. Il utilise ses pouvoirs psychiques pour lire et manipuler les émotions des autres."
+    "nom": "Mentali",
+    "description": "Mentali est extr\u00eamement loyal envers les Dresseurs qu'il respecte. On raconte que ce Pok\u00e9mon a d\u00e9velopp\u00e9 des talents divinatoires pour prot\u00e9ger son Dresseur."
   },
   {
-    "name": "Noctali",
-    "description": "Ténèbres. Noctali, le Pokémon nocturne. Il se fond dans l'ombre pour attaquer ses ennemis avec une précision mortelle."
+    "nom": "Noctali",
+    "description": "Noctali a \u00e9volu\u00e9 suite \u00e0 une longue exposition aux rayons lunaires. Il se cache dans les recoins sombres et attend patiemment le passage de ses ennemis. Les anneaux sur son corps s'illuminent au moment o\u00f9 il bondit."
   },
   {
-    "name": "Cornebre",
-    "description": "Ténèbres / Vol. Cornebre, le Pokémon corbeau. Il est connu pour voler des objets brillants pour les garder dans son nid."
+    "nom": "Corn\u00e8bre",
+    "description": "Jadis, Corn\u00e8bre \u00e9tait craint et d\u00e9test\u00e9, car on disait qu'il portait malheur. Ce Pok\u00e9mon est attir\u00e9 par tout ce qui brille. Parfois, il essaye de voler les bagues des filles."
   },
   {
-    "name": "Roigada",
-    "description": "Eau / Psy. Roigada, le Pokémon baleine. Il utilise son sonar pour naviguer dans les océans les plus sombres."
+    "nom": "Roigada",
+    "description": "Tous les jours, Roigada entreprend des recherches pour r\u00e9soudre les myst\u00e8res du monde. Cependant, ce Pok\u00e9mon oublie tout ce qu'il a appris si le Kokiyas qui se trouve sur sa t\u00eate s'en va."
   },
   {
-    "name": "Feuforêve",
-    "description": "Spectre. Feuforêve, le Pokémon rêve. Il se nourrit des rêves des autres, laissant derrière lui des cauchemars."
+    "nom": "Feufor\u00eave",
+    "description": "Feufor\u00eave effraie les gens en poussant un cri \u00e0 faire froid dans le dos, une sorte de lamentation. Ce Pok\u00e9mon utilise ses sph\u00e8res rouges pour absorber les sentiments de terreur de ses ennemis et s'en nourrir."
   },
   {
-    "name": "Zarbi",
-    "description": "Psy. Zarbi, le Pokémon symbole. Il communique en formant des symboles mystérieux avec son corps."
+    "nom": "Zarbi",
+    "description": "Ce Pok\u00e9mon a la forme d'un caract\u00e8re d'\u00e9criture antique. Personne ne sait si ces \u00e9critures antiques sont apparues avant les Zarbi ou le contraire. Des \u00e9tudes sont en cours, mais aucun r\u00e9sultat n'a \u00e9t\u00e9 annonc\u00e9."
   },
   {
-    "name": "Qulbutoké",
-    "description": "Psy. Qulbutoké, le Pokémon enjôleur. Il utilise des tours de passe-passe psychiques pour échapper à ses ennemis."
+    "nom": "Qulbutok\u00e9",
+    "description": "Si un ou plusieurs Qulbutok\u00e9 se rencontrent, ils se mesurent les uns aux autres et font des concours d'endurance. Parfois, ils tentent de voir qui peut rester le plus longtemps sans manger. Mieux vaut \u00eatre pr\u00e9venu."
   },
   {
-    "name": "Girafarig",
-    "description": "Normal / Psy. Girafarig, le Pokémon girafe. Sa deuxième tête est capable de mordre avec une force incroyable."
+    "nom": "Girafarig",
+    "description": "La t\u00eate \u00e0 l'arri\u00e8re de Girafarig a aussi un cerveau, mais il est plus petit. Elle attaque en r\u00e9ponse aux sons et aux odeurs. Si on approche de ce Pok\u00e9mon par derri\u00e8re, cette petite t\u00eate peut tout \u00e0 coup jaillir et mordre."
   },
   {
-    "name": "Pomdepik",
-    "description": "Normal. Pomdepik, le Pokémon piquant. Il lance ses piquants sur les ennemis qui menacent son territoire."
+    "nom": "Pomdepik",
+    "description": "Pomdepik s'accroche \u00e0 une branche d'arbre et attend patiemment que sa proie passe. Si ce Pok\u00e9mon est d\u00e9rang\u00e9 pendant qu'il mange par quelqu'un qui secoue son arbre, il tombe au sol et explose sans pr\u00e9venir."
   },
   {
-    "name": "Foretress",
-    "description": "Insecte / Acier. Foretress, le Pokémon forteresse. Il se roule en boule pour se protéger des attaques ennemies."
+    "nom": "Foretress",
+    "description": "Foretress se cache dans sa carapace en acier tremp\u00e9. La carapace s'ouvre quand il attrape sa proie, mais cela se passe tellement vite qu'il est impossible de voir \u00e0 l'int\u00e9rieur."
   },
   {
-    "name": "Insolourdo",
-    "description": "Normal. Insolourdo, le Pokémon bêta. Il est connu pour être extrêmement maladroit dans ses mouvements."
+    "nom": "Insolourdo",
+    "description": "Insolourdo a une perceuse au bout de la queue. Il l'utilise pour creuser des souterrains, \u00e0 reculons. On dit que ce Pok\u00e9mon enfouit son nid aux formes complexes sous terre."
   },
   {
-    "name": "Scorplane",
-    "description": "Insecte / Vol. Scorplane, le Pokémon scorpion. Il utilise son dard empoisonné pour paralyser ses proies."
+    "nom": "Scorplane",
+    "description": "Scorplane plane dans les airs sans un bruit, comme s'il glissait. Ce Pok\u00e9mon s'accroche au visage de son ennemi gr\u00e2ce aux serres de ses pattes arri\u00e8re et aux pinces de ses pattes avant, et pique avec son dard empoisonn\u00e9."
   },
   {
-    "name": "Steelix",
-    "description": "Acier / Sol. Steelix, le Pokémon fer. Il est si dur qu'aucune attaque ne peut le pénétrer."
+    "nom": "Steelix",
+    "description": "Steelix vit sous terre, encore plus profond\u00e9ment qu'Onix. On dit que ce Pok\u00e9mon creuse vers le centre de la plan\u00e8te. On a d\u00e9j\u00e0 vu ce Pok\u00e9mon descendre \u00e0 plus d'un kilom\u00e8tre de profondeur."
   },
   {
-    "name": "Snubbull",
-    "description": "Fée. Snubbull, le Pokémon renfrogné. Il utilise sa mâchoire puissante pour mordre tout ce qui s'approche trop près."
+    "nom": "Snubbull",
+    "description": "Snubbull terrorise les Pok\u00e9mon plus petits que lui en montrant les dents et en faisant une grimace. Cependant, ce Pok\u00e9mon est toujours un peu triste de voir ses ennemis prendre la fuite."
   },
   {
-    "name": "Granbull",
-    "description": "Fée. Granbull, le Pokémon mâchoire. Sa mâchoire est si forte qu'elle peut mordre à travers du métal."
+    "nom": "Granbull",
+    "description": "Granbull a une m\u00e2choire inf\u00e9rieure particuli\u00e8rement d\u00e9velopp\u00e9e. Ses \u00e9normes crocs sont tellement lourds qu'ils l'obligent \u00e0 pencher la t\u00eate. Il ne mord jamais sans raison, sauf quand il a peur."
   },
   {
-    "name": "Qwilfish",
-    "description": "Eau / Poison. Qwilfish, le Pokémon ballon. Il gonfle son corps pour devenir plus gros et plus intimidant en face de ses ennemis."
+    "nom": "Qwilfish",
+    "description": "Qwilfish se gonfle en aspirant de l'eau. Ce Pok\u00e9mon utilise la pression de l'eau aval\u00e9e pour envoyer d'un coup les pointes toxiques de son corps. Nager lui demande un gros effort."
   },
   {
-    "name": "Cizayox",
-    "description": "Insecte / Acier. Cizayox, le Pokémon pince. Il découpe ses ennemis avec ses pinces acérées en un éclair."
+    "nom": "Cizayox",
+    "description": "Le corps de Cizayox est dur comme de l'acier. Les attaques ordinaires ne le d\u00e9stabilisent pas. Ce Pok\u00e9mon bat des ailes pour r\u00e9guler sa temp\u00e9rature interne."
   },
   {
-    "name": "Caratroc",
-    "description": "Roche. Caratroc, le Pokémon roche. Il se cache dans les crevasses des rochers pour surprendre ses proies."
+    "nom": "Caratroc",
+    "description": "Caratroc se cache tranquillement sous les rochers, abritant son corps dans sa carapace solide, pendant qu'il mange les Baies qu'il a mises de c\u00f4t\u00e9. Les Baies se m\u00e9langent \u00e0 ses fluides corporels pour produire du jus."
   },
   {
-    "name": "Scarhino",
-    "description": "Insecte / Combat. Scarhino, le Pokémon scarabée. Il est connu pour sa force brute et ses capacités de combat."
+    "nom": "Scarhino",
+    "description": "Scarhino charge ses ennemis en ligne droite, se glisse dessous, les attrape et les projette violemment d'un coup de sa puissante corne. Ce Pok\u00e9mon est tellement fort qu'il pourrait d\u00e9raciner un arbre."
   },
   {
-    "name": "Farfuret",
-    "description": "Ténèbres / Glace. Farfuret, le Pokémon mauvais. Il utilise la glace pour piéger ses ennemis avant de les attaquer."
+    "nom": "Farfuret",
+    "description": "Farfuret grimpe aux arbres en enfon\u00e7ant ses griffes crochues dans l'\u00e9corce. Ce Pok\u00e9mon cherche les nids qui ne sont pas surveill\u00e9s et vole les \u0152ufs pour les manger pendant que les parents sont partis."
   },
   {
-    "name": "Teddiursa",
-    "description": "Normal. Teddiursa, le Pokémon ourson. Il cherche constamment du miel et est attiré par son odeur sucrée."
+    "nom": "Teddiursa",
+    "description": "Ce Pok\u00e9mon aime se l\u00e9cher les paumes quand elles sont encore pleines de miel. Teddiursa concocte son propre miel en m\u00e9langeant les fruits et le pollen r\u00e9colt\u00e9 par Dardargnan."
   },
   {
-    "name": "Ursaring",
-    "description": "Normal. Ursaring, le Pokémon hibernation. Il devient extrêmement agressif si quelqu'un ose perturber son sommeil."
+    "nom": "Ursaring",
+    "description": "On dit que les Ursaring trouvent leur nourriture dans les cours d'eau et les grands arbres des for\u00eats o\u00f9 ils habitent. Ce Pok\u00e9mon erre dans la for\u00eat toute la journ\u00e9e pour chercher de la nourriture."
   },
   {
-    "name": "Limagma",
-    "description": "Feu. Limagma, le Pokémon lave. Il laisse une traînée de lave fondue partout où il va."
+    "nom": "Limagma",
+    "description": "Du magma en fusion coule dans les veines de Limagma. Si ce Pok\u00e9mon est refroidi, le magma se solidifie. Son corps devient alors cassant et des morceaux s'en d\u00e9tachent, diminuant ainsi sa taille."
   },
   {
-    "name": "Volcaropod",
-    "description": "Feu. Volcaropod, le Pokémon volcan. Il peut provoquer des éruptions volcaniques massives en battant des ailes."
+    "nom": "Volcaropod",
+    "description": "La carapace de Volcaropod est en fait constitu\u00e9e de sa peau, qui s'est durcie apr\u00e8s un refroidissement. Elle est tr\u00e8s cassante et fragile. Il suffit de la toucher pour qu'elle casse. Il reprend sa forme en plongeant dans le magma."
   },
   {
-    "name": "Marcacrin",
-    "description": "Glace. Marcacrin, le Pokémon porcelet. Il utilise la glace pour se protéger des prédateurs en créant un bouclier glacé."
+    "nom": "Marcacrin",
+    "description": "Marcacrin cherche sa nourriture en frottant son groin par terre. Son plat pr\u00e9f\u00e9r\u00e9 est un champignon qui pousse sous l'herbe fan\u00e9e. Ce Pok\u00e9mon d\u00e9couvre parfois des sources d'eau chaude."
   },
   {
-    "name": "Cochignon",
-    "description": "Glace / Sol. Cochignon, le Pokémon truie. Il peut survivre dans des conditions extrêmement froides grâce à sa fourrure épaisse."
+    "nom": "Cochignon",
+    "description": "Cochignon est recouvert de longs poils \u00e9pais qui lui permettent de supporter le froid hivernal. Ce Pok\u00e9mon utilise ses d\u00e9fenses pour d\u00e9terrer la nourriture cach\u00e9e sous la glace."
   },
   {
-    "name": "Corayon",
-    "description": "Eau / Roche. Corayon, le Pokémon corail. Il construit des récifs coralliens en utilisant des matériaux trouvés dans l'océan."
+    "nom": "Corayon",
+    "description": "Les branches de Corayon brillent de sept couleurs quand elles sont expos\u00e9es \u00e0 la lumi\u00e8re du soleil. Si une des branches casse, ce Pok\u00e9mon peut la faire repousser en une nuit."
   },
   {
-    "name": "Rémoraid",
-    "description": "Eau. Rémoraid, le Pokémon canon. Il tire des jets d'eau avec une grande précision pour attaquer ses proies."
+    "nom": "R\u00e9moraid",
+    "description": "R\u00e9moraid aspire de l'eau, puis la recrache \u00e0 forte pression gr\u00e2ce \u00e0 ses muscles abdominaux pour attaquer les proies volantes. Quand son \u00e9volution approche, ce Pok\u00e9mon descend le courant des rivi\u00e8res."
   },
   {
-    "name": "Octillery",
-    "description": "Eau. Octillery, le Pokémon pieuvre. Il est capable de tirer des jets d'eau avec une force incroyable."
+    "nom": "Octillery",
+    "description": "Octillery attrape son ennemi avec ses tentacules. Ce Pok\u00e9mon essaie de l'immobiliser avant de lui ass\u00e9ner le coup final. Si l'ennemi s'av\u00e8re trop fort, Octillery lui crache de l'encre \u00e0 la figure et s'\u00e9chappe."
   },
   {
-    "name": "Cadoizo",
-    "description": "Eau / Vol. Cadoizo, le Pokémon pingouin. Il nage avec grâce sous l'eau et vole habilement dans les airs."
+    "nom": "Cadoizo",
+    "description": "Cadoizo transporte sa nourriture dans sa queue. Il y a longtemps, un c\u00e9l\u00e8bre explorateur r\u00e9ussit \u00e0 atteindre le sommet de la plus haute montagne gr\u00e2ce \u00e0 un de ces Pok\u00e9mon, qui partagea sa nourriture avec lui."
   },
   {
-    "name": "Démanta",
-    "description": "Eau / Vol. Démanta, le Pokémon raie. Il peut transporter de petits Pokémon sur son dos à travers les mers."
+    "nom": "D\u00e9manta",
+    "description": "Les jours de beau temps, on peut voir des bancs de D\u00e9manta sauter au-dessus des vagues. Le R\u00e9moraid qui l'accompagne ne d\u00e9range pas ce Pok\u00e9mon."
   },
   {
-    "name": "Airmure",
-    "description": "Acier / Vol. Airmure, le Pokémon armure. Il vole à des vitesses élevées tout en résistant aux attaques ennemies."
+    "nom": "Airmure",
+    "description": "Airmure est enti\u00e8rement recouvert d'une armure tr\u00e8s dure. Ce Pok\u00e9mon peut voler \u00e0 plus de 300 km/h. Il peut mettre ses ennemis en pi\u00e8ces gr\u00e2ce \u00e0 ses ailes tranchantes comme des sabres."
   },
   {
-    "name": "Malosse",
-    "description": "Ténèbres / Feu. Malosse, le Pokémon chiot. Il utilise des flammes ardentes pour brûler ses ennemis."
+    "nom": "Malosse",
+    "description": "Les Malosse chassent en meute organis\u00e9e. Ils communiquent entre eux gr\u00e2ce \u00e0 une s\u00e9rie de petits cris pour encercler leur proie. L'\u00e9tonnant travail d'\u00e9quipe de ces Pok\u00e9mon est sans comparaison."
   },
   {
-    "name": "Démolosse",
-    "description": "Ténèbres / Feu. Démolosse, le Pokémon chien. Il possède une force et une vitesse incroyables."
+    "nom": "D\u00e9molosse",
+    "description": "Dans une meute de D\u00e9molosse, le leader est dot\u00e9 de cornes inclin\u00e9es vers l'arri\u00e8re. Ces Pok\u00e9mon choisissent leur chef en organisant des combats entre eux."
   },
   {
-    "name": "Hyporoi",
-    "description": "Eau / Dragon. Hyporoi, le Pokémon dragon royal. Il est respecté pour sa grâce et sa puissance dans l'eau."
+    "nom": "Hyporoi",
+    "description": "Hyporoi vit au fin fond des profondeurs oc\u00e9aniques g\u00e9n\u00e9ralement inhabit\u00e9es. On a longtemps cru que le b\u00e2illement de ce Pok\u00e9mon cr\u00e9ait les tourbillons dans les oc\u00e9ans."
+  },
+  {
+    "nom": "Phanpy",
+    "description": "Pour faire son nid, Phanpy creuse un trou au bord d'une rivi\u00e8re. Il d\u00e9limite la zone autour de son nid avec sa trompe pour pr\u00e9venir les autres que ce territoire est le sien."
+  },
+  {
+    "nom": "Donphan",
+    "description": "L'attaque favorite de Donphan consiste \u00e0 se mettre en boule et \u00e0 charger son ennemi en roulant \u00e0 pleine vitesse. Une fois qu'il commence \u00e0 rouler, ce Pok\u00e9mon a du mal \u00e0 s'arr\u00eater."
+  },
+  {
+    "nom": "Porygon2",
+    "description": "Porygon2 fut cr\u00e9\u00e9 par des humains gr\u00e2ce aux progr\u00e8s de la science. Ce Pok\u00e9mon a \u00e9t\u00e9 dot\u00e9 d'une intelligence artificielle qui lui permet d'apprendre de nouveaux mouvements et des \u00e9motions par lui-m\u00eame."
+  },
+  {
+    "nom": "Cerfrousse",
+    "description": "Les superbes bois de Cerfrousse \u00e9taient vendus tr\u00e8s cher comme \u0153uvres d'art. Ce Pok\u00e9mon fut chass\u00e9 et l'esp\u00e8ce proche de l'extinction \u00e0 cause des gens qui recherchaient leurs pr\u00e9cieux bois."
+  },
+  {
+    "nom": "Queulorior",
+    "description": "Queulorior d\u00e9limite son territoire en lib\u00e9rant un fluide corporel qui sort de sa queue. On a d\u00e9couvert plus de 5 000 traces diff\u00e9rentes de fluide laiss\u00e9es par ce Pok\u00e9mon."
+  },
+  {
+    "nom": "Debugant",
+    "description": "Debugant devient nerveux s'il ne s'entra\u00eene pas tous les jours. Lorsqu'un Dresseur \u00e9l\u00e8ve ce Pok\u00e9mon, il doit \u00e9tablir et appliquer un programme d'entra\u00eenement tr\u00e8s complet."
+  },
+  {
+    "nom": "Kapoera",
+    "description": "Kapoera tournoie \u00e0 toute vitesse sur sa t\u00eate, tout en donnant des coups de pied. Cette technique combine des attaques offensives et d\u00e9fensives. Ce Pok\u00e9mon se d\u00e9place plus vite sur la t\u00eate qu'en marchant."
+  },
+  {
+    "nom": "Lippouti",
+    "description": "Lippouti court dans tous les sens et tombe assez souvent. Quand il en a l'occasion, il regarde son reflet dans l'eau pour v\u00e9rifier si son visage n'a pas \u00e9t\u00e9 sali par ses chutes."
+  },
+  {
+    "nom": "\u00c9lekid",
+    "description": "\u00c9lekid stocke de l'\u00e9lectricit\u00e9 dans son corps. S'il touche du m\u00e9tal et d\u00e9charge sans le faire expr\u00e8s son \u00e9lectricit\u00e9, ce Pok\u00e9mon fait des cercles avec ses bras pour se recharger."
+  },
+  {
+    "nom": "Magby",
+    "description": "L'\u00e9tat de sant\u00e9 de Magby peut \u00eatre devin\u00e9 selon le type de flamme qu'il crache. Si ce Pok\u00e9mon crache des flammes jaunes, c'est qu'il est en bonne sant\u00e9. Lorsqu'il est fatigu\u00e9, de la fum\u00e9e noire s'ajoute aux flammes."
+  },
+  {
+    "nom": "\u00c9cr\u00e9meuh",
+    "description": "\u00c9cr\u00e9meuh produit plus de 20 l de lait par jour. Son lait sucr\u00e9 fait le bonheur des petits et des grands. Les gens qui ne boivent pas de lait en font du yaourt."
+  },
+  {
+    "nom": "Leuphorie",
+    "description": "Leuphorie ressent la tristesse gr\u00e2ce \u00e0 son pelage duveteux. Lorsqu'il la remarque, ce Pok\u00e9mon se pr\u00e9cipite vers la personne triste pour partager avec elle un \u0152uf Chance, capable de faire na\u00eetre un sourire sur tout visage."
+  },
+  {
+    "nom": "Raikou",
+    "description": "Raikou incarne la vitesse de l'\u00e9clair. Les rugissements de ce Pok\u00e9mon lib\u00e8rent des ondes de choc provenant du ciel et frappant le sol avec la puissance de la foudre."
+  },
+  {
+    "nom": "Entei",
+    "description": "Entei incarne la col\u00e8re du magma. On pense que ce Pok\u00e9mon est n\u00e9 suite \u00e0 l'\u00e9ruption d'un volcan. Il peut envoyer d'\u00e9normes jets de flammes qui calcinent tout ce qu'ils touchent."
+  },
+  {
+    "nom": "Suicune",
+    "description": "Suicune incarne la tranquillit\u00e9 d'une source d'eau pure. Il parcourt les plaines avec gr\u00e2ce. Ce Pok\u00e9mon a le pouvoir de purifier l'eau."
+  },
+  {
+    "nom": "Embrylex",
+    "description": "Embrylex est n\u00e9 sous terre. Pour remonter \u00e0 la surface, ce Pok\u00e9mon doit manger la terre au-dessus de lui. Jusqu'\u00e0 ce qu'il y parvienne, Embrylex ne peut pas voir le visage de ses parents."
+  },
+  {
+    "nom": "Ymphect",
+    "description": "Ymphect cr\u00e9e un gaz dans son corps qu'il comprime puissamment pour se propulser, comme un avion \u00e0 r\u00e9action. Son corps est tr\u00e8s solide. Il ne l'endommage pas, m\u00eame lorsqu'il frappe de l'acier tremp\u00e9."
+  },
+  {
+    "nom": "Tyranocif",
+    "description": "Tyranocif est si incroyablement puissant qu'il peut abattre une montagne pour y faire son nid. Ce Pok\u00e9mon se prom\u00e8ne dans les montagnes pour y trouver de nouveaux adversaires."
+  },
+  {
+    "nom": "Lugia",
+    "description": "Les ailes de Lugia renferment une puissance d\u00e9vastatrice. Un simple battement de ses ailes peut d\u00e9truire de petites maisons. Du coup, ce Pok\u00e9mon a choisi de vivre loin de tout, dans les profondeurs oc\u00e9aniques."
+  },
+  {
+    "nom": "Ho-Oh",
+    "description": "Les plumes de Ho-Oh brillent de sept couleurs selon l'orientation de son corps par rapport \u00e0 la lumi\u00e8re. On raconte que ces plumes portent bonheur. On dit aussi que ce Pok\u00e9mon vit au pied d'un arc-en-ciel."
+  },
+  {
+    "nom": "Celebi",
+    "description": "Ce Pok\u00e9mon est venu du futur en voyageant dans le temps. On raconte que quand Celebi appara\u00eet, cela signifie que le futur sera bon et agr\u00e9able."
   }
 ]

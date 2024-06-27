@@ -1,3 +1,542 @@
 [
-
+  {
+    "nom": "Arcko",
+    "description": "Arcko est dot\u00e9 de petits crochets sous les pattes, ce qu'il lui permet de grimper aux murs. Ce Pok\u00e9mon attaque en frappant ses ennemis avec son \u00e9paisse queue."
+  },
+  {
+    "nom": "Massko",
+    "description": "Les feuilles qui poussent sur le corps de Massko sont bien pratiques lorsqu'il veut se camoufler dans la for\u00eat. Ce Pok\u00e9mon est pass\u00e9 ma\u00eetre dans l'art de grimper aux arbres."
+  },
+  {
+    "nom": "Jungko",
+    "description": "Les feuilles qui poussent sur le corps de Jungko sont extr\u00eamement tranchantes. Ce Pok\u00e9mon est tr\u00e8s agile. Il bondit de branche en branche avant de sauter sur son ennemi."
+  },
+  {
+    "nom": "Poussifeu",
+    "description": "Poussifeu ne l\u00e2che pas son Dresseur d'une semelle, marchant maladroitement derri\u00e8re lui. Ce Pok\u00e9mon crache des flammes pouvant atteindre 1000\u00b0C et des boules de feu qui carbonisent l'ennemi."
+  },
+  {
+    "nom": "Galifeu",
+    "description": "Galifeu muscle ses cuisses et ses mollets en courant dans les champs ou dans les montagnes. Les jambes de ce Pok\u00e9mon sont tr\u00e8s puissantes et rapides, capables de donner 10 coups de pied en 1 seconde."
+  },
+  {
+    "nom": "Bras\u00e9gali",
+    "description": "Au combat, Bras\u00e9gali envoie ses flammes ardentes de ses poignets. Il fait preuve d'un courage exceptionnel. Plus l'ennemi est puissant, plus les poignets de ce Pok\u00e9mon sont ardents."
+  },
+  {
+    "nom": "Gobou",
+    "description": "La nageoire sur la t\u00eate de Gobou lui sert de radar hypersensible. Il l'utilise pour sentir les mouvements de l'eau et de l'air. Ainsi, ce Pok\u00e9mon peut savoir ce qui se passe autour de lui sans avoir \u00e0 se servir de ses yeux."
+  },
+  {
+    "nom": "Flobio",
+    "description": "Le corps de Flobio est envelopp\u00e9 par un film fin et collant qui lui permet de vivre hors de l'eau. Ce Pok\u00e9mon joue dans la vase sur les plages lorsque la mar\u00e9e est basse."
+  },
+  {
+    "nom": "Laggron",
+    "description": "Laggron est tr\u00e8s fort. Tellement fort qu'il peut ais\u00e9ment tirer un rocher pesant plus d'une tonne. Ce Pok\u00e9mon est \u00e9galement dot\u00e9 d'une vue si efficace qu'il peut m\u00eame voir \u00e0 travers l'eau trouble."
+  },
+  {
+    "nom": "Medhy\u00e8na",
+    "description": "Sans se poser de questions, Medhy\u00e8na essaye de mordre tout ce qui bouge. Ce Pok\u00e9mon pourchasse sa proie jusqu'\u00e0 ce qu'elle s'\u00e9puise. Cependant, il se peut qu'il prenne peur et s'enfuie si la proie riposte."
+  },
+  {
+    "nom": "Grahy\u00e8na",
+    "description": "On peut facilement deviner quand Gray\u00e8na se pr\u00e9pare \u00e0 attaquer. Il grogne et se met \u00e0 plat ventre. Ce Pok\u00e9mon mord sauvagement ses ennemis avec ses crocs ac\u00e9r\u00e9s."
+  },
+  {
+    "nom": "Zigzaton",
+    "description": "Zigzaton se prom\u00e8ne nerveusement un peu partout. En effet, ce Pok\u00e9mon est tr\u00e8s curieux. Tout ce qu'il voit l'int\u00e9resse."
+  },
+  {
+    "nom": "Lin\u00e9on",
+    "description": "Lin\u00e9on court tr\u00e8s vite et toujours en ligne droite. Si un obstacle survient, il l'\u00e9vite en prenant un angle droit. Ce Pok\u00e9mon a beaucoup de mal \u00e0 suivre les routes l\u00e9g\u00e8rement courb\u00e9es."
+  },
+  {
+    "nom": "Chenipotte",
+    "description": "\u00c0 l'aide de ses pointes arri\u00e8re, Chenipotte d\u00e9chire l'\u00e9corce des arbres et mange la s\u00e8ve qui coule dessus. Les pattes de ce Pok\u00e9mon sont dot\u00e9es de coussinets \u00e0 ventouses pour adh\u00e9rer aux parois en verre sans en glisser."
+  },
+  {
+    "nom": "Armulys",
+    "description": "Armulys s'accroche \u00e0 une branche d'arbre avec de la soie pour \u00e9viter de tomber. Ce Pok\u00e9mon y reste tranquillement en attendant son \u00e9volution. Il regarde l'ext\u00e9rieur \u00e0 travers un petit trou dans son cocon de soie."
+  },
+  {
+    "nom": "Charmillon",
+    "description": "La nourriture pr\u00e9f\u00e9r\u00e9e de Charmillon est le pollen sucr\u00e9 des fleurs. Si on veut voir ce Pok\u00e9mon, il suffit de laisser une fleur en pot sur un rebord de fen\u00eatre. Charmillon viendra s\u00fbrement voir s'il y a du pollen."
+  },
+  {
+    "nom": "Blindalys",
+    "description": "Blindalys fabrique son cocon protecteur en s'enveloppant dans la soie qui sort de sa bouche. Une fois la soie autour de son corps, elle se met \u00e0 durcir. Ce Pok\u00e9mon pr\u00e9pare son \u00e9volution \u00e0 l'int\u00e9rieur du cocon."
+  },
+  {
+    "nom": "Papinox",
+    "description": "Papinox est instinctivement attir\u00e9 par la lumi\u00e8re. Des nu\u00e9es de ce Pok\u00e9mon sont attir\u00e9es par les r\u00e9verb\u00e8res des villes, o\u00f9 il s\u00e8me la pagaille en grignotant les feuilles des arbres en bordure de route."
+  },
+  {
+    "nom": "N\u00e9nupiot",
+    "description": "N\u00e9nupiot vit dans les \u00e9tangs et les lacs, sur lesquels il flotte \u00e0 la surface. Si sa feuille tombe, il est affaibli. De temps en temps, ce Pok\u00e9mon sort sur la terre ferme \u00e0 la recherche d'eau propre."
+  },
+  {
+    "nom": "Lombre",
+    "description": "Lombre est nocturne, il commence ses activit\u00e9s malicieuses et sournoises au cr\u00e9puscule. Lorsque ce Pok\u00e9mon rep\u00e8re des p\u00eacheurs, il s'approche de leur ligne, tire dessus et se moque de leur regard perplexe."
+  },
+  {
+    "nom": "Ludicolo",
+    "description": "Ludicolo ne peut pas s'emp\u00eacher de danser quand il entend une musique joyeuse et festive. On raconte que ce Pok\u00e9mon appara\u00eet lorsqu'il entend les enfants chanter pendant leurs randonn\u00e9es."
+  },
+  {
+    "nom": "Grainipiot",
+    "description": "Grainipiot s'accroche par la t\u00eate aux branches d'arbres. Il en profite alors pour absorber l'humidit\u00e9 de l'arbre. Plus ce Pok\u00e9mon boit d'eau, plus son corps devient brillant."
+  },
+  {
+    "nom": "Pifeuil",
+    "description": "Les Pifeuil vivent dans des for\u00eats tr\u00e8s dens\u00e9ment bois\u00e9es. Il leur arrive de sortir de la for\u00eat pour faire peur aux gens. Ce Pok\u00e9mon d\u00e9teste qu'on lui pince son grand nez."
+  },
+  {
+    "nom": "Tengalice",
+    "description": "Tengalice est un Pok\u00e9mon myst\u00e9rieux que l'on dit de vivre au-dessus des arbres imposants datant de plus de mille ans. Il cr\u00e9e des temp\u00eates terribles avec les feuilles \u00e9ventail qu'il d\u00e9tient."
+  },
+  {
+    "nom": "Nirondelle",
+    "description": "Nirondelle d\u00e9fend courageusement son territoire contre ses ennemis, m\u00eame les plus puissants. Ce vaillant Pok\u00e9mon est toujours pr\u00eat \u00e0 relever un d\u00e9fi, mais s'il a faim, il se met \u00e0 pleurer \u00e0 chaudes larmes."
+  },
+  {
+    "nom": "H\u00e9l\u00e9delle",
+    "description": "H\u00e9l\u00e9delle vole dans les cieux en dessinant de grands arcs. Ce Pok\u00e9mon plonge en piqu\u00e9 d\u00e8s qu'il rep\u00e8re sa proie. Il attrape fermement la malheureuse cible dans ses serres, emp\u00eachant toute fuite."
+  },
+  {
+    "nom": "Go\u00e9lise",
+    "description": "Go\u00e9lise a l'habitude de transporter ses proies et ses objets de valeur dans son bec avant de les cacher. Ce Pok\u00e9mon se laisse porter par le vent et vole comme s'il surfait dans les cieux."
+  },
+  {
+    "nom": "Bekipan",
+    "description": "Bekipan est un transporteur volant chargeant des petits Pok\u00e9mon et des \u0152ufs dans son \u00e9norme bec. Ce Pok\u00e9mon construit son nid sur les falaises, face \u00e0 la mer."
+  },
+  {
+    "nom": "Tarsal",
+    "description": "Tarsal ressent les \u00e9motions des gens gr\u00e2ce \u00e0 ses cornes. Ce Pok\u00e9mon se montre rarement, mais il arrive qu'il s'approche d'une personne s'il la sent dans un \u00e9tat d'esprit positif."
+  },
+  {
+    "nom": "Kirlia",
+    "description": "On dit qu'un Kirlia expos\u00e9 aux \u00e9motions positives de son Dresseur devient tr\u00e8s beau. Le cerveau surd\u00e9velopp\u00e9 de ce Pok\u00e9mon lui permet de contr\u00f4ler les forces t\u00e9l\u00e9kin\u00e9tiques."
+  },
+  {
+    "nom": "Gardevoir",
+    "description": "Gardevoir a le pouvoir de pr\u00e9dire l'avenir. On raconte que lorsqu'il sent que son Dresseur est en danger, il lib\u00e8re une puissante d\u00e9charge d'\u00e9nergie t\u00e9l\u00e9kin\u00e9tique."
+  },
+  {
+    "nom": "Arakdo",
+    "description": "Du bout de ses pattes, Arakdo s\u00e9cr\u00e8te une huile lui permettant de marcher sur l'eau, comme s'il glissait. Ce Pok\u00e9mon se nourrit des organismes microscopiques pr\u00e9sents dans les lacs et les \u00e9tangs."
+  },
+  {
+    "nom": "Maskadra",
+    "description": "Maskadra intimide ses ennemis gr\u00e2ce aux motifs en forme de regard sur ses antennes. En battant des ailes, ce Pok\u00e9mon peut voler librement dans toutes les directions, m\u00eame lat\u00e9ralement ou \u00e0 reculons."
+  },
+  {
+    "nom": "Balignon",
+    "description": "Les Balignon vivent dans les sols humides et les recoins sombres des grandes for\u00eats. On les trouve souvent immobiles sous les feuilles mortes. Ce Pok\u00e9mon se nourrit d'un compost fait de feuilles mortes pourries."
+  },
+  {
+    "nom": "Chapignon",
+    "description": "Chapignon se rapproche de son ennemi en se servant de son jeu de jambes, puis donne des coups de poings avec ses bras \u00e9lastiques. La technique de combat de ce Pok\u00e9mon est digne des meilleurs boxeurs."
+  },
+  {
+    "nom": "Parecool",
+    "description": "Parecool se pr\u00e9lasse plus de vingt heures par jour. Il bouge tellement peu qu'il n'a presque pas besoin de manger. Le repas quotidien de ce Pok\u00e9mon n'est constitu\u00e9 que de trois feuilles."
+  },
+  {
+    "nom": "Vigoroth",
+    "description": "Vigoroth est toujours impatient de se d\u00e9fouler. Il ne supporte pas l'id\u00e9e de rester sans rien faire, m\u00eame une minute. Le niveau de stress de ce Pok\u00e9mon augmente \u00e9norm\u00e9ment s'il ne peut pas bouger."
+  },
+  {
+    "nom": "Monafl\u00e8mit",
+    "description": "Monafl\u00e8mit passe toute sa journ\u00e9e allong\u00e9 \u00e0 paresser. Il mange toute l'herbe qu'il trouve \u00e0 port\u00e9e de main. Ensuite, il change d'endroit, \u00e0 contrec\u0153ur."
+  },
+  {
+    "nom": "Ningale",
+    "description": "Ningale vit depuis des ann\u00e9es sous terre, dans l'obscurit\u00e9 la plus totale. Ce Pok\u00e9mon absorbe les nutriments des racines des arbres. Il reste immobile, attendant patiemment son \u00e9volution."
+  },
+  {
+    "nom": "Ninjask",
+    "description": "Ninjask se d\u00e9place tellement vite qu'il est impossible de le voir. En revanche, on entend clairement son cri. On a pendant tr\u00e8s longtemps cru que ce Pok\u00e9mon \u00e9tait invisible."
+  },
+  {
+    "nom": "Munja",
+    "description": "Le corps robuste de Munja ne bouge pas d'un pouce. En fait, son corps semble \u00eatre une coquille vide. Certains croient que ce Pok\u00e9mon peut voler l'\u00e2me de quiconque regarderait \u00e0 l'int\u00e9rieur de son corps creux."
+  },
+  {
+    "nom": "Chuchmur",
+    "description": "G\u00e9n\u00e9ralement, la voix de Chuchmur est tr\u00e8s douce, \u00e0 peine audible, m\u00eame si on tend l'oreille. Pourtant, lorsque ce Pok\u00e9mon sent l'approche du danger, il se met \u00e0 crier si fort qu'il peut d\u00e9chirer des tympans."
+  },
+  {
+    "nom": "Ramboum",
+    "description": "Le hurlement de Ramboum est si fort qu'il peut faire s'effondrer une petite maison en bois. Il se sert de sa voix pour punir ses ennemis. Les oreilles de ce Pok\u00e9mon servent de haut-parleurs."
+  },
+  {
+    "nom": "Brouhabam",
+    "description": "Brouhabam peut d\u00e9clencher des tremblements de terre gr\u00e2ce aux vibrations de son hurlement. Lorsque ce Pok\u00e9mon inspire fortement, cela signifie qu'il se pr\u00e9pare \u00e0 pousser un gigantesque rugissement."
+  },
+  {
+    "nom": "Makuhita",
+    "description": "Makuhita est tenace. M\u00eame s'il est presque battu il continue \u00e0 se relever et \u00e0 attaquer son ennemi. Chaque fois qu'il se rel\u00e8ve, ce Pok\u00e9mon stocke plus d'\u00e9nergie en vue de sa future \u00e9volution."
+  },
+  {
+    "nom": "Hariyama",
+    "description": "Hariyama s'entra\u00eene \u00e0 donner ses coups directs avec sa paume le plus souvent possible. Un seul de ces puissants coups de paume peut plier un poteau t\u00e9l\u00e9phonique en deux."
+  },
+  {
+    "nom": "Azurill",
+    "description": "Azurill fait tournoyer sa queue comme un lasso et l'envoie si fort que le reste de son corps est \u00e9galement projet\u00e9. Le record de lancer de ce Pok\u00e9mon est actuellement de 10 m."
+  },
+  {
+    "nom": "Tarinor",
+    "description": "Le nez magn\u00e9tique de Tarinor pointe toujours vers le nord. Si deux de ces Pok\u00e9mon se rencontrent, ils ne peuvent pas se faire face car leurs nez magn\u00e9tiques se repoussent."
+  },
+  {
+    "nom": "Skitty",
+    "description": "Skitty a pris l'habitude de pourchasser les objets mobiles qui le fascinent. On sait que ce Pok\u00e9mon court souvent apr\u00e8s sa queue, jusqu'\u00e0 ce qu'il ait la t\u00eate qui tourne."
+  },
+  {
+    "nom": "Delcatty",
+    "description": "Delcatty pr\u00e9f\u00e8re vivre une existence sans contraintes, au cours de laquelle chacun pourrait faire ce qu'il veut. Comme ce Pok\u00e9mon mange et dort quand il le d\u00e9cide, son rythme de vie est totalement al\u00e9atoire."
+  },
+  {
+    "nom": "T\u00e9n\u00e9fix",
+    "description": "Les T\u00e9n\u00e9fix m\u00e8nent une vie tranquille dans les cavernes. Pourtant, ils sont craints, car on raconte que ces Pok\u00e9mon volent l'esprit des gens quand leurs yeux brillent dans l'obscurit\u00e9."
+  },
+  {
+    "nom": "Mysdibule",
+    "description": "Les \u00e9normes m\u00e2choires de Mysdibule sont en r\u00e9alit\u00e9 des cornes en m\u00e9tal transform\u00e9es. Son visage doux et gentil est un leurre pour tromper l'ennemi. Quand l'ennemi s'y attend le moins, il le croque d'un coup de m\u00e2choire."
+  },
+  {
+    "nom": "Galekid",
+    "description": "Ce Pok\u00e9mon a un corps en acier. Pour constituer son corps, Galekid se nourrit de minerai de fer extrait des montagnes. De temps en temps, il cause de nombreux d\u00e9g\u00e2ts en mangeant des ponts ou des rails."
+  },
+  {
+    "nom": "Galegon",
+    "description": "Galegon adoucit son corps d'acier en buvant une eau min\u00e9rale jusqu'\u00e0 ce qu'il soit tout boursoufl\u00e9. Ce Pok\u00e9mon fait son nid pr\u00e8s des sources d'eau min\u00e9rale riches en nutriments."
+  },
+  {
+    "nom": "Galeking",
+    "description": "Galeking marque son territoire autour d'une montagne enti\u00e8re. Il combat sans merci quiconque p\u00e9n\u00e8tre dans son environnement. Ce Pok\u00e9mon patrouille sans arr\u00eat sur son territoire."
+  },
+  {
+    "nom": "M\u00e9ditikka",
+    "description": "M\u00e9ditikka poursuit un difficile entra\u00eenement mental dans les montagnes. Cependant, \u00e0 chaque fois qu'il m\u00e9dite, ce Pok\u00e9mon perd sa concentration. Du coup, son entra\u00eenement ne s'arr\u00eate jamais."
+  },
+  {
+    "nom": "Charmina",
+    "description": "On dit que gr\u00e2ce \u00e0 la m\u00e9ditation, Charmina stocke de l'\u00e9nergie dans son corps et affine son sixi\u00e8me sens. Ce Pok\u00e9mon se cache des autres en se fondant dans les champs et les montagnes."
+  },
+  {
+    "nom": "Dynavolt",
+    "description": "Dynavolt stocke de l'\u00e9lectricit\u00e9 dans les poils de son corps allong\u00e9. Ce Pok\u00e9mon stimule les muscles de ses jambes avec des charges \u00e9lectriques, ce qui le rend capable d'acc\u00e9l\u00e9rations fulgurantes."
+  },
+  {
+    "nom": "\u00c9lecsprint",
+    "description": "La crini\u00e8re d'\u00c9lecsprint lib\u00e8re constamment de l'\u00e9lectricit\u00e9. Les \u00e9tincelles d\u00e9clenchent parfois des feux de for\u00eat. Au d\u00e9but de ses combats, ce Pok\u00e9mon cr\u00e9e des nuages orageux."
+  },
+  {
+    "nom": "Posipi",
+    "description": "Posipi sert de supporter \u00e0 ses partenaires. Chaque fois qu'un membre de son \u00e9quipe fait une belle action dans un combat, ce Pok\u00e9mon court-circuite son corps et lib\u00e8re des \u00e9tincelles pour montrer sa joie."
+  },
+  {
+    "nom": "N\u00e9gapi",
+    "description": "N\u00e9gapi n'h\u00e9site pas \u00e0 se mettre en danger pour soutenir ses partenaires. Il court-circuite son corps pour faire jaillir des gerbes d'\u00e9tincelles et de donner du c\u0153ur \u00e0 l'ouvrage \u00e0 ses \u00e9quipiers."
+  },
+  {
+    "nom": "Muciole",
+    "description": "\u00c0 la tomb\u00e9e de la nuit, la queue de Muciole \u00e9met de la lumi\u00e8re. Il communique avec les autres en ajustant l'intensit\u00e9 et le clignotement de sa lumi\u00e8re. Ce Pok\u00e9mon est attir\u00e9 par le doux parfum de Lumivole."
+  },
+  {
+    "nom": "Lumivole",
+    "description": "Lumivole peut attirer un essaim de Muciole gr\u00e2ce \u00e0 son doux parfum. Une fois les Muciole rassembl\u00e9s, ce Pok\u00e9mon dirige cette nu\u00e9e lumineuse et lui fait dessiner des figures g\u00e9om\u00e9triques dans la nuit \u00e9toil\u00e9e."
+  },
+  {
+    "nom": "Ros\u00e9lia",
+    "description": "Ros\u00e9lia utilise ses \u00e9pines pointues comme projectiles si on tente de cueillir les fleurs sur ses bras. Le parfum de ce Pok\u00e9mon apporte s\u00e9r\u00e9nit\u00e9 et pl\u00e9nitude \u00e0 ceux qui le sentent."
+  },
+  {
+    "nom": "Gloupti",
+    "description": "Virtuellement, le corps de Gloupti n'est qu'un estomac. Il est capable d'avaler des objets aussi gros que lui. L'estomac de ce Pok\u00e9mon contient un fluide sp\u00e9cial qui lui permet de dig\u00e9rer n'importe quoi."
+  },
+  {
+    "nom": "Avaltout",
+    "description": "Lorsqu'Avaltout rep\u00e8re une proie, il lib\u00e8re une substance terriblement toxique de ses pores et en enduit son ennemi pour l'affaiblir. Ce Pok\u00e9mon peut ensuite l'avaler d'un coup dans sa gigantesque bouche."
+  },
+  {
+    "nom": "Carvanha",
+    "description": "Les m\u00e2choires surd\u00e9velopp\u00e9es de Carvanha et ses crocs ac\u00e9r\u00e9s sont si puissants qu'ils peuvent d\u00e9chirer la coque des bateaux. De nombreux navires ont \u00e9t\u00e9 attaqu\u00e9s et coul\u00e9s par ce Pok\u00e9mon."
+  },
+  {
+    "nom": "Sharpedo",
+    "description": "Surnomm\u00e9 le \u00abtyran des mers\u00bb, Sharpedo est craint de par le monde. Ses crocs mena\u00e7ants repoussent lorsqu'ils se brisent. Un seul de ces Pok\u00e9mon peut d\u00e9truire un p\u00e9trolier gros porteur."
+  },
+  {
+    "nom": "Wailmer",
+    "description": "Les narines de Wailmer sont situ\u00e9es au-dessus de ses yeux. Ce joyeux Pok\u00e9mon adore effrayer les gens en expulsant de l'eau de mer par les narines."
+  },
+  {
+    "nom": "Wailord",
+    "description": "Wailord est le plus grand Pok\u00e9mon d\u00e9couvert \u00e0 ce jour. Ce Pok\u00e9mon g\u00e9ant nage lascivement dans les grandes \u00e9tendues maritimes, avalant d'\u00e9normes quantit\u00e9s de nourriture en une seule de ses monstrueuses bouch\u00e9es."
+  },
+  {
+    "nom": "Chamallot",
+    "description": "Chamallot est terriblement lent d'esprit. Il ne remarque m\u00eame pas quand il est touch\u00e9. Il ne supporte pas d'avoir faim, m\u00eame une seconde. Le corps de ce Pok\u00e9mon est comparable \u00e0 un chaudron de magma."
+  },
+  {
+    "nom": "Cam\u00e9rupt",
+    "description": "Le corps de Cam\u00e9rupt renferme un volcan. Du magma \u00e0 10 000 degr\u00e9s coule dans ses veines. De temps \u00e0 temps, les bosses sur le dos de ce Pok\u00e9mon entrent en \u00e9ruption et crachent le magma surchauff\u00e9"
+  },
+  {
+    "nom": "Chartor",
+    "description": "Chartor fore les montagnes \u00e0 la recherche de charbon. Lorsqu'il en trouve, il le met dans les emplacements creux de sa carapace pour le br\u00fbler. Quand il est attaqu\u00e9, ce Pok\u00e9mon crache une \u00e9paisse fum\u00e9e noire pour s'enfuir."
+  },
+  {
+    "nom": "Spoink",
+    "description": "Spoink rebondit sur sa queue. Le choc du rebond fait battre son c\u0153ur. Du coup, ce Pok\u00e9mon ne peut pas s'arr\u00eater de rebondir, sinon, son c\u0153ur s'arr\u00eate."
+  },
+  {
+    "nom": "Groret",
+    "description": "Groret utilise les perles noires situ\u00e9es sur son corps pour amplifier la puissance de ses ondes psychiques et prendre le contr\u00f4le de son ennemi. Quand il utilise son pouvoir sp\u00e9cial, ce Pok\u00e9mon a du mal \u00e0 respirer."
+  },
+  {
+    "nom": "Spinda",
+    "description": "On raconte que chaque Spinda dispose d'un agencement de t\u00e2ches tout \u00e0 fait unique. La d\u00e9marche chancelante et titubante de ce Pok\u00e9mon donne l'impression qu'il danse."
+  },
+  {
+    "nom": "Kraknoix",
+    "description": "Le nid de Kraknoix consiste en un trou en pente creus\u00e9 dans le sable, comme une cuvette. Ce Pok\u00e9mon attend patiemment que sa proie tombe dedans. Ses gigantesque m\u00e2choires sont assez puissantes pour croquer des rochers."
+  },
+  {
+    "nom": "Vibraninf",
+    "description": "Pour mettre ses proies K.O., Vibraninf envoie des ultrasons en faisant vibrer ses deux ailes. Les ondes sonores de ce Pok\u00e9mon sont si puissantes qu'elles peuvent d\u00e9clencher des maux de t\u00eate chez les gens."
+  },
+  {
+    "nom": "Lib\u00e9gon",
+    "description": "Lib\u00e9gon est surnomm\u00e9 \u00ab\u00a0l'esprit \u00e9l\u00e9mentaire du d\u00e9sert\u00a0\u00bb. Le battement de ses ailes soul\u00e8ve des nuages de sable. C'est pourquoi ce Pok\u00e9mon est toujours entour\u00e9 d'une temp\u00eate de sable quand il vole."
+  },
+  {
+    "nom": "Cacnea",
+    "description": "Cacnea vit dans les milieux arides, tels les d\u00e9serts. Sa fleur lib\u00e8re un parfum ent\u00eatant pour attirer sa proie. Lorsqu'elle s'approche, ce Pok\u00e9mon envoie des \u00e9pines pour la neutraliser."
+  },
+  {
+    "nom": "Cacturne",
+    "description": "Pendant la journ\u00e9e, Cacturne reste immobile pour \u00e9viter de se d\u00e9shydrater sous le soleil du d\u00e9sert. Ce Pok\u00e9mon ne commence son activit\u00e9 qu'une fois la nuit tomb\u00e9e, sous une temp\u00e9rature plus fra\u00eeche."
+  },
+  {
+    "nom": "Tylton",
+    "description": "Tylton est dot\u00e9 d'ailes l\u00e9g\u00e8res et duveteuses comme des nuages cotonneux. Ce Pok\u00e9mon n'est pas tr\u00e8s sauvage. Il lui arrive d'atterir sur la t\u00eate des gens et d'y rester, comme un chapeau ouat\u00e9."
+  },
+  {
+    "nom": "Altaria",
+    "description": "Altaria danse et tournoie dans les cieux, au milieu des nuages gonfl\u00e9s et cotonneux. Ce Pok\u00e9mon chante des m\u00e9lodies de sa voix cristalline pour offrir aux auditeurs une exp\u00e9rience merveilleuse et inoubliable."
+  },
+  {
+    "nom": "Mangriff",
+    "description": "Chaques cellules du corps de Mangriff porte les stigmates de sa rivalit\u00e9 avec S\u00e9viper. Ce Pok\u00e9mon est capable d'esquiver les attaques avec une agilit\u00e9 incroyable."
+  },
+  {
+    "nom": "S\u00e9viper",
+    "description": "S\u00e9viper se querelle avec Mangriff depuis plusieurs g\u00e9n\u00e9rations. Ses cicatrices sont les preuves de ses nombreux combats. Ce Pok\u00e9mon attaque \u00e0 l'aide de sa queue, aiguis\u00e9e comme une \u00e9p\u00e9e."
+  },
+  {
+    "nom": "S\u00e9l\u00e9roc",
+    "description": "S\u00e9l\u00e9roc fut d\u00e9couvert \u00e0 c\u00f4t\u00e9 d'un crat\u00e8re de m\u00e9t\u00e9orite. Du coup, certaines personnes pensent que ce Pok\u00e9mon pourrait venir de l'espace. Cependant, rien ne peut prouver cette th\u00e9orie pour le moment."
+  },
+  {
+    "nom": "Solaroc",
+    "description": "Solaroc est une nouvelle esp\u00e8ce de Pok\u00e9mon. On raconte qu'il serait tomb\u00e9 de l'espace. Il flotte dans les airs et se d\u00e9place silencieusement. Au combat, ce Pok\u00e9mon lib\u00e8re une lumi\u00e8re intense."
+  },
+  {
+    "nom": "Barloche",
+    "description": "Les vibrisses sensibles de Barloche agissent comme un syst\u00e8me radar sophistiqu\u00e9. Ce Pok\u00e9mon se cache dans la boue, laissant d\u00e9passer ses vibrisses, et attend que sa proie passe \u00e0 proximit\u00e9."
+  },
+  {
+    "nom": "Barbicha",
+    "description": "Quand il s'agit de territoire, Barbicha est tr\u00e8s possessif. Un seul de ces Pok\u00e9mon r\u00e9clame parfois un \u00e9tang entier. Si un ennemi s'approche, il fonce sur lui et d\u00e9clenche un violent tremblement de terre."
+  },
+  {
+    "nom": "\u00c9crapince",
+    "description": "Les \u00c9crapince \u00e9taient au d\u00e9part des Pok\u00e9mon \u00e9trangers import\u00e9s comme animaux domestiques. Ils ont fini par retrouver leur \u00e9tats sauvage. Ce Pok\u00e9mon est particuli\u00e8rement robuste et sa population augmente sans arr\u00eat."
+  },
+  {
+    "nom": "Colhomard",
+    "description": "Colhomard a un temp\u00e9rament tr\u00e8s violent, ce qui le pousse \u00e0 d\u00e9fier tout ce qui passe pr\u00e8s de lui. Certaines formes de vie refusent d'habiter dans les \u00e9tangs occup\u00e9s par ce Pok\u00e9mon et d\u00e9sertent ces eaux."
+  },
+  {
+    "nom": "Balbuto",
+    "description": "Balbuto se d\u00e9place en pivotant sur son unique pied. Des peintures rupestres montrant ce Pok\u00e9mon vivant avec les hommes furent d\u00e9couvertes dans des ruines tr\u00e8s anciennes."
+  },
+  {
+    "nom": "Kaorine",
+    "description": "On raconte que les Kaorine sont des poup\u00e9es de boue cr\u00e9\u00e9es par les premiers hommes et qu'elles furent amen\u00e9es \u00e0 la vie apr\u00e8s une exposition \u00e0 un myst\u00e9rieux rayon. Ce Pok\u00e9mon se d\u00e9place en l\u00e9vitant."
+  },
+  {
+    "nom": "Lilia",
+    "description": "L'esp\u00e8ce des Lilia s'est \u00e9teinte il y a environ 100 millions d'ann\u00e9es. Cet ancien Pok\u00e9mon s'accroche \u00e0 un rocher, sous l'eau, et attrape ses proies \u00e0 l'aide de ses tentacules en forme de p\u00e9tales de fleur."
+  },
+  {
+    "nom": "Vacilys",
+    "description": "Vacilys erre dans les profondeurs de l'oc\u00e9an pour chercher de la nourriture. Ce Pok\u00e9mon peut allonger son cou \u00e0 volont\u00e9 et capturer ses proies \u00e0 l'aide de ses huit tentacules."
+  },
+  {
+    "nom": "Anorith",
+    "description": "Anorith fut ressuscit\u00e9 \u00e0 partir d'un fossile pr\u00e9historique. Ce Pok\u00e9mon primitif vivait \u00e0 l'\u00e9poque dans les eaux tropicales. Il attrape fermement sa proie avec ses deux grandes pinces."
+  },
+  {
+    "nom": "Armaldo",
+    "description": "Le puissant blindage d'Armaldo peut repousser toute attaque. Les \u00e9normes pinces de ce Pok\u00e9mon peuvent s'allonger ou se r\u00e9tracter. Elles peuvent transpercer une plaque d'acier."
+  },
+  {
+    "nom": "Barpau",
+    "description": "Les nageoires de Barpau sont ab\u00eem\u00e9es et d\u00e9chir\u00e9es d\u00e8s sa naissance. Ce Pok\u00e9mon est g\u00e9n\u00e9ralement ignor\u00e9 \u00e0 cause de son apparence mis\u00e9reuse. Il peut vivre dans la mer ou en eau douce."
+  },
+  {
+    "nom": "Milobellus",
+    "description": "Certains pr\u00e9tendent que Milobellus est le plus beau de tous les Pok\u00e9mon. Il a le pouvoir d'apaiser certaines \u00e9motions comme la col\u00e8re ou l'hostilit\u00e9, afin d'\u00e9viter les querelles inutiles."
+  },
+  {
+    "nom": "Morph\u00e9o",
+    "description": "L'apparence de Morph\u00e9o change en fonction du temps. Ce Pok\u00e9mon a appris \u00e0 utiliser l'immense pouvoir de la nature pour prot\u00e9ger son corps minuscule."
+  },
+  {
+    "nom": "Kecleon",
+    "description": "Kecleon est capable de modifier les couleurs de son corps pour se fondre dans son environnement. Il y a cependant une exception\u00a0: ce Pok\u00e9mon ne peut pas modifier la figure g\u00e9om\u00e9trique en zigzag sur son ventre."
+  },
+  {
+    "nom": "Polichombr",
+    "description": "Les Polichombr sont attir\u00e9s par les sentiments de jalousie et les esprits revanchards. Si quelqu'un veut se venger, ces Pok\u00e9mon apparaissent en nu\u00e9e et s'alignent devant la porte des gens concern\u00e9s."
+  },
+  {
+    "nom": "Branette",
+    "description": "En plantant des aiguilles dans son propre corps, Branette g\u00e9n\u00e8re de l'\u00e9nergie permettant de lancer de puissantes mal\u00e9dictions. Au d\u00e9part, ce Pok\u00e9mon n'\u00e9tait qu'une malheureuse peluche jet\u00e9e \u00e0 la poubelle."
+  },
+  {
+    "nom": "Skel\u00e9nox",
+    "description": "Skel\u00e9nox peut traverser n'importe quel mur, m\u00eame le plus \u00e9pais. Une fois que ce Pok\u00e9mon a choisi une cible, il la pourchasse sans rel\u00e2che jusqu'\u00e0 l'aube."
+  },
+  {
+    "nom": "T\u00e9raclope",
+    "description": "Le corps de T\u00e9raclope est totalement creux. Il n'y a rien du tout \u00e0 l'int\u00e9rieur. On raconte que son corps est comme un trou noir. Ce Pok\u00e9mon peut absorber n'importe quoi, mais rien n'en ressort jamais."
+  },
+  {
+    "nom": "Tropius",
+    "description": "Les enfants adorent les fruits autour du cou de Tropius. Apparemment, son penchant pour les fruits l'a conduit \u00e0 en faire pousser sur son propre corps. Il les aime tant qu'il en mange sans arr\u00eat."
+  },
+  {
+    "nom": "\u00c9oko",
+    "description": "\u00c9oko fait r\u00e9sonner son cri dans son corps creux. Lorsque ce Pok\u00e9mon est en col\u00e8re, les \u00e9chos de son cri g\u00e9n\u00e8rent des ultrasons capables d'envoyer voler des ennemis."
+  },
+  {
+    "nom": "Absol",
+    "description": "Chaque fois qu'Absol appara\u00eet devant les gens, une catastrophe comme un tremblement de terre ou un raz-de-mar\u00e9e survient peu de temps apr\u00e8s. Il est devenu tristement c\u00e9l\u00e8bre sous l'appellation de Pok\u00e9mon d\u00e9sastreux."
+  },
+  {
+    "nom": "Ok\u00e9ok\u00e9",
+    "description": "Ok\u00e9ok\u00e9 a toujours un grand sourire qui illumine son visage. On peut savoir s'il est en col\u00e8re en regardant sa queue. Lorsqu'il est furieux, sa queue remue en frappant le sol."
+  },
+  {
+    "nom": "Stalgamin",
+    "description": "Les Stalgamin vivent dans les r\u00e9gions enneig\u00e9es. Pendant les saisons sans neige, comme le printemps et l'\u00e9t\u00e9, ces Pok\u00e9mon se retirent pour vivre dans les cavernes, au milieu des stalactites et des stalagmites."
+  },
+  {
+    "nom": "Oniglali",
+    "description": "Le corps de Oniglali est fait de rochers qu'il endurcit gr\u00e2ce \u00e0 une couche de glace. Ce Pok\u00e9mon a le pouvoir de geler l'humidit\u00e9 ambiante et de lui donner n'importe quelle forme."
+  },
+  {
+    "nom": "Obalie",
+    "description": "Obalie est bien plus rapide quand il roule que quand il marche. Lorsque des groupes de ce Pok\u00e9mon mangent, ils applaudissent tous en m\u00eame temps pour montrer qu'ils sont contents. Leurs repas sont tr\u00e8s bruyants."
+  },
+  {
+    "nom": "Phogleur",
+    "description": "Phogleur a pris l'habitude de jongler avec tout ce qu'il d\u00e9couvre pour la premi\u00e8re fois. Ce Pok\u00e9mon se divertit parfois en faisant tourner un Obalie sur le bout de son museau."
+  },
+  {
+    "nom": "Kaimorse",
+    "description": "Les deux \u00e9normes d\u00e9fenses de Kaimorse peuvent d\u00e9truire en un seul coup des blocs de glace de plus de 10 t. L'\u00e9paisse couche de graisse de ce Pok\u00e9mon l'isole lorsque la temp\u00e9rature est en dessous de z\u00e9ro."
+  },
+  {
+    "nom": "Coquiperl",
+    "description": "La puissante coquille de Coquiperl ne sert pas qu'\u00e0 le prot\u00e9ger. Elle lui permet \u00e9galement de pincer et d'attraper sa proie. Une coquille de Coquiperl adulte porte souvent de nombreuses \u00e9gratignures et \u00e9raflures."
+  },
+  {
+    "nom": "Serpang",
+    "description": "L'existence de Serpang fut longtemps ignor\u00e9e, car il vit dans les profondeurs abyssales des oc\u00e9ans. Les yeux de ce Pok\u00e9mon sont excellents et peuvent m\u00eame voir \u00e0 travers les eaux troubles des grandes profondeurs."
+  },
+  {
+    "nom": "Rosabyss",
+    "description": "Rosabyss vit dans les profondeurs des mers du sud. Son corps est con\u00e7u pour supporter l'\u00e9norme pression des profondeurs abyssales. Du coup, le corps de ce Pok\u00e9mon n'est pas endommag\u00e9 par les attaques ordinaires."
+  },
+  {
+    "nom": "Relicanth",
+    "description": "Les Relicanth sont une esp\u00e8ce de Pok\u00e9mon qui a exist\u00e9 pendant 100 millions d'ann\u00e9es sans jamais changer de forme. Ce Pok\u00e9mon antique se nourrit d'organismes microscopiques avec sa bouche edent\u00e9e."
+  },
+  {
+    "nom": "Lovdisc",
+    "description": "Lovdisc vit dans les mers peu profondes des tropiques. Ce Pok\u00e9mon en forme de c\u0153ur a gagn\u00e9 son nom en nageant derri\u00e8re les couples d'amoureux qu'il rep\u00e9rait dans les eaux claires de l'oc\u00e9an."
+  },
+  {
+    "nom": "Draby",
+    "description": "Draby r\u00eave de pouvoir un jour s'\u00e9lancer dans les cieux. Bien que vou\u00e9 \u00e0 l'\u00e9chec, ce Pok\u00e9mon se jette des falaises pour essayer de voler. \u00c0 force, sa t\u00eate est devenue aussi dure que de l'acier."
+  },
+  {
+    "nom": "Drackhaus",
+    "description": "\u00c0 l'int\u00e9rieur de la carapace blind\u00e9e de Drackhaus, ses cellules sont en pleine transformation pour cr\u00e9er un nouveau corps. La carapace de ce Pok\u00e9mon est tr\u00e8s lourde, ce qui rend ses mouvements tr\u00e8s lents."
+  },
+  {
+    "nom": "Drattak",
+    "description": "Drattak a ce physique gr\u00e2ce \u00e0 son d\u00e9sir de pouvoir s'envoler. On dit que cette puissante envie a d\u00e9clench\u00e9 une soudaine mutation mol\u00e9culaire de ce Pok\u00e9mon, faisant surgir de splendides ailes."
+  },
+  {
+    "nom": "Terhal",
+    "description": "Au lieu du sang, une force magn\u00e9tique tr\u00e8s puissante coule dans les veines de Terhal. Ce Pok\u00e9mon communique avec les autres en envoyant des pulsations magn\u00e9tiques."
+  },
+  {
+    "nom": "M\u00e9tang",
+    "description": "Lorsque deux Terhal fusionnent, un M\u00e9tang appara\u00eet. Les cerveaux des Terhal sont reli\u00e9s par un syst\u00e8me nerveux magn\u00e9tique, ce qui permet \u00e0 ce Pok\u00e9mon de g\u00e9n\u00e9rer un puissant pouvoir t\u00e9l\u00e9kin\u00e9sique."
+  },
+  {
+    "nom": "M\u00e9talosse",
+    "description": "M\u00e9talosse dispose de quatre cerveaux. Combin\u00e9s, ces cerveaux peuvent effectuer des calculs tr\u00e8s complexes plus vite qu'un ordinateur. Ce Pok\u00e9mon peut flotter dans l'air en repliant ses jambes."
+  },
+  {
+    "nom": "Regirock",
+    "description": "Regirock fut isol\u00e9 par les gens il y a tr\u00e8s longtemps. Lorsque le corps de ce Pok\u00e9mon est endommag\u00e9 au combat, on raconte qu'il cherche des rochers pour se r\u00e9parer."
+  },
+  {
+    "nom": "Regice",
+    "description": "Le corps de Regice fut cr\u00e9\u00e9 pendant l'\u00e8re glaciaire. Son corps est tellement gel\u00e9 qu'il ne peut pas fondre, m\u00eame en le br\u00fblant. Ce Pok\u00e9mon peut contr\u00f4ler l'air glac\u00e9 jusqu'\u00e0 une temp\u00e9rature de -200 \u00b0C."
+  },
+  {
+    "nom": "Registeel",
+    "description": "Le corps de Registeel est plus dur que n'importe quel m\u00e9tal existant. Il est apparemment creux. Personne ne sait ce que ce Pok\u00e9mon mange."
+  },
+  {
+    "nom": "Latias",
+    "description": "Latias est extr\u00eamement sensible aux \u00e9motions des gens. S'il ressent une hostilit\u00e9, ce Pok\u00e9mon \u00e9bouriffe ses plumes et pousse un cri strident pour intimider son ennemi."
+  },
+  {
+    "nom": "Latios",
+    "description": "Latios a le pouvoir de faire voir \u00e0 une personne une image provenant de son subconscient. Ce Pok\u00e9mon est intelligent et comprend le langage humain."
+  },
+  {
+    "nom": "Kyogre",
+    "description": "Gr\u00e2ce \u00e0 l'\u00e9nergie de la nature, il peut accomplir sa Primo-R\u00e9surgence pour retrouver son apparence originelle. Ce pouvoir lui permet d'appeler de terribles d\u00e9luges pour \u00e9tendre les mers."
+  },
+  {
+    "nom": "Groudon",
+    "description": "Un Pok\u00e9mon consid\u00e9r\u00e9 comme l'avatar des continents. Selon les l\u00e9gendes, il a disput\u00e9 de nombreux combats avec Kyogre pour contr\u00f4ler l'\u00e9nergie de la nature."
+  },
+  {
+    "nom": "Rayquaza",
+    "description": "On raconte qu'il aurait plus de 10 000 ans. Selon les l\u00e9gendes, c'est gr\u00e2ce \u00e0 lui que Kyogre et Groudon ont cess\u00e9 de se battre."
+  },
+  {
+    "nom": "Jirachi",
+    "description": "Une l\u00e9gende raconte qu'\u00e0 son r\u00e9veil, Jirachi r\u00e9alise n'importe quel souhait inscrit sur les papiers coll\u00e9s sur sa t\u00eate. Si ce Pok\u00e9mon se sent en danger, il se d\u00e9fend sans m\u00eame se r\u00e9veiller."
+  },
+  {
+    "nom": "Deoxys",
+    "description": "L'ADN d'un virus extraterrestre entama une mutation non attendue suite \u00e0 une exposition \u00e0 un rayon laser, ce qui cr\u00e9a Deoxys. L'organe cristallin se trouvant sur la poitrine de ce Pok\u00e9mon semble \u00eatre son cerveau."
+  }
 ]

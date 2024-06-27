@@ -1,0 +1,354 @@
+[
+  {
+    "nom": "Brindibou",
+    "description": "Il attaque en tirant des plumes ac\u00e9r\u00e9es. La force de ses coups de patte est \u00e9galement redoutable."
+  },
+  {
+    "nom": "Effl\u00e8che",
+    "description": "Ce narcissique est un amoureux de la propret\u00e9. Il refuse parfois d'ob\u00e9ir si l'on ne prend pas grand soin de ses plumes."
+  },
+  {
+    "nom": "Arch\u00e9duc",
+    "description": "Les plumes de ses ailes lui servent de fl\u00e8ches. Quand il doit \u00e0 tout prix toucher sa cible, il tire sur les lianes de son cou pour se concentrer."
+  },
+  {
+    "nom": "Flamiaou",
+    "description": "D\u00e8s qu'il a un instant, il fait sa toilette. Il d\u00e9clenche ses attaques Feu en enflammant les poils qu'il a aval\u00e9s en se l\u00e9chant."
+  },
+  {
+    "nom": "Matoufeu",
+    "description": "La poche \u00e0 feu situ\u00e9e \u00e0 la base de son cou gagne en temp\u00e9rature pendant les combats et \u00e9met un bruit semblable \u00e0 un grelot."
+  },
+  {
+    "nom": "F\u00e9linferno",
+    "description": "Un Pok\u00e9mon brutal qui n'en fait qu'\u00e0 sa t\u00eate. Selon son humeur du moment, il lui arrive parfois d'ignorer sciemment les ordres de son Dresseur."
+  },
+  {
+    "nom": "Otaquin",
+    "description": "\u00c0 force de s'entra\u00eener quotidiennement, les ballons qu'il gonfle avec son nez grossissent de jour en jour."
+  },
+  {
+    "nom": "Otarlette",
+    "description": "Il est tout excit\u00e9 quand il est t\u00e9moin d'une danse qu'il ne conna\u00eet pas. Il s'entra\u00eene alors comme un forcen\u00e9 jusqu'\u00e0 la ma\u00eetriser \u00e0 la perfection."
+  },
+  {
+    "nom": "Oratoria",
+    "description": "Pour lui, le combat est une performance artistique. Il chante et danse de toute son \u00e2me pour abattre ses proies."
+  },
+  {
+    "nom": "Picassaut",
+    "description": "Si tu aper\u00e7ois un trou dans un arbre de la jungle, c'est probablement l'\u0153uvre d'un Picassaut. Ces Pok\u00e9mon creusent les troncs en les martelant de leur bec et s'en servent pour stocker leurs fruits."
+  },
+  {
+    "nom": "Piclairon",
+    "description": "Il est capable de produire une centaine de cris diff\u00e9rents qu'il utilise pour marquer son territoire lorsqu'il survole ce dernier."
+  },
+  {
+    "nom": "Bazoucan",
+    "description": "Ils communiquent entre eux en se frappant mutuellement sur le bec. La force et la cadence des coups en disent long sur leur \u00e9tat d'esprit."
+  },
+  {
+    "nom": "Manglouton",
+    "description": "Il mange de tout, mais aime particuli\u00e8rement les proies fra\u00eeches, voire encore vives. Il erre sur les routes \u00e0 leur recherche."
+  },
+  {
+    "nom": "Argouste",
+    "description": "D'un naturel tr\u00e8s patient, il ne peut toutefois s'emp\u00eacher de bondir sur son plat favori, Rattata, s'il en voit un."
+  },
+  {
+    "nom": "Larvibule",
+    "description": "Ses mandibules peuvent briser de tr\u00e8s grosses branches. M\u00eame Minisange, son ennemi naturel, s'enfuit \u00e0 tire-d'aile devant lui."
+  },
+  {
+    "nom": "Chrysapile",
+    "description": "Il est bien prot\u00e9g\u00e9 par sa robuste carapace, et se d\u00e9fend en g\u00e9n\u00e9rant un courant \u00e9lectrique au bout de ses mandibules."
+  },
+  {
+    "nom": "Lucanon",
+    "description": "L'\u00e9lectricit\u00e9 qu'il produit dans son ventre s'accumule dans ses larges mandibules. Il la lib\u00e8re sous forme d'un rayon puissant."
+  },
+  {
+    "nom": "Crabagarre",
+    "description": "En attaque comme en d\u00e9fense, la posture de Crabagarre \u00e9voque celle d'un boxeur. Il arrive parfois qu'il prenne un Noadkoko pour un palmier et qu'il lui ass\u00e8ne un coup de poing par erreur."
+  },
+  {
+    "nom": "Crabominable",
+    "description": "Il concentre le froid dans ses pinces avant de frapper. Ses coups sont suffisamment puissants pour r\u00e9duire un \u00e9pais mur de glace en morceaux."
+  },
+  {
+    "nom": "Plumeline",
+    "description": "Style Pom-Pom\u00a0: Le jaune fonc\u00e9 de son corps s'inverse avec le blanc."
+  },
+  {
+    "nom": "Bombydou",
+    "description": "Ce Pok\u00e9mon raffole du pollens et du nectar. Il volette souvent pr\u00e8s des Tournicoton pour collecter leur pollen."
+  },
+  {
+    "nom": "Rubombelle",
+    "description": "Il d\u00e9teste la pluie car elle mouille le pollen. Quand la m\u00e9t\u00e9o se d\u00e9grade, il se cache alors dans le creux d'un arbre et attend sans bouger."
+  },
+  {
+    "nom": "Rocabot",
+    "description": "Ce Pok\u00e9mon s'attache vite \u00e0 son Dresseur, mais a une f\u00e2cheuse tendance \u00e0 le mordre, ce qui peut compliquer son entra\u00eenement."
+  },
+  {
+    "nom": "Lougaroc",
+    "description": "Les rocs de sa crini\u00e8re sont aiguis\u00e9s comme des couteaux. Il poursuit patiemment sa cible pour l'affaiblir et lui porter le coup de gr\u00e2ce."
+  },
+  {
+    "nom": "Froussardine",
+    "description": "Individuellement, ils sont tr\u00e8s faibles. Ils ont donc d\u00e9velopp\u00e9 une tactique de d\u00e9placement en banc pour r\u00e9sister aux ennemis."
+  },
+  {
+    "nom": "Vorast\u00e9rie",
+    "description": "Ses piq\u00fbres causent un engourdissement qui se mue en d\u00e9mangeaisons si terribles qu'elles poussent la victime \u00e0 se gratter jusqu'au sang."
+  },
+  {
+    "nom": "Pr\u00e9dast\u00e9rie",
+    "description": "Pour endurer les temp\u00e9ratures peu cl\u00e9mentes de Galar, il forme un d\u00f4me herm\u00e9tique avec ses pattes pour conserver sa chaleur corporelle."
+  },
+  {
+    "nom": "Tiboudet",
+    "description": "Il est si fort qu'il peut ais\u00e9ment porter des charges allant jusqu'\u00e0 50 fois son poids. C'est un expert dans l'art d'utiliser la boue."
+  },
+  {
+    "nom": "Bourrinos",
+    "description": "Il reste calme et impassible en toutes circonstances. Il m\u00e9lange sa salive \u00e0 de la terre pour cr\u00e9er une boue sp\u00e9ciale dans sa bouche."
+  },
+  {
+    "nom": "Araqua",
+    "description": "Il enveloppe sa t\u00eate dans une bulle d'eau qu'il a gonfl\u00e9e avec son abdomen. Il aime en comparer la taille avec celles de ses cong\u00e9n\u00e8res."
+  },
+  {
+    "nom": "Tarenbulle",
+    "description": "Il passe la plupart de son temps dans l'eau. S'il est rassasi\u00e9, il peut conserver ses proies dans sa bulle pour les manger plus tard."
+  },
+  {
+    "nom": "Mimantis",
+    "description": "Il d\u00e9gage une odeur d\u00e9licieuse quand il prend le soleil, ce qui attire tous les Pok\u00e9mon Insecte des alentours."
+  },
+  {
+    "nom": "Floramantis",
+    "description": "Un magnifique Pok\u00e9mon qui ressemble \u00e0 une fleur. Les Floramantis bien entra\u00een\u00e9s arborent une couleur tr\u00e8s vive."
+  },
+  {
+    "nom": "Spododo",
+    "description": "Ses chapeaux sont d\u00e9licieux, et les Pok\u00e9mon de la for\u00eat s'en d\u00e9lectent. Heureusement pour lui, ses couvre-chefs repoussent en une nuit."
+  },
+  {
+    "nom": "Lampignon",
+    "description": "Il attire ses proies et les endort gr\u00e2ce au clignotement de ses spores. Il aspire ensuite leur \u00e9nergie vitale du bout de ses doigts."
+  },
+  {
+    "nom": "Tritox",
+    "description": "Il fait chauffer le liquide qu'il s\u00e9cr\u00e8te dans ses poches \u00e0 venin avec la flamme de sa queue pour cr\u00e9er un gaz toxique."
+  },
+  {
+    "nom": "Malamandre",
+    "description": "Ce Pok\u00e9mon habite au fin fond des cavernes. Il se fait servir par des Tritox envo\u00fbt\u00e9s par ses ph\u00e9romones."
+  },
+  {
+    "nom": "Nounourson",
+    "description": "Sa fourrure duveteuse est tr\u00e8s agr\u00e9able \u00e0 caresser, mais ceux qui la touchent sans pr\u00e9venir s'exposent \u00e0 une correction brutale."
+  },
+  {
+    "nom": "Chelours",
+    "description": "Il serre fort contre lui ceux qu'il consid\u00e8re comme ses compagnons, mais ses c\u00e2lins sont assez puissants pour broyer des os."
+  },
+  {
+    "nom": "Croquine",
+    "description": "La douce odeur fruit\u00e9e qui \u00e9mane de son corps stimule \u00e9norm\u00e9ment l'app\u00e9tit des Pok\u00e9mon oiseaux."
+  },
+  {
+    "nom": "Candine",
+    "description": "Il danse en tournant sur lui-m\u00eame et r\u00e9pand une douce odeur dans son sillage. Sentir celle-ci provoque un profond sentiment de bonheur."
+  },
+  {
+    "nom": "Sucreine",
+    "description": "Ce v\u00e9ritable virtuose du coup de pied peut mettre K.O. un champion de kick-boxing en une seule frappe."
+  },
+  {
+    "nom": "Gu\u00e9rilande",
+    "description": "Il ramasse des fleurs en d\u00e9ployant la liane gluante accroch\u00e9e \u00e0 sa t\u00eate et s'en agr\u00e9mente. Il se sent mal \u00e0 l'aise lorsqu'il n'en a pas."
+  },
+  {
+    "nom": "Gouroutan",
+    "description": "D'un mouvement de son \u00e9ventail tiss\u00e9 avec des feuilles et des poils, il peut manipuler les Pok\u00e9mon et les forcer \u00e0 agir selon sa volont\u00e9."
+  },
+  {
+    "nom": "Quartermac",
+    "description": "Ils ob\u00e9issent \u00e0 leur chef au doigt et \u00e0 l'oeil, et travaillent en \u00e9quipe pour d\u00e9nicher leurs Baies favorites."
+  },
+  {
+    "nom": "Sovkipou",
+    "description": "Ce v\u00e9ritable nettoyeur de la nature mange tout, m\u00eame la nourriture avari\u00e9e et les d\u00e9chets. Les environs de son nid sont toujours impeccables."
+  },
+  {
+    "nom": "Sarmura\u00ef",
+    "description": "La carapace qui recouvre son corps est aussi dure que le diamant. Il ne recule devant rien pour gagner."
+  },
+  {
+    "nom": "Bacabouh",
+    "description": "Ce Pok\u00e9mon est n\u00e9 lorsqu'une \u00e2me rancuni\u00e8re s'est incarn\u00e9e dans un p\u00e2t\u00e9 de sable. Il tient \u00e9norm\u00e9ment \u00e0 la pelle sur sa t\u00eate."
+  },
+  {
+    "nom": "Tr\u00e9passable",
+    "description": "Chacun de ses grains de sable a sa volont\u00e9 propre. Tr\u00e9passable gobe de petits Pok\u00e9mon pour absorber leur \u00e9nergie vitale."
+  },
+  {
+    "nom": "Concombaffe",
+    "description": "Il vit dans les eaux chaudes des hauts-fonds. S'il croise un ennemi, il l'attaque en lui crachant ses organes internes au visage."
+  },
+  {
+    "nom": "Type:0",
+    "description": "On raconte qu'il aurait \u00e9t\u00e9 recr\u00e9\u00e9 \u00e0 Galar suite \u00e0 un vol de documents de recherche hautement confidentiels."
+  },
+  {
+    "nom": "Silvalli\u00e9",
+    "description": "Il a r\u00e9veill\u00e9 tout son potentiel et a \u00e9volu\u00e9. Briser son lourd masque a d\u00e9cupl\u00e9 sa vitesse."
+  },
+  {
+    "nom": "M\u00e9t\u00e9no",
+    "description": "Ce Pok\u00e9mon viendrait du ciel. Il nous a offert un spectacle magnifique dans le d\u00e9sert lorsqu'on l'a vu repartir en direction du firmament."
+  },
+  {
+    "nom": "Dodoala",
+    "description": "Ce Pok\u00e9mon passe sa vie \u00e0 dormir. Il se nourrit de feuilles particuli\u00e8rement toxiques que lui seul est capable d'assimiler sans danger."
+  },
+  {
+    "nom": "Boumata",
+    "description": "Il s'abrite derri\u00e8re une carapace couverte d'explosifs. Lorsqu'un ennemi l'attaque, il riposte \u00e0 grands coups de d\u00e9flagrations."
+  },
+  {
+    "nom": "Togedemaru",
+    "description": "Les quatorze \u00e9pines de son dos se h\u00e9rissent de leur propre chef quand il est surpris ou excit\u00e9."
+  },
+  {
+    "nom": "Mimiqui",
+    "description": "Ce Pok\u00e9mon docile d\u00e9teste la solitude, mais il oppose une r\u00e9sistance acharn\u00e9e si l'on essaie de jeter un coup d'\u0153il sous son d\u00e9guisement."
+  },
+  {
+    "nom": "Denticrisse",
+    "description": "Ce Pok\u00e9mon grince fortement des dents afin de stimuler son cerveau. Il projette ensuite l'\u00e9nergie psychique ainsi cr\u00e9\u00e9e par l'appendice sur sa t\u00eate."
+  },
+  {
+    "nom": "Dra\u00efeul",
+    "description": "Il vit dans les montagnes culminant \u00e0 plus de 3 000 m d'altitude. Il se rend parfois en ville pour jouer avec les petits enfants."
+  },
+  {
+    "nom": "Sinistrail",
+    "description": "Ce Pok\u00e9mon Spectre na\u00eet lorsque les algues d\u00e9rivant au fond de l'oc\u00e9an se fixent sur des morceaux d'\u00e9paves de navire."
+  },
+  {
+    "nom": "B\u00e9b\u00e9caille",
+    "description": "Il apprend \u00e0 se battre en entrechoquant l'\u00e9caille qu'il a sur la t\u00eate avec celle de ses cong\u00e9n\u00e8res, ce qui renforce sa technique et son esprit."
+  },
+  {
+    "nom": "\u00c9ca\u00efd",
+    "description": "Ses \u00e9cailles arrach\u00e9es et son corps couvert de cicatrices sont la preuve de sa puissance. Il les montre \u00e0 son adversaire vaincu en se pavanant."
+  },
+  {
+    "nom": "\u00c9ka\u00efser",
+    "description": "Quand il hurle pour f\u00eater sa victoire sur une proie, on entend ses cong\u00e9n\u00e8res se r\u00e9jouir de toutes parts dans un grand tintement m\u00e9tallique."
+  },
+  {
+    "nom": "Tokorico",
+    "description": "Gardien de Mele-Mele, il est curieux de tout. Il a le pouvoir d'appeler les nuages orageux pour stocker la foudre dans son corps.Il déstabilise ses ennemis avec sa vitesse ébouriffante. Il pique souvent des colères noires, mais il en oublie aussitôt la raison."
+  },
+  {
+    "nom": "Tokopiyon",
+    "description": "Pokémon candide mais terriblement cruel, c'est le gardien d'Akala. Il puise son énergie dans le parfum entêtant des fleurs.Avec ses ailes délicates, il répand une poudre mystérieuse et lumineuse quand il vole. Il suffit de le toucher pour retrouver aussitôt le sourire."
+  },
+  {
+    "nom": "Tokotoro",
+    "description": "Il arrache de grands arbres et fait des moulinets avec. Il a le pouvoir de rendre la végétation luxuriante pour ensuite se nourrir de cette force.C'est l'indolent gardien d'Ula-Ula. Il se sert de la végétation pour immobiliser des ennemis, avant de les empaler avec ses cornes."
+  },
+  {
+    "nom": "Tokopisco",
+    "description": "Il confond ses ennemis grâce au brouillard et les pousse à s'en prendre à eux-mêmes. Il puise son énergie dans les courants marins.Gardien de Poni, il a le pouvoir de contrôler l'eau. On raconte qu'il peut produire une eau limpide qui nettoie toutes les impuretés."
+  },
+  {
+    "nom": "Cosmog",
+    "description": "Il vient d'un autre univers. Son corps gazeux est si l\u00e9ger que la moindre brise peut l'emporter."
+  },
+  {
+    "nom": "Cosmovum",
+    "description": "La carapace qui le recouvre est plus dure que tout ce qui est connu par l'Homme. Il grandit en absorbant la lumi\u00e8re des \u00e9toiles."
+  },
+  {
+    "nom": "Solgaleo",
+    "description": "Lorsqu'il ouvre une Ultra-Br\u00e8che, il arrive que de l'\u00e9nergie et des formes de vie d'autres mondes se retrouvent dans le n\u00f4tre."
+  },
+  {
+    "nom": "Lunala",
+    "description": "Des documents extr\u00eamement anciens le d\u00e9crivent comme \u00ab\u00a0celui qui invite la lune\u00a0\u00bb."
+  },
+  {
+    "nom": "Zéroïd",
+    "description": "L'une des mystérieuses Ultra-Chimères. On l'aurait vue parasiter des gens en pleine rue, les rendant extrêmement violents.Nul ne sait si cette Ultra-Chimère possède une conscience propre, mais on l'aurait aperçue en train d'imiter les gestes d'une jeune fille."
+  },
+  {
+    "nom": "Mouscoto",
+    "description": "ersonne ne sait si cette Ultra-Chimère venue d'un autre monde montre ses muscles pour être admirée ou pour intimider ceux qu'elle rencontre.L'une des mystérieuses Ultra-Chimères. On l'aurait aperçue réduisant un camion à benne en miette d'un seul coup de poing."
+  },
+  {
+    "nom": "Cancrelove",
+    "description": "Une forme de vie venant d'un autre monde. Son corps gracile cache une puissance insoup\u00e7onn\u00e9e."
+  },
+  {
+    "nom": "Câblifère",
+    "description": "L'une des mystérieuses Ultra-Chimères. On l'aurait vue émettre une formidable quantité d'électricité autour d'elle.Une créature échappée de l'Ultra-Brèche. Elle a attaqué une centrale électrique, aussi suppose-t-on qu'elle se nourrit d'électricité."
+  },
+  {
+    "nom": "Bamboiselle",
+    "description": "Une Ultra-Chimère qui a traversé l'Ultra-Brèche. On l'aurait aperçue parcourir le ciel à grande vitesse.On peut détecter des pics d'énergie émis par ses bras gigantesques."
+  },
+  {
+    "nom": "Katagami",
+    "description": "Une espèce d'Ultra-Chimère. Elle ne semble pas agressive, bien que son corps tout entier soit une arme tranchante. On l'aurait aperçue coupant un pylône métallique en deux d'un seul tranchant."
+  },
+  {
+    "nom": "Engloutyran",
+    "description": "Une espèce d'Ultra-Chimère. On l'aurait aperçue dévorant des montagnes et des gratte-ciel. Elle est constamment en train de manger, mais ne semble pas produire d'excréments."
+  },
+  {
+    "nom": "Necrozma",
+    "description": "La lumi\u00e8re est sa source d'\u00e9nergie. Les impuret\u00e9s que son corps a accumul\u00e9es en dormant sous terre lui ont donn\u00e9 cette couleur noire."
+  },
+  {
+    "nom": "Magearna",
+    "description": "Ce Pokémon a été créé de toutes pièces il y a 500 ans. Il comprend ce qu'on lui dit, mais il n'est pas doué de parole.Son corps mécanique n'est qu'une enveloppe. Sa véritable nature est une âme artificielle nommée Animacœur."
+  },
+  {
+    "nom": "Marshadow",
+    "description": "Il s'est gliss\u00e9 dans l'ombre d'un ma\u00eetre du kung-fu. Il s'est aussi appropri\u00e9 sa botte secr\u00e8te ultime en copiant ses mouvements."
+  },
+  {
+    "nom": "Vémini",
+    "description": "Dans son monde, cette Ultra-Chimère est fort appréciée pour son naturel conciliant, qui fait d'elle un compagnon de voyage idéal. Elle ricane lorsqu'elle asperge ses proies de venin grâce au dard qu'elle a sur la tête."
+  },
+  {
+    "nom": "Mandrillon",
+    "description": "Son corps contient des hectolitres de poison. Il fait partie de ces créatures que l'on nomme Ultra-Chimères. Elle utilise son aiguillon pour sécréter un venin toxique, luisant et gluant."
+  },
+  {
+    "nom": "Ama-Ama",
+    "description": "Il est sorti d'une Ultra-Brèche. Il est composé de plusieurs petites entités qui s'assemblent pour n'en former qu'une seule. Si un mur se met en branle et vous attaque sans prévenir, c'est lui."
+  },
+  {
+    "nom": "Pierroteknik",
+    "description": "Cette Ultra-Chimère sortie d'une Ultra-Brèche provoque des explosions pour surprendre l'ennemi et en profite pour voler son énergie. Il s'approche des gens avec son allure désarticulée et fait subitement exploser sa tête."
+  },
+  {
+    "nom": "Zeraora",
+    "description": "Il fonce sur ses ennemis \u00e0 la vitesse de l'\u00e9clair et les d\u00e9chiquette \u00e0 l'aide de ses griffes charg\u00e9es \u00e0 haute tension."
+  },
+  {
+    "nom": "Meltan",
+    "description": "Ce Pok\u00e9mon fait fondre le fer et les autres m\u00e9taux contenus dans le sol pour les int\u00e9grer \u00e0 son corps compos\u00e9 d'acier fondu."
+  },
+  {
+    "nom": "Melmetal",
+    "description": "Autrefois v\u00e9n\u00e9r\u00e9 pour son aptitude \u00e0 produire du fer, ce Pok\u00e9mon a myst\u00e9rieusement ressuscit\u00e9 apr\u00e8s 3 000 ans."
+  }
+]

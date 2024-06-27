@@ -1,0 +1,290 @@
+[
+  {
+    "nom": "Marisson",
+    "description": "Quand il se concentre ses forces juste avant l'impact de son coup de t\u00eate, ses piquants deviennent ac\u00e9r\u00e9s et transpercent le corps de son adversaire."
+  },
+  {
+    "nom": "Bogu\u00e9risse",
+    "description": "Une carapace solide le prot\u00e8ge. Elle est si lourde qu'elle a permis \u00e0 ses membres inf\u00e9rieurs de se muscler naturellement."
+  },
+  {
+    "nom": "Blind\u00e9pique",
+    "description": "Quand ses compagnons sont en danger, il d\u00e9ploie ses bras pour former des boucliers et devient lui-m\u00eame un rempart face aux attaques."
+  },
+  {
+    "nom": "Feunnec",
+    "description": "En cas de coup de fatigue, il grignote des rameaux pour recharger ses batteries. Ses oreilles d\u00e9gagent une chaleur qui d\u00e9passe les 200\u00b0C"
+  },
+  {
+    "nom": "Roussil",
+    "description": "Il allume la branche plant\u00e9e dans sa queue en la frottant contre son pelage et s'en sert au combat."
+  },
+  {
+    "nom": "Goupelin",
+    "description": "Peut pr\u00e9dire l'avenir s'il se concentre en fixant la flamme qui danse au bout de sa canne."
+  },
+  {
+    "nom": "Grenousse",
+    "description": "Son apparente nonchalance est trompeuse. Il change soudainement d'attitude et domine ses adversaires en un clin d'\u0153il."
+  },
+  {
+    "nom": "Cro\u00e2poral",
+    "description": "Ce fin strat\u00e8ge sait se saisir du terrain \u00e0 son avantage. Quand il lance des cailloux recouverts d'\u00e9cume, il ne manque jamais sa cible."
+  },
+  {
+    "nom": "Amphinobi",
+    "description": "Sa longue langue enroul\u00e9e autour de son cou peut sentir les mouvements de l'air. Cela l'aide \u00e0 d\u00e9tecter les adversaires qu'il ne peut pas voir."
+  },
+  {
+    "nom": "Sapereau",
+    "description": "Il est tr\u00e8s dou\u00e9 pour creuser avec ses oreilles. Il peut forer un terrier atteignant dix m\u00e8tres de profondeur en une nuit."
+  },
+  {
+    "nom": "Excavarenne",
+    "description": "Aussi puissant qu'une pelleteuse, il peut venir \u00e0 bout de la roche la plus dure. On fait souvent appel \u00e0 lui pour forer des tunnels."
+  },
+  {
+    "nom": "Passerouge",
+    "description": "Son chant m\u00e9lodieux est en fait une tentative d'intimidation. Il picore sans merci tout individu qui p\u00e9n\u00e8tre dans son territoire."
+  },
+  {
+    "nom": "Braisillon",
+    "description": "Il lance des \u00e9tincelles dans le terrier de ses proies pour les effrayer. D\u00e8s qu'elles en \u00e9mergent, il les attaque \u00e0 coups de serres."
+  },
+  {
+    "nom": "Flambusard",
+    "description": "Flambusard chasse surtout les Pok\u00e9mon oiseaux. Il intimide ses adversaires en produisant des \u00e9tincelles avec son plumage."
+  },
+  {
+    "nom": "L\u00e9pidonille",
+    "description": "Il peut manger des feuilles et des racines empoisonn\u00e9es, car il transforme le poison qu'il ing\u00e8re en une poudre noire qu'il \u00e9vacue ensuite."
+  },
+  {
+    "nom": "P\u00e9r\u00e9grain",
+    "description": "Si un Furaiglon tente de l'attaquer \u00e0 coups de bec, il riposte \u00e0 l'aide de ses poils tranchants et de sa poudre noire empoisonn\u00e9e."
+  },
+  {
+    "nom": "Prismillon",
+    "description": "Ses ailes arborent diff\u00e9rents motifs en fonction de son milieu. Sur une m\u00eame \u00eele, on peut apercevoir des Prismillon dont les motifs varient selon le climat de chaque zone."
+  },
+  {
+    "nom": "H\u00e9lionceau",
+    "description": "Les N\u00e9m\u00e9lios femelles leur apprennent \u00e0 chasser. Lorsqu'ils grandissent, ils quittent la troupe et deviennent ind\u00e9pendants."
+  },
+  {
+    "nom": "N\u00e9m\u00e9lios",
+    "description": "Les femelles travaillent de concert afin d'abattre leurs proies. Gr\u00e2ce \u00e0 leurs efforts, le groupe mange \u00e0 sa faim."
+  },
+  {
+    "nom": "Flab\u00e9b\u00e9",
+    "description": "Ce Pok\u00e9mon parvient \u00e0 extraire l'\u00e9nergie cach\u00e9e des fleurs sauvages. Il aime particuli\u00e8rement les fleurs rouges."
+  },
+  {
+    "nom": "Floette",
+    "description": "Ce Pok\u00e9mon parvient \u00e0 canaliser le peu d'\u00e9nergie encore pr\u00e9sent dans les fleurs fan\u00e9es pour leur redonner du tonus. Il tient une fleur rouge."
+  },
+  {
+    "nom": "Florges",
+    "description": "Ce Pok\u00e9mon peut vivre des centaines d'ann\u00e9es et consacrer toute sa vie \u00e0 l'entretien d'un seul et m\u00eame jardin. C'est gr\u00e2ce \u00e0 Florges que le champ de fleurs du parc est d'une telle splendeur."
+  },
+  {
+    "nom": "Cabriolaine",
+    "description": "Il y a encore peu, les personnes vivant dans les zones montagneuses se d\u00e9pla\u00e7aient \u00e0 dos de Cabriolaine."
+  },
+  {
+    "nom": "Chevroum",
+    "description": "Il peut ressentir les \u00e9motions de ses adversaires en les touchant avec ses cornes. Il aide les \u00eatres humains dans leurs travaux depuis 5 000 ans."
+  },
+  {
+    "nom": "Pandespi\u00e8gle",
+    "description": "C'est en copiant son mentor, Pandarbare, qu'il apprend toutes les ficelles du m\u00e9tier, de l'art du combat \u00e0 la capture des proies."
+  },
+  {
+    "nom": "Pandarbare",
+    "description": "Ce Pok\u00e9mon agressif a recours \u00e0 la force pour faire taire ceux qui le contrarient. Il adore combattre les Ixon."
+  },
+  {
+    "nom": "Couafarel",
+    "description": "Le Pok\u00e9mon Caniche. On avait confi\u00e9 au Couafarel, la mission de prot\u00e9ger les rois qui r\u00e9gnaient autrefois sur la r\u00e9gion de Kalos."
+  },
+  {
+    "nom": "Psystigri",
+    "description": "Il couvre la source de ses pouvoirs psychiques hors du commun avec ses oreilles afin d'\u00e9viter les accidents."
+  },
+  {
+    "nom": "Mistigrix",
+    "description": "S'il se sent menac\u00e9, il l\u00e8ve les oreilles et d\u00e9cha\u00eene un pouvoir psychique capable de r\u00e9duire en miettes un camion de 10 t."
+  },
+  {
+    "nom": "Monorpale",
+    "description": "L'\u00e2me de Monorpale est celle d'un humain qui a \u00e9t\u00e9 tu\u00e9 il y a fort longtemps, par la m\u00eame lame qui forme maintenant son corps."
+  },
+  {
+    "nom": "Dimocl\u00e8s",
+    "description": "Il s'est d\u00e9doubl\u00e9 en \u00e9voluant. Il intimide ses ennemis \u00e0 grands coups de bruits m\u00e9talliques en entrechoquant ses deux lames."
+  },
+  {
+    "nom": "Exagide",
+    "description": "Ils ont fait le bonheur de g\u00e9n\u00e9rations de rois. Leurs pouvoirs psychiques leur permettent de contr\u00f4ler hommes et Pok\u00e9mon."
+  },
+  {
+    "nom": "Fluvetin",
+    "description": "Ce Pok\u00e9mon s\u00e9cr\u00e8te son doux parfum gr\u00e2ce \u00e0 un organe en forme de poche. S'il modifie son alimentation, l'odeur de son parfum change."
+  },
+  {
+    "nom": "Cocotine",
+    "description": "Un parfum capiteux \u00e9mane constamment de sa fourrure. Ce parfum est si fort qu'il peut priver son Dresseur d'odorat."
+  },
+  {
+    "nom": "Sucroquin",
+    "description": "Il mange son propre poids en sucre chaque jour. S'il n'a pas sa dose de sucreries, il devient horriblement grognon."
+  },
+  {
+    "nom": "Cupcanaille",
+    "description": "Il peut diagnostiquer l'\u00e9tat de sant\u00e9 mentale et physique de quelqu'un rien qu'\u00e0 l'odorat. Un tel don pourrait avoir des applications en m\u00e9decine."
+  },
+  {
+    "nom": "Sepiatop",
+    "description": "Il fait clignoter son corps lumineux en tournoyant. Il communique avec ses cong\u00e9n\u00e8res \u00e0 l'aide de signaux de lumi\u00e8re."
+  },
+  {
+    "nom": "Sepiatroce",
+    "description": "Il manipule \u00e0 sa guise ceux qui se sont laiss\u00e9 hypnotiser en observant son corps lumineux trop longtemps."
+  },
+  {
+    "nom": "Opermine",
+    "description": "Ils vivent par groupes de deux sur un rocher qui leur convient en bord de mer. \u00c0 mar\u00e9e haute, le duo coop\u00e8re pour capturer des proies."
+  },
+  {
+    "nom": "Golgopathe",
+    "description": "Sept Opermine s'assemblent pour former un Golgopathe. La t\u00eate commande les autres membres."
+  },
+  {
+    "nom": "Venalgue",
+    "description": "Il se m\u00eale aux algues en d\u00e9composition flottant \u00e0 la surface des oc\u00e9ans afin de surprendre et de d\u00e9vorer les Pok\u00e9mon qui viennent s'en nourrir."
+  },
+  {
+    "nom": "Kravarech",
+    "description": "Avec son poison capable de dissoudre le m\u00e9tal, il r\u00e9duit \u00e0 l'\u00e9tat d'\u00e9pave les navires-citernes qui p\u00e9n\u00e8trent sur son territoire."
+  },
+  {
+    "nom": "Flingouste",
+    "description": "S'il perd ses pinces au combat, d'autres repoussent \u00e0 la place. La chair qu'elles contiennent est un mets tr\u00e8s appr\u00e9ci\u00e9 \u00e0 Galar."
+  },
+  {
+    "nom": "Gamblast",
+    "description": "Il aspire de l'eau et la projette sous pression pour attaquer. Le jet est si puissant qu'il perce m\u00eame d'\u00e9paisses plaques d'acier."
+  },
+  {
+    "nom": "Galvaran",
+    "description": "Il absorbe les rayons du soleil en d\u00e9pliant la peau de sa t\u00eate pour produire l'\u00e9lectricit\u00e9 n\u00e9cessaire \u00e0 ses puissantes capacit\u00e9s \u00c9lectrik."
+  },
+  {
+    "nom": "Iguolta",
+    "description": "L'\u00e9lectricit\u00e9 que produit un seul Iguolta en agitant sa collerette suffit \u00e0 alimenter un immeuble entier."
+  },
+  {
+    "nom": "Ptyranidur",
+    "description": "Ce Pok\u00e9mon ancien a \u00e9t\u00e9 ranim\u00e9 \u00e0 partir d'un fossile. \u00c9go\u00efste et violent, il peut d\u00e9truire n'importe quoi avec son \u00e9norme m\u00e2choire."
+  },
+  {
+    "nom": "Rexillius",
+    "description": "Ce Pok\u00e9mon a v\u00e9cu il y a 100 millions d'ann\u00e9es. Il est tr\u00e8s violent, mais sa contenance noble lui donne des airs de royaut\u00e9."
+  },
+  {
+    "nom": "Amagara",
+    "description": "Amagara vivait jadis dans les terres glac\u00e9es. On dit que lorsqu'il pousse un cri, une aurore bor\u00e9ale nimbe le ciel nocturne."
+  },
+  {
+    "nom": "Dragmara",
+    "description": "Un Dragmara a \u00e9t\u00e9 retrouv\u00e9 dans un glacier, en parfait \u00e9tat de conservation, ce qui a fait la une des actualit\u00e9s."
+  },
+  {
+    "nom": "Nymphali",
+    "description": "Une fois le combat entam\u00e9, il n'h\u00e9site pas une seconde, m\u00eame contre un Pok\u00e9mon de type Dragon dix fois plus gros que lui."
+  },
+  {
+    "nom": "Brutalibr\u00e9",
+    "description": "Il utilise des tactiques bas\u00e9es sur son agilit\u00e9 pour fatiguer son adversaire, et termine le combat par une magnifique frappe d\u00e9cisive."
+  },
+  {
+    "nom": "Dedenne",
+    "description": "Il capte les ondes \u00e9mises par ses cong\u00e9n\u00e8res avec ses moustaches. Cela lui permet de savoir o\u00f9 trouver de la nourriture ou de l'\u00e9lectricit\u00e9."
+  },
+  {
+    "nom": "Strassie",
+    "description": "Ce Pok\u00e9mon \u00e9limine les ennemis qui l'attaquent en projetant un laser d'\u00e9nergie g\u00e9n\u00e9r\u00e9 par les pierres pr\u00e9cieuses incrust\u00e9es dans son corps."
+  },
+  {
+    "nom": "Mucuscule",
+    "description": "Son corps est principalement compos\u00e9 d'eau. S'il se d\u00e9shydrate, il devient tout rabougri. C'est le plus faible des Pok\u00e9mon Dragon."
+  },
+  {
+    "nom": "Colimucus",
+    "description": "\u00c9tant donn\u00e9 sa faiblesse, c'est uniquement gr\u00e2ce \u00e0 son fluide pouvant tout dissoudre qu'il a \u00e9chapp\u00e9 \u00e0 une extinction quasi certaine."
+  },
+  {
+    "nom": "Muplodocus",
+    "description": "Il arrive qu'il ne comprenne pas les ordres de son Dresseur et qu'il le regarde d'un air ahuri. Cette r\u00e9action adorable l'a rendu populaire."
+  },
+  {
+    "nom": "Trousselin",
+    "description": "Ce Pok\u00e9mon collectionne les cl\u00e9s. Si on lui en confie une particuli\u00e8rement importante, il la prot\u00e8gera co\u00fbte que co\u00fbte."
+  },
+  {
+    "nom": "Broc\u00e9l\u00f4me",
+    "description": "Ce Pok\u00e9mon prend vie lorsque l'\u00e2me d'un enfant disparu en for\u00eat prend possession d'une souche d'arbre."
+  },
+  {
+    "nom": "Dess\u00e9liande",
+    "description": "Les b\u00fbcherons qui viennent couper des arbres en for\u00eat ont peur d'\u00eatre d\u00e9vor\u00e9s par Dess\u00e9liande. Il est gentil avec les Pok\u00e9mon habitant les bois."
+  },
+  {
+    "nom": "Pitrouille",
+    "description": "Taille Mini\u00a0: Les Pitrouille Taille Mini aiment emporter l'\u00e2me des enfants vers l'au-del\u00e0."
+  },
+  {
+    "nom": "Banshitrouye",
+    "description": "Taille Mini\u00a0: Les Banshitrouye Taille Mini rev\u00eatent la forme d'enfants pour tromper les adultes et les emmener vers l'au-del\u00e0."
+  },
+  {
+    "nom": "Grela\u00e7on",
+    "description": "Gr\u00e2ce \u00e0 son souffle glac\u00e9 \u00e0 - 100 \u00b0 C, il peut geler l'humidit\u00e9 dans l'air et se fa\u00e7onner une carapace de glace."
+  },
+  {
+    "nom": "S\u00e9racrawl",
+    "description": "Son immense corps recouvert de glace est aussi solide que de l'acier. Quand il se d\u00e9place, il \u00e9crase tout qui se trouve sur son passage."
+  },
+  {
+    "nom": "Sonistrelle",
+    "description": "\u00c0 la tomb\u00e9e de la nuit, il quitte la grotte o\u00f9 il r\u00e9side et s'envole \u00e0 la recherche de fruits m\u00fbrs avec ses ultrasons."
+  },
+  {
+    "nom": "Bruyverne",
+    "description": "Il n'h\u00e9site pas \u00e0 an\u00e9antir ses pauvres adversaires qui se retrouvent sans d\u00e9fense dans les t\u00e9n\u00e8bres. Il est d'une nature cruelle et impulsive."
+  },
+  {
+    "nom": "Xerneas",
+    "description": "On dit que ce Pok\u00e9mon immortel peut offrir ses forces vitales. Il a \u00e9t\u00e9 ranim\u00e9 apr\u00e8s avoir pass\u00e9 1000 ans endormi sous la forme d'un arbre."
+  },
+  {
+    "nom": "Yveltal",
+    "description": "Lorsque les plumes de sa queue et de ses ailes sont d\u00e9ploy\u00e9es et virent au rouge, ce Pok\u00e9mon l\u00e9gendaire absorbe l'\u00e9nergie vitale de ce qui l'entoure."
+  },
+  {
+    "nom": "Zygarde",
+    "description": "A 10 % Ses griffes acérées déchirent ses adversaires. Il ne peut pas conserver cette forme longtemps, et se délite après un certain temps. A 50 % Ce Pokémon surveille l'équilibre de l'écosystème en permanence. Si l'on en croit la rumeur, il aurait un grand pouvoir caché... A 100 % L'orifice sur sa poitrine peut déchaîner une puissante énergie capable de tout anéantir. Il utilise sa force pour arrêter ceux qui menacent l'écosystème."
+  },
+  {
+    "nom": "Diancie",
+    "description": "\"Oh, mais vous avez attrap\u00e9 un Diancie\u00a0! Je savais que c'\u00e9tait un Pok\u00e9mon rare... mais j'ai m\u00eame entendu dire que c'\u00e9tait un Pok\u00e9mon fabuleux, le roi des fabuleux, oui\u00a0! Vous \u00eates vraiment un grand Dresseur, Joueur.\""
+  },
+  {
+    "nom": "Hoopa",
+    "description": "Il poss\u00e8de une puissance consid\u00e9rable sous son apparence v\u00e9ritable. Une l\u00e9gende raconte qu'il d\u00e9sirait si fort un tr\u00e9sor cach\u00e9 dans un ch\u00e2teau qu'il d\u00e9roba l'\u00e9difice tout entier."
+  },
+  {
+    "nom": "Volcanion",
+    "description": "Il évacue la vapeur qui s'accumule à l'intérieur de son corps par les bras situés sur son dos. Ce jet est assez puissant pour raser des montagnes."
+  }
+]

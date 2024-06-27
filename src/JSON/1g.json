@@ -1,126 +1,606 @@
 [
   {
     "nom": "Bulbizarre",
-    "description": "Plante / Poison - Bulbizarre, le Pokémon graine. Il porte une graine sur son dos depuis la naissance. Il est connu pour ses attaques végétales puissantes."
+    "description": "Bulbizarre passe son temps \u00e0 faire la sieste sous le soleil. Il y a une graine sur son dos. Il absorbe les rayons du soleil pour faire doucement pousser la graine."
   },
   {
     "nom": "Herbizarre",
-    "description": "Plante / Poison - Herbizarre est l'évolution de Bulbizarre. Il possède un bulbe qui fleurit lorsqu'il atteint sa maturité. Il maîtrise des attaques végétales puissantes."
+    "description": "Un bourgeon a pouss\u00e9 sur le dos de ce Pok\u00e9mon. Pour en supporter le poids, Herbizarre a d\u00fb se muscler les pattes. Lorsqu'il commence \u00e0 se pr\u00e9lasser au soleil, \u00e7a signifie que son bourgeon va \u00e9clore, donnant naissance \u00e0 une fleur."
   },
   {
     "nom": "Florizarre",
-    "description": "Plante / Poison - Florizarre est le stade final d'évolution de Bulbizarre. Sa grande fleur sur le dos dégage un parfum envoûtant. Sa graine est extrêmement toxique."
+    "description": "Une belle fleur se trouve sur le dos de Florizarre. Elle prend une couleur vive lorsqu'elle est bien nourrie et bien ensoleill\u00e9e. Le parfum de cette fleur peut apaiser les gens."
   },
   {
-    "nom": "Salameche",
-    "description": "Feu - Salameche, le Pokémon lézard. Il possède une petite flamme sur la pointe de sa queue, qu'il utilise pour se défendre."
+    "nom": "Salam\u00e8che",
+    "description": "La flamme qui br\u00fble au bout de sa queue indique l'humeur de ce Pok\u00e9mon. Elle vacille lorsque Salam\u00e8che est content. En revanche, lorsqu'il s'\u00e9nerve, la flamme prend de l'importance et br\u00fble plus ardemment."
   },
   {
     "nom": "Reptincel",
-    "description": "Feu - Reptincel est l'évolution de Salameche. Sa flamme brûle plus intensément lorsqu'il est excité. Il peut projeter des flammes sur ses ennemis."
+    "description": "Reptincel lac\u00e8re ses ennemis sans piti\u00e9 gr\u00e2ce \u00e0 ses griffes ac\u00e9r\u00e9es. S'il rencontre un ennemi puissant, il devient agressif et la flamme au bout de sa queue s'embrase et prend une couleur bleu clair."
   },
   {
     "nom": "Dracaufeu",
-    "description": "Feu / Vol - Dracaufeu est le stade final d'évolution de Salameche. Ses ailes puissantes lui permettent de voler à grande vitesse. Il crache des flammes ardentes lorsqu'il est en colère."
+    "description": "Dracaufeu parcourt les cieux pour trouver des adversaires \u00e0 sa mesure. Il crache de puissantes flammes capables de faire fondre n'importe quoi. Mais il ne dirige jamais son souffle destructeur vers un ennemi plus faible."
   },
   {
     "nom": "Carapuce",
-    "description": "Eau - Carapuce, le Pokémon tortue. Sa carapace dure le protège des attaques ennemies. Il peut utiliser ses pattes pour nager rapidement."
+    "description": "La carapace de Carapuce ne sert pas qu'\u00e0 le prot\u00e9ger. La forme ronde de sa carapace et ses rainures lui permettent d'am\u00e9liorer son hydrodynamisme. Ce Pok\u00e9mon nage extr\u00eamement vite."
   },
   {
     "nom": "Carabaffe",
-    "description": "Eau - Carabaffe est l'évolution de Carapuce. Il possède deux canons à eau sur son dos qu'il utilise pour se défendre et pour attaquer ses ennemis."
+    "description": "Carabaffe a une large queue recouverte d'une \u00e9paisse fourrure. Elle devient de plus en plus fonc\u00e9e avec l'\u00e2ge. Les \u00e9raflures sur la carapace de ce Pok\u00e9mon t\u00e9moignent de son exp\u00e9rience au combat."
   },
   {
     "nom": "Tortank",
-    "description": "Eau - Tortank est le stade final d'évolution de Carapuce. Il a une carapace très solide qui peut résister à de puissantes attaques. Ses canons à eau peuvent percer des métaux épais."
+    "description": "Tortank dispose de canons \u00e0 eau \u00e9mergeant de sa carapace. Ils sont tr\u00e8s pr\u00e9cis et peuvent envoyer des balles d'eau capables de faire mouche sur une cible situ\u00e9e \u00e0 plus de 50 m."
   },
   {
     "nom": "Chenipan",
-    "description": "Insecte - Chenipan est un petit Pokémon chenille. Il se nourrit de feuilles et devient plus fort en évoluant."
+    "description": "Chenipan a un app\u00e9tit d'ogre. Il peut engloutir des feuilles plus grosses que lui. Les antennes de ce Pok\u00e9mon d\u00e9gagent une odeur particuli\u00e8rement ent\u00eatante."
   },
   {
     "nom": "Chrysacier",
-    "description": "Insecte - Chrysacier est l'évolution de Chenipan. Son corps est dur comme de l'acier. Il peut endure des attaques sans broncher."
+    "description": "La carapace prot\u00e9geant ce Pok\u00e9mon est dure comme du m\u00e9tal. Chrysacier ne bouge pas beaucoup. Il reste immobile pour pr\u00e9parer les organes \u00e0 l'int\u00e9rieur de sa carapace en vue d'une \u00e9volution future."
   },
   {
     "nom": "Papilusion",
-    "description": "Insecte / Vol - Papilusion est le stade final d'évolution de Chenipan. Ses ailes colorées lui permettent de voler gracieusement. Il répand de la poudre dorée qui endort ses ennemis."
+    "description": "Papilusion est tr\u00e8s dou\u00e9 pour rep\u00e9rer le d\u00e9licieux nectar qu'il butine dans les fleurs. Il peut d\u00e9tecter, extraire et transporter le nectar de fleurs situ\u00e9es \u00e0 plus de 10 km de son nid."
   },
   {
     "nom": "Aspicot",
-    "description": "Insecte / Poison - Aspicot est un Pokémon insecte qui peut paralyser ses proies avec son poison. Il est souvent trouvé dans les forêts humides."
+    "description": "L'odorat d'Aspicot est extr\u00eamement d\u00e9velopp\u00e9. Il lui suffit de renifler ses feuilles pr\u00e9f\u00e9r\u00e9es avec son gros appendice nasal pour les reconna\u00eetre entre mille."
   },
   {
     "nom": "Coconfort",
-    "description": "Insecte / Poison - Coconfort est l'évolution d'Aspicot. Il se cache dans un cocon protecteur et peut paralyser ses ennemis avec son poison puissant."
+    "description": "Coconfort est la plupart du temps immobile et reste accroch\u00e9 \u00e0 un arbre. Cependant, int\u00e9rieurement, il est tr\u00e8s actif, car il se pr\u00e9pare pour sa prochaine \u00e9volution. En touchant sa carapace, on peut sentir sa chaleur."
   },
   {
     "nom": "Dardargnan",
-    "description": "Insecte / Poison - Dardargnan est le stade final d'évolution d'Aspicot. Ses ailes lui permettent de voler rapidement et il peut infliger de douloureuses piqûres empoisonnées."
+    "description": "Dardargnan est extr\u00eamement possessif. Il vaut mieux ne pas toucher \u00e0 son nid si on veut \u00e9viter d'avoir des ennuis. Lorsqu'ils sont en col\u00e8re, ces Pok\u00e9mon attaquent en masse."
   },
   {
     "nom": "Roucool",
-    "description": "Normal / Vol - Roucool est un Pokémon oiseau. Il est rapide et agile en vol. Il émet un cri distinctif pour avertir ses alliés en cas de danger."
+    "description": "Roucool a un excellent sens de l'orientation. Il est capable de retrouver son nid sans jamais se tromper, m\u00eame s'il est tr\u00e8s loin de chez lui et dans un environnement qu'il ne conna\u00eet pas."
   },
   {
     "nom": "Roucoups",
-    "description": "Normal / Vol - Roucoups est l'évolution de Roucool. Il est plus grand et plus fort, capable de voler à des vitesses élevées et de transporter de petits objets."
+    "description": "Roucoups utilise une vaste surface pour son territoire. Ce Pok\u00e9mon surveille r\u00e9guli\u00e8rement son espace a\u00e9rien. Si quelqu'un p\u00e9n\u00e8tre sur son territoire, il corrige l'ennemi sans piti\u00e9 d'un coup de ses terribles serres."
   },
   {
     "nom": "Roucarnage",
-    "description": "Normal / Vol - Roucarnage est le stade final d'évolution de Roucool. Ses serres acérées lui permettent de capturer sa proie avec précision. Il peut voler très haut dans le ciel."
+    "description": "Ce Pok\u00e9mon est dot\u00e9 d'un plumage magnifique et luisant. Bien des Dresseurs sont captiv\u00e9s par la beaut\u00e9 fatale de sa huppe et d\u00e9cident de choisir Roucarnage comme leur Pok\u00e9mon favori."
   },
   {
     "nom": "Rattata",
-    "description": "Normal - Rattata est un petit Pokémon rongeur. Il est connu pour sa vitesse et son agilité. Il est actif la nuit pour éviter les prédateurs."
+    "description": "Rattata est extr\u00eamement prudent. M\u00eame lorsqu'il est endormi, il fait pivoter ses oreilles pour \u00e9couter autour de lui. En ce qui concerne son habitat, il n'est vraiment pas difficile. Il peut faire son nid n'importe o\u00f9."
   },
   {
     "nom": "Rattatac",
-    "description": "Normal - Rattatac est l'évolution de Rattata. Il a une mâchoire puissante et des dents tranchantes. Il est un prédateur redoutable dans son environnement."
+    "description": "Les crocs robustes de Rattatac poussent constamment. Pour \u00e9viter qu'ils raclent le sol, il se fait les dents sur des cailloux ou des troncs d'arbre. Il lui arrive m\u00eame de ronger les murs des maisons."
   },
   {
     "nom": "Piafabec",
-    "description": "Normal / Vol - Piafabec est un Pokémon oiseau. Il communique avec ses congénères en émettant des cris distincts. Il construit des nids dans les hautes herbes."
+    "description": "Piafabec crie tellement fort qu'il peut \u00eatre entendu \u00e0 1km de distance. Ces Pok\u00e9mon se pr\u00e9viennent d'un danger en entonnant une m\u00e9lop\u00e9e tr\u00e8s aigu\u00eb, qu'ils se renvoient les uns les autres, comme un \u00e9cho."
   },
   {
     "nom": "Rapasdepic",
-    "description": "Normal / Vol - Rapasdepic est l'évolution de Piafabec. Il est territorial et défend agressivement son territoire. Il peut infliger des coups de bec redoutables à ses ennemis."
+    "description": "On reconna\u00eet un Rapasdepic \u00e0 son long cou et \u00e0 son bec allong\u00e9. Ces attributs lui permettent d'attraper facilement ses proies dans la terre ou dans l'eau. Il bouge son bec long et fin avec une grande agilit\u00e9."
   },
   {
     "nom": "Abo",
-    "description": "Poison - Abo est un Pokémon serpent. Il se faufile silencieusement pour attaquer sa proie. Il est venimeux et peut paralyser ses ennemis avec son poison."
+    "description": "Abo s'enroule en spirale pour dormir. Sa t\u00eate reste relev\u00e9e de telle sorte que cette position lui permette de r\u00e9agir rapidement si une menace survenait."
   },
   {
     "nom": "Arbok",
-    "description": "Poison - Arbok est l'évolution d'Abo. Il a une morsure venimeuse et peut infliger des blessures graves avec ses crocs. Son motif de cobra sur le ventre effraie ses adversaires."
+    "description": "Ce Pok\u00e9mon dot\u00e9 d'une force extraordinaire peut \u00e9trangler ses proies avec son corps. Il peut m\u00eame \u00e9craser des tonneaux m\u00e9talliques. Une fois sous l'\u00e9treinte d'Arbok, il est impossible de lui \u00e9chapper."
   },
   {
     "nom": "Pikachu",
-    "description": "Électrik - Pikachu est le Pokémon souris. Il stocke de l'électricité dans ses joues et peut la décharger pour attaquer ses ennemis. Sa popularité en fait un symbole des Pokémon."
+    "description": "Chaque fois que Pikachu d\u00e9couvre quelque chose de nouveau, il envoie un arc \u00e9lectrique. Lorsqu'on tombe sur une Baie carbonis\u00e9e, \u00e7a signifie sans doute qu'un de ces Pok\u00e9mon a envoy\u00e9 une charge trop forte."
   },
   {
     "nom": "Raichu",
-    "description": "Électrik - Raichu est l'évolution de Pikachu. Il a une queue qui génère de l'électricité statique. Il peut lancer des décharges électriques puissantes."
+    "description": "Si ses joues contiennent trop d'\u00e9lectricit\u00e9, Raichu plante sa queue dans le sol pour se d\u00e9charger. On trouve des parcelles de terre br\u00fbl\u00e9e \u00e0 proximit\u00e9 du nid de ce Pok\u00e9mon."
   },
   {
     "nom": "Sabelette",
-    "description": "Sol - Sabelette est un petit Pokémon taupe. Il creuse des terriers dans le sable pour se cacher et se protéger des prédateurs."
+    "description": "Le corps de Sabelette lui permet d'\u00e9conomiser l'eau qu'il absorbe, afin de survivre longtemps dans le d\u00e9sert. Ce Pok\u00e9mon s'enroule sur lui-m\u00eame pour se prot\u00e9ger de ses ennemis."
   },
   {
     "nom": "Sablaireau",
-    "description": "Sol - Sablaireau est l'évolution de Sabelette. Il a des griffes acérées qui lui permettent de creuser à travers le sol dur. Il est territorial et défend son territoire avec agressivité."
+    "description": "Le corps de Sablaireau est recouvert de pointes tr\u00e8s dures, qui sont des extensions de sa peau. Une fois par an, ce Pok\u00e9mon mue et les vieilles pointes tombent, remplac\u00e9es par de nouvelles."
   },
   {
-    "nom": "Nidoran♀",
-    "description": "Poison - Nidoran♀ est un Pokémon de type Poison. Elle a une corne toxique sur la tête qu'elle utilise pour se défendre contre les prédateurs."
+    "nom": "Nidoran\u2640",
+    "description": "Ne doit pas \u00eatre confondu avec Nidoran\u2642."
   },
   {
     "nom": "Nidorina",
-    "description": "Poison - Nidorina est l'évolution de Nidoran♀. Elle a des épines venimeuses sur tout son corps. Elle est douce mais peut être très agressive pour défendre ses petits."
+    "description": "Lorsqu'un Nidorina est avec ses amis ou sa famille, il replie ses pointes pour ne pas blesser ses proches. Ce Pok\u00e9mon devient vite nerveux lorsqu'il est s\u00e9par\u00e9 de son groupe."
   },
   {
     "nom": "Nidoqueen",
-    "description": "Poison / Sol - Nidoqueen est le stade final d'évolution de Nidoran♀. Elle a une peau dure comme le roc et une queue puissante qu'elle utilise pour attaquer ses ennemis."
+    "description": "Le corps de Nidoqueen est prot\u00e9g\u00e9 par des \u00e9cailles extr\u00eamement dures. Il aime envoyer ses ennemis voler en leur fon\u00e7ant dessus. Ce Pok\u00e9mon utilise toute sa puissance lorsqu'il prot\u00e8ge ses petits."
+  },
+  {
+    "nom": "Nidoran\u2642",
+    "description": "Ne doit pas \u00eatre confondu avec Nidoran\u2640."
+  },
+  {
+    "nom": "Nidorino",
+    "description": "Nidorino dispose d'une corne plus dure que du diamant. S'il sent une pr\u00e9sence hostile, toutes les pointes de son dos se h\u00e9rissent d'un coup, puis il d\u00e9fie son ennemi."
+  },
+  {
+    "nom": "Nidoking",
+    "description": "L'\u00e9paisse queue de Nidoking est d'une puissance incroyable. En un seul coup, il peut renverser une tour m\u00e9tallique. Lorsque ce Pok\u00e9mon se d\u00e9cha\u00eene, plus rien ne peut l'arr\u00eater."
+  },
+  {
+    "nom": "M\u00e9lof\u00e9e",
+    "description": "Les nuits de pleine lune, des groupes de ces Pok\u00e9mon sortent jouer. Lorsque l'aube commence \u00e0 poindre, les M\u00e9lof\u00e9e fatigu\u00e9s rentrent dans leur retraite montagneuse et vont dormir, blottis les uns contre les autres."
+  },
+  {
+    "nom": "M\u00e9lodelfe",
+    "description": "Les M\u00e9lodelfe se d\u00e9placent en sautant doucement, comme s'ils volaient. Leur d\u00e9marche l\u00e9g\u00e8re leur permet m\u00eame de marcher sur l'eau. On raconte qu'ils se prom\u00e8nent sur les lacs, les soirs o\u00f9 la lune est claire."
+  },
+  {
+    "nom": "Goupix",
+    "description": "\u00c0 sa naissance, Goupix a une queue blanche. Cette queue se divise en six si le Pok\u00e9mon re\u00e7oit de l'amiti\u00e9 de la part de son Dresseur. Les six queues sont courb\u00e9es et magnifiques."
+  },
+  {
+    "nom": "Feunard",
+    "description": "Feunard peut envoyer un inqui\u00e9tant rayon avec ses yeux rouge vif pour prendre le contr\u00f4le de l'esprit de son ennemi. On raconte que ce Pok\u00e9mon peut vivre 1 000 ans."
+  },
+  {
+    "nom": "Rondoudou",
+    "description": "Rondoudou utilise ses cordes vocales pour ajuster librement la longueur d'onde de sa voix. Cela permet \u00e0 ce Pok\u00e9mon de chanter en utilisant une longueur d'onde qui endort ses ennemis."
+  },
+  {
+    "nom": "Grodoudou",
+    "description": "Grodoudou a des yeux immenses et \u00e9carquill\u00e9s. La surface de ses yeux est couverte d'une fine couche de larmes. Si de la poussi\u00e8re est projet\u00e9e dans les yeux de ce Pok\u00e9mon, elle est rapidement \u00e9vacu\u00e9e."
+  },
+  {
+    "nom": "Nosferapti",
+    "description": "Nosferapti reste calme et immobile dans un coin sombre pendant la journ\u00e9e. En effet, une exposition trop longue \u00e0 la lumi\u00e8re du soleil lui br\u00fble l\u00e9g\u00e8rement la peau."
+  },
+  {
+    "nom": "Nosferalto",
+    "description": "Nosferalto adore boire le sang des cr\u00e9atures vivantes. Il est particuli\u00e8rement actif pendant les nuits noires. Ce Pok\u00e9mon se balade dans les cieux \u00e9toil\u00e9s, \u00e0 la recherche de sang frais."
+  },
+  {
+    "nom": "Mystherbe",
+    "description": "Pendant la journ\u00e9e, Mystherbe s'enterre dans le sol pour absorber avec son corps tout entier les nutriments pr\u00e9sents dans la terre. Plus le sol est fertile, plus ses feuilles sont brillantes."
+  },
+  {
+    "nom": "Ortide",
+    "description": "La plupart du temps, Ortide d\u00e9gage un parfum immonde du pistil de sa fleur. Lorsqu'il se sent en danger, la puanteur est encore pire. Lorsque ce Pok\u00e9mon se sent bien en s\u00e9curit\u00e9, il ne d\u00e9gage aucune odeur naus\u00e9abonde."
+  },
+  {
+    "nom": "Rafflesia",
+    "description": "Le pollen toxique de Rafflesia d\u00e9clenche d'affreuses r\u00e9actions allergiques. C'est pourquoi il est conseill\u00e9 de ne jamais s'approcher des jolies fleurs trouv\u00e9es dans la jungle, m\u00eame lorsqu'elles sont magnifiques."
+  },
+  {
+    "nom": "Paras",
+    "description": "Paras accueille des champignons parasites appel\u00e9s tochukaso qui poussent sur son dos. Ils grandissent gr\u00e2ce aux nutriments trouv\u00e9s sur le dos de ce Pok\u00e9mon Insecte."
+  },
+  {
+    "nom": "Parasect",
+    "description": "On sait que les Parasect vivent en groupe dans les grands arbres et se nourrissent des nutriments contenus dans le tronc et les racines. Lorsqu'un arbre infest\u00e9 meurt, ils se pr\u00e9cipitent vers le prochain."
+  },
+  {
+    "nom": "Mimitoss",
+    "description": "On raconte que Mimitoss a \u00e9volu\u00e9 avec une fourrure de poils fins et drus qui prot\u00e8ge son corps tout entier. Il est dot\u00e9 de grands yeux capables de rep\u00e9rer ses proies, m\u00eame minuscules."
+  },
+  {
+    "nom": "A\u00e9romite",
+    "description": "A\u00e9romite est un Pok\u00e9mon nocturne, il ne sort donc que la nuit. Ses proies pr\u00e9f\u00e9r\u00e9es sont les petits insectes qui se rassemblent autour des r\u00e9verb\u00e8res, attir\u00e9s par la lumi\u00e8re."
+  },
+  {
+    "nom": "Taupiqueur",
+    "description": "Les Taupiqueur sont \u00e9lev\u00e9s dans la plupart des fermes. En effet, lorsque ce Pok\u00e9mon creuse quelque part, le sol est comme labour\u00e9, pr\u00eat \u00e0 recevoir les semences. On peut alors y planter de d\u00e9licieux l\u00e9gumes."
+  },
+  {
+    "nom": "Triopikeur",
+    "description": "Les Triopikeur sont en fait des tripl\u00e9s qui ont \u00e9merg\u00e9 du m\u00eame corps. C'est pourquoi chaque tripl\u00e9 pense exactement comme les deux autres. Ils creusent inlassablement, dans une coop\u00e9ration parfaite."
+  },
+  {
+    "nom": "Miaouss",
+    "description": "Miaouss peut rentrer ses griffes dans ses pattes pour r\u00f4der gracieusement sans laisser de traces. \u00c9trangement, ce Pok\u00e9mon raffole des pi\u00e8ces d'or qui brillent \u00e0 la lumi\u00e8re."
+  },
+  {
+    "nom": "Persian",
+    "description": "Persian a six grosses vibrisses qui lui donnent un air costaud et lui permettent de sentir les mouvements de l'air pour savoir ce qui se trouve \u00e0 proximit\u00e9. Il devient docile lorsqu'on l'attrape par les moustaches."
+  },
+  {
+    "nom": "Psykokwak",
+    "description": "Psykokwak utilise un myst\u00e9rieux pouvoir. Ce Pok\u00e9mon peut g\u00e9n\u00e9rer des ondes c\u00e9r\u00e9brales normalement observ\u00e9es chez les dormeurs. Cette d\u00e9couverte a lanc\u00e9 une pol\u00e9mique dans le milieu universitaire."
+  },
+  {
+    "nom": "Akwakwak",
+    "description": "Les pattes avant et arri\u00e8re palm\u00e9es et le corps a\u00e9rodynamique d'Akwakwak lui donnent une vitesse effrayante. Ce Pok\u00e9mon est bien plus rapide que les plus grands champions de natation."
+  },
+  {
+    "nom": "F\u00e9rosinge",
+    "description": "Lorsque F\u00e9rosinge commence \u00e0 trembler et que sa respiration devient haletante, cela signifie qu'il est en col\u00e8re. En outre, la moutarde lui monte au nez tellement vite qu'il est presque impossible d'\u00e9chapper \u00e0 sa col\u00e8re."
+  },
+  {
+    "nom": "Colossinge",
+    "description": "Lorsque Colossinge devient furieux, sa circulation sanguine s'acc\u00e9l\u00e8re. Du coup, ses muscles sont encore plus puissants. En revanche, il devient bien moins intelligent."
+  },
+  {
+    "nom": "Caninos",
+    "description": "Caninos a un odorat tr\u00e8s d\u00e9velopp\u00e9. Ce Pok\u00e9mon n'oublie jamais un parfum, quel qu'il soit. Il utilise son puissant sens olfactif pour deviner les \u00e9motions des autres cr\u00e9atures vivantes."
+  },
+  {
+    "nom": "Arcanin",
+    "description": "Arcanin est c\u00e9l\u00e8bre pour son extraordinaire vitesse. On le dit capable de parcourir plus de 10 000 km en 24 h. Le feu qui fait rage \u00e0 l'int\u00e9rieur du corps de ce Pok\u00e9mon est la source de son pouvoir."
+  },
+  {
+    "nom": "Ptitard",
+    "description": "Ptitard a une peau tr\u00e8s fine. On peut m\u00eame voir les entrailles en spirale de ce Pok\u00e9mon \u00e0 travers sa peau. Malgr\u00e9 sa finesse, cette peau est aussi tr\u00e8s \u00e9lastique. M\u00eame les crocs les plus ac\u00e9r\u00e9s rebondissent dessus."
+  },
+  {
+    "nom": "T\u00eatarte",
+    "description": "La peau de T\u00eatarte est toujours maintenue humide par un liquide huileux. Gr\u00e2ce \u00e0 cette protection graisseuse, il peut facilement se glisser hors de l'\u00e9treinte de n'importe quel ennemi."
+  },
+  {
+    "nom": "Tartard",
+    "description": "Les muscles solides et surd\u00e9velopp\u00e9s de Tartard ne se fatiguent jamais, quels que soient les efforts qu'il produit. Ce Pok\u00e9mon est tellement endurant qu'il peut traverser un oc\u00e9an \u00e0 la nage avec une \u00e9tonnante facilit\u00e9."
+  },
+  {
+    "nom": "Abra",
+    "description": "Abra dort dix-huit heures par jour. Pourtant, il peut sentir la pr\u00e9sence de ses ennemis, m\u00eame endormi. Dans ce genre de situation, ce Pok\u00e9mon se t\u00e9l\u00e9porte en lieu s\u00fbr."
+  },
+  {
+    "nom": "Kadabra",
+    "description": "Kadabra \u00e9met une onde alpha si particuli\u00e8re qu'elle vous donne mal \u00e0 la t\u00eate. Seuls les gens avec un psychisme puissant peuvent esp\u00e9rer devenir Dresseur de ce Pok\u00e9mon."
+  },
+  {
+    "nom": "Alakazam",
+    "description": "Le cerveau d'Alakazam grossit sans arr\u00eat, si bien que sa t\u00eate devient trop lourde pour son cou. Ce Pok\u00e9mon maintient sa t\u00eate relev\u00e9e gr\u00e2ce \u00e0 son pouvoir t\u00e9l\u00e9kin\u00e9tique."
+  },
+  {
+    "nom": "Machoc",
+    "description": "Les muscles de Machoc sont sp\u00e9ciaux. Quels que soient les efforts qu'il produit, il n'a jamais de courbature. Ce Pok\u00e9mon est assez puissant pour lancer une centaine d'hommes adultes."
+  },
+  {
+    "nom": "Machopeur",
+    "description": "Les muscles toniques de Machopeur sont durs comme de l'acier. Ce Pok\u00e9mon est si fort qu'il peut facilement soulever un sumo avec un seul doigt."
+  },
+  {
+    "nom": "Mackogneur",
+    "description": "Mackogneur est capable de d\u00e9placer n'importe quelle masse. Cependant ses bras s'emm\u00ealent d\u00e8s qu'il essaie de r\u00e9aliser un travail d\u00e9licat ou minutieux. Ce Pok\u00e9mon a tendance \u00e0 cogner d'abord et \u00e0 r\u00e9fl\u00e9chir ensuite."
+  },
+  {
+    "nom": "Ch\u00e9tiflor",
+    "description": "Le corps long et flexible de Ch\u00e9tiflor lui permet de se tordre et d'osciller pour \u00e9viter tout type d'attaque, m\u00eames les plus puissantes. Ce Pok\u00e9mon crache un fluide corrosif qui peut m\u00eame dissoudre le fer."
+  },
+  {
+    "nom": "Boustiflor",
+    "description": "Boustiflor est dot\u00e9 d'un gros crochet. La nuit, ce Pok\u00e9mon s'accroche \u00e0 une branche pour s'endormir. Quand il a le sommeil agit\u00e9, il se r\u00e9veille par terre."
+  },
+  {
+    "nom": "Empiflor",
+    "description": "Empiflor est dot\u00e9 d'une longue liane qui part de sa t\u00eate. Cette liane se balance et remue comme un animal pour attirer ses proies. Lorsque l'une d'elles s'approche un peu trop pr\u00e8s, ce Pok\u00e9mon l'avale enti\u00e8rement."
+  },
+  {
+    "nom": "Tentacool",
+    "description": "Le corps de Tentacool est principalement aqueux. Si on le retire de l'eau, il se d\u00e9shydrate compl\u00e8tement. Si cela arrive, il suffit de le replonger dans un liquide pour qu'il reprenne sa forme normale."
+  },
+  {
+    "nom": "Tentacruel",
+    "description": "Tentacruel a deux gros globes sur la t\u00eate. Les globes s'illuminent lorsqu'il va envoyer un violent rayon d'ultrasons. Lorsque ce Pok\u00e9mon se d\u00e9cha\u00eene, il cr\u00e9e d'\u00e9normes vagues autour de lui."
+  },
+  {
+    "nom": "Racaillou",
+    "description": "Lorsqu'un Racaillou prend de l'\u00e2ge, ses bords s'\u00e9br\u00e8chent et s'usent, ce qui lui donne une apparence plus ronde. Cependant, le c\u0153ur de ce Pok\u00e9mon reste dur, rocailleux et rugueux."
+  },
+  {
+    "nom": "Gravalanch",
+    "description": "Gravalanch grandit en se nourrissant de cailloux. Apparemment, il a une pr\u00e9f\u00e9rence pour les cailloux recouverts de mousse. En moyenne, il mange une tonne de rochers par jour."
+  },
+  {
+    "nom": "Grolem",
+    "description": "Grolem vit \u00e0 la montagne. Lorsqu'il y a un tremblement de terre, ces Pok\u00e9mon roulent en groupe vers les contreforts montagneux."
+  },
+  {
+    "nom": "Ponyta",
+    "description": "\u00c0 sa naissance, Ponyta est tr\u00e8s faible. Il peut \u00e0 peine tenir debout. Ce Pok\u00e9mon se muscle en tr\u00e9buchant et en tombant, lorsqu'il essaie de suivre ses parents."
+  },
+  {
+    "nom": "Galopa",
+    "description": "On voit souvent Galopa trotter dans les champs et les plaines. Cependant, lorsque ce Pok\u00e9mon s'en donne la peine, il peut galoper \u00e0 plus de 240 km/h et sa crini\u00e8re flamboyante s'embrase."
+  },
+  {
+    "nom": "Ramoloss",
+    "description": "Ramoloss trempe sa queue dans l'eau au bord des rivi\u00e8res pour attraper ses proies. Cependant, ce Pok\u00e9mon oublie souvent ce qu'il fait l\u00e0 et passe des jours entiers \u00e0 tra\u00eener au bord de l'eau."
+  },
+  {
+    "nom": "Flagadoss",
+    "description": "Flagadoss a un Kokiyas solidement attach\u00e9 \u00e0 sa queue. Du coup, il ne peut plus l'utiliser pour p\u00eacher. Flagadoss s'est donc oblig\u00e9, \u00e0 contrec\u0153ur, de nager pour attraper ses proies."
+  },
+  {
+    "nom": "Magn\u00e9ti",
+    "description": "Magn\u00e9ti s'attache aux lignes \u00e0 haute tension pour se charger en \u00e9lectricit\u00e9. Si une maison a une panne de courant, il est conseill\u00e9 de v\u00e9rifier les fusibles car on trouve parfois ces Pok\u00e9mon amass\u00e9s sur la bo\u00eete \u00e0 fusibles."
+  },
+  {
+    "nom": "Magn\u00e9ton",
+    "description": "Magn\u00e9ton \u00e9met un puissant champ magn\u00e9tique qui neutralise les appareils \u00e9lectroniques. Lorsque ces Pok\u00e9mon d\u00e9barquent en masse, les villes sonnent l'alarme et pr\u00e9viennent les habitants."
+  },
+  {
+    "nom": "Canarticho",
+    "description": "On voit souvent des Canarticho avec une tige, r\u00e9cup\u00e9r\u00e9e sur une plante quelconque. Apparemment, ils peuvent distinguer les bonnes des mauvaises. On a vu ces Pok\u00e9mon se battre pour des histoires de tiges."
+  },
+  {
+    "nom": "Doduo",
+    "description": "Les deux t\u00eates de Doduo ne dorment jamais en m\u00eame temps. Elles se reposent \u00e0 tour de r\u00f4le pour que l'une puisse monter la garde pendant que l'autre dort."
+  },
+  {
+    "nom": "Dodrio",
+    "description": "Il faut se m\u00e9fier lorsque les trois t\u00eates de Dodrio regardent dans des directions diff\u00e9rentes. Cela signifie qu'il est sur ses gardes. Si c'est le cas, il vaut mieux ne pas s'approcher de ce Pok\u00e9mon, il pourrait d\u00e9cider d'attaquer."
+  },
+  {
+    "nom": "Otaria",
+    "description": "Otaria chasse ses proie dans l'eau gel\u00e9e, sous la couche de glace. Lorsqu'il cherche \u00e0 respirer, il perce un trou en frappant la glace avec la partie saillante de sa t\u00eate."
+  },
+  {
+    "nom": "Lamantine",
+    "description": "Lamantine adore piquer un roupillon \u00e0 m\u00eame la glace. Il y a tr\u00e8s longtemps, un marin ayant aper\u00e7u ce Pok\u00e9mon dormant sur un glacier a cru voir une sir\u00e8ne."
+  },
+  {
+    "nom": "Tadmorv",
+    "description": "Le corps boueux et g\u00e9latineux de Tadmorv peut s'enfoncer dans n'importe quelle ouverture, m\u00eame la plus petite. Ce Pok\u00e9mon se prom\u00e8ne dans les tuyaux des \u00e9gouts pour boire de l'eau croupie."
+  },
+  {
+    "nom": "Grotadmorv",
+    "description": "Un fluide naus\u00e9abond suinte du corps de Grotadmorv, agressant les narines de ses ennemis. Une seule goutte de ce fluide suffit \u00e0 faire croupir un bassin d'eau propre."
+  },
+  {
+    "nom": "Kokiyas",
+    "description": "La nuit, ce Pok\u00e9mon utilise sa grande langue pour creuser un trou dans le sable des fonds marins afin d'y dormir. Une fois endormi, Kokiyas referme sa coquille, mais laisse sa langue d\u00e9passer."
+  },
+  {
+    "nom": "Crustabri",
+    "description": "Crustabri est capable de se d\u00e9placer dans les fonds marins en avalant de l'eau et en la rejetant vers l'arri\u00e8re. Ce Pok\u00e9mon envoie des pointes en utilisant la m\u00eame m\u00e9thode."
+  },
+  {
+    "nom": "Fantominus",
+    "description": "Fantominus est principalement constitu\u00e9 de mati\u00e8re gazeuse. Lorsqu'il est expos\u00e9 au vent, son corps gazeux se disperse et diminue. Des groupes de ce Pok\u00e9mon se rassemblent sous les auvents des maisons pour se prot\u00e9ger."
+  },
+  {
+    "nom": "Spectrum",
+    "description": "Spectrum est un Pok\u00e9mon dangereux. Si l'un d'entre eux fait signe d'approcher, il ne faut jamais l'\u00e9couter. Ce Pok\u00e9mon risque de sortir sa langue pour essayer de voler votre vie."
+  },
+  {
+    "nom": "Ectoplasma",
+    "description": "Parfois, pendant les nuits noires, une ombre projet\u00e9e par une r\u00e9verb\u00e8re peut tout \u00e0 coup vous d\u00e9passer. Il s'agit d'un Ectoplasma qui court, en se faisant passer pour l'ombre de quelqu'un d'autre."
+  },
+  {
+    "nom": "Onix",
+    "description": "Onix a dans le cerveau un aimant qui lui sert de boussole. Il permet \u00e0 ce Pok\u00e9mon de ne pas se perdre pendant qu'il creuse. En prenant de l'\u00e2ge, son corps s'arrondit et se polit."
+  },
+  {
+    "nom": "Soporifik",
+    "description": "Lorsque les enfants ont le nez qui les d\u00e9mange en dormant, c'est sans doute parce que ce Pok\u00e9mon se tient au-dessus de leur oreiller, afin d'essayer de manger leurs r\u00eaves par leurs narines."
+  },
+  {
+    "nom": "Hypnomade",
+    "description": "Hypnomade tient un pendule dans sa main. Le mouvement de balancier et les reflets brillants du pendule hypnotisent profond\u00e9ment son ennemi. Lorsque ce Pok\u00e9mon cherche ses proies, il nettoie son pendule."
+  },
+  {
+    "nom": "Krabby",
+    "description": "Krabby vit sur les plages, enterr\u00e9 dans le sable. Sur les plages o\u00f9 on trouve un peu de nourriture, on peut voir ces Pok\u00e9mon se disputer pour d\u00e9fendre leur territoire."
+  },
+  {
+    "nom": "Krabboss",
+    "description": "Krabboss est dot\u00e9 d'une pince gigantesque, surdimensionn\u00e9e. Il l'agite en l'air pour communiquer avec ses semblables. En revanche, sa pince est tellement lourde que ce Pok\u00e9mon se fatigue tr\u00e8s vite."
+  },
+  {
+    "nom": "Voltorbe",
+    "description": "La premi\u00e8re fois qu'on a vu Voltorbe, c'\u00e9tait dans une usine qui fabrique des Pok\u00e9 Balls. Personne n'a jamais pu expliquer le lien entre cet \u00e9v\u00e8nement et la ressemblance frappante de ce Pok\u00e9mon avec une Pok\u00e9 Ball."
+  },
+  {
+    "nom": "\u00c9lectrode",
+    "description": "\u00c9lectrode mange l'\u00e9lectricit\u00e9 qui se trouve dans l'atmosph\u00e8re. Les jours d'orage, on peut voir ce Pok\u00e9mon exploser sans arr\u00eat parce qu'il a aval\u00e9 trop d'\u00e9lectricit\u00e9."
+  },
+  {
+    "nom": "N\u0153un\u0153uf",
+    "description": "Ce Pok\u00e9mon est constitu\u00e9 de six \u0153ufs formant une grappe serr\u00e9e. Ces six \u0153ufs s'attirent mutuellement et pivotent. Quand des fissures apparaissent sur les coquilles, \u00e7a signifie que Noeunoeuf est sur le point d'\u00e9voluer."
+  },
+  {
+    "nom": "Noadkoko",
+    "description": "Noadkoko vient des tropiques. \u00c0 force de vivre sous un soleil ardent, ses t\u00eates ont rapidement grandi. On raconte que lorsque ses t\u00eates tombent, elles se rassemblent et forment un Noeunoeuf."
+  },
+  {
+    "nom": "Osselait",
+    "description": "La maman d'Osselait lui manque terriblement et il ne la reverra jamais. La lune le fait pleurer, car elle lui rappelle sa m\u00e8re. Les taches sur le cr\u00e2ne que porte ce Pok\u00e9mon sont les marques de ses larmes."
+  },
+  {
+    "nom": "Ossatueur",
+    "description": "Ossatueur est la forme \u00e9volu\u00e9e d'Osselait. il a surmont\u00e9 le chagrin caus\u00e9 par la perte de sa maman et s'est endurci. Le temp\u00e9rament d\u00e9cid\u00e9 et entier de ce Pok\u00e9mon le rend tr\u00e8s difficile \u00e0 amadouer."
+  },
+  {
+    "nom": "Kicklee",
+    "description": "Les jambes de Kicklee peuvent se contracter et s'\u00e9tirer \u00e0 volont\u00e9. Gr\u00e2ce \u00e0 ces jambes \u00e0 ressort, il terrasse ses ennemis en les rouant de coups de pied. Apr\u00e8s les combats, il masse ses jambes pour \u00e9viter de sentir la fatigue."
+  },
+  {
+    "nom": "Tygnon",
+    "description": "On raconte que Tygnon dispose de l'\u00e9tat d'esprit d'un boxeur qui s'entra\u00eene pour le championnat du monde. Ce Pok\u00e9mon est dot\u00e9 d'une t\u00e9nacit\u00e9 \u00e0 toute \u00e9preuve et n'abandonne jamais face \u00e0 l'adversit\u00e9."
+  },
+  {
+    "nom": "Excelangue",
+    "description": "Chaque fois qu'Excelangue d\u00e9couvre quelque chose de nouveau, il le l\u00e8che. Sa m\u00e9moire est bas\u00e9e sur le go\u00fbt et la texture des objets. Il n'aime pas les choses acides."
+  },
+  {
+    "nom": "Smogo",
+    "description": "Lorsque Smogo s'agite, \u00e7a augmente la toxicit\u00e9 de ses gaz internes. Il les projette ensuite par les nombreux orifices de son corps. Ce Pok\u00e9mon peut aussi gonfler son corps et le faire exploser."
+  },
+  {
+    "nom": "Smogogo",
+    "description": "Smogogo adore les gaz qui se d\u00e9gagent des aliments pourris dans les poubelles. Ce Pok\u00e9mon cherche g\u00e9n\u00e9ralement les maisons sales et mal tenues pour y habiter. La nuit, quand tout le monde est endormi, il fouille les d\u00e9tritus."
+  },
+  {
+    "nom": "Rhinocorne",
+    "description": "Rhinocorne charge droit devant lui, d\u00e9truisant tout sur son passage. Il ne s'arr\u00eate jamais, m\u00eame lorsqu'il charge un bloc d'acier. Malgr\u00e9 tout, il sent la douleur le lendemain."
+  },
+  {
+    "nom": "Rhinof\u00e9ros",
+    "description": "La corne de Rhinof\u00e9ros peut m\u00eame casser du diamant brut. Et avec un simple coup de queue, il peut d\u00e9truire un b\u00e2timent. La peau de ce Pok\u00e9mon est incroyablement dure. Un boulet de canon ne lui ferait m\u00eame pas une \u00e9gratignure."
+  },
+  {
+    "nom": "Leveinard",
+    "description": "Leveinard pond tous les jours des \u0153ufs pleins de vitamines. Ces \u0153ufs sont tellement bons que les gens les mangent m\u00eame quand ils n'ont pas faim."
+  },
+  {
+    "nom": "Saquedeneu",
+    "description": "Les lianes de Saquedeneu se brisent facilement lorsqu'on les attrape. Cela ne lui fait pas mal et lui permet simplement de s'\u00e9chapper rapidement. Les lianes cass\u00e9es repoussent le lendemain."
+  },
+  {
+    "nom": "Kangourex",
+    "description": "Lorsqu'on rencontre un petit Kangourex qui joue tout seul, il ne faut jamais le d\u00e9ranger ou essayer de l'attraper. Les parents du b\u00e9b\u00e9 Pok\u00e9mon sont s\u00fbrement dans le coin et ils risquent d'entrer dans une col\u00e8re noire."
+  },
+  {
+    "nom": "Hypotrempe",
+    "description": "Hypotrempe mange des petits insectes et de la mousse trouv\u00e9e sur les cailloux. Lorsque les courants oc\u00e9aniques sont trop forts, ce Pok\u00e9mon peut s'ancrer en accrochant sa queue aux rochers ou aux coraux."
+  },,
+  {
+    "nom": "Hypoc\u00e9an",
+    "description": "Hypoc\u00e9an s'accroche aux r\u00e9cifs de corail avant de s'endormir. Les p\u00eacheurs de coraux se font parfois piquer par les aiguillons de ce Pok\u00e9mon lorsqu'ils ne font pas attention."
+  },
+  {
+    "nom": "Poissir\u00e8ne",
+    "description": "Poissir\u00e8ne est un Pok\u00e9mon magnifique dot\u00e9 de nageoires qui ondulent \u00e9l\u00e9gamment dans les profondeurs. Il ne faut pourtant pas baisser sa garde face \u00e0 ce Pok\u00e9mon, car il peut charger avec sa puissante corne."
+  },
+  {
+    "nom": "Poissoroy",
+    "description": "En automne, on peut voir les Poissoroy m\u00e2les effectuer des danses nuptiales dans les rivi\u00e8res pour plaire aux femelles. C'est pendant cette saison que le corps de ce Pok\u00e9mon prend ses plus belles couleurs."
+  },
+  {
+    "nom": "Stari",
+    "description": "Au centre de Stari se trouve un organe rouge et brillant appel\u00e9 le c\u0153ur. \u00c0 la fin de l'\u00e9t\u00e9, sur les plages, les c\u0153urs de ces Pok\u00e9mon brillent comme les \u00e9toiles dans le ciel."
+  },
+  {
+    "nom": "Staross",
+    "description": "Le centre de Staross, son c\u0153ur, resplendit de sept diff\u00e9rentes couleurs. Du fait de sa brillance naturelle, on appelle ce Pok\u00e9mon le \u00abjoyau des mers\u00bb."
+  },
+  {
+    "nom": "M. Mime",
+    "description": "M. Mime est un pantomime hors pair. Ses gestes et ses mouvements parviennent \u00e0 faire croire que quelque chose d'invisible existe r\u00e9ellement. Lorsqu'on y croit, ces choses deviennent palpables."
+  },
+  {
+    "nom": "Ins\u00e9cateur",
+    "description": "Ins\u00e9cateur est incroyablement rapide. Sa vitesse fulgurante am\u00e9liore l'efficacit\u00e9 des deux lames situ\u00e9es sur ses avant-bras. Elles sont si coupantes qu'elles peuvent trancher un \u00e9norme tronc d'arbre en un coup."
+  },
+  {
+    "nom": "Lippoutou",
+    "description": "Lippoutou marche en rythme, ondule de tout son corps et se d\u00e9hanche comme s'il dansait. Ses mouvements sont si communicatifs que les gens qui le voient sont soudain pris d'une terrible envie de bouger les hanches, sans r\u00e9fl\u00e9chir."
+  },
+  {
+    "nom": "\u00c9lektek",
+    "description": "Lorsqu'une temp\u00eate approche, des groupes entiers de ce Pok\u00e9mon se battent pour grimper sur les hauteurs, o\u00f9 la foudre a le plus de chance de tomber. Certaines villes se servent d'\u00c9lektek en guise de paratonnerres."
+  },
+  {
+    "nom": "Magmar",
+    "description": "Lorsqu'il se bat, Magmar fait jaillir des flammes de son corps pour intimider son adversaire. Les explosions enflamm\u00e9es de ce Pok\u00e9mon d\u00e9clenchent des vagues de chaleur qui embrasent la v\u00e9g\u00e9tation environnante."
+  },
+  {
+    "nom": "Scarabrute",
+    "description": "Scarabrute est incroyablement fort. Il peut attraper un ennemi qui p\u00e8se deux fois son poids dans ses mandibules et le soulever sans le moindre probl\u00e8me. Lorsqu'il fait froid, les mouvements de ce Pok\u00e9mon sont un peu ralentis."
+  },
+  {
+    "nom": "Tauros",
+    "description": "Ce Pok\u00e9mon n'est pas satisfait s'il ne d\u00e9truit pas tout sur son passage. Lorsque Tauros ne trouve pas d'adversaire, il se rue sur de gros arbres et les d\u00e9racine pour passer ses nerfs."
+  },
+  {
+    "nom": "Magicarpe",
+    "description": "Magicarpe est un Pok\u00e9mon ridicule qui ne sait faire que des ronds dans l'eau ou se laisser porter par les courants. Son comportement a donn\u00e9 envie aux savants d'\u00e9tudier son cas."
+  },
+  {
+    "nom": "L\u00e9viator",
+    "description": "Quand Magicarpe \u00e9volue et devient L\u00e9viator, la structure de ses cellules c\u00e9r\u00e9brales est modifi\u00e9e. On pense que l'extr\u00eame violence de ce Pok\u00e9mon d\u00e9coule de cette modification."
+  },
+  {
+    "nom": "Lokhlass",
+    "description": "Les Lokhlass sont en voie d'extinction. Le soir, on entend ce Pok\u00e9mon chantonner une complainte m\u00e9lancolique, esp\u00e9rant retrouver ses rares cong\u00e9n\u00e8res."
+  },
+  {
+    "nom": "M\u00e9tamorph",
+    "description": "M\u00e9tamorph peut modifier sa structure mol\u00e9culaire pour prendre d'autres formes. Lorsqu'il essaie de se transformer de m\u00e9moire, il lui arrive de se tromper sur certains d\u00e9tails."
+  },
+  {
+    "nom": "\u00c9voli",
+    "description": "\u00c9voli a une structure g\u00e9n\u00e9tique instable qui se transforme en fonction de l'environnement dans lequel il vit. Ce Pok\u00e9mon peut \u00e9voluer gr\u00e2ce aux radiations de diverses pierres."
+  },
+  {
+    "nom": "Aquali",
+    "description": "Aquali a subi une mutation spontan\u00e9e. Des nageoires et des branchies sont apparues sur son corps, ce qui lui permet de vivre dans les fonds marins. Ce Pok\u00e9mon peut contr\u00f4ler l'eau \u00e0 volont\u00e9."
+  },
+  {
+    "nom": "Voltali",
+    "description": "Les cellules de Voltali g\u00e9n\u00e8rent un courant de faible intensit\u00e9. Ce pouvoir est amplifi\u00e9 par l'\u00e9lectricit\u00e9 statique de ses poils, ce qui lui permet d'envoyer des \u00e9clairs. Sa fourrure h\u00e9riss\u00e9e est faite d'aiguilles charg\u00e9es d'\u00e9lectricit\u00e9."
+  },
+  {
+    "nom": "Pyroli",
+    "description": "La fourrure soyeuse de Pyroli a une fonction anatomique. Elle rejette la chaleur dans l'air pour que son corps ne surchauffe pas. La temp\u00e9rature du corps de ce Pok\u00e9mon peut atteindre 900 \u00b0C."
+  },
+  {
+    "nom": "Porygon",
+    "description": "Porygon est capable de se d\u00e9compiler et de retourner \u00e0 l'\u00e9tat de programme informatique pour entrer dans le cyberespace. Ce Pok\u00e9mon est prot\u00e9g\u00e9 contre le piratage, il est donc impossible de le copier."
+  },
+  {
+    "nom": "Amonita",
+    "description": "Amonita est l'un des Pok\u00e9mon disparus depuis longtemps et qui furent ressuscit\u00e9s \u00e0 partir de fossiles. Lorsqu'il est attaqu\u00e9 par un ennemi, il se r\u00e9tracte dans sa coquille."
+  },
+  {
+    "nom": "Amonistar",
+    "description": "Amonistar utilise ses tentacules pour capturer ses proies. On pense que l'esp\u00e8ce s'est \u00e9teinte parce que sa coquille \u00e9tait devenue trop grande et trop lourde, ce qui rendait ses mouvements lents et pesants."
+  },
+  {
+    "nom": "Kabuto",
+    "description": "Kabuto est un Pok\u00e9mon ressuscit\u00e9 \u00e0 partir d'un fossile. Cependant, on a d\u00e9couvert des sp\u00e9cimens vivants. Ce Pok\u00e9mon n'a pas chang\u00e9 depuis 300 millions d'ann\u00e9es."
+  },
+  {
+    "nom": "Kabutops",
+    "description": "Jadis, Kabutops plongeait dans les profondeurs pour trouver ses proies. Apparemment, ce Pok\u00e9mon vivant sur terre est l'\u00e9volution d'une cr\u00e9ature marine, comme le prouvent les changements dans ses branchies."
+  },
+  {
+    "nom": "Pt\u00e9ra",
+    "description": "Pt\u00e9ra est un Pok\u00e9mon de l'\u00e8re des dinosaures. Il fut ressuscit\u00e9 \u00e0 partir de cellules extraites d'un morceau d'ambre. On pense qu'il \u00e9tait le roi des cieux \u00e0 l'\u00e9poque pr\u00e9historique."
+  },
+  {
+    "nom": "Ronflex",
+    "description": "Les journ\u00e9es de Ronflex se r\u00e9sument aux repas et aux siestes. C'est un Pok\u00e9mon tellement gentil que les enfants n'h\u00e9sitent pas \u00e0 jouer sur son \u00e9norme ventre."
+  },
+  {
+    "nom": "Artikodin",
+    "description": "Artikodin est un Pok\u00e9mon Oiseau l\u00e9gendaire qui peut contr\u00f4ler la glace. Le battement de ses ailes g\u00e8le l'air tout autour de lui. C'est pourquoi on dit que lorsque ce Pok\u00e9mon vole, il va neiger."
+  },
+  {
+    "nom": "\u00e9lecthor",
+    "description": "\u00c9lecthor est un Pok\u00e9mon Oiseau l\u00e9gendaire capable de contr\u00f4ler l'\u00e9lectricit\u00e9. Il vit g\u00e9n\u00e9ralement dans les nuages orageux. Ce Pok\u00e9mon gagne en puissance lorsqu'il est frapp\u00e9 par la foudre."
+  },
+  {
+    "nom": "sulfura",
+    "description": "Sulfura est un Pok\u00e9mon Oiseau l\u00e9gendaire capable de contr\u00f4ler le feu. On raconte que lorsque ce Pok\u00e9mon est bless\u00e9, il se baigne dans le magma en \u00e9bullition d'un volcan pour se soigner."
+  },
+  {
+    "nom": "minidraco",
+    "description": "Minidraco mue constamment, renouvelant sans arr\u00eat sa peau. En effet, l'\u00e9nergie vitale de son corps augmente r\u00e9guli\u00e8rement et sa mue lui permet d'\u00e9viter d'atteindre des niveaux incontr\u00f4lables."
+  },
+  {
+    "nom": "draco",
+    "description": "Draco stocke une quantit\u00e9 d'\u00e9nergie consid\u00e9rable dans son corps. On raconte qu'il peut modifier les conditions climatiques autour de lui en d\u00e9chargeant l'\u00e9nergie contenue dans les cristaux de son cou et de sa queue."
+  },
+  {
+    "nom": "dracolosse",
+    "description": "Dracolosse est capable de faire le tour de la plan\u00e8te en seize heures \u00e0 peine. C'est un Pok\u00e9mon au grand c\u0153ur qui ram\u00e8ne \u00e0 bon port les navires perdus dans les temp\u00eates."
+  },
+  {
+    "nom": "mewtwo",
+    "description": "Mewtwo est un Pok\u00e9mon cr\u00e9\u00e9 par manipulation g\u00e9n\u00e9tique. Cependant, bien que les connaissances scientifiques des humains aient r\u00e9ussi \u00e0 cr\u00e9er son corps, elles n'ont pas pu doter Mewtwo d'un c\u0153ur sensible."
+  },
+  {
+    "nom": "mew",
+    "description": "On dit que Mew poss\u00e8de le code g\u00e9n\u00e9tique de tous les autres Pok\u00e9mon. Il peut se rendre invisible \u00e0 sa guise, ce qui lui permet de ne pas se faire remarquer quand il s'approche des gens."
   }
 ]
