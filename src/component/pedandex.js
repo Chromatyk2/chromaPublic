@@ -311,16 +311,18 @@ function Pedandex(props) {
                     }}>Tu as trouvé en {canplay === true ? tries : triesWin} éssais ! GG, reviens demain !</p>
                 </div>
                 <div id={"descriptionPedandex"}>
-                    <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
-                    {types.length > 0 ?
+                    <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
+                        <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
+                        {types.length > 0 ?
                             <div className="pokemonTypeContainer">
-                            {types.map((val, key) => {
-                                return(<img style={{margin:"0",height:"fit-content"}} src={"/images/" + val.name + ".png"}></img>)
-                            })}
+                                {types.map((val, key) => {
+                                    return(<img style={{margin:"0",height:"fit-content"}} src={"/images/" + val.name + ".png"}></img>)
+                                })}
                             </div>
-                    :
-                        <button onClick={handleIndice}><img src={"/images/random.png"}></img></button>
-                    }
+                            :
+                            <button style={{background:"transparent",border:"none",width:"80px",height:"80px"}} onClick={handleIndice}><img style={{width:"100%"}} src={"/images/random.png"}></img></button>
+                        }
+                    </div>
                     <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                     </div>
                 </div>
