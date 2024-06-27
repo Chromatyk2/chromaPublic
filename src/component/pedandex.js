@@ -212,6 +212,7 @@ function Pedandex(props) {
                 }
             )
     }
+    console.log(types);
     return (
         <>
 
