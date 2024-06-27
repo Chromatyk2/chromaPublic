@@ -19,6 +19,7 @@ function Pedandex(props) {
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [canTips, setCanTips] = React.useState(false);
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const customStyles = {
         content: {
@@ -115,6 +116,9 @@ function Pedandex(props) {
         if(!history.find((uc) => uc === guess)){
             setHistory(history => [...history,guess]);
             setTries(tries + 1);
+            if(tries > 20){
+                setCanTips(true);
+            }
             words.map((val, key) => {
                 if(val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
                     var id = key;
@@ -313,13 +317,14 @@ function Pedandex(props) {
                 <div id={"descriptionPedandex"}>
                     <div style={{gap:"50px", margin:"20px",display:"flex",justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
                         <p style={{ margin:"0",fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
-                        {types.length > 0 ?
+                        {types.length > 0 || canplay === false ?
                             <div style={{display:"flex",flexFlow:"column"}} className="pokemonTypeContainer">
                                 {types.map((val, key) => {
                                     return(<img style={{margin:"0",height:"fit-content"}} src={"/images/" + val.name + ".png"}></img>)
                                 })}
                             </div>
                             :
+                            canTips === true &&
                             <button style={{background:"transparent",border:"none",width:"80px",height:"80px"}} onClick={handleIndice}><img style={{width:"100%"}} src={"/images/random.png"}></img></button>
                         }
                     </div>
