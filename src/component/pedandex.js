@@ -12,7 +12,7 @@ function Pedandex(props) {
     const [tokens, setTokens] = useState(null);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
-    const [types, setTypes] = useState(false);
+    const [types, setTypes] = useState(null);
     const [tries, setTries] = useState(0);
     const [dailyGame, setDailyGame] = useState(null);
     const [triesWin, setTriesWin] = useState(0);
@@ -314,7 +314,12 @@ function Pedandex(props) {
                     <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
                     {types ?
                         types.map((val, key) => {
-                            <p>{val.name}</p>
+                            <div className="pokemonTypeContainer">
+                                <img src={`/images/${pokemon.types[0].type.name}.png`}></img>
+                                {pokemon.types[1] &&
+                                    <img src={`/images/${pokemon.types[1].type.name}.png`}></img>
+                                }
+                            </div>
                         })
                         :
                         <button onClick={handleIndice}>Indice</button>
