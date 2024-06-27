@@ -315,11 +315,11 @@ function Pedandex(props) {
                     {types.length > 0 ?
                             <div className="pokemonTypeContainer">
                             {types.map((val, key) => {
-                                return(<img style={{margin:"0",height:"git-content"}} src={"/images/" + val.name + ".png"}></img>)
+                                return(<img style={{margin:"0",height:"fit-content"}} src={"/images/" + val.name + ".png"}></img>)
                             })}
                             </div>
                     :
-                        <button onClick={handleIndice}>Indice</button>
+                        <button onClick={handleIndice}><img src={"/images/" + val.name + ".png"}></img></button>
                     }
                     <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                     </div>
