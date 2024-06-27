@@ -20,7 +20,7 @@ function Pedandex(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [canTips, setCanTips] = React.useState(false);
-    const [canMoreTips, setMoreCanTips] = React.useState(false);
+    const [canMoreTips, setCanMoreTips] = React.useState(false);
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [gen, setGen] = React.useState(null);
     const customStyles = {
@@ -341,7 +341,7 @@ function Pedandex(props) {
                         }
                         {gen || canplay === false ?
                             <div style={{display:"flex",flexFlow:"column"}} className="pokemonTypeContainer">
-                                <p>Génération: {Gen}</p>
+                                <p>Génération: {gen}</p>
                             </div>
                             :
                             canMoreTips === true &&
