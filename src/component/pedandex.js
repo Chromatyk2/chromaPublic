@@ -55,7 +55,7 @@ function Pedandex(props) {
                         if(answer.data.length > 0){
                             setTokens(answer.data[0].token)
                         }
-                        Axios.get("/api/getPedandexWin")
+                        Axios.get("/api/getPedandexWin/"+response.data[0].day)
                             .then(function(info){
                                 setLeaderBoard(info.data)
                                 if(info.data.find((uc) => uc.pseudo === pseudo && uc.day === response.data[0].day)){
