@@ -150,7 +150,7 @@ function Pedandex(props) {
                                 }
                             )
                                 .then(function(response){
-                                    Axios.get("/api/getPedandexWin")
+                                    Axios.get("/api/getPedandexWin"+dailyGame.day)
                                         .then(function(response) {
                                             setLeaderBoard(response.data)
                                             Axios.get("/api/getMyTokens/"+pseudo)
