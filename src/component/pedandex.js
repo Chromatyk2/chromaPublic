@@ -214,7 +214,6 @@ function Pedandex(props) {
                         tokens > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
                             <div className="infoPkm">
-                                <div className="infoNbBoxSkin">{tokens > 0 && tokens}</div>
                             </div>
                         </button>
                     }
