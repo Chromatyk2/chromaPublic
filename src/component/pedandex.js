@@ -312,7 +312,7 @@ function Pedandex(props) {
                 </div>
                 <div id={"descriptionPedandex"}>
                     <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
-                        <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
+                        <p style={{margin:"0",fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
                         {types.length > 0 ?
                             <div style={{display:"flex",flexFlow:"column"}} className="pokemonTypeContainer">
                                 {types.map((val, key) => {
