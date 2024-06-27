@@ -342,7 +342,7 @@ function Pedandex(props) {
                                 </div>
                             </>
                         }
-                        {types.length > 0 || canplay === false ?
+                        {types.length > 0 ?
                             <div style={{display: "flex", flexFlow: "column"}} className="pokemonTypeContainer">
                                 {types.map((val, key) => {
                                     return (<img style={{margin: "0", height: "fit-content"}}
@@ -353,7 +353,7 @@ function Pedandex(props) {
                             canTips === true &&
                             <button style={{background: "transparent", border: "none", width:"80px",height:"80px"}} onClick={handleIndice}><img style={{width:"100%"}} src={"/images/random.png"}></img></button>
                         }
-                        {gen || canplay === false ?
+                        {gen ?
                             <div style={{display:"flex",flexFlow:"column"}} className="pokemonTypeContainer">
                                 <p>Génération: {gen}</p>
                             </div>
