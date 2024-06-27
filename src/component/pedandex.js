@@ -20,7 +20,9 @@ function Pedandex(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [canTips, setCanTips] = React.useState(false);
+    const [canMoreTips, setMoreCanTips] = React.useState(false);
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
+    const [gen, setGen] = React.useState(null);
     const customStyles = {
         content: {
             width:"300px",
@@ -119,6 +121,9 @@ function Pedandex(props) {
             if(tries > 20){
                 setCanTips(true);
             }
+            if(tries > 100){
+                setCanMoreTips(true);
+            }
             words.map((val, key) => {
                 if(val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
                     var id = key;
@@ -215,6 +220,15 @@ function Pedandex(props) {
                 }
             )
     }
+    function handleMoreIndice(){
+        fetch("https://tyradex.vercel.app/api/v1/pokemon/"+dailyGame.name.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase())
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setGen(result.generation);
+                }
+            )
+    }
     console.log(types);
     return (
         <>
@@ -228,8 +242,6 @@ function Pedandex(props) {
                     {tokens &&
                         tokens > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
-                            <div className="infoPkm">
-                            </div>
                         </button>
                     }
                 </div>
@@ -325,6 +337,14 @@ function Pedandex(props) {
                             </div>
                             :
                             canTips === true &&
+                            <button style={{background:"transparent",border:"none",width:"80px",height:"80px"}} onClick={handleIndice}><img style={{width:"100%"}} src={"/images/random.png"}></img></button>
+                        }
+                        {gen || canplay === false ?
+                            <div style={{display:"flex",flexFlow:"column"}} className="pokemonTypeContainer">
+                                <p>Génération: {Gen}</p>
+                            </div>
+                            :
+                            canMoreTips === true &&
                             <button style={{background:"transparent",border:"none",width:"80px",height:"80px"}} onClick={handleIndice}><img style={{width:"100%"}} src={"/images/random.png"}></img></button>
                         }
                     </div>
