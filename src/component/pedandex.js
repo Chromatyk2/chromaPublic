@@ -314,7 +314,7 @@ function Pedandex(props) {
                     <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
                         <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
                         {types.length > 0 ?
-                            <div className="pokemonTypeContainer">
+                            <div style={{display:"flex",flexFlow:"column"}} className="pokemonTypeContainer">
                                 {types.map((val, key) => {
                                     return(<img style={{margin:"0",height:"fit-content"}} src={"/images/" + val.name + ".png"}></img>)
                                 })}
