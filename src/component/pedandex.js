@@ -345,7 +345,7 @@ function Pedandex(props) {
                             </div>
                             :
                             canMoreTips === true &&
-                            <button style={{background:"transparent",border:"none",width:"80px",height:"80px"}} onClick={handleIndice}><img style={{width:"100%"}} src={"/images/random.png"}></img></button>
+                            <button style={{background:"transparent",border:"none",width:"80px",height:"80px"}} onClick={handleMoreIndice}><img style={{width:"100%"}} src={"/images/random.png"}></img></button>
                         }
                     </div>
                     <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
