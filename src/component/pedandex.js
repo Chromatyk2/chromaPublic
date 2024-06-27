@@ -12,6 +12,7 @@ function Pedandex(props) {
     const [tokens, setTokens] = useState(null);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
+    const [types, setTypes] = useState(false);
     const [tries, setTries] = useState(0);
     const [dailyGame, setDailyGame] = useState(null);
     const [triesWin, setTriesWin] = useState(0);
@@ -201,6 +202,16 @@ function Pedandex(props) {
     function closeModalToken() {
         setIsOpenToken(false);
     }
+    function handleIndice(){
+        fetch("https://tyradex.vercel.app/api/v1/pokemon/"+dailyGame.name.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase())
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result)
+                    setTypes(result.types);
+                }
+            )
+    }
     return (
         <>
 
@@ -300,6 +311,13 @@ function Pedandex(props) {
                 </div>
                 <div id={"descriptionPedandex"}>
                     <p style={{fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
+                    {types ?
+                        types.map((val, key) => {
+                            <p>{val.name}</p>
+                        })
+                        :
+                        <button onClick={handleIndice}>Indice</button>
+                    }
                     <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}} id={"textToGuess"}>
                     </div>
                 </div>
