@@ -421,7 +421,7 @@ function Pedandex(props) {
                             history.map((val, key) => {
                                 return (
 
-                                    <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
+                                    <Link className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
                                     <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                         <th scope="row">Jour {val.day}</th>
                                         {myHistory.find((uc) => uc.day === val.day) ?
