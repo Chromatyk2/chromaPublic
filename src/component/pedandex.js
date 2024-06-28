@@ -241,12 +241,11 @@ function Pedandex(props) {
                 Axios.get("/api/getPedandexWinByUSer/"+pseudo)
                     .then(function(mine){
                         setMyHistory(mine.data);
+                        setIsOpenHistory(true);
                     })
                 setHistory(response.data);
             })
     }
-    console.log(myHistory);
-    console.log(history);
     return (
         <>
 
