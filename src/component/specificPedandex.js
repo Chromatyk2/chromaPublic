@@ -238,7 +238,7 @@ function SpecificPedandex(props) {
         setIsOpenHistory(false);
     }
     function changeDay() {
-        setDayChange(day + 1);
+        setDayChange(dayChange + 1);
         setIsOpenHistory(false);
     }
     function openHistory() {
