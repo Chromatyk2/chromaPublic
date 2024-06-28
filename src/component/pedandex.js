@@ -405,11 +405,22 @@ function Pedandex(props) {
             </Modal>
 
             <Modal overlayClassName={"overlayModalToken"} className={"modalToken"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
-
-                <p>Historique</p>
-                {history &&
-                    <p>Oui</p>
-                }
+                <>
+                    <p style={{textAlign:"center"}}>Historique des parties</p>
+                    <table style={{display:"flex",justifyContent:"center"}}>
+                        <tbody>
+                        {history &&
+                            history.map((val, key) => {
+                                return (
+                                    <tr style={{justifyContent: "space-between",display:"flex",gap:"50px"}}>
+                                        <th scope="row">Jour {val.day}</th>
+                                    </tr>
+                                )
+                            })
+                        }
+                        </tbody>
+                    </table>
+                </>
             </Modal>
         </>
     );
