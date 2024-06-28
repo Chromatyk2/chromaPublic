@@ -5,8 +5,7 @@ import Pagination from './paginate.js';
 import '../App.css'
 import Modal from "react-modal";
 import SpawnPokemonToken from "./spawnPokemonToken";
-import {Link} from "react-router-dom";
-function Pedandex(props) {
+function SpecificPedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
     const [history, setHistory] = useState([]);
@@ -37,8 +36,9 @@ function Pedandex(props) {
             transform: 'translate(-50%, -50%)',
         },
     };
+    const queryParameters = new URLSearchParams(window.location.search)
     useEffect(() => {
-        Axios.get("/api/getCurrentDailyGame/")
+        Axios.get("/api/api/getDailyGameByDay/"+queryParameters.get("day"))
             .then(function(response){
                 document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');
                 const name = response.data[0].name;
@@ -420,8 +420,6 @@ function Pedandex(props) {
                         {history &&
                             history.map((val, key) => {
                                 return (
-
-                                    <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
                                     <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                         <th scope="row">Jour {val.day}</th>
                                         {myHistory.find((uc) => uc.day === val.day) ?
@@ -430,7 +428,6 @@ function Pedandex(props) {
                                             <th scope="row">X</th>
                                         }
                                     </tr>
-                                    </Link>
                                 )
                             })
                         }
@@ -442,4 +439,4 @@ function Pedandex(props) {
     );
 }
 
-export default Pedandex
+export default SpecificPedandex
