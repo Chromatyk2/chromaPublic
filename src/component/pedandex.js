@@ -229,6 +229,7 @@ function Pedandex(props) {
                 }
             )
     }
+    console.log(tokens)
     return (
         <>
 
