@@ -239,15 +239,11 @@ function Pedandex(props) {
                         leaderBoard.length > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
                     }
-                    <>
-                        {tokens &&
-                            <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
-                                <div className="infoPkm">
-                                    <div className="infoNbBoxSkin">{tokens > 0 ? tokens : 0}</div>
-                                </div>
-                            </button>
-                        }
-                    </>
+                    <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
+                        <div className="infoPkm">
+                            <div className="infoNbBoxSkin">{tokens != 0 ? tokens : 0}</div>
+                        </div>
+                    </button>
                 </div>
                 {dailyGame &&
                     <p style={{color:"white",textAlign: "center", textTransform: "uppercase"}}>Jour {dailyGame.day}</p>
