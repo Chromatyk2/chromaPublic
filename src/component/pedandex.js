@@ -229,7 +229,6 @@ function Pedandex(props) {
                 }
             )
     }
-    console.log(tokens);
     return (
         <>
 
@@ -240,7 +239,7 @@ function Pedandex(props) {
                         <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
                     }
                     {tokens &&
-                        tokens > 0 &&
+                        parseInt(tokens) > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
                             <div className="infoPkm">
                                 <div className="infoNbBoxSkin">{tokens > 0 && tokens}</div>
