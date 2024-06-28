@@ -425,9 +425,9 @@ function Pedandex(props) {
                                     <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                         <th scope="row">Jour {val.day}</th>
                                         {myHistory.find((uc) => uc.day === val.day) ?
-                                            <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries}</th>
+                                            <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries} <i className="fa-solid fa-check"></i></th>
                                             :
-                                            <th scope="row">X</th>
+                                            <th scope="row"><i className="fa-solid fa-ban"></i></th>
                                         }
                                     </tr>
                                     </Link>
