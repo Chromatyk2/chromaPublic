@@ -404,7 +404,7 @@ function Pedandex(props) {
                 <SpawnPokemonToken pseudo={pseudo}/>
             </Modal>
 
-            <Modal overlayClassName={"overlayModalToken"} className={"modalToken"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
+            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
                 <>
                     <p style={{textAlign:"center"}}>Historique des parties</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
