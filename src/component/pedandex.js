@@ -236,11 +236,11 @@ function Pedandex(props) {
         setIsOpenHistory(false);
     }
     function openHistory() {
+        setMyHistory(mine.data);
         Axios.get("/api/getAllDailyGames")
             .then(function(response){
                 Axios.get("/api/getPedandexWinByUSer/"+pseudo)
                     .then(function(mine){
-                        setMyHistory(mine.data);
                         setIsOpenHistory(true);
                     })
                 setHistory(response.data);
