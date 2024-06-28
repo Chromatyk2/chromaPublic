@@ -417,7 +417,7 @@ function Pedandex(props) {
                     <p style={{textAlign:"center"}}>Historique des parties</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
-                        {history &&
+                        {myHistory &&
                             history.map((val, key) => {
                                 return (
 
@@ -432,6 +432,7 @@ function Pedandex(props) {
                                     </tr>
                                     </Link>
                                 )
+
                             })
                         }
                         </tbody>
