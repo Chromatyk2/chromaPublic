@@ -42,7 +42,7 @@ function SpecificPedandex(props) {
     useEffect(() => {
 
         var div = document.getElementById("textToGuess");
-        div.removeChild("span");
+        div.innerHTML = '';
         const queryParameters = new URLSearchParams(window.location.search)
         Axios.get("/api/getDailyGameByDay/"+queryParameters.get("day"))
             .then(function(response){
