@@ -40,6 +40,9 @@ function SpecificPedandex(props) {
         },
     };
     useEffect(() => {
+
+        var div = document.getElementById("textToGuess");
+        div.removeChild("span");
         const queryParameters = new URLSearchParams(window.location.search)
         Axios.get("/api/getDailyGameByDay/"+queryParameters.get("day"))
             .then(function(response){
