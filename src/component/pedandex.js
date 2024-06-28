@@ -247,9 +247,6 @@ function Pedandex(props) {
                     })
             })
     }
-    console.log(myHistory)
-    console.log(history)
-    console.log(modalIsOpenHistory)
     return (
         <>
 

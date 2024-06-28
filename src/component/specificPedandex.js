@@ -10,6 +10,7 @@ function SpecificPedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
     const [history, setHistory] = useState([]);
+    const [allHistory, setAllHistory] = useState([]);
     const [tokens, setTokens] = useState(0);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
@@ -242,14 +243,14 @@ function SpecificPedandex(props) {
         setIsOpenHistory(false);
     }
     function openHistory() {
-        Axios.get("/api/getAllDailyGames")
+        Axios.get("/api/getPedandexWinByUSer/"+pseudo)
             .then(function(response){
-                Axios.get("/api/getPedandexWinByUSer/"+pseudo)
-                    .then(function(mine){
-                        setMyHistory(mine.data);
+                setMyHistory(response.data);
+                Axios.get("/api/getAllDailyGames")
+                    .then(function(response){
                         setIsOpenHistory(true);
+                        setAllHistory(response.data);
                     })
-                setHistory(response.data);
             })
     }
 
@@ -422,20 +423,21 @@ function SpecificPedandex(props) {
                     <p style={{textAlign:"center"}}>Historique des parties</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
-                        {history &&
-                            history.map((val, key) => {
+                        {myHistory.length > 0 &&
+                            allHistory.map((val, key) => {
                                 return (
-                                    <Link onClick={changeDay} style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
+                                    <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
                                         <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                             <th scope="row">Jour {val.day}</th>
                                             {myHistory.find((uc) => uc.day === val.day) ?
-                                                <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries} <i style={{color:"green"}} className="fa-solid fa-check"></i></th>
+                                                <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries} <i style={{color: "green"}} className="fa-solid fa-check"></i></th>
                                                 :
-                                                <th scope="row"><i style={{color:"red"}} className="fa-solid fa-ban"></i></th>
+                                                <th scope="row"><i style={{color: "red"}} className="fa-solid fa-ban"></i></th>
                                             }
                                         </tr>
                                     </Link>
                                 )
+
                             })
                         }
                         </tbody>
