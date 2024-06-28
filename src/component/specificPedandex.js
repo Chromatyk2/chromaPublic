@@ -38,7 +38,7 @@ function SpecificPedandex(props) {
     };
     const queryParameters = new URLSearchParams(window.location.search)
     useEffect(() => {
-        Axios.get("/api/api/getDailyGameByDay/"+queryParameters.get("day"))
+        Axios.get("/api/getDailyGameByDay/"+queryParameters.get("day"))
             .then(function(response){
                 document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');
                 const name = response.data[0].name;
