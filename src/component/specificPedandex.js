@@ -5,6 +5,7 @@ import Pagination from './paginate.js';
 import '../App.css'
 import Modal from "react-modal";
 import SpawnPokemonToken from "./spawnPokemonToken";
+import {Link} from "react-router-dom";
 function SpecificPedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
@@ -420,14 +421,16 @@ function SpecificPedandex(props) {
                         {history &&
                             history.map((val, key) => {
                                 return (
-                                    <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
-                                        <th scope="row">Jour {val.day}</th>
-                                        {myHistory.find((uc) => uc.day === val.day) ?
-                                            <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries}</th>
-                                            :
-                                            <th scope="row">X</th>
-                                        }
-                                    </tr>
+                                    <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
+                                        <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
+                                            <th scope="row">Jour {val.day}</th>
+                                            {myHistory.find((uc) => uc.day === val.day) ?
+                                                <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries} <i className="fa-solid fa-check"></i></th>
+                                                :
+                                                <th scope="row"><i className="fa-solid fa-ban"></i></th>
+                                            }
+                                        </tr>
+                                    </Link>
                                 )
                             })
                         }
