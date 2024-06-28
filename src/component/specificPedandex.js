@@ -420,13 +420,13 @@ function SpecificPedandex(props) {
 
             <Modal className={"modalLeaderBoard"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
                 <>
-                    <p style={{textAlign:"center"}}>Historique des partie</p>
+                    <p style={{textAlign:"center"}}>Historique des parties</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
                         {myHistory.length > 0 &&
                             allHistory.map((val, key) => {
                                 return (
-                                    <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
+                                    <Link onClick={changeDay} style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
                                         <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                             <th scope="row">Jour {val.day}</th>
                                             {myHistory.find((uc) => uc.day === val.day) ?
@@ -437,7 +437,6 @@ function SpecificPedandex(props) {
                                         </tr>
                                     </Link>
                                 )
-
                             })
                         }
                         </tbody>
