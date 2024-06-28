@@ -253,10 +253,7 @@ function Pedandex(props) {
                     width: "100%"
                 }}>
                     <button className={"openLeaderBoardButton"} onClick={openHistory}
-                            style={{backgroundImage: "url(/token.png)"}}>
-                        <div className="infoPkm">
-                            <div className="infoNbBoxSkin">{tokens != 0 ? tokens : 0}</div>
-                        </div>
+                            style={{backgroundImage: "url(/images/stats.jpg)"}}>
                     </button>
                     {leaderBoard &&
                         leaderBoard.length > 0 &&
