@@ -253,15 +253,15 @@ function Pedandex(props) {
                     width: "100%"
                 }}>
                     <button className={"openLeaderBoardButton"} onClick={openHistory}
-                            style={{backgroundImage: "url(/images/stats.jpg)"}}>
+                            style={{filter: "drop-shadow(0px 0px 15px white)",backgroundImage: "url(/images/stats.jpg)"}}>
                     </button>
                     {leaderBoard &&
                         leaderBoard.length > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openLeaderboard}
-                                style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                                style={{filter: "drop-shadow(0px 0px 15px white)",backgroundImage: "url(/trophee.webp)"}}></button>
                     }
                     <button className={"openLeaderBoardButton"} onClick={openToken}
-                            style={{backgroundImage: "url(/token.png)"}}>
+                            style={{filter: "drop-shadow(0px 0px 15px white)",backgroundImage: "url(/token.png)"}}>
                         <div className="infoPkm">
                             <div className="infoNbBoxSkin">{tokens != 0 ? tokens : 0}</div>
                         </div>
