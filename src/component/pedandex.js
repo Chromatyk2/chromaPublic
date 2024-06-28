@@ -10,6 +10,7 @@ function Pedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
     const [history, setHistory] = useState([]);
+    const [allHistory, setAllHistory] = useState([]);
     const [tokens, setTokens] = useState(0);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
@@ -242,7 +243,7 @@ function Pedandex(props) {
                 Axios.get("/api/getAllDailyGames")
                     .then(function(response){
                         setIsOpenHistory(true);
-                        setHistory(response.data);
+                        setAllHistory(response.data);
                     })
             })
     }
@@ -418,7 +419,7 @@ function Pedandex(props) {
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
                         {myHistory.length > 0 &&
-                            history.map((val, key) => {
+                            allHistory.map((val, key) => {
                                 return (
                                     <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
                                     <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
