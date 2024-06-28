@@ -118,10 +118,10 @@ function Pedandex(props) {
         if(!history.find((uc) => uc === guess)){
             setHistory(history => [...history,guess]);
             setTries(tries + 1);
-            if(tries > 20){
+            if(tries > 48){
                 setCanTips(true);
             }
-            if(tries > 100){
+            if(tries > 98){
                 setCanMoreTips(true);
             }
             words.map((val, key) => {
@@ -330,7 +330,7 @@ function Pedandex(props) {
                 </div>
                 <div id={"descriptionPedandex"}>
                     <div style={{gap:"50px", margin:"20px",display:"flex",justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
-                        <p style={{ margin:"0",fontSize: "50px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
+                        <p style={{ margin:"0",fontSize: "35px", textAlign: "center"}} className={"itemDescription"} id={"padandexName"}></p>
                         {types.length > 0 && canplay === true ?
                             <div style={{display: "flex", flexFlow: "column"}} className="pokemonTypeContainer">
                                 {types.map((val, key) => {
