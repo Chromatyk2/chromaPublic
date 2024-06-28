@@ -9,7 +9,7 @@ function Pedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
     const [history, setHistory] = useState([]);
-    const [tokens, setTokens] = useState(null);
+    const [tokens, setTokens] = useState(0);
     const [leaderBoard, setLeaderBoard] = useState(null);
     const [canplay, setCanPlay] = useState(false);
     const [types, setTypes] = useState([]);
@@ -238,6 +238,14 @@ function Pedandex(props) {
                     {leaderBoard &&
                         leaderBoard.length > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                    }
+                    {tokens &&
+                        tokens > 0 &&
+                        <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
+                            <div className="infoPkm">
+                                <div className="infoNbBoxSkin">{tokens > 0 && tokens}</div>
+                            </div>
+                        </button>
                     }
                 </div>
                 {dailyGame &&
