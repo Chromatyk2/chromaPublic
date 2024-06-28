@@ -26,7 +26,7 @@ function SpecificPedandex(props) {
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [myHistory, setMyHistory] = React.useState([]);
     const [gen, setGen] = React.useState(null);
-    const [day, setDay] = useState(null);
+    const [dayChange, setDayChange] = React.useState(0);
     const customStyles = {
         content: {
             width:"300px",
@@ -38,12 +38,9 @@ function SpecificPedandex(props) {
             transform: 'translate(-50%, -50%)',
         },
     };
-    const queryParameters = new URLSearchParams(window.location.search)
     useEffect(() => {
-        setDay(queryParameters.get("day"));
-    }, []);
-    useEffect(() => {
-        Axios.get("/api/getDailyGameByDay/"+day)
+        const queryParameters = new URLSearchParams(window.location.search)
+        Axios.get("/api/getDailyGameByDay/"+queryParameters.get("day"))
             .then(function(response){
                 document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');
                 const name = response.data[0].name;
@@ -119,7 +116,7 @@ function SpecificPedandex(props) {
                             })
                     })
             })
-    }, [day]);
+    }, [dayChange]);
 
     const handleSubmit = (event) => {
         const guess = inputRef.current.value.toString()
@@ -241,8 +238,7 @@ function SpecificPedandex(props) {
         setIsOpenHistory(false);
     }
     function changeDay() {
-        const queryParameters = new URLSearchParams(window.location.search)
-        setDay(queryParameters.get("day"));
+        setDayChange(day + 1);
         setIsOpenHistory(false);
     }
     function openHistory() {
@@ -256,6 +252,7 @@ function SpecificPedandex(props) {
                 setHistory(response.data);
             })
     }
+
     return (
         <>
 
