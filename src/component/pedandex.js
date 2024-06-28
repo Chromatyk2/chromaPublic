@@ -19,6 +19,7 @@ function Pedandex(props) {
     const inputRef = useRef();
     const pseudo = props.cookies.user.data[0].login;
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpenHistory, setIsOpenHistory] = React.useState(false);
     const [canTips, setCanTips] = React.useState(false);
     const [canMoreTips, setCanMoreTips] = React.useState(false);
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
@@ -229,24 +230,52 @@ function Pedandex(props) {
                 }
             )
     }
-    console.log(tokens)
+    function closeModalHistory() {
+        setIsOpenHistory(false);
+    }
+    function openHistory() {
+        Axios.get("/api/getAllDailyGames")
+            .then(function(response){
+                setHistory(response.data);
+                setIsOpenHistory(true);
+            })
+    }
     return (
         <>
 
             <div className={"contentContainer"}>
-                <div style={{display:"flex",flexFlow:"row",gap:"20px",justifyContent:"center",flexWrap:"wrap",width:"100%"}}>
+                <div style={{
+                    display: "flex",
+                    flexFlow: "row",
+                    gap: "20px",
+                    justifyContent: "center",
+                    flexWrap: "wrap",
+                    width: "100%"
+                }}>
+                    <button className={"openLeaderBoardButton"} onClick={openHistory}
+                            style={{backgroundImage: "url(/token.png)"}}>
+                        <div className="infoPkm">
+                            <div className="infoNbBoxSkin">{tokens != 0 ? tokens : 0}</div>
+                        </div>
+                    </button>
                     {leaderBoard &&
                         leaderBoard.length > 0 &&
-                        <button className={"openLeaderBoardButton"} onClick={openLeaderboard} style={{backgroundImage: "url(/trophee.webp)"}}></button>
+                        <button className={"openLeaderBoardButton"} onClick={openLeaderboard}
+                                style={{backgroundImage: "url(/trophee.webp)"}}></button>
                     }
-                    <button className={"openLeaderBoardButton"} onClick={openToken} style={{backgroundImage: "url(/token.png)"}}>
+                    <button className={"openLeaderBoardButton"} onClick={openToken}
+                            style={{backgroundImage: "url(/token.png)"}}>
                         <div className="infoPkm">
                             <div className="infoNbBoxSkin">{tokens != 0 ? tokens : 0}</div>
                         </div>
                     </button>
                 </div>
                 {dailyGame &&
-                    <p style={{color:"white",textAlign: "center", textTransform: "uppercase"}}>Jour {dailyGame.day}</p>
+                    <p style={{
+                        color: "white",
+                        textAlign: "center",
+                        textTransform: "uppercase"
+                    }}>Jour {dailyGame.day}</p>
                 }
                 {canplay === true &&
                     <div style={{
@@ -375,6 +404,10 @@ function Pedandex(props) {
                 </>
             </Modal>
             <Modal overlayClassName={"overlayModalToken"} className={"modalToken"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
+                <SpawnPokemonToken pseudo={pseudo}/>
+            </Modal>
+
+            <Modal overlayClassName={"overlayModalToken"} className={"modalToken"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
                 <SpawnPokemonToken pseudo={pseudo}/>
             </Modal>
         </>
