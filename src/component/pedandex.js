@@ -245,6 +245,8 @@ function Pedandex(props) {
                 setHistory(response.data);
             })
     }
+    console.log(myHistory);
+    console.log(history);
     return (
         <>
 
