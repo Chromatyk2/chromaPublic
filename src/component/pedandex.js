@@ -23,6 +23,7 @@ function Pedandex(props) {
     const [canTips, setCanTips] = React.useState(false);
     const [canMoreTips, setCanMoreTips] = React.useState(false);
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
+    const [myHistory, setMyHistory] = React.useState([]);
     const [gen, setGen] = React.useState(null);
     const customStyles = {
         content: {
@@ -236,8 +237,12 @@ function Pedandex(props) {
     function openHistory() {
         Axios.get("/api/getAllDailyGames")
             .then(function(response){
+                Axios.get("/api/getPedandexWin/"+pseudo)
+                    .then(function(mine){
+                        setMyHistory(mine.data);
+                        setIsOpenHistory(true);
+                    })
                 setHistory(response.data);
-                setIsOpenHistory(true);
             })
     }
     return (
@@ -412,8 +417,13 @@ function Pedandex(props) {
                         {history &&
                             history.map((val, key) => {
                                 return (
-                                    <tr style={{justifyContent: "space-between",display:"flex",gap:"50px"}}>
+                                    <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                         <th scope="row">Jour {val.day}</th>
+                                        {myHistory.find((uc) => uc.day === val.day) ?
+                                            <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries}</th>
+                                            :
+                                            <th scope="row">X</th>
+                                        }
                                     </tr>
                                 )
                             })
