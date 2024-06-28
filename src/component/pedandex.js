@@ -235,14 +235,15 @@ function Pedandex(props) {
         setIsOpenHistory(false);
     }
     function openHistory() {
-        Axios.get("/api/getAllDailyGames")
-            .then(function(response){
-                Axios.get("/api/getPedandexWin/"+pseudo)
-                    .then(function(mine){
-                        setMyHistory(mine.data);
+
+        Axios.get("/api/getPedandexWin/"+pseudo)
+            .then(function(mine){
+                setMyHistory(mine.data);
+                Axios.get("/api/getAllDailyGames")
+                    .then(function(response){
+                        setHistory(response.data);
                         setIsOpenHistory(true);
                     })
-                setHistory(response.data);
             })
     }
     console.log(myHistory);
