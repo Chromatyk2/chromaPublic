@@ -388,23 +388,12 @@ function Pedandex(props) {
                     </div>
                 </div>
             </div>
-            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal}
-                   contentLabel="Example Modal">
+            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
                 <>
-                <p style={{textAlign:"center"}}>Classement du jour {dailyGame && dailyGame.day}</p>
+                    <p style={{textAlign:"center"}}>Classement du jour {dailyGame && dailyGame.day}</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
-                        {leaderBoard &&
-                            leaderBoard.map((val, key) => {
-                                return (
-                                    <tr style={{justifyContent: "space-between",display:"flex",gap:"50px"}}>
-                                        <th scope="row">{key + 1}</th>
-                                        <td>{val.pseudo}</td>
-                                        <td>{val.tries}</td>
-                                    </tr>
-                                )
-                            })
-                        }
+                        <p>Test</p>
                         </tbody>
                     </table>
                 </>
