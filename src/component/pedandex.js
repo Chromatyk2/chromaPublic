@@ -236,14 +236,14 @@ function Pedandex(props) {
         setIsOpenHistory(false);
     }
     function openHistory() {
-        setIsOpenHistory(true);
-        Axios.get("/api/getAllDailyGames")
+        Axios.get("/api/getPedandexWinByUSer/"+pseudo)
             .then(function(response){
-                Axios.get("/api/getPedandexWinByUSer/"+pseudo)
-                    .then(function(mine){
-                        setMyHistory(mine.data);
+                setMyHistory(response.data);
+                Axios.get("/api/getAllDailyGames")
+                    .then(function(response){
+                        setIsOpenHistory(true);
+                        setHistory(response.data);
                     })
-                setHistory(response.data);
             })
     }
     console.log(myHistory)
@@ -417,6 +417,23 @@ function Pedandex(props) {
                     <p style={{textAlign:"center"}}>Historique des parties</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
+                        {myHistory.length > 0 &&
+                            history.map((val, key) => {
+                                return (
+                                    <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
+                                    <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
+                                        <th scope="row">Jour {val.day}</th>
+                                        {myHistory.find((uc) => uc.day === val.day) ?
+                                            <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries} <i style={{color: "green"}} className="fa-solid fa-check"></i></th>
+                                            :
+                                            <th scope="row"><i style={{color: "red"}} className="fa-solid fa-ban"></i></th>
+                                        }
+                                    </tr>
+                                    </Link>
+                                )
+
+                            })
+                        }
                         </tbody>
                     </table>
                 </>
