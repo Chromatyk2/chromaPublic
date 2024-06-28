@@ -115,7 +115,7 @@ function SpecificPedandex(props) {
                             })
                     })
             })
-    }, []);
+    }, [queryParameters]);
 
     const handleSubmit = (event) => {
         const guess = inputRef.current.value.toString()
