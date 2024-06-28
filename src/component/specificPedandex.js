@@ -240,6 +240,11 @@ function SpecificPedandex(props) {
     function closeModalHistory() {
         setIsOpenHistory(false);
     }
+    function changeDay() {
+        const queryParameters = new URLSearchParams(window.location.search)
+        setDay(queryParameters.get("day"));
+        setIsOpenHistory(false);
+    }
     function openHistory() {
         Axios.get("/api/getAllDailyGames")
             .then(function(response){
@@ -251,8 +256,6 @@ function SpecificPedandex(props) {
                 setHistory(response.data);
             })
     }
-    console.log(myHistory);
-    console.log(history);
     return (
         <>
 
@@ -425,7 +428,7 @@ function SpecificPedandex(props) {
                         {history &&
                             history.map((val, key) => {
                                 return (
-                                    <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
+                                    <Link onClick={changeDay} style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
                                         <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                             <th scope="row">Jour {val.day}</th>
                                             {myHistory.find((uc) => uc.day === val.day) ?
