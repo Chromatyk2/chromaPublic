@@ -408,10 +408,14 @@ function Pedandex(props) {
             </Modal>
 
             <Modal overlayClassName={"overlayModalToken"} className={"modalToken"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
-                <SpawnPokemonToken pseudo={pseudo}/>
+
+                <p>Historique</p>
+                {history &&
+                    <p>Oui</p>
+                }
             </Modal>
         </>
-);
+    );
 }
 
 export default Pedandex
