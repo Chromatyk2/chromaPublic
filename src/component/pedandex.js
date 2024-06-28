@@ -240,13 +240,15 @@ function Pedandex(props) {
             .then(function(response){
                 Axios.get("/api/getPedandexWinByUSer/"+pseudo)
                     .then(function(mine){
-                        console.log(mine);
                         setMyHistory(mine.data);
                         setIsOpenHistory(true);
                     })
                 setHistory(response.data);
             })
     }
+    console.log(myHistory)
+    console.log(history)
+    console.log(modalIsOpenHistory)
     return (
         <>
 
