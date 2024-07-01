@@ -424,7 +424,7 @@ function SpecificPedandex(props) {
             <Modal className={"modalLeaderBoard"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
                 <>
                     <p style={{textAlign:"center"}}>Historique des parties</p>
-                    <table style={{display:"flex",justifyContent:"center"}}>
+                    <table style={{maxHeight: "350px",overflow: "overlay",display:"flex",justifyContent:"center"}}>
                         <tbody>
                         {myHistory.length > 0 &&
                             allHistory.map((val, key) => {
