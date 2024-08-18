@@ -17,8 +17,8 @@ function AllProfils(props) {
     }, [])
     return (
         <>
-            <OnStream />
             <div className={"contentContainer"}>
+                <OnStream />
                 <ProfilList list={allProfil}/>
             </div>
         </>

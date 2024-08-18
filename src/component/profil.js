@@ -123,10 +123,10 @@ function Profil(props) {
     }
     return (
         <>
-        <OnStream />
         {profil &&
         profil.length > 0 ?
             <div className={"contentContainer"}>
+                <OnStream />
                 <div className={"profilVisuals"}>
 
                     <div style={{display: "flex", width: "800px", justifyContent: "center", flexWrap:"wrap"}}>
