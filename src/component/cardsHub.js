@@ -113,72 +113,72 @@ function CardsHub(props) {
         <>
             <div className={"contentContainer"}>
             <OnStream />
-            <div className={"allCards"}>
-                    {props.page === null &&
-                        <div className={"introTCGtext"}>
-                            <p>
-                                Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !!!<br />
-                                Ici, l'aventure commence dès que tu cliques sur le bouton rouge !<br />
-                                Le premier clique t'offre 10 000 points pour la boutique !<br />
-                                Ensuite reviens cliquer sur le bouton tous les 1h pour en gagner 1 000 à chaque fois !<br />
+            {/*<div className={"allCards"}>*/}
+            {/*        {props.page === null &&*/}
+            {/*            <div className={"introTCGtext"}>*/}
+            {/*                <p>*/}
+            {/*                    Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !!!<br />*/}
+            {/*                    Ici, l'aventure commence dès que tu cliques sur le bouton rouge !<br />*/}
+            {/*                    Le premier clique t'offre 10 000 points pour la boutique !<br />*/}
+            {/*                    Ensuite reviens cliquer sur le bouton tous les 1h pour en gagner 1 000 à chaque fois !<br />*/}
 
-                                Ce mini site a été fait par Chromatyk !<br />
-                                Retrouve le en stream ici : <a className={"introTCGLink"} href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />
-                                Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />
+            {/*                    Ce mini site a été fait par Chromatyk !<br />*/}
+            {/*                    Retrouve le en stream ici : <a className={"introTCGLink"} href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />*/}
+            {/*                    Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />*/}
 
-                                N'hésite pas à Follow ça fait toujours plaisir !<br />
+            {/*                    N'hésite pas à Follow ça fait toujours plaisir !<br />*/}
 
-                                Amuse toi bien !
-                            </p>
-                        </div>
-                    }
-                {timer &&
-                timer.length == 0 ?
-                    canGetPoint === true ?
-                        <div className={"buttonToPointContainer"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
-                        </div>
-                        :
-                        <div className={"buttonToPointContainer disableButtonPoint"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
-                        </div>
-                    :
-                    canGetPoint === true ?
-                        <div className={"buttonToPointContainer"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>
-                        </div>
-                        :
-                        <div className={"buttonToPointContainer disableButtonPoint"}>
-                            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>
-                            <p className={'buttonArrow'}>↓</p>
-                            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>
-                        </div>
-                }
-                    {props.page == "myCards" &&
-                        <MyCards user={pseudo} />
-                    }
-                    {props.page == "cardsShop" &&
-                        <CardsShop user={pseudo} points={points}/>
-                    }
-                    {props.page == "myBoosters" &&
-                        <MyBoosters user={pseudo}/>
-                    }
-                    {props.page == "listuserTcg" &&
-                        <ListUserTcg user={pseudo}/>
-                    }
-                    {props.page == "sellCards" &&
-                        <SellCards user={pseudo}/>
-                    }
-                    {props.page == "succes" &&
-                        <Succes user={pseudo}/>
-                    }
-            </div>
+            {/*                    Amuse toi bien !*/}
+            {/*                </p>*/}
+            {/*            </div>*/}
+            {/*        }*/}
+            {/*    {timer &&*/}
+            {/*    timer.length == 0 ?*/}
+            {/*        canGetPoint === true ?*/}
+            {/*            <div className={"buttonToPointContainer"}>*/}
+            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
+            {/*                <p className={'buttonArrow'}>↓</p>*/}
+            {/*                <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
+            {/*            </div>*/}
+            {/*            :*/}
+            {/*            <div className={"buttonToPointContainer disableButtonPoint"}>*/}
+            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
+            {/*                <p className={'buttonArrow'}>↓</p>*/}
+            {/*                <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
+            {/*            </div>*/}
+            {/*        :*/}
+            {/*        canGetPoint === true ?*/}
+            {/*            <div className={"buttonToPointContainer"}>*/}
+            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
+            {/*                <p className={'buttonArrow'}>↓</p>*/}
+            {/*                <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
+            {/*            </div>*/}
+            {/*            :*/}
+            {/*            <div className={"buttonToPointContainer disableButtonPoint"}>*/}
+            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
+            {/*                <p className={'buttonArrow'}>↓</p>*/}
+            {/*                <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
+            {/*            </div>*/}
+            {/*    }*/}
+            {/*        {props.page == "myCards" &&*/}
+            {/*            <MyCards user={pseudo} />*/}
+            {/*        }*/}
+            {/*        {props.page == "cardsShop" &&*/}
+            {/*            <CardsShop user={pseudo} points={points}/>*/}
+            {/*        }*/}
+            {/*        {props.page == "myBoosters" &&*/}
+            {/*            <MyBoosters user={pseudo}/>*/}
+            {/*        }*/}
+            {/*        {props.page == "listuserTcg" &&*/}
+            {/*            <ListUserTcg user={pseudo}/>*/}
+            {/*        }*/}
+            {/*        {props.page == "sellCards" &&*/}
+            {/*            <SellCards user={pseudo}/>*/}
+            {/*        }*/}
+            {/*        {props.page == "succes" &&*/}
+            {/*            <Succes user={pseudo}/>*/}
+            {/*        }*/}
+            {/*</div>*/}
             </div>
         </>
     );

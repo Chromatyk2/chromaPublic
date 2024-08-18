@@ -4,6 +4,7 @@ import Axios from 'axios'
 import '../App.css'
 import PkmList from './pkmList.js'
 import ProfilList from "./profilList";
+import OnStream from "./onStream";
 
 function AllProfils(props) {
     const [allProfil,setAllProfil] = useState([]);
@@ -16,6 +17,7 @@ function AllProfils(props) {
     }, [])
     return (
         <>
+            <OnStream />
             <div className={"contentContainer"}>
                 <ProfilList list={allProfil}/>
             </div>

@@ -6,6 +6,7 @@ import '../App.css'
 import Modal from "react-modal";
 import SpawnPokemonToken from "./spawnPokemonToken";
 import {Link} from "react-router-dom";
+import OnStream from "./onStream";
 function Pedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
@@ -249,7 +250,7 @@ function Pedandex(props) {
     }
     return (
         <>
-
+            <OnStream />
             <div className={"contentContainer"}>
                 <div style={{
                     display: "flex",

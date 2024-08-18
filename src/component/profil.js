@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 import PokedexTeam from "./pokedexTeam";
 import {useParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
+import OnStream from "./onStream";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -122,6 +123,7 @@ function Profil(props) {
     }
     return (
         <>
+        <OnStream />
         {profil &&
         profil.length > 0 ?
             <div className={"contentContainer"}>
