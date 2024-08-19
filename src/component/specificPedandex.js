@@ -39,11 +39,6 @@ function SpecificPedandex(props) {
             transform: 'translate(-50%, -50%)',
         },
     };
-
-    useEffect(() => {
-        window.location.reload();
-    }, []);
-    
     useEffect(() => {
 
         var div = document.getElementById("textToGuess");
