@@ -28,6 +28,7 @@ function SpecificPedandex(props) {
     const [myHistory, setMyHistory] = React.useState([]);
     const [gen, setGen] = React.useState(null);
     const [dayChange, setDayChange] = React.useState(0);
+    const [queryParameters, setQueryParameters] = React.useState(new URLSearchParams(window.location.search));
     const customStyles = {
         content: {
             width:"300px",
@@ -43,7 +44,6 @@ function SpecificPedandex(props) {
 
         var div = document.getElementById("textToGuess");
         div.innerHTML = '';
-        const queryParameters = new URLSearchParams(window.location.search)
         Axios.get("/api/getDailyGameByDay/"+queryParameters.get("day"))
             .then(function(response){
                 document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');
