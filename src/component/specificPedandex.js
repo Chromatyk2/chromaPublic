@@ -39,6 +39,11 @@ function SpecificPedandex(props) {
             transform: 'translate(-50%, -50%)',
         },
     };
+
+    useEffect(() => {
+        window.location.reload();
+    }, []);
+    
     useEffect(() => {
 
         var div = document.getElementById("textToGuess");
@@ -429,7 +434,7 @@ function SpecificPedandex(props) {
                         {myHistory.length > 0 &&
                             allHistory.map((val, key) => {
                                 return (
-                                    <Link  onClick={() => window.location.reload()} style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
+                                    <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
                                         <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
                                             <th scope="row">Jour {val.day}</th>
                                             {myHistory.find((uc) => uc.day === val.day) ?
