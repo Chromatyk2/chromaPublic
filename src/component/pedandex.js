@@ -130,7 +130,7 @@ function Pedandex(props) {
                 setCanMoreTips(true);
             }
             words.map((val, key) => {
-                if(val.substring(0, val.length - 1).normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() || val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
+                if(val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().substring(0, val.length - 1) == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() || val.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase() == inputRef.current.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()){
                     var id = key;
                     document.getElementById(id).innerText = val;
                     document.getElementById(id).style.background = 'none';
