@@ -121,7 +121,9 @@ function SpecificPedandex(props) {
                     })
             })
     }, [dayChange]);
-
+    useEffect(() => {
+        window.location.reload();
+    }, [queryParameters]);
     const handleSubmit = (event) => {
         const guess = inputRef.current.value.toString()
         if(!history.find((uc) => uc === guess)){
