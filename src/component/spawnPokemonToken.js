@@ -206,8 +206,8 @@ function SpawnPokemonToken(props) {
                                                         Axios.post('/api/addXp',
                                                             {
                                                                 user: pseudo,
-                                                                win: 300,
-                                                                wins: 300
+                                                                win: 200,
+                                                                wins: 200
                                                             }
                                                         )
                                                             .then(function(response){
