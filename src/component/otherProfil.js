@@ -135,7 +135,7 @@ function OtherProfil(props) {
                         <div style={customStyles.extBar} className="fullProgressBar">
                             <div
                                 style={{
-                                    width: parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%",
+                                    width: parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%",
                                     position: 'relative',
                                     background: '#74fbcf',
                                     textWrap: 'nowrap',
@@ -145,7 +145,7 @@ function OtherProfil(props) {
                                 }}>
                             </div>
                             <div className={"pourcentLevel"}>
-                                {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
+                                {profil[0].xp + " / " + profil[0].level * 500 + "(" + parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%)"}
                             </div>
                         </div>
                         <div className={"allPokemonTeam"}>
