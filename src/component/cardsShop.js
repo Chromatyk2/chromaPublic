@@ -100,6 +100,7 @@ function selectGen(e) {
                             Axios
                                 .get("/api/getCardsPoint/"+props.user)
                                 .then(function(response){
+                                    setPoints(response.data[0].cardToken);
                                     setIsOpen(true);
                                     button.disabled = false;
                                 })
@@ -152,10 +153,6 @@ return (
                                 <button  value={items[Math.floor(Math.random() * items.length)].name} onClick={openModal}
                                         className="guessTradeButton">Ouvrir
                                 </button>
-                                <label style={{display: "flex", justifyContent: "center", marginTop: "10px"}}>Combien de
-                                    boosters ?</label>
-                                <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"}
-                                       min="1" max={Math.floor(points / 500)}/>
                             </div>
                             :
                             <button className="guessTradeButton">Chargement</button>
@@ -173,22 +170,20 @@ return (
                             </div>
                             {points > 0 ?
                                 loading === false ?
-                                    <div style={{position: "relative",bottom: "-44px"}}>
-                                        <button value={val.name} onClick={openModal} className={"guessTradeButton"}>Acheter</button>
-                                        <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
-                                        <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                    <div style={{position: "relative", bottom: "-44px"}}>
+
+                                        <button value={val.name}
+                                                onClick={openModal}
+                                                className="guessTradeButton">Ouvrir
+                                        </button>
                                     </div>
                                     :
-                                    <div style={{position: "relative",bottom: "-44px"}}>
+                                    <div style={{position: "relative", bottom: "-44px"}}>
                                         <button className="guessTradeButton">Chargement</button>
-                                        <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
-                                        <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                 :
                                 <div style={{position: "relative",bottom: "-44px"}}>
                                     <button className="guessTradeButton">Card Points manquants</button>
-                                    <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
-                                    <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                 </div>
                             }
                         </div>
