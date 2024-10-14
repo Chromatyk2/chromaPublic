@@ -198,9 +198,8 @@ return (
                         canOpenLive > 0 &&
                         loading === false ?
                             <div style={{position: "relative", bottom: "-44px"}}>
-
-                                <button value={val.name}
-                                        onClick={openModal}
+                                <button value={items[Math.floor(Math.random() * items.length)].name}
+                                        onClick={freeBooster}
                                         className="guessTradeButton">Ouvrir
                                 </button>
                             </div>
@@ -242,7 +241,7 @@ return (
                                     <div style={{position: "relative", bottom: "-44px"}}>
 
                                         <button value={val.name}
-                                                onClick={openModal}
+                                                onClick={freeBooster}
                                                 className="guessTradeButton">Booster Gratuit
                                         </button>
                                     </div>
