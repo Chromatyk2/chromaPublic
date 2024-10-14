@@ -20,7 +20,7 @@ function NavBar(props) {
                 if(response.data.length > 0){
                     return Axios.post('/api/addCardsPoint',
                         {
-                            user:user
+                            user:pseudo
                         }
                     )
                 }
