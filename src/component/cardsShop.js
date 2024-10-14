@@ -25,7 +25,7 @@ function CardsShop(props) {
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
                 console.log(response);
-                setPoints(response.data[0].points);
+                setPoints(response.data[0].cardToken);
             })
     }, [])
     function buyBooster(e) {
@@ -36,7 +36,7 @@ function CardsShop(props) {
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
-                if(response.data[0].points - totalPointsRemove >= 0){
+                if(response.data[0].cardToken - totalPointsRemove >= 0){
                     return Axios.post('/api/removeCardsPoint',
                         {
                             user:props.user,
@@ -47,7 +47,7 @@ function CardsShop(props) {
                             Axios
                                 .get("/api/getCardsPoint/"+props.user)
                                 .then(function(response){
-                                    setPoints(response.data[0].points);
+                                    setPoints(response.data[0].cardToken);
                                 }).then(
                                 (result) => {
                                     Axios
@@ -93,8 +93,8 @@ function CardsShop(props) {
                     .get("/api/getCardsPoint/" + props.user)
                     .then(function (response) {
 
-                        if(response.data[0].points - totalPointsRemove >= 0) {
-                            if (response.data[0].points - 500 >= 0) {
+                        if(response.data[0].cardToken - totalPointsRemove >= 0) {
+                            if (response.data[0].cardToken - 500 >= 0) {
                                 Axios.post('/api/removeCardsPointRandom',
                                     {
                                         user: props.user,
@@ -105,7 +105,7 @@ function CardsShop(props) {
                                         Axios
                                             .get("/api/getCardsPoint/" + props.user)
                                             .then(function (response) {
-                                                setPoints(response.data[0].points);
+                                                setPoints(response.data[0].cardToken);
                                             }).then(
                                             (result) => {
                                                 var randomIndex = Math.floor(Math.random() * items.length);
@@ -155,7 +155,7 @@ function registerCards(e) {
             Axios
                 .get("/api/getCardsPoint/"+e.target.value)
                 .then(function(response){
-                    setPoints(response.data[0].points);
+                    setPoints(response.data[0].cardToken);
                 })
         }
     )
@@ -210,7 +210,7 @@ return (
                         <img className="fit-picture" src={"/images/random.png"} alt="Grapefruit slice atop a pile of other slices"/>
                     </div>
                     <p className="pokemonNameTrade">500 Points Boutique</p>
-                    {points > 499 ?
+                    {points > 0 ?
                         loading === false ?
                             <div>
                                 <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className={"guessTradeButton"}>Acheter</button>
@@ -232,7 +232,7 @@ return (
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.name + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                             </div>
                             <p className="pokemonNameTrade">1000 Points Boutique</p>
-                            {points > 999 ?
+                            {points > 0 ?
                                 loading === false ?
                                     <div style={{position: "relative",bottom: "-44px"}}>
                                         <button value={val.name} onClick={buyBooster} className={"guessTradeButton"}>Acheter</button>
