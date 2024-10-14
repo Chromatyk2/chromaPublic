@@ -62,6 +62,9 @@ function MyBoosters(props) {
     function closeModal() {
         setIsOpen(false);
     }
+    function handleState() {
+        setIsOpen(false);
+    }
     useEffect(() => {
         Axios
             .get("/api/getMyBoosters/"+props.user)
@@ -69,9 +72,6 @@ function MyBoosters(props) {
                 setBoosters(response.data);
             })
     }, [])
-    function handleState() {
-        setIsOpen(false);
-    }
     return (
         <>
             <div id={"cardsContainer"}>
