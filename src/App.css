@@ -1189,7 +1189,7 @@ p.titleMyCaptures{
     padding: 20px;
     background: rgba(37, 87, 95,0.2);
     border-radius: 25px;
-    height: 390px ;
+    height: fit-content;
 }
 .uniqueMyCardContainer {
     background: rgba(37,87,95,.2);
@@ -1237,6 +1237,7 @@ button.deleteTrade {
     letter-spacing: 2px;
     width: 236px;
     margin:auto;
+    margin-top: 20px;
 }
 .guessTradeButton:hover{
   background: #120747;
