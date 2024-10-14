@@ -157,6 +157,7 @@ return (
                 </div>
             }
             {props.canOpen > 0 &&
+                canOpenLive > 0 &&
                 <div className="myPointsDisplay">
                     <p style={{color:"red",}}>Vous avez votre Booster gratuit !</p>
                 </div>
