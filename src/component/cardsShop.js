@@ -17,6 +17,7 @@ function CardsShop(props) {
     const [loading,setLoading] = useState(false);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [boosterId, setBoosterId] = React.useState(null);
+    const [canOpenLive, setCanOpenLive] = React.useState(props.canOpen);
     const customStyles = {
         content: {
             position:'initial',
@@ -109,6 +110,34 @@ function selectGen(e) {
             })
     }
 
+    function freeBooster(e) {
+        var button = e.currentTarget;
+        var nbBooster = e.target.getAttribute("nbBooster");
+        button.disabled = true;
+        var id = e.target.value;
+        setBoosterId(id);
+        Axios
+            .get("/api/getCanOpen/"+props.user)
+            .then(function(response){
+                if(response.data[0].canOpen - 1 > -1){
+                    return Axios.post('/api/removeCanOpen',
+                        {
+                            pseudo:props.user
+                        }
+                    )
+                        .then(function(response) {
+                            Axios
+                                .get("/api/getCanOpen/"+props.user)
+                                .then(function(response){
+                                    setCanOpenLive(response.data[0].canOpen);
+                                    setIsOpen(true);
+                                    button.disabled = false;
+                                })
+                        })
+                }
+            })
+    }
+
     function closeModal() {
         setIsOpen(false);
     }
@@ -125,6 +154,11 @@ return (
                 :
                 <div className="myPointsDisplay">
                     <p style={{color:"white",}}>Token TCG : {points}</p>
+                </div>
+            }
+            {props.canOpen > 0 &&
+                <div className="myPointsDisplay">
+                    <p style={{color:"red",}}>Vous avez votre Booster gratuit !</p>
                 </div>
             }
         </div>
@@ -159,6 +193,21 @@ return (
                         :
                         <button className="guessTradeButton">Aucun Token</button>
                     }
+                    {props.canOpen > 0 &&
+                        canOpenLive > 0 &&
+                        loading === false ?
+                            <div style={{position: "relative", bottom: "-44px"}}>
+
+                                <button value={val.name}
+                                        onClick={openModal}
+                                        className="guessTradeButton">Ouvrir
+                                </button>
+                            </div>
+                            :
+                            <div style={{position: "relative", bottom: "-44px"}}>
+                                <button className="guessTradeButton">Chargement</button>
+                            </div>
+                    }
                 </div>
             }
             {items &&
@@ -174,7 +223,7 @@ return (
 
                                         <button value={val.name}
                                                 onClick={openModal}
-                                                className="guessTradeButton">Ouvrir
+                                                className="guessTradeButton">Booster Gratuit
                                         </button>
                                     </div>
                                     :
@@ -185,6 +234,21 @@ return (
                                 <div style={{position: "relative",bottom: "-44px"}}>
                                     <button className="guessTradeButton">Aucun Token</button>
                                 </div>
+                            }
+                            {props.canOpen > 0 &&
+                                canOpenLive > 0 &&
+                                loading === false ?
+                                    <div style={{position: "relative", bottom: "-44px"}}>
+
+                                        <button value={val.name}
+                                                onClick={openModal}
+                                                className="guessTradeButton">Booster Gratuit
+                                        </button>
+                                    </div>
+                                    :
+                                    <div style={{position: "relative", bottom: "-44px"}}>
+                                        <button className="guessTradeButton">Chargement</button>
+                                    </div>
                             }
                         </div>
                     )

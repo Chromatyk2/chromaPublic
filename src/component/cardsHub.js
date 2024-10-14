@@ -15,6 +15,7 @@ import Succes from "./Succes.js";
 import OnStream from "./onStream";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
+    const [canOpen,setCanOpen] = useState(-1);
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
@@ -22,7 +23,7 @@ function CardsHub(props) {
             .then(function(response){
                 Axios.get("/api/getCanOpen/"+pseudo)
                     .then(function(response){
-                        console.log(response)
+                        setCanOpen(response.data[0].canOpen)
                     })
                 setPoints(response.data[0].points);
             })
@@ -54,7 +55,7 @@ function CardsHub(props) {
                         <MyCards user={pseudo} />
                     }
                     {props.page == "cardsShop" &&
-                        <CardsShop user={pseudo} points={points}/>
+                        <CardsShop canOpen={canOpen} user={pseudo} points={points}/>
                     }
                     {props.page == "myBoosters" &&
                         <MyBoosters user={pseudo}/>
