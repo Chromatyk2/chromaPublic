@@ -124,7 +124,7 @@ return (
                 </div>
                 :
                 <div className="myPointsDisplay">
-                    <p style={{color:"white",}}>Points Boutique : {points}</p>
+                    <p style={{color:"white",}}>Token TCG : {points}</p>
                 </div>
             }
         </div>
@@ -157,7 +157,7 @@ return (
                             :
                             <button className="guessTradeButton">Chargement</button>
                         :
-                        <button className="guessTradeButton">Card Points manquants</button>
+                        <button className="guessTradeButton">Aucun Token</button>
                     }
                 </div>
             }
@@ -183,7 +183,7 @@ return (
                                     </div>
                                 :
                                 <div style={{position: "relative",bottom: "-44px"}}>
-                                    <button className="guessTradeButton">Card Points manquants</button>
+                                    <button className="guessTradeButton">Aucun Token</button>
                                 </div>
                             }
                         </div>
