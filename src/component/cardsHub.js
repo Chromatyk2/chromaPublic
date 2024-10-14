@@ -51,8 +51,8 @@ function CardsHub(props) {
     //         }
     //     }
     // }, [timer])
-    function addPointButton() {
-        setCanGetPoint(false);
+    // function addPointButton() {
+    //     setCanGetPoint(false);
     //         if (timer.length == 0) {
     //                 Axios.post('/api/addButtonClick',
     //                     {
