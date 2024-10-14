@@ -15,12 +15,7 @@ import Succes from "./Succes.js";
 import OnStream from "./onStream";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
-    const [timer,setTimer] = useState(null);
-    const [diff,setDiff] = useState(null);
     const pseudo = props.cookies.user.data[0].login;
-    const [canGetPoint,setCanGetPoint] = useState(false);
-    const [twoHour,setTwoHour] = useState(null);
-    const [timestamp,setTimestamp] = useState(null);
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
@@ -28,87 +23,6 @@ function CardsHub(props) {
                 setPoints(response.data[0].points);
             })
     }, [])
-    // useEffect(() => {
-    //     Axios
-    //         .get("/api/getDateButton/"+pseudo)
-    //         .then(function(response){
-    //             setTimer(response.data);
-    //         })
-    // }, [])
-    // useEffect(() => {
-    //     if(timer !== null){
-    //         if(timer.length > 0) {
-    //             setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
-    //             setTwoHour((new Date().getTime() / 1000));
-    //             setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-    //             if ((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
-    //                 setCanGetPoint(true);
-    //             } else {
-    //                 setCanGetPoint(false);
-    //             }
-    //         }else{
-    //             setCanGetPoint(true);
-    //         }
-    //     }
-    // }, [timer])
-    // function addPointButton() {
-    //     setCanGetPoint(false);
-    //         if (timer.length == 0) {
-    //                 Axios.post('/api/addButtonClick',
-    //                     {
-    //                         pseudo: pseudo,
-    //                         hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0]
-    //                     }).then(
-    //                     (result) => {
-    //                         Axios
-    //                             .get("/api/getDateButton/" + pseudo)
-    //                             .then(function (response) {
-    //                                 setTimer(response.data);
-    //                             }).then(
-    //                             (result) => {
-    //                                 Axios.post('/api/registerCards',
-    //                                     {
-    //                                         pseudo: pseudo
-    //                                     }
-    //                                 )
-    //                             }
-    //                         )
-    //                     }
-    //                 )
-    //         } else{
-    //                 Axios
-    //                     .get("/api/getDateButton/"+pseudo)
-    //                     .then(function(response){
-    //                         setTimestamp((new Date(response.data[0].hour).getTime() / 1000)  + 3600);
-    //                         setTwoHour((new Date().getTime() / 1000));
-    //                         setDiff((((new Date(response.data[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-    //                         if((new Date(response.data[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
-    //                             Axios.post('/api/updateButtonTime',
-    //                                 {
-    //                                     hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0],
-    //                                     pseudo: pseudo
-    //                                 }
-    //                             ).then(
-    //                                 (result) => {
-    //                                     Axios
-    //                                         .get("/api/getDateButton/" + pseudo)
-    //                                         .then(function (response) {
-    //                                             setTimer(response.data);
-    //                                         }).then(
-    //                                         (result) => {
-    //                                             Axios.post('/api/addCardsPointButton',
-    //                                                 {
-    //                                                     user: pseudo
-    //                                                 }
-    //                                             )
-    //                                         }
-    //                                     )
-    //                                 }
-    //                             )
-    //                         }
-    //                     })
-    //         }
-    // }
     return(
         <>
             <div className={"contentContainer"}>
@@ -132,34 +46,6 @@ function CardsHub(props) {
                             </p>
                         </div>
                     }
-                {/*{timer &&*/}
-                {/*timer.length == 0 ?*/}
-                {/*    canGetPoint === true ?*/}
-                {/*        <div className={"buttonToPointContainer"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-                {/*        </div>*/}
-                {/*        :*/}
-                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-                {/*        </div>*/}
-                {/*    :*/}
-                {/*    canGetPoint === true ?*/}
-                {/*        <div className={"buttonToPointContainer"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-                {/*        </div>*/}
-                {/*        :*/}
-                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-                {/*            <p className={'buttonArrow'}>↓</p>*/}
-                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-                {/*        </div>*/}
-                {/*}*/}
                     {props.page == "myCards" &&
                         <MyCards user={pseudo} />
                     }

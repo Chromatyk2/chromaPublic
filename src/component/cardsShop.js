@@ -24,6 +24,7 @@ function CardsShop(props) {
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
+                console.log(response);
                 setPoints(response.data[0].points);
             })
     }, [])
@@ -175,6 +176,7 @@ function selectGen(e) {
             })
     }
 }
+console.log(points);
 return (
     <>
         <div>
