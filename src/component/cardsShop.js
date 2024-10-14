@@ -15,6 +15,25 @@ function CardsShop(props) {
     const [items, setItems] = useState(null);
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [boosterId, setBoosterId] = React.useState(null);
+    const customStyles = {
+        content: {
+            position:'initial',
+            border: 'none',
+            background: 'none',
+            borderRadius: '4px',
+            width: '100%',
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
+        textModal: {
+            fontSize:'30px',
+            textAlign:'center'
+        },
+    };
     useEffect(() => {
         Axios
             .get("/api/getBoostersList")
@@ -81,7 +100,6 @@ function selectGen(e) {
                             Axios
                                 .get("/api/getCardsPoint/"+props.user)
                                 .then(function(response){
-                                    setBoosters(response.data);
                                     setIsOpen(true);
                                     button.disabled = false;
                                 })
