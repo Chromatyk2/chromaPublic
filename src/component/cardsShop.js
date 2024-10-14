@@ -196,17 +196,12 @@ return (
                     }
                     {props.canOpen > 0 &&
                         canOpenLive > 0 &&
-                        loading === false ?
-                            <div style={{position: "relative", bottom: "-44px"}}>
-                                <button value={items[Math.floor(Math.random() * items.length)].name}
-                                        onClick={freeBooster}
-                                        className="guessTradeButton">Ouvrir
-                                </button>
-                            </div>
-                            :
-                            <div style={{position: "relative", bottom: "-44px"}}>
-                                <button className="guessTradeButton">Chargement</button>
-                            </div>
+                                <div style={{position: "relative", bottom: "-44px"}}>
+                                    <button value={items[Math.floor(Math.random() * items.length)].name}
+                                            onClick={freeBooster}
+                                            className="guessTradeButton">Booster Gratuit
+                                    </button>
+                                </div>
                     }
                 </div>
             }
@@ -223,7 +218,7 @@ return (
 
                                         <button value={val.name}
                                                 onClick={openModal}
-                                                className="guessTradeButton">Booster Gratuit
+                                                className="guessTradeButton">Ouvrir
                                         </button>
                                     </div>
                                     :
@@ -237,17 +232,12 @@ return (
                             }
                             {props.canOpen > 0 &&
                                 canOpenLive > 0 &&
-                                loading === false ?
                                     <div style={{position: "relative", bottom: "-44px"}}>
 
                                         <button value={val.name}
                                                 onClick={freeBooster}
                                                 className="guessTradeButton">Booster Gratuit
                                         </button>
-                                    </div>
-                                    :
-                                    <div style={{position: "relative", bottom: "-44px"}}>
-                                        <button className="guessTradeButton">Chargement</button>
                                     </div>
                             }
                         </div>
