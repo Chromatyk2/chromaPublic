@@ -28,157 +28,157 @@ function CardsHub(props) {
                 setPoints(response.data[0].points);
             })
     }, [])
-    useEffect(() => {
-        Axios
-            .get("/api/getDateButton/"+pseudo)
-            .then(function(response){
-                setTimer(response.data);
-            })
-    }, [])
-    useEffect(() => {
-        if(timer !== null){
-            if(timer.length > 0) {
-                setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
-                setTwoHour((new Date().getTime() / 1000));
-                setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-                if ((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
-                    setCanGetPoint(true);
-                } else {
-                    setCanGetPoint(false);
-                }
-            }else{
-                setCanGetPoint(true);
-            }
-        }
-    }, [timer])
+    // useEffect(() => {
+    //     Axios
+    //         .get("/api/getDateButton/"+pseudo)
+    //         .then(function(response){
+    //             setTimer(response.data);
+    //         })
+    // }, [])
+    // useEffect(() => {
+    //     if(timer !== null){
+    //         if(timer.length > 0) {
+    //             setTimestamp((new Date(timer[0].hour).getTime() / 1000)  + 3600);
+    //             setTwoHour((new Date().getTime() / 1000));
+    //             setDiff((((new Date(timer[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+    //             if ((new Date(timer[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)) {
+    //                 setCanGetPoint(true);
+    //             } else {
+    //                 setCanGetPoint(false);
+    //             }
+    //         }else{
+    //             setCanGetPoint(true);
+    //         }
+    //     }
+    // }, [timer])
     function addPointButton() {
         setCanGetPoint(false);
-            if (timer.length == 0) {
-                    Axios.post('/api/addButtonClick',
-                        {
-                            pseudo: pseudo,
-                            hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0]
-                        }).then(
-                        (result) => {
-                            Axios
-                                .get("/api/getDateButton/" + pseudo)
-                                .then(function (response) {
-                                    setTimer(response.data);
-                                }).then(
-                                (result) => {
-                                    Axios.post('/api/registerCards',
-                                        {
-                                            pseudo: pseudo
-                                        }
-                                    )
-                                }
-                            )
-                        }
-                    )
-            } else{
-                    Axios
-                        .get("/api/getDateButton/"+pseudo)
-                        .then(function(response){
-                            setTimestamp((new Date(response.data[0].hour).getTime() / 1000)  + 3600);
-                            setTwoHour((new Date().getTime() / 1000));
-                            setDiff((((new Date(response.data[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
-                            if((new Date(response.data[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
-                                Axios.post('/api/updateButtonTime',
-                                    {
-                                        hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0],
-                                        pseudo: pseudo
-                                    }
-                                ).then(
-                                    (result) => {
-                                        Axios
-                                            .get("/api/getDateButton/" + pseudo)
-                                            .then(function (response) {
-                                                setTimer(response.data);
-                                            }).then(
-                                            (result) => {
-                                                Axios.post('/api/addCardsPointButton',
-                                                    {
-                                                        user: pseudo
-                                                    }
-                                                )
-                                            }
-                                        )
-                                    }
-                                )
-                            }
-                        })
-            }
-    }
+    //         if (timer.length == 0) {
+    //                 Axios.post('/api/addButtonClick',
+    //                     {
+    //                         pseudo: pseudo,
+    //                         hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0]
+    //                     }).then(
+    //                     (result) => {
+    //                         Axios
+    //                             .get("/api/getDateButton/" + pseudo)
+    //                             .then(function (response) {
+    //                                 setTimer(response.data);
+    //                             }).then(
+    //                             (result) => {
+    //                                 Axios.post('/api/registerCards',
+    //                                     {
+    //                                         pseudo: pseudo
+    //                                     }
+    //                                 )
+    //                             }
+    //                         )
+    //                     }
+    //                 )
+    //         } else{
+    //                 Axios
+    //                     .get("/api/getDateButton/"+pseudo)
+    //                     .then(function(response){
+    //                         setTimestamp((new Date(response.data[0].hour).getTime() / 1000)  + 3600);
+    //                         setTwoHour((new Date().getTime() / 1000));
+    //                         setDiff((((new Date(response.data[0].hour).getTime() / 1000)  + 3600)  - (new Date().getTime() / 1000)) * 1000);
+    //                         if((new Date(response.data[0].hour).getTime() / 1000)  + 3600 <= (new Date().getTime() / 1000)){
+    //                             Axios.post('/api/updateButtonTime',
+    //                                 {
+    //                                     hour: new Date().toISOString().split('T')[0] + ' ' + new Date().toTimeString().split(' ')[0],
+    //                                     pseudo: pseudo
+    //                                 }
+    //                             ).then(
+    //                                 (result) => {
+    //                                     Axios
+    //                                         .get("/api/getDateButton/" + pseudo)
+    //                                         .then(function (response) {
+    //                                             setTimer(response.data);
+    //                                         }).then(
+    //                                         (result) => {
+    //                                             Axios.post('/api/addCardsPointButton',
+    //                                                 {
+    //                                                     user: pseudo
+    //                                                 }
+    //                                             )
+    //                                         }
+    //                                     )
+    //                                 }
+    //                             )
+    //                         }
+    //                     })
+    //         }
+    // }
     return(
         <>
             <div className={"contentContainer"}>
             <OnStream />
-            {/*<div className={"allCards"}>*/}
-            {/*        {props.page === null &&*/}
-            {/*            <div className={"introTCGtext"}>*/}
-            {/*                <p>*/}
-            {/*                    Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !!!<br />*/}
-            {/*                    Ici, l'aventure commence dès que tu cliques sur le bouton rouge !<br />*/}
-            {/*                    Le premier clique t'offre 10 000 points pour la boutique !<br />*/}
-            {/*                    Ensuite reviens cliquer sur le bouton tous les 1h pour en gagner 1 000 à chaque fois !<br />*/}
+            <div className={"allCards"}>
+                    {props.page === null &&
+                        <div className={"introTCGtext"}>
+                            <p>
+                                Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !!!<br />
+                                Ici, l'aventure commence dès que tu cliques sur le bouton rouge !<br />
+                                Le premier clique t'offre 10 000 points pour la boutique !<br />
+                                Ensuite reviens cliquer sur le bouton tous les 1h pour en gagner 1 000 à chaque fois !<br />
 
-            {/*                    Ce mini site a été fait par Chromatyk !<br />*/}
-            {/*                    Retrouve le en stream ici : <a className={"introTCGLink"} href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />*/}
-            {/*                    Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />*/}
+                                Ce mini site a été fait par Chromatyk !<br />
+                                Retrouve le en stream ici : <a className={"introTCGLink"} href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />
+                                Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />
 
-            {/*                    N'hésite pas à Follow ça fait toujours plaisir !<br />*/}
+                                N'hésite pas à Follow ça fait toujours plaisir !<br />
 
-            {/*                    Amuse toi bien !*/}
-            {/*                </p>*/}
-            {/*            </div>*/}
-            {/*        }*/}
-            {/*    {timer &&*/}
-            {/*    timer.length == 0 ?*/}
-            {/*        canGetPoint === true ?*/}
-            {/*            <div className={"buttonToPointContainer"}>*/}
-            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-            {/*                <p className={'buttonArrow'}>↓</p>*/}
-            {/*                <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-            {/*            </div>*/}
-            {/*            :*/}
-            {/*            <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
-            {/*                <p className={'buttonArrow'}>↓</p>*/}
-            {/*                <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-            {/*            </div>*/}
-            {/*        :*/}
-            {/*        canGetPoint === true ?*/}
-            {/*            <div className={"buttonToPointContainer"}>*/}
-            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-            {/*                <p className={'buttonArrow'}>↓</p>*/}
-            {/*                <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
-            {/*            </div>*/}
-            {/*            :*/}
-            {/*            <div className={"buttonToPointContainer disableButtonPoint"}>*/}
-            {/*                <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
-            {/*                <p className={'buttonArrow'}>↓</p>*/}
-            {/*                <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
-            {/*            </div>*/}
-            {/*    }*/}
-            {/*        {props.page == "myCards" &&*/}
-            {/*            <MyCards user={pseudo} />*/}
-            {/*        }*/}
-            {/*        {props.page == "cardsShop" &&*/}
-            {/*            <CardsShop user={pseudo} points={points}/>*/}
-            {/*        }*/}
-            {/*        {props.page == "myBoosters" &&*/}
-            {/*            <MyBoosters user={pseudo}/>*/}
-            {/*        }*/}
-            {/*        {props.page == "listuserTcg" &&*/}
-            {/*            <ListUserTcg user={pseudo}/>*/}
-            {/*        }*/}
-            {/*        {props.page == "sellCards" &&*/}
-            {/*            <SellCards user={pseudo}/>*/}
-            {/*        }*/}
-            {/*        {props.page == "succes" &&*/}
-            {/*            <Succes user={pseudo}/>*/}
-            {/*        }*/}
-            {/*</div>*/}
+                                Amuse toi bien !
+                            </p>
+                        </div>
+                    }
+                {/*{timer &&*/}
+                {/*timer.length == 0 ?*/}
+                {/*    canGetPoint === true ?*/}
+                {/*        <div className={"buttonToPointContainer"}>*/}
+                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
+                {/*            <p className={'buttonArrow'}>↓</p>*/}
+                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
+                {/*        </div>*/}
+                {/*        :*/}
+                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
+                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 10000 points</p>*/}
+                {/*            <p className={'buttonArrow'}>↓</p>*/}
+                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
+                {/*        </div>*/}
+                {/*    :*/}
+                {/*    canGetPoint === true ?*/}
+                {/*        <div className={"buttonToPointContainer"}>*/}
+                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
+                {/*            <p className={'buttonArrow'}>↓</p>*/}
+                {/*            <button className={"buttonToPoint"} onClick={addPointButton}>+</button>*/}
+                {/*        </div>*/}
+                {/*        :*/}
+                {/*        <div className={"buttonToPointContainer disableButtonPoint"}>*/}
+                {/*            <p className={"textButtonPoint"}>Appuie pour gagner 1000 points</p>*/}
+                {/*            <p className={'buttonArrow'}>↓</p>*/}
+                {/*            <button className={"buttonToPoint"} onClick={addPointButton} disabled>+</button>*/}
+                {/*        </div>*/}
+                {/*}*/}
+                    {props.page == "myCards" &&
+                        <MyCards user={pseudo} />
+                    }
+                    {props.page == "cardsShop" &&
+                        <CardsShop user={pseudo} points={points}/>
+                    }
+                    {props.page == "myBoosters" &&
+                        <MyBoosters user={pseudo}/>
+                    }
+                    {props.page == "listuserTcg" &&
+                        <ListUserTcg user={pseudo}/>
+                    }
+                    {props.page == "sellCards" &&
+                        <SellCards user={pseudo}/>
+                    }
+                    {props.page == "succes" &&
+                        <Succes user={pseudo}/>
+                    }
+            </div>
             </div>
         </>
     );
