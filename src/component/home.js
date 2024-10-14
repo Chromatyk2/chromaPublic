@@ -10,7 +10,6 @@ function HomePage(props) {
         <div className={"contentContainer"}>
             <OnStream/>
             <p style={{textAlign: "center", color: "white"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
-            <p style={{textAlign: "center", color: "red"}}>A cause de limitations techniques et financières le système de carte est désactivé pour le moment, je suis à la recherche de méthodes pour permettre son retour, désolé.</p>
             <div className="socialContainer">
                 <p className="myNetworks">Mes reseaux</p>
                 <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i
