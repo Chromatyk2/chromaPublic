@@ -46,7 +46,7 @@ function LastBangerAlert(props) {
                         })
                         setNewLastCardUser(response);
                     })
-            }, 10000)
+            }, 60000)
     }, []);
 
     useEffect(() => {
