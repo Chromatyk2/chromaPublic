@@ -20,6 +20,10 @@ function CardsHub(props) {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
             .then(function(response){
+                Axios.get("/api/getCanOpen/"+pseudo)
+                    .then(function(response){
+                        console.log(response)
+                    })
                 setPoints(response.data[0].points);
             })
     }, [])

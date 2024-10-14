@@ -1381,6 +1381,9 @@ span.myCountProposition {
   background-color: rgba(0,0,0,0);
     top:0;
 }
+.u-text-center{
+    color:white;
+}
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
 @import url('https://fonts.cdnfonts.com/css/common-pixel');
 @keyframes float {
