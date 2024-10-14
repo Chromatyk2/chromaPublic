@@ -13,6 +13,19 @@ function NavBar(props) {
   const [stream, setStream] = useState(null);
   const pseudo = props.cookies.user.data[0].login;
   const [expanded, setExpanded] = useState(false);
+    useEffect(() => {
+        Axios
+            .get("/api/getProfil/"+pseudo)
+            .then(function(response){
+                if(response.data.length > 0){
+                    return Axios.post('/api/addCardsPoint',
+                        {
+                            user:user
+                        }
+                    )
+                }
+            })
+    }, [])
   return (
 
       <Navbar expanded={expanded} bg="light" expand="lg">
