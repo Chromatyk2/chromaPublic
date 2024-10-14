@@ -17,7 +17,8 @@ function NavBar(props) {
         Axios
             .get("/api/getProfil/"+pseudo)
             .then(function(response){
-                if(response.data.length > 0){
+                if(response.data.length < 1){
+                    console.log(response.data.length)
                     return Axios.post('/api/addCardsPoint',
                         {
                             user:pseudo
