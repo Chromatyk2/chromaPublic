@@ -261,12 +261,12 @@ return (
                         })
                     }
                 </div>
-                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
-                       contentLabel="Example Modal">
-                    <OpeningBooster change={handleState} idBooster={boosterId} user={props.user}/>
-                </Modal>
             </>
         }
+        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
+               contentLabel="Example Modal">
+            <OpeningBooster change={handleState} idBooster={boosterId} user={props.user}/>
+        </Modal>
 
     </>
 )
