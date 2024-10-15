@@ -131,7 +131,7 @@ function selectGen(e) {
         Axios
             .get("/api/getCanOpen/"+props.user)
             .then(function(response){
-                if(response.data[0].canOpen - 1 > -1){
+                if(response.data[0].canOpen - 1 > -1 || canOpenLive == 1){
                     return Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
