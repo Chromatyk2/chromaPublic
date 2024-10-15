@@ -51,12 +51,11 @@ function CardsShop(props) {
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
                         console.log(Date.now());
-                        console.log(new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime() + 36000);
-                        console.log((Date.now() - new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime()));
+                        console.log(new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime());
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
-                            if(Date.now() - new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime() > 3600){
+                            if(Date.now() - new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime() + 36000 > 3600){
                                 setCanOpenLive(0)
                             }else{
                                 setCanOpenLive(1)
