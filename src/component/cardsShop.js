@@ -149,8 +149,23 @@ function selectGen(e) {
                                 .get("/api/getCanOpen/"+props.user)
                                 .then(function(response){
                                     setCanOpenLive(0);
-                                    setIsOpen(true);
-                                    button.disabled = false;
+                                    Axios.get("/api/getProfil/"+props.user)
+                                        .then(function(response){
+                                            setIsOpen(true);
+                                            button.disabled = false;
+                                            const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                                            const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
+                                            if(response.data[0].canOpen == 1){
+                                                setCanOpenLive(response.data[0].canOpen)
+                                            }else{
+                                                setNextFree(moment(lastDrawing).valueOf() + 7200000);
+                                                if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
+                                                    setCanOpenLive(1)
+                                                }else{
+                                                    setCanOpenLive(0)
+                                                }
+                                            }
+                                        })
                                 })
                         })
                 }
