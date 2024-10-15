@@ -50,7 +50,7 @@ function CardsShop(props) {
                 setPoints(response.data[0].cardToken);
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
-                        console.log(moment(Date.now()).tz("Europe/Paris").format() - moment(response.data[0].lastOpening).tz("Europe/Paris").format());
+                        console.log(moment(Date.now()).tz("Europe/Paris") - moment(response.data[0].lastOpening).tz("Europe/Paris"));
                         console.log(moment(Date.now()).tz("Europe/Paris").format());
                         console.log(moment(response.data[0].lastOpening).tz("Europe/Paris").format());
                         if(response.data[0].canOpen == 1){
@@ -160,7 +160,6 @@ function selectGen(e) {
     function handleState() {
         setIsOpen(false);
     }
-    console.log(canOpenLive);
 return (
     <>
         {canOpenLive !== null &&
