@@ -52,15 +52,12 @@ function CardsShop(props) {
                     .then(function(response){
                         const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                         const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                        console.log(dateNow);
-                        console.log(lastDrawing);
-                        console.log(moment(dateNow).valueOf() - moment(lastDrawing).valueOf());
                         // console.log((moment(Date.now()).tz("Europe/Paris") + 6000000) - moment(new Date(response.data[0].lastOpening)).tz("Europe/Paris").valueOf());
                         // console.log(moment(Date.now()).tz("Europe/Paris").valueOf());
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
-                            if(moment(response.data[0].lastOpening).fromNow() == "2 hours ago"){
+                            if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
                                 setCanOpenLive(0)
                             }else{
                                 setCanOpenLive(1)
