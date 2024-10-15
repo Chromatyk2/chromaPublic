@@ -58,9 +58,9 @@ function CardsShop(props) {
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
                             if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
-                                setCanOpenLive(0)
-                            }else{
                                 setCanOpenLive(1)
+                            }else{
+                                setCanOpenLive(0)
                             }
                         }
                     })
