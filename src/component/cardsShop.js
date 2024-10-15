@@ -48,7 +48,7 @@ function CardsShop(props) {
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
                 setPoints(response.data[0].cardToken);
-                Axios.get("/api/getProfil/"+pseudo)
+                Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
                         console.log(response.data[0].lastOpening);
                         console.log(new Date());
