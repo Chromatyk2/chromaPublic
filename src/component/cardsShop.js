@@ -53,8 +53,7 @@ function CardsShop(props) {
                         console.log(new Date().toISOString().slice(0, 19).replace('T', ' '));
                         console.log(new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' '));
                         console.log(Date.now());
-                        console.log(Date.now(), 'YYYY-MM-DD h:mm:ss');
-                        console.log(moment(response.data[0].lastOpening))
+                        console.log(moment(Date.now()).format('YYYY-MM-DD h:mm:ss'));
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
@@ -140,7 +139,7 @@ function selectGen(e) {
                     return Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
-                            today:new Date().toISOString().slice(0, 19).replace('T', ' ')
+                            today:moment(Date.now()).format('YYYY-MM-DD h:mm:ss')
                         }
                     )
                         .then(function(response) {
