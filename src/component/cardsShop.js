@@ -51,7 +51,7 @@ function CardsShop(props) {
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
                         const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                        const lastDrawing = moment(new Date(response.data[0].lastOpening).toISOString()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                        const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
                         console.log(dateNow);
                         console.log(lastDrawing);
                         // console.log((moment(Date.now()).tz("Europe/Paris") + 6000000) - moment(new Date(response.data[0].lastOpening)).tz("Europe/Paris").valueOf());
