@@ -20,7 +20,6 @@ function CardsShop(props) {
     const [boosterId, setBoosterId] = React.useState(null);
     const [canOpenLive, setCanOpenLive] = React.useState(null);
     const [nextFree, setNextFree] = React.useState(null);
-    console.log()
     const customStyles = {
         content: {
             position:'initial',
@@ -57,8 +56,8 @@ function CardsShop(props) {
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
+                            setNextFree(moment(lastDrawing).valueOf() + 7200000);
                             if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
-                                setNextFree(moment(lastDrawing).valueOf())
                                 setCanOpenLive(1)
                             }else{
                                 setCanOpenLive(0)
@@ -183,7 +182,7 @@ return (
                         :
                         <div className="myPointsDisplay">
                             <Countdown
-                                date={nextFree + 7200000}
+                                date={nextFree}
                                 intervalDelay={0}
                                 precision={3}
                             />
