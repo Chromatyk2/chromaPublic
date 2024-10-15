@@ -9,6 +9,7 @@ import moment from 'moment-timezone';
 import Modal from "react-modal";
 import OpeningBooster from "./openingBooster";
 import Countdown from "react-countdown";
+import Lugia from "../lugia.gif"
 
 function CardsShop(props) {
     const [error, setError] = useState(null);
@@ -198,6 +199,7 @@ return (
                         </div>
                         :
                         <div className="myPointsDisplay">
+                            <img src={Lugia} />
                             <Countdown
                                 date={nextFree}
                                 intervalDelay={0}
