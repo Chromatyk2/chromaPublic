@@ -51,6 +51,8 @@ function CardsShop(props) {
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
                         console.log(moment(Date.now()).tz("Europe/Paris").format() - moment(response.data[0].lastOpening).tz("Europe/Paris").format());
+                        console.log(moment(Date.now()).tz("Europe/Paris").format());
+                        console.log(moment(response.data[0].lastOpening).tz("Europe/Paris").format());
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
