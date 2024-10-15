@@ -54,11 +54,11 @@ function CardsShop(props) {
                         const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
                         // console.log((moment(Date.now()).tz("Europe/Paris") + 6000000) - moment(new Date(response.data[0].lastOpening)).tz("Europe/Paris").valueOf());
                         // console.log(moment(Date.now()).tz("Europe/Paris").valueOf());
+                        console.log(moment(moment(dateNow).valueOf() - moment(lastDrawing).valueOf()).tz("Europe/Paris").format('HH:mm:ss'))
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
                             if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
-                                console.log(moment(moment(dateNow).valueOf() - moment(lastDrawing).valueOf()).tz("Europe/Paris").format('HH:mm:ss'))
                                 setCanOpenLive(1)
                             }else{
                                 setCanOpenLive(0)
