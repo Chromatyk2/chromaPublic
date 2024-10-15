@@ -19,6 +19,7 @@ function CardsShop(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [boosterId, setBoosterId] = React.useState(null);
     const [canOpenLive, setCanOpenLive] = React.useState(null);
+    const [nextFree, setNextFree] = React.useState(null);
     console.log()
     const customStyles = {
         content: {
@@ -53,13 +54,12 @@ function CardsShop(props) {
                     .then(function(response){
                         const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                         const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                        // console.log((moment(Date.now()).tz("Europe/Paris") + 6000000) - moment(new Date(response.data[0].lastOpening)).tz("Europe/Paris").valueOf());
-                        // console.log(moment(Date.now()).tz("Europe/Paris").valueOf());
                         console.log(7200000 - (moment(moment(dateNow).valueOf() - moment(lastDrawing).valueOf()).tz("Europe/Paris").format('HH:mm:ss')))
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
                             if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
+                                setNextFree(moment(lastDrawing).valueOf() + 7200000)
                                 setCanOpenLive(1)
                             }else{
                                 setCanOpenLive(0)
@@ -177,10 +177,17 @@ return (
                             <p style={{color: "white",}}>Token TCG : {points}</p>
                         </div>
                     }
-                    {canOpenLive == 1 &&
+                    {canOpenLive == 1 ?
                         <div className="myPointsDisplay">
                             <p style={{color: "red",}}>Vous avez votre Booster gratuit !</p>
                         </div>
+                        :
+                        <Countdown
+                            date={nextFree}
+                            intervalDelay={0}
+                            precision={3}
+                            renderer={props => <div>{props.total}</div>}
+                        />
                     }
                 </div>
                 <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
