@@ -160,7 +160,7 @@ function selectGen(e) {
     }
 return (
     <>
-        {canOpenLive &&
+        {canOpenLive == 1 || canOpenLive == 0 &&
             <>
                 <div>
                     {points &&
