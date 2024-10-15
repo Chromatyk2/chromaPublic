@@ -199,13 +199,15 @@ return (
                         </div>
                         :
                         <div className="myPointsDisplay">
-                            <span>Prochain booster Gratuit dans : </span>
-                            <Countdown
-                                date={nextFree}
-                                intervalDelay={0}
-                                precision={3}
-                                onComplete={checkEndCountdown}
-                            />
+                            <p style={{marginBottom:"10px"}}>
+                                <span>Prochain booster Gratuit dans : </span>
+                                <Countdown
+                                    date={nextFree}
+                                    intervalDelay={0}
+                                    precision={3}
+                                    onComplete={checkEndCountdown}
+                                />
+                            </p>
                         </div>
                     }
                 </div>
