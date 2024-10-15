@@ -50,10 +50,10 @@ function CardsShop(props) {
                 setPoints(response.data[0].cardToken);
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
-                        const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                        const lastDrawing =  moment(response.data[0].lastOpening).format('YYYY-MM-DD HH:mm:ss');
+                        const dateNow = new Date().toISOString();
+                        const lastDrawing = new Date(response.data[0].lastOpening).toISOString();
                         console.log(dateNow);
-                        console.log(new Date(lastDrawing).toLocaleDateString());
+                        console.log(lastDrawing);
                         // console.log((moment(Date.now()).tz("Europe/Paris") + 6000000) - moment(new Date(response.data[0].lastOpening)).tz("Europe/Paris").valueOf());
                         // console.log(moment(Date.now()).tz("Europe/Paris").valueOf());
                         if(response.data[0].canOpen == 1){
