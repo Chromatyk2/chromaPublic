@@ -187,7 +187,7 @@ return (
                                 date={nextFree}
                                 intervalDelay={0}
                                 precision={3}
-                                renderer={checkEndCountdown}
+                                onComplete={checkEndCountdown}
                             />
                         </div>
                     }
