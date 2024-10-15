@@ -52,6 +52,7 @@ function CardsShop(props) {
                     .then(function(response){
                         console.log(Date.now());
                         console.log(new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime());
+                        console.log(moment(response.data[0].lastOpening, 'YYYY-MM-DD h:mm:ss').fromNow());
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
