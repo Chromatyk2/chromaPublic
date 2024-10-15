@@ -123,7 +123,7 @@ function selectGen(e) {
                     return Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
-                            today:new Date()
+                            today:new Date().toISOString().slice(0, 19).replace('T', ' ')
                         }
                     )
                         .then(function(response) {
@@ -231,8 +231,8 @@ return (
                                     <button className="guessTradeButton">Aucun Token</button>
                                 </div>
                             }
-                            {props.canOpen > 0 &&
-                                canOpenLive > 0 &&
+                            {props.canOpen == 1 &&
+                                canOpenLive == 1 &&
                                     <div style={{position: "relative", bottom: "-44px"}}>
 
                                         <button value={val.name}
