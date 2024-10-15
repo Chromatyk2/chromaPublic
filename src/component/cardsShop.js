@@ -53,7 +53,7 @@ function CardsShop(props) {
                         const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                         const lastDrawing =  moment(response.data[0].lastOpening).format('YYYY-MM-DD HH:mm:ss');
                         console.log(dateNow);
-                        console.log(lastDrawing);
+                        console.log(new Date(lastDrawing).toLocaleDateString());
                         // console.log((moment(Date.now()).tz("Europe/Paris") + 6000000) - moment(new Date(response.data[0].lastOpening)).tz("Europe/Paris").valueOf());
                         // console.log(moment(Date.now()).tz("Europe/Paris").valueOf());
                         if(response.data[0].canOpen == 1){
