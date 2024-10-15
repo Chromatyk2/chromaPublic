@@ -3974,6 +3974,9 @@ span.navbar-brand {
     animation: scale 1s linear infinite .5s;
     -webkit-animation: scale 1s linear infinite .5s;
 }
+.myPointsDisplay span{
+    color:white;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;

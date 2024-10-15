@@ -178,14 +178,16 @@ return (
                     }
                     {canOpenLive == 1 ?
                         <div className="myPointsDisplay">
-                            <p style={{color: "red",}}>Vous avez votre Booster gratuit !</p>
+                            <p style={{color: "red",}}>Booster Gratuit disponible ! !</p>
                         </div>
                         :
-                        <Countdown
-                            date={nextFree + 7200000}
-                            intervalDelay={0}
-                            precision={3}
-                        />
+                        <div className="myPointsDisplay">
+                            <Countdown
+                                date={nextFree + 7200000}
+                                intervalDelay={0}
+                                precision={3}
+                            />
+                        </div>
                     }
                 </div>
                 <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
