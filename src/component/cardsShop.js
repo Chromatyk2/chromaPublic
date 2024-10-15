@@ -54,7 +54,6 @@ function CardsShop(props) {
                     .then(function(response){
                         const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                         const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                        console.log(7200000 - (moment(moment(dateNow).valueOf() - moment(lastDrawing).valueOf()).tz("Europe/Paris").format('HH:mm:ss')))
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
@@ -186,7 +185,6 @@ return (
                             date={nextFree}
                             intervalDelay={0}
                             precision={3}
-                            renderer={props => <div>{props.total}</div>}
                         />
                     }
                 </div>
