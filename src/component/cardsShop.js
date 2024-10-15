@@ -83,21 +83,7 @@ function registerCards(e) {
     )
 }
     function checkEndCountdown() {
-        Axios.get("/api/getProfil/"+props.user)
-            .then(function(response){
-                const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                if(response.data[0].canOpen == 1){
-                    setCanOpenLive(response.data[0].canOpen)
-                }else{
-                    setNextFree(moment(lastDrawing).valueOf() + 7200000);
-                    if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
-                        setCanOpenLive(1)
-                    }else{
-                        setCanOpenLive(0)
-                    }
-                }
-            })
+        setCanOpenLive(1)
     }
 function selectGen(e) {
     if(e.target.value == "all"){
