@@ -17,7 +17,8 @@ function CardsShop(props) {
     const [loading,setLoading] = useState(false);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [boosterId, setBoosterId] = React.useState(null);
-    const [canOpenLive, setCanOpenLive] = React.useState(props.canOpen);
+    const [canOpenLive, setCanOpenLive] = React.useState(null);
+    console.log()
     const customStyles = {
         content: {
             position:'initial',
@@ -46,8 +47,15 @@ function CardsShop(props) {
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
-                console.log(response);
                 setPoints(response.data[0].cardToken);
+                Axios.get("/api/getProfil/"+pseudo)
+                    .then(function(response){
+                        console.log(response.data[0].lastOpening);
+                        console.log(new Date());
+                        console.log(new Date().toISOString().slice(0, 19).replace('T', ' ') - response.data[0].lastOpening);
+
+                        setCanOpenLive(response.data[0].canOpen)
+                    })
             })
     }, [])
 
@@ -147,109 +155,118 @@ function selectGen(e) {
     }
 return (
     <>
-        <div>
-            {points &&
-            points == -1 ?
-                <div className="myPointsDisplay">
-                </div>
-                :
-                <div className="myPointsDisplay">
-                    <p style={{color:"white",}}>Token TCG : {points}</p>
-                </div>
-            }
-            {props.canOpen > 0 &&
-                canOpenLive > 0 &&
-                <div className="myPointsDisplay">
-                    <p style={{color:"red",}}>Vous avez votre Booster gratuit !</p>
-                </div>
-            }
-        </div>
-        <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
-            <option value="all">All Gen</option>
-            <option value="1">Gen 1</option>
-            <option value="2">Gen 2</option>
-            <option value="3">Gen 3</option>
-            <option value="4">Gen 4</option>
-            <option value="5">Gen 5</option>
-            <option value="6">Gen 6</option>
-            <option value="7">Gen 7</option>
-            <option value="8">Gen 8</option>
-            <option value="9">Gen 9</option>
-        </select>
-        <div id={"cardsContainer"}>
-            {items &&
-                <div className="uniqueTradeContainer">
-                    <p className="pokemonNameTrade">Booster Aléatoire</p>
-                    <div className={"containerImgBooster"}>
-                        <img className="fit-picture" src={"/images/random.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                    </div>
-                    {points > 0 ?
-                        loading === false ?
-                            <div>
-                                <button  value={items[Math.floor(Math.random() * items.length)].name} onClick={openModal}
-                                        className="guessTradeButton">Ouvrir
-                                </button>
-                            </div>
-                            :
-                            <button className="guessTradeButton">Chargement</button>
+        {canOpenLive &&
+            <>
+                <div>
+                    {points &&
+                    points == -1 ?
+                        <div className="myPointsDisplay">
+                        </div>
                         :
-                        <button className="guessTradeButton">Aucun Token</button>
+                        <div className="myPointsDisplay">
+                            <p style={{color: "white",}}>Token TCG : {points}</p>
+                        </div>
                     }
                     {props.canOpen > 0 &&
                         canOpenLive > 0 &&
+                        <div className="myPointsDisplay">
+                            <p style={{color: "red",}}>Vous avez votre Booster gratuit !</p>
+                        </div>
+                    }
+                </div>
+                <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
+                    <option value="all">All Gen</option>
+                    <option value="1">Gen 1</option>
+                    <option value="2">Gen 2</option>
+                    <option value="3">Gen 3</option>
+                    <option value="4">Gen 4</option>
+                    <option value="5">Gen 5</option>
+                    <option value="6">Gen 6</option>
+                    <option value="7">Gen 7</option>
+                    <option value="8">Gen 8</option>
+                    <option value="9">Gen 9</option>
+                </select>
+                <div id={"cardsContainer"}>
+                    {items &&
+                        <div className="uniqueTradeContainer">
+                            <p className="pokemonNameTrade">Booster Aléatoire</p>
+                            <div className={"containerImgBooster"}>
+                                <img className="fit-picture" src={"/images/random.png"}
+                                     alt="Grapefruit slice atop a pile of other slices"/>
+                            </div>
+                            {points > 0 ?
+                                loading === false ?
+                                    <div>
+                                        <button value={items[Math.floor(Math.random() * items.length)].name}
+                                                onClick={openModal}
+                                                className="guessTradeButton">Ouvrir
+                                        </button>
+                                    </div>
+                                    :
+                                    <button className="guessTradeButton">Chargement</button>
+                                :
+                                <button className="guessTradeButton">Aucun Token</button>
+                            }
+                            {canOpenLive == 1 &&
                                 <div style={{position: "relative", bottom: "-44px"}}>
                                     <button value={items[Math.floor(Math.random() * items.length)].name}
                                             onClick={freeBooster}
                                             className="guessTradeButton">Booster Gratuit
                                     </button>
                                 </div>
-                    }
-                </div>
-            }
-            {items &&
-                items.map((val, key) => {
-                    return(
-                        <div className="uniqueTradeContainer">
-                            <div className={"containerImgBooster"}>
-                                <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.name + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
-                            </div>
-                            {points > 0 ?
-                                loading === false ?
-                                    <div style={{position: "relative", bottom: "-44px"}}>
-
-                                        <button value={val.name}
-                                                onClick={openModal}
-                                                className="guessTradeButton">Ouvrir
-                                        </button>
-                                    </div>
-                                    :
-                                    <div style={{position: "relative", bottom: "-44px"}}>
-                                        <button className="guessTradeButton">Chargement</button>
-                                    </div>
-                                :
-                                <div style={{position: "relative",bottom: "-44px"}}>
-                                    <button className="guessTradeButton">Aucun Token</button>
-                                </div>
-                            }
-                            {props.canOpen == 1 &&
-                                canOpenLive == 1 &&
-                                    <div style={{position: "relative", bottom: "-44px"}}>
-
-                                        <button value={val.name}
-                                                onClick={freeBooster}
-                                                className="guessTradeButton">Booster Gratuit
-                                        </button>
-                                    </div>
                             }
                         </div>
-                    )
-                })
-            }
-        </div>
-        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-            <OpeningBooster change = {handleState} idBooster={boosterId} user={props.user}/>
-        </Modal>
+                    }
+                    {items &&
+                        items.map((val, key) => {
+                            return (
+                                <div className="uniqueTradeContainer">
+                                    <div className={"containerImgBooster"}>
+                                        <img className="fit-picture"
+                                             src={"https://images.pokemontcg.io/" + val.name + "/logo.png"}
+                                             alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>
+                                    {points > 0 ?
+                                        loading === false ?
+                                            <div style={{position: "relative", bottom: "-44px"}}>
+
+                                                <button value={val.name}
+                                                        onClick={openModal}
+                                                        className="guessTradeButton">Ouvrir
+                                                </button>
+                                            </div>
+                                            :
+                                            <div style={{position: "relative", bottom: "-44px"}}>
+                                                <button className="guessTradeButton">Chargement</button>
+                                            </div>
+                                        :
+                                        <div style={{position: "relative", bottom: "-44px"}}>
+                                            <button className="guessTradeButton">Aucun Token</button>
+                                        </div>
+                                    }
+                                    {canOpenLive == 1 &&
+                                        <div style={{position: "relative", bottom: "-44px"}}>
+
+                                            <button value={val.name}
+                                                    onClick={freeBooster}
+                                                    className="guessTradeButton">Booster Gratuit
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
+                       contentLabel="Example Modal">
+                    <OpeningBooster change={handleState} idBooster={boosterId} user={props.user}/>
+                </Modal>
+            </>
+        }
+
     </>
 )
 }
+
 export default CardsShop
