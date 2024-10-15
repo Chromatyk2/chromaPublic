@@ -196,7 +196,7 @@ return (
                     {canOpenLive == 1 ?
                         <div id="icomp-neon">
                             <p><span href="http://tuts.icomp.ir">
-                                Booster Gratuit Disponible !
+                                Booster Gratuit Disponible
                             </span></p>
                         </div>
                         :
