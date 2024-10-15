@@ -53,7 +53,7 @@ function CardsShop(props) {
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
-                            if(moment(response.data[0].lastOpening, 'YYYY-MM-DD h:mm:ss').fromNow() != "2 hours ago"){
+                            if(moment(response.data[0].lastOpening, 'YYYY-MM-DD h:mm:ss').fromNow() == "2 hours ago"){
                                 setCanOpenLive(0)
                             }else{
                                 setCanOpenLive(1)
