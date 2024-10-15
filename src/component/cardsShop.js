@@ -200,7 +200,7 @@ return (
                             </span></p>
                         </div>
                         :
-                        <div className="myPointsDisplay">
+                        <div style={{marginTop:"15px"}} className="myPointsDisplay">
                         <p style={{marginBottom:"10px"}}>
                                 <span>Prochain booster Gratuit dans : </span>
                                 <Countdown
