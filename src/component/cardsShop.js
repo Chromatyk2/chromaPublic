@@ -54,6 +54,7 @@ function CardsShop(props) {
                         const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
                         console.log(dateNow);
                         console.log(lastDrawing);
+                        console.log(moment(dateNow).valueOf() - moment(lastDrawing).valueOf());
                         // console.log((moment(Date.now()).tz("Europe/Paris") + 6000000) - moment(new Date(response.data[0].lastOpening)).tz("Europe/Paris").valueOf());
                         // console.log(moment(Date.now()).tz("Europe/Paris").valueOf());
                         if(response.data[0].canOpen == 1){
