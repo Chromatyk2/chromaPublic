@@ -199,7 +199,7 @@ return (
                         </div>
                         :
                         <div className="myPointsDisplay">
-                            <img src={Lugia} />
+                            <span>Prochain booster Gratuit dans : </span>
                             <Countdown
                                 date={nextFree}
                                 intervalDelay={0}
