@@ -194,12 +194,14 @@ return (
                         </div>
                     }
                     {canOpenLive == 1 ?
-                        <div className="myPointsDisplay">
-                            <p style={{color: "red",}}>Booster Gratuit disponible ! !</p>
+                        <div id="icomp-neon">
+                            <p><span href="http://tuts.icomp.ir">
+                                IcompTuts
+                            </span></p>
                         </div>
                         :
                         <div className="myPointsDisplay">
-                            <p style={{marginBottom:"10px"}}>
+                        <p style={{marginBottom:"10px"}}>
                                 <span>Prochain booster Gratuit dans : </span>
                                 <Countdown
                                     date={nextFree}
