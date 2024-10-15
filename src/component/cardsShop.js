@@ -171,8 +171,7 @@ return (
                             <p style={{color: "white",}}>Token TCG : {points}</p>
                         </div>
                     }
-                    {props.canOpen > 0 &&
-                        canOpenLive > 0 &&
+                    {canOpenLive == 1 &&
                         <div className="myPointsDisplay">
                             <p style={{color: "red",}}>Vous avez votre Booster gratuit !</p>
                         </div>
