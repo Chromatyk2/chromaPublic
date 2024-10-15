@@ -135,7 +135,7 @@ function selectGen(e) {
                     return Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
-                            today:new Date().toISOString().slice(0, 19).replace('T', ' ')
+                            today:moment(Date.now(), 'YYYY-MM-DD h:mm:ss')
                         }
                     )
                         .then(function(response) {
