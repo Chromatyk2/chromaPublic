@@ -47,6 +47,9 @@ function CardsShop(props) {
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
+                console.log(new Date().toISOString().slice(0, 19).replace('T', ' '));
+                console.log(new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' '));
+                console.log(Date.now());
                 setPoints(response.data[0].cardToken);
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
@@ -135,7 +138,7 @@ function selectGen(e) {
                     return Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
-                            today:new Date().toLocaleDateString()
+                            today:new Date().toISOString().slice(0, 19).replace('T', ' ')
                         }
                     )
                         .then(function(response) {
