@@ -142,7 +142,7 @@ function selectGen(e) {
                             Axios
                                 .get("/api/getCanOpen/"+props.user)
                                 .then(function(response){
-                                    setCanOpenLive(response.data[0].canOpen);
+                                    setCanOpenLive(0);
                                     setIsOpen(true);
                                     button.disabled = false;
                                 })
