@@ -52,7 +52,7 @@ function CardsShop(props) {
                     .then(function(response){
                         const hour = 90 * 60 * 1000;
                         console.log(response.data[0].lastOpening);
-                        console.log(Date.parse(response.data[0]));
+                        console.log(Date.parse(response.data[0].toString()));
                         console.log(Date.now());
                         setCanOpenLive(response.data[0].canOpen)
                     })
