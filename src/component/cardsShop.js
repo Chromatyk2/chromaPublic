@@ -51,6 +51,8 @@ function CardsShop(props) {
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
                         console.log(moment(Date.now()) - moment(response.data[0].lastOpening));
+                        console.log(moment(Date.now()));
+                        console.log(moment(response.data[0].lastOpening));
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
