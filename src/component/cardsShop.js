@@ -47,18 +47,18 @@ function CardsShop(props) {
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
-                console.log(new Date().toISOString().slice(0, 19).replace('T', ' '));
-                console.log(new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' '));
-                console.log(Date.now());
-                console.log(Date.now(), 'YYYY-MM-DD h:mm:ss');
-                console.log(moment(response.data[0].lastOpening, 'YYYY-MM-DD h:mm:ss'))
                 setPoints(response.data[0].cardToken);
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
+                        console.log(new Date().toISOString().slice(0, 19).replace('T', ' '));
+                        console.log(new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' '));
+                        console.log(Date.now());
+                        console.log(Date.now(), 'YYYY-MM-DD h:mm:ss');
+                        console.log(moment(response.data[0].lastOpening))
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
-                            if(moment(response.data[0].lastOpening, 'YYYY-MM-DD h:mm:ss').fromNow() == "2 hours ago"){
+                            if(moment(response.data[0].lastOpening).fromNow() == "2 hours ago"){
                                 setCanOpenLive(0)
                             }else{
                                 setCanOpenLive(1)
