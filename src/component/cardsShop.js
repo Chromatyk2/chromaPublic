@@ -54,7 +54,7 @@ function CardsShop(props) {
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
-                            if(Date.now() - new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime() > 3600){
+                            if(Date.now() - new Date(moment(response.data[0].lastOpening).format('YYYY-MM-DD h:mm:ss')).getTime() < 3600){
                                 setCanOpenLive(1)
                             }else{
                                 setCanOpenLive(0)
