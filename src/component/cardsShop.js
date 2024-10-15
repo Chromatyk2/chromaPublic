@@ -50,6 +50,8 @@ function CardsShop(props) {
                 console.log(new Date().toISOString().slice(0, 19).replace('T', ' '));
                 console.log(new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' '));
                 console.log(Date.now());
+                console.log(Date.now(), 'YYYY-MM-DD h:mm:ss');
+                console.log(moment(response.data[0].lastOpening, 'YYYY-MM-DD h:mm:ss'))
                 setPoints(response.data[0].cardToken);
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
