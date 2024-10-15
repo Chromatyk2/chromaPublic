@@ -58,7 +58,7 @@ function CardsShop(props) {
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
                             if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
-                                setNextFree(moment(lastDrawing).valueOf() + 7200000)
+                                setNextFree(moment(lastDrawing).valueOf())
                                 setCanOpenLive(1)
                             }else{
                                 setCanOpenLive(0)
@@ -182,7 +182,7 @@ return (
                         </div>
                         :
                         <Countdown
-                            date={nextFree}
+                            date={nextFree + 7200000}
                             intervalDelay={0}
                             precision={3}
                         />
