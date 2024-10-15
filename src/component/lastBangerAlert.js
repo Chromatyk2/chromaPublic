@@ -29,24 +29,11 @@ function LastBangerAlert(props) {
                                             setError(error);
                                         }
                                     )
-                            }else if(val.stade == 3){
-                                fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
-                                    .then(res => res.json())
-                                    .then(
-                                        (result) => {
-                                            setNewLastCardUser(val);
-                                            setNewLastCardData(result);
-                                        },
-                                        (error) => {
-                                            setIsLoaded(true);
-                                            setError(error);
-                                        }
-                                    )
                             }
                         })
                         setNewLastCardUser(response);
                     })
-            }, 10000)
+            }, 60000)
     }, []);
 
     useEffect(() => {

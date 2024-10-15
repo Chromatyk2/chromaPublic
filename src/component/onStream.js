@@ -18,17 +18,20 @@ function OnStream() {
 
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
-        Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login=Chromatyk',
-            {
-                headers:{
-                    'Authorization': `Bearer ${cookies.token.access_token}`,
-                    'Client-Id': process.env.REACT_APP_CLIENT_ID
+
+        setInterval(() => {
+            Axios.get(
+                'https://api.twitch.tv/helix/streams?user_login=Chromatyk',
+                {
+                    headers:{
+                        'Authorization': `Bearer ${cookies.token.access_token}`,
+                        'Client-Id': process.env.REACT_APP_CLIENT_ID
+                    }
                 }
-            }
-        ).then(function(response){
-            setStream(response.data);
-        })
+            ).then(function(response){
+                setStream(response.data);
+            })
+        }, 60000)
     }, [])
     useEffect(() => {
         Axios.get(
