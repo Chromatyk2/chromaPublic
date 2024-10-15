@@ -12,6 +12,20 @@ function NavBar(props) {
   const [count, setCount] = useState(0);
   const [stream, setStream] = useState(null);
   const [expanded, setExpanded] = useState(false);
+    useEffect(() => {
+        Axios
+            .get("/api/getProfil/"+pseudo)
+            .then(function(response){
+                if(response.data.length < 1){
+                    console.log(response.data.length)
+                    return Axios.post('/api/addCardsPoint',
+                        {
+                            user:pseudo
+                        }
+                    )
+                }
+            })
+    }, [])
   return (
 
       <Navbar expanded={expanded} bg="light" expand="lg">
@@ -27,12 +41,17 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pokedex">Pokedex</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/allProfils">Classement</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
-                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boosters">Mes boosters</Link>
-                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Boutique TCG</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Ouverture Booster</Link>
+
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pedandex">Pedandex</Link>
                       {pseudo == "chromatyk" &&
                                     <>
+<<<<<<< HEAD
                                         <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/VXJ325De2ee8ah">Generateur</Link>
+=======
+                                        {/*<Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boosters">Mes boosters</Link>*/}
+                                        <Link style={{color:"red"}} onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/49Vs5sWVS2e7qs">Générateur</Link>
+>>>>>>> main
                                       {/*  <Link className="navLink" to="/pokedex">Pokedex</Link>*/}
                                       {/*  <Link className="navLink" to="/leaderboard">Classement</Link>*/}
                                       {/*  <Link className="navLink myTradesLink" to="/myTrades">Mes Echanges {count > 0 && <span className="myCountProposition">{count}</span>}</Link>*/}

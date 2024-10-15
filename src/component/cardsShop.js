@@ -6,6 +6,8 @@ import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
+import Modal from "react-modal";
+import OpeningBooster from "./openingBooster";
 
 function CardsShop(props) {
     const [error, setError] = useState(null);
@@ -13,6 +15,26 @@ function CardsShop(props) {
     const [items, setItems] = useState(null);
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [boosterId, setBoosterId] = React.useState(null);
+    const [canOpenLive, setCanOpenLive] = React.useState(props.canOpen);
+    const customStyles = {
+        content: {
+            position:'initial',
+            border: 'none',
+            background: 'none',
+            borderRadius: '4px',
+            width: '100%',
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
+        textModal: {
+            fontSize:'30px',
+            textAlign:'center'
+        },
+    };
     useEffect(() => {
         Axios
             .get("/api/getBoostersList")
@@ -24,125 +46,10 @@ function CardsShop(props) {
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
-                setPoints(response.data[0].points);
+                console.log(response);
+                setPoints(response.data[0].cardToken);
             })
     }, [])
-    function buyBooster(e) {
-        setLoading(true);
-        var idBooster = e.target.value;
-        var nbPick = document.getElementById("nbBoosterToBuy"+idBooster).value;
-        var totalPointsRemove = 1000 * nbPick;
-        Axios
-            .get("/api/getCardsPoint/"+props.user)
-            .then(function(response){
-                if(response.data[0].points - totalPointsRemove >= 0){
-                    return Axios.post('/api/removeCardsPoint',
-                        {
-                            user:props.user,
-                            pointRemove:totalPointsRemove
-                        }
-                    ).then(
-                        (result) => {
-                            Axios
-                                .get("/api/getCardsPoint/"+props.user)
-                                .then(function(response){
-                                    setPoints(response.data[0].points);
-                                }).then(
-                                (result) => {
-                                    Axios
-                                        .get("/api/getMyBoostersByOne/" + props.user + "/" + idBooster)
-                                        .then(function (response) {
-                                            console.log(response.data)
-                                            if (response.data.length < 1) {
-                                                Axios.post('/api/addBooster',
-                                                    {
-                                                        pseudo: props.user,
-                                                        booster: idBooster,
-                                                        nbBooster: nbPick
-                                                    }).then(
-                                                    (result) => {
-                                                        setLoading(false);
-                                                    })
-                                            } else {
-                                                Axios.post('/api/updateBooster',
-                                                    {
-                                                        pseudo: props.user,
-                                                        booster: idBooster,
-                                                        nbBooster: nbPick
-                                                    }).then(
-                                                    (result) => {
-                                                        setLoading(false);
-                                                    })
-                                            }
-                                        })
-                                }
-                            )
-                        }
-                    )
-                }
-            })
-    }
-
-    function buyBoosterRandom(e) {
-        setLoading(true);
-        var nbPick = document.getElementById("nbBoosterToBuyRandom").value;
-        var totalPointsRemove = 500 * nbPick;
-        for(var i=0;i<nbPick;i++){
-                Axios
-                    .get("/api/getCardsPoint/" + props.user)
-                    .then(function (response) {
-
-                        if(response.data[0].points - totalPointsRemove >= 0) {
-                            if (response.data[0].points - 500 >= 0) {
-                                Axios.post('/api/removeCardsPointRandom',
-                                    {
-                                        user: props.user,
-                                        pointRemove: 500
-                                    }
-                                ).then(
-                                    (result) => {
-                                        Axios
-                                            .get("/api/getCardsPoint/" + props.user)
-                                            .then(function (response) {
-                                                setPoints(response.data[0].points);
-                                            }).then(
-                                            (result) => {
-                                                var randomIndex = Math.floor(Math.random() * items.length);
-                                                Axios
-                                                    .get("/api/getMyBoostersByOne/" + props.user + "/" + items[randomIndex].name)
-                                                    .then(function (response) {
-                                                        if (response.data.length < 1) {
-                                                            Axios.post('/api/addBooster',
-                                                                {
-                                                                    pseudo: props.user,
-                                                                    booster: items[randomIndex].name,
-                                                                    nbBooster: 1
-                                                                }).then(
-                                                                (result) => {
-                                                                    setLoading(false);
-                                                                })
-                                                        } else {
-                                                            Axios.post('/api/updateBooster',
-                                                                {
-                                                                    pseudo: props.user,
-                                                                    booster: items[randomIndex].name,
-                                                                    nbBooster: 1
-                                                                }).then(
-                                                                (result) => {
-                                                                    setLoading(false);
-                                                                })
-                                                        }
-                                                    })
-                                            }
-                                        )
-                                    }
-                                )
-                            }
-                        }
-                    }
-                    )
-        }
-    }
 
 function registerCards(e) {
     return Axios.post('/api/registerCards',
@@ -154,7 +61,7 @@ function registerCards(e) {
             Axios
                 .get("/api/getCardsPoint/"+e.target.value)
                 .then(function(response){
-                    setPoints(response.data[0].points);
+                    setPoints(response.data[0].cardToken);
                 })
         }
     )
@@ -175,6 +82,68 @@ function selectGen(e) {
             })
     }
 }
+    function openModal(e) {
+        var button = e.currentTarget;
+        var nbBooster = e.target.getAttribute("nbBooster");
+        button.disabled = true;
+        var id = e.target.value;
+        setBoosterId(id);
+        Axios
+            .get("/api/getCardsPoint/"+props.user)
+            .then(function(response){
+                if(response.data[0].cardToken - 1 > -1){
+                    return Axios.post('/api/removeCardsPoint',
+                        {
+                            user:props.user
+                        }
+                    )
+                        .then(function(response) {
+                            Axios
+                                .get("/api/getCardsPoint/"+props.user)
+                                .then(function(response){
+                                    setPoints(response.data[0].cardToken);
+                                    setIsOpen(true);
+                                    button.disabled = false;
+                                })
+                        })
+                }
+            })
+    }
+
+    function freeBooster(e) {
+        var button = e.currentTarget;
+        var nbBooster = e.target.getAttribute("nbBooster");
+        button.disabled = true;
+        var id = e.target.value;
+        setBoosterId(id);
+        Axios
+            .get("/api/getCanOpen/"+props.user)
+            .then(function(response){
+                if(response.data[0].canOpen - 1 > -1){
+                    return Axios.post('/api/removeCanOpen',
+                        {
+                            pseudo:props.user
+                        }
+                    )
+                        .then(function(response) {
+                            Axios
+                                .get("/api/getCanOpen/"+props.user)
+                                .then(function(response){
+                                    setCanOpenLive(response.data[0].canOpen);
+                                    setIsOpen(true);
+                                    button.disabled = false;
+                                })
+                        })
+                }
+            })
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+    function handleState() {
+        setIsOpen(false);
+    }
 return (
     <>
         <div>
@@ -184,7 +153,13 @@ return (
                 </div>
                 :
                 <div className="myPointsDisplay">
-                    <p style={{color:"white",}}>Points Boutique : {points}</p>
+                    <p style={{color:"white",}}>Token TCG : {points}</p>
+                </div>
+            }
+            {props.canOpen > 0 &&
+                canOpenLive > 0 &&
+                <div className="myPointsDisplay">
+                    <p style={{color:"red",}}>Vous avez votre Booster gratuit !</p>
                 </div>
             }
         </div>
@@ -207,18 +182,26 @@ return (
                     <div className={"containerImgBooster"}>
                         <img className="fit-picture" src={"/images/random.png"} alt="Grapefruit slice atop a pile of other slices"/>
                     </div>
-                    <p className="pokemonNameTrade">500 Points Boutique</p>
-                    {points > 499 ?
+                    {points > 0 ?
                         loading === false ?
                             <div>
-                                <button value={items[Math.floor(Math.random() * items.length)].name} onClick={buyBoosterRandom} className={"guessTradeButton"}>Acheter</button>
-                                <label style={{display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
-                                <input className={"nbToBuy"} id={"nbBoosterToBuyRandom"} type="number" placeholder={"0"} min="1" max={Math.floor(points/500)}  />
+                                <button  value={items[Math.floor(Math.random() * items.length)].name} onClick={openModal}
+                                        className="guessTradeButton">Ouvrir
+                                </button>
                             </div>
                             :
                             <button className="guessTradeButton">Chargement</button>
                         :
-                        <button className="guessTradeButton">Card Points manquants</button>
+                        <button className="guessTradeButton">Aucun Token</button>
+                    }
+                    {props.canOpen > 0 &&
+                        canOpenLive > 0 &&
+                                <div style={{position: "relative", bottom: "-44px"}}>
+                                    <button value={items[Math.floor(Math.random() * items.length)].name}
+                                            onClick={freeBooster}
+                                            className="guessTradeButton">Booster Gratuit
+                                    </button>
+                                </div>
                     }
                 </div>
             }
@@ -229,32 +212,42 @@ return (
                             <div className={"containerImgBooster"}>
                                 <img className="fit-picture" src={"https://images.pokemontcg.io/" + val.name + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                             </div>
-                            <p className="pokemonNameTrade">1000 Points Boutique</p>
-                            {points > 999 ?
+                            {points > 0 ?
                                 loading === false ?
-                                    <div style={{position: "relative",bottom: "-44px"}}>
-                                        <button value={val.name} onClick={buyBooster} className={"guessTradeButton"}>Acheter</button>
-                                        <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px"}}>Combien de boosters ?</label>
-                                        <input className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                    <div style={{position: "relative", bottom: "-44px"}}>
+
+                                        <button value={val.name}
+                                                onClick={openModal}
+                                                className="guessTradeButton">Ouvrir
+                                        </button>
                                     </div>
                                     :
-                                    <div style={{position: "relative",bottom: "-44px"}}>
+                                    <div style={{position: "relative", bottom: "-44px"}}>
                                         <button className="guessTradeButton">Chargement</button>
-                                        <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
-                                        <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
                                     </div>
                                 :
                                 <div style={{position: "relative",bottom: "-44px"}}>
-                                    <button className="guessTradeButton">Card Points manquants</button>
-                                    <label style={{color:"white",display:"flex",justifyContent:"center",marginTop:"10px",visibility:"hidden"}}>Combien de boosters ?</label>
-                                    <input style={{visibility:"hidden"}} className={"nbToBuy"} id={"nbBoosterToBuy"+val.name} type="number" placeholder={"0"} min="1" max={Math.floor(points/1000)} />
+                                    <button className="guessTradeButton">Aucun Token</button>
                                 </div>
+                            }
+                            {props.canOpen > 0 &&
+                                canOpenLive > 0 &&
+                                    <div style={{position: "relative", bottom: "-44px"}}>
+
+                                        <button value={val.name}
+                                                onClick={freeBooster}
+                                                className="guessTradeButton">Booster Gratuit
+                                        </button>
+                                    </div>
                             }
                         </div>
                     )
                 })
             }
         </div>
+        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+            <OpeningBooster change = {handleState} idBooster={boosterId} user={props.user}/>
+        </Modal>
     </>
 )
 }

@@ -906,6 +906,11 @@ p.filterTitle {
     transform: translate(-50%, -50%);
     width: 300px;
     padding: 30px;
+    max-height: 500px;
+    overflow:overlay;
+    scrollbar-color: #fff transparent;
+    scrollbar-width: thin;
+
 }
 .ReactModal__Content.ReactModal__Content--after-open.modalToken {
     bottom: auto;
@@ -1138,7 +1143,7 @@ p.titleMyCaptures{
     padding: 20px;
     background: rgba(37, 87, 95,0.2);
     border-radius: 25px;
-    height: 390px ;
+    height: fit-content;
 }
 .uniqueMyCardContainer {
     background: rgba(37,87,95,.2);
@@ -1186,6 +1191,7 @@ button.deleteTrade {
     letter-spacing: 2px;
     width: 236px;
     margin:auto;
+    margin-top: 20px;
 }
 .guessTradeButton:hover{
   background: #120747;
@@ -1321,6 +1327,9 @@ span.myCountProposition {
   z-index: -10000;
   background-color: rgba(0,0,0,0);
     top:0;
+}
+.u-text-center{
+    color:white;
 }
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
 @import url('https://fonts.cdnfonts.com/css/common-pixel');
@@ -3692,7 +3701,7 @@ span.navbar-brand {
     background: rgba(0, 0, 0, .5);
     border-radius: 50px;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: flex-start;
@@ -3705,7 +3714,7 @@ span.navbar-brand {
 .itemDescription {
     background-color: #fff;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
 }
 .formPed{
     margin: 20px;

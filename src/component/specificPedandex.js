@@ -6,8 +6,7 @@ import '../App.css'
 import Modal from "react-modal";
 import SpawnPokemonToken from "./spawnPokemonToken";
 import {Link} from "react-router-dom";
-import OnStream from "./onStream";
-function Pedandex(props) {
+function SpecificPedandex(props) {
     const [name, setName] = useState(null);
     const [words, setWords] = useState([]);
     const [history, setHistory] = useState([]);
@@ -28,6 +27,8 @@ function Pedandex(props) {
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [myHistory, setMyHistory] = React.useState([]);
     const [gen, setGen] = React.useState(null);
+    const [dayChange, setDayChange] = React.useState(0);
+    const [queryParameters, setQueryParameters] = React.useState(new URLSearchParams(window.location.search));
     const customStyles = {
         content: {
             width:"300px",
@@ -40,7 +41,10 @@ function Pedandex(props) {
         },
     };
     useEffect(() => {
-        Axios.get("/api/getCurrentDailyGame/")
+
+        var div = document.getElementById("textToGuess");
+        div.innerHTML = '';
+        Axios.get("/api/getDailyGameByDay/"+queryParameters.get("day"))
             .then(function(response){
                 document.getElementById("padandexName").innerText = response.data[0].name.replace(/[^.]/g,'x');
                 const name = response.data[0].name;
@@ -116,8 +120,7 @@ function Pedandex(props) {
                             })
                     })
             })
-    }, []);
-
+    }, [dayChange]);
     const handleSubmit = (event) => {
         const guess = inputRef.current.value.toString()
         if(!history.find((uc) => uc === guess)){
@@ -237,6 +240,10 @@ function Pedandex(props) {
     function closeModalHistory() {
         setIsOpenHistory(false);
     }
+    function changeDay() {
+        setDayChange(dayChange + 1);
+        setIsOpenHistory(false);
+    }
     function openHistory() {
         Axios.get("/api/getPedandexWinByUSer/"+pseudo)
             .then(function(response){
@@ -248,10 +255,11 @@ function Pedandex(props) {
                     })
             })
     }
+
     return (
         <>
+
             <div className={"contentContainer"}>
-                <OnStream />
                 <div style={{
                     display: "flex",
                     flexFlow: "row",
@@ -387,9 +395,10 @@ function Pedandex(props) {
                     </div>
                 </div>
             </div>
-            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal">
+            <Modal className={"modalLeaderBoard"} isOpen={modalIsOpen} onRequestClose={closeModal}
+                   contentLabel="Example Modal">
                 <>
-                    <p style={{textAlign:"center"}}>Classement du jour {dailyGame && dailyGame.day}</p>
+                <p style={{textAlign:"center"}}>Classement du jour {dailyGame && dailyGame.day}</p>
                     <table style={{display:"flex",justifyContent:"center"}}>
                         <tbody>
                         {leaderBoard &&
@@ -414,23 +423,22 @@ function Pedandex(props) {
             <Modal className={"modalLeaderBoard"} isOpen={modalIsOpenHistory} onRequestClose={closeModalHistory} contentLabel="Example Modal">
                 <>
                     <p style={{textAlign:"center"}}>Historique des parties</p>
-                    <table style={{display:"flex",justifyContent:"center"}}>
+                    <table style={{maxHeight: "350px",overflow: "overlay",display:"flex",justifyContent:"center"}}>
                         <tbody>
                         {myHistory.length > 0 &&
                             allHistory.map((val, key) => {
                                 return (
                                     <Link style={{fontSize: "20px", textDecoration: "none"}} className="navLink linkFromNav" to={"/oldpedandex?day="+val.day}>
-                                    <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
-                                        <th scope="row">Jour {val.day}</th>
-                                        {myHistory.find((uc) => uc.day === val.day) ?
-                                            <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries} <i style={{color: "green"}} className="fa-solid fa-check"></i></th>
-                                            :
-                                            <th scope="row"><i style={{color: "red"}} className="fa-solid fa-ban"></i></th>
-                                        }
-                                    </tr>
+                                        <tr style={{justifyContent: "space-between", display: "flex", gap: "50px"}}>
+                                            <th scope="row">Jour {val.day}</th>
+                                            {myHistory.find((uc) => uc.day === val.day) ?
+                                                <th scope="row">{myHistory.find((uc) => uc.day === val.day).tries} <i style={{color: "green"}} className="fa-solid fa-check"></i></th>
+                                                :
+                                                <th scope="row"><i style={{color: "red"}} className="fa-solid fa-ban"></i></th>
+                                            }
+                                        </tr>
                                     </Link>
                                 )
-
                             })
                         }
                         </tbody>
@@ -441,4 +449,4 @@ function Pedandex(props) {
     );
 }
 
-export default Pedandex
+export default SpecificPedandex

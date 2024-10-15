@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 import PokedexTeam from "./pokedexTeam";
 import {useParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
+import OnStream from "./onStream";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -125,6 +126,7 @@ function Profil(props) {
         {profil &&
         profil.length > 0 ?
             <div className={"contentContainer"}>
+                <OnStream />
                 <div className={"profilVisuals"}>
 
                     <div style={{display: "flex", width: "800px", justifyContent: "center", flexWrap:"wrap"}}>
@@ -211,7 +213,7 @@ function Profil(props) {
                     <div style={customStyles.extBar} className="fullProgressBar">
                         <div
                             style={{
-                                width: parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%",
+                                width: parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%",
                                 position: 'relative',
                                 background: '#74fbcf',
                                 textWrap: 'nowrap',
@@ -221,7 +223,7 @@ function Profil(props) {
                             }}>
                         </div>
                         <div className={"pourcentLevel"}>
-                            {profil[0].xp + " / " + profil[0].level * 1000 + "(" + parseFloat(profil[0].xp / (profil[0].level * 1000) * 100).toFixed(2) + "%)"}
+                            {profil[0].xp + " / " + profil[0].level * 500 + "(" + parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%)"}
                         </div>
                     </div>
                     <div className={"allPokemonTeam"}>
