@@ -3981,13 +3981,12 @@ span.navbar-brand {
 #icomp-neon {
     width:500px;
     margin:auto;
-    margin-top:50px;
 }
 
 
 #icomp-neon p{
     text-align:center;
-    font-size:7em;
+    font-size:2em;
     margin:20px 0 20px 0;
 }
 
@@ -3996,12 +3995,12 @@ span.navbar-brand {
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
+    letter-spacing: 2px;
 }
 
 
 #icomp-neon p span{
     color:#BA01FF;
-    font-family: 'Audiowide', cursive;
 }
 #icomp-neon p span{
     -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
@@ -4017,21 +4016,21 @@ span.navbar-brand {
         text-shadow: 0 0 10px #fff,
         0 0 20px #fff,
         0 0 30px #fff,
-        0 0 40px #ff00de,
-        0 0 70px #ff00de,
-        0 0 80px #ff00de,
-        0 0 100px #ff00de,
-        0 0 150px #ff00de;
+        0 0 40px #24275D,
+        0 0 70px #24275D,
+        0 0 80px #24275D,
+        0 0 100px #24275D,
+        0 0 150px #24275D;
     }
     to {
         text-shadow: 0 0 5px #fff,
         0 0 10px #fff,
         0 0 15px #fff,
-        0 0 20px #ff00de,
-        0 0 35px #ff00de,
-        0 0 40px #ff00de,
-        0 0 50px #ff00de,
-        0 0 75px #ff00de;
+        0 0 20px #24275D,
+        0 0 35px #24275D,
+        0 0 40px #24275D,
+        0 0 50px #24275D,
+        0 0 75px #24275D;
     }
 }
 
@@ -4041,21 +4040,21 @@ span.navbar-brand {
         text-shadow: 0 0 10px #fff,
         0 0 20px #fff,
         0 0 30px #fff,
-        0 0 40px #ff00de,
-        0 0 70px #ff00de,
-        0 0 80px #ff00de,
-        0 0 100px #ff00de,
-        0 0 150px #ff00de;
+        0 0 40px #24275D,
+        0 0 70px #24275D,
+        0 0 80px #24275D,
+        0 0 100px #24275D,
+        0 0 150px #24275D;
     }
     to {
         text-shadow: 0 0 5px #fff,
         0 0 10px #fff,
         0 0 15px #fff,
-        0 0 20px #ff00de,
-        0 0 35px #ff00de,
-        0 0 40px #ff00de,
-        0 0 50px #ff00de,
-        0 0 75px #ff00de;
+        0 0 20px #24275D,
+        0 0 35px #24275D,
+        0 0 40px #24275D,
+        0 0 50px #24275D,
+        0 0 75px #24275D;
     }
 }
 
@@ -4064,21 +4063,21 @@ span.navbar-brand {
         text-shadow: 0 0 10px #fff,
         0 0 20px #fff,
         0 0 30px #fff,
-        0 0 40px #ff00de,
-        0 0 70px #ff00de,
-        0 0 80px #ff00de,
-        0 0 100px #ff00de,
-        0 0 150px #ff00de;
+        0 0 40px #24275D,
+        0 0 70px #24275D,
+        0 0 80px #24275D,
+        0 0 100px #24275D,
+        0 0 150px #24275D;
     }
     to {
         text-shadow: 0 0 5px #fff,
         0 0 10px #fff,
         0 0 15px #fff,
-        0 0 20px #ff00de,
-        0 0 35px #ff00de,
-        0 0 40px #ff00de,
-        0 0 50px #ff00de,
-        0 0 75px #ff00de;
+        0 0 20px #24275D,
+        0 0 35px #24275D,
+        0 0 40px #24275D,
+        0 0 50px #24275D,
+        0 0 75px #24275D;
     }
 }
 

@@ -189,14 +189,14 @@ return (
                         <div className="myPointsDisplay">
                         </div>
                         :
-                        <div className="myPointsDisplay">
+                        <div style={{marginBottom:"-25px",marginTop:"10px"}} className="myPointsDisplay">
                             <p style={{color: "white",}}>Token TCG : {points}</p>
                         </div>
                     }
                     {canOpenLive == 1 ?
                         <div id="icomp-neon">
                             <p><span href="http://tuts.icomp.ir">
-                                IcompTuts
+                                Booster Gratuit Disponible !
                             </span></p>
                         </div>
                         :
