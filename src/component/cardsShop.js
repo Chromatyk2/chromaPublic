@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Modal from "react-modal";
 import OpeningBooster from "./openingBooster";
 
@@ -50,9 +50,7 @@ function CardsShop(props) {
                 setPoints(response.data[0].cardToken);
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
-                        console.log(moment(Date.now()) - moment(response.data[0].lastOpening));
-                        console.log(moment(Date.now()));
-                        console.log(moment(response.data[0].lastOpening));
+                        console.log(moment(Date.now()).tz("Europe/Paris").format() - moment(response.data[0].lastOpening).tz("Europe/Paris").format());
                         if(response.data[0].canOpen == 1){
                             setCanOpenLive(response.data[0].canOpen)
                         }else{
@@ -138,7 +136,7 @@ function selectGen(e) {
                     return Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
-                            today:moment(Date.now()).format('YYYY-MM-DD HH:mm:ss')
+                            today:moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss')
                         }
                     )
                         .then(function(response) {

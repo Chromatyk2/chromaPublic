@@ -12,6 +12,7 @@
     "dotenv": "^16.3.1",
     "jquery": "^3.6.4",
     "moment": "^2.29.4",
+    "moment-timezone": "^0.5.46",
     "obs-websocket-js": "^5.0.3",
     "react": "^18.2.0",
     "react-autocomplete-input": "^1.0.20",
