@@ -51,7 +51,8 @@ function CardsShop(props) {
                 Axios.get("/api/getProfil/"+props.user)
                     .then(function(response){
                         const hour = 90 * 60 * 1000;
-                        console.log(response.data[0].lastOpening - hour);
+                        console.log(response.data[0].lastOpening);
+                        console.log(Date.now());
                         setCanOpenLive(response.data[0].canOpen)
                     })
             })
