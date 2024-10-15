@@ -157,6 +157,7 @@ function selectGen(e) {
     function handleState() {
         setIsOpen(false);
     }
+    console.log(canOpenLive);
 return (
     <>
         {canOpenLive == 1 || canOpenLive == 0 &&
