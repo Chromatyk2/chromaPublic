@@ -122,7 +122,8 @@ function selectGen(e) {
                 if(response.data[0].canOpen - 1 > -1){
                     return Axios.post('/api/removeCanOpen',
                         {
-                            pseudo:props.user
+                            pseudo:props.user,
+                            today:new Date()
                         }
                     )
                         .then(function(response) {
