@@ -297,6 +297,8 @@ function MyCardsSet(props) {
                                 }else if(!onlyMine){
                                     return (
                                         <LazyLoadImage
+                                            delayTime={100}
+                                            threshold={50}
                                             width={"250"}
                                             style={{filter:"grayscale(1)"}}
                                             stade={stadeC}
