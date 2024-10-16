@@ -20,7 +20,7 @@ function NostalPickV2(props) {
         content: {
             position:'initial',
             border: 'none',
-            background: 'none',
+            background: 'transparent',
             borderRadius: '4px',
             width: '100%',
             height: '100vh',

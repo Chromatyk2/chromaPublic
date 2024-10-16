@@ -182,24 +182,6 @@ function UniqueBoxV2(props) {
                 }
                 <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/"+typeBox+".png"} />
             </div>
-            <audio id="karateka">
-                <source src="sounds/karateka.mp3" type="audio/mpeg"/>
-            </audio>
-            <audio id="loose">
-                <source src="sounds/Loose.mp3" type="audio/mpeg"/>
-            </audio>
-            <audio id="greenWin">
-                <source src="sounds/GreenWin.mp3" type="audio/mpeg"/>
-            </audio>
-            <audio id="blueWin">
-                <source src="sounds/BlueWin.mp3" type="audio/mpeg"/>
-            </audio>
-            <audio id="orangeWin">
-                <source src="sounds/OrangeWin.mp3" type="audio/mpeg"/>
-            </audio>
-            <audio id="rainbowWin">
-                <source src="sounds/RainbowWin.mp3" type="audio/mpeg"/>
-            </audio>
         </>
     )
 }
