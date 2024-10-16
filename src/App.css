@@ -1559,6 +1559,9 @@ object{
 .fit-picture{
     width: 150px;
 }
+.lazy-load-image-background.opacity.lazy-load-image-loaded img{
+    width: 250px;
+}
 .fit-picture-card{
     width:250px ;
     margin: 0;
