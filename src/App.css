@@ -1995,6 +1995,8 @@ button.buttonToSell:hover {
     text-align: left;
     font-weight: bold;
     filter: drop-shadow(2px 4px 6px black);
+    margin-top: -20px;
+    font-family: "Charge Vector Black";
 }
 
 @keyframes rainbow_animation {
