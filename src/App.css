@@ -1606,6 +1606,9 @@ object{
     width: 350px;
     position: absolute;
 }
+.dropCards:hover{
+    cursor: grab;
+}
 .dropBooster{
     width: 350px;
     position: absolute;
@@ -1995,7 +1998,7 @@ button.buttonToSell:hover {
     background-size: 400% 100%;
     color: transparent;
     font-size: 50px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     filter: drop-shadow(2px 4px 6px black);
     font-family: "Charge Vector Black";
