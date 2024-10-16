@@ -9,7 +9,7 @@ import ProgressBarCard from "./progressBarCard";
 import UniqueCard from "./UniqueCard.js";
 import Modal from "react-modal";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
@@ -244,7 +244,7 @@ function MyCardsSet(props) {
                                                     width={"250px"}
                                                     style={{width:"250px",filter:"brightness(1)"}}
                                                     wrapperClassName={"shadowBangerCard"}
-                                                    effect="blur"
+                                                    effect="opacity"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "1s"},
