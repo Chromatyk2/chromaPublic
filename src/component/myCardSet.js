@@ -9,6 +9,7 @@ import ProgressBarCard from "./progressBarCard";
 import UniqueCard from "./UniqueCard.js";
 import Modal from "react-modal";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
