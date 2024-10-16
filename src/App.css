@@ -871,6 +871,8 @@ p.filterTitle {
 #root{
   min-height: 100vh;
   background: transparent;
+    position: absolute;
+    width: 100%;
 }
 .labelStats {
     display: flex;
