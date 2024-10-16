@@ -284,7 +284,9 @@ function OpeningCards(props) {
             }
             {isNew === true &&
                 <div id={"shadowBox"}>
-                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                    <div className={"newContainer"}>
+                        <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                    </div>
                 </div>
             }
             {tenCards.length == 10 &&
