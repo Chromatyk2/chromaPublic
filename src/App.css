@@ -1995,10 +1995,15 @@ button.buttonToSell:hover {
     text-align: left;
     font-weight: bold;
     filter: drop-shadow(2px 4px 6px black);
-    margin-top: -20px;
     font-family: "Charge Vector Black";
 }
-
+.newContainer{
+    background: rgba(71, 117, 179, 0.5);
+    width: 205px;
+    border-radius: 25px 25px 0 0;
+    margin-top: -20px;
+    border: solid 5px #4775B3;
+}
 @keyframes rainbow_animation {
     0%,100% {
         background-position: 0 0;
