@@ -210,20 +210,29 @@ function Profil(props) {
                     </button>
                     <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
                     <p className={"levelProfil"}>Niveau {profil[0].level}</p>
-                    <div style={customStyles.extBar} className="fullProgressBar">
-                        <div
-                            style={{
-                                width: parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%",
-                                position: 'relative',
-                                background: '#74fbcf',
-                                textWrap: 'nowrap',
-                                color: 'black',
-                                borderRadius: '50px 0 0 50px',
-                                height: '30px'
-                            }}>
-                        </div>
-                        <div className={"pourcentLevel"}>
-                            {profil[0].xp + " / " + profil[0].level * 500 + "(" + parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%)"}
+                    <div>
+                        {profil[0].pkmToken > 0 &&
+                        <button className={"openLeaderBoardButton"} onClick={openToken}
+                                style={{filter: "drop-shadow(0px 0px 15px white)", backgroundImage: "url(/token.png)"}}>
+                            <div className="infoPkm">
+                                <div className="infoNbBoxSkin">{profil[0].pkmToken != 0 ? profil[0].pkmToken : 0}</div>
+                            </div>
+                        </button>}
+                        <div style={customStyles.extBar} className="fullProgressBar">
+                            <div
+                                style={{
+                                    width: parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%",
+                                    position: 'relative',
+                                    background: '#74fbcf',
+                                    textWrap: 'nowrap',
+                                    color: 'black',
+                                    borderRadius: '50px 0 0 50px',
+                                    height: '30px'
+                                }}>
+                            </div>
+                            <div className={"pourcentLevel"}>
+                                {profil[0].xp + " / " + profil[0].level * 500 + "(" + parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%)"}
+                            </div>
                         </div>
                     </div>
                     <div className={"allPokemonTeam"}>
