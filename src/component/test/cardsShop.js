@@ -180,7 +180,7 @@ function selectGen(e) {
 
         return (
             <>
-                {onOpen === false ?
+                {onOpen === true ?
                     <OpeningBoosterTest change={handleState} idBooster={boosterId} user={props.user}/>
                     :
                     canOpenLive !== null &&
