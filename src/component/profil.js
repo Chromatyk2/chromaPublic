@@ -244,8 +244,7 @@ function Profil(props) {
                         }
                     </button>
                     <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
-                    <p className={"levelProfil"}>Niveau {profil[0].level}</p>
-                    <div style={{display:"flex",alignItems:"center",gap:"50px"}}>
+                    <div style={{display:"flex",alignItems:"center",gap:"50px", marginBottom:"20px"}}>
                         {profil[0].pkmToken > 0 &&
                         <button disabled={openTime} className={"openLeaderBoardButton"} onClick={openToken}
                                 style={{filter: "drop-shadow(0px 0px 15px white)", backgroundImage: "url(/token.png)"}}>
@@ -254,7 +253,7 @@ function Profil(props) {
                             </div>
                         </button>}
                         <div>
-                            <p className="levelProfil">Niveau 9</p>
+                            <p className={"levelProfil"}>Niveau {profil[0].level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
                                     style={{
