@@ -3649,6 +3649,22 @@ span.navbar-brand {
     top: 0;
     width: 100vw;
 }
+.profilVisualsOther {
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 50px;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    margin: auto;
+    padding: 0 50px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 75px;
+}
 .pseudoProfilList{
     margin:0;
     text-align: center;

@@ -54,7 +54,7 @@ function OtherProfil(props) {
         <>
             {profil &&
                 <div className={"contentContainer"}>
-                    <div className={"profilVisuals"}>
+                    <div className={"profilVisualsOther"}>
 
 
                         <div style={{display: "flex", width: "800px", justifyContent: "flex-start"}}>
