@@ -8,6 +8,7 @@ import PokedexTeam from "./pokedexTeam";
 import {useParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
 import OnStream from "./onStream";
+import SpawnPokemonToken from "./spawnPokemonToken";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -17,6 +18,29 @@ function Profil(props) {
     const [teamToHandle, setTeamToHandle] = React.useState("");
     const [list,setList] = useState([]);
     const [pourcent, setPourcent] = useState();
+    const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
+    function openToken() {
+        Axios.get("/api/getMyTokens/"+pseudo)
+            .then(function(response){
+                if(response.data[0].token > 0){
+                    Axios.post('/api/removeToken',
+                        {
+                            user:pseudo
+                        }
+                    )
+                        .then(function(response){
+                            Axios.get("/api/getMyTokens/"+pseudo)
+                                .then(function(response){
+                                    setTokens(response.data[0].token)
+                                    setIsOpenToken(true);
+                                })
+                        })
+                }
+            })
+    }
+    function closeModalToken() {
+        setIsOpenToken(false);
+    }
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
@@ -317,6 +341,9 @@ function Profil(props) {
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles}
                    contentLabel="Example Modal">
                 <PokedexTeam list={list} change={handleState} pkmToUpdate={teamToHandle} cookies={props.cookies}/>
+            </Modal>
+            <Modal overlayClassName={"overlayModalToken"} className={"modalToken"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
+                <SpawnPokemonToken pseudo={pseudo}/>
             </Modal>
         </>
     )
