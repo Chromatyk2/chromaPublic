@@ -213,7 +213,7 @@ function CardsShop(props) {
                             </div>
                             :
                             <div style={{marginTop:"15px"}} className="myPointsDisplay">
-                                <p style={{marginBottom:"10px"}}>
+                                <p style={{marginBottom:"10px", textAlign:"center"}}>
                                     <span>Prochain booster Gratuit dans : </span>
                                     <Countdown
                                         date={nextFree}
