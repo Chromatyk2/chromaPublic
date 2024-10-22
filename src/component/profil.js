@@ -20,18 +20,19 @@ function Profil(props) {
     const [pourcent, setPourcent] = useState();
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     function openToken() {
-        Axios.get("/api/getMyTokens/"+pseudo)
+        Axios
+            .get("/api/getProfil/"+pseudo)
             .then(function(response){
-                if(response.data[0].token > 0){
+                if(response.data[0].pkToken -1 > -1){
                     Axios.post('/api/removeToken',
                         {
                             user:pseudo
                         }
                     )
                         .then(function(response){
-                            Axios.get("/api/getMyTokens/"+pseudo)
+                            Axios.get("/api/getProfil/"+pseudo)
                                 .then(function(response){
-                                    setTokens(response.data[0].token)
+                                    setProfil(response.data);
                                     setIsOpenToken(true);
                                 })
                         })
