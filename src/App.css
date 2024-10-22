@@ -4011,7 +4011,15 @@ span.navbar-brand {
     width: 100%;
     justify-content: center;
 }
-
+.nbCardBooster{
+    background: #fff;
+    border-radius: 20px;
+    color: #000;
+    font-family: Charge Vector Black;
+    font-size: 15px;
+    padding: 0 15px;
+    text-align: center;
+}
 
 #icomp-neon p{
     text-align:center;

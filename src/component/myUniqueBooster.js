@@ -21,7 +21,7 @@ function MyUniqueBooster(props) {
                                 <div className={"containerImgBooster"}>
                                     <img className="fit-picture" src={"https://images.pokemontcg.io/" + props.nbCard.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
-                                <p className="pokemonNameTrade">{props.nbCard.nbCard} carte(s)</p>
+                                <p className="nbCardBooster">{props.nbCard.nbCard} carte(s)</p>
                                 <button value={props.nbCard.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                             </div>
     )
