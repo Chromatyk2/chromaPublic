@@ -21,10 +21,10 @@ function OpeningCards(props) {
     const [myCardsId, setMyCardsId] = useState([]);
     const [isNew, setIsNew] = useState(false);
     const [getToken, setGetToken] = useState(false);
+    const [isToken, setIsToken] = useState(false);
 
     useEffect(() => {
-        var tokenBonus = Math.floor(Math.random() * 1);
-        console.log(tokenBonus)
+        var tokenBonus = Math.floor(Math.random() * 10);
         if(tokenBonus == 0){
             setGetToken(true);
         }
@@ -260,6 +260,8 @@ function OpeningCards(props) {
         setIndex(index + 1);
     }
     function getNextToken(e) {
+        setIsNew(false);
+        setIsToken(true);
         var next = document.getElementById("tokenContainer");
         next.classList.toggle('glowGetRainbow');
         next.style.display = "block";
@@ -300,6 +302,13 @@ function OpeningCards(props) {
                 <div id={"shadowBox"}>
                     <div className={"newContainer"}>
                         <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                    </div>
+                </div>
+            }
+            {isToken === true &&
+                <div id={"shadowBox"}>
+                    <div className={"newContainer"}>
+                        <p className={"rainbow rainbow_text_animated"}>1 Token Pokemon !!</p>
                     </div>
                 </div>
             }
