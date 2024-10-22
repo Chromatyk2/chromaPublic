@@ -19,7 +19,7 @@ function OpeningCardsTest(props) {
     const [isToken, setIsToken] = useState(false);
 
     useEffect(() => {
-        var tokenBonus = Math.floor(Math.random() * 1);
+        var tokenBonus = Math.floor(Math.random() * 10);
         if(tokenBonus == 0){
             setGetToken(true);
         }
@@ -294,59 +294,59 @@ function OpeningCardsTest(props) {
     }
     return (
         <>
-            {/*{tenCards.length == 10 &&*/}
-            {/*    <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>*/}
-            {/*        <img style={customStyles.imgModal} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>*/}
-            {/*        <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>*/}
-            {/*    </div>*/}
-            {/*}*/}
-            {/*{isNew === true &&*/}
-            {/*    <div id={"shadowBox"}>*/}
-            {/*        <div className={"newContainer"}>*/}
-            {/*            <p className={"rainbow rainbow_text_animated"}>NEW !</p>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*}*/}
-            {/*{isToken === true &&*/}
-            {/*    <div id={"shadowBox"}>*/}
-            {/*        <div className={"newTokenContainer"}>*/}
-            {/*            <p className={"rainbow rainbow_text_animated_token"}>1 Token Pokemon !!</p>*/}
-            {/*            <p className="rainbow rainbow_text_animated" style={{fontSize: "10px",marginTop: "-15px"}}>Utilisez le sur la page profil</p>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*}*/}
-            {/*{tenCards.length == 10 &&*/}
-            {/*    <>*/}
-            {/*        {getToken === true &&*/}
-            {/*            <img*/}
-            {/*                rarity={4}*/}
-            {/*                onClick={getLastCard}*/}
-            {/*                 id={"tokenContainer"}*/}
-            {/*             style={{display:"none"}}*/}
-            {/*             className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}*/}
-            {/*             src={token}*/}
-            {/*             onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>*/}
-            {/*        }*/}
-            {/*        {tenCards.slice(0).reverse().map((val, key) => {*/}
-            {/*            if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){*/}
-            {/*                var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;*/}
-            {/*            }else{*/}
-            {/*                var stadeC = 0;*/}
-            {/*            }*/}
-            {/*            return(*/}
-            {/*                <>*/}
-            {/*                    <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}*/}
-            {/*                         cardId={val.id} onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}*/}
-            {/*                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}*/}
-            {/*                         src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}*/}
-            {/*                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>*/}
-            {/*                </>*/}
-            {/*            )*/}
-            {/*        })}*/}
-            {/*    </>*/}
+            {tenCards.length == 10 &&
+                <div onClick={showCards} class={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
+                    <img style={customStyles.imgModal} src={"https://images.pokemontcg.io/" + props.idBooster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                    <p style={customStyles.textModal}>Appuie pour découvrir tes cartes</p>
+                </div>
+            }
+            {isNew === true &&
+                <div id={"shadowBox"}>
+                    <div className={"newContainer"}>
+                        <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                    </div>
+                </div>
+            }
+            {isToken === true &&
+                <div id={"shadowBox"}>
+                    <div className={"newTokenContainer"}>
+                        <p className={"rainbow rainbow_text_animated_token"}>1 Token Pokemon !!</p>
+                        <p className="rainbow rainbow_text_animated" style={{fontSize: "10px",marginTop: "-15px"}}>Utilisez le sur la page profil</p>
+                    </div>
+                </div>
+            }
+            {tenCards.length == 10 &&
+                <>
+                    {getToken === true &&
+                        <img
+                            rarity={4}
+                            onClick={getLastCard}
+                             id={"tokenContainer"}
+                         style={{display:"none"}}
+                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                         src={token}
+                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                    }
+                    {tenCards.slice(0).reverse().map((val, key) => {
+                        if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
+                            var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
+                        }else{
+                            var stadeC = 0;
+                        }
+                        return(
+                            <>
+                                <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
+                                     cardId={val.id} onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
+                                     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
+                                     onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                            </>
+                        )
+                    })}
+                </>
 
-            {/*}*/}
-            {tenCards.length > 0 &&
+            }
+            {tenCards.length < 10 &&
                 <div className={"loaderPokemon"}>
                     <h2 className="u-text-center">Chargement ...</h2>
                     <div className="pokemon"></div>
