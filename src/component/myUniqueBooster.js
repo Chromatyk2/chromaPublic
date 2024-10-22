@@ -23,7 +23,6 @@ function MyUniqueBooster(props) {
                                     <img className="fit-picture" src={"https://images.pokemontcg.io/" + props.nbCard.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
                                 <SmallProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
-                                <p className="nbCardBooster">{props.nbCard.nbCard} carte(s) / {(props.nbCard.nbCard / props.maxBooster) * 100} %</p>
                                 <button value={props.nbCard.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                             </div>
     )
