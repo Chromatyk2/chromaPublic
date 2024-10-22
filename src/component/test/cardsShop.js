@@ -176,14 +176,14 @@ function selectGen(e) {
     function handleState() {
         setIsOpen(false);
     }
-    {onOpen === false ?
 
-        return <OpeningBoosterTest change={handleState} idBooster={boosterId} user={props.user}/>
-        :
 
         return (
             <>
-                {canOpenLive !== null &&
+                {onOpen === false ?
+                    <OpeningBoosterTest change={handleState} idBooster={boosterId} user={props.user}/>
+                    :
+                    canOpenLive !== null &&
                     <>
                         <div>
                             {points &&
@@ -304,7 +304,6 @@ function selectGen(e) {
                 }
             </>
         )
-    }
 }
 
 export default CardsShopTest
