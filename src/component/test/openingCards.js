@@ -346,7 +346,7 @@ function OpeningCardsTest(props) {
                 </>
 
             }
-            {tenCards.length < 10 &&
+            {tenCards.length > -1 &&
                 <div style={{marginTop:"210px"}} className={"loaderPokemon"}>
                     <h2 style={{textAlign:"center"}} className="u-text-center">Chargement ...</h2>
                     <div className="pokemon"></div>
