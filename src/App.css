@@ -4925,6 +4925,30 @@ button.uniqueBoxContainer:last-child{
     left: -50px;
     filter: drop-shadow(10px 10px 10px black);
 }
+.fav-star {
+    position: absolute;
+    width: 1rem;
+    fill: #FFAC33;
+    -webkit-animation: token 2s forwards;
+    animation: token 2s forwards;
+    animation-delay: 2.2s;
+    transform: scale(0);
+    left: -50px;
+    filter: drop-shadow(10px 10px 10px black);
+}
+.moreToken{
+    transform: scale(-2, 2);
+    position: relative;
+    top: -7px;
+    left: 15px;
+    color: black;
+    background: white;
+    border-radius: 100px;
+    height: 13px;
+    width: 13px;
+    text-align: center;
+    font-size: 10px;
+}
 .fav-star2 {
     position: absolute;
     width: 2rem;
@@ -5108,6 +5132,7 @@ button.uniqueBoxContainer:last-child{
         fill: #FFAC33;
     }
 }
+
 @-webkit-keyframes sparkle {
     0% {
         transform: scale(0.3);
