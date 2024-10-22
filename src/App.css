@@ -4099,6 +4099,13 @@ span.navbar-brand {
         0 0 75px #24275D;
     }
 }
+.newTokenContainer {
+    background: rgba(71, 117, 179, .5);
+    border: 5px solid #4775b3;
+    border-radius: 25px 0 25px 0;
+    margin-top: -20px;
+    width: fit-content;
+}
 .infoNbPkmToken {
 
     background-color: #fff;

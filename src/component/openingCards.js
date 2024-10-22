@@ -24,7 +24,7 @@ function OpeningCards(props) {
     const [isToken, setIsToken] = useState(false);
 
     useEffect(() => {
-        var tokenBonus = Math.floor(Math.random() * 10);
+        var tokenBonus = Math.floor(Math.random() * 1);
         if(tokenBonus == 0){
             setGetToken(true);
         }
@@ -156,6 +156,13 @@ function OpeningCards(props) {
                     setNbCards (nbCards + 1);
                 }
             }else if(tenCards.length == 9){
+                if(getToken === true){
+                    Axios.post('/api/addPkmToken',
+                        {
+                            user:pseudo
+                        }
+                    )
+                }
                 var stadeTwo = Math.floor(Math.random() * 100);
                 if(stadeTwo > 50){
                     var stadeThree = Math.floor(Math.random() * 100);
@@ -307,7 +314,7 @@ function OpeningCards(props) {
             }
             {isToken === true &&
                 <div id={"shadowBox"}>
-                    <div className={"newContainer"}>
+                    <div className={"newTokenContainer"}>
                         <p className={"rainbow rainbow_text_animated"}>1 Token Pokemon !!</p>
                     </div>
                 </div>
