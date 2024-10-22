@@ -280,6 +280,7 @@ function OpeningCards(props) {
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
+    console.log(getToken);
     return (
         <>
             {tenCards.length == 10 &&
