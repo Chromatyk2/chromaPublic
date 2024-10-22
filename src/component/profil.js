@@ -159,7 +159,7 @@ function Profil(props) {
         <>
         {isLoad === false &&
             profil &&
-            profil.length > 0 ?
+            profil.length > 0 &&
             <div className={"contentContainer"}>
                 <OnStream />
                 <div className={"profilVisuals"}>
@@ -305,13 +305,6 @@ function Profil(props) {
                         </button>
                     </div>
                 </div>
-            </div>
-            :
-            <div className={"contentContainer"}>
-                <p className={"pseudoProfil"}>Capture ton premier pokémon pour débuter ton profil !</p>
-                <p className={"pseudoProfil"}>Pour ça, rendez-vous sur le stream de <a href={"twitch.tv/chromatyk"}
-                                                                                       target={"_blank"}>Chromatyk</a> quand
-                    il est en live !</p>
             </div>
         }
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
