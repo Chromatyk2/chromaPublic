@@ -2023,9 +2023,7 @@ button.buttonToSell:hover {
     height: 80px;
     width: 205px;
     display: block;
-    margin: auto;
-    margin-top: -20px;
-    margin-left: 120px;
+    margin: -75px auto auto -105px;
 }
 @keyframes rainbow_animation {
     0%,100% {
@@ -4146,12 +4144,13 @@ span.navbar-brand {
     background: rgba(71, 117, 179, .5);
     border: 5px solid #4775b3;
     border-radius: 25px 0 25px 0;
-    margin-top: -110px;
+    margin-top: -30px;
+    position: relative;
     width: -webkit-fit-content;
     width: -moz-fit-content;
-    width: fit-content;
-    position: relative;
+    width: 300px;
     z-index: 1;
+    margin-left: -90px;
 }
 #tokenContainer{
     width:250px;
