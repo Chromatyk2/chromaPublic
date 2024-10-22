@@ -4112,7 +4112,7 @@ span.navbar-brand {
     text-align: center;
     width: fit-content;
     top: 60px;
-    padding: 0 25px 0 25px;
+    padding: 0 10px 0 10px;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
