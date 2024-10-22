@@ -265,7 +265,7 @@ function SpawnPokemonToken(props) {
                                 </span>
                             </div>
                             <div className="mon">
-                                {getToken === true && <img src={card} style={{width:"50px"}} /> }
+                                {getToken === true && <div className="fav-sparkle"><img src={card} style={{width:"50px"}} /></div> }
                                 {shiny === true &&
                                     <div className="fav">
                                         <svg className="fav-star" viewBox="0 0 114 110">
