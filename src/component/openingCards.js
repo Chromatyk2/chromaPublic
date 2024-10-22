@@ -6,6 +6,7 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
+import token from '../token.png'
 
 function OpeningCards(props) {
 
@@ -19,8 +20,13 @@ function OpeningCards(props) {
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     const [isNew, setIsNew] = useState(false);
+    const [getToken, setGetToken] = useState(false);
 
     useEffect(() => {
+        var tokenBonus = Math.floor(Math.random() * 10);
+        if(tokenBonus == 1){
+            setGetToken(true);
+        }
         Axios
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
             .then(function(response){
@@ -290,22 +296,31 @@ function OpeningCards(props) {
                 </div>
             }
             {tenCards.length == 10 &&
-                tenCards.slice(0).reverse().map((val, key) => {
-                            if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
-                                var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
-                            }else{
-                                var stadeC = 0;
-                            }
-                            return(
-                                <>
-                                    <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
-                                         cardId={val.id} onClick={key == 0 ? getLastCard : getCard}
-                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                         src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
-                                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
-                                </>
-                            )
-                })
+                <>
+                    {getToken === true &&
+                        <img onClick={getCard}
+                         className={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}
+                         src={token}
+                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                    }
+                    {tenCards.slice(0).reverse().map((val, key) => {
+                        if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
+                            var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
+                        }else{
+                            var stadeC = 0;
+                        }
+                        return(
+                            <>
+                                <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
+                                     cardId={val.id} onClick={key == 0 ? getLastCard : getCard}
+                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
+                                     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
+                                     onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                            </>
+                        )
+                    })}
+                </>
+
             }
             {tenCards.length < 10 &&
                 <div className={"loaderPokemon"}>
