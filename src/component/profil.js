@@ -34,6 +34,12 @@ function Profil(props) {
                                 .then(function(response){
                                     setProfil(response.data);
                                     setIsOpenToken(true);
+                                    Axios
+                                        .get("/api/getByUser/"+pseudo)
+                                        .then(function(response){
+                                            setList(response.data);
+                                            setPourcent(Math.round((response.data.length / 1025) * 100));
+                                        })
                                 })
                         })
                 }
