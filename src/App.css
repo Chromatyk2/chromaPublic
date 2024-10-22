@@ -1902,21 +1902,7 @@ img.gettedBoxImg {
     align-items: center;
     height: 89vh;
 }
-.rainbow_text_animated_token {
-     -webkit-animation: rainbow_animation 6s ease-in-out infinite;
-     animation: rainbow_animation 2s ease-in-out infinite;
-     background: linear-gradient(90deg, #66f, #09f, #0f0, #f39, #66f);
-     -webkit-background-clip: text;
-     background-clip: text;
-     background-size: 400% 100%;
-     color: transparent;
-     -webkit-filter: drop-shadow(2px 4px 6px #000);
-     filter: drop-shadow(2px 4px 6px black);
-     font-family: "Charge Vector Black";
-     font-size: 30px;
-     font-weight: 700;
-     text-align: center;
- }
+
 .showBooster{
     visibility: hidden;
     animation:bounceIn 1s;
@@ -1951,8 +1937,8 @@ img.gettedBoxImg {
     animation-fill-mode: forwards;
 }
 #shadowBox {
-   height: 600px;
-    width:350px;
+    height: 490px;
+    width: 115px;
 }
 #shadowBox:hover {
     cursor: grab;
@@ -2030,13 +2016,16 @@ button.buttonToSell:hover {
     filter: drop-shadow(2px 4px 6px black);
     font-family: "Charge Vector Black";
 }
-.newContainer{
+.newContainer {
     background: rgba(71, 117, 179, .5);
     border: 5px solid #4775b3;
     border-radius: 25px 25px 0 0;
-    width: 205px;
-    margin-top: -75px;
     height: 80px;
+    width: 205px;
+    display: block;
+    margin: auto;
+    margin-top: -20px;
+    margin-left: 120px;
 }
 @keyframes rainbow_animation {
     0%,100% {
@@ -4181,6 +4170,21 @@ span.navbar-brand {
     width: fit-content;
     top: 60px;
     padding: 0 10px 0 10px;
+}
+.rainbow_text_animated_token {
+    -webkit-animation: rainbow_animation 6s ease-in-out infinite;
+    animation: rainbow_animation 2s ease-in-out infinite;
+    background: linear-gradient(90deg, #66f, #09f, #0f0, #f39, #66f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 400% 100%;
+    color: transparent;
+    -webkit-filter: drop-shadow(2px 4px 6px #000);
+    filter: drop-shadow(2px 4px 6px black);
+    font-family: "Charge Vector Black";
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
