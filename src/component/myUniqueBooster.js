@@ -6,7 +6,7 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
-import ProgressBarCard from "./progressBarCard";
+import SmallProgressBarCard from "./smallProgressBar";
 
 function MyUniqueBooster(props) {
     function displayPage(e) {
@@ -22,7 +22,7 @@ function MyUniqueBooster(props) {
                                 <div className={"containerImgBooster"}>
                                     <img className="fit-picture" src={"https://images.pokemontcg.io/" + props.nbCard.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
-                                <ProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
+                                <SmallProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
                                 <p className="nbCardBooster">{props.nbCard.nbCard} carte(s) / {(props.nbCard.nbCard / props.maxBooster) * 100} %</p>
                                 <button value={props.nbCard.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                             </div>
