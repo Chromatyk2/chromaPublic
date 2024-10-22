@@ -140,7 +140,7 @@ function OtherProfil(props) {
                                     background: '#74fbcf',
                                     textWrap: 'nowrap',
                                     color: 'black',
-                                    borderRadius: '50px 0 0 50px',
+                                    borderRadius: '50px 50px 50px 50px',
                                     height: '30px'
                                 }}>
                             </div>
