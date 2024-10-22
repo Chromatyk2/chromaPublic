@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../App.css'
 import Axios from "axios";
 import moment from "moment/moment";
+import card from "../cards.png"
 function SpawnPokemon(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([])
@@ -11,7 +12,17 @@ function SpawnPokemon(props) {
     const [isLoaded, setIsLoaded] = useState(true);
     const [reloadFetch, setReloadFetch] = useState(0);
     const [shiny, setShiny] = useState(false);
+    const [getToken, setGetToken] = useState(false);;
     useEffect(() => {
+        var tokenBonus = Math.floor(Math.random() * 10);
+        if(tokenBonus == 0){
+            setGetToken(true);
+            Axios.post('/api/addCardsPointTw',
+                {
+                    user:queryParameters.get("pseudo")
+                }
+            )
+        }
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
             .then(res => res.json())
             .then(
@@ -292,6 +303,7 @@ function SpawnPokemon(props) {
                                 </span>
                             </div>
                             <div className="mon">
+                                {getToken === true && <div className="fav-token"><img src={card} style={{width:"50px"}} /><p className={"moreToken"}>+1</p></div> }
                                 {shiny === true &&
                                     <div className="fav">
                                         <svg className="fav-star" viewBox="0 0 114 110">

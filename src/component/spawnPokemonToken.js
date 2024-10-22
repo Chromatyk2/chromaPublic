@@ -12,10 +12,9 @@ function SpawnPokemonToken(props) {
     const [isLoaded, setIsLoaded] = useState(true);
     const [reloadFetch, setReloadFetch] = useState(0);
     const [shiny, setShiny] = useState(false);
-    const [getToken, setGetToken] = useState(false);
-    const [isToken, setIsToken] = useState(false);
+    const [getToken, setGetToken] = useState(false);;
     useEffect(() => {
-        var tokenBonus = Math.floor(Math.random() * 1);
+        var tokenBonus = Math.floor(Math.random() * 10);
         if(tokenBonus == 0){
             setGetToken(true);
             Axios.post('/api/addCardsPointTw',

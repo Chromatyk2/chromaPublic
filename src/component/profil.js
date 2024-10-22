@@ -19,7 +19,9 @@ function Profil(props) {
     const [list,setList] = useState([]);
     const [pourcent, setPourcent] = useState();
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
+    const [openTime, setOpenTime] = React.useState(false);
     function openToken() {
+        setOpenTime(true)
         Axios
             .get("/api/getProfil/"+pseudo)
             .then(function(response){
@@ -32,6 +34,7 @@ function Profil(props) {
                         .then(function(response){
                             Axios.get("/api/getProfil/"+pseudo)
                                 .then(function(response){
+                                    setOpenTime(false)
                                     setProfil(response.data);
                                     setIsOpenToken(true);
                                     Axios
@@ -241,6 +244,7 @@ function Profil(props) {
                     <p className={"levelProfil"}>Niveau {profil[0].level}</p>
                     <div style={{display:"flex",alignItems:"center",gap:"50px"}}>
                         {profil[0].pkmToken > 0 &&
+                            openTime === false &&
                         <button className={"openLeaderBoardButton"} onClick={openToken}
                                 style={{filter: "drop-shadow(0px 0px 15px white)", backgroundImage: "url(/token.png)"}}>
                             <div className="infoPkm">
