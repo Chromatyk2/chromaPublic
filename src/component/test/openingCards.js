@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import '../../App.css'
-import token from '../token.png'
+import token from '../../token.png'
 
 function OpeningCardsTest(props) {
 
