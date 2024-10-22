@@ -244,8 +244,7 @@ function Profil(props) {
                     <p className={"levelProfil"}>Niveau {profil[0].level}</p>
                     <div style={{display:"flex",alignItems:"center",gap:"50px"}}>
                         {profil[0].pkmToken > 0 &&
-                            openTime === false &&
-                        <button className={"openLeaderBoardButton"} onClick={openToken}
+                        <button disabled={openTime} className={"openLeaderBoardButton"} onClick={openToken}
                                 style={{filter: "drop-shadow(0px 0px 15px white)", backgroundImage: "url(/token.png)"}}>
                             <div className="infoPkm">
                                 <div className="infoNbPkmToken">{profil[0].pkmToken != 0 ? profil[0].pkmToken : 0}</div>
