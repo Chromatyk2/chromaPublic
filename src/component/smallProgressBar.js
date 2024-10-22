@@ -9,7 +9,7 @@ import moment from 'moment';
 function SmallProgressBarCard(props) {
     const customStyles = {
         extBar: {
-            width: '10%',
+            width: '100%',
             backgroundColor: '#00368a',
             position: 'relative',
             zIndex: '1',
