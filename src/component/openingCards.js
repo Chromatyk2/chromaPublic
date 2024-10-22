@@ -159,7 +159,7 @@ function OpeningCards(props) {
                 if(getToken === true){
                     Axios.post('/api/addPkmToken',
                         {
-                            user:pseudo
+                            user:props.user
                         }
                     )
                 }

@@ -4106,6 +4106,9 @@ span.navbar-brand {
     margin-top: -20px;
     width: fit-content;
 }
+#tokenContainer{
+    width:250px;
+}
 .infoNbPkmToken {
 
     background-color: #fff;
