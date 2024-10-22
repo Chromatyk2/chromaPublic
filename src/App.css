@@ -1900,7 +1900,21 @@ img.gettedBoxImg {
     display: flex;
     justify-content: center;
     margin-top: 110px;
-}
+}.rainbow_text_animated_token {
+     -webkit-animation: rainbow_animation 6s ease-in-out infinite;
+     animation: rainbow_animation 2s ease-in-out infinite;
+     background: linear-gradient(90deg, #66f, #09f, #0f0, #f39, #66f);
+     -webkit-background-clip: text;
+     background-clip: text;
+     background-size: 400% 100%;
+     color: transparent;
+     -webkit-filter: drop-shadow(2px 4px 6px #000);
+     filter: drop-shadow(2px 4px 6px black);
+     font-family: Charge Vector Black;
+     font-size: 30px;
+     font-weight: 700;
+     text-align: center;
+ }
 .showBooster{
     visibility: hidden;
     animation:bounceIn 1s;
@@ -4141,8 +4155,12 @@ span.navbar-brand {
     background: rgba(71, 117, 179, .5);
     border: 5px solid #4775b3;
     border-radius: 25px 0 25px 0;
-    margin-top: -20px;
+    margin-top: -110px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
+    position: relative;
+    z-index: 1;
 }
 #tokenContainer{
     width:250px;
