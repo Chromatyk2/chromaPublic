@@ -1900,7 +1900,8 @@ img.gettedBoxImg {
     display: flex;
     justify-content: center;
     margin-top: 210px;
-}.rainbow_text_animated_token {
+}
+.rainbow_text_animated_token {
      -webkit-animation: rainbow_animation 6s ease-in-out infinite;
      animation: rainbow_animation 2s ease-in-out infinite;
      background: linear-gradient(90deg, #66f, #09f, #0f0, #f39, #66f);
@@ -1910,7 +1911,7 @@ img.gettedBoxImg {
      color: transparent;
      -webkit-filter: drop-shadow(2px 4px 6px #000);
      filter: drop-shadow(2px 4px 6px black);
-     font-family: Charge Vector Black;
+     font-family: "Charge Vector Black";
      font-size: 30px;
      font-weight: 700;
      text-align: center;
