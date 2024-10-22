@@ -3699,11 +3699,12 @@ span.navbar-brand {
     color: #007bb3;
     height: 50px;
     position: absolute;
-    width: 50px;
+    width: fit-content;
     font-size: 35px;
     font-weight: 700;
     left: -19px;
     text-align: center;
+    padding: 0 15px 0 15px;
 }
 .infoNbBoxSkin{
      background-color: #fff;
