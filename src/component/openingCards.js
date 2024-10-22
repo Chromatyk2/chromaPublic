@@ -299,7 +299,7 @@ function OpeningCards(props) {
                 <>
                     {getToken === true &&
                         <img onClick={getCard}
-                         className={isHidden === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}
+                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
                          src={token}
                          onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                     }
