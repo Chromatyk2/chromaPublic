@@ -2023,7 +2023,7 @@ button.buttonToSell:hover {
     height: 80px;
     width: 205px;
     display: block;
-    margin: -75px auto auto -105px;
+    margin: -75px auto auto 20px;
 }
 @keyframes rainbow_animation {
     0%,100% {
