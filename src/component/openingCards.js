@@ -296,7 +296,6 @@ function OpeningCards(props) {
         e.target.onerror = null;
         e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
     }
-    console.log(getToken);
     return (
         <>
             {tenCards.length == 10 &&
@@ -316,6 +315,7 @@ function OpeningCards(props) {
                 <div id={"shadowBox"}>
                     <div className={"newTokenContainer"}>
                         <p className={"rainbow rainbow_text_animated"}>1 Token Pokemon !!</p>
+                        <p className="rainbow rainbow_text_animated" style={{fontSize: "10px",marginTop: "-15px"}}>Utilisez le sur la page profil</p>
                     </div>
                 </div>
             }
