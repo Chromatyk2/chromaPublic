@@ -17,6 +17,7 @@ function CardsShopTest(props) {
     const [boosterId, setBoosterId] = React.useState(null);
     const [canOpenLive, setCanOpenLive] = React.useState(null);
     const [nextFree, setNextFree] = React.useState(null);
+    const [onOpen, setOnOpen] = React.useState(false);
     const customStyles = {
         content: {
             position:'initial',
@@ -117,7 +118,7 @@ function selectGen(e) {
                                 .get("/api/getCardsPoint/"+props.user)
                                 .then(function(response){
                                     setPoints(response.data[0].cardToken);
-                                    setIsOpen(true);
+                                    setOnOpen(true);
                                     button.disabled = false;
                                 })
                         })
@@ -148,7 +149,7 @@ function selectGen(e) {
                                     setCanOpenLive(0);
                                     Axios.get("/api/getProfil/"+props.user)
                                         .then(function(response){
-                                            setIsOpen(true);
+                                            setOnOpen(true);
                                             button.disabled = false;
                                             const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                                             const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
@@ -175,134 +176,135 @@ function selectGen(e) {
     function handleState() {
         setIsOpen(false);
     }
-return (
-    <>
-        {canOpenLive !== null &&
+    {onOpen === false ?
+
+        return <OpeningBoosterTest change={handleState} idBooster={boosterId} user={props.user}/>
+        :
+
+        return (
             <>
-                <div>
-                    {points &&
-                    points == -1 ?
-                        <div className="myPointsDisplay">
-                        </div>
-                        :
-                        <div style={{marginBottom:"-25px",marginTop:"10px"}} className="myPointsDisplay">
-                            <img style={{display:"block",margin:"auto",width:"50px"}} src={token} />
-                            <p style={{color: "white",textAlign:"center"}}>Token TCG : {points}</p>
-                        </div>
-                    }
-                    {canOpenLive == 1 ?
-                        <div id="icomp-neon">
-                            <p><span href="http://tuts.icomp.ir">
+                {canOpenLive !== null &&
+                    <>
+                        <div>
+                            {points &&
+                            points == -1 ?
+                                <div className="myPointsDisplay">
+                                </div>
+                                :
+                                <div style={{marginBottom:"-25px",marginTop:"10px"}} className="myPointsDisplay">
+                                    <img style={{display:"block",margin:"auto",width:"50px"}} src={token} />
+                                    <p style={{color: "white",textAlign:"center"}}>Token TCG : {points}</p>
+                                </div>
+                            }
+                            {canOpenLive == 1 ?
+                                <div id="icomp-neon">
+                                    <p><span href="http://tuts.icomp.ir">
                                 Booster Gratuit Disponible
                             </span></p>
-                        </div>
-                        :
-                        <div style={{marginTop:"15px"}} className="myPointsDisplay">
-                        <p style={{marginBottom:"10px"}}>
-                                <span>Prochain booster Gratuit dans : </span>
-                                <Countdown
-                                    date={nextFree}
-                                    intervalDelay={0}
-                                    precision={3}
-                                    onComplete={checkEndCountdown}
-                                />
-                            </p>
-                        </div>
-                    }
-                </div>
-                <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
-                    <option value="all">All Gen</option>
-                    <option value="1">Gen 1</option>
-                    <option value="2">Gen 2</option>
-                    <option value="3">Gen 3</option>
-                    <option value="4">Gen 4</option>
-                    <option value="5">Gen 5</option>
-                    <option value="6">Gen 6</option>
-                    <option value="7">Gen 7</option>
-                    <option value="8">Gen 8</option>
-                    <option value="9">Gen 9</option>
-                </select>
-                <div id={"cardsContainer"}>
-                    {items &&
-                        <div className="uniqueTradeContainer">
-                            <p className="pokemonNameTrade">Booster Aléatoire</p>
-                            <div className={"containerImgBooster"}>
-                                <img className="fit-picture" src={"/images/random.png"}
-                                     alt="Grapefruit slice atop a pile of other slices"/>
-                            </div>
-                            {points > 0 ?
-                                loading === false ?
-                                    <div style={{position: "relative", bottom: "-44px"}}>
-                                        <button value={items[Math.floor(Math.random() * items.length)].name}
-                                                onClick={openModal}
-                                                className="guessTradeButton">Ouvrir
-                                        </button>
-                                    </div>
-                                    :
-                                    <button className="guessTradeButton">Chargement</button>
+                                </div>
                                 :
-                                <button className="guessTradeButton">Aucun Token</button>
-                            }
-                            {canOpenLive == 1 &&
-                                <div style={{position: "relative", bottom: "-44px"}}>
-                                    <button value={items[Math.floor(Math.random() * items.length)].name}
-                                            onClick={freeBooster}
-                                            className="guessTradeButton">Booster Gratuit
-                                    </button>
+                                <div style={{marginTop:"15px"}} className="myPointsDisplay">
+                                    <p style={{marginBottom:"10px"}}>
+                                        <span>Prochain booster Gratuit dans : </span>
+                                        <Countdown
+                                            date={nextFree}
+                                            intervalDelay={0}
+                                            precision={3}
+                                            onComplete={checkEndCountdown}
+                                        />
+                                    </p>
                                 </div>
                             }
                         </div>
-                    }
-                    {items &&
-                        items.map((val, key) => {
-                            return (
+                        <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
+                            <option value="all">All Gen</option>
+                            <option value="1">Gen 1</option>
+                            <option value="2">Gen 2</option>
+                            <option value="3">Gen 3</option>
+                            <option value="4">Gen 4</option>
+                            <option value="5">Gen 5</option>
+                            <option value="6">Gen 6</option>
+                            <option value="7">Gen 7</option>
+                            <option value="8">Gen 8</option>
+                            <option value="9">Gen 9</option>
+                        </select>
+                        <div id={"cardsContainer"}>
+                            {items &&
                                 <div className="uniqueTradeContainer">
+                                    <p className="pokemonNameTrade">Booster Aléatoire</p>
                                     <div className={"containerImgBooster"}>
-                                        <img className="fit-picture"
-                                             src={"https://images.pokemontcg.io/" + val.name + "/logo.png"}
+                                        <img className="fit-picture" src={"/images/random.png"}
                                              alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
                                     {points > 0 ?
                                         loading === false ?
                                             <div style={{position: "relative", bottom: "-44px"}}>
-
-                                                <button value={val.name}
+                                                <button value={items[Math.floor(Math.random() * items.length)].name}
                                                         onClick={openModal}
                                                         className="guessTradeButton">Ouvrir
                                                 </button>
                                             </div>
                                             :
-                                            <div style={{position: "relative", bottom: "-44px"}}>
-                                                <button className="guessTradeButton">Chargement</button>
-                                            </div>
+                                            <button className="guessTradeButton">Chargement</button>
                                         :
-                                        <div style={{position: "relative", bottom: "-44px"}}>
-                                            <button className="guessTradeButton">Aucun Token</button>
-                                        </div>
+                                        <button className="guessTradeButton">Aucun Token</button>
                                     }
                                     {canOpenLive == 1 &&
                                         <div style={{position: "relative", bottom: "-44px"}}>
-
-                                            <button value={val.name}
+                                            <button value={items[Math.floor(Math.random() * items.length)].name}
                                                     onClick={freeBooster}
                                                     className="guessTradeButton">Booster Gratuit
                                             </button>
                                         </div>
                                     }
                                 </div>
-                            )
-                        })
-                    }
-                </div>
-            </>
-        }
-        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
-               contentLabel="Example Modal">
-            <OpeningBoosterTest change={handleState} idBooster={boosterId} user={props.user}/>
-        </Modal>
+                            }
+                            {items &&
+                                items.map((val, key) => {
+                                    return (
+                                        <div className="uniqueTradeContainer">
+                                            <div className={"containerImgBooster"}>
+                                                <img className="fit-picture"
+                                                     src={"https://images.pokemontcg.io/" + val.name + "/logo.png"}
+                                                     alt="Grapefruit slice atop a pile of other slices"/>
+                                            </div>
+                                            {points > 0 ?
+                                                loading === false ?
+                                                    <div style={{position: "relative", bottom: "-44px"}}>
 
-    </>
-)
+                                                        <button value={val.name}
+                                                                onClick={openModal}
+                                                                className="guessTradeButton">Ouvrir
+                                                        </button>
+                                                    </div>
+                                                    :
+                                                    <div style={{position: "relative", bottom: "-44px"}}>
+                                                        <button className="guessTradeButton">Chargement</button>
+                                                    </div>
+                                                :
+                                                <div style={{position: "relative", bottom: "-44px"}}>
+                                                    <button className="guessTradeButton">Aucun Token</button>
+                                                </div>
+                                            }
+                                            {canOpenLive == 1 &&
+                                                <div style={{position: "relative", bottom: "-44px"}}>
+
+                                                    <button value={val.name}
+                                                            onClick={freeBooster}
+                                                            className="guessTradeButton">Booster Gratuit
+                                                    </button>
+                                                </div>
+                                            }
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </>
+                }
+            </>
+        )
+    }
 }
 
 export default CardsShopTest
