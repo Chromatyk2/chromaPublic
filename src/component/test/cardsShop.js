@@ -174,7 +174,7 @@ function selectGen(e) {
         setIsOpen(false);
     }
     function handleState() {
-        setIsOpen(false);
+        setOnOpen(false);
     }
 
 
