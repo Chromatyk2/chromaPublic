@@ -40,7 +40,7 @@ import OtherProfil from "./component/otherProfil";
 import Pedandex from "./component/pedandex";
 import StartPedandex from "./component/startPedandex";
 import SpecificPedandex from "./component/specificPedandex";
-import CardsShopTest from "./component/test/cardsShop";
+import CardsHubTest from "./component/test/cardsHub";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -86,7 +86,7 @@ function App(props) {
           <Route path="/pedandex" element={<Pedandex cookies={cookies} />} />
           <Route path="/oldpedandex" element={<SpecificPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qs" element={<StartPedandex cookies={cookies} />} />
-          <Route path="/49Vs5sWVS2e7qds" element={<CardsShopTest cookies={cookies} />} />
+          <Route path="/49Vs5sWVS2e7qds" element={<CardsHubTest page={"cardsShop"} cookies={cookies} />} />
         </Routes>
         {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
