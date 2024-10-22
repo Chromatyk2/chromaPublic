@@ -99,6 +99,7 @@ function selectGen(e) {
     }
 }
     function openModal(e) {
+        setOnOpen(true);
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
         button.disabled = true;
@@ -118,15 +119,17 @@ function selectGen(e) {
                                 .get("/api/getCardsPoint/"+props.user)
                                 .then(function(response){
                                     setPoints(response.data[0].cardToken);
-                                    setOnOpen(true);
                                     button.disabled = false;
                                 })
                         })
+                }else{
+                    setOnOpen(false);
                 }
             })
     }
 
     function freeBooster(e) {
+        setOnOpen(true);
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
         button.disabled = true;
@@ -149,7 +152,6 @@ function selectGen(e) {
                                     setCanOpenLive(0);
                                     Axios.get("/api/getProfil/"+props.user)
                                         .then(function(response){
-                                            setOnOpen(true);
                                             button.disabled = false;
                                             const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                                             const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
@@ -166,6 +168,8 @@ function selectGen(e) {
                                         })
                                 })
                         })
+                }else{
+                    setOnOpen(true);
                 }
             })
     }
