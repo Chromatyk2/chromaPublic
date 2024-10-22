@@ -1,7 +1,4 @@
 import React,{useState, useEffect} from 'react';
-import {BrowserRouter, Link} from "react-router-dom";
-import { useParams } from 'react-router-dom'
-import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
 import '../../App.css'
 import moment from 'moment-timezone';
