@@ -280,7 +280,8 @@ function OpeningCardsTest(props) {
     const customStyles = {
         textModal: {
             fontSize:'30px',
-            textAlign:'center'
+            textAlign:'center',
+            color:"white"
         },
         imgModal: {
             width:'200px',

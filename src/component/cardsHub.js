@@ -31,7 +31,6 @@ function CardsHub(props) {
     return(
         <>
             <div className={"contentContainer"}>
-            <OnStream />
             <div className={"allCards"}>
                     {props.page === null &&
                         <div className={"introTCGtext"}>
