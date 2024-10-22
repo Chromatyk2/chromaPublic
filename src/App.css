@@ -1899,7 +1899,8 @@ img.gettedBoxImg {
 .discoveredCardsContainer{
     display: flex;
     justify-content: center;
-    margin-top: 180px;
+    align-items: center;
+    height: 89vh;
 }
 .rainbow_text_animated_token {
      -webkit-animation: rainbow_animation 6s ease-in-out infinite;
