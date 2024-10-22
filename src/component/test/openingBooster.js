@@ -138,7 +138,6 @@ function OpeningBoosterTest(props) {
                 {isLoaded === false &&
                         items &&
                             <OpeningCardsTest user={props.user} change={handleState} idBooster={props.idBooster} items={items} rarities={rarities}/>
-
                 }
             </div>
         </>
