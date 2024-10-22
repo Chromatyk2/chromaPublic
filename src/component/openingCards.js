@@ -301,7 +301,7 @@ function OpeningCards(props) {
                 <>
                     {getToken === true &&
                         <img onClick={getLastCard}
-                         style={{dispaly:"none"}}
+                         style={{display:"none"}}
                          className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
                          src={token}
                          onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
