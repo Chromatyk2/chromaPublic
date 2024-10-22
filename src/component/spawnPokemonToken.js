@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../App.css'
 import Axios from "axios";
 import moment from "moment/moment";
+import card from "../cards.png"
 function SpawnPokemonToken(props) {
     const pseudo = props.pseudo;
     const [pokemon, setPokemon] = useState([])
@@ -11,7 +12,18 @@ function SpawnPokemonToken(props) {
     const [isLoaded, setIsLoaded] = useState(true);
     const [reloadFetch, setReloadFetch] = useState(0);
     const [shiny, setShiny] = useState(false);
+    const [getToken, setGetToken] = useState(false);
+    const [isToken, setIsToken] = useState(false);
     useEffect(() => {
+        var tokenBonus = Math.floor(Math.random() * 1);
+        if(tokenBonus == 0){
+            setGetToken(true);
+            Axios.post('/api/addCardsPointTw',
+                {
+                    user:pseudo
+                }
+            )
+        }
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
             .then(res => res.json())
             .then(
@@ -276,6 +288,7 @@ function SpawnPokemonToken(props) {
                                         <span className="fav-sparkle-i"></span>
                                         <span className="fav-sparkle-i"></span>
                                         <span className="fav-sparkle-i"></span>
+                                            {getToken === true && <img src={card} style={{width:"50px"}} /> }
                                     </span>
                                     </div>
                                 }
