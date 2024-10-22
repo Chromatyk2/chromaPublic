@@ -10,7 +10,7 @@ function ProgressBarCard(props) {
     const customStyles = {
     extBar: {
         width: '75%',
-        backgroundColor: 'rgb(116, 251, 207)',
+        backgroundColor: '#00368a',
         position: 'relative',
         zIndex: '1',
         borderRadius: '50px',
@@ -20,7 +20,7 @@ function ProgressBarCard(props) {
     intBar: {
         width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
         position: 'relative',
-        background: 'rgb(252, 114, 161)',
+        background: '#120747',
         textWrap: 'nowrap',
         color: 'black',
         padding: '15px',
