@@ -1609,6 +1609,7 @@ object{
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-flow: column;
 }
 .dropCards{
     width: 350px;

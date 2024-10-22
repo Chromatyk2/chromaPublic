@@ -9,7 +9,7 @@ import moment from 'moment-timezone';
 import Modal from "react-modal";
 import OpeningBooster from "./openingBooster";
 import Countdown from "react-countdown";
-import token from "../token.png"
+import token from "../cards.png"
 
 function CardsShop(props) {
     const [error, setError] = useState(null);
@@ -190,8 +190,8 @@ return (
                         </div>
                         :
                         <div style={{marginBottom:"-25px",marginTop:"10px"}} className="myPointsDisplay">
-                            <img style={{display:"block",margin:"auto",width:"20px"}} src={token} />
-                            <p style={{color: "white",}}>Token TCG : {points}</p>
+                            <img style={{display:"block",margin:"auto",width:"50px"}} src={token} />
+                            <p style={{color: "white",textAlign:"center"}}>Token TCG : {points}</p>
                         </div>
                     }
                     {canOpenLive == 1 ?
