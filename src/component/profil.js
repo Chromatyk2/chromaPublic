@@ -23,7 +23,7 @@ function Profil(props) {
         Axios
             .get("/api/getProfil/"+pseudo)
             .then(function(response){
-                if(response.data[0].pkToken -1 > -1){
+                if(response.data[0].pkmToken -1 > -1){
                     Axios.post('/api/removeToken',
                         {
                             user:pseudo
@@ -69,8 +69,6 @@ function Profil(props) {
                 position: 'relative',
                 zIndex: '1',
                 borderRadius: '50px',
-                margin:'auto',
-                marginBottom: '15px',
                 height:'30px',
                 width:'300px'
             }
@@ -235,12 +233,12 @@ function Profil(props) {
                     </button>
                     <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
                     <p className={"levelProfil"}>Niveau {profil[0].level}</p>
-                    <div>
+                    <div style={{display:"flex",alignItems:"center",gap:"50px"}}>
                         {profil[0].pkmToken > 0 &&
                         <button className={"openLeaderBoardButton"} onClick={openToken}
                                 style={{filter: "drop-shadow(0px 0px 15px white)", backgroundImage: "url(/token.png)"}}>
                             <div className="infoPkm">
-                                <div className="infoNbBoxSkin">{profil[0].pkmToken != 0 ? profil[0].pkmToken : 0}</div>
+                                <div className="infoNbPkmToken">{profil[0].pkmToken != 0 ? profil[0].pkmToken : 0}</div>
                             </div>
                         </button>}
                         <div style={customStyles.extBar} className="fullProgressBar">

@@ -4098,7 +4098,15 @@ span.navbar-brand {
         0 0 75px #24275D;
     }
 }
-
+.infoNbPkmToken {
+    font-size: 20px;
+    height: 30px;
+    left: -30px;
+    top: 60px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0 15px 0 15px;
+}
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
     display: flex;
