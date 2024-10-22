@@ -259,7 +259,13 @@ function OpeningCards(props) {
         e.target.classList.toggle('gettedCard');
         setIndex(index + 1);
     }
-
+    function getNextToken(e) {
+        var next = document.getElementById("tokenContainer");
+        next.classList.toggle('glowGetRainbow');
+        next.style.display = "block";
+        e.target.classList.toggle('glowGet');
+        e.target.classList.toggle('gettedCard');
+    }
     function getLastCard(e) {
         setIsNew(false);
         setEndPull(true);
@@ -300,7 +306,10 @@ function OpeningCards(props) {
             {tenCards.length == 10 &&
                 <>
                     {getToken === true &&
-                        <img onClick={getLastCard}
+                        <img
+                            rarity={4}
+                            onClick={getLastCard}
+                             id={"tokenContainer"}
                          style={{display:"none"}}
                          className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
                          src={token}
@@ -315,7 +324,7 @@ function OpeningCards(props) {
                         return(
                             <>
                                 <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
-                                     cardId={val.id} onClick={getCard}
+                                     cardId={val.id} onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
                                      className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
                                      src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
                                      onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
