@@ -4925,12 +4925,12 @@ button.uniqueBoxContainer:last-child{
     left: -50px;
     filter: drop-shadow(10px 10px 10px black);
 }
-.fav-star {
+.fav-token {
     position: absolute;
     width: 1rem;
     fill: #FFAC33;
-    -webkit-animation: token 2s forwards;
-    animation: token 2s forwards;
+    -webkit-animation: star 2s forwards;
+    animation: star 2s forwards;
     animation-delay: 2.2s;
     transform: scale(0);
     left: -50px;
