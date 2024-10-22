@@ -752,6 +752,7 @@ padding: 10px;
 .selectGen{
 width: 200px;
 margin: auto;
+margin-bottom: 50px;
 }
 
 .pokemon {
@@ -1181,17 +1182,22 @@ p.titleMyCaptures{
     justify-content: center;
 }
 .pokemonNameTrade{
-  text-align: center;
-  color: white;
-  font-family: Charge Vector Black;
-  font-size: 15px;
-  margin-top: 5px;
+    color: black;
+    font-family: Charge Vector Black;
+    font-size: 15px;
+    text-align: center;
+    position: absolute;
+    background: white;
+    padding: 0 15px 0 15px;
+    border-radius: 20px;
+    margin-top: -30px;
+    margin-left: 25px;
 }
 .uniqueTradeContainer {
-    padding: 20px;
-    background: rgba(37, 87, 95,0.2);
+    background: rgba(37, 87, 95, .2);
     border-radius: 25px;
-    height: fit-content;
+    padding: 20px;
+    height: 360px;
 }
 .uniqueMyCardContainer {
     background: rgba(37,87,95,.2);
@@ -3998,8 +4004,10 @@ span.navbar-brand {
 }
 
 #icomp-neon {
-    width:500px;
-    margin:auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 

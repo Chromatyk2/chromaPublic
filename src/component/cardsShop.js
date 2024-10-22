@@ -9,7 +9,7 @@ import moment from 'moment-timezone';
 import Modal from "react-modal";
 import OpeningBooster from "./openingBooster";
 import Countdown from "react-countdown";
-import Lugia from "../lugia.gif"
+import token from "../token.png"
 
 function CardsShop(props) {
     const [error, setError] = useState(null);
@@ -190,6 +190,7 @@ return (
                         </div>
                         :
                         <div style={{marginBottom:"-25px",marginTop:"10px"}} className="myPointsDisplay">
+                            <img style={{display:"block",margin:"auto",width:"20px"}} src={token} />
                             <p style={{color: "white",}}>Token TCG : {points}</p>
                         </div>
                     }
@@ -235,7 +236,7 @@ return (
                             </div>
                             {points > 0 ?
                                 loading === false ?
-                                    <div>
+                                    <div style={{position: "relative", bottom: "-44px"}}>
                                         <button value={items[Math.floor(Math.random() * items.length)].name}
                                                 onClick={openModal}
                                                 className="guessTradeButton">Ouvrir
