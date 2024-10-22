@@ -76,7 +76,7 @@ function Profil(props) {
 
         const customStyles = {
             extBar: {
-                backgroundColor: '#fc72a1',
+                backgroundColor: '#00368a',
                 position: 'relative',
                 zIndex: '1',
                 borderRadius: '50px',
@@ -260,9 +260,9 @@ function Profil(props) {
                                         style={{
                                             width: parseFloat(profil[0].xp / (profil[0].level * 500) * 100).toFixed(2) + "%",
                                             position: 'relative',
-                                            background: '#74fbcf',
+                                            background: '#120747',
                                             textWrap: 'nowrap',
-                                            color: 'black',
+                                            color: 'white',
                                             borderRadius: '50px 50px 50px 50px',
                                             height: '30px'
                                         }}>

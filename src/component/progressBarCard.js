@@ -22,7 +22,7 @@ function ProgressBarCard(props) {
         position: 'relative',
         background: '#120747',
         textWrap: 'nowrap',
-        color: 'black',
+        color: 'white',
         padding: '15px',
         borderRadius: '50px 50px 50px 50px'
     },
