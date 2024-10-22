@@ -4106,6 +4106,7 @@ span.navbar-brand {
     width: fit-content;
     border-radius: 10px;
     padding: 0 15px 0 15px;
+    color: #007bb3;
 }
 @media screen and (min-width: 944px) and (max-width: 1659px) {
   .pokemonGlobalContainer {
