@@ -20,6 +20,7 @@ function Profil(props) {
     const [pourcent, setPourcent] = useState();
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [openTime, setOpenTime] = React.useState(false);
+    const [isLoad, setIsLoad] = React.useState(true);
     function openToken() {
         setOpenTime(true)
         Axios
@@ -56,6 +57,7 @@ function Profil(props) {
             .get("/api/getProfil/"+pseudo)
             .then(function(response){
                 setProfil(response.data);
+                setIsLoad(false)
                     Axios
                         .get("/api/getByUser/"+pseudo)
                         .then(function(response){
@@ -155,8 +157,9 @@ function Profil(props) {
     }
     return (
         <>
-        {profil &&
-        profil.length > 0 ?
+        {isLoad === false &&
+            profil &&
+            profil.length > 0 ?
             <div className={"contentContainer"}>
                 <OnStream />
                 <div className={"profilVisuals"}>
