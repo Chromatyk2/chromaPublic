@@ -15,6 +15,7 @@ function SpawnPokemon(props) {
     const [getToken, setGetToken] = useState(false);;
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
+        const queryParameters = new URLSearchParams(window.location.search)
         if(tokenBonus == 0){
             setGetToken(true);
             Axios.post('/api/addCardsPointTw',
