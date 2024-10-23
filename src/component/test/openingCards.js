@@ -343,8 +343,10 @@ function OpeningCardsTest(props) {
                                          onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
                                          className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"} id={"cardNb" + key} className="cardBangerAlert">
                                     <img
-                                         src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
-                                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                                        onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"} id={"cardNb" + key} className="cardBangerAlert"
+                                        src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                        onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
                                     :
                                     <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}}
