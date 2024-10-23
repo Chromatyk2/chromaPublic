@@ -133,19 +133,19 @@ function OpeningBooster(props) {
     }, [])
     return (
         <>
-            {isLoaded === true &&
-                <div className={"loaderPokemon"}>
-                    <h2 className="u-text-center">Chargement ...</h2>
-                    <div className="pokemon"></div>
-                </div>
-            }
-            {isLoaded === false &&
-                <div className={"discoveredCardsContainer"}>
-                    {items &&
-                        <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items} rarities={rarities}/>
-                    }
-                </div>
-            }
+            <div className={"discoveredCardsContainer"}>
+                {isLoaded === true &&
+                    <div className={"loaderPokemon"}>
+                        <h2 sty className="u-text-center">Chargement ...</h2>
+                        <div className="pokemon"></div>
+                    </div>
+                }
+                {isLoaded === false &&
+                        items &&
+                            <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items} rarities={rarities}/>
+
+                }
+            </div>
         </>
     )
 }
