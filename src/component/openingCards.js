@@ -164,11 +164,11 @@ function OpeningCards(props) {
                     )
                 }
                 var stadeTwo = Math.floor(Math.random() * 100);
-                if(stadeTwo > 25){
+                if(stadeTwo > 0){
                     var stadeThree = Math.floor(Math.random() * 100);
-                    if(stadeThree > 40){
+                    if(stadeThree > 0){
                         var stadeFour = Math.floor(Math.random() * 100);
-                        if(stadeFour > 30){
+                        if(stadeFour > 10){
                             var rarityArray = props.rarities.filter(item => item.stade == 4);
                             const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
                             const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
