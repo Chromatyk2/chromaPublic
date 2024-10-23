@@ -338,7 +338,7 @@ function OpeningCardsTest(props) {
                                 {key == 0 ?
 
                                     <div
-                                        stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}}
+                                        stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none", animation:"bounceLastBangerAlert 9s forwards"}}
                                          keyCard={key}
                                          cardId={val.id}
                                          onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
