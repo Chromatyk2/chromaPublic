@@ -16,6 +16,7 @@ function LastBangerAlert(props) {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         response.data.map((val, key) => {
+                            if(val.stade == 4){
                                 fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
                                     .then(res => res.json())
                                     .then(
@@ -28,6 +29,7 @@ function LastBangerAlert(props) {
                                             setError(error);
                                         }
                                     )
+                            }
                         })
                         setNewLastCardUser(response);
                     })
@@ -37,14 +39,20 @@ function LastBangerAlert(props) {
     useEffect(() => {
         if(newLastCardData != null){
             if(lastCardUser == null){
-                $('audio#omglebanger')[0].play()
+                if(newLastCardUser.stade == 3){
+                }else if(newLastCardUser.stade == 4){
+                    $('audio#omglebanger')[0].play()
+                }
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBangerAlert 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
                 }, 9000);
             }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
-                $('audio#omglebanger')[0].play()
+                    if(newLastCardUser.stade == 3){
+                    }else if(newLastCardUser.stade == 4){
+                        $('audio#omglebanger')[0].play()
+                    }
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBangerAlert 9s forwards";
                     setTimeout(() => {
