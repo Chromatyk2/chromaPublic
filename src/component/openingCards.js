@@ -318,7 +318,7 @@ function OpeningCards(props) {
                 </div>
             }
             {isToken === true &&
-                <div id={"shadowBox"}>
+                <div style={{position: "absolute"}} id={"shadowBox"}>
                     <div className={"newTokenContainer"}>
                         <p className={"rainbow rainbow_text_animated_token"}>1 Token Pokemon !!</p>
                         <p className="rainbow rainbow_text_animated" style={{fontSize: "10px",marginTop: "-15px"}}>Utilisez le sur la page profil</p>
