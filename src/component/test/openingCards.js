@@ -335,10 +335,12 @@ function OpeningCardsTest(props) {
                         }
                         return(
                             <>
-                                {key == 0 ?
+                                {key == 0 &&
+                                    stadeC == 4
+                                    ?
 
                                     <div
-                                        stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none", animation:"bounceLastBangerAlert 9s forwards"}}
+                                        stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none", animation: stadeC == 4 && "bounceLastBangerAlertBooster 9s forwards"}}
                                          keyCard={key}
                                          cardId={val.id}
                                          onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
