@@ -166,7 +166,7 @@ function OpeningCards(props) {
                 var stadeTwo = Math.floor(Math.random() * 100);
                 if(stadeTwo > 29){
                     var stadeThree = Math.floor(Math.random() * 100);
-                    if(stadeThree > 69){
+                    if(stadeThree > 71){
                         var stadeFour = Math.floor(Math.random() * 100);
                         if(stadeFour > 74){
                             var rarityArray = props.rarities.filter(item => item.stade == 4);
