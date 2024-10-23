@@ -156,7 +156,6 @@ function OpeningCards(props) {
                     setNbCards (nbCards + 1);
                 }
             }else if(tenCards.length == 9){
-                console.log("dernière carte")
                 if(getToken === true){
                     Axios.post('/api/addPkmToken',
                         {
@@ -165,15 +164,11 @@ function OpeningCards(props) {
                     )
                 }
                 var stadeTwo = Math.floor(Math.random() * 100);
-                console.log(stadeTwo)
-                if(stadeTwo > 0){
+                if(stadeTwo > 40){
                     var stadeThree = Math.floor(Math.random() * 100);
-                    console.log(stadeThree)
-                    if(stadeThree > 0){
+                    if(stadeThree > 50){
                         var stadeFour = Math.floor(Math.random() * 100);
-                        console.log(stadeFour)
-                        if(stadeFour > 10){
-                            console.log("Ultra !!")
+                        if(stadeFour > 75){
                             var rarityArray = props.rarities.filter(item => item.stade == 4);
                             const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
                             const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
