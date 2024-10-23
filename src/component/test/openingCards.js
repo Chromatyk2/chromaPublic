@@ -337,14 +337,15 @@ function OpeningCardsTest(props) {
                             <>
                                 {key == 0 ?
 
-                                    <div stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}}
+                                    <div
+                                        style={{marginLeft:"-116px"}}
+                                        stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}}
                                          keyCard={key}
                                          cardId={val.id}
                                          onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
                                          className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"} id={"cardNb" + key}>
                                     <img
                                         onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
-                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"} id={"cardNb" + key}
                                         src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
                                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
