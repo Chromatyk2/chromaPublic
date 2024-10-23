@@ -301,7 +301,7 @@ function OpeningCardsTest(props) {
                 </div>
             }
             {isNew === true &&
-                <div id={"shadowBox"}>
+                <div style={{position:"absolute"}} id={"shadowBox"}>
                     <div className={"newContainer"}>
                         <p className={"rainbow rainbow_text_animated"}>NEW !</p>
                     </div>
@@ -338,7 +338,6 @@ function OpeningCardsTest(props) {
                                 {key == 0 ?
 
                                     <div
-                                        style={{marginLeft:"-116px"}}
                                         stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}}
                                          keyCard={key}
                                          cardId={val.id}
