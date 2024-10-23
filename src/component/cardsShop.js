@@ -190,7 +190,7 @@ function CardsShop(props) {
     return (
         <>
             {onOpen === true ?
-                <OpeningBoosterTest change={handleState} idBooster={boosterId} user={props.user}/>
+                <OpeningBooster change={handleState} idBooster={boosterId} user={props.user}/>
                 :
                 canOpenLive !== null &&
                 <>
