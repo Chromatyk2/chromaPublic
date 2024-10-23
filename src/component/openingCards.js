@@ -285,7 +285,8 @@ function OpeningCards(props) {
     const customStyles = {
         textModal: {
             fontSize:'30px',
-            textAlign:'center'
+            textAlign:'center',
+            color:"white"
         },
         imgModal: {
             width:'200px',
@@ -305,7 +306,7 @@ function OpeningCards(props) {
                 </div>
             }
             {isNew === true &&
-                <div id={"shadowBox"}>
+                <div style={{position:"absolute"}} id={"shadowBox"}>
                     <div className={"newContainer"}>
                         <p className={"rainbow rainbow_text_animated"}>NEW !</p>
                     </div>
@@ -314,7 +315,7 @@ function OpeningCards(props) {
             {isToken === true &&
                 <div id={"shadowBox"}>
                     <div className={"newTokenContainer"}>
-                        <p className={"rainbow rainbow_text_animated"}>1 Token Pokemon !!</p>
+                        <p className={"rainbow rainbow_text_animated_token"}>1 Token Pokemon !!</p>
                         <p className="rainbow rainbow_text_animated" style={{fontSize: "10px",marginTop: "-15px"}}>Utilisez le sur la page profil</p>
                     </div>
                 </div>
@@ -325,11 +326,11 @@ function OpeningCards(props) {
                         <img
                             rarity={4}
                             onClick={getLastCard}
-                             id={"tokenContainer"}
-                         style={{display:"none"}}
-                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
-                         src={token}
-                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                            id={"tokenContainer"}
+                            style={{display:"none"}}
+                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                            src={token}
+                            onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                     }
                     {tenCards.slice(0).reverse().map((val, key) => {
                         if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
@@ -339,11 +340,31 @@ function OpeningCards(props) {
                         }
                         return(
                             <>
-                                <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
-                                     cardId={val.id} onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
-                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
-                                     onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                                {key == 0 &&
+                                stadeC == 4
+                                    ?
+
+                                    <div
+                                        stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none", animation: stadeC == 4 && "bounceLastBangerAlertBooster 9s forwards"}}
+                                        keyCard={key}
+                                        cardId={val.id}
+                                        onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"} id={"cardNb" + key}>
+                                        <img
+                                            onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"} id={"cardNb" + key}
+                                            src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                            onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>
+                                    :
+                                    <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}}
+                                         id={"cardNb" + key} keyCard={key}
+                                         cardId={val.id}
+                                         onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
+                                         src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                                }
                             </>
                         )
                     })}
