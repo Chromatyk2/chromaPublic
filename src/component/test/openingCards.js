@@ -301,7 +301,7 @@ function OpeningCardsTest(props) {
                 </div>
             }
             {isNew === true &&
-                <div id={"shadowBox"}>
+                <div style={{position:"absolute"}} id={"shadowBox"}>
                     <div className={"newContainer"}>
                         <p className={"rainbow rainbow_text_animated"}>NEW !</p>
                     </div>
@@ -335,11 +335,31 @@ function OpeningCardsTest(props) {
                         }
                         return(
                             <>
-                                <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}} id={"cardNb" + key} keyCard={key}
-                                     cardId={val.id} onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
-                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
-                                     onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                                {key == 0 &&
+                                    stadeC == 4
+                                    ?
+
+                                    <div
+                                        stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none", animation: stadeC == 4 && "bounceLastBangerAlertBooster 9s forwards"}}
+                                         keyCard={key}
+                                         cardId={val.id}
+                                         onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"} id={"cardNb" + key}>
+                                    <img
+                                        onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"} id={"cardNb" + key}
+                                        src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                        onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>
+                                    :
+                                    <img stade={stadeC} rarity={val.rarity} style={{display: key < 9 && "none"}}
+                                         id={"cardNb" + key} keyCard={key}
+                                         cardId={val.id}
+                                         onClick={key == 0 ? getToken === true ? getNextToken : getLastCard : getCard}
+                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
+                                         src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                         onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
+                                }
                             </>
                         )
                     })}
@@ -355,4 +375,5 @@ function OpeningCardsTest(props) {
         </>
     )
 }
+
 export default OpeningCardsTest
