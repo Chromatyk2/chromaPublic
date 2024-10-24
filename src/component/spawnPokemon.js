@@ -14,7 +14,7 @@ function SpawnPokemon(props) {
     const [shiny, setShiny] = useState(false);
     const [getToken, setGetToken] = useState(false);;
     useEffect(() => {
-        var tokenBonus = Math.floor(Math.random() * 10);
+        var tokenBonus = Math.floor(Math.random() * 1);
         const queryParameters = new URLSearchParams(window.location.search)
         if(tokenBonus == 0){
             setGetToken(true);
