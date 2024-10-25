@@ -2942,8 +2942,8 @@ span.navbar-brand {
 }
 
 .pkmn.exit .mon:before {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
     -webkit-animation-duration: 0.75s;
     animation-duration: 0.75s;
     -webkit-animation-timing-function: ease-out;
@@ -3353,8 +3353,8 @@ span.navbar-brand {
 
 .exit .explode,
 .exit .explode:before {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
     -webkit-animation-duration: 0.66s;
     animation-duration: 0.66s;
     -webkit-animation-iteration-count: 1;
@@ -3382,16 +3382,16 @@ span.navbar-brand {
 }
 
 .pkmn.exit .mon:before {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
     -webkit-animation-duration: var(--slowmo, 1s);
     animation-duration: var(--slowmo, 1s);
 }
 
 .pkmn.exit .explode,
 .pkmn.exit .explode:before {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
     -webkit-animation-duration: var(--slowsplode, 0.75s);
     animation-duration: var(--slowsplode, 0.75s);
 }
@@ -3399,8 +3399,8 @@ span.navbar-brand {
 .pkmn.exit .ball,
 .pkmn.exit .ball *,
 .pkmn.exit .ball .sprite:before {
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
 }
 
 @-webkit-keyframes explode {
