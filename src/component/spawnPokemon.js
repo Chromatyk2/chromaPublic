@@ -292,7 +292,6 @@ function SpawnPokemon(props) {
                                     </div>
                                 }
                             </div>
-                            <div className="explode"></div>
                         </div>
                         <div className="pkmn exit right">
                             <div className={useBall + " ball"}>
@@ -332,7 +331,6 @@ function SpawnPokemon(props) {
                                     </div>
                                 }
                             </div>
-                            <div className="explode"></div>
                         </div>
                     </div>
                 </>
