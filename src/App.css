@@ -4999,7 +4999,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s linear;
     animation: star 2s linear;
-    animation-delay: 2.2s;
+    animation-delay: 3.6s;
     transform: scale(0);
     left: -50px;
     filter: drop-shadow(10px 10px 10px black);
@@ -5010,7 +5010,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s forwards;
     animation: star 2s forwards;
-    animation-delay: 2.2s;
+    animation-delay: 3.6s;
     transform: scale(0);
     left: -50px;
     filter: drop-shadow(10px 10px 10px black);
@@ -5034,7 +5034,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s linear;
     animation: star 2s linear;
-    animation-delay: 2.4s;
+    animation-delay: 3.8s;
     transform: scale(0);
     right: 50px;
     filter: drop-shadow(10px 10px 10px black);
@@ -5045,7 +5045,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s linear;
     animation: star 2s linear;
-    animation-delay: 2.6s;
+    animation-delay: 4s;
     transform: scale(0);
     bottom: 0;
     filter: drop-shadow(10px 10px 10px black);
@@ -5059,7 +5059,7 @@ button.uniqueBoxContainer:last-child{
     border: 2.5rem solid #FFAC33;
     -webkit-animation: round 4s  linear;
     animation: round 4s  linear;
-    animation-delay: 2.2s;
+    animation-delay: 3.6s;
     z-index: -1;
     transform: scale(0);
 }
@@ -5069,7 +5069,7 @@ button.uniqueBoxContainer:last-child{
     height: 5rem;
     -webkit-animation: sparkle 4s linear;
     animation: sparkle 4s  linear;
-    animation-delay: 2.2s;
+    animation-delay: 3.6s;
     z-index: -1;
     transform: scale(0);
 }
@@ -5082,7 +5082,7 @@ button.uniqueBoxContainer:last-child{
     transform-origin: 0 0;
     -webkit-animation: sparkles 4s  linear;
     animation: sparkles 4s  linear;
-    animation-delay: 2.2s;
+    animation-delay: 3.6s;
     z-index: -1;
 }
 .fav-sparkle-i:nth-child(1) {
