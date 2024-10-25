@@ -3625,7 +3625,7 @@ span.navbar-brand {
     margin-top: -40px;
     justify-content: center;
     height:100vh;
-    background-color:#4A1464;
+    background-color:rgba(0,0,0,0.5);
 }
 
 .pkmn {
