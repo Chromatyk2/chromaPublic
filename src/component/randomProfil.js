@@ -12,7 +12,7 @@ function RandomProfil(props) {
     const [randomIndex,setRandomIndex] = useState(-1);
     useEffect(() => {
         Axios
-            .get("/api/getAllProfil")
+            .get("/api/getAllProfilRandom")
             .then(function(response){
                 setAllProfil(response.data);
                 setRandomIndex(Math.floor(Math.random() * response.data.length));
