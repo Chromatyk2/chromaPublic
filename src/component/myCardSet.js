@@ -14,7 +14,7 @@ import 'react-lazy-load-image-component/src/effects/opacity.css';
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(null);
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -63,10 +63,7 @@ function MyCardsSet(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(false);
-                    result.data.map((val, key) => {
-                            setItems(items => [...items,val]);
-                    })
+                    setItems(result.data);
                     if(result.data.length == 250){
                         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster+"&page=2")
                             .then(res => res.json())
@@ -230,7 +227,7 @@ function MyCardsSet(props) {
                         </label>
                     </div>
                     <div id={"cardsContainer"}>
-                        {items.length > 0 &&
+                        {items &&
                             items.sort((a, b) => a.number - b.number).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
                                     if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
@@ -244,13 +241,9 @@ function MyCardsSet(props) {
                                         <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSet">
                                                 <LazyLoadImage
-                                                    delayTime={0}
-                                                    threshold={200}
                                                     width={"250"}
-                                                    style={{filter:"grayscale(1)"}}
-                                                    stade={stadeC}
-                                                    image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
-                                                    wrapperClassName={"fit-picture-card"}
+                                                    style={{width:"250px",filter:"brightness(1)"}}
+                                                    wrapperClassName={"shadowBangerCard"}
                                                     effect="opacity"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
@@ -266,13 +259,9 @@ function MyCardsSet(props) {
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} onClick={openModal} style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSetThree">
                                                     <LazyLoadImage
-                                                        delayTime={0}
-                                                        threshold={200}
                                                         width={"250"}
-                                                        style={{filter:"grayscale(1)"}}
-                                                        stade={stadeC}
-                                                        image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
-                                                        wrapperClassName={"fit-picture-card"}
+                                                        style={{width:"250px",filter:"brightness(1.2)"}}
+                                                        wrapperClassName={"shadowBangerCard"}
                                                         effect="opacity"
                                                         wrapperProps={{
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
@@ -287,13 +276,11 @@ function MyCardsSet(props) {
                                         return (
                                             <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
                                                 <LazyLoadImage
-                                                    delayTime={0}
-                                                    threshold={200}
                                                     width={"250"}
-                                                    style={{filter:"grayscale(1)"}}
                                                     stade={stadeC}
-                                                    image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
-                                                    wrapperClassName={"fit-picture-card"}
+                                                    style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                    image={val.image}
+                                                    wrapperClassName={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
                                                     effect="opacity"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
@@ -307,7 +294,7 @@ function MyCardsSet(props) {
                                             </button>
                                         )
                                     }
-                                }else{
+                                }else if(!onlyMine){
                                     return (
                                         <LazyLoadImage
                                             delayTime={0}
