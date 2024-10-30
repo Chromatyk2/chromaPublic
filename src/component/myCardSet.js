@@ -297,7 +297,7 @@ function MyCardsSet(props) {
                                             </button>
                                         )
                                     }
-                                }else if(!onlyMine){
+                                }else{
                                     return (
                                         <LazyLoadImage
                                             delayTime={0}
