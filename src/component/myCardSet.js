@@ -213,57 +213,51 @@ function MyCardsSet(props) {
                     </div>
                 </>
             }
-            <div style={{color: "white", display: "flex", width: "100%", justifyContent: "center", flexWrap: "wrap"}}>
-                <label htmlFor="subscribe">
-                    <input
-                        style={{marginRight: "10px"}}
-                        type="checkbox"
-                        onChange={handleChangeOnlyMine}
-                        id="subscribe"
-                        name="subscribe"
-                    />
-                    Voir les cartes manquantes
-                </label>
-            </div>
-            <div id={"cardsContainer"}>
-                {isLoaded === false &&
-                    <>
+            {items === false &&
+                <>
+                    <div style={{color:"white",display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
+                        <label htmlFor="subscribe">
+                            <input
+                                style={{marginRight:"10px"}}
+                                type="checkbox"
+                                onChange={handleChangeOnlyMine}
+                                id="subscribe"
+                                name="subscribe"
+                            />
+                            Voir les cartes manquantes
+                        </label>
+                    </div>
+                    <div id={"cardsContainer"}>
                         {items &&
                             items.sort((a, b) => a.number - b.number).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
-                                    if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
+                                    if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
                                         var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
-                                    } else {
+                                    }else{
                                         var stadeC = 0;
                                     }
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
-                                    if (stadeC == 4) {
+                                    if(stadeC == 4){
                                         return (
                                             <LazyLoad height={200} offset={0}>
-                                                <div onClick={openModal}
-                                                     style={{animation: "glowGetRainbow 10s infinite alternate"}}
-                                                     id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                                    <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                         image={val.image} stade={stadeC}
-                                                         className="cardBangerAlertSet">
-                                                        <img className={"shadowBangerCard"}
+                                                <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                                    <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSet">
+                                                        <img
+                                                            loading={"lazy"}
+                                                            className={"shadowBangerCard"}
                                                              style={{width: "250px", filter: "brightness(1)"}}
                                                              src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + "_hires.png"}/>
                                                     </div>
                                                 </div>
                                             </LazyLoad>
                                         )
-                                    } else if (stadeC == 3) {
+                                    }else if(stadeC == 3){
                                         return (
                                             <LazyLoad height={200} offset={0}>
-                                                <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                     image={val.image} stade={stadeC} onClick={openModal}
-                                                     style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
-                                                     id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                                    <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                         image={val.image} stade={stadeC}
-                                                         className="cardBangerAlertSetThree">
+                                                <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} onClick={openModal} style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                                    <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSetThree">
                                                         <img className={"shadowBangerCard"}
+                                                             loading={"lazy"}
                                                              style={{width: "250px", filter: "brightness(1.2)"}}
                                                              src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + "_hires.png"}/>
 
@@ -271,13 +265,13 @@ function MyCardsSet(props) {
                                                 </div>
                                             </LazyLoad>
                                         )
-                                    } else {
+                                    }else{
                                         return (
                                             <LazyLoad height={200} offset={0}>
-                                                <button stade={stadeC} style={customStyles.buttonMyCard}
-                                                        onClick={openModal} className={"cardBox"}>
+                                                <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
 
                                                     <img stade={stadeC}
+                                                         loading={"lazy"}
                                                          style={{filter: stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                          cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                          image={val.image}
@@ -292,6 +286,7 @@ function MyCardsSet(props) {
                                     return (
                                         <LazyLoad height={200} offset={0}>
                                             <img style={{filter: "grayscale(1)"}} className={"fit-picture-card"}
+                                                 loading={"lazy"}
                                                  src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
                                                  onError={errorImage}/>
 
@@ -300,17 +295,16 @@ function MyCardsSet(props) {
                                 }
                             })
                         }
-                        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
-                               contentLabel="Example Modal">
-                            <UniqueCard stade={stadeCard} pokemonName={pokemonName} onClick={closeModal}
-                                        cardImage={myCardImage} cardNb={myCardNb}
-                                        cardId={cardId} idBooster={props.idBooster} change={handleState}/>
-                        </Modal>
-                    </>
-                }
+                    </div>
+                    <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
+                           contentLabel="Example Modal">
+                        <UniqueCard stade={stadeCard} pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
+                                    cardId={cardId} idBooster={props.idBooster} change={handleState}/>
+                    </Modal>
+                </>
+            }
             </div>
         </>
     )
 }
-
 export default MyCardsSet
