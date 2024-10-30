@@ -64,7 +64,9 @@ function MyCardsSet(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setItems(result.data);
+                    result.data.map((val, key) => {
+                        setItems(items => [...items,val]);
+                    })
                     if(result.data.length == 250){
                         fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster+"&page=2")
                             .then(res => res.json())
