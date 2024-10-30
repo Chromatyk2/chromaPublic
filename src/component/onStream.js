@@ -96,36 +96,18 @@ function OnStream() {
                                     width="1280">
                                 </iframe>
                             </div>
-                            <div className="twitch-chat">
-                                <iframe
-                                    frameBorder="0"
-                                    scrolling="no"
-                                    src="https://www.twitch.tv/embed/chromatyk/chat?parent=chromatyk.fr"
-                                    height="100%"
-                                    width="100%">
-                                </iframe>
-                            </div>
                         </div>
                 : meetUp &&
                     meetUp.data.length > 0 &&
                         <div style={displayStream === false ? {visibility:"hidden", height:0} : {visibility:"visible"}} className="twitch">
                             <div className="twitch-video">
                                 <iframe
-                                    src="https://player.twitch.tv/?channel=meetup_tv&parent=chromatyk.fr&autoplay=true&muted=false"
+                                    src="https://player.twitch.tv/?channel=ponce&parent=chromatyk.fr&autoplay=true&muted=false"
                                     frameBorder="0"
                                     scrolling="no"
                                     allowFullScreen="true"
                                     height="720"
                                     width="1280">
-                                </iframe>
-                            </div>
-                            <div className="twitch-chat">
-                                <iframe
-                                    frameBorder="0"
-                                    scrolling="no"
-                                    src="https://www.twitch.tv/embed/meetup_tv/chat?parent=chromatyk.fr"
-                                    height="100%"
-                                    width="100%">
                                 </iframe>
                             </div>
                         </div>
