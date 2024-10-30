@@ -242,17 +242,9 @@ function MyCardsSet(props) {
                                             <LazyLoad height={200} offset={100}>
                                                 <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                     <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSet">
-                                                        <LazyLoadImage
-                                                            width={"250"}
-                                                            style={{width:"250px",filter:"brightness(1)"}}
-                                                            wrapperClassName={"shadowBangerCard"}
-                                                            effect="blur"
-                                                            wrapperProps={{
-                                                                // If you need to, you can tweak the effect transition using the wrapper style.
-                                                                style: {transitionDelay: "1s"},
-                                                            }}
-                                                            src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"} />
-                                                        {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                                        <img className={"shadowBangerCard"}
+                                                             style={{width: "250px", filter: "brightness(1)"}}
+                                                             src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + "_hires.png"}/>
                                                     </div>
                                                 </div>
                                             </LazyLoad>
@@ -262,17 +254,10 @@ function MyCardsSet(props) {
                                             <LazyLoad height={200} offset={100}>
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} onClick={openModal} style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                     <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSetThree">
-                                                        <LazyLoadImage
-                                                            width={"250"}
-                                                            style={{width:"250px",filter:"brightness(1.2)"}}
-                                                            wrapperClassName={"shadowBangerCard"}
-                                                            effect="blur"
-                                                            wrapperProps={{
-                                                                // If you need to, you can tweak the effect transition using the wrapper style.
-                                                                style: {transitionDelay: "1s"},
-                                                            }}
-                                                            src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"} />
-                                                        {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1.2)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                                        <img className={"shadowBangerCard"}
+                                                             style={{width: "250px", filter: "brightness(1.2)"}}
+                                                             src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + "_hires.png"}/>
+
                                                     </div>
                                                 </div>
                                             </LazyLoad>
@@ -281,45 +266,26 @@ function MyCardsSet(props) {
                                         return (
                                             <LazyLoad height={200} offset={100}>
                                                 <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
-                                                    <LazyLoadImage
-                                                        width={"250"}
-                                                        stade={stadeC}
-                                                        style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                        image={val.image}
-                                                        wrapperClassName={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                                                        effect="blur"
-                                                        wrapperProps={{
-                                                            // If you need to, you can tweak the effect transition using the wrapper style.
-                                                            style: {transitionDelay: "1s"},
-                                                        }}
-                                                        src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"} />
-                                                    {/*<img stade={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}*/}
-                                                    {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
-                                                    {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
-                                                    {/*     onError={errorImage}/>*/}
+
+                                                    <img stade={stadeC}
+                                                         style={{filter: stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
+                                                         cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                                         image={val.image}
+                                                         className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                                         src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + "_hires.png"}
+                                                         onError={errorImage}/>
                                                 </button>
                                             </LazyLoad>
                                         )
                                     }
-                                }else if(!onlyMine){
+                                } else if (!onlyMine) {
                                     return (
                                         <LazyLoad height={200} offset={100}>
-                                        <LazyLoadImage
-                                            delayTime={0}
-                                            threshold={200}
-                                            width={"250"}
-                                            style={{filter:"grayscale(1)"}}
-                                            stade={stadeC}
-                                            image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
-                                            wrapperClassName={"fit-picture-card"}
-                                            effect="blur"
-                                            wrapperProps={{
-                                                // If you need to, you can tweak the effect transition using the wrapper style.
-                                                style: {transitionDelay: "1s"},
-                                            }}
-                                            src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"} />
+                                            <img style={{filter: "grayscale(1)"}} className={"fit-picture-card"}
+                                                 src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                                 onError={errorImage}/>
+
                                         </LazyLoad>
-                                        // <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"} onError={errorImage}/>
                                     )
                                 }
                             })
