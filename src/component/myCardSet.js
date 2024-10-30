@@ -227,7 +227,10 @@ function MyCardsSet(props) {
                         </label>
                     </div>
 
-                    <LazyLoadComponent>
+                    <LazyLoadComponent
+                        delayTime={0}
+                        threshold={200}
+                    >
                         <div id={"cardsContainer"}>
                             {items &&
                                 items.sort((a, b) => a.number - b.number).map((val, key) => {
@@ -277,13 +280,14 @@ function MyCardsSet(props) {
                                         }else{
                                             return (
                                                     <LazyLoadImage
-                                                        stade={stadeC}
                                                         onClick={openModal}
+                                                        delayTime={0}
+                                                        threshold={200}
                                                         width={"250"}
+                                                        style={{filter:"grayscale(1)"}}
                                                         stade={stadeC}
-                                                        style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                        image={val.image}
-                                                        wrapperClassName={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                                        image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
+                                                        wrapperClassName={"fit-picture-card"}
                                                         effect="opacity"
                                                         wrapperProps={{
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
