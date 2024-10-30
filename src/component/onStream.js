@@ -33,19 +33,6 @@ function OnStream() {
             })
         }, 60000)
     }, [])
-    useEffect(() => {
-        Axios.get(
-            'https://api.twitch.tv/helix/streams?user_login=Ponce',
-            {
-                headers:{
-                    'Authorization': `Bearer ${cookies.token.access_token}`,
-                    'Client-Id': process.env.REACT_APP_CLIENT_ID
-                }
-            }
-        ).then(function(response){
-            setMeetUp(response.data);
-        })
-    }, [])
     function displayStreamOff() {
         setDisplayStream(false);
     }
@@ -59,24 +46,11 @@ function OnStream() {
                 <>
                     <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live On <span className={"spanOnair"}>(clique et viens gagner des points)</span></a>
                 </>
-                :
-                meetUp &&
-                meetUp.data.length > 0 ?
-                <>
-                    <a className={"linkOnAir"} href={"https://twitch.tv/meetup_tv"} target={"_blank"}>Meet Up est en live<span className={"spanOnair"}>(viens soutenir l'asso !)</span></a>
-                </>
                     :
                 <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
             }
             {stream &&
-            stream.data.length > 0 ?
-                <div className={"buttonToDisplayStream"}>
-                    <button onClick={displayStreamOff}>Cacher le stream</button>
-                    <button onClick={displayStreamOn}>Afficher le stream</button>
-                </div>
-                :
-                meetUp &&
-                meetUp.data.length > 0 &&
+            stream.data.length > 0 &&
                 <div className={"buttonToDisplayStream"}>
                     <button onClick={displayStreamOff}>Cacher le stream</button>
                     <button onClick={displayStreamOn}>Afficher le stream</button>
