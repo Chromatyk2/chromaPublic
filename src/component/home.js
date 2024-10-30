@@ -10,6 +10,10 @@ function HomePage(props) {
         <div className={"contentContainer"}>
             <OnStream/>
             <p style={{textAlign: "center", color: "white"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
+            <p style="text-align: center;color: white;">Capture des Pokemons, fait ton profil et collectionne les cartes
+                avec les points de chaines que tu gagnes sur les streams de chromatyk, tu gagnes un booster sur le site
+                tous les 2h en plus de ceux dispo avec les tokens ( 300 points de chaine ), rejoins le discord si tu as
+                des questions et hésite pas à claquer ton follow sur twitch !</p>
             <div className="socialContainer">
                 <p className="myNetworks">Mes reseaux</p>
                 <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i

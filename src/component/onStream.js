@@ -31,7 +31,7 @@ function OnStream() {
                 if(response.data.length > 0){setDisplayStream(true)}else{setDisplayStream(false)}
             })
     }, [])
-    
+
     useEffect(() => {
 
         setInterval(() => {
