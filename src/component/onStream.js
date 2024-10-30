@@ -30,6 +30,7 @@ function OnStream() {
                 }
             ).then(function(response){
                 setStream(response.data);
+                if(response.data.length > 0){setDisplayStream(true)}else{setDisplayStream(false)}
             })
         }, 60000)
     }, [])
@@ -56,8 +57,7 @@ function OnStream() {
                     <button onClick={displayStreamOn}>Afficher le stream</button>
                 </div>
             }
-            {displayStream !== false &&
-                stream &&
+            {stream &&
                         <div style={displayStream === false ? {visibility:"hidden", height:0} : {visibility:"visible"}} className="twitch">
                             <div className="twitch-video">
                                 <iframe
