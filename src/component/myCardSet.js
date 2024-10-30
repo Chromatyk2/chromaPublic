@@ -14,7 +14,7 @@ import 'react-lazy-load-image-component/src/effects/opacity.css';
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
-    const [items, setItems] = useState(null);
+    const [items, setItems] = useState([]);
     const [myCards, setMyCards] = useState([]);
     const [myCardsId, setMyCardsId] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -230,7 +230,7 @@ function MyCardsSet(props) {
                         </label>
                     </div>
                     <div id={"cardsContainer"}>
-                        {items &&
+                        {items.length > 0 &&
                             items.sort((a, b) => a.number - b.number).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
                                     if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
