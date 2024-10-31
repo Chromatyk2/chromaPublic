@@ -245,7 +245,7 @@ function Profil(props) {
                             }
                         </button>
                         <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
-                        <div style={{display: "flex", alignItems: "center", gap: "50px", marginBottom: "20px"}}>
+                        <div style={{display: "flex", alignItems: "center", marginBottom: "20px", justifyContent:"center",flexWrap:"wrap"}}>
                             {profil[0].pkmToken > 0 &&
                                 <button disabled={openTime} className={"openLeaderBoardButton"} onClick={openToken}
                                         style={{filter: "drop-shadow(0px 0px 15px white)", backgroundImage: "url(/token.png)"}}>
