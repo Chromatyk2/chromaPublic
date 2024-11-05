@@ -30,7 +30,7 @@ function SpawnPokemonToken(props) {
                     const isLegendary = Math.floor((Math.random() * 5) + 1);
                     const isMythical = Math.floor((Math.random() * 10) + 1);
                     const queryParameters = new URLSearchParams(window.location.search)
-                    const isShiny = Math.floor((Math.random() * 100) + 1);
+                    const isShiny = Math.floor((Math.random() * 50) + 1);
                     const name = result.names.find((element) => element.language.name == "fr").name;
                     switch (result.is_legendary){
                         case true:
@@ -58,7 +58,7 @@ function SpawnPokemonToken(props) {
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 500){
+                                                                        if(response.data[0].xp >= response.data[0].level * 50){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
@@ -75,14 +75,14 @@ function SpawnPokemonToken(props) {
                                                         Axios.post('/api/addXp',
                                                             {
                                                                 user: pseudo,
-                                                                win: 1000,
-                                                                wins: 1000
+                                                                win: 100,
+                                                                wins: 100
                                                             }
                                                         )
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 500){
+                                                                        if(response.data[0].xp >= response.data[0].level * 50){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
@@ -131,7 +131,7 @@ function SpawnPokemonToken(props) {
                                                                     .then(function(response){
                                                                         Axios.get("/api/getProfil/"+pseudo)
                                                                             .then(function(response){
-                                                                                if(response.data[0].xp >= response.data[0].level * 500){
+                                                                                if(response.data[0].xp >= response.data[0].level * 50){
                                                                                     Axios.post('/api/levelUp',
                                                                                         {
                                                                                             pseudo: pseudo
@@ -148,14 +148,14 @@ function SpawnPokemonToken(props) {
                                                                 Axios.post('/api/addXp',
                                                                     {
                                                                         user: pseudo,
-                                                                        win: 3000,
-                                                                        wins: 3000
+                                                                        win: 300,
+                                                                        wins: 300
                                                                     }
                                                                 )
                                                                     .then(function(response){
                                                                         Axios.get("/api/getProfil/"+pseudo)
                                                                             .then(function(response){
-                                                                                if(response.data[0].xp >= response.data[0].level * 500){
+                                                                                if(response.data[0].xp >= response.data[0].level * 50){
                                                                                     Axios.post('/api/levelUp',
                                                                                         {
                                                                                             pseudo: pseudo
@@ -200,7 +200,7 @@ function SpawnPokemonToken(props) {
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 500){
+                                                                        if(response.data[0].xp >= response.data[0].level * 50){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
@@ -217,14 +217,14 @@ function SpawnPokemonToken(props) {
                                                         Axios.post('/api/addXp',
                                                             {
                                                                 user: pseudo,
-                                                                win: 200,
-                                                                wins: 200
+                                                                win: 20,
+                                                                wins: 20
                                                             }
                                                         )
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 500){
+                                                                        if(response.data[0].xp >= response.data[0].level * 50){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
@@ -292,7 +292,6 @@ function SpawnPokemonToken(props) {
                                     </div>
                                 }
                             </div>
-                            <div className="explode"></div>
                         </div>
                     </div>
                 </>

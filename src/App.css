@@ -272,13 +272,14 @@ font-size: 32px;
 margin-top: 50px;
 }
 .socialContainer {
-display: flex;
-flex-flow: column;
-gap: 20px;
-justify-content: center;
-align-items: center;
-margin-top: 3%;
-padding-bottom: 50px;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 3%;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
 }
 .loginButton{
 display: flex;
@@ -870,7 +871,7 @@ p.filterTitle {
   font-weight: bold;
 }
 #root{
-  min-height: 100vh;
+  min-height: 92vh;
   background: transparent;
     position: absolute;
     width: 100%;
@@ -990,17 +991,15 @@ p.filterTitle {
     top: 100px;
 }
 .openLeaderBoardButton{
-    background-position: center center;
+    background-position: 50%;
     background-repeat: no-repeat;
+    background-color: initial;
+    background-size: contain;
     border: none;
     border-radius: 25px;
-    padding: 20px;
-    width: 100px;
-    height: 100px;
-    background-size: contain;
     display: block;
-    background-color: transparent;
-    margin: 20px;
+    height: 125px;
+    width: 60px;
 }
 .uniquePokemonContainer {
     background-position: 50%;
@@ -1010,6 +1009,29 @@ p.filterTitle {
     -webkit-filter: drop-shadow(0 0 12px #000);
     filter: drop-shadow(0 0 12px black);
     padding: 10px;
+}
+
+.infoEdit, .xpText{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+.progress-container:hover {
+    cursor: pointer;
+    .infoEdit{
+        transition: opacity 0.5s, transform 0.5s;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    .xpText{
+        transition: opacity 0.5s, transform 0.5s;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    .uniquePokemonContainer{
+        filter: drop-shadow( 3px 3px 1px black);
+    }
+
 }
 .uniquePokemonContainerTeam {
     background-position: 50%;
@@ -2114,6 +2136,9 @@ a.linkOnAirOff {
     padding: 10px;
     background: gray;
     margin-top: 0px;
+    position: fixed;
+    bottom:30px;
+    left:30px;
 }
 .pagePokemonContainer{
     min-height: 100vh;
@@ -3658,16 +3683,16 @@ span.navbar-brand {
     top: 300px;
 }
 .pseudoProfil{
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 50px;
+    font-size: 25px;
     text-transform: uppercase;
     font-family: 'Charge Vector Black';
     color: white;
 }
 .ReactModal__Overlay.ReactModal__Overlay--after-open.overlayModalToken {
-    background-color: #101010;
+    background-color: rgba(0,0,0,0.8);
     height: 100vh;
     position: absolute;
     top: 0;
@@ -3729,30 +3754,45 @@ span.navbar-brand {
     color: white;
 }
 .profilVisuals {
-    align-items: center;
+    align-items: end;
+    border-radius: 50px;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     flex-wrap: wrap;
     gap: 0;
-    justify-content: center;
-    width: fit-content;
-    margin: auto;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0 50px 0 50px;
-    border-radius: 50px;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    border-bottom: solid black 1px;
+    box-shadow: 0px 6px 5px black;
 }
 .infoNbBox{
     background-color: #fff;
     border-radius: 50%;
     color: #007bb3;
-    height: 50px;
+    height: 25px;
     position: absolute;
     width: fit-content;
-    font-size: 35px;
+    font-size: 15px;
     font-weight: 700;
     left: -19px;
     text-align: center;
-    padding: 0 15px 0 15px;
+    padding: 0 10px;
+    line-height: 25px;
+}
+.infoEdit{
+    background-color: #fff;
+    border-radius: 20px;
+    color: #007bb3;
+    font-size: 13px;
+    font-weight: 700;
+    height: 20px;
+    left: -5px;
+    padding: 0 10px;
+    position: absolute;
+    text-align: center;
+    top: 80px;
+    width: 20px;
 }
 .infoNbBoxSkin{
      background-color: #fff;
@@ -3769,6 +3809,11 @@ span.navbar-brand {
 }
 .openSkinBox:hover{
     background-image: url('../public/images/skinOpen.png')!important;
+}
+.profilContainer{
+    max-width: 800px;
+    display: block;
+    margin: auto;
 }
 .profilPicture{
     width: 400px;
@@ -4174,20 +4219,27 @@ span.navbar-brand {
     width:250px;
 }
 .infoNbPkmToken {
-
     background-color: #fff;
     border-radius: 20px;
     color: #007bb3;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 700;
-    height: 30px;
-    left: -30px;
+    height: 17px;
+    left: 15px;
+    padding: 0 10px;
     position: absolute;
     text-align: center;
+    top: 75px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
-    top: 60px;
-    padding: 0 10px 0 10px;
 }
+.threePokemon {
+     display: flex;
+     justify-content: center;
+     margin: 20px;
+     gap: 20px;
+ }
 .rainbow_text_animated_token {
     -webkit-animation: rainbow_animation 6s ease-in-out infinite;
     animation: rainbow_animation 2s ease-in-out infinite;
@@ -4236,18 +4288,8 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
-    .profilVisuals {
-        align-items: center;
-        background: rgba(0, 0, 0, .5);
-        border-radius: 50px;
-        display: flex;
-        flex-flow: row;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        margin: auto;
-        padding: 15px;
-        width: 100%;
+    a.linkOnAirOff {
+        display: none;
     }
     button.anchorTooltip.uniquePokemonContainerTeam {
         width: 100px;
@@ -4335,18 +4377,8 @@ span.navbar-brand {
     }
 }
 @media screen and (max-width: 379px) {
-    .profilVisuals {
-        align-items: center;
-        background: rgba(0, 0, 0, .5);
-        border-radius: 50px;
-        display: flex;
-        flex-flow: row;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        margin: auto;
-        padding: 15px;
-        width: 100%;
+    a.linkOnAirOff {
+        display: none;
     }
     button.anchorTooltip.uniquePokemonContainerTeam {
         width: 100px;
@@ -5330,4 +5362,49 @@ button.navbar-toggler.collapsed {
 }
 .lazy-load-image-background.blur.lazy-load-image-loaded>img {
     width: 250px;
+}
+
+.progress-container {
+    --hue: 0;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-container + .progress-container {
+    margin-top: 1rem;
+}
+
+
+.progress-container span {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100px;
+}
+
+.progress-bar {
+    transform: rotate(-90deg);
+    z-index: 1;
+}
+
+.progress-bar circle {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1.5s ease-in-out;
+    transition-delay: 1s;
+    stroke: #120747;
+    filter: drop-shadow(0px 0px 2px white);
+}
+
+.progress-bar .progress-value {
+    stroke: white;
+    stroke-dashoffset: 301.59;
 }
