@@ -215,6 +215,7 @@ function Profil(props) {
                     .then(function(response){
                         setSkins(response.data);
                         setIsOpenTeam(false);
+                        setIsOpen(false);
                     })
             })
     }
@@ -392,7 +393,7 @@ function Profil(props) {
                 <PokedexTeam list={list} change={handleState} pkmToUpdate={teamToHandle} cookies={props.cookies}/>
             </Modal>
             <Modal overlayClassName={"overlayModalToken"} className={"modalToken"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
-                <SpawnPokemonToken pseudo={pseudo}/>
+                <SpawnPokemonToken  change={handleState} pseudo={pseudo}/>
             </Modal>
         </>
     )
