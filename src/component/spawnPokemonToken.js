@@ -15,7 +15,7 @@ function SpawnPokemonToken(props) {
     const [getToken, setGetToken] = useState(false);
     setTimeout(() => {
         props.change();
-    }, 3500);
+    }, 4500);
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
         if(tokenBonus == 0){
