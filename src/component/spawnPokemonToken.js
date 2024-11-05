@@ -13,9 +13,9 @@ function SpawnPokemonToken(props) {
     const [reloadFetch, setReloadFetch] = useState(0);
     const [shiny, setShiny] = useState(false);
     const [getToken, setGetToken] = useState(false);
-    setTimeout(() => {
-        props.change();
-    }, 3500);
+    // setTimeout(() => {
+    //     props.change();
+    // }, 3500);
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
         if(tokenBonus == 0){
@@ -67,6 +67,8 @@ function SpawnPokemonToken(props) {
                                                                                     pseudo: pseudo
                                                                                 }
                                                                             )
+                                                                        }else{
+                                                                            props.change();
                                                                         }
                                                                     })
                                                             })
@@ -91,6 +93,8 @@ function SpawnPokemonToken(props) {
                                                                                     pseudo: pseudo
                                                                                 }
                                                                             )
+                                                                        }else{
+                                                                            props.change();
                                                                         }
                                                                     })
                                                             })
@@ -139,7 +143,11 @@ function SpawnPokemonToken(props) {
                                                                                         {
                                                                                             pseudo: pseudo
                                                                                         }
-                                                                                    )
+                                                                                    ).then(function(response){
+                                                                                        props.change();
+                                                                                    })
+                                                                                }else{
+                                                                                    props.change();
                                                                                 }
                                                                             })
                                                                     })
@@ -163,7 +171,11 @@ function SpawnPokemonToken(props) {
                                                                                         {
                                                                                             pseudo: pseudo
                                                                                         }
-                                                                                    )
+                                                                                    ).then(function(response){
+                                                                                        props.change();
+                                                                                    })
+                                                                                }else{
+                                                                                    props.change();
                                                                                 }
                                                                             })
                                                                     })
@@ -208,7 +220,11 @@ function SpawnPokemonToken(props) {
                                                                                 {
                                                                                     pseudo: pseudo
                                                                                 }
-                                                                            )
+                                                                            ).then(function(response){
+                                                                                props.change();
+                                                                            })
+                                                                        }else{
+                                                                            props.change();
                                                                         }
                                                                     })
                                                             })
@@ -233,6 +249,11 @@ function SpawnPokemonToken(props) {
                                                                                     pseudo: pseudo
                                                                                 }
                                                                             )
+                                                                                .then(function(response){
+                                                                                    props.change();
+                                                                                })
+                                                                        }else{
+                                                                            props.change();
                                                                         }
                                                                     })
                                                             })
