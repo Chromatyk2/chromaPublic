@@ -2967,8 +2967,8 @@ span.navbar-brand {
 }
 
 .pkmn.exit .mon:before {
-    -webkit-animation-delay: 2.5s;
-    animation-delay: 2.5s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
     -webkit-animation-duration: 0.75s;
     animation-duration: 0.75s;
     -webkit-animation-timing-function: ease-out;
@@ -3378,8 +3378,8 @@ span.navbar-brand {
 
 .exit .explode,
 .exit .explode:before {
-    -webkit-animation-delay: 3.5s;
-    animation-delay: 3.5s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
     -webkit-animation-duration: 0.66s;
     animation-duration: 0.66s;
     -webkit-animation-iteration-count: 1;
@@ -3407,16 +3407,16 @@ span.navbar-brand {
 }
 
 .pkmn.exit .mon:before {
-    -webkit-animation-delay: 2.5s;
-    animation-delay: 2.5s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
     -webkit-animation-duration: var(--slowmo, 1s);
     animation-duration: var(--slowmo, 1s);
 }
 
 .pkmn.exit .explode,
 .pkmn.exit .explode:before {
-    -webkit-animation-delay: 3.5s;
-    animation-delay: 3.5s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
     -webkit-animation-duration: var(--slowsplode, 0.75s);
     animation-duration: var(--slowsplode, 0.75s);
 }
@@ -3424,8 +3424,8 @@ span.navbar-brand {
 .pkmn.exit .ball,
 .pkmn.exit .ball *,
 .pkmn.exit .ball .sprite:before {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
 }
 
 @-webkit-keyframes explode {
@@ -5031,7 +5031,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s linear;
     animation: star 2s linear;
-    animation-delay: 2.6s;
+    animation-delay: 1.1s;
     transform: scale(0);
     left: -50px;
     filter: drop-shadow(10px 10px 10px black);
@@ -5042,7 +5042,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s forwards;
     animation: star 2s forwards;
-    animation-delay: 2.6s;
+    animation-delay: 1.1s;
     transform: scale(0);
     left: -50px;
     filter: drop-shadow(10px 10px 10px black);
@@ -5066,7 +5066,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s linear;
     animation: star 2s linear;
-    animation-delay: 2.8s;
+    animation-delay: 1.3s;
     transform: scale(0);
     right: 50px;
     filter: drop-shadow(10px 10px 10px black);
@@ -5077,7 +5077,7 @@ button.uniqueBoxContainer:last-child{
     fill: #FFAC33;
     -webkit-animation: star 2s linear;
     animation: star 2s linear;
-    animation-delay: 3s;
+    animation-delay: 1.5s;
     transform: scale(0);
     bottom: 0;
     filter: drop-shadow(10px 10px 10px black);
@@ -5091,7 +5091,7 @@ button.uniqueBoxContainer:last-child{
     border: 2.5rem solid #FFAC33;
     -webkit-animation: round 4s  linear;
     animation: round 4s  linear;
-    animation-delay: 2.6s;
+    animation-delay: 1.1s;
     z-index: -1;
     transform: scale(0);
 }
@@ -5101,7 +5101,7 @@ button.uniqueBoxContainer:last-child{
     height: 5rem;
     -webkit-animation: sparkle 4s linear;
     animation: sparkle 4s  linear;
-    animation-delay: 2.6s;
+    animation-delay: 1.1s;
     z-index: -1;
     transform: scale(0);
 }
@@ -5114,7 +5114,7 @@ button.uniqueBoxContainer:last-child{
     transform-origin: 0 0;
     -webkit-animation: sparkles 4s  linear;
     animation: sparkles 4s  linear;
-    animation-delay: 2.6s;
+    animation-delay: 1.1s;
     z-index: -1;
 }
 .fav-sparkle-i:nth-child(1) {
