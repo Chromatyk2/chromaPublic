@@ -15,15 +15,24 @@ import Lv3 from "../lv3.png";
 import Lv4 from "../lv4.png";
 import Lv5 from "../lv5.png";
 import Lv6 from "../lv6.png";
+import Lv1c from "../lv1c.png";
+import Lv2c from "../lv2c.png";
+import Lv3c from "../lv3c.png";
+import Lv4c from "../lv4c.png";
+import Lv5c from "../lv5c.png";
+import Lv6c from "../lv6c.png";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
+    const [myTotalsCards, setMyTotalsCards] = useState(null);
+    const [myLastTenCards, setMyLastTenCards] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState("");
     const [list,setList] = useState([]);
     const [pourcent, setPourcent] = useState();
+    const [pourcentCard, setPourcentCard] = useState();
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [openTime, setOpenTime] = React.useState(false);
     const [isLoad, setIsLoad] = React.useState(true);
@@ -118,15 +127,24 @@ function Profil(props) {
     useEffect(() => {
         Axios
             .get("/api/getProfil/"+pseudo)
-            .then(function(response){
+            .then(function (response){
                 setProfil(response.data);
-                setIsLoad(false)
-                    Axios
-                        .get("/api/getByUser/"+pseudo)
-                        .then(function(response){
-                            setList(response.data);
-                            setPourcent(Math.round((response.data.length / 1025) * 100));
-                        })
+                Axios.get("/api/getMyTotalCards/"+pseudo)
+                    .then(function (response){
+                        setPourcentCard(Math.round((response.data[0].nbCard / 15937) * 100));
+                        setMyTotalsCards(response.data)
+                        Axios.get("/api/getMyLastTenCards/"+pseudo)
+                            .then(function(response){
+                                setMyLastTenCards(response.data)
+                                Axios
+                                    .get("/api/getByUser/"+pseudo)
+                                    .then(function(response){
+                                        setIsLoad(false)
+                                        setList(response.data);
+                                        setPourcent(Math.round((response.data.length / 1025) * 100));
+                                    })
+                            })
+                    })
             })
     }, [])
     useEffect(() => {
@@ -137,16 +155,16 @@ function Profil(props) {
             })
     }, [setIsOpen])
 
-        const customStyles = {
-            extBar: {
-                backgroundColor: '#00368a',
-                position: 'relative',
-                zIndex: '1',
-                borderRadius: '50px',
-                height:'30px',
-                width:'300px'
-            }
-        };
+    const customStyles = {
+        extBar: {
+            backgroundColor: '#00368a',
+            position: 'relative',
+            zIndex: '1',
+            borderRadius: '50px',
+            height:'30px',
+            width:'300px'
+        }
+    };
     function handleProfileImage() {
         setIsOpen(true);
     }
@@ -169,14 +187,14 @@ function Profil(props) {
                 skin:e.target.value
             }
         )
-        .then(function(response){
-            Axios
-                .get("/api/getProfil/"+pseudo)
-                .then(function(response){
-                    setProfil(response.data);
-                    setIsOpen(false);
-                })
-        })
+            .then(function(response){
+                Axios
+                    .get("/api/getProfil/"+pseudo)
+                    .then(function(response){
+                        setProfil(response.data);
+                        setIsOpen(false);
+                    })
+            })
     }
     function openSkin(e) {
         if(profil[0].box - 1 > -1){
@@ -233,7 +251,8 @@ function Profil(props) {
                                 <div style={{width: "120px"}}>
                                     {profil[0].pkmToken > 0 ?
                                         <button className="anchorTooltip"
-                                                data-tooltip-content="Clique our capturer un pokemon" disabled={openTime}
+                                                data-tooltip-content="Clique our capturer un pokemon"
+                                                disabled={openTime}
                                                 className={"openLeaderBoardButton"} onClick={openToken}
                                                 style={{
                                                     width: "120px",
@@ -261,7 +280,8 @@ function Profil(props) {
                                     }
                                 </div>
                                 <div onClick={handleProfileImage} className="progress-container" data-value="100">
-                                    <svg className="progress-bar" id="svg" width="120" height="120" viewPort="0 0 100 100"
+                                    <svg className="progress-bar" id="svg" width="120" height="120"
+                                         viewPort="0 0 100 100"
                                          version="1.1" xmlns="http://www.w3.org/2000/svg">
                                         <circle className="progress-meter" r="16" cx="30" cy="90" fill="transparent"
                                                 stroke-width="13" strokeDashoffset="0"></circle>
@@ -295,20 +315,23 @@ function Profil(props) {
                                     </div>
                                 </button>
                             </span>
-                                    <div style={{width: "max-content", left: "-20px", position: "absolute", top: "85px"}}
-                                         className={"xpText"}>
-                                        <p style={{fontSize: "13px", textAlign: "left", width:"fit-content"}}
+                                    <div
+                                        style={{width: "max-content", left: "-20px", position: "absolute", top: "85px"}}
+                                        className={"xpText"}>
+                                        <p style={{fontSize: "13px", textAlign: "left", width: "fit-content"}}
                                            className={"levelProfil"}>N.{profil[0].level}</p>
-                                        <p style={{fontSize: "13px", textAlign: "left", width:"fit-content"}}
+                                        <p style={{fontSize: "13px", textAlign: "left", width: "fit-content"}}
                                            className={"levelProfil"}>{profil[0].xp + " / " + profil[0].level * 50}</p>
                                     </div>
                                 </div>
-                                <div className="anchorTooltip"
-                                     data-tooltip-content={pourcent == 100 ? "100% du Pokedex Complété" : pourcent >= 80 ? "80% du Pokedex Complété" : pourcent >= 60 ? "60% du Pokedex Complété" : pourcent >= 40 ? "40% du Pokedex Complété" : pourcent >= 20 ? "20% du Pokedex Complété" : "Au moins 1 Pokémon capturé"}
-                                     style={{width: "120px", height: "95px"}}>
-                                    <img style={{width: "60px"}}
-                                         src={pourcent == 100 ? Lv6 : pourcent >= 80 ? Lv5 : pourcent >= 60 ? Lv4 : pourcent >= 40 ? Lv3 : pourcent >= 20 ? Lv2 : Lv1}/>
-                                </div>
+                                {pourcent > 0 &&
+                                    <div className="anchorTooltip"
+                                         data-tooltip-content={pourcent == 100 ? "100% du Pokedex Complété" : pourcent >= 80 ? "80% du Pokedex Complété" : pourcent >= 60 ? "60% du Pokedex Complété" : pourcent >= 40 ? "40% du Pokedex Complété" : pourcent >= 20 ? "20% du Pokedex Complété" : "Au moins 1 Pokémon capturé"}
+                                         style={{width: "120px", height: "95px"}}>
+                                        <img style={{width: "60px"}}
+                                             src={pourcent == 100 ? Lv6 : pourcent >= 80 ? Lv5 : pourcent >= 60 ? Lv4 : pourcent >= 40 ? Lv3 : pourcent >= 20 ? Lv2 : Lv1}/>
+                                    </div>
+                                }
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
                             <p className={"pseudoProfil"}>Mon équipe</p>
@@ -346,6 +369,29 @@ function Profil(props) {
                                     className="anchorTooltip uniquePokemonContainerTeam">
                                 </button>
                             </div>
+                            { pourcentCard > 0 &&
+                                <>
+                                    <div className={"profilVisualsCard"}>
+                                        <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
+                                        <img style={{width: "60px"}} className="anchorTooltip"
+                                             data-tooltip-content={pourcentCard == 100 ? "100% du Cartodex Complété" : pourcentCard >= 80 ? "80% du Cartodex Complété" : pourcentCard >= 60 ? "60% du Cartodex Complété" : pourcentCard >= 40 ? "40% du Cartodex Complété" : pourcentCard >= 20 ? "20% du Cartodex Complété" : "Au moins 1 carte obtenue"}
+                                             src={pourcentCard == 100 ? Lv6c : pourcentCard >= 80 ? Lv5c : pourcentCard >= 60 ? Lv4c : pourcentCard >= 40 ? Lv3c : pourcentCard >= 20 ? Lv2c : Lv1c}/>
+                                    </div>
+                                    <p style={{marginTop: "20px", marginBottom: "20px"}}
+                                       className={"pseudoProfil"}>Dernier Booster</p>
+                                    <div className={"profilCards"}>
+                                        {myLastTenCards.sort((a, b) => b.stade - a.stade).map((val, key) => {
+                                            return (
+                                                <img className={"profilCard"}
+                                                     style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
+                                                     src={"https://images.pokemontcg.io/" + val.booster + "/" + val.card.split("-").pop() + "_hires.png"}/>
+                                            )
+                                        })
+
+                                        }
+                                    </div>
+                                </>
+                            }
                         </>
                     }
                 </div>
@@ -367,8 +413,8 @@ function Profil(props) {
                     display: "flex",
                     gap: "10px",
                     flexFlow: "row",
-                    flexWrap:"wrap",
-                    justifyContent:"center"
+                    flexWrap: "wrap",
+                    justifyContent: "center"
                 }}>
                     {skins &&
                         skins.map((val, key) => {
