@@ -1940,6 +1940,9 @@ img.gettedBoxImg {
     justify-content: center;
     align-items: center;
     height: 89vh;
+    position: fixed;
+    left: 0;
+    right: 0;
 }
 
 .showBooster{
@@ -5398,7 +5401,7 @@ button.navbar-toggler.collapsed {
     gap: 35px;
     justify-content: center;
     margin: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
 }
 .profilVisualsCard{
     align-items: end;
