@@ -244,7 +244,7 @@ function MyCardsSet(props) {
                                                     width={"250"}
                                                     style={{width:"250px",filter:"brightness(1)"}}
                                                     wrapperClassName={"shadowBangerCard"}
-                                                    placeholderSrc={"https://images.pokemontcg.io"}
+                                                    placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     effect="blur"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
@@ -263,7 +263,7 @@ function MyCardsSet(props) {
                                                         width={"250"}
                                                         style={{width:"250px",filter:"brightness(1.2)"}}
                                                         wrapperClassName={"shadowBangerCard"}
-                                                        placeholderSrc={"https://images.pokemontcg.io"}
+                                                        placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                         effect="blur"
                                                         wrapperProps={{
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
@@ -280,7 +280,7 @@ function MyCardsSet(props) {
                                                 <LazyLoadImage
                                                     width={"250"}
                                                     stade={stadeC}
-                                                    placeholderSrc={"https://images.pokemontcg.io"}
+                                                    placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                     image={val.image}
                                                     wrapperClassName={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
@@ -304,7 +304,7 @@ function MyCardsSet(props) {
                                             threshold={200}
                                             width={"250"}
                                             style={{filter:"grayscale(1)"}}
-                                            placeholderSrc={"https://images.pokemontcg.io"}
+                                            placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                             stade={stadeC}
                                             image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
                                             wrapperClassName={"fit-picture-card"}
