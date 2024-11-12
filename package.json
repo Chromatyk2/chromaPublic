@@ -11,6 +11,7 @@
     "date-fns": "^2.29.3",
     "dotenv": "^16.3.1",
     "jquery": "^3.6.4",
+    "jquery-lazyload-any": "^0.3.1",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.46",
     "obs-websocket-js": "^5.0.3",
