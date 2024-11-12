@@ -9,7 +9,7 @@ import ProgressBarCard from "./progressBarCard";
 import UniqueCard from "./UniqueCard.js";
 import Modal from "react-modal";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/opacity.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
@@ -245,7 +245,7 @@ function MyCardsSet(props) {
                                                     style={{width:"250px",filter:"brightness(1)"}}
                                                     wrapperClassName={"shadowBangerCard"}
                                                     placeholderSrc={"https://images.pokemontcg.io"}
-                                                    effect="opacity"
+                                                    effect="blur"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "1s"},
@@ -264,7 +264,7 @@ function MyCardsSet(props) {
                                                         style={{width:"250px",filter:"brightness(1.2)"}}
                                                         wrapperClassName={"shadowBangerCard"}
                                                         placeholderSrc={"https://images.pokemontcg.io"}
-                                                        effect="opacity"
+                                                        effect="blur"
                                                         wrapperProps={{
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                                             style: {transitionDelay: "1s"},
@@ -284,7 +284,7 @@ function MyCardsSet(props) {
                                                     style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                     image={val.image}
                                                     wrapperClassName={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                                                    effect="opacity"
+                                                    effect="blur"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "1s"},
@@ -308,7 +308,7 @@ function MyCardsSet(props) {
                                             stade={stadeC}
                                             image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
                                             wrapperClassName={"fit-picture-card"}
-                                            effect="opacity"
+                                            effect="blur"
                                             wrapperProps={{
                                                 // If you need to, you can tweak the effect transition using the wrapper style.
                                                 style: {transitionDelay: "1s"},
