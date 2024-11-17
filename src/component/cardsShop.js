@@ -11,11 +11,16 @@ import OpeningBooster from "./openingBooster";
 import Countdown from "react-countdown";
 import token from "../cards.png"
 import OpeningBoosterTest from "./test/openingBooster";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
+import { Carousel } from 'react-responsive-3d-carousel'
+import 'react-responsive-3d-carousel/dist/styles.css'
 
 function CardsShop(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState(null);
+    const [array, setArray] = useState([]);
     const [points,setPoints] = useState(-1);
     const [loading,setLoading] = useState(false);
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -23,6 +28,7 @@ function CardsShop(props) {
     const [canOpenLive, setCanOpenLive] = React.useState(null);
     const [nextFree, setNextFree] = React.useState(null);
     const [onOpen, setOnOpen] = React.useState(false);
+    const [selectedBoosterId, setSelectedBoosterId] = React.useState(0);
     const customStyles = {
         content: {
             position:'initial',
@@ -41,33 +47,56 @@ function CardsShop(props) {
         },
     };
     useEffect(() => {
-        Axios
-            .get("/api/getBoostersList")
-            .then(function(response){
-                setItems(response.data);
-            })
-    }, [])
-    useEffect(() => {
-        Axios
-            .get("/api/getCardsPoint/"+props.user)
-            .then(function(response){
-                setPoints(response.data[0].cardToken);
-                Axios.get("/api/getProfil/"+props.user)
+                Axios
+                    .get("/api/getCardsPoint/"+props.user)
                     .then(function(response){
-                        const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                        const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                        if(response.data[0].canOpen == 1){
-                            setCanOpenLive(response.data[0].canOpen)
-                        }else{
-                            setNextFree(moment(lastDrawing).valueOf() + 7200000);
-                            if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
-                                setCanOpenLive(1)
-                            }else{
-                                setCanOpenLive(0)
-                            }
-                        }
+                        setPoints(response.data[0].cardToken);
+                        Axios.get("/api/getProfil/"+props.user)
+                            .then(function(response){
+                                const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                                const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
+                                if(response.data[0].canOpen == 1){
+                                    setCanOpenLive(response.data[0].canOpen)
+                                }else{
+                                    setNextFree(moment(lastDrawing).valueOf() + 7200000);
+                                    if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
+                                        setCanOpenLive(1)
+                                    }else{
+                                        setCanOpenLive(0)
+                                    }
+                                }
+
+                                Axios
+                                    .get("/api/getBoostersList")
+                                    .then(function(response){
+                                        setItems(response.data);
+                                        response.data.filter(item => item.gen == 1).map((val, key) => {
+                                            setArray(array => [...array,
+                                                <div className="uniqueTradeContainer">
+                                                    <div className={"containerImgBooster"}>
+                                                        <LazyLoadImage
+                                                            delayTime={0}
+                                                            threshold={200}
+                                                            placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
+                                                            width={"150"}
+                                                            style={{width: "220px", filter: "brightness(1) drop-shadow(2px 4px 6px black)",borderRadius: "25px"}}
+                                                            effect="opacity"
+                                                            delayTime={5}
+                                                            wrapperProps={{
+                                                                // If you need to, you can tweak the effect transition using the wrapper style.
+                                                                style: {transitionDelay: "0.1s"},
+                                                            }}
+                                                            src={"/Boosters/" + val.name + ".png"}/>
+                                                        {/*<img className="fit-picture"*/}
+                                                        {/*     src={"https://images.pokemontcg.io/" + val.name + "/logo.png"}*/}
+                                                        {/*     alt="Grapefruit slice atop a pile of other slices"/>*/}
+                                                    </div>
+                                                </div>
+                                            ]);
+                                        })
+                                    })
+                            })
                     })
-            })
     }, [])
 
     function registerCards(e) {
@@ -89,19 +118,37 @@ function CardsShop(props) {
         setCanOpenLive(1)
     }
     function selectGen(e) {
-        if(e.target.value == "all"){
+        setArray([])
+        setSelectedBoosterId(0)
             Axios
                 .get("/api/getBoostersList")
                 .then(function(response){
-                    setItems(response.data);
+                    setItems(response.data.filter(item => item.gen == e.target.value));
+                    response.data.filter(item => item.gen == e.target.value).map((val, key) => {
+                        setArray(array => [...array,
+                            <div className="uniqueTradeContainer">
+                                <div className={"containerImgBooster"}>
+                                    <LazyLoadImage
+                                        delayTime={0}
+                                        threshold={200}
+                                        placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
+                                        width={"150"}
+                                        style={{width: "220px", filter: "brightness(1) drop-shadow(2px 4px 6px black)",borderRadius: "25px"}}
+                                        effect="opacity"
+                                        delayTime={5}
+                                        wrapperProps={{
+                                            // If you need to, you can tweak the effect transition using the wrapper style.
+                                            style: {transitionDelay: "0.1s"},
+                                        }}
+                                        src={"/Boosters/" + val.name + ".png"}/>
+                                    {/*<img className="fit-picture"*/}
+                                    {/*     src={"https://images.pokemontcg.io/" + val.name + "/logo.png"}*/}
+                                    {/*     alt="Grapefruit slice atop a pile of other slices"/>*/}
+                                </div>
+                            </div>
+                        ]);
+                    })
                 })
-        }else{
-            Axios
-                .get("/api/getBoostersListByGen/"+ e.target.value)
-                .then(function(response){
-                    setItems(response.data);
-                })
-        }
     }
     function openModal(e) {
         setOnOpen(true);
@@ -185,8 +232,9 @@ function CardsShop(props) {
     function handleState() {
         setOnOpen(false);
     }
-
-
+    function changeCarousel(e) {
+        setSelectedBoosterId(e)
+    }
     return (
         <>
             {onOpen === true ?
@@ -226,7 +274,6 @@ function CardsShop(props) {
                         }
                     </div>
                     <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
-                        <option value="all">All Gen</option>
                         <option value="1">Gen 1</option>
                         <option value="2">Gen 2</option>
                         <option value="3">Gen 3</option>
@@ -239,74 +286,67 @@ function CardsShop(props) {
                     </select>
                     <div id={"cardsContainer"}>
                         {items &&
-                            <div className="uniqueTradeContainer">
-                                <p className="pokemonNameTrade">Booster Aléatoire</p>
-                                <div className={"containerImgBooster"}>
-                                    <img className="fit-picture" src={"/images/random.png"}
+                            <div className="uniqueTradeContainerRandom">
+                                <div style={{height:"70px"}} className={"containerImgBooster"}>
+                                    <img style={{width:"70px"}} className="fit-picture" src={"/images/random.png"}
                                          alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
-                                {points > 0 ?
-                                    loading === false ?
-                                        <div style={{position: "relative", bottom: "-44px"}}>
-                                            <button value={items[Math.floor(Math.random() * items.length)].name}
-                                                    onClick={openModal}
-                                                    className="guessTradeButton">Ouvrir
-                                            </button>
-                                        </div>
+                                <div>
+                                    {points > 0 ?
+                                        loading === false ?
+                                                <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}
+                                                        value={items[Math.floor(Math.random() * items.length)].name}
+                                                        onClick={openModal}
+                                                        className="guessTradeButton">Ouvrir
+                                                </button>
+                                            :
+                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Chargement</button>
                                         :
-                                        <button className="guessTradeButton">Chargement</button>
-                                    :
-                                    <button className="guessTradeButton">Aucun Token</button>
-                                }
-                                {canOpenLive == 1 &&
-                                    <div style={{position: "relative", bottom: "-44px"}}>
-                                        <button value={items[Math.floor(Math.random() * items.length)].name}
-                                                onClick={freeBooster}
-                                                className="guessTradeButton">Booster Gratuit
-                                        </button>
-                                    </div>
-                                }
+                                        <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Aucun Token</button>
+                                    }
+                                    {canOpenLive == 1 &&
+                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}  value={items[Math.floor(Math.random() * items.length)].name}
+                                                    onClick={freeBooster}
+                                                    className="guessTradeButton">Booster Gratuit
+                                            </button>
+                                    }
+                                </div>
                             </div>
                         }
-                        {items &&
-                            items.map((val, key) => {
-                                return (
-                                    <div className="uniqueTradeContainer">
-                                        <div className={"containerImgBooster"}>
-                                            <img className="fit-picture"
-                                                 src={"https://images.pokemontcg.io/" + val.name + "/logo.png"}
-                                                 alt="Grapefruit slice atop a pile of other slices"/>
-                                        </div>
+                        {array.length > 0 &&
+                            <div style={{width: "100%"}}>
+                                <Carousel onChange={(item) => changeCarousel(item)}
+                                          transformDuration={100}
+                                          transformTimingFn={"linear"}
+                                          items={array}
+                                          startIndex={0}
+                                          interval={10000}
+                                          pauseOnHover={false}
+                                >
+                                    <div className={"buttonsBooster"}>
                                         {points > 0 ?
                                             loading === false ?
-                                                <div style={{position: "relative", bottom: "-44px"}}>
-
-                                                    <button value={val.name}
+                                                <button
+                                                            style={{fontSize: "13px", width: "180px", margin:"0"}}
+                                                            value={items[selectedBoosterId].name}
                                                             onClick={openModal}
                                                             className="guessTradeButton">Ouvrir
                                                     </button>
-                                                </div>
                                                 :
-                                                <div style={{position: "relative", bottom: "-44px"}}>
-                                                    <button className="guessTradeButton">Chargement</button>
-                                                </div>
+                                                    <button style={{fontSize: "13px", width: "180px", margin:"0"}} className="guessTradeButton">Chargement</button>
                                             :
-                                            <div style={{position: "relative", bottom: "-44px"}}>
-                                                <button className="guessTradeButton">Aucun Token</button>
-                                            </div>
+                                                <button style={{fontSize: "13px", width: "180px", margin:"0"}} className="guessTradeButton">Aucun Token</button>
                                         }
                                         {canOpenLive == 1 &&
-                                            <div style={{position: "relative", bottom: "-44px"}}>
-
-                                                <button value={val.name}
+                                            <button style={{fontSize: "13px", width: "180px", margin:"0"}}
+                                                        value={items[selectedBoosterId].name}
                                                         onClick={freeBooster}
                                                         className="guessTradeButton">Booster Gratuit
-                                                </button>
-                                            </div>
+                                            </button>
                                         }
                                     </div>
-                                )
-                            })
+                                </Carousel>
+                            </div>
                         }
                     </div>
                 </>
