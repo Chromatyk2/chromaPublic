@@ -131,7 +131,7 @@ function Profil(props) {
                 setProfil(response.data);
                 Axios.get("/api/getMyTotalCards/"+pseudo)
                     .then(function (response){
-                        setPourcentCard(Math.round((response.data[0].nbCard / 15937) * 100));
+                        setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100).toFixed(5));
                         setMyTotalsCards(response.data)
                         Axios.get("/api/getMyLastTenCards/"+pseudo)
                             .then(function(response){
