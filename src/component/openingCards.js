@@ -73,13 +73,13 @@ function OpeningCards(props) {
                     setNbCards (nbCards + 1);
             }else if(tenCards.length == 8){
                     var randomStade = Math.floor(Math.random() * 100);
-                    if(randomStade < 37 ){
+                    if(randomStade < 50 ){
                         var rarityArray = props.rarities.filter(item => item.stade == 1);
                         var stade = 1;
-                    }else if(randomStade > 36 && randomStade < 75){
+                    }else if(randomStade > 49 && randomStade < 79){
                         var rarityArray = props.rarities.filter(item => item.stade == 2);
                         var stade = 2;
-                    }else if(randomStade > 74 && randomStade < 99){
+                    }else if(randomStade > 78 && randomStade < 99){
                         var rarityArray = props.rarities.filter(item => item.stade == 3);
                         var stade = 3;
                     }else if (randomStade > 98){
