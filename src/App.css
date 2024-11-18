@@ -264,7 +264,7 @@ iframe{
     font-size: 30px;
     font-family: "Charge Vector Black";
 }
-.leaderBoardSwitch button:className={
+.leaderBoardSwitch button:className{
     color: #0a3a2c;
     font-size: 32px;
 }
@@ -1215,13 +1215,12 @@ p.titleMyCaptures{
     margin-left: 25px;
 }
 .uniqueTradeContainer {
-    background: rgba(37, 87, 95, .2);
+    background: transparent;
     border-radius: 25px;
     padding: 20px;
-    height: 360px;
 }
 .uniqueMyCardContainer {
-    background: rgba(37,87,95,.2);
+    background: transparent;
     border-radius: 25px;
     padding: 20px;
 }
@@ -1607,7 +1606,9 @@ object{
 }
 .containerImgBooster {
     display: flex;
-    height: 150px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
 }
 #twitch-chat-embed{
     position: fixed;
@@ -1877,18 +1878,34 @@ img.gettedBoxImg {
     0% {
         visibility: visible;
         transform:scale(0.0001);
+        height: 0;
+    }
+    10% {
+        visibility: visible;
+        transform:scale(1.1);
+        height: 0;
+    }
+    20% {
+        visibility: visible;
+        transform:scale(0.9);
+        height: 0;
+    }
+    30% {
+        visibility: visible;
+        transform:scale(1);
     }
     60% {
         visibility: visible;
-        transform:scale(1.1);
+        transform:scale(1);
     }
     80% {
         visibility: visible;
-        transform:scale(0.9);
+        transform:scale(1);
     }
     100% {
         visibility: visible;
-        transform:scale(1);
+        height: 300px;
+        display: none;
     }
 }
 @keyframes bounceOut {
@@ -1899,8 +1916,10 @@ img.gettedBoxImg {
         transform:scale(1.1);
     }
     100% {
-        visibility: hidden;
         transform:scale(0);
+        .containerLoadingBooster{
+            display: none!important;
+        }
     }
 }
 @keyframes bounceInCards {
@@ -1932,7 +1951,7 @@ img.gettedBoxImg {
     100% {
         transform: translate(0em);
         z-index:-2;
-        visibility: hidden;
+        display: none;
     }
 }
 .discoveredCardsContainer{
@@ -1947,9 +1966,9 @@ img.gettedBoxImg {
 
 .showBooster{
     visibility: hidden;
-    animation:bounceIn 1s;
+    animation:bounceIn 5s;
     animation-fill-mode: forwards;
-    animation-delay: 0.5s;
+    height: 0;
 }
 .hiddenBooster{
     animation:bounceOut 1s;
@@ -1962,7 +1981,7 @@ img.gettedBoxImg {
     visibility: hidden;
     animation:bounceInCards 0.5s;
     animation-fill-mode: forwards;
-    animation-delay: 0.6s;
+    animation-delay: 1.5s;
 }
 .gettedCard{
     animation: moveCard 0.5s forwards;
@@ -4128,7 +4147,9 @@ span.navbar-brand {
     color:#BA01FF;
 }
 #icomp-neon p span{
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #24275d, 0 0 35px #24275d, 0 0 40px #24275d, 0 0 50px #24275d, 0 0 75px #24275d;
+    -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon6 1.5s ease-in-out infinite alternate;
+    animation: neon6 1.5s ease-in-out infinite alternate;
 }
 
 #icomp-neon p span{
@@ -5399,7 +5420,7 @@ button.navbar-toggler.collapsed {
     gap: 35px;
     justify-content: center;
     margin: 20px;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
 }
 .profilVisualsCard{
     align-items: end;
@@ -5431,4 +5452,42 @@ button.navbar-toggler.collapsed {
 .progress-bar .progress-value {
     stroke: white;
     stroke-dashoffset: 301.59;
+}
+button.guessTradeButton {
+    margin-top: 25px;
+}
+li.react-responsive-3d-carousel__item.fixed-width.fixed-height {
+    height: 450px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+li.react-responsive-3d-carousel__item.fixed-width.fixed-height:hover {
+    background: none;
+}
+li.react-responsive-3d-carousel__item.fixed-width.fixed-height:focus {
+    background: none;
+}
+ul.react-responsive-3d-carousel__list {
+    height:450px!important
+}
+.uniqueTradeContainerRandom {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+    width: 100%;
+}
+.buttonsBooster {
+    align-items: end;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+    top: 345px;
 }

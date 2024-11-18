@@ -11,6 +11,7 @@ import OpeningCards from "./openingCards";
 function OpeningBooster(props) {
     const [items, setItems] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
+    const [things, setThings] = useState(true);
     const [error, setError] = useState(null);
     const [tenCards, setTenCards] = useState([]);
     const [modalIsOpen, setIsOpen] = React.useState(true);
@@ -131,22 +132,65 @@ function OpeningBooster(props) {
                 setRarities(response.data);
             })
     }, [])
+    const customStyles = {
+        textModal: {
+            fontSize:'30px',
+            textAlign:'center',
+            color:"white"
+        },
+        imgModal: {
+            width:'200px',
+            marginBottom:'30px',
+            borderRadius: "25px",
+            filter: "drop-shadow(2px 4px 6px black)"
+        },imgModal2: {
+            width:'200px',
+            marginBottom:'30px',
+            borderRadius: "25px",
+            filter: "grayscale(1)"
+        },
+    };
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setIsLoaded(false)
+            const timeout = setTimeout(() => {
+                setThings(false)
+
+            }, 1000)
+            return () => clearTimeout(timeout)
+        }, 5000)
+
+        return () => clearTimeout(timeout)
+    }, []);
     return (
         <>
             <div className={"discoveredCardsContainer"}>
-                {isLoaded === true &&
-                    <div className={"loaderPokemon"}>
-                        <h2 sty className="u-text-center">Chargement ...</h2>
-                        <div className="pokemon"></div>
+                <div style={{
+                    display: things === true ? "flex" : "none" ,
+                    justifyContent: "center",
+                    height: "280px",
+                    width: "300px"
+                }}>
+                    <div
+                         className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
+                        <img style={customStyles.imgModal2} src={"/Boosters/" + props.idBooster + ".png"}
+                             alt="Grapefruit slice atop a pile of other slices"/>
                     </div>
-                }
-                {isLoaded === false &&
-                        items &&
-                            <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items} rarities={rarities}/>
+                    <div style={{overflow: "hidden"}}
+                         className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
+                        <img style={customStyles.imgModal} src={"/Boosters/" + props.idBooster + ".png"}
+                             alt="Grapefruit slice atop a pile of other slices"/>
+                    </div>
+                </div>
+                {
+                    items &&
+                    <OpeningCards user={props.user} change={handleState} idBooster={props.idBooster} items={items}
+                                  rarities={rarities}/>
 
                 }
             </div>
         </>
     )
 }
+
 export default OpeningBooster
