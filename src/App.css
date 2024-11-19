@@ -5412,7 +5412,7 @@ button.navbar-toggler.collapsed {
     height: 100px;
 }
 .profilCard:hover{
-    transform: scale(3);
+    transform: scale(2);
 }
 .profilCards{
     display: flex;
