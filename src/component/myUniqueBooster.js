@@ -20,7 +20,7 @@ function MyUniqueBooster(props) {
                                     <img className={"done"} src={"/images/done.png"}/>
                                 }
                                 <div className={"containerImgBooster"}>
-                                    <img className="fit-picture" src={"https://images.pokemontcg.io/" + props.nbCard.booster + "/logo.png"} alt="Grapefruit slice atop a pile of other slices"/>
+                                    <img className="fit-picture" src={"/Boosters/" +props.nbCard.booster + ".png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
                                 <SmallProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
                                 <button value={props.nbCard.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>

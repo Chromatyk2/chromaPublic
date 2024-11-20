@@ -237,6 +237,10 @@ function Profil(props) {
                     })
             })
     }
+    function errorImage(e){
+        e.target.onerror = null;
+        e.target.src = "https://assets.tcgdex.net/en/"+e.target.getAttribute("block")+"/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"/high.png";
+    }
     return (
         <>
             <div className={"contentContainer"}>
@@ -386,7 +390,12 @@ function Profil(props) {
                                                 {
                                                     if(val.number !== null && val.block !== null){
                                                         return (
-                                                            <img className={"profilCard"}
+                                                            <img
+                                                                number={val.number}
+                                                                booster={val.booster}
+                                                                block={val.block}
+                                                                className={"profilCard"}
+                                                                 onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
                                                                  style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                                  src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + val.number + "/high.png"}/>
 
