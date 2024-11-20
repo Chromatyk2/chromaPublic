@@ -338,7 +338,7 @@ function OpeningCards(props) {
         const timeoutCards = setTimeout(() => {
             setIsLoaded(false);
 
-        }, 11500)
+        }, 10600)
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
