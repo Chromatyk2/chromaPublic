@@ -156,7 +156,7 @@ function MyCardsSet(props) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     if(stadeC == 4){
                                         return (
-                                        <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                        <div style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSet">
                                                 <LazyLoadImage
                                                     number={val.number}
@@ -181,7 +181,7 @@ function MyCardsSet(props) {
                                         )
                                     }else if(stadeC == 3){
                                         return (
-                                            <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} onClick={openModal} style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                            <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSetThree">
                                                     <LazyLoadImage
                                                         number={val.number}
@@ -204,7 +204,7 @@ function MyCardsSet(props) {
                                         )
                                     }else{
                                         return (
-                                            <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
+                                            <button stade={stadeC} style={customStyles.buttonMyCard} className={"cardBox"}>
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
@@ -257,7 +257,7 @@ function MyCardsSet(props) {
                     <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
                            contentLabel="Example Modal">
                         <UniqueCard stade={stadeCard} pokemonName={pokemonName} onClick={closeModal} cardImage={myCardImage} cardNb={myCardNb}
-                                    cardId={cardId} idBooster={props.idBooster} change={handleState}/>
+                                    cardId={cardId} idBooster={props.idBooster} change={handleState} lang={lang}/>
                     </Modal>
                 </>
                 :
