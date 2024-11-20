@@ -48,7 +48,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomCommon = result[Math.floor(Math.random() * result.data.length)];
+                            const randomCommon = result[Math.floor(Math.random() * result.length)];
                             console.log(randomCommon);
                             Axios.post('/api/addCard',
                                 {
@@ -73,7 +73,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomCommon = result[Math.floor(Math.random() * result.data.length)];
+                            const randomCommon = result[Math.floor(Math.random() * result.length)];
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
@@ -116,7 +116,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomFinal = result[Math.floor(Math.random() * result.data.length)];
+                            const randomFinal = result[Math.floor(Math.random() * result.length)];
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
@@ -165,7 +165,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomFinal = result[Math.floor(Math.random() * result.data.length)];
+                            const randomFinal = result[Math.floor(Math.random() * result.length)];
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
