@@ -73,7 +73,7 @@ function CardsShop(props) {
                                     .get("/api/getBoostersList")
                                     .then(function(response){
                                         setItems(response.data);
-                                        setRandomBooster(Math.floor(Math.random() * items.length));
+                                        setRandomBooster(Math.floor(Math.random() * response.data.length));
                                         response.data.filter(item => item.gen == 1).map((val, key) => {
                                             setArray(array => [...array,
                                                 <div className="uniqueTradeContainer">
