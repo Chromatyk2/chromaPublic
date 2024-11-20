@@ -138,9 +138,8 @@ function MyCardsSet(props) {
                     <div id={"cardsContainer"}>
                         {items.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
-                                    console.log(items)
-                                    if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
-                                        var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
+                                    if(myCards.find((uc) => uc.card == val.id).rarity != "Common" && myCards.find((uc) => uc.card == val.id).rarity != "Uncommon" && typeof myCards.find((uc) => uc.card == val.id).rarity !== "undefined"){
+                                        var stadeC = rarities.find((uc) => uc.rarity.includes(myCards.find((uc) => uc.card == val.id).rarity)).stade;
                                     }else{
                                         var stadeC = 0;
                                     }
