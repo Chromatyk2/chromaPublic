@@ -241,7 +241,7 @@ function MyCardsSet(props) {
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
                                                     }}
-                                                    src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + val.number + "/high.png"}/>
+                                                    src={"https://assets.tcgdex.net/fr/" + myCards[0].block + "/" + myCards.find((uc) => uc.rarity.includes(val.rarity)).stade + "/" + val.number + "/high.png"}/>
                                                 {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
                                             </div>
                                         </div>
