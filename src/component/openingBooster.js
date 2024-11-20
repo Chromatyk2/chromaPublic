@@ -36,6 +36,7 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
+    console.log(items)
     useEffect(() => {
         Axios
             .get("/api/getRaritiesByBooster/"+props.idBooster)
