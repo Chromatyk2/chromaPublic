@@ -26,6 +26,7 @@ function OpeningCards(props) {
     const [isToken, setIsToken] = useState(false);
     const [block, setBlock] = useState(null);
     const [things, setThings] = useState(true);
+    const [thingsBooster, setThingsBooster] = useState(true);
 
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
@@ -331,6 +332,9 @@ function OpeningCards(props) {
         const timeout = setTimeout(() => {
             setThings(false)
         }, 10000)
+        const timeoutBooster = setTimeout(() => {
+            setThingsBooster(false)
+        }, 11000)
         const timeoutCards = setTimeout(() => {
             setIsLoaded(false);
 
@@ -341,7 +345,7 @@ function OpeningCards(props) {
     return (
         <>
             <div style={{
-                display: things === true ? "flex" : "none",
+                display: thingsBooster === true ? "flex" : "none",
                 justifyContent: "center",
                 height: "280px",
                 width: "300px"
