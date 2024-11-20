@@ -44,61 +44,96 @@ function OpeningCards(props) {
     useEffect(() => {
         if (tenCards.length < 11) {
             if(tenCards.length < 6){
-                const commonArray = props.items.filter(item => item.rarity == 'Common' || typeof item.rarity === "undefined");
-                const randomCommon = commonArray[Math.floor(Math.random() * commonArray.length)];
-                Axios.post('/api/addCard',
-                    {
-                        pseudo:props.user,
-                        idCard:randomCommon.id,
-                        booster:props.idBooster,
-                        rarity:randomCommon.rarity,
-                        stade:0
-                    })
-                setIsLoaded(true);
-                setTenCards(tenCards => [...tenCards,randomCommon]);
-                setNbCards (nbCards + 1);
+                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:common")
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            const randomCommon = result.data[Math.floor(Math.random() * result.data.length)];
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo:props.user,
+                                    idCard:randomCommon.id,
+                                    booster:props.idBooster,
+                                    rarity:"Common",
+                                    stade:0,
+                                    nb:randomCommon.localId
+                                })
+                            setIsLoaded(true);
+                            setTenCards(tenCards => [...tenCards,{card :randomCommon, rarity:"Common"}]);
+                            setNbCards (nbCards + 1);
+                        },
+                        (error) => {
+                            setIsLoaded(true);
+                            setError(error);
+                        }
+                    )
             }else if(tenCards.length > 5 && tenCards.length < 8){
-                    const uncommonArray = props.items.filter(item => item.rarity == 'Uncommon');
-                    const randomUncommon = uncommonArray[Math.floor(Math.random() * uncommonArray.length)];
-                    Axios.post('/api/addCard',
-                        {
-                            pseudo:props.user,
-                            idCard:randomUncommon.id,
-                            booster:props.idBooster,
-                            rarity:randomUncommon.rarity,
-                            stade:0
-                        })
-                    setIsLoaded(true);
-                    setTenCards(tenCards => [...tenCards,randomUncommon]);
-                    setNbCards (nbCards + 1);
+                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:uncommon")
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            const randomCommon = result.data[Math.floor(Math.random() * result.data.length)];
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo:props.user,
+                                    idCard:randomCommon.id,
+                                    booster:props.idBooster,
+                                    rarity:"Uncommon",
+                                    stade:0,
+                                    nb:randomCommon.localId
+                                })
+                            setIsLoaded(true);
+                            setTenCards(tenCards => [...tenCards,{card :randomCommon, rarity:"Uncommon"}]);
+                            setNbCards (nbCards + 1);
+                        },
+                        (error) => {
+                            setIsLoaded(true);
+                            setError(error);
+                        }
+                    )
             }else if(tenCards.length == 8){
                     var randomStade = Math.floor(Math.random() * 100);
                     if(randomStade < 50 ){
                         var rarityArray = props.rarities.filter(item => item.stade == 1);
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                         var stade = 1;
                     }else if(randomStade > 49 && randomStade < 79){
                         var rarityArray = props.rarities.filter(item => item.stade == 2);
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                         var stade = 2;
                     }else if(randomStade > 78 && randomStade < 99){
                         var rarityArray = props.rarities.filter(item => item.stade == 3);
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                         var stade = 3;
                     }else if (randomStade > 98){
                         var rarityArray = props.rarities.filter(item => item.stade == 4);
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                         var stade = 4;
                     }
-                    const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
-                    const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
-                    Axios.post('/api/addCard',
-                        {
-                            pseudo:props.user,
-                            idCard:randomFinal.id,
-                            booster:props.idBooster,
-                            rarity:randomFinal.rarity,
-                            stade:stade
-                        })
-                    setIsLoaded(true);
-                    setTenCards(tenCards => [...tenCards,randomFinal]);
-                    setNbCards (nbCards + 1);
+
+                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:"+rarity)
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            const randomFinal = result.data[Math.floor(Math.random() * result.data.length)];
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo:props.user,
+                                    idCard:randomFinal.id,
+                                    booster:props.idBooster,
+                                    rarity:rarity,
+                                    stade:0,
+                                    nb:randomFinal.localId
+                                })
+                            setIsLoaded(true);
+                            setTenCards(tenCards => [...tenCards,{card :randomFinal, rarity:rarity}]);
+                            setNbCards (nbCards + 1);
+                        },
+                        (error) => {
+                            setIsLoaded(true);
+                            setError(error);
+                        }
+                    )
             }else if(tenCards.length == 9){
                 if(getToken === true){
                     Axios.post('/api/addPkmToken',
@@ -110,30 +145,45 @@ function OpeningCards(props) {
                 var randomStade = Math.floor(Math.random() * 100);
                 if(randomStade < 30 ){
                     var rarityArray = props.rarities.filter(item => item.stade == 1);
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                     var stade = 1;
                 }else if(randomStade > 29 && randomStade < 79){
                     var rarityArray = props.rarities.filter(item => item.stade == 2);
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                     var stade = 2;
                 }else if (randomStade > 79  && randomStade < 96){
                     var rarityArray = props.rarities.filter(item => item.stade == 3);
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                     var stade = 3;
                 }else{
                     var rarityArray = props.rarities.filter(item => item.stade == 4);
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                     var stade = 4;
                 }
-                const finalArray = props.items.filter(item => item.rarity == rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity);
-                const randomFinal = finalArray[Math.floor(Math.random() * finalArray.length)];
-                Axios.post('/api/addCard',
-                    {
-                        pseudo:props.user,
-                        idCard:randomFinal.id,
-                        booster:props.idBooster,
-                        rarity:randomFinal.rarity,
-                        stade:stade
-                    })
-                setIsLoaded(false);
-                setTenCards(tenCards => [...tenCards,randomFinal]);
-                setNbCards (nbCards + 1);
+                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:"+rarity)
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            const randomFinal = result.data[Math.floor(Math.random() * result.data.length)];
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo:props.user,
+                                    idCard:randomFinal.id,
+                                    booster:props.idBooster,
+                                    rarity:rarity,
+                                    stade:0,
+                                    nb:randomFinal.localId
+                                })
+                            setIsLoaded(true);
+                            setTenCards(tenCards => [...tenCards,{card :randomFinal, rarity:rarity}]);
+                            setNbCards (nbCards + 1);
+                            console.log(tenCards)
+                        },
+                        (error) => {
+                            setIsLoaded(true);
+                            setError(error);
+                        }
+                    )
             }
         }
     }, [nbCards])
