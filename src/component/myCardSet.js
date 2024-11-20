@@ -122,7 +122,7 @@ function MyCardsSet(props) {
         <>
             {isLoaded === false ?
                 <>
-                    <ProgressBarCard getNb={myCards.length} item={items.length}/>
+                    <ProgressBarCard getNb={myCards.length} item={items.cards.length}/>
                     <div style={{color:"white",display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
                         <label htmlFor="subscribe">
                             <input
@@ -136,7 +136,7 @@ function MyCardsSet(props) {
                         </label>
                     </div>
                     <div id={"cardsContainer"}>
-                        {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                        {items.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
                                     if(val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined"){
                                         var stadeC = rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
