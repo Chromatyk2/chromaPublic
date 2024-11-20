@@ -17,7 +17,7 @@ function MyCards(props) {
     const [boosterList, setBoosterList] = useState(null);
     const [page, setPage] = useState(null);
     const [guruName, setGuruName] = useState(null);
-    function displayPage(e,f, g) {
+    function displayPage(e,f,g) {
         setPage(e);
         setNbCard(f);
         setGuruName(g);

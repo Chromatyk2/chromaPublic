@@ -14,7 +14,7 @@ function MyUniqueBooster(props) {
     function displayPage(e) {
         var page = e.target.value;
         var nbCard = e.target.getAttribute("nbCard")
-        var guruName = e.target.getAttribute("nbCard")
+        var guruName = e.target.getAttribute("guruName")
         props.change(page,nbCard, guruName);
     }
     console.log(booster)
