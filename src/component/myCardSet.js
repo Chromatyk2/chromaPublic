@@ -61,7 +61,7 @@ function MyCardsSet(props) {
             .get("/api/getRaritiesByBooster/"+props.idBooster)
             .then(function(response){
                 setRarities(response.data);
-                if(response.data[0].rarity == "gym" ||response.data[0].rarity == "col"){
+                if(response.data[0].block == "gym" ||response.data[0].block == "col"){
                     setLang("en")
                 }else{
                     setLang("fr")
