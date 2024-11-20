@@ -2377,7 +2377,12 @@ a.linkOnAirOff {
     display: block;
     animation: bounceInCards 1s forwards;
 }
-
+.showCards{
+    visibility: hidden;
+    animation:bounceInCards 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
 .glowGetGreen{
     display: block;
     filter: drop-shadow(2px 4px 30px green);
