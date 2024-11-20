@@ -118,6 +118,10 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
+    function errorImage(e){
+        e.target.onerror = null;
+        e.target.src = "https://assets.tcgdex.net/en/"+e.target.getAttribute("block")+"/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"/high.png";
+    }
     return (
         <>
             {isLoaded === false ?
@@ -149,6 +153,10 @@ function MyCardsSet(props) {
                                         <div onClick={openModal} style={{animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSet">
                                                 <LazyLoadImage
+                                                    number={val.number}
+                                                    booster={val.booster}
+                                                    block={val.block}
+                                                    onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
                                                     delayTime={0}
                                                     threshold={200}
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -171,6 +179,10 @@ function MyCardsSet(props) {
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} onClick={openModal} style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard} image={val.image} stade={stadeC} className="cardBangerAlertSetThree">
                                                     <LazyLoadImage
+                                                        number={val.number}
+                                                        booster={val.booster}
+                                                        block={val.block}
+                                                        onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
                                                         delayTime={0}
                                                         threshold={200}
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -191,6 +203,10 @@ function MyCardsSet(props) {
                                         return (
                                             <button stade={stadeC} style={customStyles.buttonMyCard} onClick={openModal} className={"cardBox"}>
                                                 <LazyLoadImage
+                                                    number={val.number}
+                                                    booster={val.booster}
+                                                    block={val.block}
+                                                    onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
                                                     delayTime={0}
                                                     threshold={200}
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -215,6 +231,10 @@ function MyCardsSet(props) {
                                 }else if(!onlyMine){
                                     return (
                                         <LazyLoadImage
+                                            number={val.number}
+                                            booster={val.booster}
+                                            block={val.block}
+                                            onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
                                             placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                             delayTime={0}
                                             threshold={200}
