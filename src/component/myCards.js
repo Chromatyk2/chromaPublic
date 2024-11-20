@@ -16,9 +16,11 @@ function MyCards(props) {
     const [totalCardUser, setTotalCardUser] = useState(null);
     const [boosterList, setBoosterList] = useState(null);
     const [page, setPage] = useState(null);
-    function displayPage(e,f) {
+    const [guruName, setGuruName] = useState(null);
+    function displayPage(e,f, g) {
         setPage(e);
         setNbCard(f);
+        setGuruName(g);
     }
     function backPage() {
         setPage(null)
@@ -53,7 +55,7 @@ function MyCards(props) {
                     page ?
                         <>
                             <button style={{color:"white",width:"100%",margin:"0",padding:"0"}}onClick={backPage} className="backButton">Retour</button>
-                            <MyCardsSet user={props.user} card={nbCard} idBooster={page}/>
+                            <MyCardsSet user={props.user} card={nbCard} idBooster={page} guruName={guruName}/>
                         </>
                     :
                         nbCards &&
