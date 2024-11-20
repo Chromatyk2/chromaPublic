@@ -14,7 +14,8 @@ function MyUniqueBooster(props) {
     function displayPage(e) {
         var page = e.target.value;
         var nbCard = e.target.getAttribute("nbCard")
-        props.change(page,nbCard);
+        var guruName = e.target.getAttribute("nbCard")
+        props.change(page,nbCard, guruName);
     }
     console.log(booster)
     return (
@@ -26,7 +27,7 @@ function MyUniqueBooster(props) {
                                     <img className="fit-picture" src={"/Boosters/" +props.nbCard.booster + ".png"} alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
                                 <SmallProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
-                                <button value={props.nbCard.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
+                                <button guruName={booster[0].nameGuru} value={props.nbCard.booster} onClick={displayPage} className="guessTradeButton">Voir toute mes cartes</button>
                             </div>
     )
 }
