@@ -71,7 +71,7 @@ function OpeningBooster(props) {
 
             }, 1000)
             return () => clearTimeout(timeout)
-        }, 5000)
+        }, 7000)
 
         return () => clearTimeout(timeout)
     }, []);
