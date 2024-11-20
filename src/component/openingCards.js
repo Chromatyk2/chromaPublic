@@ -67,7 +67,7 @@ function OpeningCards(props) {
                                     rarity:"Common",
                                     stade:0,
                                     nb:randomCommon.localId,
-                                    block:block
+                                    block:props.block
                                 })
                             setIsLoaded(true);
                             setTenCards(tenCards => [...tenCards,{card :randomCommon, rarity:"Common"}]);
@@ -92,7 +92,7 @@ function OpeningCards(props) {
                                     rarity:"Uncommon",
                                     stade:0,
                                     nb:randomCommon.localId,
-                                    block:block
+                                    block:props.block
                                 })
                             setIsLoaded(true);
                             setTenCards(tenCards => [...tenCards,{card :randomCommon, rarity:"Uncommon"}]);
@@ -140,7 +140,7 @@ function OpeningCards(props) {
                                                 rarity:rarity,
                                                 stade:stade,
                                                 nb:result.localId,
-                                                block:block
+                                                block:props.block
                                             })
                                         setIsLoaded(true);
                                         setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
@@ -196,7 +196,7 @@ function OpeningCards(props) {
                                                 rarity:rarity,
                                                 stade:stade,
                                                 nb:result.localId,
-                                                block:block
+                                                block:props.block
                                             })
                                         setIsLoaded(true);
                                         setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);

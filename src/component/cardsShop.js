@@ -30,6 +30,7 @@ function CardsShop(props) {
     const [onOpen, setOnOpen] = React.useState(false);
     const [selectedBoosterId, setSelectedBoosterId] = React.useState(0);
     const [nameGuru, setNameGuru] = React.useState(0);
+    const [block, setBlock] = React.useState(0);
     const customStyles = {
         content: {
             position:'initial',
@@ -156,10 +157,12 @@ function CardsShop(props) {
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
         var nameGuru = e.target.getAttribute("nameGuru");
+        var block = e.target.getAttribute("block");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
         setNameGuru(nameGuru);
+        setBlock(block);
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
@@ -188,10 +191,12 @@ function CardsShop(props) {
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
         var nameGuru = e.target.getAttribute("nameGuru");
+        var block = e.target.getAttribute("block");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
         setNameGuru(nameGuru);
+        setBlock(block);
         Axios
             .get("/api/getCanOpen/"+props.user)
             .then(function(response){
@@ -243,7 +248,7 @@ function CardsShop(props) {
     return (
         <>
             {onOpen === true ?
-                <OpeningBooster change={handleState} idBooster={boosterId} user={props.user} boosterGuru={nameGuru}/>
+                <OpeningBooster change={handleState} idBooster={boosterId} user={props.user} boosterGuru={nameGuru} block={block}/>
                 :
                 canOpenLive !== null &&
                 <>
@@ -290,34 +295,34 @@ function CardsShop(props) {
                         <option value="9">Gen 9</option>
                     </select>
                     <div id={"cardsContainer"}>
-                        {items &&
-                            <div className="uniqueTradeContainerRandom">
-                                <div style={{height:"70px"}} className={"containerImgBooster"}>
-                                    <img style={{width:"70px"}} className="fit-picture" src={"/images/random.png"}
-                                         alt="Grapefruit slice atop a pile of other slices"/>
-                                </div>
-                                <div>
-                                    {points > 0 ?
-                                        loading === false ?
-                                                <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}
-                                                        value={items[Math.floor(Math.random() * items.length)].name}
-                                                        onClick={openModal}
-                                                        className="guessTradeButton">Ouvrir
-                                                </button>
-                                            :
-                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Chargement</button>
-                                        :
-                                        <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Aucun Token</button>
-                                    }
-                                    {canOpenLive == 1 &&
-                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}  value={items[Math.floor(Math.random() * items.length)].name}
-                                                    onClick={freeBooster}
-                                                    className="guessTradeButton">Booster Gratuit
-                                            </button>
-                                    }
-                                </div>
-                            </div>
-                        }
+                        {/*{items &&*/}
+                        {/*    <div className="uniqueTradeContainerRandom">*/}
+                        {/*        <div style={{height:"70px"}} className={"containerImgBooster"}>*/}
+                        {/*            <img style={{width:"70px"}} className="fit-picture" src={"/images/random.png"}*/}
+                        {/*                 alt="Grapefruit slice atop a pile of other slices"/>*/}
+                        {/*        </div>*/}
+                        {/*        <div>*/}
+                        {/*            {points > 0 ?*/}
+                        {/*                loading === false ?*/}
+                        {/*                        <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}*/}
+                        {/*                                value={items[Math.floor(Math.random() * items.length)].name}*/}
+                        {/*                                onClick={openModal}*/}
+                        {/*                                className="guessTradeButton">Ouvrir*/}
+                        {/*                        </button>*/}
+                        {/*                    :*/}
+                        {/*                    <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Chargement</button>*/}
+                        {/*                :*/}
+                        {/*                <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Aucun Token</button>*/}
+                        {/*            }*/}
+                        {/*            {canOpenLive == 1 &&*/}
+                        {/*                    <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}  value={items[Math.floor(Math.random() * items.length)].name}*/}
+                        {/*                            onClick={freeBooster}*/}
+                        {/*                            className="guessTradeButton">Booster Gratuit*/}
+                        {/*                    </button>*/}
+                        {/*            }*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*}*/}
                         {array.length > 0 &&
                             <div style={{width: "100%"}}>
                                 <Carousel onChange={(item) => changeCarousel(item)}
@@ -335,6 +340,7 @@ function CardsShop(props) {
                                                             style={{fontSize: "13px", width: "180px", margin:"0"}}
                                                             value={items[selectedBoosterId].name}
                                                             nameGuru={items[selectedBoosterId].nameGuru}
+                                                            block={items[selectedBoosterId].block}
                                                             onClick={openModal}
                                                             className="guessTradeButton">Ouvrir
                                                     </button>
@@ -347,6 +353,7 @@ function CardsShop(props) {
                                             <button style={{fontSize: "13px", width: "180px", margin:"0"}}
                                                         value={items[selectedBoosterId].name}
                                                         nameGuru={items[selectedBoosterId].nameGuru}
+                                                        block={items[selectedBoosterId].block}
                                                         onClick={freeBooster}
                                                         className="guessTradeButton">Booster Gratuit
                                             </button>
