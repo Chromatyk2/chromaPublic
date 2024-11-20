@@ -62,39 +62,9 @@ function OpeningBooster(props) {
             filter: "grayscale(1)"
         },
     };
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setIsLoaded(false)
-            const timeout = setTimeout(() => {
-                setThings(false)
-                setIsLoaded(false);
-
-            }, 1000)
-            return () => clearTimeout(timeout)
-        }, 7000)
-
-        return () => clearTimeout(timeout)
-    }, []);
     return (
         <>
             <div className={"discoveredCardsContainer"}>
-                <div style={{
-                    display: things === true ? "flex" : "none" ,
-                    justifyContent: "center",
-                    height: "280px",
-                    width: "300px"
-                }}>
-                    <div
-                         className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
-                        <img style={customStyles.imgModal2} src={"/Boosters/" + props.idBooster + ".png"}
-                             alt="Grapefruit slice atop a pile of other slices"/>
-                    </div>
-                    <div style={{overflow: "hidden"}}
-                         className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
-                        <img style={customStyles.imgModal} src={"/Boosters/" + props.idBooster + ".png"}
-                             alt="Grapefruit slice atop a pile of other slices"/>
-                    </div>
-                </div>
                 {
                     things === false &&
                     <OpeningCards block={props.block} user={props.user} change={handleState} boosterGuru={props.boosterGuru} idBooster={props.idBooster} items={items}
