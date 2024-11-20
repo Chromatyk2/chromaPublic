@@ -10,7 +10,8 @@ import SmallProgressBarCard from "./smallProgressBar";
 
 function MyUniqueBooster(props) {
 
-    const [booster, setBooster] = useState(props.boosterList.find((uc) => uc.nameGuru == props.nbCard.booster).nameGuru);
+    const [booster, setBooster] = useState(props.boosterList.find((uc) => uc.nameGuru == props.nbCard.booster));
+    console.log(booster);
     function displayPage(e) {
         var page = e.target.value;
         var nbCard = e.target.getAttribute("nbCard")
