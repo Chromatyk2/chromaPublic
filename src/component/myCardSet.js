@@ -57,7 +57,7 @@ function MyCardsSet(props) {
     };
     useEffect(() => {
         Axios
-            .get("/api/getRaritiesByBooster/"+props.guruName)
+            .get("/api/getRaritiesByBooster/"+props.idBooster)
             .then(function(response){
                 setRarities(response.data);
             })
