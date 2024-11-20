@@ -2378,7 +2378,6 @@ a.linkOnAirOff {
     animation: bounceInCards 1s forwards;
 }
 .showCards{
-    visibility: hidden;
     animation:bounceInCards 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 1.5s;
