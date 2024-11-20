@@ -334,7 +334,7 @@ function CardsShop(props) {
                                                 <button
                                                             style={{fontSize: "13px", width: "180px", margin:"0"}}
                                                             value={items[selectedBoosterId].name}
-                                                            nameGuru={items[selectedBoosterId].nameGuru}
+
                                                             onClick={openModal}
                                                             className="guessTradeButton">Ouvrir
                                                     </button>
@@ -346,7 +346,6 @@ function CardsShop(props) {
                                         {canOpenLive == 1 &&
                                             <button style={{fontSize: "13px", width: "180px", margin:"0"}}
                                                         value={items[selectedBoosterId].name}
-                                                        nameGuru={items[selectedBoosterId].nameGuru}
                                                         onClick={freeBooster}
                                                         className="guessTradeButton">Booster Gratuit
                                             </button>
