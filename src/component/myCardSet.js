@@ -182,7 +182,7 @@ function MyCardsSet(props) {
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                                             style: {transitionDelay: "0.1s"},
                                                         }}
-                                                        src={"https://assets.tcgdex.net/fr/" + myCards[0].block + "/" + props.idBooster + "/" + val.number + "/high.png"}/>
+                                                        src={"https://assets.tcgdex.net/fr/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
                                                     {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1.2)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
                                                 </div>
                                             </div>
@@ -204,7 +204,7 @@ function MyCardsSet(props) {
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
                                                     }}
-                                                    src={"https://assets.tcgdex.net/fr/" + myCards[0].block + "/" + props.idBooster + "/" + val.number + "/high.png"}/>
+                                                    src={"https://assets.tcgdex.net/fr/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
                                                 {/*<img stade={stadeC} style={{filter:stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}} cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}*/}
                                                 {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                                 {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
@@ -228,8 +228,7 @@ function MyCardsSet(props) {
                                                 // If you need to, you can tweak the effect transition using the wrapper style.
                                                 style: {transitionDelay: "0.1s"},
                                             }}
-                                            src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + val.number + "/high.png"}
-                                        />
+                                            src={"https://assets.tcgdex.net/fr/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
                                         // <img style={{filter:"grayscale(1)"}} className={"fit-picture-card"} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"} onError={errorImage}/>
                                     )
                                 }
