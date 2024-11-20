@@ -31,6 +31,7 @@ function CardsShop(props) {
     const [selectedBoosterId, setSelectedBoosterId] = React.useState(0);
     const [nameGuru, setNameGuru] = React.useState(0);
     const [block, setBlock] = React.useState(0);
+    const [randomBooster, setRandomBooster] = React.useState(null);
     const customStyles = {
         content: {
             position:'initial',
@@ -72,6 +73,7 @@ function CardsShop(props) {
                                     .get("/api/getBoostersList")
                                     .then(function(response){
                                         setItems(response.data);
+                                        setRandomBooster(Math.floor(Math.random() * items.length));
                                         response.data.filter(item => item.gen == 1).map((val, key) => {
                                             setArray(array => [...array,
                                                 <div className="uniqueTradeContainer">
@@ -295,34 +297,39 @@ function CardsShop(props) {
                         <option value="9">Gen 9</option>
                     </select>
                     <div id={"cardsContainer"}>
-                        {/*{items &&*/}
-                        {/*    <div className="uniqueTradeContainerRandom">*/}
-                        {/*        <div style={{height:"70px"}} className={"containerImgBooster"}>*/}
-                        {/*            <img style={{width:"70px"}} className="fit-picture" src={"/images/random.png"}*/}
-                        {/*                 alt="Grapefruit slice atop a pile of other slices"/>*/}
-                        {/*        </div>*/}
-                        {/*        <div>*/}
-                        {/*            {points > 0 ?*/}
-                        {/*                loading === false ?*/}
-                        {/*                        <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}*/}
-                        {/*                                value={items[Math.floor(Math.random() * items.length)].name}*/}
-                        {/*                                onClick={openModal}*/}
-                        {/*                                className="guessTradeButton">Ouvrir*/}
-                        {/*                        </button>*/}
-                        {/*                    :*/}
-                        {/*                    <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Chargement</button>*/}
-                        {/*                :*/}
-                        {/*                <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Aucun Token</button>*/}
-                        {/*            }*/}
-                        {/*            {canOpenLive == 1 &&*/}
-                        {/*                    <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}  value={items[Math.floor(Math.random() * items.length)].name}*/}
-                        {/*                            onClick={freeBooster}*/}
-                        {/*                            className="guessTradeButton">Booster Gratuit*/}
-                        {/*                    </button>*/}
-                        {/*            }*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*}*/}
+                        {randomBooster &&
+                            <div className="uniqueTradeContainerRandom">
+                                <div style={{height:"70px"}} className={"containerImgBooster"}>
+                                    <img style={{width:"70px"}} className="fit-picture" src={"/images/random.png"}
+                                         alt="Grapefruit slice atop a pile of other slices"/>
+                                </div>
+                                <div>
+                                    {points > 0 ?
+                                        loading === false ?
+                                                <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}
+                                                        value={items[randomBooster].name}
+                                                        nameGuru={items[randomBooster].nameGuru}
+                                                        block={items[randomBooster].block}
+                                                        onClick={openModal}
+                                                        className="guessTradeButton">Ouvrir
+                                                </button>
+                                            :
+                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Chargement</button>
+                                        :
+                                        <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Aucun Token</button>
+                                    }
+                                    {canOpenLive == 1 &&
+                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}
+                                                    value={items[randomBooster].name}
+                                                    nameGuru={items[randomBooster].nameGuru}
+                                                    block={items[randomBooster].block}
+                                                    onClick={freeBooster}
+                                                    className="guessTradeButton">Booster Gratuit
+                                            </button>
+                                    }
+                                </div>
+                            </div>
+                        }
                         {array.length > 0 &&
                             <div style={{width: "100%"}}>
                                 <Carousel onChange={(item) => changeCarousel(item)}
