@@ -29,6 +29,7 @@ function CardsShop(props) {
     const [nextFree, setNextFree] = React.useState(null);
     const [onOpen, setOnOpen] = React.useState(false);
     const [selectedBoosterId, setSelectedBoosterId] = React.useState(0);
+    const [nameGuru, setNameGuru] = React.useState(0);
     const customStyles = {
         content: {
             position:'initial',
@@ -154,9 +155,11 @@ function CardsShop(props) {
         setOnOpen(true);
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
+        var nameGuru = e.target.getAttribute("nameGuru");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
+        setNameGuru(nameGuru);
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
@@ -184,9 +187,11 @@ function CardsShop(props) {
         setOnOpen(true);
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
+        var nameGuru = e.target.getAttribute("nameGuru");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
+        setNameGuru(nameGuru);
         Axios
             .get("/api/getCanOpen/"+props.user)
             .then(function(response){
@@ -238,7 +243,7 @@ function CardsShop(props) {
     return (
         <>
             {onOpen === true ?
-                <OpeningBooster change={handleState} idBooster={boosterId} user={props.user}/>
+                <OpeningBooster change={handleState} idBooster={boosterId} user={props.user} boosterGuru={nameGuru}/>
                 :
                 canOpenLive !== null &&
                 <>
@@ -329,6 +334,7 @@ function CardsShop(props) {
                                                 <button
                                                             style={{fontSize: "13px", width: "180px", margin:"0"}}
                                                             value={items[selectedBoosterId].name}
+                                                            nameGuru={items[selectedBoosterId].nameGuru}
                                                             onClick={openModal}
                                                             className="guessTradeButton">Ouvrir
                                                     </button>
@@ -340,6 +346,7 @@ function CardsShop(props) {
                                         {canOpenLive == 1 &&
                                             <button style={{fontSize: "13px", width: "180px", margin:"0"}}
                                                         value={items[selectedBoosterId].name}
+                                                        nameGuru={items[selectedBoosterId].nameGuru}
                                                         onClick={freeBooster}
                                                         className="guessTradeButton">Booster Gratuit
                                             </button>

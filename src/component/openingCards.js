@@ -121,7 +121,7 @@ function OpeningCards(props) {
                         var stade = 4;
                     }
 
-                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:"+rarity)
+                fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.boosterGuru+" !rarity:"+rarity)
                     .then(res => res.json())
                     .then(
                         (result) => {
@@ -132,7 +132,7 @@ function OpeningCards(props) {
                                     idCard:randomFinal.id,
                                     booster:props.idBooster,
                                     rarity:rarity,
-                                    stade:0,
+                                    stade:stade,
                                     nb:randomFinal.localId
                                 })
                             setIsLoaded(true);
@@ -170,7 +170,7 @@ function OpeningCards(props) {
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                     var stade = 4;
                 }
-                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:"+rarity)
+                fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.boosterGuru+" !rarity:"+rarity)
                     .then(res => res.json())
                     .then(
                         (result) => {
@@ -181,7 +181,7 @@ function OpeningCards(props) {
                                     idCard:randomFinal.id,
                                     booster:props.idBooster,
                                     rarity:rarity,
-                                    stade:0,
+                                    stade:stade,
                                     nb:randomFinal.localId
                                 })
                             setIsLoaded(true);
