@@ -155,7 +155,7 @@ function CardsShop(props) {
         setOnOpen(true);
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
-        var nameGuru = e.target.nameGuru;
+        var nameGuru = e.target.getAttribute("nameGuru");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
@@ -187,7 +187,7 @@ function CardsShop(props) {
         setOnOpen(true);
         var button = e.currentTarget;
         var nbBooster = e.target.getAttribute("nbBooster");
-        var nameGuru = e.target.nameGuru;
+        var nameGuru = e.target.getAttribute("nameGuru");
         button.disabled = true;
         var id = e.target.value;
         setBoosterId(id);
@@ -243,7 +243,7 @@ function CardsShop(props) {
     return (
         <>
             {onOpen === true ?
-                <OpeningBooster change={handleState} idBooster={boosterId} user={props.user} nameGuru={nameGuru}/>
+                <OpeningBooster change={handleState} idBooster={boosterId} user={props.user} boosterGuru={nameGuru}/>
                 :
                 canOpenLive !== null &&
                 <>
