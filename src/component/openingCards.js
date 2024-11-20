@@ -48,8 +48,8 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            console.log(result)
                             const randomCommon = result[Math.floor(Math.random() * result.data.length)];
+                            console.log(randomCommon);
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
