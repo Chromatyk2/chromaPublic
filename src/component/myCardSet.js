@@ -221,7 +221,7 @@ function MyCardsSet(props) {
                                             width={"250"}
                                             style={{filter:"grayscale(1)"}}
                                             stade={stadeC}
-                                            image={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+".png"}
+                                            image={val.image}
                                             wrapperClassName={"fit-picture-card"}
                                             effect="opacity"
                                             wrapperProps={{
