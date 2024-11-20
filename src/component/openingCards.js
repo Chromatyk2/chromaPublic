@@ -170,7 +170,7 @@ function OpeningCards(props) {
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
                     var stade = 4;
                 }
-                fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.boosterGuru+" !rarity:"+rarity)
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.boosterGuru+' !rarity:"'+rarity+'"')
                     .then(res => res.json())
                     .then(
                         (result) => {
