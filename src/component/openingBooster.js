@@ -16,7 +16,7 @@ function OpeningBooster(props) {
     const [modalIsOpen, setIsOpen] = React.useState(true);
     let [state, setState] = useState("Initial");
     let [rarities, setRarities] = useState(null);
-    const OpeningCards = React.lazy(() => import('./OpeningCards'));
+    const OpeningCards = React.lazy(() => import('./openingCards'));
     function handleState() {
         setTimeout(() => {
             props.change();
