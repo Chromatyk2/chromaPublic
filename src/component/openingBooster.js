@@ -29,6 +29,11 @@ function OpeningBooster(props) {
             .then(
                 (result) => {
                     setItems(result.cards);
+                    Axios
+                        .get("/api/getRaritiesByBooster/"+props.idBooster)
+                        .then(function(response){
+                            setRarities(response.data);
+                        })
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -36,14 +41,6 @@ function OpeningBooster(props) {
                 }
             )
     }, []);
-    console.log(items)
-    useEffect(() => {
-        Axios
-            .get("/api/getRaritiesByBooster/"+props.idBooster)
-            .then(function(response){
-                setRarities(response.data);
-            })
-    }, [])
     const customStyles = {
         textModal: {
             fontSize:'30px',
@@ -66,7 +63,7 @@ function OpeningBooster(props) {
         <>
             <div className={"discoveredCardsContainer"}>
                 {
-                    things === false &&
+                    rarities &&
                     <OpeningCards block={props.block} user={props.user} change={handleState} boosterGuru={props.boosterGuru} idBooster={props.idBooster} items={items}
                                   rarities={rarities}/>
 
