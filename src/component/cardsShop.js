@@ -242,6 +242,7 @@ function CardsShop(props) {
         setIsOpen(false);
     }
     function handleState() {
+        setRandomBooster(Math.floor(Math.random() * items.length));
         setOnOpen(false);
     }
     function changeCarousel(e) {
