@@ -302,7 +302,7 @@ function OpeningCards(props) {
     };
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://assets.tcgdex.net/en/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png";
+        e.target.src = "https://assets.tcgdex.net/en/"+block+"/"+props.idBooster+"/"+e.target.getAttribute("cardLocalId")+"/high.png";
     }
     useEffect(() => {
             const timeout = setTimeout(() => {
