@@ -48,7 +48,8 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomCommon = result.data[Math.floor(Math.random() * result.data.length)];
+                            console.log(result)
+                            const randomCommon = result[Math.floor(Math.random() * result.data.length)];
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
@@ -72,7 +73,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomCommon = result.data[Math.floor(Math.random() * result.data.length)];
+                            const randomCommon = result[Math.floor(Math.random() * result.data.length)];
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
@@ -115,7 +116,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomFinal = result.data[Math.floor(Math.random() * result.data.length)];
+                            const randomFinal = result[Math.floor(Math.random() * result.data.length)];
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
@@ -164,7 +165,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomFinal = result.data[Math.floor(Math.random() * result.data.length)];
+                            const randomFinal = result[Math.floor(Math.random() * result.data.length)];
                             Axios.post('/api/addCard',
                                 {
                                     pseudo:props.user,
