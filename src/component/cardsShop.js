@@ -32,6 +32,7 @@ function CardsShop(props) {
     const [nameGuru, setNameGuru] = React.useState(0);
     const [block, setBlock] = React.useState(0);
     const [randomBooster, setRandomBooster] = React.useState(null);
+    const [globalBooster, setGlobalBoosters] = React.useState(null);
     const customStyles = {
         content: {
             position:'initial',
@@ -73,7 +74,11 @@ function CardsShop(props) {
                                     .get("/api/getBoostersList")
                                     .then(function(response){
                                         setItems(response.data);
-                                        setRandomBooster(Math.floor(Math.random() * response.data.length));
+                                            Axios.get("/api/getBoostersList")
+                                            .then(function(response){
+                                                setGlobalBoosters(response.data);
+                                                setRandomBooster(Math.floor(Math.random() * response.data.length));
+                                            })
                                         response.data.filter(item => item.gen == 1).map((val, key) => {
                                             setArray(array => [...array,
                                                 <div className="uniqueTradeContainer">
@@ -308,9 +313,9 @@ function CardsShop(props) {
                                     {points > 0 ?
                                         loading === false ?
                                                 <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}
-                                                        value={items[randomBooster].name}
-                                                        nameGuru={items[randomBooster].nameGuru}
-                                                        block={items[randomBooster].block}
+                                                        value={globalBooster[randomBooster].name}
+                                                        nameGuru={globalBooster[randomBooster].nameGuru}
+                                                        block={globalBooster[randomBooster].block}
                                                         onClick={openModal}
                                                         className="guessTradeButton">Ouvrir
                                                 </button>
@@ -321,9 +326,9 @@ function CardsShop(props) {
                                     }
                                     {canOpenLive == 1 &&
                                             <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}
-                                                    value={items[randomBooster].name}
-                                                    nameGuru={items[randomBooster].nameGuru}
-                                                    block={items[randomBooster].block}
+                                                    value={globalBooster[randomBooster].name}
+                                                    nameGuru={globalBooster[randomBooster].nameGuru}
+                                                    block={globalBooster[randomBooster].block}
                                                     onClick={freeBooster}
                                                     className="guessTradeButton">Booster Gratuit
                                             </button>
