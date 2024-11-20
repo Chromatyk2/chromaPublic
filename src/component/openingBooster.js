@@ -26,7 +26,7 @@ function OpeningBooster(props) {
         fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
             .then(res => res.json())
             .then(
-                (result) => {
+                (result) => {console.log(result)
                     setItems(result.data.cards);
                     setIsLoaded(false);
                 },
