@@ -29,7 +29,6 @@ function OpeningBooster(props) {
             .then(
                 (result) => {
                     setItems(result.cards);
-                    setIsLoaded(false);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -68,6 +67,7 @@ function OpeningBooster(props) {
             setIsLoaded(false)
             const timeout = setTimeout(() => {
                 setThings(false)
+                setIsLoaded(false);
 
             }, 1000)
             return () => clearTimeout(timeout)
