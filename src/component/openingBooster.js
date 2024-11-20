@@ -97,7 +97,8 @@ function OpeningBooster(props) {
                 </div>
                 {
                     things === false &&
-                    <OpeningCards block={props.block} user={props.user} ready={} change={handleState} boosterGuru={props.boosterGuru} idBooster={props.idBooster} items={items}
+                    <OpeningCards block={props.block} user={props.user} c
+                                  hange={handleState} boosterGuru={props.boosterGuru} idBooster={props.idBooster} items={items}
                                   rarities={rarities}/>
 
                 }
