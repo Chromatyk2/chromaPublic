@@ -125,19 +125,25 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomFinal = result[Math.floor(Math.random() * result.length)];
-                            Axios.post('/api/addCard',
-                                {
-                                    pseudo:props.user,
-                                    idCard:randomFinal.id,
-                                    booster:props.idBooster,
-                                    rarity:rarity,
-                                    stade:stade,
-                                    nb:randomFinal.localId
-                                })
-                            setIsLoaded(true);
-                            setTenCards(tenCards => [...tenCards,{card :randomFinal, rarity:rarity}]);
-                            setNbCards (nbCards + 1);
+                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        Axios.post('/api/addCard',
+                                            {
+                                                pseudo:props.user,
+                                                idCard:result.id,
+                                                booster:props.idBooster,
+                                                rarity:rarity,
+                                                stade:stade,
+                                                nb:result.localId
+                                            })
+                                        setIsLoaded(true);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
+                                        setNbCards (nbCards + 1);
+                                        console.log(tenCards)
+                                    })
                         },
                         (error) => {
                             setIsLoaded(true);
@@ -174,20 +180,25 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomFinal = result[Math.floor(Math.random() * result.length)];
-                            Axios.post('/api/addCard',
-                                {
-                                    pseudo:props.user,
-                                    idCard:randomFinal.id,
-                                    booster:props.idBooster,
-                                    rarity:rarity,
-                                    stade:stade,
-                                    nb:randomFinal.localId
-                                })
-                            setIsLoaded(true);
-                            setTenCards(tenCards => [...tenCards,{card :randomFinal, rarity:rarity}]);
-                            setNbCards (nbCards + 1);
-                            console.log(tenCards)
+                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        Axios.post('/api/addCard',
+                                            {
+                                                pseudo:props.user,
+                                                idCard:result.id,
+                                                booster:props.idBooster,
+                                                rarity:rarity,
+                                                stade:stade,
+                                                nb:result.localId
+                                            })
+                                        setIsLoaded(true);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
+                                        setNbCards (nbCards + 1);
+                                        console.log(tenCards)
+                                    })
                         },
                         (error) => {
                             setIsLoaded(true);
