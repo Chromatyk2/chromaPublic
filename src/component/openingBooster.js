@@ -6,7 +6,6 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import Modal from 'react-modal';
-import OpeningCards from "./openingCards";
 
 function OpeningBooster(props) {
     const [items, setItems] = useState(null);
@@ -17,6 +16,7 @@ function OpeningBooster(props) {
     const [modalIsOpen, setIsOpen] = React.useState(true);
     let [state, setState] = useState("Initial");
     let [rarities, setRarities] = useState(null);
+    const OpeningCards = React.lazy(() => import('./OpeningCards'));
     function handleState() {
         setTimeout(() => {
             props.change();
@@ -78,29 +78,32 @@ function OpeningBooster(props) {
     return (
         <>
             <div className={"discoveredCardsContainer"}>
-                <div style={{
-                    display: things === true ? "flex" : "none" ,
-                    justifyContent: "center",
-                    height: "280px",
-                    width: "300px"
-                }}>
-                    <div
-                         className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
-                        <img style={customStyles.imgModal2} src={"/Boosters/" + props.idBooster + ".png"}
-                             alt="Grapefruit slice atop a pile of other slices"/>
-                    </div>
-                    <div style={{overflow: "hidden"}}
-                         className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
-                        <img style={customStyles.imgModal} src={"/Boosters/" + props.idBooster + ".png"}
-                             alt="Grapefruit slice atop a pile of other slices"/>
-                    </div>
-                </div>
-                {
-                    things === false &&
-                    <OpeningCards block={props.block} user={props.user} change={handleState} boosterGuru={props.boosterGuru} idBooster={props.idBooster} items={items}
-                                  rarities={rarities}/>
-
+                <Suspense fallback={
+                    <>
+                        <div style={{
+                            display: things === true ? "flex" : "none",
+                            justifyContent: "center",
+                            height: "280px",
+                            width: "300px"
+                        }}>
+                            <div
+                                className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
+                                <img style={customStyles.imgModal2} src={"/Boosters/" + props.idBooster + ".png"}
+                                     alt="Grapefruit slice atop a pile of other slices"/>
+                            </div>
+                            <div style={{overflow: "hidden"}}
+                                 className={isLoaded === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
+                                <img style={customStyles.imgModal} src={"/Boosters/" + props.idBooster + ".png"}
+                                     alt="Grapefruit slice atop a pile of other slices"/>
+                            </div>
+                        </div>
+                    </>
                 }
+                >
+                    <OpeningCards block={props.block} user={props.user} ready={} change={handleState}
+                                  boosterGuru={props.boosterGuru} idBooster={props.idBooster} items={items}
+                                  rarities={rarities}/>
+                </Suspense>
             </div>
         </>
     )
