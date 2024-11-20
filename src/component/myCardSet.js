@@ -70,13 +70,13 @@ function MyCardsSet(props) {
                 response.data.map((val, key) => {
                     setMyCardsId(myCardsId => [...myCardsId,val.card]);
                 })
-                fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster)
+                fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.guruName)
                     .then(res => res.json())
                     .then(
                         (result) => {
                             setItems(result.data)
                                 if(result.data.length == 250){
-                                    fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.idBooster+"&page=2")
+                                    fetch("https://api.pokemontcg.io/v2/cards?q=set.id:"+props.guruName+"&page=2")
                                         .then(res => res.json())
                                         .then(
                                             (result) => {
