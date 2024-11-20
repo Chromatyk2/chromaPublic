@@ -24,6 +24,7 @@ function OpeningCards(props) {
     const [isNew, setIsNew] = useState(false);
     const [getToken, setGetToken] = useState(false);
     const [isToken, setIsToken] = useState(false);
+    const [block, setBlock] = useState(null);
 
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
@@ -34,6 +35,14 @@ function OpeningCards(props) {
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
             .then(function(response){
                 setMyCards(response.data);
+
+                fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            setBlock(result.serie.id)
+                        }
+                    )
             })
     }, [])
     useEffect(() => {
@@ -293,7 +302,7 @@ function OpeningCards(props) {
     };
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://images.pokemoncard.io/images/"+props.idBooster+"/"+e.target.getAttribute("cardId")+".png";
+        e.target.src = "https://assets.tcgdex.net/en/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png";
     }
     useEffect(() => {
             const timeout = setTimeout(() => {
@@ -331,15 +340,17 @@ function OpeningCards(props) {
                                             animation: stadeC == 4 && "bounceLastBangerAlertBooster 9s forwards"
                                         }}
                                             keyCard={key}
-                                            cardId={val.id}
+                                            cardId={val.card.id}
+                                            cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                             id={"cardNb" + key}>
                                             <img
+                                                cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
                                                 className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}
-                                                src={props.idBooster == "gym1" ? "https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png" : props.idBooster = "gym2" ? "https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png" :  "https://assets.tcgdex.net/fr/swsh/"+props.idBooster+"/"+val.number+"/high.png"}
+                                                src={"https://assets.tcgdex.net/fr/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png"}
                                                 onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                                             {getToken === true &&
                                                 <>
@@ -386,15 +397,17 @@ function OpeningCards(props) {
                                                 stade={stadeC} rarity={val.rarity}
                                                 style={{display: key < 9 && "none", overflow: "unset"}}
                                                 keyCard={key}
-                                                cardId={val.id}
+                                                cardId={val.card.id}
+                                                cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
                                                 className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}>
                                                 <img
+                                                    cardLocalId={val.card.localId}
                                                     onClick={key == 0 ? getLastCard : getCard}
                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                     id={"cardNb" + key}
-                                                    src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                                    src={"https://assets.tcgdex.net/fr/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png"}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
                                                 {getToken === true &&
@@ -440,10 +453,11 @@ function OpeningCards(props) {
                                                 <img stade={stadeC} rarity={val.rarity}
                                                      style={{display: key < 9 && "none"}}
                                                      id={"cardNb" + key} keyCard={key}
-                                                     cardId={val.id}
+                                                     cardId={val.card.id}
+                                                     cardLocalId={val.card.localId}
                                                      onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
                                                      className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                                     src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                                     src={"https://assets.tcgdex.net/fr/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png"}
                                                      onError={errorImage}
                                                      alt="Grapefruit slice atop a pile of other slices"/>
                                             </>
@@ -457,15 +471,17 @@ function OpeningCards(props) {
                                             animation: stadeC == 4 && "bounceLastBangerAlertBooster 9s forwards"
                                         }}
                                             keyCard={key}
-                                            cardId={val.id}
+                                            cardId={val.card.id}
+                                            cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                             id={"cardNb" + key}>
                                             <img
+                                                cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
                                                 className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}
-                                                src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                                src={"https://assets.tcgdex.net/fr/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png"}
                                                 onError={errorImage} alt="Grapefruit slice atop a pile of other slices"/>
                                         </div>
                                         :
@@ -474,15 +490,17 @@ function OpeningCards(props) {
                                                 stade={stadeC} rarity={val.rarity}
                                                 style={{display: key < 9 && "none", overflow: "unset"}}
                                                 keyCard={key}
-                                                cardId={val.id}
+                                                cardId={val.card.id}
+                                                cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
                                                 className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}>
                                                 <img
+                                                    cardLocalId={val.card.localId}
                                                     onClick={key == 0 ? getLastCard : getCard}
                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                     id={"cardNb" + key}
-                                                    src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                                    src={"https://assets.tcgdex.net/fr/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png"}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
                                             </div>
@@ -491,10 +509,11 @@ function OpeningCards(props) {
                                                 <img stade={stadeC} rarity={val.rarity}
                                                      style={{display: key < 9 && "none"}}
                                                      id={"cardNb" + key} keyCard={key}
-                                                     cardId={val.id}
+                                                     cardId={val.card.id}
+                                                     cardLocalId={val.card.localId}
                                                      onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
                                                      className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                                     src={"https://images.pokemontcg.io/" + val.set.id + "/" + val.number + ".png"}
+                                                        src={"https://assets.tcgdex.net/fr/"+block+"/"+props.idBooster+"/"+val.card.localId+"/high.png"}
                                                      onError={errorImage}
                                                      alt="Grapefruit slice atop a pile of other slices"/>
                                             </>

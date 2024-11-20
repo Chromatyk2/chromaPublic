@@ -22,6 +22,7 @@ function OpeningBooster(props) {
             props.change();
         }, 1000);
     }
+
     useEffect(() => {
         fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
             .then(res => res.json())
