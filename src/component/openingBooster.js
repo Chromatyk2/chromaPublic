@@ -27,7 +27,7 @@ function OpeningBooster(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setItems(result.data);
+                    setItems(result.data.cards);
                     setIsLoaded(false);
                 },
                 (error) => {
