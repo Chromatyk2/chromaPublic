@@ -17,6 +17,7 @@ function MyUniqueBooster(props) {
         var nbCard = e.target.getAttribute("guruName")
         props.change(page,nbCard, guruName);
     }
+    console.log(booster.nameGuru)
     return (
                             <div style={{filter: props.maxBooster == props.nbCard.nbCard && 'drop-shadow(0px 0px 6px orange) drop-shadow(0px 0px 47px yellow)'}} className="uniqueMyCardContainer">
                                 {props.maxBooster == props.nbCard.nbCard &&
