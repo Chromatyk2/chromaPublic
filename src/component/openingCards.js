@@ -337,11 +337,11 @@ function OpeningCards(props) {
         }, 7500)
         const timeoutBooster = setTimeout(() => {
             setThingsBooster(false)
-        }, 9500)
+        }, 8500)
         const timeoutCards = setTimeout(() => {
             setIsLoaded(false);
 
-        }, 10600)
+        }, 8501)
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
