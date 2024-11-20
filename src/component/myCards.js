@@ -62,7 +62,7 @@ function MyCards(props) {
                             totalCard &&
                                 nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                                 return(
-                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val.booster} boosterList={boosterList} maxBooster={boosterList.find((uc) => uc.name == val.booster).totalCards}/>
+                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} boosterList={boosterList} maxBooster={boosterList.find((uc) => uc.name == val.booster).totalCards}/>
                                 )
                             })
                 }
