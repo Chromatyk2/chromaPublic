@@ -1905,7 +1905,6 @@ img.gettedBoxImg {
     100% {
         visibility: visible;
         height: 300px;
-        display: none;
     }
 }
 @keyframes bounceOut {
