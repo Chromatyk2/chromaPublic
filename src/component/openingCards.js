@@ -121,7 +121,7 @@ function OpeningCards(props) {
                         var stade = 4;
                     }
 
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.boosterGuru+' !rarity:""'+rarity+'""')
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.boosterGuru+' !rarity:"'+rarity+'"')
                     .then(res => res.json())
                     .then(
                         (result) => {
