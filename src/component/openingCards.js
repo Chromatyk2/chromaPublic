@@ -27,6 +27,7 @@ function OpeningCards(props) {
     const [block, setBlock] = useState(null);
     const [things, setThings] = useState(true);
     const [thingsBooster, setThingsBooster] = useState(true);
+    const [setGlobalBooster, globalBooster] = useState(true);
 
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
@@ -43,6 +44,7 @@ function OpeningCards(props) {
                     .then(
                         (result) => {
                             setBlock(result.serie.id)
+                            setGlobalBooster(result.abbreviation.official)
                         }
                     )
             })
@@ -322,7 +324,7 @@ function OpeningCards(props) {
     };
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://assets.tcgdex.net/en/"+block+"/"+props.idBooster+"/"+e.target.getAttribute("cardLocalId")+"/high.png";
+        e.target.src = "https://www.pokecardex.com/assets/images/sets/SCR/HD/3.jpg";
     }
     useEffect(() => {
             const timeout = setTimeout(() => {
