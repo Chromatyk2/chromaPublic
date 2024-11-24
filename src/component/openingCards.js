@@ -111,23 +111,23 @@ function OpeningCards(props) {
                     var randomStade = Math.floor(Math.random() * 100);
                     if(randomStade < 50 ){
                         var rarityArray = props.rarities.filter(item => item.stade == 1);
-                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                         var stade = 1;
                     }else if(randomStade > 49 && randomStade < 79){
                         var rarityArray = props.rarities.filter(item => item.stade == 2);
-                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                         var stade = 2;
                     }else if(randomStade > 78 && randomStade < 99){
                         var rarityArray = props.rarities.filter(item => item.stade == 3);
-                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                         var stade = 3;
                     }else if (randomStade > 98){
                         var rarityArray = props.rarities.filter(item => item.stade == 4);
-                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                         var stade = 4;
                     }
 
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.boosterGuru+' !rarity:"'+rarity+'"')
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity.rarity+'"')
                     .then(res => res.json())
                     .then(
                         (result) => {
@@ -168,22 +168,22 @@ function OpeningCards(props) {
                 var randomStade = Math.floor(Math.random() * 100);
                 if(randomStade < 30 ){
                     var rarityArray = props.rarities.filter(item => item.stade == 1);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 1;
                 }else if(randomStade > 29 && randomStade < 79){
                     var rarityArray = props.rarities.filter(item => item.stade == 2);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 2;
                 }else if (randomStade > 79  && randomStade < 96){
                     var rarityArray = props.rarities.filter(item => item.stade == 3);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 3;
                 }else{
                     var rarityArray = props.rarities.filter(item => item.stade == 4);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)].rarity
+                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 4;
                 }
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.boosterGuru+' !rarity:"'+rarity+'"')
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity.rarity+'"')
                     .then(res => res.json())
                     .then(
                         (result) => {
