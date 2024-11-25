@@ -373,7 +373,8 @@ function OpeningCards(props) {
                     </div>
                 </div>
             }
-            {isLoaded === false &&
+            {tenCards.length > 9 &&
+                isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
                         if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
