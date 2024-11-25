@@ -391,18 +391,18 @@ function OpeningCards(props) {
                                             stade={stadeC} rarity={val.rarity} style={{
                                             overflow: "unset",
                                             display: key < 9 && "none",
-                                            animation: stadeC == 4 && "bounceLastBangerAlertBooster 9s forwards"
+                                            animation: stadeC == 4 && "bounceLastBangerAlertBooster 4s forwards"
                                         }}
                                             keyCard={key}
                                             cardId={val.card.id}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                             id={"cardNb" + key}>
                                             <img
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlertOpening" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                                 id={"cardNb" + key}
                                                 src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                 onError={errorImage}
@@ -455,12 +455,12 @@ function OpeningCards(props) {
                                                 cardId={val.card.id}
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                                 id={"cardNb" + key}>
                                                 <img
                                                     cardLocalId={val.card.localId}
                                                     onClick={key == 0 ? getLastCard : getCard}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlertOpening" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                                     id={"cardNb" + key}
                                                     src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                     onError={errorImage}
@@ -523,18 +523,18 @@ function OpeningCards(props) {
                                             stade={stadeC} rarity={val.rarity} style={{
                                             overflow: "unset",
                                             display: key < 9 && "none",
-                                            animation: stadeC == 4 && "bounceLastBangerAlertBooster 9s forwards"
+                                            animation: stadeC == 4 && "bounceLastBangerAlertBooster 4s forwards"
                                         }}
                                             keyCard={key}
                                             cardId={val.card.id}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                             id={"cardNb" + key}>
                                             <img
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlertOpening" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                                 id={"cardNb" + key}
                                                 src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                 onError={errorImage}
@@ -549,12 +549,12 @@ function OpeningCards(props) {
                                                 cardId={val.card.id}
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                                 id={"cardNb" + key}>
                                                 <img
                                                     cardLocalId={val.card.localId}
                                                     onClick={key == 0 ? getLastCard : getCard}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlertOpening" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlertOpening" : "fit-picture dropCards glowGet cardBangerAlertOpening"}
                                                     id={"cardNb" + key}
                                                     src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                     onError={errorImage}
