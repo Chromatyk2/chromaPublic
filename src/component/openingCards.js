@@ -316,7 +316,7 @@ function OpeningCards(props) {
     };
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://assets.tcgdex.net/en/" + e.target.getAttribute("block") + "/" + e.target.getAttribute("booster") + "/" + e.target.getAttribute("local") + "/high.png"
+        e.target.src = "https://images.pokemontcg.io/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("local")+"_hires.png"
     }
     useEffect(() => {
             const timeout = setTimeout(() => {
