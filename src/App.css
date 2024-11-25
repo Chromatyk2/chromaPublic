@@ -1633,6 +1633,13 @@ object{
     justify-content: center;
     flex-flow: column;
 }
+.dropCards{
+    width: 350px;
+    position: absolute;
+}
+.dropCards:hover{
+    cursor: grab;
+}
 .dropBooster{
     width: 350px;
     position: absolute;
@@ -5486,12 +5493,4 @@ ul.react-responsive-3d-carousel__list {
     z-index: 10;
     flex-wrap: wrap;
     top: 345px;
-}
-
-.dropCards{
-    width: 350px;
-    position: absolute;
-}
-.dropCards:hover{
-    cursor: grab;
 }
