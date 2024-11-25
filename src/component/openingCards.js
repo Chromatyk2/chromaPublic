@@ -141,7 +141,7 @@ function OpeningCards(props) {
                                                 pseudo:props.user,
                                                 idCard:result.id,
                                                 booster:props.idBooster,
-                                                rarity:rarity.rarity,
+                                                rarity:rarity,
                                                 stade:stade,
                                                 nb:result.localId,
                                                 block:props.block
@@ -197,7 +197,7 @@ function OpeningCards(props) {
                                                 pseudo:props.user,
                                                 idCard:result.id,
                                                 booster:props.idBooster,
-                                                rarity:rarity.rarity,
+                                                rarity:rarity,
                                                 stade:stade,
                                                 nb:result.localId,
                                                 block:props.block
@@ -347,6 +347,7 @@ function OpeningCards(props) {
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
+    console.log(props.rarities);
     return (
         <>
             <div style={{
@@ -373,12 +374,11 @@ function OpeningCards(props) {
                     </div>
                 </div>
             }
-            {tenCards.length > 9 &&
-                isLoaded === false &&
+            {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
                         if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
-                            var stadeC = props.rarities.find(item => item.rarity == val.rarity).stade;
+                            var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
                         } else {
                             var stadeC = 0;
                         }
