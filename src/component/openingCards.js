@@ -163,11 +163,11 @@ function OpeningCards(props) {
                 }
                 var randomStade = Math.floor(Math.random() * 101);
                 if(randomStade < 60){
-                    var rarityArray = props.rarities.filter(item => item.stade ==  2);
+                    var rarityArray = props.rarities.filter(item => item.stade ==  4);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 2;
                 }else if (randomStade > 59 && randomStade < 96){
-                    var rarityArray = props.rarities.filter(item => item.stade ==  3);
+                    var rarityArray = props.rarities.filter(item => item.stade ==  4);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 3;
                 }else{
@@ -394,7 +394,7 @@ function OpeningCards(props) {
                                             <img
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
                                                 id={"cardNb" + key}
                                                 src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                 onError={errorImage}
