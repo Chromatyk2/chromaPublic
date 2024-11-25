@@ -28,10 +28,10 @@ function OpeningCards(props) {
     const [things, setThings] = useState(true);
     const [thingsBooster, setThingsBooster] = useState(true);
     const [setGlobalBooster, globalBooster] = useState(true);
-    const [setLang, lang] = useState(null);
+    const [setLang, lang] = useState("");
 
     useEffect(() => {
-        setLang("fr")
+        setLang("fr");
         var tokenBonus = Math.floor(Math.random() * 10);
         if(tokenBonus == 0){
             setGetToken(true);
