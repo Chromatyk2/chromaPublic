@@ -141,7 +141,7 @@ function OpeningCards(props) {
                                                 pseudo:props.user,
                                                 idCard:result.id,
                                                 booster:props.idBooster,
-                                                rarity:rarity,
+                                                rarity:rarity.rarity,
                                                 stade:stade,
                                                 nb:result.localId,
                                                 block:props.block
@@ -197,7 +197,7 @@ function OpeningCards(props) {
                                                 pseudo:props.user,
                                                 idCard:result.id,
                                                 booster:props.idBooster,
-                                                rarity:rarity,
+                                                rarity:rarity.rarity,
                                                 stade:stade,
                                                 nb:result.localId,
                                                 block:props.block
