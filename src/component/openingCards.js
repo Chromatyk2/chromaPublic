@@ -383,7 +383,7 @@ function OpeningCards(props) {
                                             stade={stadeC} rarity={val.rarity.rarity} style={{
                                             overflow: "unset",
                                             display: key < 9 && "none",
-                                            animation: stadeC == 4 && "bounceLastBangerAlertBooster 3s forwards"
+                                            animation: stadeC == 4 && endPull === false &&"bounceLastBangerAlertBooster 3s forwards"
                                         }}
                                             keyCard={key}
                                             cardId={val.card.id}
