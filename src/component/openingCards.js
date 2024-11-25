@@ -170,11 +170,11 @@ function OpeningCards(props) {
                     var rarityArray = props.rarities.filter(item => item.stade == 1);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 1;
-                }else if(randomStade > 29 && randomStade < 79){
+                }else if(randomStade > 29 && randomStade < 65){
                     var rarityArray = props.rarities.filter(item => item.stade == 2);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 2;
-                }else if (randomStade > 79  && randomStade < 96){
+                }else if (randomStade > 64  && randomStade < 85){
                     var rarityArray = props.rarities.filter(item => item.stade == 3);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 3;
