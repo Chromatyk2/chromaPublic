@@ -163,11 +163,11 @@ function OpeningCards(props) {
                 }
                 var randomStade = Math.floor(Math.random() * 101);
                 if(randomStade < 60){
-                    var rarityArray = props.rarities.filter(item => item.stade ==  4);
+                    var rarityArray = props.rarities.filter(item => item.stade ==  2);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 2;
                 }else if (randomStade > 59 && randomStade < 96){
-                    var rarityArray = props.rarities.filter(item => item.stade ==  4);
+                    var rarityArray = props.rarities.filter(item => item.stade ==  3);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 3;
                 }else{
