@@ -377,7 +377,7 @@ function OpeningCards(props) {
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
-                        if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
+                        if (val.rarity.rarity != "Common" && val.rarity.rarity != "Uncommon" && typeof val.rarity.rarity !== "undefined") {
                             var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity.rarity)).stade;
                         } else {
                             var stadeC = 0;
@@ -388,7 +388,7 @@ function OpeningCards(props) {
                                     stadeC == 4 ?
                                         <div
                                             style={{overflow: "unset"}}
-                                            stade={stadeC} rarity={val.rarity} style={{
+                                            stade={stadeC} rarity={val.rarity.rarity} style={{
                                             overflow: "unset",
                                             display: key < 9 && "none",
                                             animation: stadeC == 4 && "bounceLastBangerAlertBooster 3s forwards"
@@ -449,7 +449,7 @@ function OpeningCards(props) {
                                         :
                                         stadeC == 3 ?
                                             <div
-                                                stade={stadeC} rarity={val.rarity}
+                                                stade={stadeC} rarity={val.rarity.rarity}
                                                 style={{display: key < 9 && "none", overflow: "unset"}}
                                                 keyCard={key}
                                                 cardId={val.card.id}
@@ -505,7 +505,7 @@ function OpeningCards(props) {
                                             </div>
                                             :
                                             <>
-                                                <img stade={stadeC} rarity={val.rarity}
+                                                <img stade={stadeC} rarity={val.rarity.rarity}
                                                      style={{display: key < 9 && "none"}}
                                                      id={"cardNb" + key} keyCard={key}
                                                      cardId={val.card.id}
@@ -520,7 +520,7 @@ function OpeningCards(props) {
                                     stadeC == 4 ?
                                         <div
                                             style={{overflow: "unset"}}
-                                            stade={stadeC} rarity={val.rarity} style={{
+                                            stade={stadeC} rarity={val.rarity.rarity} style={{
                                             overflow: "unset",
                                             display: key < 9 && "none",
                                             animation: stadeC == 4 && "bounceLastBangerAlertBooster 3s forwards"
@@ -543,7 +543,7 @@ function OpeningCards(props) {
                                         :
                                         stadeC == 3 ?
                                             <div
-                                                stade={stadeC} rarity={val.rarity}
+                                                stade={stadeC} rarity={val.rarity.rarity}
                                                 style={{display: key < 9 && "none", overflow: "unset"}}
                                                 keyCard={key}
                                                 cardId={val.card.id}
@@ -562,7 +562,7 @@ function OpeningCards(props) {
                                             </div>
                                             :
                                             <>
-                                                <img stade={stadeC} rarity={val.rarity}
+                                                <img stade={stadeC} rarity={val.rarity.rarity}
                                                      style={{display: key < 9 && "none"}}
                                                      id={"cardNb" + key} keyCard={key}
                                                      cardId={val.card.id}
