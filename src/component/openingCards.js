@@ -108,7 +108,7 @@ function OpeningCards(props) {
                         }
                     )
             }else if(tenCards.length == 8){
-                    var randomStade = Math.floor(Math.random() * 100);
+                    var randomStade = Math.floor(Math.random() * 101);
                     if(randomStade < 60 ){
                         var rarityArray = props.rarities.filter(item => item.stade ==  1);
                         var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
@@ -161,16 +161,12 @@ function OpeningCards(props) {
                         }
                     )
                 }
-                var randomStade = Math.floor(Math.random() * 100);
-                if(randomStade < 30 ){
-                    var rarityArray = props.rarities.filter(item => item.stade ==  1);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                    var stade = 1;
-                }else if(randomStade > 29 && randomStade < 81){
+                var randomStade = Math.floor(Math.random() * 101);
+                if(randomStade < 60){
                     var rarityArray = props.rarities.filter(item => item.stade ==  2);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 2;
-                }else if (randomStade > 80  && randomStade < 95){
+                }else if (randomStade > 59 && randomStade < 96){
                     var rarityArray = props.rarities.filter(item => item.stade ==  3);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 3;
