@@ -27,7 +27,6 @@ function OpeningCards(props) {
     const [block, setBlock] = useState(null);
     const [things, setThings] = useState(true);
     const [thingsBooster, setThingsBooster] = useState(true);
-    const [setGlobalBooster, globalBooster] = useState(true);
 
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
@@ -44,7 +43,6 @@ function OpeningCards(props) {
                     .then(
                         (result) => {
                             setBlock(result.serie.id)
-                            setGlobalBooster(result.abbreviation.official)
                         }
                     )
             })
