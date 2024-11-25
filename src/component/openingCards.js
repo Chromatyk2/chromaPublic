@@ -113,11 +113,11 @@ function OpeningCards(props) {
                         var rarityArray = props.rarities.filter(item => item.stade == 1);
                         var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                         var stade = 1;
-                    }else if(randomStade > 49 && randomStade < 79){
+                    }else if(randomStade > 49 && randomStade < 89){
                         var rarityArray = props.rarities.filter(item => item.stade == 2);
                         var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                         var stade = 2;
-                    }else if(randomStade > 78 && randomStade < 99){
+                    }else if(randomStade > 88 && randomStade < 99){
                         var rarityArray = props.rarities.filter(item => item.stade == 3);
                         var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                         var stade = 3;
@@ -167,15 +167,15 @@ function OpeningCards(props) {
                 }
                 var randomStade = Math.floor(Math.random() * 100);
                 if(randomStade < 30 ){
-                    var rarityArray = props.rarities.filter(item => item.stade == 1);
+                    var rarityArray = props.rarities.filter(item => item.stade == 4);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 1;
-                }else if(randomStade > 29 && randomStade < 65){
-                    var rarityArray = props.rarities.filter(item => item.stade == 2);
+                }else if(randomStade > 29 && randomStade < 81){
+                    var rarityArray = props.rarities.filter(item => item.stade == 4);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 2;
-                }else if (randomStade > 64  && randomStade < 85){
-                    var rarityArray = props.rarities.filter(item => item.stade == 3);
+                }else if (randomStade > 80  && randomStade < 95){
+                    var rarityArray = props.rarities.filter(item => item.stade == 4);
                     var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                     var stade = 3;
                 }else{
