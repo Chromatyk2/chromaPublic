@@ -293,7 +293,7 @@ function OpeningCards(props) {
         setIsNew(false);
         setEndPull(true);
         props.change();
-        e.target.classList.toggle(' endPull');
+        e.target.classList.toggle('endPull');
     }
 
     const customStyles = {
