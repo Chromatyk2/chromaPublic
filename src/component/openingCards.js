@@ -28,10 +28,8 @@ function OpeningCards(props) {
     const [things, setThings] = useState(true);
     const [thingsBooster, setThingsBooster] = useState(true);
     const [setGlobalBooster, globalBooster] = useState(true);
-    const [setLang, lang] = useState("");
 
     useEffect(() => {
-        setLang("fr");
         var tokenBonus = Math.floor(Math.random() * 10);
         if(tokenBonus == 0){
             setGetToken(true);
@@ -318,7 +316,7 @@ function OpeningCards(props) {
     };
     function errorImage(e){
         e.target.onerror = null;
-        setLang("en");
+        e.target.src = "https://assets.tcgdex.net/en/" + e.target.getAttribute("block") + "/" + e.target.getAttribute("booster") + "/" + e.target.getAttribute("local") + "/high.png"
     }
     useEffect(() => {
             const timeout = setTimeout(() => {
@@ -398,7 +396,10 @@ function OpeningCards(props) {
                                                 onClick={key == 0 ? getLastCard : getCard}
                                                 className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
                                                 id={"cardNb" + key}
-                                                src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+                                                block={block}
+                                                booster={props.idBooster}
+                                                local={val.card.localId}
+                                                src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                 onError={errorImage}
                                                 alt="Grapefruit slice atop a pile of other slices"/>
                                             {getToken === true &&
@@ -456,7 +457,10 @@ function OpeningCards(props) {
                                                     onClick={key == 0 ? getLastCard : getCard}
                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                     id={"cardNb" + key}
-                                                    src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+                                                    block={block}
+                                                    booster={props.idBooster}
+                                                    local={val.card.localId}
+                                                    src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
                                                 {getToken === true &&
@@ -506,7 +510,10 @@ function OpeningCards(props) {
                                                      cardLocalId={val.card.localId}
                                                      onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
                                                      className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                                     src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+                                                     block={block}
+                                                     booster={props.idBooster}
+                                                     local={val.card.localId}
+                                                     src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                      onError={errorImage}
                                                      alt="Grapefruit slice atop a pile of other slices"/>
                                             </>
@@ -530,7 +537,10 @@ function OpeningCards(props) {
                                                 onClick={key == 0 ? getLastCard : getCard}
                                                 className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}
-                                                src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+                                                block={block}
+                                                booster={props.idBooster}
+                                                local={val.card.localId}
+                                                src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                 onError={errorImage}
                                                 alt="Grapefruit slice atop a pile of other slices"/>
                                         </div>
@@ -550,7 +560,10 @@ function OpeningCards(props) {
                                                     onClick={key == 0 ? getLastCard : getCard}
                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                     id={"cardNb" + key}
-                                                    src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+                                                    block={block}
+                                                    booster={props.idBooster}
+                                                    local={val.card.localId}
+                                                    src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
                                             </div>
@@ -563,7 +576,11 @@ function OpeningCards(props) {
                                                      cardLocalId={val.card.localId}
                                                      onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
                                                      className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                                     src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+
+                                                     block={block}
+                                                     booster={props.idBooster}
+                                                     local={val.card.localId}
+                                                     src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                                      onError={errorImage}
                                                      alt="Grapefruit slice atop a pile of other slices"/>
                                             </>
