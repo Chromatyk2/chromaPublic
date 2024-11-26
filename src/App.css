@@ -4319,9 +4319,6 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
-    a.linkOnAirOff {
-        display: none;
-    }
     button.anchorTooltip.uniquePokemonContainerTeam {
         width: 100px;
         height: 100px;
@@ -4408,9 +4405,6 @@ span.navbar-brand {
     }
 }
 @media screen and (max-width: 379px) {
-    a.linkOnAirOff {
-        display: none;
-    }
     button.anchorTooltip.uniquePokemonContainerTeam {
         width: 100px;
         height: 100px;
