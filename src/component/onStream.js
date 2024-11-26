@@ -33,6 +33,16 @@ function OnStream() {
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
         },
+        button:{
+
+            background: "none",
+            border: "none",
+            color: "white",
+            width: "100%",
+            display: "flex",
+            justifyContent: "end",
+            marginBottom: "20px"
+        }
     };
     useEffect(() => {
             Axios.get(
@@ -116,10 +126,10 @@ function OnStream() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <button onClick={closeModal}>close</button>
+                <button style={customStyles.button} onClick={closeModal}>close</button>
                 <p>Chromatyk est en stream !</p>
                 <p>Rejoins le en cliquant ici :</p>
-                <a href={"https://twitch.tv/chromatyk"} target={"_blank"}>Twitch</a>
+                <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{display:"block", margin:"auto",width: "50px"}} src={Twitch}/></a>
             </Modal>
         </>
 
