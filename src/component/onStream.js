@@ -11,6 +11,8 @@ import {useCookies} from "react-cookie";
 import Twitch from '../twitch.png'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import Modal from "react-modal";
+import UniqueBoxV2 from "./uniqueBoxV2";
 
 
 function OnStream() {
@@ -19,6 +21,7 @@ function OnStream() {
     const [stream, setStream] = useState(null);
     const [meetUp, setMeetUp] = useState(null);
     const [displayStream, setDisplayStream] = useState(true);
+    const [modalIsOpen, setIsOpen] = React.useState(true);
 
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
@@ -32,7 +35,12 @@ function OnStream() {
                 }
             ).then(function(response){
                 setStream(response.data);
-                if(response.data.length > 0){setDisplayStream(true)}else{setDisplayStream(false)}
+                if(response.data.length > 0){
+                    setDisplayStream(true)
+                    setIsOpen(true)
+                }else{
+                    setDisplayStream(false)
+                }
             })
     }, [])
 
@@ -49,7 +57,12 @@ function OnStream() {
                 }
             ).then(function(response){
                 setStream(response.data);
-                if(response.data.length > 0){setDisplayStream(true)}else{setDisplayStream(false)}
+                if(response.data.length > 0){
+                    setDisplayStream(true)
+                    setIsOpen(true)
+                }else{
+                    setDisplayStream(false)
+                }
             })
         }, 60000)
     }, [])
@@ -83,10 +96,11 @@ function OnStream() {
                             </div>
                         </div>
             }
-
-            <Popup trigger={<button> Trigger</button>} position="right center">
-                <div>Popup content here !!</div>
-            </Popup>
+            <Modal isOpen={modalIsOpen} contentLabel="Example Modal">
+                <p>Chromatyk est en stream !</p>
+                <p>Rejoins le en cliquant ici :</p>
+                <a href={"https://twitch.tv/chromatyk"} target={"_blank"}>Twitch</a>
+            </Modal>
         </>
 
     );
