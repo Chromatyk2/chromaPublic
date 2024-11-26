@@ -2138,10 +2138,15 @@ a.linkOnAir {
     margin: auto auto 10px;
     text-align: center;
     text-decoration: none;
-    width: 300px;
     flex-flow: column;
     padding: 10px;
     background: red;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    position: fixed;
+    right: 10px;
+    top: 10px;
 }
 a.linkOnAirOff {
     border-radius: 50px;
@@ -2151,14 +2156,16 @@ a.linkOnAirOff {
     margin: auto auto 10px;
     text-align: center;
     text-decoration: none;
-    width: 300px;
     flex-flow: column;
     padding: 10px;
     background: gray;
     margin-top: 0px;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
     position: fixed;
-    top:30px;
-    right:30px;
+    right: 10px;
+    top: 10px;
 }
 .pagePokemonContainer{
     min-height: 100vh;

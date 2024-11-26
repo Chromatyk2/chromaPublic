@@ -61,10 +61,10 @@ function OnStream() {
             {stream &&
             stream.data.length > 0 ?
                 <>
-                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img src={Twitch}/></a>
+                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/></a>
                 </>
                     :
-                <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img src={Twitch}/></a>
+                <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/></a>
             }
             {stream &&
                         <div style={displayStream === false ? {visibility:"hidden", height:0} : {visibility:"visible"}} className="twitch">
