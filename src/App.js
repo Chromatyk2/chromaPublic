@@ -41,7 +41,6 @@ import Pedandex from "./component/pedandex";
 import StartPedandex from "./component/startPedandex";
 import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
-import OnStream from "./onStream";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
