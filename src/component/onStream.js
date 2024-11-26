@@ -20,7 +20,7 @@ function OnStream() {
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
             Axios.get(
-                'https://api.twitch.tv/helix/streams?user_login=Ponce',
+                'https://api.twitch.tv/helix/streams?user_login=chromatyk',
                 {
                     headers:{
                         'Authorization': `Bearer ${cookies.token.access_token}`,
@@ -37,7 +37,7 @@ function OnStream() {
 
         setInterval(() => {
             Axios.get(
-                'https://api.twitch.tv/helix/streams?user_login=Ponce',
+                'https://api.twitch.tv/helix/streams?user_login=chromatyk',
                 {
                     headers:{
                         'Authorization': `Bearer ${cookies.token.access_token}`,
@@ -70,7 +70,7 @@ function OnStream() {
                         <div style={displayStream === false ? {visibility:"hidden", height:0} : {visibility:"visible"}} className="twitch">
                             <div className="twitch-video">
                                 <iframe
-                                    src="https://player.twitch.tv/?channel=ponce&parent=chromatyk.fr&autoplay=true&muted=false"
+                                    src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
                                     frameBorder="0"
                                     scrolling="no"
                                     allowFullScreen="true"
