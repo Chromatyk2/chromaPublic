@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
-import Twitch from '../twitch.webp'
+import Twitch from '../twitch.png'
 
 function OnStream() {
     const [cookies, setCookie] = useCookies();
