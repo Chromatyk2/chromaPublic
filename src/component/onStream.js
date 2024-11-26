@@ -8,6 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
+import Twitch from '../twitch.webp'
 
 function OnStream() {
     const [cookies, setCookie] = useCookies();
@@ -60,17 +61,10 @@ function OnStream() {
             {stream &&
             stream.data.length > 0 ?
                 <>
-                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live On <span className={"spanOnair"}>(clique et viens gagner des points)</span></a>
+                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img src={Twitch}/></a>
                 </>
                     :
-                <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}>Live Off <span className={"spanOnair"}>(clique et lache ton follow ça fait plaisir)</span></a>
-            }
-            {stream &&
-            stream.data.length > 0 &&
-                <div className={"buttonToDisplayStream"}>
-                    <button onClick={displayStreamOff}>Cacher le stream</button>
-                    <button onClick={displayStreamOn}>Afficher le stream</button>
-                </div>
+                <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img src={Twitch}/></a>
             }
             {stream &&
                         <div style={displayStream === false ? {visibility:"hidden", height:0} : {visibility:"visible"}} className="twitch">
