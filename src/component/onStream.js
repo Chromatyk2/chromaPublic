@@ -24,6 +24,16 @@ function OnStream() {
     const [modalIsOpen, setIsOpen] = React.useState(true);
 
     const pseudo = cookies.user.data[0].login;
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        },
+    };
     useEffect(() => {
             Axios.get(
                 'https://api.twitch.tv/helix/streams?user_login=chromatyk',
@@ -72,6 +82,10 @@ function OnStream() {
     function displayStreamOn() {
         setDisplayStream(true);
     }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
     return (
         <>
             {stream &&
@@ -96,7 +110,13 @@ function OnStream() {
                             </div>
                         </div>
             }
-            <Modal isOpen={modalIsOpen} contentLabel="Example Modal">
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+            >
+                <button onClick={closeModal}>close</button>
                 <p>Chromatyk est en stream !</p>
                 <p>Rejoins le en cliquant ici :</p>
                 <a href={"https://twitch.tv/chromatyk"} target={"_blank"}>Twitch</a>
