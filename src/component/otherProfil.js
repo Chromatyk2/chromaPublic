@@ -249,7 +249,6 @@ function Profil(props) {
                         profil &&
                         profil.length > 0 &&
                         <>
-                            <OnStream/>
                             <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
                             <div className={"profilVisuals"}>
                                 <div style={{width: "120px"}}>

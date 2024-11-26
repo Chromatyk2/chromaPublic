@@ -2157,8 +2157,8 @@ a.linkOnAirOff {
     background: gray;
     margin-top: 0px;
     position: fixed;
-    bottom:30px;
-    left:30px;
+    top:30px;
+    right:30px;
 }
 .pagePokemonContainer{
     min-height: 100vh;

@@ -41,6 +41,7 @@ import Pedandex from "./component/pedandex";
 import StartPedandex from "./component/startPedandex";
 import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
+import OnStream from "./onStream";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0) {
@@ -51,6 +52,7 @@ function App(props) {
       {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
+        <OnStream />
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
