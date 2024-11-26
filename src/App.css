@@ -4297,6 +4297,9 @@ span.navbar-brand {
     }
 }
 @media screen and (min-width: 850px) {
+    .contentContainer {
+        padding-top: 115px;
+    }
     .twitch {
         position: relative;
         margin-bottom: 50px;

@@ -67,7 +67,7 @@ function OnStream() {
                 <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/></a>
             }
             {stream &&
-                        <div style={displayStream === false ? {visibility:"hidden", height:0} : {visibility:"visible"}} className="twitch">
+                        <div style={displayStream === false ? {visibility:"hidden", height:0, position: "absolute",zIndex: "-10"} : {visibility:"visible", position: "absolute",zIndex: "-10"}} className="twitch">
                             <div className="twitch-video">
                                 <iframe
                                     src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
