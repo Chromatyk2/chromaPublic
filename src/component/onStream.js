@@ -21,7 +21,7 @@ function OnStream() {
     const [stream, setStream] = useState(null);
     const [meetUp, setMeetUp] = useState(null);
     const [displayStream, setDisplayStream] = useState(true);
-    const [modalIsOpen, setIsOpen] = React.useState(true);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const pseudo = cookies.user.data[0].login;
     const customStyles = {
@@ -41,7 +41,8 @@ function OnStream() {
             width: "100%",
             display: "flex",
             justifyContent: "end",
-            marginBottom: "20px"
+            marginBottom: "20px",
+            fontWeight: "bolder"
         }
     };
     useEffect(() => {
@@ -126,10 +127,10 @@ function OnStream() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <button style={customStyles.button} onClick={closeModal}>close</button>
+                <button style={customStyles.button} onClick={closeModal}>x</button>
                 <p>Chromatyk est en stream !</p>
-                <p>Rejoins le en cliquant ici :</p>
-                <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{display:"block", margin:"auto",width: "50px"}} src={Twitch}/></a>
+                <p>Rejoint le en cliquant ici :</p>
+                <a style={{position:"initial"}} className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{display:"block", margin:"auto",width: "50px"}} src={Twitch}/></a>
             </Modal>
         </>
 
