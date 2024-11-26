@@ -9,6 +9,9 @@ import {BrowserRouter, Link} from "react-router-dom";
 import env from "react-dotenv";
 import {useCookies} from "react-cookie";
 import Twitch from '../twitch.png'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 
 function OnStream() {
     const [cookies, setCookie] = useCookies();
@@ -80,6 +83,10 @@ function OnStream() {
                             </div>
                         </div>
             }
+
+            <Popup trigger={<button> Trigger</button>} position="right center">
+                <div>Popup content here !!</div>
+            </Popup>
         </>
 
     );
