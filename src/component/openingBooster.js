@@ -17,7 +17,6 @@ function OpeningBooster(props) {
     const [modalIsOpen, setIsOpen] = React.useState(true);
     let [state, setState] = useState("Initial");
     let [rarities, setRarities] = useState(null);
-    let [abreviation, setAbreviation] = useState(null);
     function handleState() {
         setTimeout(() => {
             props.change();
@@ -30,7 +29,6 @@ function OpeningBooster(props) {
             .then(
                 (result) => {
                     setItems(result.cards);
-                    setAbreviation(result.abbreviation.official)
                     Axios
                         .get("/api/getRaritiesByBooster/"+props.idBooster)
                         .then(function(response){
@@ -67,7 +65,7 @@ function OpeningBooster(props) {
                 {
                     rarities &&
                     <OpeningCards block={props.block} user={props.user} change={handleState} boosterGuru={props.boosterGuru} idBooster={props.idBooster} items={items}
-                                  rarities={rarities} abreviation={abreviation}/>
+                                  rarities={rarities}/>
 
                 }
             </div>
