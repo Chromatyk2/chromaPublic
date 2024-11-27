@@ -239,7 +239,11 @@ function Profil(props) {
     }
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://assets.tcgdex.net/en/"+e.target.getAttribute("block")+"/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"/high.png";
+        if(e.target.getAttribute("booster") == "sm3.5"){
+            e.target.src = "https://images.pokemontcg.io/sm35/"+e.target.getAttribute("number")+"_hires.png";
+        }else{
+            e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+e.target.getAttribute("number")+"_hires.png";
+        }
     }
     return (
         <>
