@@ -8,7 +8,6 @@ function AuthService() {
   const [cookies, setCookie, removeCookie] = useCookies();
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
   const REDIRECT_URI = "https://chromatyk.fr/";
-  const SCOPES = ['openid'];
   const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 
   const encodeQueryString = (params) => {
@@ -23,8 +22,7 @@ function AuthService() {
     const params = {
         client_id: CLIENT_ID,
         redirect_uri: REDIRECT_URI,
-        response_type: "code",
-        scope: SCOPES,
+        response_type: "code"
     };
       const queryString = encodeQueryString(params);
       const authenticationUrl = `https://id.twitch.tv/oauth2/authorize?${queryString}`;
