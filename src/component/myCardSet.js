@@ -163,13 +163,12 @@ function MyCardsSet(props) {
                                                     booster={val.booster}
                                                     block={val.block}
                                                     onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
-                                                    delayTime={0}
-                                                    threshold={200}
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     width={"250"}
                                                     style={{width:"250px",filter:"brightness(1)"}}
                                                     wrapperClassName={"shadowBangerCard"}
                                                     effect="opacity"
+                                                    threshold={200}
                                                     delayTime={5}
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
