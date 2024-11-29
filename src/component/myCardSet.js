@@ -107,7 +107,7 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
-    function errorImage(e){
+    function console.error('Image failed to load', e){
         e.target.onerror = null;
         if(e.target.getAttribute("booster") == "sm3.5"){
             e.target.src = "https://images.pokemontcg.io/sm35/"+e.target.getAttribute("number")+"_hires.png";
@@ -144,7 +144,7 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
-    function errorImage(e){
+    function console.error('Image failed to load', e){
         e.target.onerror = null;
         e.target.src = "https://assets.tcgdex.net/en/"+e.target.getAttribute("block")+"/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"/high.png";
     }
@@ -182,7 +182,7 @@ function MyCardsSet(props) {
                                                     number={val.number}
                                                     booster={val.booster}
                                                     block={val.block}
-                                                    onError={(e) => errorImage(e)} alt="Grapefruit slice atop a pile of other slices"
+                                                    onError={(e) => console.error('Image failed to load', e)} alt="Grapefruit slice atop a pile of other slices"
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     width={"250"}
                                                     style={{width:"250px",filter:"brightness(1)"}}
@@ -206,7 +206,7 @@ function MyCardsSet(props) {
                                                         number={val.number}
                                                         booster={val.booster}
                                                         block={val.block}
-                                                        onError={(e) => errorImage(e)} alt="Grapefruit slice atop a pile of other slices"
+                                                        onError={(e) => console.error('Image failed to load', e)} alt="Grapefruit slice atop a pile of other slices"
                                                         delayTime={0}
                                                         threshold={200}
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -228,7 +228,7 @@ function MyCardsSet(props) {
                                                     number={val.number}
                                                     booster={val.booster}
                                                     block={val.block}
-                                                    onError={(e) => errorImage(e)} alt="Grapefruit slice atop a pile of other slices"
+                                                    onError={(e) => console.error('Image failed to load', e)} alt="Grapefruit slice atop a pile of other slices"
                                                     delayTime={0}
                                                     threshold={200}
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -244,7 +244,7 @@ function MyCardsSet(props) {
                                                     }}
                                                     src={"https://assets.tcgdex.net/"+lang+"/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>                                                {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                                 {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
-                                                {/*     onError={(e) => errorImage(e)}/>*/}
+                                                {/*     onError={(e) => console.error('Image failed to load', e)}/>*/}
                                             </button>
                                         )
                                     }
@@ -254,7 +254,7 @@ function MyCardsSet(props) {
                                             number={val.number}
                                             booster={val.booster}
                                             block={val.block}
-                                            onError={(e) => errorImage(e)} alt="Grapefruit slice atop a pile of other slices"
+                                            onError={(e) => console.error('Image failed to load', e)} alt="Grapefruit slice atop a pile of other slices"
                                             placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                             delayTime={0}
                                             threshold={200}
