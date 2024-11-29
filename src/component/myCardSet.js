@@ -107,7 +107,7 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
-    function console.error('Image failed to load', e){
+    function errorImages(e){
         e.target.onerror = null;
         if(e.target.getAttribute("booster") == "sm3.5"){
             e.target.src = "https://images.pokemontcg.io/sm35/"+e.target.getAttribute("number")+"_hires.png";
@@ -144,10 +144,6 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
-    function errorImages(e){
-        e.target.onerror = null;
-        e.target.src = "https://assets.tcgdex.net/en/"+e.target.getAttribute("block")+"/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"/high.png";
-    }
     return (
         <>
             {isLoaded === false ?
