@@ -174,7 +174,7 @@ function MyCardsSet(props) {
                                     let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
                                     if(stadeC == 4){
                                         return (
-                                            <div style={{animation: "glowGetRainbow 10s infinite alternate"}}
+                                            <div style={{position:"relative", animation: "glowGetRainbow 10s infinite alternate"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 <div className="infoNbCapture" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:0}}>{myCards.find((uc) => uc.card == val.id).nbCard}</div>
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
@@ -204,7 +204,7 @@ function MyCardsSet(props) {
                                         return (
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} stade={stadeC}
-                                                 style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
+                                                 style={{position:"relative", filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 <div
                                                     className="infoNbCapture" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:0}}>{myCards.find((uc) => uc.card == val.id).nbCard}</div>
