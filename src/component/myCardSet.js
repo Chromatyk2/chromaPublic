@@ -180,7 +180,7 @@ function MyCardsSet(props) {
                                                     number={val.number}
                                                     booster={val.booster}
                                                     block={val.block}
-                                                    onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
+                                                    onError={(e) => errorImages(e, props.idBooster, val.localId )} alt="Grapefruit slice atop a pile of other slices"
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     width={"250"}
                                                     style={{width:"250px",filter:"brightness(1)"}}
@@ -204,7 +204,7 @@ function MyCardsSet(props) {
                                                         number={val.number}
                                                         booster={val.booster}
                                                         block={val.block}
-                                                        onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
+                                                        onError={(e) => errorImages(e, props.idBooster, val.localId )} alt="Grapefruit slice atop a pile of other slices"
                                                         delayTime={0}
                                                         threshold={200}
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -226,7 +226,7 @@ function MyCardsSet(props) {
                                                     number={val.number}
                                                     booster={val.booster}
                                                     block={val.block}
-                                                    onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
+                                                    onError={(e) => errorImages(e, props.idBooster, val.localId )} alt="Grapefruit slice atop a pile of other slices"
                                                     delayTime={0}
                                                     threshold={200}
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -242,7 +242,7 @@ function MyCardsSet(props) {
                                                     }}
                                                     src={"https://assets.tcgdex.net/"+lang+"/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>                                                {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                                 {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
-                                                {/*     onError={(e) => errorImages(e, val.booster, val.number )}/>*/}
+                                                {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
                                             </button>
                                         )
                                     }
@@ -252,7 +252,7 @@ function MyCardsSet(props) {
                                             number={val.number}
                                             booster={val.booster}
                                             block={val.block}
-                                            onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
+                                            onError={(e) => errorImages(e, props.idBooster, val.localId )} alt="Grapefruit slice atop a pile of other slices"
                                             placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                             delayTime={0}
                                             threshold={200}
