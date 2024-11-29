@@ -912,7 +912,7 @@ p.filterTitle {
     height: 25px;
     font-weight: bold;
     text-align: center;
-    color: #4c4c4c;
+    color: #120747;
     font-size: 50px;
     background: none;
     letter-spacing: 0px;
@@ -929,6 +929,7 @@ p.filterTitle {
     text-align: center;
     font-size: 18px;
     color: #007bb3;
+    letter-spacing: 5px;
 }
 .infoShiny{
     left: 90px;
