@@ -107,30 +107,30 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
-    function errorImages(e){
+    function errorImages(e, booster, number){
         e.target.onerror = null;
         console.log(e.target);
         console.log(e.target.src);
-        if(e.target.getAttribute("booster") == "sm3.5"){
-            e.target.src = "https://images.pokemontcg.io/sm35/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sm7.5"){
-            e.target.src = "https://images.pokemontcg.io/sm75/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sm11.5"){
-            e.target.src = "https://images.pokemontcg.io/sm115/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "swsh3.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh35/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "swsh4.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh4.5/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "swsh12.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh12pt5/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv03.5"){
-            e.target.src = "https://images.pokemontcg.io/sv3pt5/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv04.5"){
-            e.target.src = "https://images.pokemontcg.io/sv4pt5/"+e.target.getAttribute("number")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv06.5"){
-            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("number")+"_hires.png";
+        if(booster == "sm3.5"){
+            e.target.src = "https://images.pokemontcg.io/sm35/"+number+"_hires.png";
+        }else if(booster == "sm7.5"){
+            e.target.src = "https://images.pokemontcg.io/sm75/"+number+"_hires.png";
+        }else if(booster == "sm11.5"){
+            e.target.src = "https://images.pokemontcg.io/sm115/"+number+"_hires.png";
+        }else if(booster == "swsh3.5"){
+            e.target.src = "https://images.pokemontcg.io/swsh35/"+number+"_hires.png";
+        }else if(booster == "swsh4.5"){
+            e.target.src = "https://images.pokemontcg.io/swsh4.5/"+number+"_hires.png";
+        }else if(booster == "swsh12.5"){
+            e.target.src = "https://images.pokemontcg.io/swsh12pt5/"+number+"_hires.png";
+        }else if(booster == "sv03.5"){
+            e.target.src = "https://images.pokemontcg.io/sv3pt5/"+number+"_hires.png";
+        }else if(booster == "sv04.5"){
+            e.target.src = "https://images.pokemontcg.io/sv4pt5/"+number+"_hires.png";
+        }else if(booster == "sv06.5"){
+            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+number+"_hires.png";
         }else{
-            e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+e.target.getAttribute("number")+"_hires.png";
+            e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+number+"_hires.png";
         }
     }
     function handleState() {
@@ -180,7 +180,7 @@ function MyCardsSet(props) {
                                                     number={val.number}
                                                     booster={val.booster}
                                                     block={val.block}
-                                                    onError={(e) => errorImages(e)} alt="Grapefruit slice atop a pile of other slices"
+                                                    onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     width={"250"}
                                                     style={{width:"250px",filter:"brightness(1)"}}
@@ -204,7 +204,7 @@ function MyCardsSet(props) {
                                                         number={val.number}
                                                         booster={val.booster}
                                                         block={val.block}
-                                                        onError={(e) => errorImages(e)} alt="Grapefruit slice atop a pile of other slices"
+                                                        onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
                                                         delayTime={0}
                                                         threshold={200}
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -226,7 +226,7 @@ function MyCardsSet(props) {
                                                     number={val.number}
                                                     booster={val.booster}
                                                     block={val.block}
-                                                    onError={(e) => errorImages(e)} alt="Grapefruit slice atop a pile of other slices"
+                                                    onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
                                                     delayTime={0}
                                                     threshold={200}
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -242,7 +242,7 @@ function MyCardsSet(props) {
                                                     }}
                                                     src={"https://assets.tcgdex.net/"+lang+"/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>                                                {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                                 {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
-                                                {/*     onError={(e) => errorImages(e)}/>*/}
+                                                {/*     onError={(e) => errorImages(e, val.booster, val.number )}/>*/}
                                             </button>
                                         )
                                     }
@@ -252,7 +252,7 @@ function MyCardsSet(props) {
                                             number={val.number}
                                             booster={val.booster}
                                             block={val.block}
-                                            onError={(e) => errorImages(e)} alt="Grapefruit slice atop a pile of other slices"
+                                            onError={(e) => errorImages(e, val.booster, val.number )} alt="Grapefruit slice atop a pile of other slices"
                                             placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                             delayTime={0}
                                             threshold={200}
