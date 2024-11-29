@@ -176,7 +176,7 @@ function MyCardsSet(props) {
                                         return (
                                             <div style={{animation: "glowGetRainbow 10s infinite alternate"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                                <div className="infoNbCapture">{myCards.find((uc) => uc.card == val.id).nbCard}</div>
+                                                <div className="infoNbCapture" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:0}}>{myCards.find((uc) => uc.card == val.id).nbCard}</div>
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                      image={val.image} stade={stadeC} className="cardBangerAlertSet">
                                                     <LazyLoadImage
@@ -207,7 +207,7 @@ function MyCardsSet(props) {
                                                  style={{filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 <div
-                                                    className="infoNbCapture">{myCards.find((uc) => uc.card == val.id).nbCard}</div>
+                                                    className="infoNbCapture" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:0}}>{myCards.find((uc) => uc.card == val.id).nbCard}</div>
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                      image={val.image} stade={stadeC}
                                                      className="cardBangerAlertSetThree">
@@ -236,8 +236,7 @@ function MyCardsSet(props) {
                                         return (
                                             <button stade={stadeC} style={customStyles.buttonMyCard}
                                                     className={"cardBox"}>
-                                                <div
-                                                    className="infoNbCapture">{myCards.find((uc) => uc.card == val.id).nbCard}</div>
+                                                <div className="infoNbCapture" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:0}}>{myCards.find((uc) => uc.card == val.id).nbCard}</div>
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
