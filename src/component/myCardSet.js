@@ -236,7 +236,7 @@ function MyCardsSet(props) {
                                         return (
                                             <button stade={stadeC} style={customStyles.buttonMyCard}
                                                     className={"cardBox"}>
-                                                <div className="infoNbCapture" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:0}}>{myCards.find((uc) => uc.card == val.id).nbCard}</div>
+                                                <div className="infoNbCapture" style={{position:"relative", zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:0}}>{myCards.find((uc) => uc.card == val.id).nbCard}</div>
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
