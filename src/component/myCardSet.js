@@ -144,7 +144,7 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
-    function console.error('Image failed to load', e){
+    function errorImages(e){
         e.target.onerror = null;
         e.target.src = "https://assets.tcgdex.net/en/"+e.target.getAttribute("block")+"/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"/high.png";
     }
