@@ -54,7 +54,7 @@ function MyCards(props) {
                 {totalCard &&
                     page ?
                         <>
-                            <button style={{color:"white",width:"100%",margin:"0",padding:"0"}}onClick={backPage} className="backButton">Retour</button>
+                            <button style={{color:"white",width:"100%",margin:"0",padding:"0",marginTop:"30px"}}onClick={backPage} className="backButton">Retour</button>
                             <MyCardsSet user={props.user} card={nbCard} idBooster={page} guruName={guruName}/>
                         </>
                     :

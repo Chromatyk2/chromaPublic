@@ -153,16 +153,18 @@ function MyCardsSet(props) {
                 <>
                     <ProgressBarCard booster={props.idBooster} getNb={myCards.length} item={items.cards.length}/>
                     <div style={{color:"white",display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
-                        <label htmlFor="subscribe">
-                            <input
-                                style={{marginRight:"10px"}}
-                                type="checkbox"
-                                onChange={handleChangeOnlyMine}
-                                id="subscribe"
-                                name="subscribe"
-                            />
-                            Voir les cartes manquantes
-                        </label>
+                        {myCards.length != items.cards.length &&
+                            <label htmlFor="subscribe">
+                                <input
+                                    style={{marginRight:"10px"}}
+                                    type="checkbox"
+                                    onChange={handleChangeOnlyMine}
+                                    id="subscribe"
+                                    name="subscribe"
+                                />
+                                Voir les cartes manquantes
+                            </label>
+                        }
                     </div>
                     <div id={"cardsContainer"}>
                         {items.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
