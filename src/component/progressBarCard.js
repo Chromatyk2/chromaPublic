@@ -38,13 +38,15 @@ function ProgressBarCard(props) {
             animation: "moveGradient 5s linear infinite",
             color: "#120747",
             letterSpacing:0,
-            textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff"
+            textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
+            textAlign:"center"
         }
 };
 
     return (
     <div style={customStyles.extBar} className="fullProgressBar">
         <div style={props.getNb == props.item ? customStyles.rainbowBar :customStyles.intBar}>{props.getNb+" / "+props.item+"("+parseFloat(props.getNb/props.item*100).toFixed(2)+"%)"}</div>
+        <img src={"/Ribbon/"+props.booster+".png"}/>
     </div>
     )
 }

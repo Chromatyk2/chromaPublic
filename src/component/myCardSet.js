@@ -151,7 +151,7 @@ function MyCardsSet(props) {
         <>
             {isLoaded === false ?
                 <>
-                    <ProgressBarCard getNb={myCards.length} item={items.cards.length}/>
+                    <ProgressBarCard booster={props.idBooster} getNb={myCards.length} item={items.cards.length}/>
                     <div style={{color:"white",display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
                         <label htmlFor="subscribe">
                             <input
