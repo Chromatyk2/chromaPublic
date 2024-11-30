@@ -5512,3 +5512,11 @@ ul.react-responsive-3d-carousel__list {
     flex-wrap: wrap;
     top: 345px;
 }
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: -200% 0%;
+    }
+}
