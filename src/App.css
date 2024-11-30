@@ -1526,9 +1526,9 @@ h1 {
     margin: 0 auto;
 }
 img.done {
+    margin-left: 160px;
+    margin-top: 0px;
     position: absolute;
-    margin-left: 192px;
-    margin-top: -27px;
 }
 
 #again {
