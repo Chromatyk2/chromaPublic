@@ -258,7 +258,7 @@ function Profil(props) {
         }else if(e.target.getAttribute("booster") == "sv06.5"){
             e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("number")+"_hires.png";
         }else{
-            e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+e.target.getAttribute("number")+"_hires.png";
+            e.target.src = "https://images.pokemontcg.io/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"_hires.png";
         }
     }
     return (
