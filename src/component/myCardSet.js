@@ -131,7 +131,7 @@ function MyCardsSet(props) {
         }else if(booster == "sv06.5"){
             e.target.src = "https://images.pokemontcg.io/sv6pt5/"+number+"_hires.png";
         }else{
-            e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+number+"_hires.png";
+            e.target.src = "https://images.pokemontcg.io/"+booster+"/"+number+"_hires.png";
         }
     }
     function handleState() {
