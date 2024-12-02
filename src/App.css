@@ -2002,7 +2002,6 @@ img.gettedBoxImg {
     transform-box: fill-box;
     visibility: visible;
     z-index: -2;
-    display: none!important;
 }
 .lastCard{
     z-index: 1;
