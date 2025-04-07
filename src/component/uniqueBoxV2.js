@@ -86,7 +86,7 @@ function UniqueBoxV2(props) {
                 <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
                      src={"/" + typeBox + ".png"}/>
                 {typeBox != "basic" &&
-                    <img id={"box"} className={"gettedBoxImg"} src={"/" + typeBox + "Open.png"}/>
+                    <img id={"box"} style={{width: "500px", right: "475px"}} className={"gettedBoxImg"} src={"/" + typeBox + "Open.png"}/>
                 }
             </div>
         </>
