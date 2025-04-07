@@ -1683,8 +1683,8 @@ img.gettedBoxImg {
     bottom: 200px;
     position: absolute;
     width: 350px;
-    -webkit-animation: bounceIn 1s;
-    animation: bounceIn 1s;
+    -webkit-animation: bounceInBox 1s;
+    animation: bounceInBox 1s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1934,6 +1934,20 @@ img.gettedBoxImg {
     }
     100% {
         transform:scale(0);
+        .containerLoadingBooster{
+            display: none!important;
+        }
+    }
+}
+@keyframes bounceInBox {
+    0% {
+        transform:scale(0);
+    }
+    60% {
+        transform:scale(1.1);
+    }
+    100% {
+        transform:scale(1);
         .containerLoadingBooster{
             display: none!important;
         }
