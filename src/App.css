@@ -1854,7 +1854,7 @@ img.gettedBoxImg {
         transform: scale(.0001) translateX(-750px) translateY(-750px);
     }
     100% {
-        transform: scale(1) translateX(0px) translateY(0px);
+        transform: scale(1) translateX(0px) translateY(150px);
     }
 }
 @keyframes bounceLastBanger {
