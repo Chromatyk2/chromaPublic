@@ -5420,6 +5420,10 @@ button.navbar-toggler.collapsed {
     background: linear-gradient(140deg, #120747, #035078) !important;
     color: white;
 }
+#modalBoxNostal.ReactModal__Content.ReactModal__Content--after-open {
+    background: transparent !important;
+    color: white;
+}
 .lazy-load-image-background.blur.lazy-load-image-loaded>img {
     width: 250px;
 }
