@@ -1682,7 +1682,6 @@ object{
 img.gettedBoxImg {
     bottom: 200px;
     position: absolute;
-    right: 50px;
     width: 350px;
     -webkit-animation: bounceIn 1s;
     animation: bounceIn 1s;
