@@ -62,9 +62,10 @@ function UniqueBoxV2(props) {
                 setTypeBox("epic");
         }
 
+        document.getElementById("box").classList.toggle("openAnimationBox");
         setTimeout(function() {
             document.getElementById("boxOpen").style.visibility = "visible";
-        }.bind(this), 6000)
+        }.bind(this), 100000)
     }
     useEffect(() => {
         if(finalState !== null){
