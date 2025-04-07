@@ -229,6 +229,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
     position: fixed;
     width: 100%;
     z-index: 2;
+    top:0;
 }
 .me-auto.navbar-nav {
     gap: 30px;
