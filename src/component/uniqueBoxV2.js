@@ -65,8 +65,9 @@ function UniqueBoxV2(props) {
         document.getElementById("box").classList.toggle("gettedBoxImg");
         document.getElementById("box").classList.toggle("openAnimationBox");
         setTimeout(function() {
+            document.getElementById("box").style.visibility = "hidden";
             document.getElementById("boxOpen").style.visibility = "visible";
-        }.bind(this), 100000)
+        }.bind(this), 2000)
     }
     useEffect(() => {
         if(finalState !== null){
