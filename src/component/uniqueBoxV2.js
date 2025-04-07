@@ -51,77 +51,15 @@ function UniqueBoxV2(props) {
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
-        var rare = Math.floor(Math.random() * 100);
-        if(rare < 99){
-            setTimeout(function() {
-                document.getElementById("box").classList.toggle("spinBox");
-            }.bind(this), 1000)
-            var epic = Math.floor(Math.random() * 100);
-            if(epic < 99) {
-                setTimeout(function() {
-                    document.getElementById("box").classList.toggle("spinBox");
-                }.bind(this), 3000)
-                setTimeout(function() {
-                    document.getElementById("box").classList.toggle("spinBox");
-                }.bind(this), 5000)
-                var legendary = Math.floor(Math.random() * 100);
-                if(legendary < 99){
-                    setTimeout(function() {
-                        document.getElementById("box").classList.toggle("spinBox");
-                    }.bind(this), 7000)
-                    setTimeout(function() {
-                        document.getElementById("box").classList.toggle("spinBox");
-                    }.bind(this), 9000)
-                    var ultra = Math.floor(Math.random() * 100);
-                    if(ultra < 99){
-                        setTimeout(function() {
-                            setTypeBox("rare");
-                        }.bind(this), 2000)
-                        setTimeout(function() {
-                            setTypeBox("epic");
-                        }.bind(this), 6000)
-                        setTimeout(function() {
-                            setTypeBox("legendary");
-                        }.bind(this), 10000)
-                        setTimeout(function() {
-                            setTypeBox("legendary");
-                        }.bind(this), 13000)
-                        setTimeout(function() {
-                            document.getElementById("box").classList.toggle("spinBox");
-                        }.bind(this), 11000)
-                    }else{
-                        setTimeout(function() {
-                            setTypeBox("rare");
-                        }.bind(this), 2000)
-                        setTimeout(function() {
-                            setTypeBox("epic");
-                        }.bind(this), 6000)
-                        setTimeout(function() {
-                            setTypeBox("legendary");
-                        }.bind(this), 10000)
-                        setTimeout(function() {
-                            document.getElementById("box").classList.toggle("spinBox");
-                        }.bind(this), 11000)
-                    }
-                }else{
-                    setTimeout(function() {
-                        setTypeBox("rare");
-                    }.bind(this), 2000)
-                    setTimeout(function() {
-                        setTypeBox("epic");
-                    }.bind(this), 6000)
-                    setTimeout(function() {
-                        document.getElementById("box").classList.toggle("spinBox");
-                    }.bind(this), 7000)
-                }
-            }else {
-                setTimeout(function() {
-                    setTypeBox("rare");
-                }.bind(this), 2000)
-                setTimeout(function() {
-                    document.getElementById("box").classList.toggle("spinBox");
-                }.bind(this), 3000)
-            }
+        var rarity = Math.floor(Math.random() * 100);
+        if(rarity > 99){
+                setTypeBox("ultra");
+        }else if(rarity < 100 && rarity > 88){
+                setTypeBox("legendary");
+        }else if (rarity < 89 && rarity > 49){
+                setTypeBox("rare");
+        }else if( rarity < 50){
+                setTypeBox("epic");
         }
     }
     useEffect(() => {
@@ -139,13 +77,25 @@ function UniqueBoxV2(props) {
         <>
             <div>
                 {randomNumber &&
-                    <div style={{display:"none"}} className={"gettedGameImg"} onClick={handleState} id={"imgGame"+randomNumber}>
-                        <img className={"imgInBox"} src={"/images/jaquettes/"+props.consolePicked+"/jaquette ("+randomNumber+").png"}/>
+                    <div style={{display: "none"}} className={"gettedGameImg"} onClick={handleState}
+                         id={"imgGame" + randomNumber}>
+                        <img className={"imgInBox"}
+                             src={"/images/jaquettes/" + props.consolePicked + "/jaquette (" + randomNumber + ").png"}/>
                     </div>
                 }
-                <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"} src={"/"+typeBox+".png"} />
+                <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
+                     src={"/" + typeBox + ".png"}/>
+                <img id={"box"} className={"gettedBoxImg"}
+                     src={"/" + typeBox + "Open.png"}/>
+                <img id={"box"} className={"gettedBoxImg"}
+                     src={"/" + typeBox + "Open.png"}/>
+                <img id={"box"} className={"gettedBoxImg"}
+                     src={"/" + typeBox + "Open.png"}/>
+                <img id={"box"}  className={"gettedBoxImg"}
+                     src={"/" + typeBox + "Open.png"}/>
             </div>
         </>
     )
 }
+
 export default UniqueBoxV2
