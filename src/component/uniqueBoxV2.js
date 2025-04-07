@@ -67,6 +67,7 @@ function UniqueBoxV2(props) {
         setTimeout(function() {
             document.getElementById("box").style.visibility = "hidden";
             document.getElementById("boxOpen").style.visibility = "visible";
+            setFinalState("done");
         }.bind(this), 2000)
     }
     useEffect(() => {
