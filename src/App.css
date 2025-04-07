@@ -1684,6 +1684,10 @@ img.gettedBoxImg {
     position: absolute;
     right: 50px;
     width: 350px;
+    -webkit-animation: bounceIn 1s;
+    animation: bounceIn 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 .gettedGameImg{
     -webkit-animation: showGame 2s;
