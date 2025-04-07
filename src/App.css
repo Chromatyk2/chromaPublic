@@ -1680,7 +1680,7 @@ object{
     overflow: hidden;
 }
 img.gettedBoxImg {
-    bottom: 200px;
+    bottom: 100px;
     position: absolute;
     width: 350px;
     right: 550px;
@@ -1713,7 +1713,7 @@ img.gettedBoxImg {
     left: -35px;
 }
 .openAnimationBox {
-    bottom: 200px;
+    bottom: 100px;
     position: absolute;
     width: 350px;
     right: 550px;
