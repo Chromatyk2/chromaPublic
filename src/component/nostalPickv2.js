@@ -34,13 +34,13 @@ function NostalPickV2(props) {
         },
     };
     function openModal(e) {
-        document.getElementById("boxContainerId").style.visibility = "hidden";
         var uConsole = e.target.getAttribute("uConsole");
         var buttonClick = document.getElementById("buttonBox"+uConsole);
         setPickConsole(uConsole);
         buttonClick.classList.toggle("getBox");
         setTimeout(function() { //Start the timer
             setIsOpen(true);
+            document.getElementById("boxContainerId").style.visibility = "hidden";
         }.bind(this), 800)
     }
     function handleState() {
