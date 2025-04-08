@@ -60,9 +60,11 @@ function NostalPickV2(props) {
                         )
                     })}
             </div>
-            <Modal isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
-                <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
-            </Modal>
+            <div id={"containerModalNostal"}>
+                <Modal isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
+                    <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
+                </Modal>
+            </div>
         </>
     )
 }
