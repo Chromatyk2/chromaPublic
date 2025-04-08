@@ -60,11 +60,9 @@ function NostalPickV2(props) {
                         )
                     })}
             </div>
-            <div id={"containerModalNostal"}>
-                <Modal isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
+                <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
                     <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
                 </Modal>
-            </div>
         </>
     )
 }

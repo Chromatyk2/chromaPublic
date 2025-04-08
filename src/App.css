@@ -5508,7 +5508,7 @@ button.navbar-toggler.collapsed {
     background: linear-gradient(140deg, #120747, #035078) !important;
     color: white;
 }
-#containerModalNostal.ReactModal__Overlay.ReactModal__Overlay--after-open{
+.ReactModal__Overlay.ReactModal__Overlay--after-open{
     background: transparent !important;
 }
 #modalBoxNostal.ReactModal__Content.ReactModal__Content--after-open {
@@ -5519,7 +5519,9 @@ button.navbar-toggler.collapsed {
 .lazy-load-image-background.blur.lazy-load-image-loaded>img {
     width: 250px;
 }
-
+.OverlayNostal{
+    background: transparent!important;
+}
 .progress-container {
     --hue: 0;
 
