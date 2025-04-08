@@ -41,7 +41,6 @@ function NostalPickV2(props) {
         setTimeout(function() { //Start the timer
             setIsOpen(true);
             document.getElementById("boxContainerId").style.visibility = "hidden";
-            document.getElementById("boxContainerId").classList.toggle("getBox");
         }.bind(this), 800)
     }
     function handleState() {
