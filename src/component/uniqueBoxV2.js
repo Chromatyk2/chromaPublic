@@ -157,13 +157,10 @@ function UniqueBoxV2(props) {
                     <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
                          src={"/basic.png"}/>
                     <img style={{visibility: "hidden"}} id={"boxCloseRare"} onClick={openBox} uConsole={props.consolePicked}
-                         className={"gettedBoxImg"}
                          src={"/rare.png"}/>
                     <img style={{visibility: "hidden"}} id={"boxCloseEpic"} onClick={openBox} uConsole={props.consolePicked}
-                         className={"gettedBoxImg"}
                          src={"/epic.png"}/>
                     <img style={{visibility: "hidden"}} id={"boxCloseLegendary"} onClick={openBox} uConsole={props.consolePicked}
-                         className={"gettedBoxImg"}
                          src={"/legendary.png"}/>
                 </div>
                 {typeBox != "basic" &&

@@ -1689,6 +1689,22 @@ img.gettedBoxImg {
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
+#boxCloseRare{
+    bottom: 100px;
+    position: absolute;
+    right: 550px;
+    width: 350px;
+}#boxCloseEpic{
+    bottom: 100px;
+    position: absolute;
+    right: 550px;
+    width: 350px;
+}#boxCloseLegendary{
+    bottom: 100px;
+    position: absolute;
+    right: 550px;
+    width: 350px;
+}
 .gettedGameImg{
     -webkit-animation: showGame 2s;
     animation: showGame 2s;
