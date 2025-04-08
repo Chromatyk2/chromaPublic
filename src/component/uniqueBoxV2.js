@@ -63,7 +63,7 @@ function UniqueBoxV2(props) {
         }
 
         document.getElementById("box").classList.toggle("gettedBoxImg");
-        document.getElementById("box").classList.toggle("openAnimationBox");
+        document.getElementById("boxBefore").classList.toggle("openAnimationBox");
         setTimeout(function() {
             document.getElementById("box").style.visibility = "hidden";
             document.getElementById("boxClose").style.visibility = "visible";
@@ -95,10 +95,13 @@ function UniqueBoxV2(props) {
                              src={"/images/jaquettes/" + props.consolePicked + "/jaquette (" + randomNumber + ").png"}/>
                     </div>
                 }
-                <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
-                     src={"/basic.png"}/>
-                <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
-                     src={"/"+ typeBox +".png"}/>
+                <div id={"boxBefore"}>
+                    <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
+                         src={"/basic.png"}/>
+                    <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked}
+                         className={"gettedBoxImg"}
+                         src={"/" + typeBox + ".png"}/>
+                </div>
                 {typeBox != "basic" &&
                     <img id={"boxOpen"} style={{width: "500px", right: "475px", visibility: "hidden"}}
                          className={"gettedBoxImg"} src={"/" + typeBox + "Open.png"}/>
