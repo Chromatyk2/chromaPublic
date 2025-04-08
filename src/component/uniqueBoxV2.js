@@ -62,7 +62,6 @@ function UniqueBoxV2(props) {
                 setTypeBox("epic");
         }
 
-        document.getElementById("box").classList.toggle("gettedBoxImg");
         document.getElementById("boxBefore").classList.toggle("openAnimationBox");
         setTimeout(function() {
             document.getElementById("box").style.visibility = "hidden";

@@ -1682,8 +1682,8 @@ object{
 img.gettedBoxImg {
     bottom: 100px;
     position: absolute;
-    width: 350px;
     right: 550px;
+    width: 350px;
     -webkit-animation: bounceInBox 1s;
     animation: bounceInBox 1s;
     -webkit-animation-fill-mode: forwards;
