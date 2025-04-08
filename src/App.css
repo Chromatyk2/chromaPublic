@@ -1855,12 +1855,10 @@ img.gettedBoxImg {
 }
 @keyframes bumpRare {
     0% {
-        visibility: visible;
         transform: scale(1);
         height: 0;
     }
     100% {
-        visibility: visible;
         transform: scale(1.1);
         height: 0;
     }
@@ -1873,12 +1871,10 @@ img.gettedBoxImg {
 }
 @keyframes bumpEpic {
     0% {
-        visibility: visible;
         transform: scale(1);
         height: 0;
     }
     100% {
-        visibility: visible;
         transform: scale(1.2);
         height: 0;
     }
@@ -1890,12 +1886,10 @@ img.gettedBoxImg {
 }
 @keyframes bumpLegendary {
     0% {
-        visibility: visible;
         transform: scale(1);
         height: 0;
     }
     100% {
-        visibility: visible;
         transform: scale(1.3);
         height: 0;
     }
