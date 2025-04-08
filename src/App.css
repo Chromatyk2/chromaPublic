@@ -1713,6 +1713,10 @@ img.gettedBoxImg {
     left: -35px;
 }
 .openAnimationBox {
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+    width: 350px;
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
 
