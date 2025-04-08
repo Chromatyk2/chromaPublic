@@ -95,7 +95,7 @@ function UniqueBoxV2(props) {
                 document.getElementById("boxCloseLegendary").classList.toggle("bumpLegendary");
             }.bind(this), 6000)
             setTimeout(function() {
-                document.getElementById("boxCloseEpic").style.visibility = "hidden";
+                document.getElementById("boxCloseLegendary").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
             }.bind(this), 9000)
