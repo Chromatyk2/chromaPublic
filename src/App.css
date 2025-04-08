@@ -1885,7 +1885,7 @@ img.gettedBoxImg {
 }
 @keyframes bumpEpic {
     0% {
-        transform: scale(1);
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1.2);
@@ -1898,7 +1898,7 @@ img.gettedBoxImg {
 }
 @keyframes bumpLegendary {
     0% {
-        transform: scale(1);
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1.3);
