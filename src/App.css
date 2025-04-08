@@ -5447,6 +5447,7 @@ button.navbar-toggler.collapsed {
 #modalBoxNostal.ReactModal__Content.ReactModal__Content--after-open {
     background: transparent !important;
     color: white;
+    overflow: hidden!important;
 }
 .lazy-load-image-background.blur.lazy-load-image-loaded>img {
     width: 250px;
