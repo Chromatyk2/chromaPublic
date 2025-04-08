@@ -26,7 +26,7 @@ function NostalPickV2(props) {
             height: '100vh',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center', overflow:'hidden'
         },
         textModal: {
             fontSize:'30px',
