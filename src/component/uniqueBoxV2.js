@@ -52,6 +52,7 @@ function UniqueBoxV2(props) {
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
         var rarity = Math.floor(Math.random() * 101);
+        console.log(rarity)
         if(rarity > 99){
                 setTypeBox("ultra");
                 document.getElementById("boxBefore").classList.toggle("openAnimationBox");
