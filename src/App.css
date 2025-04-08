@@ -1680,9 +1680,9 @@ object{
     overflow: hidden;
 }
 img.gettedBoxImg {
-    bottom: 100px;
+    bottom: 200px;
     position: absolute;
-    right: 550px;
+    right: 650px;
     width: 350px;
     -webkit-animation: bounceInBox 1s;
     animation: bounceInBox 1s;
@@ -1690,19 +1690,19 @@ img.gettedBoxImg {
     animation-fill-mode: forwards;
 }
 #boxCloseRare{
-    bottom: 100px;
+    bottom: 200px;
     position: absolute;
-    right: 550px;
+    right: 650px;
     width: 350px;
 }#boxCloseEpic{
-    bottom: 100px;
+    bottom: 200px;
     position: absolute;
-    right: 550px;
+    right: 650px;
     width: 350px;
 }#boxCloseLegendary{
-    bottom: 100px;
+    bottom: 200px;
     position: absolute;
-    right: 550px;
+    right: 650px;
     width: 350px;
 }
 .gettedGameImg{

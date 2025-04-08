@@ -168,7 +168,7 @@ function UniqueBoxV2(props) {
                          src={"/legendary.png"}/>
                 </div>
                 {typeBox != "basic" &&
-                    <img id={"boxOpen"} style={{width: "450px", right: "500px", visibility: "hidden"}}
+                    <img id={"boxOpen"} style={{width: "450px", right: "600px", visibility: "hidden"}}
                          src={"/" + typeBox + "Open.png"}/>
                 }
             </div>
