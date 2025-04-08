@@ -1875,7 +1875,7 @@ img.gettedBoxImg {
         transform: scale(1);
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 }
 .bumpEpic{
@@ -1883,28 +1883,28 @@ img.gettedBoxImg {
     animation: bumpEpic 1s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 @keyframes bumpEpic {
     0% {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(1.4);
     }
 }.bumpLegendary{
     -webkit-animation: bumpLegendary 1s;
     animation: bumpLegendary 1s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-     transform: scale(1.2);
+     transform: scale(1.4);
 }
 @keyframes bumpLegendary {
     0% {
-        transform: scale(1.2);
+        transform: scale(1.4);
     }
     100% {
-        transform: scale(1.3);
+        transform: scale(1.6);
     }
 }
 @keyframes showGame {
