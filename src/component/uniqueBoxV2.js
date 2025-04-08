@@ -68,15 +68,15 @@ function UniqueBoxV2(props) {
             document.getElementById("box").style.visibility = "hidden";
             document.getElementById("boxOpen").style.visibility = "visible";
             setFinalState("done");
-        }.bind(this), 10000)
+        }.bind(this), 2000)
     }
-    // useEffect(() => {
-    //     if(finalState !== null){
-    //         setTimeout(function() {
-    //             document.getElementById("imgGame"+randomNumber).style.display = "block";
-    //         }.bind(this), 300)
-    //     }
-    // }, [finalState])
+    useEffect(() => {
+        if(finalState !== null){
+            setTimeout(function() {
+                document.getElementById("imgGame"+randomNumber).style.display = "block";
+            }.bind(this), 300)
+        }
+    }, [finalState])
     function handleState() {
         props.change();
     }
