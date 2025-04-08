@@ -1847,6 +1847,59 @@ img.gettedBoxImg {
 .imgInBox{
     width: 600px;
 }
+.bumpRare{
+    -webkit-animation: bumpRare 1s;
+    animation: bumpRare 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes bumpRare {
+    0% {
+        visibility: visible;
+        transform: scale(1);
+        height: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: scale(1.1);
+        height: 0;
+    }
+}
+.bumpEpic{
+    -webkit-animation: bumpEpic 1s;
+    animation: bumpEpic 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes bumpEpic {
+    0% {
+        visibility: visible;
+        transform: scale(1);
+        height: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: scale(1.2);
+        height: 0;
+    }
+}.bumpLegendary{
+    -webkit-animation: bumpLegendary 1s;
+    animation: bumpLegendary 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes bumpLegendary {
+    0% {
+        visibility: visible;
+        transform: scale(1);
+        height: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: scale(1.3);
+        height: 0;
+    }
+}
 @keyframes showGame {
     0% {
         transform: scale(.0001) translateX(-750px) translateY(-750px);

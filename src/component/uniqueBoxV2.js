@@ -58,60 +58,67 @@ function UniqueBoxV2(props) {
                 setTimeout(function() {
                     document.getElementById("box").style.visibility = "hidden";
                     document.getElementById("boxCloseRare").style.visibility = "visible";
-                }.bind(this), 1000)
+                    document.getElementById("boxCloseRare").classList.toggle("bumpRare");
+                }.bind(this), 2000)
                 setTimeout(function() {
                     document.getElementById("boxCloseRare").style.visibility = "hidden";
                     document.getElementById("boxCloseEpic").style.visibility = "visible";
-                }.bind(this), 2000)
+                    document.getElementById("boxCloseEpic").classList.toggle("bumpEpic");
+                }.bind(this), 4000)
                 setTimeout(function() {
                     document.getElementById("boxCloseEpic").style.visibility = "hidden";
                     document.getElementById("boxCloseLegendary").style.visibility = "visible";
-                }.bind(this), 3000)
+                    document.getElementById("boxCloseLegendary").classList.toggle("bumpLegendary");
+                }.bind(this), 6000)
                 setTimeout(function() {
                     document.getElementById("boxCloseLegendary").style.visibility = "hidden";
                     document.getElementById("boxOpen").style.visibility = "visible";
                     setFinalState("done");
-                }.bind(this), 6000)
+                }.bind(this), 9000)
         }else if(rarity < 100 && rarity > 88){
                 setTypeBox("legendary");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
                 document.getElementById("box").style.visibility = "hidden";
                 document.getElementById("boxCloseRare").style.visibility = "visible";
-            }.bind(this), 1000)
+                document.getElementById("boxCloseRare").classList.toggle("bumpRare");
+            }.bind(this), 2000)
             setTimeout(function() {
                 document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxCloseEpic").style.visibility = "visible";
-            }.bind(this), 2000)
+                document.getElementById("boxCloseEpic").classList.toggle("bumpEpic");
+            }.bind(this), 4000)
             setTimeout(function() {
                 document.getElementById("boxCloseEpic").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 4000)
+            }.bind(this), 7000)
         }else if (rarity < 89 && rarity > 49){
                 setTypeBox("rare");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
                 document.getElementById("box").style.visibility = "hidden";
                 document.getElementById("boxCloseRare").style.visibility = "visible";
-            }.bind(this), 1000)
+                document.getElementById("boxCloseRare").classList.toggle("bumpRare");
+            }.bind(this), 2000)
             setTimeout(function() {
                 document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 4000)
+            }.bind(this), 5000)
         }else if( rarity < 50){
                 setTypeBox("epic");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
                 document.getElementById("box").style.visibility = "hidden";
                 document.getElementById("boxCloseRare").style.visibility = "visible";
-            }.bind(this), 1000)
+                document.getElementById("boxCloseRare").classList.toggle("bumpRare");
+            }.bind(this), 2000)
             setTimeout(function() {
                 document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 4000)
+            }.bind(this), 5000)
         }
     }
     useEffect(() => {
