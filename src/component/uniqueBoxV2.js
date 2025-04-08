@@ -53,7 +53,7 @@ function UniqueBoxV2(props) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
         var rarity = Math.floor(Math.random() * 101);
         console.log(rarity)
-        if(rarity > 99){
+        if(rarity > 95){
                 setTypeBox("ultra");
                 document.getElementById("boxBefore").classList.toggle("openAnimationBox");
                 setTimeout(function() {
@@ -76,7 +76,7 @@ function UniqueBoxV2(props) {
                     document.getElementById("boxOpen").style.visibility = "visible";
                     setFinalState("done");
                 }.bind(this), 9000)
-        }else if(rarity < 100 && rarity > 88){
+        }else if(rarity < 95 && rarity > 79){
                 setTypeBox("legendary");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
@@ -99,7 +99,7 @@ function UniqueBoxV2(props) {
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
             }.bind(this), 9000)
-        }else if (rarity < 89 && rarity > 49){
+        }else if (rarity < 80 && rarity > 49){
                 setTypeBox("rare");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
