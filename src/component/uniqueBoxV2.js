@@ -66,6 +66,10 @@ function UniqueBoxV2(props) {
         document.getElementById("box").classList.toggle("openAnimationBox");
         setTimeout(function() {
             document.getElementById("box").style.visibility = "hidden";
+            document.getElementById("boxClose").style.visibility = "visible";
+        }.bind(this), 1000)
+        setTimeout(function() {
+            document.getElementById("boxClose").style.visibility = "hidden";
             document.getElementById("boxOpen").style.visibility = "visible";
             setFinalState("done");
         }.bind(this), 2000)
@@ -74,7 +78,7 @@ function UniqueBoxV2(props) {
         if(finalState !== null){
             setTimeout(function() {
                 document.getElementById("imgGame"+randomNumber).style.display = "block";
-            }.bind(this), 300)
+            }.bind(this), 0)
         }
     }, [finalState])
     function handleState() {
@@ -93,8 +97,11 @@ function UniqueBoxV2(props) {
                 }
                 <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
                      src={"/basic.png"}/>
+                <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
+                     src={"/"+ typeBox +".png"}/>
                 {typeBox != "basic" &&
-                    <img id={"boxOpen"} style={{width: "500px", right: "475px", visibility:"hidden"}} className={"gettedBoxImg"} src={"/" + typeBox + "Open.png"}/>
+                    <img id={"boxOpen"} style={{width: "500px", right: "475px", visibility: "hidden"}}
+                         className={"gettedBoxImg"} src={"/" + typeBox + "Open.png"}/>
                 }
             </div>
         </>
