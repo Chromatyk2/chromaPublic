@@ -5508,6 +5508,9 @@ button.navbar-toggler.collapsed {
     background: linear-gradient(140deg, #120747, #035078) !important;
     color: white;
 }
+.ReactModal__Overlay.ReactModal__Overlay--after-open:has(#modalBoxNostal){
+    background: transparent !important;
+}
 #modalBoxNostal.ReactModal__Content.ReactModal__Content--after-open {
     background: transparent !important;
     color: white;
