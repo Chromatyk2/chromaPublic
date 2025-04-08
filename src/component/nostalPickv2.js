@@ -34,6 +34,7 @@ function NostalPickV2(props) {
         },
     };
     function openModal(e) {
+        document.getElementById("boxContainerId").style.visibility = "hidden";
         var uConsole = e.target.getAttribute("uConsole");
         var buttonClick = document.getElementById("buttonBox"+uConsole);
         setPickConsole(uConsole);
@@ -44,10 +45,11 @@ function NostalPickV2(props) {
     }
     function handleState() {
         setIsOpen(false);
+        document.getElementById("boxContainerId").style.visibility = "visible";
     }
     return(
         <>
-            <div className="boxContainer">
+            <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
                         numbers.map((val, key) => {
                         return (
