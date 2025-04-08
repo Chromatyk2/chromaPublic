@@ -74,7 +74,7 @@ function UniqueBoxV2(props) {
                 setTimeout(function() {
                     document.getElementById("boxCloseLegendary").style.visibility = "hidden";
                     document.getElementById("boxOpen").style.visibility = "visible";
-                    document.getElementById("boxOpen").style.transform = "scale(1.6)";
+                    document.getElementById("boxOpen").style.transform = "scale(1.3)";
                     setFinalState("done");
                 }.bind(this), 9000)
         }else if(rarity < 95 && rarity > 79){
@@ -98,7 +98,7 @@ function UniqueBoxV2(props) {
             setTimeout(function() {
                 document.getElementById("boxCloseLegendary").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
-                document.getElementById("boxOpen").style.transform = "scale(1.6)";
+                document.getElementById("boxOpen").style.transform = "scale(1.3)";
                 setFinalState("done");
             }.bind(this), 9000)
         }else if (rarity < 80 && rarity > 49){
@@ -112,7 +112,7 @@ function UniqueBoxV2(props) {
             setTimeout(function() {
                 document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
-                document.getElementById("boxOpen").style.transform = "scale(1.2)";
+                document.getElementById("boxOpen").style.transform = "scale(1.1)";
                 setFinalState("done");
             }.bind(this), 5000)
         }else if( rarity < 50){
@@ -131,7 +131,7 @@ function UniqueBoxV2(props) {
             setTimeout(function() {
                 document.getElementById("boxCloseEpic").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
-                document.getElementById("boxOpen").style.transform = "scale(1.4)";
+                document.getElementById("boxOpen").style.transform = "scale(1.2)";
                 setFinalState("done");
             }.bind(this), 7000)
         }
@@ -168,7 +168,7 @@ function UniqueBoxV2(props) {
                          src={"/legendary.png"}/>
                 </div>
                 {typeBox != "basic" &&
-                    <img id={"boxOpen"} style={{width: "500px", right: "475px", visibility: "hidden"}}
+                    <img id={"boxOpen"} style={{width: "450px", right: "500px", visibility: "hidden"}}
                          src={"/" + typeBox + "Open.png"}/>
                 }
             </div>
