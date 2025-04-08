@@ -1868,6 +1868,7 @@ img.gettedBoxImg {
     animation: bumpRare 1s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    transform: scale(1);
 }
 @keyframes bumpRare {
     0% {
@@ -1882,6 +1883,7 @@ img.gettedBoxImg {
     animation: bumpEpic 1s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    transform: scale(1.1);
 }
 @keyframes bumpEpic {
     0% {
@@ -1895,6 +1897,7 @@ img.gettedBoxImg {
     animation: bumpLegendary 1s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+     transform: scale(1.2);
 }
 @keyframes bumpLegendary {
     0% {
