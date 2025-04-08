@@ -57,49 +57,61 @@ function UniqueBoxV2(props) {
                 document.getElementById("boxBefore").classList.toggle("openAnimationBox");
                 setTimeout(function() {
                     document.getElementById("box").style.visibility = "hidden";
-                    document.getElementById("boxClose").style.visibility = "visible";
+                    document.getElementById("boxCloseRare").style.visibility = "visible";
                 }.bind(this), 1000)
                 setTimeout(function() {
-                    document.getElementById("boxClose").style.visibility = "hidden";
+                    document.getElementById("boxCloseRare").style.visibility = "hidden";
+                    document.getElementById("boxCloseEpic").style.visibility = "visible";
+                }.bind(this), 2000)
+                setTimeout(function() {
+                    document.getElementById("boxCloseEpic").style.visibility = "hidden";
+                    document.getElementById("boxCloseLegendary").style.visibility = "visible";
+                }.bind(this), 3000)
+                setTimeout(function() {
+                    document.getElementById("boxCloseLegendary").style.visibility = "hidden";
                     document.getElementById("boxOpen").style.visibility = "visible";
                     setFinalState("done");
-                }.bind(this), 2000)
+                }.bind(this), 6000)
         }else if(rarity < 100 && rarity > 88){
                 setTypeBox("legendary");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
                 document.getElementById("box").style.visibility = "hidden";
-                document.getElementById("boxClose").style.visibility = "visible";
+                document.getElementById("boxCloseRare").style.visibility = "visible";
             }.bind(this), 1000)
             setTimeout(function() {
-                document.getElementById("boxClose").style.visibility = "hidden";
+                document.getElementById("boxCloseRare").style.visibility = "hidden";
+                document.getElementById("boxCloseEpic").style.visibility = "visible";
+            }.bind(this), 2000)
+            setTimeout(function() {
+                document.getElementById("boxCloseEpic").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 2000)
+            }.bind(this), 4000)
         }else if (rarity < 89 && rarity > 49){
                 setTypeBox("rare");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
                 document.getElementById("box").style.visibility = "hidden";
-                document.getElementById("boxClose").style.visibility = "visible";
+                document.getElementById("boxCloseRare").style.visibility = "visible";
             }.bind(this), 1000)
             setTimeout(function() {
-                document.getElementById("boxClose").style.visibility = "hidden";
+                document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 2000)
+            }.bind(this), 4000)
         }else if( rarity < 50){
                 setTypeBox("epic");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
             setTimeout(function() {
                 document.getElementById("box").style.visibility = "hidden";
-                document.getElementById("boxClose").style.visibility = "visible";
+                document.getElementById("boxCloseRare").style.visibility = "visible";
             }.bind(this), 1000)
             setTimeout(function() {
-                document.getElementById("boxClose").style.visibility = "hidden";
+                document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 2000)
+            }.bind(this), 4000)
         }
     }
     useEffect(() => {
@@ -123,16 +135,16 @@ function UniqueBoxV2(props) {
                              src={"/images/jaquettes/" + props.consolePicked + "/jaquette (" + randomNumber + ").png"}/>
                     </div>
                 }
-                <div id={"boxBefore"}>
+                <div style={{animationIterationCount: 20}} id={"boxBefore"}>
                     <img id={"box"} onClick={openBox} uConsole={props.consolePicked} className={"gettedBoxImg"}
                          src={"/basic.png"}/>
-                    <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked}
+                    <img style={{visibility: "hidden"}} id={"boxCloseRare"} onClick={openBox} uConsole={props.consolePicked}
                          className={"gettedBoxImg"}
                          src={"/rare.png"}/>
-                    <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked}
+                    <img style={{visibility: "hidden"}} id={"boxCloseEpic"} onClick={openBox} uConsole={props.consolePicked}
                          className={"gettedBoxImg"}
                          src={"/epic.png"}/>
-                    <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked}
+                    <img style={{visibility: "hidden"}} id={"boxCloseLegendary"} onClick={openBox} uConsole={props.consolePicked}
                          className={"gettedBoxImg"}
                          src={"/legendary.png"}/>
                 </div>
