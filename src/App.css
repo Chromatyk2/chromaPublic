@@ -1886,7 +1886,7 @@ img.gettedBoxImg {
     transform: scale(1.1);
 }
 #boxOpen{
-    bottom: 100px;
+    bottom: 210px;
     position: absolute;
     right: 550px;
     width: 350px;
