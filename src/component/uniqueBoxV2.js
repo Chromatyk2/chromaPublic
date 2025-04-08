@@ -51,27 +51,56 @@ function UniqueBoxV2(props) {
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
-        var rarity = Math.floor(Math.random() * 100);
+        var rarity = Math.floor(Math.random() * 101);
         if(rarity > 99){
                 setTypeBox("ultra");
+                document.getElementById("boxBefore").classList.toggle("openAnimationBox");
+                setTimeout(function() {
+                    document.getElementById("box").style.visibility = "hidden";
+                    document.getElementById("boxClose").style.visibility = "visible";
+                }.bind(this), 1000)
+                setTimeout(function() {
+                    document.getElementById("boxClose").style.visibility = "hidden";
+                    document.getElementById("boxOpen").style.visibility = "visible";
+                    setFinalState("done");
+                }.bind(this), 2000)
         }else if(rarity < 100 && rarity > 88){
                 setTypeBox("legendary");
+            document.getElementById("boxBefore").classList.toggle("openAnimationBox");
+            setTimeout(function() {
+                document.getElementById("box").style.visibility = "hidden";
+                document.getElementById("boxClose").style.visibility = "visible";
+            }.bind(this), 1000)
+            setTimeout(function() {
+                document.getElementById("boxClose").style.visibility = "hidden";
+                document.getElementById("boxOpen").style.visibility = "visible";
+                setFinalState("done");
+            }.bind(this), 2000)
         }else if (rarity < 89 && rarity > 49){
                 setTypeBox("rare");
+            document.getElementById("boxBefore").classList.toggle("openAnimationBox");
+            setTimeout(function() {
+                document.getElementById("box").style.visibility = "hidden";
+                document.getElementById("boxClose").style.visibility = "visible";
+            }.bind(this), 1000)
+            setTimeout(function() {
+                document.getElementById("boxClose").style.visibility = "hidden";
+                document.getElementById("boxOpen").style.visibility = "visible";
+                setFinalState("done");
+            }.bind(this), 2000)
         }else if( rarity < 50){
                 setTypeBox("epic");
+            document.getElementById("boxBefore").classList.toggle("openAnimationBox");
+            setTimeout(function() {
+                document.getElementById("box").style.visibility = "hidden";
+                document.getElementById("boxClose").style.visibility = "visible";
+            }.bind(this), 1000)
+            setTimeout(function() {
+                document.getElementById("boxClose").style.visibility = "hidden";
+                document.getElementById("boxOpen").style.visibility = "visible";
+                setFinalState("done");
+            }.bind(this), 2000)
         }
-
-        document.getElementById("boxBefore").classList.toggle("openAnimationBox");
-        setTimeout(function() {
-            document.getElementById("box").style.visibility = "hidden";
-            document.getElementById("boxClose").style.visibility = "visible";
-        }.bind(this), 1000)
-        setTimeout(function() {
-            document.getElementById("boxClose").style.visibility = "hidden";
-            document.getElementById("boxOpen").style.visibility = "visible";
-            setFinalState("done");
-        }.bind(this), 2000)
     }
     useEffect(() => {
         if(finalState !== null){
@@ -99,7 +128,13 @@ function UniqueBoxV2(props) {
                          src={"/basic.png"}/>
                     <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked}
                          className={"gettedBoxImg"}
-                         src={"/" + typeBox + ".png"}/>
+                         src={"/rare.png"}/>
+                    <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked}
+                         className={"gettedBoxImg"}
+                         src={"/epic.png"}/>
+                    <img style={{visibility: "hidden"}} id={"boxClose"} onClick={openBox} uConsole={props.consolePicked}
+                         className={"gettedBoxImg"}
+                         src={"/legendary.png"}/>
                 </div>
                 {typeBox != "basic" &&
                     <img id={"boxOpen"} style={{width: "500px", right: "475px", visibility: "hidden"}}
