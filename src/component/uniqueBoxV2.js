@@ -90,9 +90,14 @@ function UniqueBoxV2(props) {
             }.bind(this), 4000)
             setTimeout(function() {
                 document.getElementById("boxCloseEpic").style.visibility = "hidden";
+                document.getElementById("boxCloseLegendary").style.visibility = "visible";
+                document.getElementById("boxCloseLegendary").classList.toggle("bumpLegendary");
+            }.bind(this), 6000)
+            setTimeout(function() {
+                document.getElementById("boxCloseEpic").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 7000)
+            }.bind(this), 9000)
         }else if (rarity < 89 && rarity > 49){
                 setTypeBox("rare");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
@@ -103,9 +108,14 @@ function UniqueBoxV2(props) {
             }.bind(this), 2000)
             setTimeout(function() {
                 document.getElementById("boxCloseRare").style.visibility = "hidden";
+                document.getElementById("boxCloseEpic").style.visibility = "visible";
+                document.getElementById("boxCloseEpic").classList.toggle("bumpEpic");
+            }.bind(this), 4000)
+            setTimeout(function() {
+                document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
                 setFinalState("done");
-            }.bind(this), 5000)
+            }.bind(this), 7000)
         }else if( rarity < 50){
                 setTypeBox("epic");
             document.getElementById("boxBefore").classList.toggle("openAnimationBox");
