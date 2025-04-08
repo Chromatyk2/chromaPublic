@@ -1714,8 +1714,8 @@ img.gettedBoxImg {
     visibility: visible;
     width: 600px;
     z-index: 1;
-    margin-left: 700px;
-    bottom: -200px;
+    margin-left: 650px;
+    bottom: -150px;
 }
 .textResultBoxRare {
     -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
