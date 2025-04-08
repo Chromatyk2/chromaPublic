@@ -74,7 +74,7 @@ function UniqueBoxV2(props) {
                 setTimeout(function() {
                     document.getElementById("boxCloseLegendary").style.visibility = "hidden";
                     document.getElementById("boxOpen").style.visibility = "visible";
-                    document.getElementById("boxOpen").style.transform = "scale(1.6)!important";
+                    document.getElementById("boxOpen").style.transform = "scale(1.6)";
                     setFinalState("done");
                 }.bind(this), 9000)
         }else if(rarity < 95 && rarity > 79){
@@ -98,7 +98,7 @@ function UniqueBoxV2(props) {
             setTimeout(function() {
                 document.getElementById("boxCloseLegendary").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
-                document.getElementById("boxOpen").style.transform = "scale(1.6)!important";
+                document.getElementById("boxOpen").style.transform = "scale(1.6)";
                 setFinalState("done");
             }.bind(this), 9000)
         }else if (rarity < 80 && rarity > 49){
@@ -112,7 +112,7 @@ function UniqueBoxV2(props) {
             setTimeout(function() {
                 document.getElementById("boxCloseRare").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
-                document.getElementById("boxOpen").style.transform = "scale(1.2)!important";
+                document.getElementById("boxOpen").style.transform = "scale(1.2)";
                 setFinalState("done");
             }.bind(this), 5000)
         }else if( rarity < 50){
@@ -131,7 +131,7 @@ function UniqueBoxV2(props) {
             setTimeout(function() {
                 document.getElementById("boxCloseEpic").style.visibility = "hidden";
                 document.getElementById("boxOpen").style.visibility = "visible";
-                document.getElementById("boxOpen").style.transform = "scale(1.4)!important";
+                document.getElementById("boxOpen").style.transform = "scale(1.4)";
                 setFinalState("done");
             }.bind(this), 7000)
         }
@@ -169,7 +169,7 @@ function UniqueBoxV2(props) {
                 </div>
                 {typeBox != "basic" &&
                     <img id={"boxOpen"} style={{width: "500px", right: "475px", visibility: "hidden"}}
-                         className={"gettedBoxImg"} src={"/" + typeBox + "Open.png"}/>
+                         src={"/" + typeBox + "Open.png"}/>
                 }
             </div>
         </>

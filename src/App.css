@@ -1885,6 +1885,12 @@ img.gettedBoxImg {
     animation-fill-mode: forwards;
     transform: scale(1.2);
 }
+#boxOpen{
+    bottom: 100px;
+    position: absolute;
+    right: 550px;
+    width: 350px;
+}
 @keyframes bumpEpic {
     0% {
         transform: scale(1.2);
