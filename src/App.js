@@ -41,7 +41,7 @@ import Pedandex from "./component/pedandex";
 import StartPedandex from "./component/startPedandex";
 import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
-import UniqueBox from "./component/UniqueBox";
+import DonationBox from "./component/donationBox";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
@@ -67,6 +67,7 @@ function App(props) {
           <Route path="/t4m4Q2zE3LV8ue" element={<AllNotes cookies={cookies} />} />
           <Route path="/t4m4Q2zE3LV8uf" element={<ViewersNote cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGS" element={<NostalPickV2 cookies={cookies} />} />
+          <Route path="/49Vs5sWVS2e7ub" element={<DonationBox cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGM" element={<CurrentGameImage cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGB" element={<BangerOverlay cookies={cookies} />} />
@@ -89,7 +90,6 @@ function App(props) {
           <Route path="/oldpedandex" element={<SpecificPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qs" element={<StartPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qds" element={<CardsHubTest page={"cardsShop"} cookies={cookies} />} />
-          <Route path="/49Vs5sWVS2e7ub" element={<UniqueBox cookies={cookies} />} />
         </Routes>
         {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
