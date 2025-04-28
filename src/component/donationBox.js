@@ -11,7 +11,6 @@ function DonationBox(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
     const [randomConsoles, setRandomConsoles] = React.useState(null);
-    var numbers = [1,2];
     useEffect(() => {
         var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
@@ -51,7 +50,7 @@ function DonationBox(props) {
         <>
             <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
-                            <button id={"buttonBox"} onClick={openModal} className={"uniqueBoxContainer"}>
+                            <button id={"buttonBox"} onClick={openModal} className={"uniqueBoxContainerDonation"}>
                                 <img uConsole={randomConsoles[Math.floor(Math.random()*randomConsoles.length)]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                     }

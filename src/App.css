@@ -1561,6 +1561,10 @@ img.imgBox {
     background: none;
     border: none;
     position: relative;
+}.uniqueBoxContainerDonation {
+    background: none;
+    border: none;
+    position: relative;
 }
 p.nbBox {
     color: #fff;
