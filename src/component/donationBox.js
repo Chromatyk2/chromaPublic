@@ -11,6 +11,7 @@ function DonationBox(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
     const [randomConsoles, setRandomConsoles] = React.useState(null);
+    const [montant, setMontant] = React.useState(0);
     useEffect(() => {
         var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
@@ -46,12 +47,20 @@ function DonationBox(props) {
         setIsOpen(false);
         document.getElementById("boxContainerId").style.visibility = "visible";
     }
+    function changeBox(e) {
+        setTimeout(function() { //Start the timer
+            if(montant != e.target.value){
+                setMontant(parseFloat(montant + 1));
+            }
+        }.bind(this), 800)
+    }
     return(
         <>
+            <input type={"number"} onChange={changeBox}/>
             <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
                         <button id={"buttonBox"} onClick={openModal} className={"uniqueBoxContainerDonation"}>
-                            <img uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
+                            <img style={{scale: (montant/25)*100+"%",filter: "grayscale("+100-((montant/25)*100)+"%)"}} uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
                                  className={"imgBox"} src={"/basic.png"}/>
                         </button>
                     }
