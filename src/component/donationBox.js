@@ -53,8 +53,6 @@ function DonationBox(props) {
                         <button id={"buttonBox"} onClick={openModal} className={"uniqueBoxContainerDonation"}>
                             <img uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
                                  className={"imgBox"} src={"/basic.png"}/>
-                            <img uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
-                                 className={"imgBox"} src={"/basic.png"}/>
                         </button>
                     }
             </div>
