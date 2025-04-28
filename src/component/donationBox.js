@@ -51,11 +51,14 @@ function DonationBox(props) {
         <>
             <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
+                        numbers.map((val, key) => {
+                        return (
                             <button id={"buttonBox"+randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
                                 <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
-                    }
+                        )
+                    })}
             </div>
                 <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
                     <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
