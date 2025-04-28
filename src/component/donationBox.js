@@ -11,7 +11,7 @@ function DonationBox(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
     const [randomConsoles, setRandomConsoles] = React.useState(null);
-    var numbers = [1,2,3,4,5,6,7,8,9,10];
+    var numbers = [1,2];
     useEffect(() => {
         var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
@@ -51,14 +51,11 @@ function DonationBox(props) {
         <>
             <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
-                        numbers.map((val, key) => {
-                        return (
                             <button id={"buttonBox"+randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
                                 <p className={"nbBox"}>{val}</p>
                                 <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
-                        )
-                    })}
+                    }
             </div>
                 <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
                     <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
