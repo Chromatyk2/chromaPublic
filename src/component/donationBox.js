@@ -32,6 +32,10 @@ function DonationBox(props) {
             fontSize:'30px',
             textAlign:'center'
         },
+        boxImg:{
+            scale: (montant/25)*100+"%",
+            filter: "grayscale("+100-((montant/25)*100)+"%)"
+        }
     };
     function openModal(e) {
         var uConsole = e.target.getAttribute("uConsole");
@@ -60,7 +64,7 @@ function DonationBox(props) {
             <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
                         <button id={"buttonBox"} onClick={openModal} className={"uniqueBoxContainerDonation"}>
-                            <img style={{scale: (montant/25)*100+"%", filter: "grayscale("+100-((montant/25)*100)+"%)"}} uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
+                            <img style={customStyles.boxImg} uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
                                  className={"imgBox"} src={"/basic.png"}/>
                         </button>
                     }
