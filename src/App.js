@@ -41,6 +41,7 @@ import Pedandex from "./component/pedandex";
 import StartPedandex from "./component/startPedandex";
 import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
+import UniqueBox from "./component/UniqueBox";
 function App(props) {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
@@ -88,6 +89,7 @@ function App(props) {
           <Route path="/oldpedandex" element={<SpecificPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qs" element={<StartPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qds" element={<CardsHubTest page={"cardsShop"} cookies={cookies} />} />
+          <Route path="/49Vs5sWVS2e7ub" element={<UniqueBox cookies={cookies} />} />
         </Routes>
         {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
