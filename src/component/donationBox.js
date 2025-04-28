@@ -50,12 +50,15 @@ function DonationBox(props) {
         <>
             <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
-                            <button id={"buttonBox"} onClick={openModal} className={"uniqueBoxContainerDonation"}>
-                                <img uConsole={randomConsoles[Math.floor(Math.random()*randomConsoles.length)]} className={"imgBox"} src={"/basic.png"}/>
-                            </button>
+                        <button id={"buttonBox"} onClick={openModal} className={"uniqueBoxContainerDonation"}>
+                            <img uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
+                                 className={"imgBox"} src={"/basic.png"}/>
+                            <img uConsole={randomConsoles[Math.floor(Math.random() * randomConsoles.length)]}
+                                 className={"imgBox"} src={"/basic.png"}/>
+                        </button>
                     }
             </div>
-                <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
+            <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
                     <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
                 </Modal>
         </>
