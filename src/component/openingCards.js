@@ -341,7 +341,8 @@ function OpeningCards(props) {
                                         :
                                         stadeC == 3 ?
                                             <div
-                                                stade={stadeC} rarity={val.rarity.rarity}
+                                                stade={stadeC}
+                                                rarity={val.rarity.rarity}
                                                 style={{display: key < 4 && "none", overflow: "unset"}}
                                                 keyCard={key}
                                                 cardId={val.card.id}
@@ -471,6 +472,7 @@ function OpeningCards(props) {
                                                      id={"cardNb" + key} keyCard={key}
                                                      cardId={val.card.id}
                                                      cardLocalId={val.card.localId}
+                                                     rarity={val.rarity.rarity}
                                                      onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
                                                      className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
 
