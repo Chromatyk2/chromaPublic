@@ -57,7 +57,7 @@ function OpeningCards(props) {
             fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
                 .then(res => res.json())
                 .then(
-                    (result) => {
+                    (result) => {console.log(result);
                         const pkmNumber = result.data[Math.floor(Math.random() * result.length)].localId;
                         fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
                             .then(res => res.json())
