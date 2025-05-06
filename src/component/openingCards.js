@@ -224,18 +224,17 @@ function OpeningCards(props) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setThings(false)
-        }, 12001)
+        }, 7001)
         const timeoutBooster = setTimeout(() => {
             setThingsBooster(false)
-        }, 13001)
+        }, 8001)
         const timeoutCards = setTimeout(() => {
             setIsLoaded(false);
 
-        }, 14001)
+        }, 7001)
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
-    console.log(tenCards);
     return (
         <>
             <div style={{
@@ -246,12 +245,12 @@ function OpeningCards(props) {
             }}>
                 <div
                     className={things === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
-                    <img style={customStyles.imgModal2} src={"/Boosters/" + props.idBooster.replace(".", "") + ".png"}
+                    <img style={customStyles.imgModal2} src={"/Boosters/" + props.idBooster + ".png"}
                          alt="Grapefruit slice atop a pile of other slices"/>
                 </div>
                 <div style={{overflow: "hidden"}}
                      className={things === true ? "dropBooster fit-picture showBooster" : "fit-picture dropCards hiddenBooster"}>
-                    <img style={customStyles.imgModal} src={"/Boosters/" + props.idBooster.replace(".", "") + ".png"}
+                    <img style={customStyles.imgModal} src={"/Boosters/" + props.idBooster + ".png"}
                          alt="Grapefruit slice atop a pile of other slices"/>
                 </div>
             </div>
