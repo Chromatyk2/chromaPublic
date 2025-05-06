@@ -96,7 +96,6 @@ function OpeningCards(props) {
         var id = (e.target.getAttribute("keyCard"));
         var nextId = parseInt(id,5) - 1;
         var next = document.getElementById("cardNb"+nextId);
-        var rarity = next.getAttribute("rarity");
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
         if(index == 0){
@@ -136,7 +135,6 @@ function OpeningCards(props) {
         var id = (e.target.getAttribute("keyCard"));
         var nextId = parseInt(id,5) - 1;
         var next = document.getElementById("cardNb"+nextId);
-        var rarity = next.getAttribute("rarity");
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
         if(stadeCurrent == 1){
