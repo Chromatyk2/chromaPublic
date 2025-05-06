@@ -87,7 +87,7 @@ function OpeningCards(props) {
                             setError(error);
                         }
                     )
-            }else if(tenCards.length > 5 && tenCards.length < 8){
+            }else if(tenCards.length > 4 && tenCards.length < 8){
                 var rarityArray = props.rarities.filter(item => item.stade ==  1);
                 var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
                 fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"Uncommon"')
@@ -361,18 +361,17 @@ function OpeningCards(props) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setThings(false)
-        }, 7001)
+        }, 10001)
         const timeoutBooster = setTimeout(() => {
             setThingsBooster(false)
-        }, 8001)
+        }, 11001)
         const timeoutCards = setTimeout(() => {
             setIsLoaded(false);
 
-        }, 7001)
+        }, 12001)
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
-    console.log(props.rarities);
     return (
         <>
             <div style={{
