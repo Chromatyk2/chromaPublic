@@ -70,7 +70,7 @@ function OpeningCards(props) {
                                             idCard:result.id,
                                             booster:props.idBooster,
                                             rarity:result.rarity,
-                                            stade:0,
+                                            stade:stade,
                                             nb:result.localId,
                                             block:props.block
                                         })
@@ -235,6 +235,7 @@ function OpeningCards(props) {
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
+    console.log(tenCards);
     return (
         <>
             <div style={{
@@ -264,8 +265,8 @@ function OpeningCards(props) {
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
-                        if (val.rarity.rarity != "Common" && val.rarity.rarity != "Uncommon" && typeof val.rarity.rarity !== "undefined") {
-                            var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity.rarity)).stade;
+                        if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
+                            var stadeC = props.rarities.find((uc) => uc.rarity.includes(val.rarity)).stade;
                         } else {
                             var stadeC = 0;
                         }
