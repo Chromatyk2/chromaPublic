@@ -71,12 +71,12 @@ function OpeningCards(props) {
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             }
             console.log(rarity)
-            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", "")+"&rarity="+rarity)
+            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", "")+"&rarity="+rarity.rarity)
                 .then(res => res.json())
                 .then(
                     (result) => {
                         if(result.length == 0){
-                            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity="+rarity)
+                            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity="+rarity.rarity)
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
