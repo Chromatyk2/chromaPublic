@@ -62,7 +62,68 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
-        if(tenCards.length < 5){
+        if(tenCards.length == 0){
+            const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
+            var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
+            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", "")+"&rarity="+rarity.rarity)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        if(result.length == 0){
+                            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity="+rarity.rarity)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
+                                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                                            .then(res => res.json())
+                                            .then(
+                                                (result) => {
+                                                    var stade = rarity.stade;
+                                                    Axios.post('/api/addCard',
+                                                        {
+                                                            pseudo:props.user,
+                                                            idCard:result.id,
+                                                            booster:props.idBooster,
+                                                            rarity:rarity.rarity,
+                                                            stade:stade,
+                                                            nb:result.localId,
+                                                            block:props.block
+                                                        })
+                                                    setIsLoaded(true);
+                                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
+                                                    setNbCards (nbCards + 1);
+                                                })
+                                    })
+                        }else{
+                            const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
+                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".", "")+'/'+pkmNumber)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        var stade = rarity.stade;
+                                        Axios.post('/api/addCard',
+                                            {
+                                                pseudo:props.user,
+                                                idCard:result.id,
+                                                booster:props.idBooster.replace(".", ""),
+                                                rarity:rarity.rarity,
+                                                stade:stade,
+                                                nb:result.localId,
+                                                block:props.block
+                                            })
+                                        setIsLoaded(true);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
+                                        setNbCards (nbCards + 1);
+                                    })
+                        }
+                    },
+                    (error) => {
+                        setIsLoaded(true);
+                        setError(error);
+                    }
+                )
+        }else if(tenCards.length < 5 && tenCards.length > 0){
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 50 ){
