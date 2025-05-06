@@ -42,8 +42,17 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            console.log(result)
-                            setBlock(result.serie.id)
+                            if(result.status == 404){
+                                fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+                                    .then(res => res.json())
+                                    .then(
+                                        (result) => {
+                                                setBlock(result.serie.id)
+                                        }
+                                    )
+                            }else{
+                                setBlock(result.serie.id)
+                            }
                         }
                     )
             })
@@ -55,30 +64,81 @@ function OpeningCards(props) {
     }, [myCards]);
     useEffect(() => {
         if(tenCards.length < 5){
-            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", "").replace(".", ""))
+            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", ""))
                 .then(res => res.json())
                 .then(
-                    (result) => {console.log(result);
-                        const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
-                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".", "")+'/'+pkmNumber)
-                            .then(res => res.json())
-                            .then(
-                                (result) => {
-                                    var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
-                                    Axios.post('/api/addCard',
-                                        {
-                                            pseudo:props.user,
-                                            idCard:result.id,
-                                            booster:props.idBooster.replace(".", ""),
-                                            rarity:result.rarity,
-                                            stade:stade,
-                                            nb:result.localId,
-                                            block:props.block
-                                        })
-                                    setIsLoaded(true);
-                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
-                                    setNbCards (nbCards + 1);
-                                })
+                    (result) => {
+                        if(result.status == 404){
+                            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        if(result.status == 404){
+                                            const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
+                                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                                                .then(res => res.json())
+                                                .then(
+                                                    (result) => {
+                                                        var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
+                                                        Axios.post('/api/addCard',
+                                                            {
+                                                                pseudo:props.user,
+                                                                idCard:result.id,
+                                                                booster:props.idBooster,
+                                                                rarity:result.rarity,
+                                                                stade:stade,
+                                                                nb:result.localId,
+                                                                block:props.block
+                                                            })
+                                                        setIsLoaded(true);
+                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
+                                                        setNbCards (nbCards + 1);
+                                                    })
+                                        }else{
+                                            const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
+                                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".", "")+'/'+pkmNumber)
+                                                .then(res => res.json())
+                                                .then(
+                                                    (result) => {
+                                                        var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
+                                                        Axios.post('/api/addCard',
+                                                            {
+                                                                pseudo:props.user,
+                                                                idCard:result.id,
+                                                                booster:props.idBooster.replace(".", ""),
+                                                                rarity:result.rarity,
+                                                                stade:stade,
+                                                                nb:result.localId,
+                                                                block:props.block
+                                                            })
+                                                        setIsLoaded(true);
+                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
+                                                        setNbCards (nbCards + 1);
+                                                    })
+                                        }
+                                    })
+                        }else{
+                            const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
+                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".", "")+'/'+pkmNumber)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
+                                        Axios.post('/api/addCard',
+                                            {
+                                                pseudo:props.user,
+                                                idCard:result.id,
+                                                booster:props.idBooster.replace(".", ""),
+                                                rarity:result.rarity,
+                                                stade:stade,
+                                                nb:result.localId,
+                                                block:props.block
+                                            })
+                                        setIsLoaded(true);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
+                                        setNbCards (nbCards + 1);
+                                    })
+                        }
                     },
                     (error) => {
                         setIsLoaded(true);
