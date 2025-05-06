@@ -53,7 +53,7 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
-        if(tenCards.length < 6){
+        if(tenCards.length < 5){
             fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
                 .then(res => res.json())
                 .then(
