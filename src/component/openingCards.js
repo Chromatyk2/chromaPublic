@@ -37,10 +37,9 @@ function OpeningCards(props) {
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
             .then(function(response){
                 setMyCards(response.data);
-
                 fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".", ""))
                     .then(res => res.json())
-                    .then(
+                    .finally(
                         (result) => {
                             if(result.status == 404){
                                 fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
@@ -68,35 +67,13 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        if(result.status == 404){
+                        if(result.length == 0){
                             fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
-                                        if(result.status == 404){
                                             const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
                                             fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                                .then(res => res.json())
-                                                .then(
-                                                    (result) => {
-                                                        var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
-                                                        Axios.post('/api/addCard',
-                                                            {
-                                                                pseudo:props.user,
-                                                                idCard:result.id,
-                                                                booster:props.idBooster,
-                                                                rarity:result.rarity,
-                                                                stade:stade,
-                                                                nb:result.localId,
-                                                                block:props.block
-                                                            })
-                                                        setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
-                                                        setNbCards (nbCards + 1);
-                                                    })
-                                        }else{
-                                            const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
-                                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".", "")+'/'+pkmNumber)
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
@@ -115,7 +92,6 @@ function OpeningCards(props) {
                                                         setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
                                                         setNbCards (nbCards + 1);
                                                     })
-                                        }
                                     })
                         }else{
                             const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
