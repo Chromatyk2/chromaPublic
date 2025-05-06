@@ -55,7 +55,7 @@ function OpeningCards(props) {
     useEffect(() => {
         if (tenCards.length < 11) {
             if(tenCards.length < 6){
-                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:common")
+                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
                     .then(res => res.json())
                     .then(
                         (result) => {
@@ -81,7 +81,7 @@ function OpeningCards(props) {
                         }
                     )
             }else if(tenCards.length > 5 && tenCards.length < 8){
-                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity=eq:uncommon")
+                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
                     .then(res => res.json())
                     .then(
                         (result) => {
