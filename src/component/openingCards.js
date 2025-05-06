@@ -42,6 +42,7 @@ function OpeningCards(props) {
                     .then(res => res.json())
                     .then(
                         (result) => {
+                            console.log(result)
                             setBlock(result.serie.id)
                         }
                     )
