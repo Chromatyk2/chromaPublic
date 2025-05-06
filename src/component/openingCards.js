@@ -53,27 +53,33 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
-        if (tenCards.length < 6) {
+        if (tenCards.length < 11) {
             if(tenCards.length < 6){
-                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
+                var rarity = "Common"
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity+'"')
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomCommon = result[Math.floor(Math.random() * result.length)];
-                            console.log(randomCommon);
-                            Axios.post('/api/addCard',
-                                {
-                                    pseudo:props.user,
-                                    idCard:randomCommon.id,
-                                    booster:props.idBooster,
-                                    rarity:"Common",
-                                    stade:0,
-                                    nb:randomCommon.localId,
-                                    block:props.block
-                                })
-                            setIsLoaded(true);
-                            setTenCards(tenCards => [...tenCards,{card :randomCommon, rarity:"Common"}]);
-                            setNbCards (nbCards + 1);
+                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        Axios.post('/api/addCard',
+                                            {
+                                                pseudo:props.user,
+                                                idCard:result.id,
+                                                booster:props.idBooster,
+                                                rarity:"Common",
+                                                stade:0,
+                                                nb:result.localId,
+                                                block:props.block
+                                            })
+                                        setIsLoaded(true);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
+                                        setNbCards (nbCards + 1);
+                                        console.log(tenCards)
+                                    })
                         },
                         (error) => {
                             setIsLoaded(true);
@@ -81,24 +87,31 @@ function OpeningCards(props) {
                         }
                     )
             }else if(tenCards.length > 5 && tenCards.length < 8){
-                fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
+                var rarity = "Uncommon"
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity+'"')
                     .then(res => res.json())
                     .then(
                         (result) => {
-                            const randomCommon = result[Math.floor(Math.random() * result.length)];
-                            Axios.post('/api/addCard',
-                                {
-                                    pseudo:props.user,
-                                    idCard:randomCommon.id,
-                                    booster:props.idBooster,
-                                    rarity:"Uncommon",
-                                    stade:0,
-                                    nb:randomCommon.localId,
-                                    block:props.block
-                                })
-                            setIsLoaded(true);
-                            setTenCards(tenCards => [...tenCards,{card :randomCommon, rarity:"Uncommon"}]);
-                            setNbCards (nbCards + 1);
+                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        Axios.post('/api/addCard',
+                                            {
+                                                pseudo:props.user,
+                                                idCard:result.id,
+                                                booster:props.idBooster,
+                                                rarity:"Uncommon",
+                                                stade:0,
+                                                nb:result.localId,
+                                                block:props.block
+                                            })
+                                        setIsLoaded(true);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
+                                        setNbCards (nbCards + 1);
+                                        console.log(tenCards)
+                                    })
                         },
                         (error) => {
                             setIsLoaded(true);
