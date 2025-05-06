@@ -55,8 +55,9 @@ function OpeningCards(props) {
     useEffect(() => {
         if (tenCards.length < 11) {
             if(tenCards.length < 6){
-                var rarity = "Common"
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity+'"')
+                var rarityArray = props.rarities.filter(item => item.stade ==  1);
+                var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"Common"')
                     .then(res => res.json())
                     .then(
                         (result) => {
@@ -87,8 +88,9 @@ function OpeningCards(props) {
                         }
                     )
             }else if(tenCards.length > 5 && tenCards.length < 8){
-                var rarity = "Uncommon"
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity+'"')
+                var rarityArray = props.rarities.filter(item => item.stade ==  1);
+                var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
+                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"Uncommon"')
                     .then(res => res.json())
                     .then(
                         (result) => {
