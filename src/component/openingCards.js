@@ -94,7 +94,7 @@ function OpeningCards(props) {
     }
     function getCard(e) {
         var id = (e.target.getAttribute("keyCard"));
-        var nextId = parseInt(id,5) - 1;
+        var nextId = parseInt(id - 1);
         var next = document.getElementById("cardNb"+nextId);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
