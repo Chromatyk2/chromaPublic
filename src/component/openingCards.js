@@ -53,183 +53,48 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
-        if (tenCards.length < 11) {
-            if(tenCards.length < 6){
-                var rarityArray = props.rarities.filter(item => item.stade ==  1);
-                var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"Common"')
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        Axios.post('/api/addCard',
-                                            {
-                                                pseudo:props.user,
-                                                idCard:result.id,
-                                                booster:props.idBooster,
-                                                rarity:"Common",
-                                                stade:0,
-                                                nb:result.localId,
-                                                block:props.block
-                                            })
-                                        setIsLoaded(true);
-                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:"Common"}]);
-                                        setNbCards (nbCards + 1);
-                                        console.log(tenCards)
-                                    })
-                        },
-                        (error) => {
-                            setIsLoaded(true);
-                            setError(error);
-                        }
-                    )
-            }else if(tenCards.length > 4 && tenCards.length < 8){
-                var rarityArray = props.rarities.filter(item => item.stade ==  1);
-                var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"Uncommon"')
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        Axios.post('/api/addCard',
-                                            {
-                                                pseudo:props.user,
-                                                idCard:result.id,
-                                                booster:props.idBooster,
-                                                rarity:"Uncommon",
-                                                stade:0,
-                                                nb:result.localId,
-                                                block:props.block
-                                            })
-                                        setIsLoaded(true);
-                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:"Uncommon"}]);
-                                        setNbCards (nbCards + 1);
-                                        console.log(tenCards)
-                                    })
-                        },
-                        (error) => {
-                            setIsLoaded(true);
-                            setError(error);
-                        }
-                    )
-            }else if(tenCards.length == 8){
-                    var randomStade = Math.floor(Math.random() * 101);
-                    if(randomStade < 60 ){
-                        var rarityArray = props.rarities.filter(item => item.stade ==  1);
-                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                        var stade = 1;
-                    }else if(randomStade > 59 && randomStade < 96){
-                        var rarityArray = props.rarities.filter(item => item.stade ==  2);
-                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                        var stade = 2;
-                    }else{
-                        var rarityArray = props.rarities.filter(item => item.stade ==  3);
-                        var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                        var stade = 3;
+        if(tenCards.length < 6){
+            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].localId;
+                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
+                                    Axios.post('/api/addCard',
+                                        {
+                                            pseudo:props.user,
+                                            idCard:result.id,
+                                            booster:props.idBooster,
+                                            rarity:result.rarity,
+                                            stade:0,
+                                            nb:result.localId,
+                                            block:props.block
+                                        })
+                                    setIsLoaded(true);
+                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
+                                    setNbCards (nbCards + 1);
+                                })
+                    },
+                    (error) => {
+                        setIsLoaded(true);
+                        setError(error);
                     }
-
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity.rarity+'"')
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        Axios.post('/api/addCard',
-                                            {
-                                                pseudo:props.user,
-                                                idCard:result.id,
-                                                booster:props.idBooster,
-                                                rarity:rarity.rarity,
-                                                stade:stade,
-                                                nb:result.localId,
-                                                block:props.block
-                                            })
-                                        setIsLoaded(true);
-                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
-                                        setNbCards (nbCards + 1);
-                                        console.log(tenCards)
-                                    })
-                        },
-                        (error) => {
-                            setIsLoaded(true);
-                            setError(error);
-                        }
-                    )
-            }else if(tenCards.length == 9){
-                if(getToken === true){
-                    Axios.post('/api/addPkmToken',
-                        {
-                            user:props.user
-                        }
-                    )
-                }
-                var randomStade = Math.floor(Math.random() * 101);
-                if(randomStade < 60){
-                    var rarityArray = props.rarities.filter(item => item.stade ==  2);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                    var stade = 2;
-                }else if (randomStade > 59 && randomStade < 96){
-                    var rarityArray = props.rarities.filter(item => item.stade ==  3);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                    var stade = 3;
-                }else{
-                    var rarityArray = props.rarities.filter(item => item.stade ==  4);
-                    var rarity = rarityArray[Math.floor(Math.random() * rarityArray.length)]
-                    var stade = 4;
-                }
-                fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' !rarity:"'+rarity.rarity+'"')
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        Axios.post('/api/addCard',
-                                            {
-                                                pseudo:props.user,
-                                                idCard:result.id,
-                                                booster:props.idBooster,
-                                                rarity:rarity.rarity,
-                                                stade:stade,
-                                                nb:result.localId,
-                                                block:props.block
-                                            })
-                                        setIsLoaded(true);
-                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
-                                        setNbCards (nbCards + 1);
-                                        console.log(tenCards)
-                                    })
-                        },
-                        (error) => {
-                            setIsLoaded(true);
-                            setError(error);
-                        }
-                    )
-            }
+                )
         }
     }, [nbCards])
     function showCards() {
         setIsHidden(false);
-        if(!myCardsId.includes(tenCards.slice(0).reverse()[9].id)){
+        if(!myCardsId.includes(tenCards.slice(0).reverse()[4].id)){
             setIsNew(true);
         }
     }
     function getCard(e) {
         var id = (e.target.getAttribute("keyCard"));
-        var nextId = parseInt(id,10) - 1;
+        var nextId = parseInt(id,5) - 1;
         var next = document.getElementById("cardNb"+nextId);
         var rarity = next.getAttribute("rarity");
         var nextCardId = next.getAttribute("cardId");
@@ -269,7 +134,7 @@ function OpeningCards(props) {
     function getNextToken(e) {
         setIsToken(true);
         var id = (e.target.getAttribute("keyCard"));
-        var nextId = parseInt(id,10) - 1;
+        var nextId = parseInt(id,5) - 1;
         var next = document.getElementById("cardNb"+nextId);
         var rarity = next.getAttribute("rarity");
         var nextCardId = next.getAttribute("cardId");
@@ -414,19 +279,19 @@ function OpeningCards(props) {
                                             style={{overflow: "unset"}}
                                             stade={stadeC} rarity={val.rarity.rarity} style={{
                                             overflow: "unset",
-                                            display: key < 9 && "none",
+                                            display: key < 4 && "none",
                                             animation: stadeC == 4 && endPull === false &&"bounceLastBangerAlertBooster 3s forwards"
                                         }}
                                             keyCard={key}
                                             cardId={val.card.id}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
                                             id={"cardNb" + key}>
                                             <img
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
                                                 id={"cardNb" + key}
                                                 block={block}
                                                 booster={props.idBooster}
@@ -468,7 +333,7 @@ function OpeningCards(props) {
                                                         filter: "drop-shadow(0px 4px 4px black)",
                                                         textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                     }}
-                                                       className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
+                                                       className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
                                                     </p>
                                                 </>
                                             }
@@ -477,17 +342,17 @@ function OpeningCards(props) {
                                         stadeC == 3 ?
                                             <div
                                                 stade={stadeC} rarity={val.rarity.rarity}
-                                                style={{display: key < 9 && "none", overflow: "unset"}}
+                                                style={{display: key < 4 && "none", overflow: "unset"}}
                                                 keyCard={key}
                                                 cardId={val.card.id}
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}>
                                                 <img
                                                     cardLocalId={val.card.localId}
                                                     onClick={key == 0 ? getLastCard : getCard}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                     id={"cardNb" + key}
                                                     block={block}
                                                     booster={props.idBooster}
@@ -528,7 +393,7 @@ function OpeningCards(props) {
                                                             filter: "drop-shadow(0px 4px 4px black)",
                                                             textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                         }}
-                                                           className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
+                                                           className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
                                                         </p>
                                                     </>
                                                 }
@@ -536,12 +401,12 @@ function OpeningCards(props) {
                                             :
                                             <>
                                                 <img stade={stadeC} rarity={val.rarity.rarity}
-                                                     style={{display: key < 9 && "none"}}
+                                                     style={{display: key < 4 && "none"}}
                                                      id={"cardNb" + key} keyCard={key}
                                                      cardId={val.card.id}
                                                      cardLocalId={val.card.localId}
                                                      onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
-                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
+                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
                                                      block={block}
                                                      booster={props.idBooster}
                                                      local={val.card.localId}
@@ -555,19 +420,19 @@ function OpeningCards(props) {
                                             style={{overflow: "unset"}}
                                             stade={stadeC} rarity={val.rarity.rarity} style={{
                                             overflow: "unset",
-                                            display: key < 9 && "none",
+                                            display: key < 4 && "none",
                                             animation: stadeC == 4 && "bounceLastBangerAlertBooster 3s forwards"
                                         }}
                                             keyCard={key}
                                             cardId={val.card.id}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                             id={"cardNb" + key}>
                                             <img
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}
                                                 block={block}
                                                 booster={props.idBooster}
@@ -580,17 +445,17 @@ function OpeningCards(props) {
                                         stadeC == 3 ?
                                             <div
                                                 stade={stadeC} rarity={val.rarity.rarity}
-                                                style={{display: key < 9 && "none", overflow: "unset"}}
+                                                style={{display: key < 4 && "none", overflow: "unset"}}
                                                 keyCard={key}
                                                 cardId={val.card.id}
                                                 cardLocalId={val.card.localId}
                                                 onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                 id={"cardNb" + key}>
                                                 <img
                                                     cardLocalId={val.card.localId}
                                                     onClick={key == 0 ? getLastCard : getCard}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 9 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                                     id={"cardNb" + key}
                                                     block={block}
                                                     booster={props.idBooster}
@@ -602,12 +467,12 @@ function OpeningCards(props) {
                                             :
                                             <>
                                                 <img stade={stadeC} rarity={val.rarity.rarity}
-                                                     style={{display: key < 9 && "none"}}
+                                                     style={{display: key < 4 && "none"}}
                                                      id={"cardNb" + key} keyCard={key}
                                                      cardId={val.card.id}
                                                      cardLocalId={val.card.localId}
                                                      onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
-                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
+                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
 
                                                      block={block}
                                                      booster={props.idBooster}
