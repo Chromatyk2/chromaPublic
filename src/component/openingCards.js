@@ -39,7 +39,7 @@ function OpeningCards(props) {
                 setMyCards(response.data);
                 fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".", ""))
                     .then(res => res.json())
-                    .finally(
+                    .then(
                         (result) => {
                             if(result.status == 404){
                                 fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
