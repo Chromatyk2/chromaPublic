@@ -77,7 +77,7 @@ function OpeningCards(props) {
                                                 block:props.block
                                             })
                                         setIsLoaded(true);
-                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:"Common"}]);
                                         setNbCards (nbCards + 1);
                                         console.log(tenCards)
                                     })
@@ -110,7 +110,7 @@ function OpeningCards(props) {
                                                 block:props.block
                                             })
                                         setIsLoaded(true);
-                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:"Uncommon"}]);
                                         setNbCards (nbCards + 1);
                                         console.log(tenCards)
                                     })
