@@ -65,7 +65,7 @@ function OpeningCards(props) {
         if(tenCards.length < 5){
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 50 ){
-                var rarity = props.rarities[Math.floor(Math.random() * rarityArray.length)]
+                var rarity = props.rarities[Math.floor(Math.random() * props.rarities.length)]
             }
             console.log(rarity)
             fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", ""))
