@@ -17,7 +17,6 @@
     "moment-timezone": "^0.5.46",
     "obs-websocket-js": "^5.0.3",
     "react": "^18.3.1",
-    "react-animated-3d-card": "^1.0.2",
     "react-autocomplete-input": "^1.0.20",
     "react-bootstrap": "^2.7.2",
     "react-cookie": "^4.1.1",
