@@ -361,14 +361,14 @@ function OpeningCards(props) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setThings(false)
-        }, 10001)
+        }, 12001)
         const timeoutBooster = setTimeout(() => {
             setThingsBooster(false)
-        }, 11001)
+        }, 13001)
         const timeoutCards = setTimeout(() => {
             setIsLoaded(false);
 
-        }, 12001)
+        }, 14001)
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
