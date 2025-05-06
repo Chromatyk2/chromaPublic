@@ -63,6 +63,11 @@ function OpeningCards(props) {
     }, [myCards]);
     useEffect(() => {
         if(tenCards.length < 5){
+            var randomStade = Math.floor(Math.random() * 101);
+            if(randomStade > 50 ){
+                var rarity = props.rarities[Math.floor(Math.random() * rarityArray.length)]
+            }
+            console.log(rarity)
             fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", ""))
                 .then(res => res.json())
                 .then(
@@ -77,19 +82,19 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
+                                                        var stade = rarity.stade;
                                                         Axios.post('/api/addCard',
                                                             {
                                                                 pseudo:props.user,
                                                                 idCard:result.id,
                                                                 booster:props.idBooster,
-                                                                rarity:result.rarity,
+                                                                rarity:rarity.rarity,
                                                                 stade:stade,
                                                                 nb:result.localId,
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
+                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                                         setNbCards (nbCards + 1);
                                                     })
                                     })
@@ -99,19 +104,19 @@ function OpeningCards(props) {
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
-                                        var stade = props.rarities.filter(item => item.rarity == result.rarity).stade;
+                                        var stade = rarity.stade;
                                         Axios.post('/api/addCard',
                                             {
                                                 pseudo:props.user,
                                                 idCard:result.id,
                                                 booster:props.idBooster.replace(".", ""),
-                                                rarity:result.rarity,
+                                                rarity:rarity.rarity,
                                                 stade:stade,
                                                 nb:result.localId,
                                                 block:props.block
                                             })
                                         setIsLoaded(true);
-                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity}]);
+                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                         setNbCards (nbCards + 1);
                                     })
                         }
