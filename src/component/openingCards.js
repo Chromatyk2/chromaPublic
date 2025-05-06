@@ -63,9 +63,12 @@ function OpeningCards(props) {
     }, [myCards]);
     useEffect(() => {
         if(tenCards.length < 5){
+            const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 50 ){
                 var rarity = props.rarities[Math.floor(Math.random() * props.rarities.length)]
+            }else{
+                var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             }
             console.log(rarity)
             fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", ""))
