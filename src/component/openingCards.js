@@ -82,7 +82,7 @@ function OpeningCards(props) {
                                                             {
                                                                 pseudo:props.user,
                                                                 idCard:result.id,
-                                                                booster:props.idBooster.replace(".", ""),
+                                                                booster:props.idBooster,
                                                                 rarity:result.rarity,
                                                                 stade:stade,
                                                                 nb:result.localId,
