@@ -121,7 +121,6 @@ function OpeningCards(props) {
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 70 ){
                 var rarity = props.rarities[Math.floor(Math.random() * props.rarities.length)]
-                if(rarity == "Trainer Gallery Rare Holo")
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             }
