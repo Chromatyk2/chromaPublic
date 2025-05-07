@@ -213,6 +213,16 @@ function OpeningCards(props) {
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
+                                                .then(
+                                                    (result) => {
+                                                        setIsLoaded(false);
+                                                        setThings(false)
+                                                        const timeoutBooster = setTimeout(() => {
+                                                            setThingsBooster(false)
+                                                        }, 8001)
+                                                        return () => clearTimeout(timeoutBooster)
+
+                                                    })
                                         }else{
                                             var stade = rarity.stade;
                                             Axios.post('/api/addCard',
@@ -232,6 +242,16 @@ function OpeningCards(props) {
                                         }
                                     }
                                 )
+                                .then(
+                                    (result) => {
+                                        setIsLoaded(false);
+                                        setThings(false)
+                                        const timeoutBooster = setTimeout(() => {
+                                            setThingsBooster(false)
+                                        }, 8001)
+                                        return () => clearTimeout(timeoutBooster)
+
+                                    })
                         }
                     }
                 )
