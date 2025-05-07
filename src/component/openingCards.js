@@ -365,6 +365,7 @@ function OpeningCards(props) {
 
             return () => clearTimeout(timeout)
     }, []);
+    return (
         <>
             <div style={{
                 display: thingsBooster === true ? "flex" : "none",
