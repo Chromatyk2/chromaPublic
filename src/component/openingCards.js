@@ -176,10 +176,13 @@ function OpeningCards(props) {
                                                 })
                                             .then(
                                                 (result) => {
-                                                    if(tenCards.length == 5){
-                                                        setIsLoaded(false);
+                                                    setIsLoaded(false);
+                                                    setThings(false)
+                                                    const timeoutBooster = setTimeout(() => {
+                                                        setThingsBooster(false)
+                                                    }, 8001)
+                                                    return () => clearTimeout(timeoutBooster)
 
-                                                    }
                                                 })
                                     })
                         }else{
@@ -209,10 +212,13 @@ function OpeningCards(props) {
                                                 })
                                             .then(
                                                 (result) => {
-                                                    if(tenCards.length == 5){
-                                                        setIsLoaded(false);
+                                                    setIsLoaded(false);
+                                                    setThings(false)
+                                                    const timeoutBooster = setTimeout(() => {
+                                                        setThingsBooster(false)
+                                                    }, 8001)
+                                                    return () => clearTimeout(timeoutBooster)
 
-                                                    }
                                                 })
                                     })
                         }
@@ -359,17 +365,6 @@ function OpeningCards(props) {
 
             return () => clearTimeout(timeout)
     }, []);
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setThings(false)
-        }, 7001)
-        const timeoutBooster = setTimeout(() => {
-            setThingsBooster(false)
-        }, 8001)
-        return () => clearTimeout(timeout)
-        return () => clearTimeout(timeoutBooster)
-    }, []);
-    return (
         <>
             <div style={{
                 display: thingsBooster === true ? "flex" : "none",
