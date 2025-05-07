@@ -65,78 +65,33 @@ function OpeningCards(props) {
         if(tenCards.length == 0){
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
-            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", "")+"&rarity="+rarity.rarity)
+            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+' rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        if(result.length == 0){
-                            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                            .then(res => res.json())
-                                            .then(
-                                                (result) => {
-                                                    var stade = rarity.stade;
-                                                    Axios.post('/api/addCard',
-                                                        {
-                                                            pseudo:props.user,
-                                                            idCard:result.id,
-                                                            booster:props.idBooster,
-                                                            rarity:rarity.rarity,
-                                                            stade:stade,
-                                                            nb:result.localId,
-                                                            block:props.block
-                                                        })
-                                                    setIsLoaded(true);
-                                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
-                                                    setNbCards (nbCards + 1);
-                                                })
-                                    })
-                        }else{
-                            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".", "")+'/'+pkmNumber)
-                                            .then(res => res.json())
-                                            .then(
-                                                (result) => {
-                                                    var stade = rarity.stade;
-                                                    Axios.post('/api/addCard',
-                                                        {
-                                                            pseudo:props.user,
-                                                            idCard:result.id,
-                                                            booster:props.idBooster,
-                                                            rarity:rarity.rarity,
-                                                            stade:stade,
-                                                            nb:result.localId,
-                                                            block:props.block
-                                                        })
-                                                    setIsLoaded(true);
-                                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
-                                                    setNbCards (nbCards + 1);
-                                                })
-                                            .then(
-                                                (result) => {
-                                                    console.log("done")
-                                                    console.log(tenCards.length)
-                                                    if(tenCards.length == 5){
-                                                        setIsLoaded(false);
-
-                                                    }
-                                                })
-                                    })
-                        }
-                    },
-                    (error) => {
-                        setIsLoaded(true);
-                        setError(error);
-                    }
-                )
+                        const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    var stade = rarity.stade;
+                                    Axios.post('/api/addCard',
+                                        {
+                                            pseudo:props.user,
+                                            idCard:result.id,
+                                            booster:props.idBooster,
+                                            rarity:rarity.rarity,
+                                            stade:stade,
+                                            nb:result.localId,
+                                            block:props.block
+                                        })
+                                    setIsLoaded(true);
+                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
+                                    setNbCards (nbCards + 1);
+                                }
+                            )
+                }
+            )
         }else if(tenCards.length < 5 && tenCards.length > 0){
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var randomStade = Math.floor(Math.random() * 101);
@@ -145,89 +100,41 @@ function OpeningCards(props) {
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             }
-            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster.replace(".", "")+"&rarity="+rarity.rarity)
+            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        if(result.length == 0){
-                            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                            .then(res => res.json())
-                                            .then(
-                                                (result) => {
-                                                    var stade = rarity.stade;
-                                                    Axios.post('/api/addCard',
-                                                        {
-                                                            pseudo:props.user,
-                                                            idCard:result.id,
-                                                            booster:props.idBooster,
-                                                            rarity:rarity.rarity,
-                                                            stade:stade,
-                                                            nb:result.localId,
-                                                            block:props.block
-                                                        })
-                                                    setIsLoaded(true);
-                                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
-                                                    setNbCards (nbCards + 1);
-                                                })
-                                            .then(
-                                                (result) => {
-                                                    setIsLoaded(false);
-                                                    setThings(false)
-                                                    const timeoutBooster = setTimeout(() => {
-                                                        setThingsBooster(false)
-                                                    }, 8001)
-                                                    return () => clearTimeout(timeoutBooster)
+                        const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    var stade = rarity.stade;
+                                    Axios.post('/api/addCard',
+                                        {
+                                            pseudo:props.user,
+                                            idCard:result.id,
+                                            booster:props.idBooster,
+                                            rarity:rarity.rarity,
+                                            stade:stade,
+                                            nb:result.localId,
+                                            block:props.block
+                                        })
+                                    setIsLoaded(true);
+                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
+                                    setNbCards (nbCards + 1);
+                                })
+                            .then(
+                                (result) => {
+                                    setIsLoaded(false);
+                                    setThings(false)
+                                    const timeoutBooster = setTimeout(() => {
+                                        setThingsBooster(false)
+                                    }, 8001)
+                                    return () => clearTimeout(timeoutBooster)
 
-                                                })
-                                    })
-                        }else{
-                            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                                        fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".", "")+'/'+pkmNumber)
-                                            .then(res => res.json())
-                                            .then(
-                                                (result) => {
-                                                    var stade = rarity.stade;
-                                                    Axios.post('/api/addCard',
-                                                        {
-                                                            pseudo:props.user,
-                                                            idCard:result.id,
-                                                            booster:props.idBooster,
-                                                            rarity:rarity.rarity,
-                                                            stade:stade,
-                                                            nb:result.localId,
-                                                            block:props.block
-                                                        })
-                                                    setIsLoaded(true);
-                                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
-                                                    setNbCards (nbCards + 1);
-                                                })
-                                            .then(
-                                                (result) => {
-                                                    setIsLoaded(false);
-                                                    setThings(false)
-                                                    const timeoutBooster = setTimeout(() => {
-                                                        setThingsBooster(false)
-                                                    }, 8001)
-                                                    return () => clearTimeout(timeoutBooster)
-
-                                                })
-                                    })
-                        }
-                    },
-                    (error) => {
-                        setIsLoaded(true);
-                        setError(error);
-                    }
-                )
+                                })
+                    })
         }
     }, [nbCards])
     function showCards() {
