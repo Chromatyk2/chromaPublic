@@ -1,7 +1,6 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useCookies } from 'react-cookie';
-import $ from "jquery";
 import './App.css';
 import 'react-tooltip/dist/react-tooltip.css'
 import HomePage from './component/home.js';
@@ -27,9 +26,6 @@ import NostalPickV2 from "./component/nostalPickv2";
 import LastBanger from "./component/lastBanger";
 import LastBangerAlert from "./component/lastBangerAlert";
 import Mentions from "./component/Mentions";
-import Footer from "./component/footer";
-import authServices from "./services/auth.services.js";
-import AuthService from "./services/auth.services.js";
 import SpawnPokemonRob from "./component/spawnPokemonRob";
 import SpawnPokemon from "./component/spawnPokemon";
 import Profil from "./component/profil";
@@ -42,7 +38,7 @@ import StartPedandex from "./component/startPedandex";
 import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
 import DonationBox from "./component/donationBox";
-function App(props) {
+function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
     return <Login />
@@ -91,7 +87,6 @@ function App(props) {
           <Route path="/49Vs5sWVS2e7qs" element={<StartPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qds" element={<CardsHubTest page={"cardsShop"} cookies={cookies} />} />
         </Routes>
-        {/*<Footer cookies={cookies} />*/}
       </BrowserRouter>
       }
     </>
