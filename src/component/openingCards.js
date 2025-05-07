@@ -112,7 +112,6 @@ function OpeningCards(props) {
                                                 nb:result.localId,
                                                 block:props.block
                                             })
-                                        setIsLoaded(true);
                                         setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                         setNbCards (nbCards + 1);
                                     })
@@ -126,12 +125,12 @@ function OpeningCards(props) {
         }else if(tenCards.length < 5 && tenCards.length > 0){
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var randomStade = Math.floor(Math.random() * 101);
-            if(randomStade > 50 ){
+            if(randomStade > 70 ){
                 var rarity = props.rarities[Math.floor(Math.random() * props.rarities.length)]
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             }
-            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace([".","0"], ["",""])+'&rarity:"'+rarity.rarity+'"')
+            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","").replace("0","")+'&rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
                     (result) => {
@@ -150,7 +149,6 @@ function OpeningCards(props) {
                                             nb:result.localId,
                                             block:props.block
                                         })
-                                    setIsLoaded(true);
                                     setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                     setNbCards (nbCards + 1);
                                 })
@@ -300,13 +298,13 @@ function OpeningCards(props) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setThings(false)
-        }, 10001)
+        }, 7001)
         const timeoutBooster = setTimeout(() => {
             setThingsBooster(false)
-        }, 11001)
+        }, 8001)
         const timeoutCards = setTimeout(() => {
             setIsLoaded(false);
-        }, 12001)
+        }, 9001)
         return () => clearTimeout(timeout)
         return () => clearTimeout(timeoutCards)
     }, []);
