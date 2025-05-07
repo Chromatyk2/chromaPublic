@@ -131,7 +131,7 @@ function OpeningCards(props) {
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             }
-            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".", "")+' !rarity:"'+rarity.rarity+'"')
+            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".", "")+'&rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
                     (result) => {
