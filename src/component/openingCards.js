@@ -151,7 +151,7 @@ function OpeningCards(props) {
                                             block:props.block
                                         })
                                     setIsLoaded(true);
-                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity}]);
+                                    setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                     setNbCards (nbCards + 1);
                                 })
                     },
