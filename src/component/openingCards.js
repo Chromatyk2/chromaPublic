@@ -70,7 +70,7 @@ function OpeningCards(props) {
                 .then(
                     (result) => {
                         if(result.length == 0){
-                            fetch("https://api.tcgdex.net/v2/en/cards?set=eq:"+props.idBooster+"&rarity="+rarity.rarity)
+                            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
