@@ -94,6 +94,13 @@ function OpeningCards(props) {
                                                     setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                                     setNbCards (nbCards + 1);
                                                 })
+                                            .then(
+                                                (result) => {
+                                                    if(tenCards.length == 5){
+                                                        setIsLoaded(false);
+
+                                                    }
+                                                })
                                     })
                         }else{
                             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
@@ -119,6 +126,13 @@ function OpeningCards(props) {
                                                     setIsLoaded(true);
                                                     setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                                     setNbCards (nbCards + 1);
+                                                })
+                                            .then(
+                                                (result) => {
+                                                    if(tenCards.length == 5){
+                                                        setIsLoaded(false);
+
+                                                    }
                                                 })
                                     })
                         }
@@ -165,6 +179,13 @@ function OpeningCards(props) {
                                                     setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                                     setNbCards (nbCards + 1);
                                                 })
+                                            .then(
+                                                (result) => {
+                                                    if(tenCards.length == 5){
+                                                        setIsLoaded(false);
+
+                                                    }
+                                                })
                                     })
                         }else{
                             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+props.idBooster.replace(".","pt").replace("0","")+'&rarity:"'+rarity.rarity+'"')
@@ -190,6 +211,13 @@ function OpeningCards(props) {
                                                     setIsLoaded(true);
                                                     setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
                                                     setNbCards (nbCards + 1);
+                                                })
+                                            .then(
+                                                (result) => {
+                                                    if(tenCards.length == 5){
+                                                        setIsLoaded(false);
+
+                                                    }
                                                 })
                                     })
                         }
@@ -343,11 +371,8 @@ function OpeningCards(props) {
         const timeoutBooster = setTimeout(() => {
             setThingsBooster(false)
         }, 8001)
-        const timeoutCards = setTimeout(() => {
-            setIsLoaded(false);
-        }, 9001)
         return () => clearTimeout(timeout)
-        return () => clearTimeout(timeoutCards)
+        return () => clearTimeout(timeoutBooster)
     }, []);
     return (
         <>
