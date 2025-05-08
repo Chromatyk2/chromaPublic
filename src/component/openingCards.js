@@ -124,7 +124,7 @@ function OpeningCards(props) {
                     var rarity = props.rarities.filter(item => item.stade ===  4)[Math.floor(Math.random() * props.rarities.length)]
                     var boosterName = rarity.nameGuru;
                 }else{
-                    var rarity = props.rarities.filter(item => item.stade !==  4)[Math.floor(Math.random() * props.rarities.length)]
+                    var rarity = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.length)]
                     var boosterName = rarity.nameGuru;
                 }
             }else{
