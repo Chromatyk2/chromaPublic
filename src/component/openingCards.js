@@ -124,9 +124,15 @@ function OpeningCards(props) {
                 if(randomStade > 95){
                     var rarity = props.rarities.filter(item => item.stade ===  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  4).length)]
                     var boosterName = rarity.nameGuru;
+                    if(boosterName == "sma"){
+                        props.idBooster = "sma";
+                    }
                 }else{
                     var rarity = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade <  4).length)]
                     var boosterName = rarity.nameGuru;
+                    if(boosterName == "sma"){
+                        props.idBooster = "sma";
+                    }
                 }
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
@@ -142,7 +148,7 @@ function OpeningCards(props) {
                                 .then(
                                     (result) => {
                                         if(result.status == 404){
-                                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterName == "sma" ? boosterName : props.idBooster.replace(".","")+'/'+pkmNumber)
+                                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".","")+'/'+pkmNumber)
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
