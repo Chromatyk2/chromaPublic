@@ -120,8 +120,13 @@ function OpeningCards(props) {
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 70 ){
-                var rarity = props.rarities[Math.floor(Math.random() * props.rarities.length)]
-                var boosterName = rarity.nameGuru;
+                if(randomStade > 95){
+                    var rarity = props.rarities.filter(item => item.stade ==  4)[Math.floor(Math.random() * props.rarities.length)]
+                    var boosterName = rarity.nameGuru;
+                }else{
+                    var rarity = props.rarities.filter(item => item.stade !=  4)[Math.floor(Math.random() * props.rarities.length)]
+                    var boosterName = rarity.nameGuru;
+                }
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
                 var boosterName = props.idBooster;
