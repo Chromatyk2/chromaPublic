@@ -63,7 +63,7 @@ function OpeningCards(props) {
     }, [myCards]);
     useEffect(() => {
         if(tenCards.length == 0){
-            const boosterGuru = props.rarities[Math.floor(Math.random() * props.rarities.length)].nameGuru
+            const boosterGuru = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade <  4).length)].nameGuru
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterGuru+' !rarity:"'+rarity.rarity+'"')
@@ -118,7 +118,6 @@ function OpeningCards(props) {
                 }
             )
         }else if(tenCards.length < 5 && tenCards.length > 0){
-            console.log(props.rarities.filter(item => item.stade <  4));
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 70 ){
@@ -133,7 +132,6 @@ function OpeningCards(props) {
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
                 var boosterName = props.idBooster;
             }
-            console.log(props.rarities)
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
@@ -371,7 +369,6 @@ function OpeningCards(props) {
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
-                        console.log(val.rarity);
                         if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
                             var stadeC = props.rarities.find((uc) => uc.rarity.toUpperCase() === val.rarity.toUpperCase()).stade;
                         } else {
