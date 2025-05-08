@@ -193,13 +193,14 @@ function OpeningCards(props) {
                                 )
                                 .then(
                                     (result) => {
-                                        console.log(tenCards.length);
-                                        setIsLoaded(false);
-                                        setThings(false)
-                                        const timeoutBooster = setTimeout(() => {
-                                            setThingsBooster(false)
-                                        }, 8001)
-                                        return () => clearTimeout(timeoutBooster)
+                                        if(tenCards.length){
+                                            setIsLoaded(false);
+                                            setThings(false)
+                                            const timeoutBooster = setTimeout(() => {
+                                                setThingsBooster(false)
+                                            }, 8001)
+                                            return () => clearTimeout(timeoutBooster)
+                                        }
 
                                     })
                     }
