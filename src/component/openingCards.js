@@ -65,7 +65,7 @@ function OpeningCards(props) {
         if(tenCards.length == 0){
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
-            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' rarity:"'+rarity.rarity+'"')
+            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.rarity+' rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
                     (result) => {
