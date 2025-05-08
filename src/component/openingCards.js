@@ -142,7 +142,7 @@ function OpeningCards(props) {
                                 .then(
                                     (result) => {
                                         if(result.status == 404){
-                                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".","")+'/'+pkmNumber)
+                                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterName == "sma" ? boosterName : props.idBooster.replace(".","")+'/'+pkmNumber)
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
