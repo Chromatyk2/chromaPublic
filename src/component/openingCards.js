@@ -63,7 +63,7 @@ function OpeningCards(props) {
     }, [myCards]);
     useEffect(() => {
         if(tenCards.length == 0){
-            const boosterGuru = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade <  4).length)].nameGuru
+            const boosterGuru = props.rarities.filter(item => item.stade ==  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade == 1 ).length)].nameGuru
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterGuru+' !rarity:"'+rarity.rarity+'"')
@@ -130,7 +130,7 @@ function OpeningCards(props) {
                 }
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
-                var boosterName = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade <  4).length)].nameGuru
+                var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
             }
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
