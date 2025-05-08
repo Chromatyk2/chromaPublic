@@ -117,6 +117,7 @@ function OpeningCards(props) {
                 }
             )
         }else if(tenCards.length < 5 && tenCards.length > 0){
+            console.log(props.rarities.filter(item => item.stade <  4));
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 70 ){
