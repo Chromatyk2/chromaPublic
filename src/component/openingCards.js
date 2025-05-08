@@ -323,6 +323,8 @@ function OpeningCards(props) {
             e.target.src = "https://images.pokemontcg.io/sm35/"+e.target.getAttribute("local")+"_hires.png";
         }else if(e.target.getAttribute("booster") == "sm7.5"){
             e.target.src = "https://images.pokemontcg.io/sm75/"+e.target.getAttribute("local")+"_hires.png";
+        }else if(e.target.getAttribute("booster") == "sma"){
+            e.target.src = "https://images.pokemontcg.io/sma/"+e.target.getAttribute("local")+"_hires.png";
         }else if(e.target.getAttribute("booster") == "sm11.5"){
             e.target.src = "https://images.pokemontcg.io/sm115/"+e.target.getAttribute("local")+"_hires.png";
         }else if(e.target.getAttribute("booster") == "swsh3.5"){
