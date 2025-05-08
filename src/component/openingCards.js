@@ -121,11 +121,13 @@ function OpeningCards(props) {
             var randomStade = Math.floor(Math.random() * 101);
             if(randomStade > 70 ){
                 var rarity = props.rarities[Math.floor(Math.random() * props.rarities.length)]
+                var boosterName = rarity.nameGuru;
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
+                var boosterName = props.idBooster;
             }
-            console.log(props.rarity)
-            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+rarity.nameGuru+' rarity:"'+rarity.rarity+'"')
+            console.log(props.rarities)
+            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
                     (result) => {
