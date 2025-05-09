@@ -89,6 +89,23 @@ function MyCardsSet(props) {
                                         (result) => {
                                                 setItems(result)
                                                 setIsLoaded(false);
+
+                                            if(props.idBooster=== "sm11.5"){
+                                                fetch("https://api.tcgdex.net/v2/en/sets/sma")
+                                                    .then(res => res.json())
+                                                    .then(
+                                                        (result) => {
+                                                            result.map((val, key) => {
+                                                                setItems(items => [...items,val]);
+                                                            })
+                                                            setIsLoaded(false);
+                                                        },
+                                                        (error) => {
+                                                            setIsLoaded(true);
+                                                            setError(error);
+                                                        }
+                                                    )
+                                            }
                                         },
                                         (error) => {
                                             setIsLoaded(true);
@@ -105,30 +122,7 @@ function MyCardsSet(props) {
                             setIsLoaded(true);
                             setError(error);
                         }
-                    ).then(
-                    (result) => {
-                        if(props.idBooster=== "sm11.5"){
-                            fetch("https://api.tcgdex.net/v2/en/sets/sma")
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        result.map((val, key) => {
-                                            setItems(items => [...items,val]);
-                                        })
-                                            setIsLoaded(false);
-                                    },
-                                    (error) => {
-                                        setIsLoaded(true);
-                                        setError(error);
-                                    }
-                                )
-                        }
-                    },
-                    (error) => {
-                        setIsLoaded(true);
-                        setError(error);
-                    }
-                )
+                    )
             })
     }, []);
     function openModal(e) {
