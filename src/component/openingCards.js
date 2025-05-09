@@ -385,6 +385,11 @@ function OpeningCards(props) {
                         } else {
                             var stadeC = 0;
                         }
+                        if(props.idBooster.startsWith("sv")){
+                            var boosterImg = props.idBooster
+                        }else{
+                            var boosterImg = props.idBooster.replace(".", "")
+                        }
                         return (
                             <>
                                 {key === 4 ?
@@ -408,7 +413,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
@@ -432,7 +437,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" +block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/fr/" +block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
