@@ -404,7 +404,7 @@ function OpeningCards(props) {
                                             keyCard={key}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 && stadeC > 2 ? "fit-picture dropCards showCards glowGet cardBangerAlert cardSparkling" : "fit-picture dropCards glowGet cardBangerAlert"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={props.idBooster.replace(".", "")}
@@ -466,7 +466,7 @@ function OpeningCards(props) {
                                             keyCard={key}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={props.idBooster.replace(".", "")}
