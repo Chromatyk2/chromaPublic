@@ -160,11 +160,11 @@ function OpeningCards(props) {
                                                                 booster:props.idBooster,
                                                                 rarity:rarity.rarity,
                                                                 stade:stade,
-                                                                nb:result.localId,
+                                                                nb:pkmNumber,
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
+                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber}]);
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
@@ -190,11 +190,11 @@ function OpeningCards(props) {
                                                     booster:props.idBooster,
                                                     rarity:rarity.rarity,
                                                     stade:stade,
-                                                    nb:result.localId,
+                                                    nb:pkmNumber,
                                                     block:props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity}]);
+                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber}]);
                                             setNbCards (nbCards + 1);
 
                                         }
@@ -342,6 +342,8 @@ function OpeningCards(props) {
             e.target.src = "https://images.pokemontcg.io/sv4pt5/"+e.target.getAttribute("local")+"_hires.png";
         }else if(e.target.getAttribute("booster") == "sv06.5"){
             e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("local")+"_hires.png";
+        }else if(e.target.getAttribute("booster") == "sv06.5"){
+            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("local")+"_hires.png";
         }else{
             e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+e.target.getAttribute("local")+"_hires.png";
         }
@@ -399,7 +401,7 @@ function OpeningCards(props) {
                                          className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
                                          block={block}
                                          booster={props.idBooster.replace(".", "")}
-                                         local={val.card.localId}
+                                         local={val.nbCard}
                                          src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                          onError={errorImage}
                                          alt="Grapefruit slice atop a pile of other slices"/>
@@ -422,7 +424,7 @@ function OpeningCards(props) {
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={props.idBooster.replace(".", "")}
-                                            local={val.card.localId}
+                                            local={val.nbCard}
                                             src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
