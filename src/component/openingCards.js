@@ -387,215 +387,89 @@ function OpeningCards(props) {
                         return (
                             <>
                                 {key == 0 ?
-                                    stadeC == 4 ?
-                                        <div
-                                            style={{overflow: "unset"}}
-                                            stade={stadeC} rarity={val.rarity.rarity} style={{
-                                            overflow: "unset",
-                                            display: key < 4 && "none",
-                                            animation: stadeC == 4 && endPull === false &&"bounceLastBangerAlertBooster 3s forwards"
-                                        }}
-                                            keyCard={key}
-                                            cardId={val.card.id}
+                                    <div
+                                        stade={stadeC}
+                                        rarity={val.rarity.rarity}
+                                        style={{display: key < 4 && "none", overflow: "unset"}}
+                                        keyCard={key}
+                                        cardId={val.card.id}
+                                        cardLocalId={val.card.localId}
+                                        onClick={key == 0 ? getLastCard : getCard}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                        id={"cardNb" + key}>
+                                        <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
-                                            id={"cardNb" + key}>
-                                            <img
-                                                cardLocalId={val.card.localId}
-                                                onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGetRainbow cardBangerAlert" : "fit-picture dropCards glowGetRainbow cardBangerAlert"}
-                                                id={"cardNb" + key}
-                                                block={block}
-                                                booster={props.idBooster.replace(".", "")}
-                                                local={val.card.localId}
-                                                src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
-                                                onError={errorImage}
-                                                alt="Grapefruit slice atop a pile of other slices"/>
-                                            {getToken === true &&
-                                                <>
-
-                                                    <img
-                                                        rarity={4}
-                                                        onClick={getLastCard}
-                                                        id={"tokenContainer"}
-                                                        style={{
-                                                            display: "block",
-                                                            position: "absolute",
-                                                            zIndex: "100",
-                                                            top: "-13px",
-                                                            width: "100px",
-                                                            left: "-13px",
-                                                            margin: 0,
-                                                            filter: "drop-shadow(0px 4px 4px black)"
-                                                        }}
-                                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
-                                                        src={token}
-                                                        onError={errorImage}
-                                                        alt="Grapefruit slice atop a pile of other slices"/>
-                                                    <p style={{
-                                                        color: "white",
-                                                        fontSize: "30px",
-                                                        left: "45px",
-                                                        top: "30px",
-                                                        display: key == 0 ? "block" : "none",
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            id={"cardNb" + key}
+                                            block={block}
+                                            booster={props.idBooster.replace(".", "")}
+                                            local={val.card.localId}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
+                                            onError={errorImage}
+                                            alt="Grapefruit slice atop a pile of other slices"/>
+                                        {getToken === true &&
+                                            <>
+                                                <img
+                                                    rarity={4}
+                                                    onClick={getLastCard}
+                                                    id={"tokenContainer"}
+                                                    style={{
+                                                        display: "block",
                                                         position: "absolute",
                                                         zIndex: "100",
+                                                        top: "-13px",
                                                         width: "100px",
+                                                        left: "-13px",
                                                         margin: 0,
-                                                        filter: "drop-shadow(0px 4px 4px black)",
-                                                        textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
+                                                        filter: "drop-shadow(0px 4px 4px black)"
                                                     }}
-                                                       className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
-                                                    </p>
-                                                </>
-                                            }
-                                        </div>
-                                        :
-                                        stadeC == 3 ?
-                                            <div
-                                                stade={stadeC}
-                                                rarity={val.rarity.rarity}
-                                                style={{display: key < 4 && "none", overflow: "unset"}}
-                                                keyCard={key}
-                                                cardId={val.card.id}
-                                                cardLocalId={val.card.localId}
-                                                onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
-                                                id={"cardNb" + key}>
-                                                <img
-                                                    cardLocalId={val.card.localId}
-                                                    onClick={key == 0 ? getLastCard : getCard}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
-                                                    id={"cardNb" + key}
-                                                    block={block}
-                                                    booster={props.idBooster.replace(".", "")}
-                                                    local={val.card.localId}
-                                                    src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                                                    src={token}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
-                                                {getToken === true &&
-                                                    <>
-                                                        <img
-                                                            rarity={4}
-                                                            onClick={getLastCard}
-                                                            id={"tokenContainer"}
-                                                            style={{
-                                                                display: "block",
-                                                                position: "absolute",
-                                                                zIndex: "100",
-                                                                top: "-13px",
-                                                                width: "100px",
-                                                                left: "-13px",
-                                                                margin: 0,
-                                                                filter: "drop-shadow(0px 4px 4px black)"
-                                                            }}
-                                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
-                                                            src={token}
-                                                            onError={errorImage}
-                                                            alt="Grapefruit slice atop a pile of other slices"/>
-                                                        <p style={{
-                                                            color: "white",
-                                                            fontSize: "30px",
-                                                            left: "45px",
-                                                            top: "30px",
-                                                            display: key == 0 ? "block" : "none",
-                                                            position: "absolute",
-                                                            zIndex: "100",
-                                                            width: "100px",
-                                                            margin: 0,
-                                                            filter: "drop-shadow(0px 4px 4px black)",
-                                                            textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
-                                                        }}
-                                                           className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
-                                                        </p>
-                                                    </>
-                                                }
-                                            </div>
-                                            :
-                                            <>
-                                                <img stade={stadeC} rarity={val.rarity.rarity}
-                                                     style={{display: key < 4 && "none"}}
-                                                     id={"cardNb" + key} keyCard={key}
-                                                     cardId={val.card.id}
-                                                     cardLocalId={val.card.localId}
-                                                     onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
-                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-                                                     block={block}
-                                                     booster={props.idBooster.replace(".", "")}
-                                                     local={val.card.localId}
-                                                     src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
-                                                     onError={errorImage}
-                                                     alt="Grapefruit slice atop a pile of other slices"/>
+                                                <p style={{
+                                                    color: "white",
+                                                    fontSize: "30px",
+                                                    left: "45px",
+                                                    top: "30px",
+                                                    display: key == 0 ? "block" : "none",
+                                                    position: "absolute",
+                                                    zIndex: "100",
+                                                    width: "100px",
+                                                    margin: 0,
+                                                    filter: "drop-shadow(0px 4px 4px black)",
+                                                    textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
+                                                }}
+                                                   className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
+                                                </p>
                                             </>
+                                        }
+                                    </div>
                                     :
-                                    stadeC == 4 ?
-                                        <div
-                                            style={{overflow: "unset"}}
-                                            stade={stadeC} rarity={val.rarity.rarity} style={{
-                                            overflow: "unset",
-                                            display: key < 4 && "none",
-                                            animation: stadeC == 4 && "bounceLastBangerAlertBooster 3s forwards"
-                                        }}
-                                            keyCard={key}
-                                            cardId={val.card.id}
+
+                                    <div
+                                        stade={stadeC}
+                                        rarity={val.rarity.rarity}
+                                        style={{display: key < 4 && "none", overflow: "unset"}}
+                                        keyCard={key}
+                                        cardId={val.card.id}
+                                        cardLocalId={val.card.localId}
+                                        onClick={key == 0 ? getLastCard : getCard}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                        id={"cardNb" + key}>
+                                        <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
-                                            id={"cardNb" + key}>
-                                            <img
-                                                cardLocalId={val.card.localId}
-                                                onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
-                                                id={"cardNb" + key}
-                                                block={block}
-                                                booster={props.idBooster.replace(".", "")}
-                                                local={val.card.localId}
-                                                src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
-                                                onError={errorImage}
-                                                alt="Grapefruit slice atop a pile of other slices"/>
-                                        </div>
-                                        :
-                                        stadeC == 3 ?
-                                            <div
-                                                stade={stadeC} rarity={val.rarity.rarity}
-                                                style={{display: key < 4 && "none", overflow: "unset"}}
-                                                keyCard={key}
-                                                cardId={val.card.id}
-                                                cardLocalId={val.card.localId}
-                                                onClick={key == 0 ? getLastCard : getCard}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
-                                                id={"cardNb" + key}>
-                                                <img
-                                                    cardLocalId={val.card.localId}
-                                                    onClick={key == 0 ? getLastCard : getCard}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
-                                                    id={"cardNb" + key}
-                                                    block={block}
-                                                    booster={props.idBooster.replace(".", "")}
-                                                    local={val.card.localId}
-                                                    src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
-                                                    onError={errorImage}
-                                                    alt="Grapefruit slice atop a pile of other slices"/>
-                                            </div>
-                                            :
-                                            <>
-                                                <img stade={stadeC} rarity={val.rarity.rarity}
-                                                     style={{display: key < 4 && "none"}}
-                                                     id={"cardNb" + key} keyCard={key}
-                                                     cardId={val.card.id}
-                                                     cardLocalId={val.card.localId}
-                                                     rarity={val.rarity.rarity}
-                                                     onClick={key == 0 ? getLastCard : getToken === true && key == 1 ? getNextToken : getCard}
-                                                     className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}
-
-                                                     block={block}
-                                                     booster={props.idBooster.replace(".", "")}
-                                                     local={val.card.localId}
-                                                     src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
-                                                     onError={errorImage}
-                                                     alt="Grapefruit slice atop a pile of other slices"/>
-                                            </>
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            id={"cardNb" + key}
+                                            block={block}
+                                            booster={props.idBooster.replace(".", "")}
+                                            local={val.card.localId}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
+                                            onError={errorImage}
+                                            alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>
                                 }
                             </>
                         )
