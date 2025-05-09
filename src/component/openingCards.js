@@ -134,6 +134,8 @@ function OpeningCards(props) {
             }
             if(boosterName == "sma"){
                 var boosterDex = "sma"
+            }else if(boosterName.startsWith("sv")){
+                var boosterName = rarity.booster
             }else{
                 var boosterDex = props.idBooster
             }
@@ -406,7 +408,7 @@ function OpeningCards(props) {
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
-                                            booster={val.booster == "sma" ? "sma" : props.idBooster.startsWith("sv") ? props.idBooster : props.idBooster.replace(".", "")}
+                                            booster={val.booster == "sma" ? "sma" : props.idBooster.startsWith("sv") ? val.booster : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
                                             src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
@@ -430,7 +432,7 @@ function OpeningCards(props) {
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards gettedCard endPull cardBangerAlert" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
-                                            booster={val.booster == "sma" ? "sma" : props.idBooster.startsWith("sv") ? props.idBooster : props.idBooster.replace(".", "")}
+                                            booster={val.booster == "sma" ? "sma" : props.idBooster.startsWith("sv") ? val.booster : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
                                             src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
