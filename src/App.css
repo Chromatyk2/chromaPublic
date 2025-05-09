@@ -4935,7 +4935,7 @@ img#imgModal {
     padding:0;
 }
 
-.cardSparkling:after {
+.cardBangerAlert:after {
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif");
     background-position: center;
     background-size: 180%;
@@ -4952,7 +4952,7 @@ img#imgModal {
     top: 0;
     transform: translateZ(0);
 }
-.cardSparkling:before {
+.cardBangerAlert:before {
     content: "";
     position: absolute;
     left: 0;

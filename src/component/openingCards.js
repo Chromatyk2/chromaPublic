@@ -199,12 +199,12 @@ function OpeningCards(props) {
                                 )
                                 .then(
                                     (result) => {
-                                        if(tenCards.length){
+                                        if(tenCards.length === 4){
                                             setIsLoaded(false);
                                             setThings(false)
                                             const timeoutBooster = setTimeout(() => {
                                                 setThingsBooster(false)
-                                            }, 8001)
+                                            }, 1000)
                                             return () => clearTimeout(timeoutBooster)
                                         }
 
