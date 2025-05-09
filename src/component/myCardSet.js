@@ -87,7 +87,7 @@ function MyCardsSet(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                                setItems(result)
+                                                setItems(result.cards)
                                                 setIsLoaded(false);
                                             if(props.idBooster === "sm11.5"){
                                                 fetch("https://api.tcgdex.net/v2/en/sets/sma")
@@ -95,7 +95,7 @@ function MyCardsSet(props) {
                                                     .then(
                                                         (result) => {
                                                             result.cards.map((val, key) => {
-                                                                setItems(items => [...items.cards,val]);
+                                                                setItems(items => [...items,val]);
                                                             })
                                                             setIsLoaded(false);
                                                         },
@@ -112,7 +112,7 @@ function MyCardsSet(props) {
                                         }
                                     )
                             }else{
-                                setItems(result)
+                                setItems(result.cards)
                                 setIsLoaded(false);
 
                             }
@@ -184,9 +184,9 @@ function MyCardsSet(props) {
         <>
             {isLoaded === false ?
                 <>
-                    <ProgressBarCard booster={props.idBooster} getNb={myCards.length} item={items.cards.length}/>
+                    <ProgressBarCard booster={props.idBooster} getNb={myCards.length} item={items.length}/>
                     <div style={{color:"white",display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
-                        {myCards.length != items.cards.length &&
+                        {myCards.length != items.length &&
                             <label htmlFor="subscribe">
                                 <input
                                     style={{marginRight:"10px"}}
@@ -200,7 +200,7 @@ function MyCardsSet(props) {
                         }
                     </div>
                     <div id={"cardsContainer"}>
-                        {items.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                        {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
                                     if(myCards.find((uc) => uc.card == val.id).rarity != "Common" && myCards.find((uc) => uc.card == val.id).rarity != "Uncommon" && typeof myCards.find((uc) => uc.card == val.id).rarity !== "undefined"){
                                         var stadeC = rarities.find((uc) => uc.rarity.toUpperCase().includes(myCards.find((uc) => uc.card == val.id).rarity.toUpperCase())).stade;
