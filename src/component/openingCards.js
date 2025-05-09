@@ -124,15 +124,9 @@ function OpeningCards(props) {
                 if(randomStade > 95){
                     var rarity = props.rarities.filter(item => item.stade ===  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  4).length)]
                     var boosterName = rarity.nameGuru;
-                    if(boosterName == "sma"){
-                        props.idBooster = "sma";
-                    }
                 }else{
                     var rarity = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade <  4).length)]
                     var boosterName = rarity.nameGuru;
-                    if(boosterName == "sma"){
-                        props.idBooster = "sma";
-                    }
                 }
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
@@ -165,7 +159,7 @@ function OpeningCards(props) {
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber}]);
+                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
@@ -195,7 +189,7 @@ function OpeningCards(props) {
                                                     block:props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber}]);
+                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
                                             setNbCards (nbCards + 1);
 
                                         }
@@ -408,7 +402,7 @@ function OpeningCards(props) {
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
-                                            booster={props.idBooster.replace(".", "")}
+                                            booster={val.boosterName == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
                                             src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
@@ -432,7 +426,7 @@ function OpeningCards(props) {
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards gettedCard endPull cardBangerAlert" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
-                                            booster={props.idBooster.replace(".", "")}
+                                            booster={val.boosterName == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
                                             src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
