@@ -34,7 +34,7 @@ function OpeningCards(props) {
             setGetToken(true);
         }
         Axios
-            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
             .then(function(response){
                 setMyCards(response.data);
                 fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".", ""))
@@ -338,6 +338,8 @@ function OpeningCards(props) {
             e.target.src = "https://images.pokemontcg.io/sv4pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
         }else if(e.target.getAttribute("booster") == "sv06.5"){
             e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
+        }else if(e.target.getAttribute("booster") == "sv06.5"){
+            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
         }else{
             e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+e.target.getAttribute("cardLocalId")+"_hires.png";
         }
@@ -406,7 +408,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.startsWith("sv") === true ? props.idBooster.replace("pt", ".") : props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
@@ -430,7 +432,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.startsWith("sv") === true ? props.idBooster.replace("pt", ".") : props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/fr/" +block + "/" + props.idBooster + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
