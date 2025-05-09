@@ -231,9 +231,6 @@ function OpeningCards(props) {
         if(index == 0){
             e.target.classList.toggle('showCards');
         }
-        if(e.target.getAttribute("keyCard") === 4){
-            e.target.classList.toggle('showCards');
-        }
         if(stadeCurrent == 1){
             next.classList.toggle('glowGetGreen');
         }else if(stadeCurrent == 2){
