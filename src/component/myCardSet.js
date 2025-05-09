@@ -89,15 +89,12 @@ function MyCardsSet(props) {
                                         (result) => {
                                                 setItems(result)
                                                 setIsLoaded(false);
-
-                                            if(props.idBooster=== "sm11.5"){
+                                            if(props.idBooster === "sm11.5"){
                                                 fetch("https://api.tcgdex.net/v2/en/sets/sma")
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            result.map((val, key) => {
-                                                                setItems(items => [...items,val]);
-                                                            })
+                                                            setItems(items => [...items,result]);
                                                             setIsLoaded(false);
                                                         },
                                                         (error) => {
