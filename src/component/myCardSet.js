@@ -232,7 +232,7 @@ function MyCardsSet(props) {
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                                             style: {transitionDelay: "0.1s"},
                                                         }}
-                                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                                        src={val.image+ "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
                                                 </div>
                                             </div>
                                         )
@@ -264,7 +264,7 @@ function MyCardsSet(props) {
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                                             style: {transitionDelay: "0.1s"},
                                                         }}
-                                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
+                                                        src={val.image+ "/high.png"}/>
                                                 </div>
                                             </div>
                                         )
@@ -293,7 +293,7 @@ function MyCardsSet(props) {
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
                                                     }}
-                                                    src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
+                                                    src={val.image+ "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                                 {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
                                                 {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
                                             </button>
@@ -319,7 +319,7 @@ function MyCardsSet(props) {
                                                 // If you need to, you can tweak the effect transition using the wrapper style.
                                                 style: {transitionDelay: "0.1s"},
                                             }}
-                                            src={"https://assets.tcgdex.net/"+lang+"/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>                                    )
+                                            src={val.image"/high.png"}/>                                    )
                                 }
                             })
                         }
