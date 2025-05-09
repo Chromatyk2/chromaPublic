@@ -137,7 +137,6 @@ function OpeningCards(props) {
             }else{
                 var boosterDex = props.idBooster
             }
-            var boosterSV = rarity.booster;
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
@@ -164,7 +163,7 @@ function OpeningCards(props) {
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName, boosterSv:boosterSv}]);
+                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
@@ -194,7 +193,7 @@ function OpeningCards(props) {
                                                     block:props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName, boosterSv:boosterSv}]);
+                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
                                             setNbCards (nbCards + 1);
 
                                         }
