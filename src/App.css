@@ -5019,6 +5019,7 @@ img#imgModal {
     right: 0;
     top: 0;
     transform: translateZ(0);
+    background: transparent;
 }
 .cardBangerAlertNoShiny:before {
     content: "";
