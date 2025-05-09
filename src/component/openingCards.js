@@ -395,7 +395,7 @@ function OpeningCards(props) {
                                         cardId={val.card.id}
                                         cardLocalId={val.card.localId}
                                         onClick={key == 0 ? getLastCard : getCard}
-                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 && stadeC > 2 ? "fit-picture dropCards showCards glowGet cardBangerAlert cardSparkling" : "fit-picture dropCards glowGet cardBangerAlert"}
                                         id={"cardNb" + key}>
                                         <img
                                             cardLocalId={val.card.localId}
