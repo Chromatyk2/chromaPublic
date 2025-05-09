@@ -87,14 +87,8 @@ function MyCardsSet(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            if(result.status == 404){
-
-                                            }else{
                                                 setItems(result)
                                                 setIsLoaded(false);
-
-                                            }
-
                                         },
                                         (error) => {
                                             setIsLoaded(true);
@@ -106,13 +100,39 @@ function MyCardsSet(props) {
                                 setIsLoaded(false);
 
                             }
-
                         },
                         (error) => {
                             setIsLoaded(true);
                             setError(error);
                         }
-                    )
+                    ).then(
+                    (result) => {
+                        if(props.idBooster=== "sm11.5"){
+                            fetch("https://api.tcgdex.net/v2/en/sets/sma")
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        result.map((val, key) => {
+                                            setItems(items => [...items,val]);
+                                        })
+                                            setIsLoaded(false);
+                                    },
+                                    (error) => {
+                                        setIsLoaded(true);
+                                        setError(error);
+                                    }
+                                )
+                        }else{
+                            setItems(result)
+                            setIsLoaded(false);
+
+                        }
+                    },
+                    (error) => {
+                        setIsLoaded(true);
+                        setError(error);
+                    }
+                )
             })
     }, []);
     function openModal(e) {
