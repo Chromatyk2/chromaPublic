@@ -142,8 +142,6 @@ function MyCardsSet(props) {
     }
     function errorImages(e, booster, number){
         e.target.onerror = null;
-        console.log(e.target);
-        console.log(e.target.src);
         if(booster == "sm3.5"){
             e.target.src = "https://images.pokemontcg.io/sm35/"+number+"_hires.png";
         }else if(booster == "sm7.5"){
@@ -162,6 +160,8 @@ function MyCardsSet(props) {
             e.target.src = "https://images.pokemontcg.io/sv4pt5/"+number+"_hires.png";
         }else if(booster == "sv06.5"){
             e.target.src = "https://images.pokemontcg.io/sv6pt5/"+number+"_hires.png";
+        }else if(booster == "sma"){
+            e.target.src = "https://images.pokemontcg.io/sma/"+number+"_hires.png";
         }else{
             e.target.src = "https://images.pokemontcg.io/"+booster+"/"+number+"_hires.png";
         }
