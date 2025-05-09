@@ -219,7 +219,7 @@ function MyCardsSet(props) {
                                                         number={val.number}
                                                         booster={val.booster}
                                                         block={val.block}
-                                                        onError={(e) => errorImages(e, props.idBooster, val.localId)}
+                                                        onError={(e) => errorImages(e, val.localId.startsWith("SV") ? "sma" : props.idBooster, val.localId)}
                                                         alt="Grapefruit slice atop a pile of other slices"
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                         width={"250"}
@@ -232,7 +232,7 @@ function MyCardsSet(props) {
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                                             style: {transitionDelay: "0.1s"},
                                                         }}
-                                                        src={val.image+ "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
                                                 </div>
                                             </div>
                                         )
@@ -251,7 +251,7 @@ function MyCardsSet(props) {
                                                         number={val.number}
                                                         booster={val.booster}
                                                         block={val.block}
-                                                        onError={(e) => errorImages(e, props.idBooster, val.localId)}
+                                                        onError={(e) => errorImages(e, val.localId.startsWith("SV") ? "sma" : props.idBooster, val.localId)}
                                                         alt="Grapefruit slice atop a pile of other slices"
                                                         delayTime={0}
                                                         threshold={200}
@@ -264,7 +264,7 @@ function MyCardsSet(props) {
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                                             style: {transitionDelay: "0.1s"},
                                                         }}
-                                                        src={val.image+ "/high.png"}/>
+                                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
                                                 </div>
                                             </div>
                                         )
@@ -277,7 +277,7 @@ function MyCardsSet(props) {
                                                     number={val.number}
                                                     booster={val.booster}
                                                     block={val.block}
-                                                    onError={(e) => errorImages(e, props.idBooster, val.localId)}
+                                                    onError={(e) => errorImages(e, val.localId.startsWith("SV") ? "sma" : props.idBooster, val.localId)}
                                                     alt="Grapefruit slice atop a pile of other slices"
                                                     delayTime={0}
                                                     threshold={200}
@@ -293,7 +293,7 @@ function MyCardsSet(props) {
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
                                                     }}
-                                                    src={val.image+ "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
+                                                    src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                                 {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
                                                 {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
                                             </button>
@@ -305,7 +305,7 @@ function MyCardsSet(props) {
                                             number={val.number}
                                             booster={val.booster}
                                             block={val.block}
-                                            onError={(e) => errorImages(e, props.idBooster, val.localId )} alt="Grapefruit slice atop a pile of other slices"
+                                            onError={(e) => errorImages(e, val.localId.startsWith("SV") ? "sma" : props.idBooster, val.localId )} alt="Grapefruit slice atop a pile of other slices"
                                             placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                             delayTime={0}
                                             threshold={200}
@@ -319,7 +319,7 @@ function MyCardsSet(props) {
                                                 // If you need to, you can tweak the effect transition using the wrapper style.
                                                 style: {transitionDelay: "0.1s"},
                                             }}
-                                            src={val.image"/high.png"}/>                                    )
+                                            src={"https://assets.tcgdex.net/"+lang+"/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>                                    )
                                 }
                             })
                         }
