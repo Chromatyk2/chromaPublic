@@ -94,7 +94,9 @@ function MyCardsSet(props) {
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            setItems(items => [...items,result]);
+                                                            result.cards.map((val, key) => {
+                                                                setItems(items => [...items.cards,val]);
+                                                            })
                                                             setIsLoaded(false);
                                                         },
                                                         (error) => {
