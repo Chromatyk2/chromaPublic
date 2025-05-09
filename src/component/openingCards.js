@@ -221,8 +221,11 @@ function OpeningCards(props) {
     }
     function getCard(e) {
         var id = (e.target.getAttribute("keyCard"));
+        console.log(id)
         var nextId = parseInt(id,5) - 1;
+        console.log(nextId)
         var next = document.getElementById("cardNb"+nextId);
+        console.log(next);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
         if(index == 0){
