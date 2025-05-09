@@ -134,8 +134,6 @@ function OpeningCards(props) {
             }
             if(boosterName == "sma"){
                 var boosterDex = "sma"
-            }else if(boosterName.startsWith("sv")){
-                var boosterName = rarity.booster
             }else{
                 var boosterDex = props.idBooster
             }
@@ -338,8 +336,6 @@ function OpeningCards(props) {
             e.target.src = "https://images.pokemontcg.io/sv3pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
         }else if(e.target.getAttribute("booster") == "sv04.5"){
             e.target.src = "https://images.pokemontcg.io/sv4pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv06.5"){
-            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
         }else if(e.target.getAttribute("booster") == "sv06.5"){
             e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
         }else{
