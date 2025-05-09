@@ -137,6 +137,7 @@ function OpeningCards(props) {
             }else{
                 var boosterDex = props.idBooster
             }
+            var boosterSV = rarity.booster;
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
@@ -163,7 +164,7 @@ function OpeningCards(props) {
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
+                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName, boosterSv:boosterSv}]);
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
@@ -193,7 +194,7 @@ function OpeningCards(props) {
                                                     block:props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
+                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName, boosterSv:boosterSv}]);
                                             setNbCards (nbCards + 1);
 
                                         }
@@ -406,7 +407,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.startsWith("sv") === true ? props.idBooster : props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.startsWith("sv") === true ? val.boosterSv : props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
@@ -430,7 +431,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.startsWith("sv") === true ? props.idBooster : props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + props.idBooster.startsWith("sv") === true ? val.boosterSv : props.idBooster.replace(".", "") + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
