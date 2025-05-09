@@ -132,18 +132,24 @@ function OpeningCards(props) {
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
                 var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
             }
-            console.log(boosterName);
+            if(boosterName == "sma"){
+                var boosterDex = "sma"
+            }else{
+                var boosterDex = props.idBooster
+
+            }
+            var boosterDex =
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
                     (result) => {
                             const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
-                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterName == "sma" ? "sma" : props.idBooster+'/'+pkmNumber)
+                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterDex+'/'+pkmNumber)
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
                                         if(result.status == 404){
-                                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterName == "sma" ? "sma" : props.idBooster.replace(".","")+'/'+pkmNumber)
+                                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterDex.replace(".","")+'/'+pkmNumber)
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
