@@ -171,11 +171,14 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         setIsLoaded(false);
-                                                        setThings(false)
-                                                        const timeoutBooster = setTimeout(() => {
-                                                            setThingsBooster(false)
-                                                        }, 8001)
-                                                        return () => clearTimeout(timeoutBooster)
+                                                        if(tenCards.length === 4){
+                                                            setIsLoaded(false);
+                                                            setThings(false)
+                                                            const timeoutBooster = setTimeout(() => {
+                                                                setThingsBooster(false)
+                                                            }, 1001)
+                                                            return () => clearTimeout(timeoutBooster)
+                                                        }
 
                                                     })
                                         }else{
@@ -204,7 +207,7 @@ function OpeningCards(props) {
                                             setThings(false)
                                             const timeoutBooster = setTimeout(() => {
                                                 setThingsBooster(false)
-                                            }, 1000)
+                                            }, 1001)
                                             return () => clearTimeout(timeoutBooster)
                                         }
 
@@ -221,11 +224,8 @@ function OpeningCards(props) {
     }
     function getCard(e) {
         var id = (e.target.getAttribute("keyCard"));
-        console.log(id)
         var nextId = parseInt(id,5) - 1;
-        console.log(nextId)
         var next = document.getElementById("cardNb"+nextId);
-        console.log(next);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
         if(index == 0){
@@ -401,10 +401,9 @@ function OpeningCards(props) {
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 && stadeC > 2 ? "fit-picture dropCards showCards glowGet cardBangerAlert cardSparkling" : "fit-picture dropCards glowGet cardBangerAlert"}
                                         id={"cardNb" + key}>
                                         <img
-                                            keyCard={key}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 && stadeC > 2 ? "fit-picture dropCards showCards glowGet cardBangerAlert cardSparkling" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={props.idBooster.replace(".", "")}
@@ -463,10 +462,9 @@ function OpeningCards(props) {
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                         id={"cardNb" + key}>
                                         <img
-                                            keyCard={key}
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull cardBangerAlert" : key == 4 ? "fit-picture dropCards showCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlert"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={props.idBooster.replace(".", "")}
