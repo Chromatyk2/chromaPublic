@@ -62,8 +62,7 @@ function MyCards(props) {
                             totalCard &&
                                 nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                                 return(
-                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} boosterList={boosterList} maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" :uc.nameGuru == val.booster).totalCards
-                                        : boosterList.find((uc) => uc.name == val.booster).totalCards}/>
+                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} boosterList={boosterList} maxBooster={totalCard}/>
                                 )
                             })
                 }
