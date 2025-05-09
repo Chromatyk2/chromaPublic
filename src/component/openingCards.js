@@ -228,7 +228,7 @@ function OpeningCards(props) {
         var next = document.getElementById("cardNb"+nextId);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
-        if(index == 0){
+        if(index == 0 || index == 4){
             e.target.classList.toggle('showCards');
         }
         if(stadeCurrent == 1){
