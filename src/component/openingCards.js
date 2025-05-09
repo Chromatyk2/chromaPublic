@@ -136,9 +136,7 @@ function OpeningCards(props) {
                 var boosterDex = "sma"
             }else{
                 var boosterDex = props.idBooster
-
             }
-            var boosterDex =
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
