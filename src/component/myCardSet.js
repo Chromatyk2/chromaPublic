@@ -175,7 +175,7 @@ function MyCardsSet(props) {
                                     }else{
                                         var stadeC = 0;
                                     }
-                                    let cardNb = myCards.find((myCard) => myCard.card.includes(val.id));
+                                    let cardNb = myCards.find((myCard) => myCard.card === val.id);
                                     if(stadeC == 4){
                                         return (
                                             <div style={{position:"relative", animation: "glowGetRainbow 10s infinite alternate"}}
