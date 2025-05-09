@@ -138,6 +138,7 @@ function OpeningCards(props) {
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
                 var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
             }
+            console.log(boosterName);
             fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
                 .then(res => res.json())
                 .then(
