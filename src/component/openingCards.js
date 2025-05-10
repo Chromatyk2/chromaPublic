@@ -124,9 +124,19 @@ function OpeningCards(props) {
                 if(randomStade > 95){
                     var rarity = props.rarities.filter(item => item.stade ===  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  4).length)]
                     var boosterName = rarity.nameGuru;
+                    if(rarity.rarity == "Rare Prism Star"){
+                        var finalRarity = 'rarity:"Rare Prism"'
+                    }else{
+                        var finalRarity = '!rarity:"'+rarity.rarity+'"'
+                    }
                 }else{
                     var rarity = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade <  4).length)]
                     var boosterName = rarity.nameGuru;
+                    if(rarity.rarity == "Rare Prism Star"){
+                        var finalRarity = 'rarity:"Rare Prism"'
+                    }else{
+                        var finalRarity = '!rarity:"'+rarity.rarity+'"'
+                    }
                 }
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
@@ -137,7 +147,7 @@ function OpeningCards(props) {
             }else{
                 var boosterDex = props.idBooster
             }
-            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' !rarity:"'+rarity.rarity+'"')
+            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' '+finalRarity)
                 .then(res => res.json())
                 .then(
                     (result) => {
