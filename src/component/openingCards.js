@@ -141,6 +141,7 @@ function OpeningCards(props) {
             }else{
                 var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
                 var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
+                var finalRarity = '!rarity:"'+rarity.rarity+'"'
             }
             if(boosterName == "sma"){
                 var boosterDex = "sma"
