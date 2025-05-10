@@ -387,6 +387,8 @@ function OpeningCards(props) {
                         }
                         if(props.idBooster.startsWith("sv")){
                             var boosterImg = props.idBooster
+                        }else if(props.idBooster.startsWith("swsh")){
+                            var boosterImg = props.idBooster
                         }else{
                             var boosterImg = props.idBooster.replace(".", "")
                         }
