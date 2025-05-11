@@ -23,20 +23,14 @@ function LastBangerAlert(props) {
     useEffect(() => {
         if(newLastCardData != null){
             if(lastCardUser == null){
-                if(newLastCardUser.stade == 3){
-                }else if(newLastCardUser.stade == 4){
-                    $('audio#omglebanger')[0].play()
-                }
+                $('audio#omglebanger')[0].play()
                 setLastCardUser(newLastCardUser);
                 document.getElementById("lastBangerContainer").style.animation = "bounceLastBangerAlert 9s forwards";
                 setTimeout(() => {
                     setNewLastCardData(null);
                 }, 9000);
             }else if(lastCardUser.user !== newLastCardUser.user || lastCardUser.card !== newLastCardUser.card){
-                    if(newLastCardUser.stade == 3){
-                    }else if(newLastCardUser.stade == 4){
-                        $('audio#omglebanger')[0].play()
-                    }
+                    $('audio#omglebanger')[0].play()
                     setLastCardUser(newLastCardUser);
                     document.getElementById("lastBangerContainer").style.animation = "bounceLastBangerAlert 9s forwards";
                     setTimeout(() => {
