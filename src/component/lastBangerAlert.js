@@ -16,7 +16,7 @@ function LastBangerAlert(props) {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
                         setNewLastCardUser(response.data[0]);
-                        setNewLastCardData(result);
+                        setNewLastCardData(response.data[0]);
                     })
             }, 60000)
     }, []);
