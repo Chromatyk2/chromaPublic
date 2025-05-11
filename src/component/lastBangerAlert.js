@@ -15,8 +15,19 @@ function LastBangerAlert(props) {
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
-                        setNewLastCardUser(response.data[0]);
-                        setNewLastCardData(response.data[0]);
+                                fetch("https://api.tcgdex.net/v2/en/cards/"+response.data[0].card)
+                                    .then(res => res.json())
+                                    .then(
+                                        (result) => {
+                                            setNewLastCardUser(response.data[0]);
+                                            setNewLastCardData(result);
+                                        },
+                                        (error) => {
+                                            setIsLoaded(true);
+                                            setError(error);
+                                        }
+                                    )
+                        setNewLastCardUser(response);
                     })
             }, 60000)
     }, []);
@@ -50,13 +61,17 @@ function LastBangerAlert(props) {
             }
         }
     }, [newLastCardData])
+    function errorImage(e){
+        e.target.onerror = null;
+        e.target.src = "https://assets.tcgdex.net/en/"+e.target.getAttribute("block")+"/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"/high.png";
+    }
     return (
         <>
             {newLastCardData &&
                 <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
                     <p className={"lastCardUsername"}>{newLastCardUser.user}</p>
                     <div className="cardBangerAlert">
-                        <img className={"shadowBangerCard"} style={{width:"350px",filter:"brightness(0.8)"}} src={"https://images.pokemontcg.io/"+newLastCardData.set.id+"/"+newLastCardData.number+"_hires.png"}/>
+                        <img onError={errorImage} number={newLastCardData.number} block={newLastCardData.block} booster={newLastCardData.booster} className={"shadowBangerCard"} style={{width:"350px",filter:"brightness(0.8)"}} src={"https://assets.tcgdex.net/fr/"+newLastCardData.block+"/"+newLastCardData.booster+"/"+newLastCardData.number+"/high.png"}/>
                     </div>
                 </div>
             }
