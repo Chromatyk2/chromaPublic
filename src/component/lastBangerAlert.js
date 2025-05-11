@@ -15,13 +15,11 @@ function LastBangerAlert(props) {
             setInterval(() => {
                 Axios.get("/api/getLastCard/")
                     .then(function(response){
-                        response.data.map((val, key) => {
-                            if(val.stade == 4){
-                                fetch("https://api.pokemontcg.io/v2/cards/"+val.card)
+                                fetch("https://api.pokemontcg.io/v2/cards/"+response.data[0].card)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setNewLastCardUser(val);
+                                            setNewLastCardUser(response.data[0]);
                                             setNewLastCardData(result);
                                         },
                                         (error) => {
@@ -29,7 +27,6 @@ function LastBangerAlert(props) {
                                             setError(error);
                                         }
                                     )
-                            }
                         })
                         setNewLastCardUser(response);
                     })
