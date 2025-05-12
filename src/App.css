@@ -1264,6 +1264,7 @@ button.deleteTrade {
     position: absolute;
     left: 580px;
     animation: bounceLastBangerOut 1s forwards;
+    top:800px;
 }
 .guessTradeButton {
     background: white;
