@@ -396,9 +396,7 @@ function OpeningCards(props) {
                         } else {
                             var stadeC = 0;
                         }
-                        if(props.idBooster.startsWith("sv")){
-                            var boosterImg = props.idBooster
-                        }else if(props.idBooster.startsWith("swsh")){
+                        if(props.idBooster.startsWith("sv") || props.idBooster.startsWith("swsh")){
                             var boosterImg = props.idBooster
                         }else{
                             var boosterImg = props.idBooster.replace(".", "")
