@@ -244,8 +244,8 @@ function SpawnPokemon(props) {
                             }
                     }
                     setTimeout(function (){
-                        document.getElementById("pkmLeft").style.display = 'none';
-                        document.getElementById("pkmRight").style.display = 'none';
+                        document.getElementById("pkmLeft").toggleClass('hiddePokemon');
+                        document.getElementById("pkmRight").toggleClass('hiddePokemon');
                     },10000);
                 },
                 (error) => {
