@@ -416,12 +416,12 @@ function OpeningCards(props) {
                                         keyCard={key}
                                         cardId={val.card.id}
                                         cardLocalId={val.card.localId}
-                                        onClick={getLastCard}
+                                        onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
                                         <img
                                             cardLocalId={val.card.localId}
-                                            onClick={getLastCard}
+                                            onClick={key == 0 ? getLastCard : getCard}
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
@@ -432,6 +432,7 @@ function OpeningCards(props) {
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {getToken === true &&
                                             <>
+
                                                 <img
                                                     rarity={4}
                                                     onClick={getLastCard}
@@ -469,7 +470,8 @@ function OpeningCards(props) {
                                         }
                                     </div>
                                 }
-                                {key === 4 ?
+                                {key !== 0 &&
+                                    key === 4 ?
                                     <div
                                         stade={stadeC}
                                         rarity={val.rarity.rarity}
