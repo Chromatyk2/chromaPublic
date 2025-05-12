@@ -247,7 +247,7 @@ function SpawnPokemon(props) {
                     setTimeout(function (){
                         $("#pkmLeft").toggleClass('hiddePokemon');
                         $("#pkmRight").toggleClass('hiddePokemon');
-                    },10000);
+                    },6500);
                 },
                 (error) => {
                     setIsLoaded(true);
