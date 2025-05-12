@@ -3080,6 +3080,7 @@ span.navbar-brand {
     height: 140px;
     margin: 2px;
     position: relative;
+    filter: drop-shadow(0px 0px 10px black);
 }
 
 .pkmn .mon {
