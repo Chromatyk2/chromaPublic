@@ -30,7 +30,7 @@ function OpeningCards(props) {
 
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 10);
-        if(tokenBonus < 10){
+        if(tokenBonus === 10){
             setGetToken(true);
             Axios.post('/api/addPkmToken',
                 {
