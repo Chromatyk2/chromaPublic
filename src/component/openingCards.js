@@ -408,9 +408,7 @@ function OpeningCards(props) {
                         }
                         return (
                             <>
-                                {key === 4 ?
-
-
+                                {key === 0 &&
                                     <div
                                         stade={stadeC}
                                         rarity={val.rarity.rarity}
@@ -418,12 +416,12 @@ function OpeningCards(props) {
                                         keyCard={key}
                                         cardId={val.card.id}
                                         cardLocalId={val.card.localId}
-                                        onClick={key == 0 ? getLastCard : getCard}
+                                        onClick={getLastCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
                                         <img
                                             cardLocalId={val.card.localId}
-                                            onClick={key == 0 ? getLastCard : getCard}
+                                            onClick={getLastCard}
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
@@ -434,7 +432,6 @@ function OpeningCards(props) {
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {getToken === true &&
                                             <>
-
                                                 <img
                                                     rarity={4}
                                                     onClick={getLastCard}
@@ -471,8 +468,31 @@ function OpeningCards(props) {
                                             </>
                                         }
                                     </div>
+                                }
+                                {key === 4 ?
+                                    <div
+                                        stade={stadeC}
+                                        rarity={val.rarity.rarity}
+                                        style={{display: key < 4 && "none", overflow: "unset"}}
+                                        keyCard={key}
+                                        cardId={val.card.id}
+                                        cardLocalId={val.card.localId}
+                                        onClick={key == 0 ? getLastCard : getCard}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                        id={"cardNb" + key}>
+                                        <img
+                                            cardLocalId={val.card.localId}
+                                            onClick={key == 0 ? getLastCard : getCard}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                            id={"cardNb" + key}
+                                            block={block}
+                                            booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
+                                            local={val.nbCard}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
+                                            onError={errorImage}
+                                            alt="Grapefruit slice atop a pile of other slices"/>
+                                    </div>
                                     :
-
                                     <div
                                         stade={stadeC}
                                         rarity={val.rarity.rarity}
