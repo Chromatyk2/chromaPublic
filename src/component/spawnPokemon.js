@@ -3,6 +3,7 @@ import '../App.css'
 import Axios from "axios";
 import moment from "moment/moment";
 import card from "../cards.png"
+import $ from 'jquery';
 function SpawnPokemon(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([])
@@ -244,8 +245,8 @@ function SpawnPokemon(props) {
                             }
                     }
                     setTimeout(function (){
-                        document.getElementById("pkmLeft").toggleClass('hiddePokemon');
-                        document.getElementById("pkmRight").toggleClass('hiddePokemon');
+                        $("#pkmLeft").toggleClass('hiddePokemon');
+                        $("#pkmRight").toggleClass('hiddePokemon');
                     },10000);
                 },
                 (error) => {
