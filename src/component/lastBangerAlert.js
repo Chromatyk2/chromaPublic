@@ -60,7 +60,20 @@ function LastBangerAlert(props) {
                 <div id={"lastBangerContainer"} className={"lastBangerContainer"}>
                     <p className={"lastCardUsername"}>{newLastCardUser.user}</p>
                     <div className="cardBangerAlert">
-                        <img onError={errorImage} number={newLastCardData.number} block={newLastCardData.block} booster={newLastCardData.booster} className={"shadowBangerCard"} style={{width:"350px",filter:"brightness(0.8)"}} src={"https://assets.tcgdex.net/fr/"+newLastCardData.block+"/"+newLastCardData.booster+"/"+newLastCardData.number+"/high.png"}/>
+                        {
+                        newLastCardData.booster.startsWith("sv") === true ?
+                            <img onError={errorImage} number={newLastCardData.number} block={newLastCardData.block}
+                                 booster={newLastCardData.booster} className={"shadowBangerCard"}
+                                 style={{width: "350px", filter: "brightness(0.8)"}}
+                                 src={"https://assets.tcgdex.net/fr/" + newLastCardData.block + "/" + newLastCardData.booster + "/" + newLastCardData.number.toString().padStart(3, '0') + "/high.png"}/>
+
+                        :
+                            <img onError={errorImage} number={newLastCardData.number} block={newLastCardData.block}
+                                 booster={newLastCardData.booster} className={"shadowBangerCard"}
+                                 style={{width:"350px",filter:"brightness(0.8)"}}
+                                 src={"https://assets.tcgdex.net/fr/"+newLastCardData.block+"/"+newLastCardData.booster+"/"+newLastCardData.number+"/high.png"}/>
+
+                        }
                     </div>
                 </div>
             }
@@ -73,4 +86,5 @@ function LastBangerAlert(props) {
         </>
     )
 }
+
 export default LastBangerAlert

@@ -379,6 +379,11 @@ function Profil(props) {
                                             {myLastTenCards.sort((a, b) => b.stade - a.stade).map((val, key) => {
                                                 {
                                                     if(val.number !== null && val.block !== null){
+                                                        if(val.booster.startsWith("sv")){
+                                                            var cardNumber = val.number.toString().padStart(3, '0');
+                                                        }else{
+                                                            var cardNumber = val.number;
+                                                        }
                                                         return (
                                                             <img
                                                                 number={val.number}
@@ -387,7 +392,7 @@ function Profil(props) {
                                                                 className={"profilCard"}
                                                                 onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
                                                                 style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
-                                                                src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + val.number + "/high.png"}/>
+                                                                src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + cardNumber + "/high.png"}/>
 
                                                         )
                                                     }
