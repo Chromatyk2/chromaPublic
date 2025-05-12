@@ -15,6 +15,8 @@ function SpawnPokemon(props) {
     const [shiny, setShiny] = useState(false);
     const [getToken, setGetToken] = useState(false);;
     useEffect(() => {
+
+        setTimeout(function (){
         var tokenBonus = Math.floor(Math.random() * 10);
         const queryParameters = new URLSearchParams(window.location.search)
         if(tokenBonus == 0){
@@ -254,6 +256,7 @@ function SpawnPokemon(props) {
                     setError(error);
                 }
             )
+        },2000);
     }, [reloadFetch])
     return (
         <>
