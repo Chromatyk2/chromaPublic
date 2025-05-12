@@ -256,7 +256,7 @@ function SpawnPokemon(props) {
                     setError(error);
                 }
             )
-        },2000);
+        },1000);
     }, [reloadFetch])
     return (
         <>
