@@ -418,7 +418,7 @@ function Profil(props) {
                                                             number={val.number}
                                                             booster={val.booster}
                                                             block={val.block}
-                                                            className={stade === 4 ? "profilCard glowGetRainbow" : "profilCard"}
+                                                            className={val.stade === 4 ? "profilCard glowGetRainbow" : "profilCard"}
                                                                  onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
                                                                  style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                                  src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + cardNumber + "/high.png"}/>
