@@ -243,6 +243,10 @@ function SpawnPokemon(props) {
                                         )
                             }
                     }
+                    setTimeout(function (){
+                        document.getElementById("pkmLeft").style.display = 'none';
+                        document.getElementById("pkmRight").style.display = 'none';
+                    },10000);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -255,7 +259,7 @@ function SpawnPokemon(props) {
             {isLoaded === false &&
                 <>
                     <div className="pokemonContent">
-                        <div className="pkmn exit left">
+                        <div id={"pkmLeft"} className="pkmn exit left">
                             <div className={useBall+" ball"}>
                                 <span className="x">
                                   <span className="y">
@@ -294,7 +298,7 @@ function SpawnPokemon(props) {
                                 }
                             </div>
                         </div>
-                        <div className="pkmn exit right">
+                        <div id={"pkmRight"} className="pkmn exit right">
                             <div className={useBall + " ball"}>
                                 <span className="x">
                                   <span className="y">
