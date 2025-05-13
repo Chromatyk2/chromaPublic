@@ -14,18 +14,20 @@ const pseudo = props.cookies.user.data[0].login;
       .get("/api/getByUser/"+pseudo)
       .then(function(response){
           setList(response.data);
+          Axios
+              .get("/api/getTotalPokemon/"+pseudo)
+              .then(function(response){
+                  setTotalPkm(response.data[0].totalCapture);
+              })
       })
-      Axios
-          .get("/api/getTotalPokemon/"+pseudo)
-          .then(function(response){
-              setTotalPkm(response.data.totalCapture);
-          })
     }, [])
     return (
         <>
-            <div className={"contentContainer"}>
-                <PkmList list={list} totalPkm={totalPkm}/>
-            </div>
+            {totalPkm &&
+                <div className={"contentContainer"}>
+                    <PkmList list={list} totalPkm={totalPkm}/>
+                </div>
+            }
         </>
     )
 }
