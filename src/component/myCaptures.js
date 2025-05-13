@@ -8,6 +8,7 @@ import '../App.css'
 import moment from 'moment';
 
 function MyCaptures(props) {
+
   if(props.captures.length > 0){
     return (
       <>
@@ -24,9 +25,6 @@ function MyCaptures(props) {
                 </div>
               })
           }
-            {props.captures.length > 4 &&
-                <button> Sacrifier 5 pour avoir ce pokemon en shiny</button>
-            }
         </div>
       </>
     );

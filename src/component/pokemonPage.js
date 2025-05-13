@@ -6,6 +6,7 @@ import Pagination from './paginate.js';
 import MyCaptures from './myCaptures.js';
 import OtherCaptures from './otherCaptures.js';
 import '../App.css'
+import moment from "moment";
 
 function PokemonPage(props) {
 const pseudo = props.cookies.user.data[0].login;
@@ -15,6 +16,7 @@ const [captures, setCaptures] = useState([]);
 const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
 const [isShiny, setIsShiny] = useState(false);
+const [isLoadConvert, setIsLoadedConvert] = useState(false);
 const { id } = useParams()
 useEffect(() => {
  fetch("https://pokeapi.co/api/v2/pokemon/"+id)
@@ -51,11 +53,30 @@ useEffect(() => {
         setCaptures(response.data);
   })
 }, [])
-    function changeSprite() {
-        if(isShiny === true){
-            setIsShiny(false)
-        }else{
-            setIsShiny(true)
+function changeSprite() {
+    if(isShiny === true){
+        setIsShiny(false)
+    }else{
+        setIsShiny(true)
+    }
+}
+    function convertShiny() {
+        if(captures.length > 4){
+            setIsLoadedConvert(true);
+            Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
+                .then(
+                    (result) => {
+                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:pokemon.sprites.front_shiny,pkmId:id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                            .then(
+                                (result) => {
+                                    Axios
+                                        .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
+                                        .then(function(response){
+                                            setCaptures(response.data);
+                                            setIsLoadedConvert(false);
+                                        })
+                                })
+                    })
         }
     }
  if (error) {
@@ -63,7 +84,7 @@ useEffect(() => {
  } else if (!isLoaded) {
    return <div></div>;
  } else {
-   if(name[4] !== undefined && pokemon.sprites !== undefined){
+     if(name[4] !== undefined && pokemon.sprites !== undefined){
    return (
      <>
          <div className={"pagePokemonContainer"}>
@@ -81,6 +102,10 @@ useEffect(() => {
                 </div>
                 <div>
                     <MyCaptures captures={captures} />
+                    {captures.length > 4 &&
+                        isLoadConvert === false &&
+                        <button onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny</button>
+                    }
                 </div>
               </div>
          </div>
