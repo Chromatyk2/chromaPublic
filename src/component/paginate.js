@@ -91,7 +91,7 @@ function Pagination(props) {
             {hasShiny.length > 0 &&
               <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
             }
-            <button className="filterButton" onClick={sortPokemon} value="2">Captures décroissantes</button>
+            <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
           </div>
       {isSorted === false ?
           <Items currentItems={currentItems}/>
