@@ -55,6 +55,11 @@ function Pagination(props) {
     const endOffset = itemOffset + props.itemsPerPage;
     setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
   }, [props.items]);
+  useEffect(() => {
+    setFiltredPokemon(props.items);
+    const endOffset = itemOffset + props.itemsPerPage;
+    setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
+  }, [isSorted]);
   function handlePokemon(e) {
     let sort = e.target.value;
     switch (sort){
@@ -91,11 +96,7 @@ function Pagination(props) {
               }
               <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
             </div>
-            {isSorted === false ?
-                <Items currentItems={currentItems}/>
-                :
-                <Items currentItems={currentItems.sort((a, b) => b.nbCapture - a.nbCapture)}/>
-            }
+            <Items currentItems={currentItems}/>
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."
