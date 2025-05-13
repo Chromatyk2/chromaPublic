@@ -57,26 +57,25 @@ function Pagination(props) {
   }, []);
   function handlePokemon(e) {
     let sort = e.target.value;
+    setCurrentItems(null)
     switch (sort){
       case "0" :
-        setCurrentItems(null)
         var endOffset = itemOffset + props.itemsPerPage;
         setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
         break;
       case "1" :
-        setCurrentItems(null)
         var endOffset = itemOffset + props.itemsPerPage;
         setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).slice(itemOffset, endOffset))
         break;
       case "2" :
         setIsSorted(true);
         var endOffset = itemOffset + props.itemsPerPage;
-        setCurrentItems(currentItems.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
+        setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
         break;
       case "3" :
         setIsSorted(false);
         var endOffset = itemOffset + props.itemsPerPage;
-        setCurrentItems(currentItems.sort((a, b) => b.nbCapture + a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
+        setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture + a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
         break;
       default :
         setFiltredPokemon(props.items);
