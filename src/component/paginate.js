@@ -54,31 +54,26 @@ function Pagination(props) {
     setFiltredPokemon(props.items);
     const endOffset = itemOffset + props.itemsPerPage;
     setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
-  }, [props.items]);
-  useEffect(() => {
-    setFiltredPokemon(props.items);
-    var endOffset = itemOffset + props.itemsPerPage;
-    if(isSorted === true){
-      setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
-    }else{
-      setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
-    }
-  }, [isSorted]);
+  }, []);
   function handlePokemon(e) {
+    setCurrentItems(null)
     let sort = e.target.value;
     switch (sort){
       case "0" :
-        setFiltredPokemon(props.items);
         var endOffset = itemOffset + props.itemsPerPage;
         setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
         break;
       case "1" :
-        setFiltredPokemon(props.items.filter(item => item.shiny == 1));
         var endOffset = itemOffset + props.itemsPerPage;
-        setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
+        setCurrentItems(filtredPokemon.props.items.filter(item => item.shiny == 1).slice(itemOffset, endOffset))
         break;
       case "2" :
         setIsSorted(true);
+        var endOffset = itemOffset + props.itemsPerPage;
+        setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
+        break;
+      case "3" :
+        setIsSorted(false);
         var endOffset = itemOffset + props.itemsPerPage;
         setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
         break;
@@ -104,7 +99,11 @@ function Pagination(props) {
               {hasShiny.length > 0 &&
                   <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
               }
-              <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
+              {isSorted === false ?
+                  <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
+                  :
+                  <button className="filterButton" onClick={handlePokemon} value="3">Remettre dans l'ordre</button>
+              }
             </div>
             <Items currentItems={currentItems}/>
             <ReactPaginate
