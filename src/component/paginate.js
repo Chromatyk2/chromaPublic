@@ -52,10 +52,20 @@ function Pagination(props) {
     setFiltredPokemon(props.items);
   }, [props.items]);
   function handlePokemon(e) {
-    let shiny = e.target.value;
-    shiny != 0
-      ? setFiltredPokemon(props.items.filter(item => item.shiny == shiny))
-      : setFiltredPokemon(props.items);
+    let sort = e.target.value;
+    switch (sort){
+      case 0 :
+        setFiltredPokemon(props.items);
+        break;
+      case 1 :
+        ssetFiltredPokemon(props.items.filter(item => item.shiny == shiny));
+        break;
+      case 2 :
+        ssetFiltredPokemon(props.items.nbCapture.sort((a, b) => b - a));
+        break;
+      default :
+        setFiltredPokemon(props.items);
+    }
   }
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
@@ -72,16 +82,18 @@ function Pagination(props) {
 
   return (
     <>
-      {hasShiny.length > 0 &&
-        <div className="filtersContainer">
-          <p className="filterTitle">Trier</p>
-          <button className="filterButton" onClick={handlePokemon} value="0" >Tous</button>
-          <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
-        </div>
-      }
-      <Items currentItems={currentItems} />
+
+          <div className="filtersContainer">
+            <p className="filterTitle">Trier</p>
+            <button className="filterButton" onClick={handlePokemon} value="0">Tous</button>
+            {hasShiny.length > 0 &&
+              <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
+            }
+            <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
+          </div>
+      <Items currentItems={currentItems}/>
       <ReactPaginate
-      className="paginateLay"
+          className="paginateLay"
         breakLabel="..."
         nextLabel=">>"
         onPageChange={handlePageClick}
