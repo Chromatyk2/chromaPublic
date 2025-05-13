@@ -13,7 +13,7 @@ function PkmList(props) {
         <div className="stats">
           <p className="labelStats">Shiny<br/><span className="valueStats">{nbShiny}</span></p>
           <p className="labelStats">Total<br/><span className="valueStats">{nbTotal}</span></p>
-            <p>Captures totales = {props.totalPkm}</p>
+            <p>{"Captures totales = "+props.totalPkm}</p>
         </div>
           <Pagination
             itemsPerPage={32}
