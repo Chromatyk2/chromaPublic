@@ -104,7 +104,7 @@ function changeSprite() {
                     <MyCaptures captures={captures} />
                     {captures.length > 4 &&
                         isLoadConvert === false &&
-                        <button onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny</button>
+                        <button style={{width:"fit-content"}} className={"filterButton"} onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny</button>
                     }
                 </div>
               </div>
