@@ -48,6 +48,7 @@ function Pagination(props) {
   const [pkmListFiltered,setPkmListFiltered] = useState([]);
   const [filtredPokemon, setFiltredPokemon] = useState(props.items);
   const [isSorted, setIsSorted] = useState(false);
+  const [currentItems, setCurrentItems] = useState(false);
   const hasShiny = props.items.filter(item => item.shiny == 1);
   useEffect(() => {
     setFiltredPokemon(props.items);
@@ -73,7 +74,11 @@ function Pagination(props) {
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
     const endOffset = itemOffset + props.itemsPerPage;
-    const currentItems = filtredPokemon.slice(itemOffset, endOffset);
+    if(isSorted === false ){
+      setCurrentItems(filtredPokemon.slice(itemOffset, endOffset));
+    }else{
+      setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset));
+    }
     const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
 
   // Invoke when user click to request another page.
@@ -93,11 +98,7 @@ function Pagination(props) {
             }
             <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
           </div>
-      {isSorted === false ?
           <Items currentItems={currentItems}/>
-      :
-          <Items currentItems={currentItems.sort((a, b) => b.nbCapture - a.nbCapture)}/>
-      }
       <ReactPaginate
           className="paginateLay"
         breakLabel="..."
