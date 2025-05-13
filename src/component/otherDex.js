@@ -7,6 +7,7 @@ import {useParams} from "react-router-dom";
 
 function Otherdex(props) {
     const [list,setList] = useState([]);
+    const [totalPkm,setTotalPkm] = useState(0);
     const { pseudo } = useParams()
     useEffect(() => {
         Axios
@@ -14,11 +15,16 @@ function Otherdex(props) {
             .then(function(response){
                 setList(response.data);
             })
+        Axios
+            .get("/api/getTotalPokemon/"+pseudo)
+            .then(function(response){
+                setTotalPkm(response.data.totalCapture);
+            })
     }, [])
     return (
         <>
             <div className={"contentContainer"}>
-                <PkmList list={list}/>
+                <PkmList list={list} totalPkm={totalPkm}/>
             </div>
         </>
     )
