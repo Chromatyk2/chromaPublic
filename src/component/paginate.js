@@ -65,7 +65,7 @@ function Pagination(props) {
         break;
       case "1" :
         var endOffset = itemOffset + props.itemsPerPage;
-        setCurrentItems(filtredPokemon.props.items.filter(item => item.shiny == 1).slice(itemOffset, endOffset))
+        setCurrentItems(filtredPokemonfilter(item => item.shiny == 1).slice(itemOffset, endOffset))
         break;
       case "2" :
         setIsSorted(true);
