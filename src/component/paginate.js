@@ -53,6 +53,7 @@ function Pagination(props) {
   }, [props.items]);
   function handlePokemon(e) {
     let sort = e.target.value;
+    console.log(sort)
     switch (sort){
       case 0 :
         setFiltredPokemon(props.items);
