@@ -80,32 +80,35 @@ function Pagination(props) {
   };
 
   return (
-    <>
-
-          <div className="filtersContainer">
-            <p className="filterTitle">Trier</p>
-            <button className="filterButton" onClick={handlePokemon} value="0">Tous</button>
-            {hasShiny.length > 0 &&
-              <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
+      <>
+        {currentItems &&
+          <>
+            <div className="filtersContainer">
+              <p className="filterTitle">Trier</p>
+              <button className="filterButton" onClick={handlePokemon} value="0">Tous</button>
+              {hasShiny.length > 0 &&
+                  <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
+              }
+              <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
+            </div>
+            {isSorted === false ?
+                <Items currentItems={currentItems}/>
+                :
+                <Items currentItems={currentItems.sort((a, b) => b.nbCapture - a.nbCapture)}/>
             }
-            <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
-          </div>
-      {isSorted === false ?
-          <Items currentItems={currentItems}/>
-      :
-          <Items currentItems={currentItems.sort((a, b) => b.nbCapture - a.nbCapture)}/>
-      }
-      <ReactPaginate
-          className="paginateLay"
-        breakLabel="..."
-        nextLabel=">>"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={2}
-        pageCount={pageCount}
-        previousLabel="<<"
-        renderOnZeroPageCount={null}
-      />
-    </>
+            <ReactPaginate
+                className="paginateLay"
+                breakLabel="..."
+                nextLabel=">>"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={2}
+                pageCount={pageCount}
+                previousLabel="<<"
+                renderOnZeroPageCount={null}
+            />
+          </>
+        }
+      </>
   );
 }
 
