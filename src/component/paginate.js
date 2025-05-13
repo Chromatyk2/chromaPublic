@@ -47,6 +47,7 @@ function Pagination(props) {
   const [itemOffset, setItemOffset] = useState(0);
   const [pkmListFiltered,setPkmListFiltered] = useState([]);
   const [filtredPokemon, setFiltredPokemon] = useState(props.items);
+  const [isSorted, setIsSorted] = useState(false);
   const hasShiny = props.items.filter(item => item.shiny == 1);
   useEffect(() => {
     setFiltredPokemon(props.items);
@@ -62,7 +63,7 @@ function Pagination(props) {
         setFiltredPokemon(props.items.filter(item => item.shiny == 1));
         break;
       case "2" :
-        setFiltredPokemon(props.items.sort((a, b) => b.nbCapture - a.nbCapture));
+        setIsSorted(true);
         break;
       default :
         setFiltredPokemon(props.items);
@@ -90,9 +91,13 @@ function Pagination(props) {
             {hasShiny.length > 0 &&
               <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
             }
-            <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
+            <button className="filterButton" onClick={sortPokemon} value="2">Captures décroissantes</button>
           </div>
-      <Items currentItems={currentItems}/>
+      {isSorted === false ?
+          <Items currentItems={currentItems}/>
+      :
+          <Items currentItems={currentItems.sort((a, b) => b.nbCapture - a.nbCapture)}/>
+      }
       <ReactPaginate
           className="paginateLay"
         breakLabel="..."
