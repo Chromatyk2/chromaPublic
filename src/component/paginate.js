@@ -76,7 +76,7 @@ function Pagination(props) {
       case "3" :
         setIsSorted(false);
         var endOffset = itemOffset + props.itemsPerPage;
-        setCurrentItems(currentItems.slice(itemOffset, endOffset))
+        setCurrentItems(currentItems.sort((a, b) => b.nbCapture + a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
         break;
       default :
         setFiltredPokemon(props.items);
