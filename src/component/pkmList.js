@@ -15,6 +15,7 @@ function PkmList(props) {
                 <p className="labelStats">Total<br/><span className="valueStats">{nbTotal}</span></p>
             </div>
             <p style={{textAlign: "center", color: "white"}}>{"Captures totales = " + props.totalPkm}</p>
+            <p style={{textAlign: "center", color: "white"}}>Clique sur les Pokémons pour + de détails</p>
             <Pagination
                 itemsPerPage={32}
                 items={props.list}
