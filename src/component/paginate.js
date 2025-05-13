@@ -62,7 +62,7 @@ function Pagination(props) {
         setFiltredPokemon(props.items.filter(item => item.shiny == 1));
         break;
       case "2" :
-        setFiltredPokemon(props.items.nbCapture.sort((a, b) => b - a));
+        setFiltredPokemon(props.items.sort((a, b) => b.nbCapture - a.nbCapture));
         break;
       default :
         setFiltredPokemon(props.items);
