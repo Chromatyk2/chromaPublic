@@ -55,13 +55,13 @@ function Pagination(props) {
     let sort = e.target.value;
     console.log(sort)
     switch (sort){
-      case 0 :
+      case "0" :
         setFiltredPokemon(props.items);
         break;
-      case 1 :
+      case "1" :
         setFiltredPokemon(props.items.filter(item => item.shiny == 1));
         break;
-      case 2 :
+      case "2" :
         setFiltredPokemon(props.items.nbCapture.sort((a, b) => b - a));
         break;
       default :
