@@ -24,6 +24,9 @@ function MyCaptures(props) {
                 </div>
               })
           }
+            {props.captures.length > 4 &&
+                <button> Sacrifier 5 pour avoir ce pokemon en shiny</button>
+            }
         </div>
       </>
     );
