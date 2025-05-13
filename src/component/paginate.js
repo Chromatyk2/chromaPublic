@@ -58,7 +58,11 @@ function Pagination(props) {
   useEffect(() => {
     setFiltredPokemon(props.items);
     const endOffset = itemOffset + props.itemsPerPage;
-    setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
+    if(isSorted === true){
+      setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
+    }else{
+      setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
+    }
   }, [isSorted]);
   function handlePokemon(e) {
     let sort = e.target.value;
