@@ -58,10 +58,10 @@ function Pagination(props) {
         setFiltredPokemon(props.items);
         break;
       case 1 :
-        ssetFiltredPokemon(props.items.filter(item => item.shiny == shiny));
+        setFiltredPokemon(props.items.filter(item => item.shiny == 1));
         break;
       case 2 :
-        ssetFiltredPokemon(props.items.nbCapture.sort((a, b) => b - a));
+        setFiltredPokemon(props.items.nbCapture.sort((a, b) => b - a));
         break;
       default :
         setFiltredPokemon(props.items);
