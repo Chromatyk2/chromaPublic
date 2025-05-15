@@ -61,6 +61,7 @@ function Pagination(props) {
     let sort = e.target.value;
     setCurrentItems(null)
     console.log(filtredPokemon);
+    console.log(props.items);
     switch (sort){
       case "0" :
         setIsShiny(false);
@@ -118,7 +119,6 @@ function Pagination(props) {
   const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    console.log(event.selected)
     var start = event.selected * props.itemsPerPage;
     var endOffset = start + props.itemsPerPage;
     setCurrentItems(filtredPokemon.slice(start,endOffset))
