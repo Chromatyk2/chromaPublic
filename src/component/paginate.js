@@ -57,6 +57,7 @@ function Pagination(props) {
     setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
   }, []);
   function handlePokemon(e) {
+    setFiltredPokemon(props.items)
     let sort = e.target.value;
     setCurrentItems(null)
     switch (sort){
