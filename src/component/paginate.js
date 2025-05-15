@@ -90,7 +90,7 @@ function Pagination(props) {
           setFiltredPokemon(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture))
         }else{
           setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
-          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
+          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture))
         }
         break;
       case "3" :
