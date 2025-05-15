@@ -60,6 +60,7 @@ function Pagination(props) {
     setFiltredPokemon(props.items)
     let sort = e.target.value;
     setCurrentItems(null)
+    console.log(filtredPokemon);
     switch (sort){
       case "0" :
         setIsShiny(false);
