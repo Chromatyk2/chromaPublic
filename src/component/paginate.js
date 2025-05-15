@@ -113,8 +113,10 @@ function Pagination(props) {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     var newOffset = ((event.selected + 1) * props.itemsPerPage);
+    console.log(newOffset);
     setItemOffset(newOffset);
     var endOffset = itemOffset + props.itemsPerPage;
+    console.log(endOffset);
     setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
   };
 console.log(currentItems);
