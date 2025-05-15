@@ -115,7 +115,7 @@ function Pagination(props) {
     var newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
     setItemOffset(newOffset);
     var endOffset = itemOffset + props.itemsPerPage;
-    setCurrentItems(currentItems.slice(itemOffset, endOffset))
+    setCurrentItems(filtredPokemon.slice(itemOffset, endOffset))
   };
 console.log(currentItems);
   return (
