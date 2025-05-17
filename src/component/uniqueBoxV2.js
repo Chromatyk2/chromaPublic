@@ -156,16 +156,16 @@ function UniqueBoxV2(props) {
                         <img className={"imgInBox"}
                              src={"/images/jaquettes/" + props.consolePicked + "/jaquette (" + randomNumber + ").png"}/>
                         {typeBox == "ultra" ?
-                            <p className={"textResultBoxUltra"}>Bravo tu gagne 25 Tokens de ton choix !</p>
+                            <p className={"textResultBoxUltra"}>Bravo tu gagne 25 Tokens<br/> de ton choix !</p>
                             :
                             typeBox == "legendary" ?
-                            <p className={"textResultBoxLegendary"}>Bravo tu gagne 10 Tokens de ton choix !</p>
+                            <p className={"textResultBoxLegendary"}>Bravo tu gagne 10 Tokens<br/> de ton choix !</p>
                             :
                             typeBox == "epic" ?
-                            <p className={"textResultBoxEpic"}>Bravo tu gagne 5 Tokens de ton choix !</p>
-                            :
+                                <p className={"textResultBoxEpic"}>Bravo tu gagne 5 Tokens<br/> de ton choix !</p>
+                                :
                             typeBox == "rare" &&
-                            <p className={"textResultBoxRare"}>Bravo tu gagne 1 Tokens de ton choix !</p>
+                                <p className={"textResultBoxRare"}>Bravo tu gagne 1 Tokens<br/> de ton choix !</p>
                         }
                     </div>
                 }
