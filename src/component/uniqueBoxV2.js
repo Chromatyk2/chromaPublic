@@ -155,6 +155,7 @@ function UniqueBoxV2(props) {
                          id={"imgGame" + randomNumber}>
                         <img className={"imgInBox"}
                              src={"/images/jaquettes/" + props.consolePicked + "/jaquette (" + randomNumber + ").png"}/>
+                        <p>Bravo tu gagne rien !</p>
                     </div>
                 }
                 <div style={{animationIterationCount: 20}} id={"boxBefore"}>
