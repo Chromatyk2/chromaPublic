@@ -62,38 +62,50 @@ function Pagination(props) {
     switch (sort){
       case "0" :
         setIsShiny(false);
-        var endOffset = itemOffset + props.itemsPerPage;
+        var start = 0;
+        var endOffset = start + props.itemsPerPage;
         if(isSorted === false){
-          setCurrentItems(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId).slice(itemOffset, endOffset))
+          setCurrentItems(props.items.sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
+          setFiltredPokemon(props.items.sort((a, b) => a.pkmId - b.pkmId))
         }else{
-          setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
+          setCurrentItems(props.items.sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
+          setFiltredPokemon(props.items.sort((a, b) => b.nbCapture - a.nbCapture))
         }
         break;
       case "1" :
         setIsShiny(true);
-        var endOffset = itemOffset + props.itemsPerPage;
+        var start = 0;
+        var endOffset = start + props.itemsPerPage;
         if(isSorted === false){
-          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId).slice(itemOffset, endOffset))
+          setCurrentItems(props.items.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
+          setFiltredPokemon(props.items.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId))
         }else{
-          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset))
+          setCurrentItems(props.items.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
+          setFiltredPokemon(props.items.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture))
         }
         break;
       case "2" :
         setIsSorted(true);
-        var endOffset = itemOffset + props.itemsPerPage;
+        var start = 0;
+        var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
-          setCurrentItems(filtredPokemon.sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
+          setCurrentItems(props.items.sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
+          setFiltredPokemon(props.items.sort((a, b) => b.nbCapture - a.nbCapture))
         }else{
-          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(itemOffset, endOffset).slice(itemOffset, endOffset))
+          setCurrentItems(props.items.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
+          setFiltredPokemon(props.items.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture))
         }
         break;
       case "3" :
         setIsSorted(false);
-        var endOffset = itemOffset + props.itemsPerPage;
+        var start = 0;
+        var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
-          setCurrentItems(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId).slice(itemOffset, endOffset))
+          setCurrentItems(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId))
         }else{
-          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId).slice(itemOffset, endOffset))
+          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId))
         }
         break;
       default :
@@ -104,10 +116,10 @@ function Pagination(props) {
   const pageCount = Math.ceil(filtredPokemon.length / props.itemsPerPage);
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
-    setItemOffset(newOffset);
+    var start = event.selected * props.itemsPerPage;
+    var endOffset = start + props.itemsPerPage;
+    setCurrentItems(filtredPokemon.slice(start,endOffset))
   };
-
   return (
       <>
         {currentItems &&
