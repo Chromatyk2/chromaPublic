@@ -291,6 +291,8 @@ function Profil(props) {
                                         :
                                         <button disabled={openTime} className={"openLeaderBoardButton"}
                                                 style={{
+                                                    width: "120px",
+                                                    backgroundSize: "80px",
                                                     filter: "drop-shadow(0px 0px 15px white)",
                                                     backgroundImage: "url(/token.png)"
                                                 }}>
