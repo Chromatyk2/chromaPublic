@@ -926,10 +926,10 @@ p.filterTitle {
     font-weight: bold;
     text-align: center;
     color: #120747;
-    font-size: 50px;
+    font-size: 20px;
     background: none;
     letter-spacing: 0px;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    text-shadow: 2px 0px red, -2px 0px red, 0px 2px red, 0px -2px red, 1px 1px red, -1px -1px red, 1px -1px red, -1px 1px red;
 }
 .infoShiny{
     left: 90px;

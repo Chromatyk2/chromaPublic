@@ -212,7 +212,7 @@ function MyCardsSet(props) {
                                         return (
                                             <div style={{position:"relative", animation: "glowGetRainbow 10s infinite alternate"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                                {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"15px",bottom:"8px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+                                                {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"8px",top:"2px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                      image={val.image} stade={stadeC} className="cardBangerAlertSet">
                                                     <LazyLoadImage
@@ -243,7 +243,7 @@ function MyCardsSet(props) {
                                                  style={{position:"relative", filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
-                                                    className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"15px",bottom:"8px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+                                                    className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"8px",top:"2px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                      image={val.image} stade={stadeC}
                                                      className="cardBangerAlertSetThree">
@@ -272,7 +272,7 @@ function MyCardsSet(props) {
                                         return (
                                             <button stade={stadeC} style={customStyles.buttonMyCard}
                                                     className={"cardBox"}>
-                                                {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"15px",bottom:"8px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+                                                {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"8px",top:"2px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
