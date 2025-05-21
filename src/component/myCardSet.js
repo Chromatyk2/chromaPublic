@@ -317,7 +317,7 @@ function MyCardsSet(props) {
                                             effect="opacity"
                                             wrapperProps={{
                                                 // If you need to, you can tweak the effect transition using the wrapper style.
-                                                style: {transitionDelay: "0.1s"},
+                                                style: {width:"350px", transitionDelay: "0.1s"},
                                             }}
                                             src={"https://assets.tcgdex.net/"+lang+"/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>                                    )
                                 }
