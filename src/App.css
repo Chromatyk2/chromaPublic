@@ -5138,7 +5138,7 @@ img#imgModal {
     transition-property: -webkit-transform;
     transition-property: transform;
     transition-property: transform,-webkit-transform;
-    width: 400px;
+    width: 300px;
     will-change: transform;
 }
 .cardBangerAlertSetThree:before {
