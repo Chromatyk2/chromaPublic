@@ -9,7 +9,7 @@ import ProgressBarCard from "./progressBarCard";
 import UniqueCard from "./UniqueCard.js";
 import Modal from "react-modal";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/opacity.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
@@ -225,7 +225,7 @@ function MyCardsSet(props) {
                                                         width={"350"}
                                                         style={{width: "350px", filter: "brightness(1)"}}
                                                         wrapperClassName={"shadowBangerCard"}
-                                                        effect="opacity"
+                                                        effect="blur"
                                                         threshold={200}
                                                         delayTime={5}
                                                         wrapperProps={{
@@ -259,7 +259,7 @@ function MyCardsSet(props) {
                                                         width={"350"}
                                                         style={{width: "350px", filter: "brightness(1.2)"}}
                                                         wrapperClassName={"shadowBangerCard"}
-                                                        effect="opacity"
+                                                        effect="blur"
                                                         wrapperProps={{
                                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                                             style: {transitionDelay: "0.1s"},
@@ -288,7 +288,7 @@ function MyCardsSet(props) {
                                                     cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                     image={val.image}
                                                     wrapperClassName={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                                                    effect="opacity"
+                                                    effect="blur"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
@@ -314,7 +314,7 @@ function MyCardsSet(props) {
                                             stade={stadeC}
                                             image={val.image}
                                             wrapperClassName={"fit-picture-card"}
-                                            effect="opacity"
+                                            effect="blur"
                                             wrapperProps={{
                                                 // If you need to, you can tweak the effect transition using the wrapper style.
                                                 style: {width:"350px", transitionDelay: "0.1s"},
