@@ -52,8 +52,8 @@ function MyCardsSet(props) {
             border:'none',
             background:'none',
             padding:0,
-            width:"250px",
-            height:"350px",
+            width:"400px",
+            height:"600px",
             position:"relative"
         },
     };
@@ -210,7 +210,7 @@ function MyCardsSet(props) {
                                     let cardNb = myCards.find((myCard) => myCard.card === val.id);
                                     if(stadeC == 4){
                                         return (
-                                            <div style={{position:"relative", animation: "glowGetRainbow 10s infinite alternate"}}
+                                            <div style={{width:"400px",position:"relative", animation: "glowGetRainbow 10s infinite alternate"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"8px",top:"2px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
                                                 <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
@@ -222,7 +222,7 @@ function MyCardsSet(props) {
                                                         onError={(e) => errorImages(e, val.localId.startsWith("SV") ? "sma" : props.idBooster, val.localId)}
                                                         alt="Grapefruit slice atop a pile of other slices"
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
-                                                        width={"250"}
+                                                        width={"400"}
                                                         style={{width: "250px", filter: "brightness(1)"}}
                                                         wrapperClassName={"shadowBangerCard"}
                                                         effect="opacity"
@@ -240,7 +240,7 @@ function MyCardsSet(props) {
                                         return (
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} stade={stadeC}
-                                                 style={{position:"relative", filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
+                                                 style={{width:"400px",position:"relative", filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                  id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                 {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
                                                     className="infoNbCard" style={{zIndex:"1",width:"30px",height:"30px",lineHeight:"30px",left:"8px",top:"2px"}}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
@@ -256,7 +256,7 @@ function MyCardsSet(props) {
                                                         delayTime={0}
                                                         threshold={200}
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
-                                                        width={"250"}
+                                                        width={"400"}
                                                         style={{width: "250px", filter: "brightness(1.2)"}}
                                                         wrapperClassName={"shadowBangerCard"}
                                                         effect="opacity"
@@ -282,7 +282,7 @@ function MyCardsSet(props) {
                                                     delayTime={0}
                                                     threshold={200}
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
-                                                    width={"250"}
+                                                    width={"400"}
                                                     stade={stadeC}
                                                     style={{filter: stadeC == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : stadeC == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : stadeC == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                     cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
@@ -309,7 +309,7 @@ function MyCardsSet(props) {
                                             placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                             delayTime={0}
                                             threshold={200}
-                                            width={"250"}
+                                            width={"400"}
                                             style={{filter:"grayscale(1)"}}
                                             stade={stadeC}
                                             image={val.image}
