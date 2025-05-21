@@ -53,7 +53,7 @@ function MyCardsSet(props) {
             background:'none',
             padding:0,
             width:"300px",
-            height:"600px",
+            height:"420px",
             position:"relative"
         },
     };
