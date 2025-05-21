@@ -1609,7 +1609,7 @@ object{
     width: 150px;
 }
 .lazy-load-image-background.opacity.lazy-load-image-loaded img{
-    width: 250px;
+    width: 400px;
 }
 .fit-picture-card{
     width:250px ;

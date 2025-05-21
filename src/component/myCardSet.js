@@ -223,7 +223,7 @@ function MyCardsSet(props) {
                                                         alt="Grapefruit slice atop a pile of other slices"
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                         width={"400"}
-                                                        style={{width: "250px", filter: "brightness(1)"}}
+                                                        style={{width: "400px", filter: "brightness(1)"}}
                                                         wrapperClassName={"shadowBangerCard"}
                                                         effect="opacity"
                                                         threshold={200}
@@ -257,7 +257,7 @@ function MyCardsSet(props) {
                                                         threshold={200}
                                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                         width={"400"}
-                                                        style={{width: "250px", filter: "brightness(1.2)"}}
+                                                        style={{width: "400px", filter: "brightness(1.2)"}}
                                                         wrapperClassName={"shadowBangerCard"}
                                                         effect="opacity"
                                                         wrapperProps={{
