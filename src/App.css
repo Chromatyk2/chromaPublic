@@ -1609,7 +1609,7 @@ object{
     width: 150px;
 }
 .lazy-load-image-background.opacity.lazy-load-image-loaded img{
-    width: 400px;
+    width: 250px;
 }
 .fit-picture-card{
     width:250px ;
@@ -5138,7 +5138,7 @@ img#imgModal {
     transition-property: -webkit-transform;
     transition-property: transform;
     transition-property: transform,-webkit-transform;
-    width: 250px;
+    width: 400px;
     will-change: transform;
 }
 .cardBangerAlertSetThree:before {
