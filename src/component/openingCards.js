@@ -397,7 +397,7 @@ function OpeningCards(props) {
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
                         if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
-                            var stadeC = props.rarities.find((uc) => uc.rarity.toUpperCase() === val.rarity.toUpperCase()).stade;
+                            var stadeC = props.rarities.find((uc) => uc.nameGuru.toUpperCase() === val.booster.toUpperCase()).find((uc) => uc.rarity.toUpperCase() === val.rarity.toUpperCase()).stade;
                         } else {
                             var stadeC = 0;
                         }
