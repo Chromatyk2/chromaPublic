@@ -29,8 +29,8 @@ function OpeningCards(props) {
     const [thingsBooster, setThingsBooster] = useState(true);
 
     useEffect(() => {
-        var tokenBonus = Math.floor(Math.random() * 10);
-        if(tokenBonus === 5){
+        var tokenBonus = Math.floor(Math.random() * 5);
+        if(tokenBonus === 2){
             setGetToken(true);
             Axios.post('/api/addPkmToken',
                 {
