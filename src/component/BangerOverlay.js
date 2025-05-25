@@ -49,7 +49,7 @@ function BangerOverlay(props) {
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
-                <button id={"buttonBoxWII"} onClick={openModal} className={"uniqueBoxContainer"}>
+                <button style={{border:"none"}} id={"buttonBoxWII"} onClick={openModal}>
                     <img uConsole={"WII"} className={"imgBox"} src={"/basic.png"}/>
                 </button>
             </div>
