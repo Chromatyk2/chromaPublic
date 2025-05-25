@@ -13,7 +13,7 @@ function BangerOverlay(props) {
     const [randomConsoles, setRandomConsoles] = React.useState(null);
     var numbers = [1,2];
     useEffect(() => {
-        var consoles = ["GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM"];
+        var consoles = ["WII"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
     }, []);
     const customStyles = {

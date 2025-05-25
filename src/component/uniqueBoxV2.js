@@ -48,6 +48,15 @@ function UniqueBoxV2(props) {
         if(props.consolePicked == "SNES"){
             setMax(458);
         }
+        if(props.consolePicked == "DREAMCAST"){
+            setMax(77);
+        }
+        if(props.consolePicked == "GAMEGEAR"){
+            setMax(370);
+        }
+        if(props.consolePicked == "WII"){
+            setMax(50);
+        }
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
