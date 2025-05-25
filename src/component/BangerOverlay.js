@@ -34,9 +34,8 @@ function BangerOverlay(props) {
         },
     };
     function openModal(e) {
-        var uConsole = e.target.getAttribute("uConsole");
-        var buttonClick = document.getElementById("buttonBox"+uConsole);
-        setPickConsole(uConsole);
+        var buttonClick = document.getElementById("buttonBoxWII");
+        setPickConsole("WII");
         buttonClick.classList.toggle("getBox");
         setTimeout(function() { //Start the timer
             setIsOpen(true);
@@ -50,7 +49,6 @@ function BangerOverlay(props) {
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
-
                 <button id={"buttonBoxWII"} onClick={openModal} className={"uniqueBoxContainer"}>
                     <img uConsole={"WII"} className={"imgBox"} src={"/basic.png"}/>
                 </button>
