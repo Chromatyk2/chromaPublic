@@ -11,7 +11,7 @@ function BangerOverlay(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [pickConsole, setPickConsole] = React.useState("null");
     const [randomConsoles, setRandomConsoles] = React.useState(null);
-    var numbers = [1,2];
+    var numbers = [1,2,3,4,5,6,7,8,9,10];
     useEffect(() => {
         var consoles = ["WII"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
@@ -20,13 +20,13 @@ function BangerOverlay(props) {
         content: {
             position:'initial',
             border: 'none',
-            background: 'none',
+            background: 'transparent!important',
             borderRadius: '4px',
             width: '100%',
             height: '100vh',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center', overflow:'hidden'
         },
         textModal: {
             fontSize:'30px',
@@ -40,28 +40,28 @@ function BangerOverlay(props) {
         buttonClick.classList.toggle("getBox");
         setTimeout(function() { //Start the timer
             setIsOpen(true);
+            document.getElementById("boxContainerId").style.visibility = "hidden";
         }.bind(this), 800)
     }
     function handleState() {
         setIsOpen(false);
+        document.getElementById("boxContainerId").style.visibility = "visible";
     }
     return(
         <>
-            <div className="boxContainer">
-                {randomConsoles &&
-                    numbers.map((val, key) => {
-                        return (
-                            <button id={"buttonBox"+randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>{val}</p>
-                                <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
-                            </button>
-                        )
-                    })}
+            <div id={"boxContainerId"} className="boxContainer">
+
+                <button id={"buttonBox" + randomConsoles[numbers[0]]} onClick={openModal} className={"uniqueBoxContainer"}>
+                    <p className={"nbBox"}>{numbers[0]}</p>
+                    <img uConsole={randomConsoles[numbers[0]]} className={"imgBox"} src={"/basic.png"}/>
+                </button>
             </div>
-            <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Example Modal">
-                <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
+            <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content}
+                   contentLabel="Example Modal" id={"modalBoxNostal"}>
+                <UniqueBoxV2 consolePicked={pickConsole} change={handleState}/>
             </Modal>
         </>
     )
 }
+
 export default BangerOverlay
