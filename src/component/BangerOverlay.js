@@ -51,9 +51,8 @@ function BangerOverlay(props) {
         <>
             <div id={"boxContainerId"} className="boxContainer">
 
-                <button id={"buttonBox" + randomConsoles[numbers[0]]} onClick={openModal} className={"uniqueBoxContainer"}>
-                    <p className={"nbBox"}>{numbers[0]}</p>
-                    <img uConsole={randomConsoles[numbers[0]]} className={"imgBox"} src={"/basic.png"}/>
+                <button id={"buttonBoxWII"} onClick={openModal} className={"uniqueBoxContainer"}>
+                    <img uConsole={"WII"} className={"imgBox"} src={"/basic.png"}/>
                 </button>
             </div>
             <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content}
