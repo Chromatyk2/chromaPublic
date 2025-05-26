@@ -27,8 +27,11 @@ function LastGames(props) {
     }, []);
     return(
         <>
-                <img src={"/public/images/jaquettes/"+lastGames[0].console+"/"+lastGames[0].title} />
+            {lastGames &&
+                <img src={"/public/images/jaquettes/" + lastGames[0].console + "/" + lastGames[0].title}/>
+            }
         </>
     )
 }
+
 export default LastGames
