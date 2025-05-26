@@ -28,7 +28,7 @@ function LastGames(props) {
     return(
         <>
             {lastGames &&
-                <img src={"/public/images/jaquettes/" + lastGames[0].console + "/" + lastGames[0].title}/>
+                <img src={"/images/jaquettes/" + lastGames[0].console + "/" + lastGames[0].title}/>
             }
         </>
     )
