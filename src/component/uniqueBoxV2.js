@@ -156,6 +156,14 @@ function UniqueBoxV2(props) {
         props.change();
     }
 
+    useEffect(() => {
+
+        Axios.post('/api/addPkmToken',
+            {
+                image:"jaquette (" + randomNumber + ").png"
+            }
+        )
+    }, [randomNumber]);
     return(
         <>
             <div>
