@@ -161,7 +161,7 @@ function UniqueBoxV2(props) {
         Axios.post('/api/addCurrentImage',
             {
                 title:"jaquette (" + randomNumber + ").png",
-                console:props.consolePicked
+                plateforme:props.consolePicked
 
             }
         )
