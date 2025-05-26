@@ -157,14 +157,16 @@ function UniqueBoxV2(props) {
     }
 
     useEffect(() => {
+        if(randomNumber !== null){
+            Axios.post('/api/addCurrentImage',
+                {
+                    title:"Jaquette (" + randomNumber + ").png",
+                    plateforme:props.consolePicked
 
-        Axios.post('/api/addCurrentImage',
-            {
-                title:"Jaquette (" + randomNumber + ").png",
-                plateforme:props.consolePicked
+                }
+            )
 
-            }
-        )
+        }
     }, [randomNumber]);
     return(
         <>

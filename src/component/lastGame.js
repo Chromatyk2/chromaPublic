@@ -14,13 +14,9 @@ function LastGames(props) {
     useEffect(() => {
         const interval = setInterval(() => {
             Axios.get('/api/lastGame')
-            .then(function(response){
-                const newElement = document.createElement('span');
-                newElement.innerText = response.data[0].title;
-                return (
-                    <div id="non-portal" ref={node => node.appendChild(newElement)}></div>
-                )
-            })
+                .then(function(response){
+                    setLastGames(response.data);
+                })
         }, 10000);
 
         return () => clearInterval(interval);
