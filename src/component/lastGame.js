@@ -27,18 +27,7 @@ function LastGames(props) {
     }, []);
     return(
         <>
-            {lastGames &&
-                lastGames.map((val, key) => {
-                    return(
-                        <>
-                            <div className="lastGameContainer">
-                                <p>{val.title}</p>
-                                <p>{val.console}</p>
-                            </div>
-                        </>
-                    )
-                })
-            }
+                <img src={"/public/images/jaquettes/"+lastGames[0].console+"/"+lastGames[0].title} />
         </>
     )
 }

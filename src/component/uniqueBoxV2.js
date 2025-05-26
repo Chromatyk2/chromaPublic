@@ -158,7 +158,7 @@ function UniqueBoxV2(props) {
 
     useEffect(() => {
 
-        Axios.post('/api/addPkmToken',
+        Axios.post('/api/addCurrentImage',
             {
                 image:"jaquette (" + randomNumber + ").png"
             }
