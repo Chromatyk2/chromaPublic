@@ -14,13 +14,9 @@ function LastGames(props) {
     useEffect(() => {
         const interval = setInterval(() => {
             Axios.get('/api/lastGame')
-            .then(function(response){
-                const newElement = document.createElement('span');
-                newElement.innerText = response.data[0].title;
-                return (
-                    <div id="non-portal" ref={node => node.appendChild(newElement)}></div>
-                )
-            })
+                .then(function(response){
+                    setLastGames(response.data);
+                })
         }, 10000);
 
         return () => clearInterval(interval);
@@ -28,18 +24,14 @@ function LastGames(props) {
     return(
         <>
             {lastGames &&
-                lastGames.map((val, key) => {
-                    return(
-                        <>
-                            <div className="lastGameContainer">
-                                <p>{val.title}</p>
-                                <p>{val.console}</p>
-                            </div>
-                        </>
-                    )
-                })
+                <img style={{width: "500px",
+                    position: "absolute",
+                    top: "300px",
+                    left: 0,
+                    right: 0}} src={"/images/jaquettes/" + lastGames[0].console + "/" + lastGames[0].title}/>
             }
         </>
     )
 }
+
 export default LastGames

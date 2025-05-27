@@ -156,6 +156,18 @@ function UniqueBoxV2(props) {
         props.change();
     }
 
+    useEffect(() => {
+        if(randomNumber !== null){
+            Axios.post('/api/addCurrentImage',
+                {
+                    title:"Jaquette (" + randomNumber + ").png",
+                    plateforme:props.consolePicked
+
+                }
+            )
+
+        }
+    }, [randomNumber]);
     return(
         <>
             <div>
