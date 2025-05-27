@@ -20,10 +20,10 @@ function LastGames(props) {
                             .then(function(response){
                                 setLastGames(response.data);
                             })
-                    }, 10000);
+                    }, 30000);
                     return () => clearInterval(intervalDisplay);
                 })
-        }, 50000);
+        }, 10000);
 
         return () => clearInterval(interval);
     }, []);
