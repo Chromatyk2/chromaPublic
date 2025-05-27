@@ -15,13 +15,9 @@ function LastGames(props) {
         const interval = setInterval(() => {
             Axios.get('/api/lastGame')
                 .then(function(response){
-                    const intervalDisplay = setInterval(() => {
-                        Axios.get('/api/lastGame')
-                            .then(function(response){
-                                setLastGames(response.data);
-                            })
-                    }, 30000);
-                    return () => clearInterval(intervalDisplay);
+                    setTimeout(function() { //Start the timer
+                         setLastGames(response.data);
+                    }.bind(this), 800)
                 })
         }, 10000);
 
