@@ -5,10 +5,17 @@ import Axios from 'axios';
 function CurrentGameImage(props) {
     const [currentGame, setCurrentGame] = useState(null);
     useEffect(() => {
-        Axios.get('/api/getCurrentGame')
-            .then(function(response){
-                setCurrentGame(response.data[0].image);
-            })
+        const interval = setInterval(
+            () =>
+                Axios.get('/api/getCurrentGame')
+                    .then(function(response){
+                        setCurrentGame(response.data[0].image);
+                    })
+            , 5000
+        );
+        return () => {
+            clearInterval(interval);
+        };
     }, [])
     if(currentGame !== null){
         return(
