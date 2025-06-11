@@ -48,7 +48,7 @@ function App() {
       {cookies.user !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
-        {/*<OnStream />*/}
+        <OnStream />
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
