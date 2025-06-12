@@ -112,7 +112,7 @@ function OnStream() {
                     bottom: "0px",
                     left: "0px",
                     width: "300px"}}>
-                    {displayStream !== false ?
+                    {displayStream === true ?
                         <button onClick={hiddeStream}>Fermer le stream</button>
                         :
                         <button onClick={showStream}>Voir le stream</button>
