@@ -92,6 +92,10 @@ function OnStream() {
 
         document.getElementById("twitchPlayer").style.height = 0;
     }
+    function showStream() {
+        setDisplayStream(true);
+        document.getElementById("twitchPlayer").style.height = "auto";
+    }
     return (
         <>
             {stream &&
@@ -109,9 +113,14 @@ function OnStream() {
                     bottom: "0px",
                     left: "0px",
                     width: "300px"}}>
-                    <button onClick={hiddeStream}>Fermer le stream</button>
+                    {displayStream !== false ?
+                        <button onClick={hiddeStream}>Fermer le stream</button>
+                        :
+                        <button onClick={showStream}>Fermer le stream</button>
+
+                    }
                     <div id={"twitchPlayer"} className="twitch">
-                        <div className="twitch-video">
+                    <div className="twitch-video">
                             <iframe
                                 src="https://player.twitch.tv/?channel=taelth&parent=chromatyk.fr&autoplay=true&muted=false"
                                 frameBorder="0"
