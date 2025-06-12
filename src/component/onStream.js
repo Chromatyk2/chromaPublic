@@ -98,16 +98,26 @@ function OnStream() {
                     left: "0px",
                     width: "300px"}}>
                     {displayStream === true ?
-                        <button onClick={hiddeStream}>Fermer le stream</button>
+                        <button style={{
+                            width: "300px",
+                            color: "white",
+                            background: "none",
+                            border: "none",
+                            textAlign: "center"}} onClick={hiddeStream}>Fermer le stream</button>
                         :
-                        <button onClick={showStream}>Voir le stream</button>
+                        <button style={{
+                            width: "300px",
+                            color: "white",
+                            background: "none",
+                            border: "none",
+                            textAlign: "center"}} onClick={showStream}>Voir le stream</button>
 
                     }
                     <div className="twitch">
                     <div className="twitch-video">
                             <iframe
                                 id={"twitchPlayer"}
-                                src="https://player.twitch.tv/?channel=taelth&parent=chromatyk.fr&autoplay=true&muted=false"
+                                src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
                                 frameBorder="0"
                                 scrolling="no"
                                 allowFullScreen="true"
