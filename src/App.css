@@ -5700,3 +5700,6 @@ div.fit-picture{
  transform: scale(0);
     transition: .5s;
 }
+#twitchPlayer{
+    transition: height .5s;
+}
