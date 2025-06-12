@@ -87,16 +87,6 @@ function OnStream() {
             })
         }, 60000)
     }, [])
-    function displayStreamOff() {
-        setDisplayStream(false);
-    }
-    function displayStreamOn() {
-        setDisplayStream(true);
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
     return (
         <>
             {stream &&
@@ -109,6 +99,7 @@ function OnStream() {
             }
             {stream &&
                         <div style={{visibility: "visible",position: "absolute",height: "auto", bottom: 0, left: 0, width: "300px"}} className="twitch">
+                            <button>Fermer le stream</button>
                             <div className="twitch-video">
                                 <iframe
                                     src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
@@ -121,17 +112,6 @@ function OnStream() {
                             </div>
                         </div>
             }
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-            >
-                <button style={customStyles.button} onClick={closeModal}>x</button>
-                <p>Chromatyk est en stream !</p>
-                <p>Rejoint le en cliquant ici :</p>
-                <a style={{position:"initial"}} className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{display:"block", margin:"auto",width: "50px"}} src={Twitch}/></a>
-            </Modal>
         </>
 
     );
