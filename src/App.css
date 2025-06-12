@@ -4427,26 +4427,6 @@ span.navbar-brand {
     .contentContainer {
         padding-top: 140px;
     }
-    .twitch {
-        position: relative;
-        margin-bottom: 50px;
-    }
-
-    .twitch .twitch-video {
-        padding-top: 23.1875%;
-        width: 40%;
-        display: block;
-        margin: auto;
-    }
-
-    .twitch .twitch-chat {
-        bottom: 0;
-        height: auto;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 30%;
-    }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {
     button.anchorTooltip.uniquePokemonContainerTeam {

@@ -107,7 +107,8 @@ function OnStream() {
                     :
                 <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/></a>
             }
-                        <div style={displayStream === false ? {visibility:"hidden", height:0, position: "absolute",zIndex: "-10"} : {visibility:"visible", position: "absolute",zIndex: "-10"}} className="twitch">
+            {stream &&
+                        <div style={{visibility: "visible",position: "absolute",height: "300px", bottom: 0, left: 0, width: "300px"}} className="twitch">
                             <div className="twitch-video">
                                 <iframe
                                     src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
@@ -119,6 +120,7 @@ function OnStream() {
                                 </iframe>
                             </div>
                         </div>
+            }
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
