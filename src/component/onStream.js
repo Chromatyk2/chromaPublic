@@ -98,19 +98,28 @@ function OnStream() {
                 <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/></a>
             }
             {stream &&
-                        <div style={{visibility: "visible",position: "absolute",height: "auto", bottom: 0, left: 0, width: "300px"}} className="twitch">
-                            <button>Fermer le stream</button>
-                            <div className="twitch-video">
-                                <iframe
-                                    src="https://player.twitch.tv/?channel=taelth&parent=chromatyk.fr&autoplay=true&muted=false"
-                                    frameBorder="0"
-                                    scrolling="no"
-                                    allowFullScreen="true"
-                                    height="720"
-                                    width="1280">
-                                </iframe>
-                            </div>
+                <div>
+                    <button>Fermer le stream</button>
+                    <div id={"twitchPlayer"} style={{
+                        visibility: "visible",
+                        position: "absolute",
+                        height: "auto",
+                        bottom: 0,
+                        left: 0,
+                        width: "300px"
+                    }} className="twitch">
+                        <div className="twitch-video">
+                            <iframe
+                                src="https://player.twitch.tv/?channel=taelth&parent=chromatyk.fr&autoplay=true&muted=false"
+                                frameBorder="0"
+                                scrolling="no"
+                                allowFullScreen="true"
+                                height="720"
+                                width="1280">
+                            </iframe>
                         </div>
+                    </div>
+                </div>
             }
         </>
 
