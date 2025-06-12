@@ -5681,4 +5681,6 @@ div.fit-picture{
 }
 #twitchPlayer{
     transition: height .5s;
+    height: auto;
+    width: 300px;
 }
