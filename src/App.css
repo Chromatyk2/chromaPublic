@@ -2632,27 +2632,6 @@ span.navbar-brand {
     position: absolute;
     top: 0;
 }
-
-.twitch .twitch-video {
-    padding-top: 56.25%;
-    position: relative;
-    height: 0;
-}
-
-.twitch .twitch-video iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-}
-.twitch .twitch-chat {
-    height: 400px;
-}
-
-.twitch .twitch-chat iframe {
-    width: 100%;
-    height: 100%;
-}
 /*
   The css for the pokeball sprites is quite long, but fairly simple.
   And the bouncing animation is cute, but again pretty straight-forward with
