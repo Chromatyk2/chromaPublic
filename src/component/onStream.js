@@ -87,6 +87,11 @@ function OnStream() {
             })
         }, 60000)
     }, [])
+    function hiddeStream() {
+        setDisplayStream(false);
+
+        document.getElementById("twitchPlayer").style.height = 0;
+    }
     return (
         <>
             {stream &&
@@ -99,7 +104,7 @@ function OnStream() {
             }
             {stream &&
                 <div>
-                    <button>Fermer le stream</button>
+                    <button onClick={hiddeStream}>Fermer le stream</button>
                     <div id={"twitchPlayer"} style={{
                         visibility: "visible",
                         position: "absolute",
