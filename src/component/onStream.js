@@ -119,9 +119,10 @@ function OnStream() {
                         <button onClick={showStream}>Fermer le stream</button>
 
                     }
-                    <div id={"twitchPlayer"} className="twitch">
+                    <div className="twitch">
                     <div className="twitch-video">
                             <iframe
+                                id={"twitchPlayer"}
                                 src="https://player.twitch.tv/?channel=taelth&parent=chromatyk.fr&autoplay=true&muted=false"
                                 frameBorder="0"
                                 scrolling="no"
