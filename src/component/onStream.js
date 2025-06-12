@@ -17,11 +17,8 @@ import UniqueBoxV2 from "./uniqueBoxV2";
 
 function OnStream() {
     const [cookies, setCookie] = useCookies();
-    const [count, setCount] = useState(0);
     const [stream, setStream] = useState(null);
-    const [meetUp, setMeetUp] = useState(null);
     const [displayStream, setDisplayStream] = useState(true);
-    const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const pseudo = cookies.user.data[0].login;
     const customStyles = {
@@ -56,12 +53,6 @@ function OnStream() {
                 }
             ).then(function(response){
                 setStream(response.data);
-                if(response.data.length > 0){
-                    setDisplayStream(true)
-                    setIsOpen(true)
-                }else{
-                    setDisplayStream(false)
-                }
             })
     }, [])
 
@@ -78,12 +69,6 @@ function OnStream() {
                 }
             ).then(function(response){
                 setStream(response.data);
-                if(response.data.length > 0){
-                    setDisplayStream(true)
-                    setIsOpen(true)
-                }else{
-                    setDisplayStream(false)
-                }
             })
         }, 60000)
     }, [])
