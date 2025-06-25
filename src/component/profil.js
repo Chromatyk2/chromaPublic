@@ -21,6 +21,7 @@ import Lv3c from "../lv3c.png";
 import Lv4c from "../lv4c.png";
 import Lv5c from "../lv5c.png";
 import Lv6c from "../lv6c.png";
+import $ from "jquery";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
@@ -107,8 +108,10 @@ function Profil(props) {
                             Axios.get("/api/getProfil/"+pseudo)
                                 .then(function(response){
                                     setOpenTime(false)
-                                    setProfil(response.data);
                                     setIsOpenToken(true);
+                                    setTimeout(function (){
+                                        setProfil(response.data);
+                                    },10000);
                                     Axios
                                         .get("/api/getByUser/"+pseudo)
                                         .then(function(response){
