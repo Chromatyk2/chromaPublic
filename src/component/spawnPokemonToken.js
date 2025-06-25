@@ -61,7 +61,7 @@ function SpawnPokemonToken(props) {
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 50){
+                                                                        if(response.data[0].xp >= response.data[0].level * 25){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
@@ -85,7 +85,7 @@ function SpawnPokemonToken(props) {
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 50){
+                                                                        if(response.data[0].xp >= response.data[0].level * 25){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
@@ -134,7 +134,7 @@ function SpawnPokemonToken(props) {
                                                                     .then(function(response){
                                                                         Axios.get("/api/getProfil/"+pseudo)
                                                                             .then(function(response){
-                                                                                if(response.data[0].xp >= response.data[0].level * 50){
+                                                                                if(response.data[0].xp >= response.data[0].level * 25){
                                                                                     Axios.post('/api/levelUp',
                                                                                         {
                                                                                             pseudo: pseudo
@@ -158,7 +158,7 @@ function SpawnPokemonToken(props) {
                                                                     .then(function(response){
                                                                         Axios.get("/api/getProfil/"+pseudo)
                                                                             .then(function(response){
-                                                                                if(response.data[0].xp >= response.data[0].level * 50){
+                                                                                if(response.data[0].xp >= response.data[0].level * 25){
                                                                                     Axios.post('/api/levelUp',
                                                                                         {
                                                                                             pseudo: pseudo
@@ -203,7 +203,7 @@ function SpawnPokemonToken(props) {
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 50){
+                                                                        if(response.data[0].xp >= response.data[0].level * 25){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
@@ -227,7 +227,7 @@ function SpawnPokemonToken(props) {
                                                             .then(function(response){
                                                                 Axios.get("/api/getProfil/"+pseudo)
                                                                     .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 50){
+                                                                        if(response.data[0].xp >= response.data[0].level * 25){
                                                                             Axios.post('/api/levelUp',
                                                                                 {
                                                                                     pseudo: pseudo
