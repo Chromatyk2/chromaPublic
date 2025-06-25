@@ -96,7 +96,8 @@ function OnStream() {
                     height: "auto",
                     bottom: "0px",
                     left: "0px",
-                    width: "300px"}}>
+                    width: "300px",
+                    zIndex: 10000}}>
                     {displayStream === true ?
                         <button style={{
                             width: "300px",
