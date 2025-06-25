@@ -465,7 +465,7 @@ function Profil(props) {
                                 <button value={val.skin} style={{
                                     backgroundPosition: "center",
                                     backgroundRepeat: "no-repeat",
-                                    backgroundImage: "url(/images/Trainers/Trainer (" + val.skin + ").png)",
+                                    backgroundImage: "url(/images/Trainers/Trainer ("+val.skin+").png)",
                                     border: "solid",
                                     borderRadius: "25px",
                                     padding: "20px",
