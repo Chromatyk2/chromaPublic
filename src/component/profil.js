@@ -207,7 +207,7 @@ function Profil(props) {
                     Axios.post('/api/addSkin',
                         {
                             user:pseudo,
-                            skin:Math.floor((Math.random() * 734) + 1)
+                            skin:Math.floor((Math.random() * 2153) + 1)
                         }
                     )
                         .then(function(response){
