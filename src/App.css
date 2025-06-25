@@ -4417,7 +4417,7 @@ span.navbar-brand {
 }
 @media screen and (min-width: 850px) {
     .contentContainer {
-        padding-top: 140px;
+        padding-top: 100px;
     }
 }
 @media screen and (min-width: 380px) and (max-width: 943px) {

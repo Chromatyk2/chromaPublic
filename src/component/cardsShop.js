@@ -290,7 +290,7 @@ function CardsShop(props) {
                                 </p>
                             </div>
                         }
-                        <p style={{color: "red", textAlign: "center"}}>Obtiens plus de boosters sur le stream de Chroma quand il est en live <a href={"https://twitch.tv/chromatyk"} target={"_blank"}>ici</a></p>
+                        <p style={{color: "red", textAlign: "center"}}>Obtiens plus de boosters sur le stream de Chroma quand il est en live <a style={{fontSize:"15px"}} href={"https://twitch.tv/chromatyk"} target={"_blank"}>ici</a></p>
                     </div>
                     <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
                     <option value="1">Gen 1</option>
