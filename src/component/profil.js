@@ -110,14 +110,17 @@ function Profil(props) {
                                     setOpenTime(false)
                                     setIsOpenToken(true);
                                     setTimeout(function (){
-                                        setProfil(response.data);
-                                        Axios
-                                            .get("/api/getByUser/"+pseudo)
+                                        Axios.get("/api/getProfil/"+pseudo)
                                             .then(function(response){
-                                                setList(response.data);
-                                                setPourcent(Math.round((response.data.length / 1025) * 100));
+                                                setProfil(response.data);
+                                                Axios
+                                                    .get("/api/getByUser/"+pseudo)
+                                                    .then(function(response){
+                                                        setList(response.data);
+                                                        setPourcent(Math.round((response.data.length / 1025) * 100));
+                                                    })
                                             })
-                                    },10000);
+                                    },3000);
                                 })
                         })
                 }
