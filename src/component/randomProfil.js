@@ -65,7 +65,7 @@ function RandomProfil(props) {
                             <div style={{width: "150px"}} className="anchorTooltip uniquePokemonContainer">
                                 {allProfil[randomIndex].profil_picture ?
                                     <img style={{width: "100%"}}
-                                         src={"/images/Trainers/Trainer (" + allProfil[randomIndex].profil_picture + ").png"}/>
+                                         src={"/images/Trainers/Trainer"+allProfil[randomIndex].profil_picture+".png"}/>
                                     :
                                     <img style={{width: "100%"}} src={"/images/random.png"}/>
                                 }
