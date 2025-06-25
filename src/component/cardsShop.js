@@ -266,9 +266,9 @@ function CardsShop(props) {
                             <div className="myPointsDisplay">
                             </div>
                             :
-                            <div style={{marginBottom:"-25px",marginTop:"10px"}} className="myPointsDisplay">
-                                <img style={{display:"block",margin:"auto",width:"50px"}} src={token} />
-                                <p style={{color: "white",textAlign:"center"}}>Token TCG : {points}</p>
+                            <div style={{marginBottom: "-25px", marginTop: "10px"}} className="myPointsDisplay">
+                                <img style={{display: "block", margin: "auto", width: "50px"}} src={token}/>
+                                <p style={{color: "white", textAlign: "center"}}>Token TCG : {points}</p>
                             </div>
                         }
                         {canOpenLive == 1 ?
@@ -278,8 +278,8 @@ function CardsShop(props) {
                             </span></p>
                             </div>
                             :
-                            <div style={{marginTop:"15px"}} className="myPointsDisplay">
-                                <p style={{marginBottom:"10px", textAlign:"center"}}>
+                            <div style={{marginTop: "15px"}} className="myPointsDisplay">
+                                <p style={{marginBottom: "10px", textAlign: "center"}}>
                                     <span>Prochain booster Gratuit dans : </span>
                                     <Countdown
                                         date={nextFree}
@@ -290,9 +290,10 @@ function CardsShop(props) {
                                 </p>
                             </div>
                         }
+                        <p style={{color: "white", textAlign: "center"}}>Obtiens plus de boosters sur le stream de Chroma quand il est en live <a href={"https://twitch.tv/chromatyk"} target={"_blank"}ici></a></p>
                     </div>
                     <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
-                        <option value="1">Gen 1</option>
+                    <option value="1">Gen 1</option>
                         <option value="2">Gen 2</option>
                         <option value="3">Gen 3</option>
                         <option value="4">Gen 4</option>
