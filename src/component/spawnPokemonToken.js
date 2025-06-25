@@ -30,10 +30,10 @@ function SpawnPokemonToken(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    const isLegendary = Math.floor((Math.random() * 5) + 1);
-                    const isMythical = Math.floor((Math.random() * 10) + 1);
+                    const isLegendary = Math.floor((Math.random() * 2) + 1);
+                    const isMythical = Math.floor((Math.random() * 3) + 1);
                     const queryParameters = new URLSearchParams(window.location.search)
-                    const isShiny = Math.floor((Math.random() * 50) + 1);
+                    const isShiny = Math.floor((Math.random() * 100) + 1);
                     const name = result.names.find((element) => element.language.name == "fr").name;
                     switch (result.is_legendary){
                         case true:
