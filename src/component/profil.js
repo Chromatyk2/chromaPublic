@@ -330,7 +330,7 @@ function Profil(props) {
                                     }
                                     {profil[0].profil_picture ?
                                         <img style={{width: "75px"}}
-                                             src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
+                                             src={"/images/Trainers/Trainer (" + profil[0].profil_picture + ").png"}/>
                                         :
                                         <img style={{width: "75px"}} src={"/images/random.png"}/>
                                     }
@@ -465,7 +465,7 @@ function Profil(props) {
                                 <button value={val.skin} style={{
                                     backgroundPosition: "center",
                                     backgroundRepeat: "no-repeat",
-                                    backgroundImage: "url(/images/Trainers/Trainer" + val.skin + ".png)",
+                                    backgroundImage: "url(/images/Trainers/Trainer (" + val.skin + ").png)",
                                     border: "solid",
                                     borderRadius: "25px",
                                     padding: "20px",
