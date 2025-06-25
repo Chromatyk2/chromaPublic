@@ -100,16 +100,16 @@ function OnStream() {
                     zIndex: 10000}}>
                     {displayStream === true ?
                         <button style={{
+                            background: "#120747",
                             width: "300px",
                             color: "white",
-                            background: "none",
                             border: "none",
                             textAlign: "center"}} onClick={hiddeStream}>Fermer le stream</button>
                         :
                         <button style={{
                             width: "300px",
                             color: "white",
-                            background: "none",
+                            background: "#120747",
                             border: "none",
                             textAlign: "center"}} onClick={showStream}>Voir le stream</button>
 
