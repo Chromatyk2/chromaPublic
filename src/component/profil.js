@@ -120,7 +120,7 @@ function Profil(props) {
                                                         setPourcent(Math.round((response.data.length / 1025) * 100));
                                                     })
                                             })
-                                    },3000);
+                                    },1500);
                                 })
                         })
                 }
