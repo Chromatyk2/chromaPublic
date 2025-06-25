@@ -92,7 +92,7 @@ function OnStream() {
             }
             {stream &&
                 <div style={{visibility: "visible",
-                    position: "absolute",
+                    position: "fixed",
                     height: "auto",
                     bottom: "0px",
                     left: "0px",
