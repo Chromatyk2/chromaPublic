@@ -90,7 +90,6 @@ function OnStream() {
                     :
                 <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/></a>
             }
-            {stream &&
                 <div style={{visibility: "visible",
                     position: "fixed",
                     height: "auto",
@@ -128,7 +127,6 @@ function OnStream() {
                         </div>
                     </div>
                 </div>
-            }
         </>
 
     );
