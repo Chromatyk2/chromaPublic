@@ -2279,7 +2279,7 @@ a.linkOnAir {
     text-decoration: none;
     flex-flow: column;
     padding: 10px;
-    background: red;
+    background: #8956FB;
     width: 80px;
     height: 80px;
     z-index: 10;
@@ -2297,7 +2297,7 @@ a.linkOnAirOff {
     text-decoration: none;
     flex-flow: column;
     padding: 10px;
-    background: gray;
+    background: #8956FB;
     margin-top: 0px;
     width: 80px;
     height: 80px;

@@ -42,36 +42,6 @@ function OnStream() {
             fontWeight: "bolder"
         }
     };
-    useEffect(() => {
-            Axios.get(
-                'https://api.twitch.tv/helix/streams?user_login=chromatyk',
-                {
-                    headers:{
-                        'Authorization': `Bearer ${cookies.token.access_token}`,
-                        'Client-Id': process.env.REACT_APP_CLIENT_ID
-                    }
-                }
-            ).then(function(response){
-                setStream(response.data);
-            })
-    }, [])
-
-    useEffect(() => {
-
-        setInterval(() => {
-            Axios.get(
-                'https://api.twitch.tv/helix/streams?user_login=chromatyk',
-                {
-                    headers:{
-                        'Authorization': `Bearer ${cookies.token.access_token}`,
-                        'Client-Id': process.env.REACT_APP_CLIENT_ID
-                    }
-                }
-            ).then(function(response){
-                setStream(response.data);
-            })
-        }, 60000)
-    }, [])
     function hiddeStream() {
         setDisplayStream(false);
         document.getElementById("twitchPlayer").style.height = 0;
@@ -82,51 +52,49 @@ function OnStream() {
     }
     return (
         <>
-            {stream &&
-            stream.data.length > 0 ?
-                <>
-                    <a className={"linkOnAir"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/><p style={{fontSize: "15px",position: "absolute", left: "-75px", top: "30px"}}>En live !</p></a>
-                </>
+            <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img
+            style={{width: "50px"}} src={Twitch}/></a>
+            <div style={{
+                visibility: "visible",
+                position: "fixed",
+                height: "auto",
+                bottom: "0px",
+                left: "0px",
+                width: "300px",
+                zIndex: 10000
+            }}>
+                {displayStream === true ?
+                    <button style={{
+                        background: "#120747",
+                        width: "300px",
+                        color: "white",
+                        border: "none",
+                        textAlign: "center"
+                    }} onClick={hiddeStream}>Fermer le stream</button>
                     :
-                <a className={"linkOnAirOff"} href={"https://twitch.tv/chromatyk"} target={"_blank"}><img style={{width:"50px"}} src={Twitch}/></a>
-            }
-                <div style={{visibility: "visible",
-                    position: "fixed",
-                    height: "auto",
-                    bottom: "0px",
-                    left: "0px",
-                    width: "300px",
-                    zIndex: 10000}}>
-                    {displayStream === true ?
-                        <button style={{
-                            background: "#120747",
-                            width: "300px",
-                            color: "white",
-                            border: "none",
-                            textAlign: "center"}} onClick={hiddeStream}>Fermer le stream</button>
-                        :
-                        <button style={{
-                            width: "300px",
-                            color: "white",
-                            background: "#120747",
-                            border: "none",
-                            textAlign: "center"}} onClick={showStream}>Voir le stream</button>
+                    <button style={{
+                        width: "300px",
+                        color: "white",
+                        background: "#120747",
+                        border: "none",
+                        textAlign: "center"
+                    }} onClick={showStream}>Voir le stream</button>
 
-                    }
-                    <div className="twitch">
+                }
+                <div className="twitch">
                     <div className="twitch-video">
-                            <iframe
-                                id={"twitchPlayer"}
-                                src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
-                                frameBorder="0"
-                                scrolling="no"
-                                allowFullScreen="true"
-                                height="720"
-                                width="1280">
-                            </iframe>
-                        </div>
+                        <iframe
+                            id={"twitchPlayer"}
+                            src="https://player.twitch.tv/?channel=chromatyk&parent=chromatyk.fr&autoplay=true&muted=false"
+                            frameBorder="0"
+                            scrolling="no"
+                            allowFullScreen="true"
+                            height="720"
+                            width="1280">
+                        </iframe>
                     </div>
                 </div>
+            </div>
         </>
 
     );
