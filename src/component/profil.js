@@ -285,9 +285,9 @@ function Profil(props) {
                                                 className={"openLeaderBoardButton"} onClick={openToken}
                                                 style={{
                                                     width: "120px",
-                                                    backgroundSize: "80px",
+                                                    backgroundSize: "80%",
                                                     filter: "drop-shadow(white 0 0 4px)",
-                                                    backgroundImage: "url(/token.png)"
+                                                    backgroundImage: "url(/token.png)",
                                                 }}>
                                             <div className="infoPkm">
                                                 <div
@@ -298,7 +298,7 @@ function Profil(props) {
                                         <button disabled={openTime} className={"openLeaderBoardButton"}
                                                 style={{
                                                     width: "120px",
-                                                    backgroundSize: "80px",
+                                                    backgroundSize: "80%",
                                                     filter: "drop-shadow(0px 0px 15px white)",
                                                     backgroundImage: "url(/token.png)"
                                                 }}>
@@ -358,8 +358,8 @@ function Profil(props) {
                                 {pourcent > 0 &&
                                     <div className="anchorTooltip"
                                          data-tooltip-content={pourcent == 100 ? "100% du Pokedex Complété" : pourcent >= 80 ? "80% du Pokedex Complété" : pourcent >= 60 ? "60% du Pokedex Complété" : pourcent >= 40 ? "40% du Pokedex Complété" : pourcent >= 20 ? "20% du Pokedex Complété" : "Au moins 1 Pokémon capturé"}
-                                         style={{width: "120px", height: "95px"}}>
-                                        <img style={{width: "80px"}}
+                                         style={{width: "120px"}}>
+                                        <img style={{width: "80%"}}
                                              src={pourcent == 100 ? Lv6 : pourcent >= 80 ? Lv5 : pourcent >= 60 ? Lv4 : pourcent >= 40 ? Lv3 : pourcent >= 20 ? Lv2 : Lv1}/>
                                     </div>
                                 }

@@ -3904,17 +3904,17 @@ span.navbar-brand {
     color: white;
 }
 .profilVisuals {
-    align-items: end;
+    align-items: center;
+    border-bottom: 1px solid #000;
     border-radius: 50px;
+    box-shadow: 0 6px 5px #000;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
     gap: 0;
     justify-content: space-around;
-    width: 100%;
     padding: 10px;
-    border-bottom: solid black 1px;
-    box-shadow: 0px 6px 5px black;
+    width: 100%;
 }
 .infoNbBox{
     background-color: #fff;
