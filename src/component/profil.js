@@ -357,7 +357,7 @@ function Profil(props) {
                                 </div>
                                 {pourcent > 0 &&
                                     <div className="anchorTooltip"
-                                         data-tooltip-content={pourcent == 100 ? "100% du Pokedex Complété" : pourcent >= 80 ? "80% du Pokedex Complété" : pourcent >= 60 ? "60% du Pokedex Complété" : pourcent >= 40 ? "40% du Pokedex Complété" : pourcent >= 20 ? "20% du Pokedex Complété" : "Au moins 1 Pokémon capturé"}
+                                         data-tooltip-content={pourcent+"% du Pokedex Complété"}
                                          style={{width: "120px"}}>
                                         <img style={{width: "80%"}}
                                              src={pourcent == 100 ? Lv6 : pourcent >= 80 ? Lv5 : pourcent >= 60 ? Lv4 : pourcent >= 40 ? Lv3 : pourcent >= 20 ? Lv2 : Lv1}/>
