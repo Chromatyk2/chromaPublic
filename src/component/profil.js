@@ -15,6 +15,11 @@ import Lv3 from "../lv3.png";
 import Lv4 from "../lv4.png";
 import Lv5 from "../lv5.png";
 import Lv6 from "../lv6.png";
+import Lv7 from "../lv7.png";
+import Lv8 from "../lv8.png";
+import Lv9 from "../lv9.png";
+import Lv10 from "../lv10.png";
+import Lv11 from "../lv11.png";
 import Lv1c from "../lv1c.png";
 import Lv2c from "../lv2c.png";
 import Lv3c from "../lv3c.png";
@@ -360,7 +365,7 @@ function Profil(props) {
                                          data-tooltip-content={pourcent+"% du Pokedex Complété"}
                                          style={{width: "120px"}}>
                                         <img style={{width: "80%"}}
-                                             src={pourcent == 100 ? Lv6 : pourcent >= 80 ? Lv5 : pourcent >= 60 ? Lv4 : pourcent >= 40 ? Lv3 : pourcent >= 20 ? Lv2 : Lv1}/>
+                                             src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
                                     </div>
                                 }
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
