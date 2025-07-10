@@ -26,6 +26,11 @@ import Lv3c from "../lv3c.png";
 import Lv4c from "../lv4c.png";
 import Lv5c from "../lv5c.png";
 import Lv6c from "../lv6c.png";
+import Lv7c from "../lv7c.png";
+import Lv8c from "../lv8c.png";
+import Lv9c from "../lv9c.png";
+import Lv10c from "../lv10c.png";
+import Lv11c from "../lv11c.png";
 import $ from "jquery";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
@@ -409,9 +414,9 @@ function Profil(props) {
                                 <>
                                     <div className={"profilVisualsCard"}>
                                         <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
-                                        <img style={{width: "80px"}} className="anchorTooltip"
-                                             data-tooltip-content={pourcentCard == 100 ? "100% du Cartodex Complété" : pourcentCard >= 80 ? "80% du Cartodex Complété" : pourcentCard >= 60 ? "60% du Cartodex Complété" : pourcentCard >= 40 ? "40% du Cartodex Complété" : pourcentCard >= 20 ? "20% du Cartodex Complété" : "Au moins 1 carte obtenue"}
-                                             src={pourcentCard == 100 ? Lv6c : pourcentCard >= 80 ? Lv5c : pourcentCard >= 60 ? Lv4c : pourcentCard >= 40 ? Lv3c : pourcentCard >= 20 ? Lv2c : Lv1c}/>
+                                        <img style={{width: "110px"}} className="anchorTooltip"
+                                             data-tooltip-content={pourcentCard+"% du Cartodex Complété"}
+                                             src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
                                     </div>
                                     <p style={{marginTop: "20px", marginBottom: "20px"}}
                                        className={"pseudoProfil"}>Dernier Booster</p>
