@@ -125,7 +125,7 @@ function ProgressBarCard(props) {
                             <div>
                                 <div></div>
                                     <p>Stade {key+1}
-                                        : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
+                                        : {purcents.find((item) => item.stade == key+1).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == key+1).nb / props.item * 100).toFixed(2) + "%)"}</p>
                                 </div>
                             )
                         })
