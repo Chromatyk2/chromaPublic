@@ -36,7 +36,7 @@ function ProgressBarCard(props) {
             filter: "drop-shadow(0px 0px 6px blue)"
         },
         yellowBar: {
-            width: parseFloat(purcents.filter((item) => item.stade == 3).length/props.item*100).toFixed(2)+"%",
+            width: parseFloat(purcents.filter((item) => item.stade == 3).nb/props.item*100).toFixed(2)+"%",
             position: 'relative',
             background: '#e5d330',
             textWrap: 'nowrap',
@@ -46,7 +46,7 @@ function ProgressBarCard(props) {
             filter: "drop-shadow(0px 0px 6px blue)"
         },
         blueBar: {
-            width: parseFloat(purcents.filter((item) => item.stade == 2).length/props.item*100).toFixed(2)+"%",
+            width: parseFloat(purcents.filter((item) => item.stade == 2).nb/props.item*100).toFixed(2)+"%",
             position: 'relative',
             background: '#81adef',
             textWrap: 'nowrap',
@@ -56,7 +56,7 @@ function ProgressBarCard(props) {
             filter: "drop-shadow(0px 0px 6px blue)"
         },
         greenBar: {
-            width: parseFloat(purcents.filter((item) => item.stade == 1).length/props.item*100).toFixed(2)+"%",
+            width: parseFloat(purcents.filter((item) => item.stade == 1).nb/props.item*100).toFixed(2)+"%",
             position: 'relative',
             background: '#40b24b',
             textWrap: 'nowrap',
@@ -66,7 +66,7 @@ function ProgressBarCard(props) {
             filter: "drop-shadow(0px 0px 6px blue)"
         },
         rainbowBar: {
-            width: parseFloat(purcents.filter((item) => item.stade == 4).length/props.item*100).toFixed(2)+"%",
+            width: parseFloat(purcents.filter((item) => item.stade == 4).nb/props.item*100).toFixed(2)+"%",
             position: 'relative',
             textWrap: 'nowrap',
             padding: '15px',
@@ -95,7 +95,7 @@ function ProgressBarCard(props) {
         {purcents.length > 0 &&
             purcents.sort((a, b) => a.nb - b.nb).map((val, key) => {
                 return (
-                    <div style={val.stade == 4 ? customStyles.rainbowBar : val.stade == 3 ? customStyles.yellowBar : val.stade == 3 ? customStyles.blueBar : customStyles.greenBar }>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+                    <div style={val.stade == 4 ? customStyles.rainbowBar : val.stade == 3 ? customStyles.yellowBar : val.stade == 2 ? customStyles.blueBar : customStyles.greenBar }>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
                 )
             })
         }
