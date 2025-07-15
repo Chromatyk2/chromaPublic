@@ -75,7 +75,7 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].localId;
                             fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
                                 .then(res => res.json())
                                 .then(
@@ -157,7 +157,7 @@ function OpeningCards(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].number;
+                            const pkmNumber = result.data[Math.floor(Math.random() * result.data.length)].localId;
                             fetch('https://api.tcgdex.net/v2/en/sets/'+boosterDex+'/'+pkmNumber)
                                 .then(res => res.json())
                                 .then(
