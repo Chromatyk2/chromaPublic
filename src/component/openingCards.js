@@ -67,94 +67,14 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
-        if(tenCards.length == 0){
-            const boosterGuru = props.rarities.filter(item => item.stade ==  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade == 1 ).length)].nameGuru
-            const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
-            var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
-            fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:'+props.idBooster+'&rarity=eq:'+rarity.rarity)
-                .then(res => res.json())
-                .then(
-                    (result) => {
-                        console.log(result);
-                            const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
-                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster+'/'+pkmNumber)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        if(result.status == 404){
-                                            fetch('https://api.tcgdex.net/v2/en/sets/'+props.idBooster.replace(".","")+'/'+pkmNumber)
-                                                .then(res => res.json())
-                                                .then(
-                                                    (result) => {
-                                                        var stade = rarity.stade;
-                                                        Axios.post('/api/addCard',
-                                                            {
-                                                                pseudo:props.user,
-                                                                idCard:result.id,
-                                                                booster:props.idBooster,
-                                                                rarity:rarity.rarity,
-                                                                stade:stade,
-                                                                nb:result.localId,
-                                                                block:props.block
-                                                            })
-                                                        setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{stade:stade,card :result, rarity:rarity.rarity, booster:boosterName}]);
-                                                        setNbCards (nbCards + 1);
-                                                    }
-                                                )
-                                        }else{
-                                            var stade = rarity.stade;
-                                            Axios.post('/api/addCard',
-                                                {
-                                                    pseudo:props.user,
-                                                    idCard:result.id,
-                                                    booster:props.idBooster,
-                                                    rarity:rarity.rarity,
-                                                    stade:stade,
-                                                    nb:result.localId,
-                                                    block:props.block
-                                                })
-                                            setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{stade:stade,card :result, rarity:rarity.rarity, booster:boosterName}]);
-                                            setNbCards (nbCards + 1);
-
-                                        }
-                                    }
-                                )
-                }
-            )
-        }else if(tenCards.length < 5 && tenCards.length > 0){
-            const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
-            var randomStade = Math.floor(Math.random() * 101);
-            if(randomStade > 70 ){
-                if(randomStade > 95){
-                    var rarity = props.rarities.filter(item => item.stade ===  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  4).length)]
-                    var boosterName = rarity.nameGuru;
-                    if(rarity.rarity == "Rare Prism Star"){
-                        var finalRarity = 'rarity:"Rare Prism"'
-                    }else{
-                        var finalRarity = '!rarity:"'+rarity.rarity+'"'
-                    }
-                }else{
-                    var rarity = props.rarities.filter(item => item.stade <  4)[Math.floor(Math.random() * props.rarities.filter(item => item.stade <  4).length)]
-                    var boosterName = rarity.nameGuru;
-                    if(rarity.rarity == "Rare Prism Star"){
-                        var finalRarity = 'rarity:"Rare Prism"'
-                    }else{
-                        var finalRarity = '!rarity:"'+rarity.rarity+'"'
-                    }
-                }
-            }else{
-                var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
-                var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
-                var finalRarity = '!rarity:"'+rarity.rarity+'"'
-            }
+        if(tenCards.length < 5){
+            var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
             if(boosterName == "sma"){
                 var boosterDex = "sma"
             }else{
                 var boosterDex = props.idBooster
             }
-            fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:'+props.idBooster+'&rarity=eq:'+rarity.rarity)
+            fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:'+props.idBooster)
                 .then(res => res.json())
                 .then(
                     (result) => {
@@ -168,13 +88,24 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        var stade = rarity.stade;
+                                                        var randomStade = Math.floor(Math.random() * 100);
+                                                        if(randomStade < 25 ){
+                                                            var stade = 0;
+                                                        }else if(randomStade > 24 && randomStade < 76 ){
+                                                            var stade = 1;
+                                                        }else if(randomStade > 75 && randomStade < 95 ){
+                                                            var stade = 2;
+                                                        }else if(randomStade > 94 && randomStade < 99 ){
+                                                            var stade = 3;
+                                                        }else if(randomStade == 99){
+                                                            var stade = 4;
+                                                        }
                                                         Axios.post('/api/addCard',
                                                             {
                                                                 pseudo:props.user,
                                                                 idCard:result.id,
                                                                 booster:props.idBooster,
-                                                                rarity:rarity.rarity,
+                                                                rarity:result.rarity,
                                                                 stade:stade,
                                                                 nb:pkmNumber,
                                                                 block:props.block
@@ -198,7 +129,18 @@ function OpeningCards(props) {
 
                                                     })
                                         }else{
-                                            var stade = rarity.stade;
+                                            var randomStade = Math.floor(Math.random() * 100);
+                                            if(randomStade < 25 ){
+                                                var stade = 0;
+                                            }else if(randomStade > 24 && randomStade < 76 ){
+                                                var stade = 1;
+                                            }else if(randomStade > 75 && randomStade < 95 ){
+                                                var stade = 2;
+                                            }else if(randomStade > 94 && randomStade < 99 ){
+                                                var stade = 3;
+                                            }else if(randomStade == 99){
+                                                var stade = 4;
+                                            }
                                             Axios.post('/api/addCard',
                                                 {
                                                     pseudo:props.user,
