@@ -36,7 +36,7 @@ function ProgressBarCard(props) {
             filter: "drop-shadow(0px 0px 6px blue)"
         },
         yellowBar: {
-            width: parseFloat(rpurcents.filter((item) => item.stade == 3).length/props.item*100).toFixed(2)+"%",
+            width: parseFloat(purcents.filter((item) => item.stade == 3).length/props.item*100).toFixed(2)+"%",
             position: 'relative',
             background: '#e5d330',
             textWrap: 'nowrap',
