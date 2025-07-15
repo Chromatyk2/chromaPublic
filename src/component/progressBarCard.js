@@ -105,20 +105,47 @@ function ProgressBarCard(props) {
     }, []);
     return (
         customStyles &&
+        <>
+            <div>
+                <div>
+                    <div></div>
+                    <p>Stade 0 : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>                </div>
+                <div>
+                    <div></div>
+                    <p>Stade 1 : {response.data.filter((item) => item.stade == "1").nb + " / " + props.item + "(" + parseFloat(response.data.filter((item) => item.stade == "1").nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+                <div>
+                    <div></div>
+                    <p>Stade 2 : {response.data.filter((item) => item.stade == "12").nb + " / " + props.item + "(" + parseFloat(response.data.filter((item) => item.stade == "2").nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+                <div>
+                    <div></div>
+                    <p>Stade 3 : {response.data.filter((item) => item.stade == "3").nb + " / " + props.item + "(" + parseFloat(response.data.filter((item) => item.stade == "3").nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+                <div>
+                    <div></div>
+                    <p>Stade 4 : {response.data.filter((item) => item.stade == "4").nb + " / " + props.item + "(" + parseFloat(response.data.filter((item) => item.stade == "4").nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+            </div>
             <div style={customStyles.extBar} className="fullProgressBar">
-                    <div
-                        style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+                <div
+                    style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
 
                 {purcents.length > 0 &&
                     props.global === false &&
                     purcents.sort((a, b) => b.nb - a.nb).map((val, key) => {
                         return (
-                            <div style={val.stade == 4 ? customStyles.rainbowBar : val.stade == 3 ? customStyles.yellowBar : val.stade == 2 ? customStyles.blueBar : customStyles.greenBar }>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+                            <div
+                                style={val.stade == 4 ? customStyles.rainbowBar : val.stade == 3 ? customStyles.yellowBar : val.stade == 2 ? customStyles.blueBar : customStyles.greenBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
                         )
                     })
                 }
-                {props.booster && <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear} src={"/Ribbon/"+props.booster+".png"}/>}
+                {props.booster &&
+                    <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear}
+                         src={"/Ribbon/" + props.booster + ".png"}/>}
             </div>
+        </>
     )
 }
+
 export default ProgressBarCard
