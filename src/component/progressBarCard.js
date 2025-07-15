@@ -104,21 +104,21 @@ function ProgressBarCard(props) {
             })
     }, []);
     return (
-    <div style={customStyles.extBar} className="fullProgressBar">
-        {customStyles &&
-            <div
-                style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
-        }
-        {purcents.length > 0 &&
-            props.global === false &&
-            purcents.sort((a, b) => a.nb - b.nb).map((val, key) => {
-                return (
-                    <div style={val.stade == 4 ? customStyles.rainbowBar : val.stade == 3 ? customStyles.yellowBar : val.stade == 2 ? customStyles.blueBar : customStyles.greenBar }>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
-                )
-            })
-        }
-        {props.booster && <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear} src={"/Ribbon/"+props.booster+".png"}/>}
-    </div>
+        customStyles &&
+            <div style={customStyles.extBar} className="fullProgressBar">
+                    <div
+                        style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+
+                {purcents.length > 0 &&
+                    props.global === false &&
+                    purcents.sort((a, b) => a.nb - b.nb).map((val, key) => {
+                        return (
+                            <div style={val.stade == 4 ? customStyles.rainbowBar : val.stade == 3 ? customStyles.yellowBar : val.stade == 2 ? customStyles.blueBar : customStyles.greenBar }>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+                        )
+                    })
+                }
+                {props.booster && <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear} src={"/Ribbon/"+props.booster+".png"}/>}
+            </div>
     )
 }
 export default ProgressBarCard
