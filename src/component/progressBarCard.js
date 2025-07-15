@@ -7,6 +7,11 @@ import '../App.css'
 import moment from 'moment';
 
 function ProgressBarCard(props) {
+    const [purcents, setPurcents] = useState([]);
+    Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+        .then(function(response){
+            setPurcents([{one:response.filter((item) => item.stade == 1).length, two :response.filter((item) => item.stade == 2).length, three:response.filter((item) => item.stade == 3).length, four:response.filter((item) => item.stade == 4).length}])
+        })
     const customStyles = {
     extBar: {
         width: '75%',
@@ -51,7 +56,7 @@ function ProgressBarCard(props) {
             display:"none"
         }
 };
-
+console.log(purcents);
     return (
     <div style={customStyles.extBar} className="fullProgressBar">
         <div style={props.getNb == props.item ? customStyles.rainbowBar :customStyles.intBar}>{props.getNb+" / "+props.item+"("+parseFloat(props.getNb/props.item*100).toFixed(2)+"%)"}</div>
