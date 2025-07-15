@@ -8,10 +8,12 @@ import moment from 'moment';
 
 function ProgressBarCard(props) {
     const [purcents, setPurcents] = useState([]);
-    Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
-        .then(function(response){
-            setPurcents([{stade : 1, nb:response.data.filter((item) => item.stade == "1").length}, {stade : 2, nb: response.data.filter((item) => item.stade == "2").length}, {stade : 3, nb: response.data.filter((item) => item.stade == "3").length}, {stade : 4, nb: response.data.filter((item) => item.stade == "4").length}])
-        })
+    useEffect(() => {
+        Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
+            .then(function(response){
+                setPurcents([{stade : 1, nb:response.data.filter((item) => item.stade == "1").length}, {stade : 2, nb: response.data.filter((item) => item.stade == "2").length}, {stade : 3, nb: response.data.filter((item) => item.stade == "3").length}, {stade : 4, nb: response.data.filter((item) => item.stade == "4").length}])
+            })
+    }, []);
     const customStyles = {
     extBar: {
         width: '75%',
@@ -32,6 +34,36 @@ function ProgressBarCard(props) {
         borderRadius: '50px 50px 50px 50px',
         filter: "drop-shadow(0px 0px 6px blue)"
     },
+        yellowBar: {
+            width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
+            position: 'relative',
+            background: '#e5d330',
+            textWrap: 'nowrap',
+            color: 'white',
+            padding: '15px',
+            borderRadius: '50px 50px 50px 50px',
+            filter: "drop-shadow(0px 0px 6px blue)"
+        },
+        blueBar: {
+            width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
+            position: 'relative',
+            background: '#81adef',
+            textWrap: 'nowrap',
+            color: 'white',
+            padding: '15px',
+            borderRadius: '50px 50px 50px 50px',
+            filter: "drop-shadow(0px 0px 6px blue)"
+        },
+        greenBar: {
+            width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
+            position: 'relative',
+            background: '#40b24b',
+            textWrap: 'nowrap',
+            color: 'white',
+            padding: '15px',
+            borderRadius: '50px 50px 50px 50px',
+            filter: "drop-shadow(0px 0px 6px blue)"
+        },
         rainbowBar: {
             width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
             position: 'relative',
@@ -56,11 +88,17 @@ function ProgressBarCard(props) {
             display:"none"
         }
 };
-console.log(purcents);
     return (
     <div style={customStyles.extBar} className="fullProgressBar">
         <div style={customStyles.intBar}>{props.getNb+" / "+props.item+"("+parseFloat(props.getNb/props.item*100).toFixed(2)+"%)"}</div>
-        {props.booster && <img style={props.getNb == props.item ? customStyles.ribbonClear :customStyles.ribbonUnclear} src={"/Ribbon/"+props.booster+".png"}/>}
+        {purcents.length > 0 &&
+            purcents.sort((a, b) => a.nb - b.nb).map((val, key) => {
+                return (
+                    <div style={val.stade == 4 ? customStyles.rainbowBar ? val.stade == 3 ? customStyles.yellowBar : val.stade == 3 ? customStyles.blueBar : customStyles.greenBar }>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+                )
+            })
+        }
+        {props.booster && <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear} src={"/Ribbon/"+props.booster+".png"}/>}
     </div>
     )
 }
