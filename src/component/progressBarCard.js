@@ -10,7 +10,7 @@ function ProgressBarCard(props) {
     const [purcents, setPurcents] = useState([]);
     Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
         .then(function(response){
-            setPurcents([{one:response.filter((item) => item.stade == 1).length, two :response.filter((item) => item.stade == 2).length, three:response.filter((item) => item.stade == 3).length, four:response.filter((item) => item.stade == 4).length}])
+            setPurcents([{one:response.filter((item) => item.stade == "1").length, two :response.filter((item) => item.stade == "2").length, three:response.filter((item) => item.stade == "3").length, four:response.filter((item) => item.stade == "4").length}])
         })
     const customStyles = {
     extBar: {
