@@ -48,11 +48,7 @@ function ProgressBarCard(props) {
             width: "130px"
         },
         ribbonUnclear:{
-            position: "absolute",
-            top: "-15px",
-            right: "-35px",
-            width: "80px",
-            filter: "brightness(0)"
+            display:"none"
         }
 };
 
