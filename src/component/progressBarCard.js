@@ -109,25 +109,27 @@ function ProgressBarCard(props) {
         customStyles &&
             purcents.length > 0 &&
             <>
-                {purcents.length > 0 &&
-                    props.global === false &&
-                    <div>
-                        <div></div>
-                        <p>Stade 0
-                            : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
-                    </div>
-                }
-                {purcents.length > 0 &&
-                    props.global === false &&
-                    purcents.sort((a, b) => b.nb - a.nb).map((val, key) => {
-                        return (
-                            <div>
-                                <div></div>
+                <div style={{color:"white"}}>
+                    {purcents.length > 0 &&
+                        props.global === false &&
+                        <div>
+                            <div></div>
+                            <p>Stade 0
+                                : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
+                        </div>
+                    }
+                    {purcents.length > 0 &&
+                        props.global === false &&
+                        purcents.sort((a, b) => b.nb - a.nb).map((val, key) => {
+                            return (
+                                <div>
+                                    <div></div>
                                     <p>Stade {key+1} : {purcents.find((item) => item.stade == key+1).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == key+1).nb / props.item * 100).toFixed(2) + "%)"}</p>
                                 </div>
                             )
                         })
-                }
+                    }
+                </div>
             <div style={customStyles.extBar} className="fullProgressBar">
                 <div
                     style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
