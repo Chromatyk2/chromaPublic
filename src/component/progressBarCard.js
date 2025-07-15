@@ -15,7 +15,7 @@ function ProgressBarCard(props) {
         zIndex: '1',
         borderRadius: '50px',
         margin:'auto',
-        marginBottom: '15px'
+        marginBottom: '50px'
     },
     intBar: {
         width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
