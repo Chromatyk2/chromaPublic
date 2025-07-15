@@ -11,8 +11,14 @@ function ProgressBarCard(props) {
     const [customStyles, setCustomStyles] = useState(null);
     useEffect(() => {
         Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
-            .then(function(response){
-                setPurcents([{stade : 1, nb:response.data.filter((item) => item.stade == "1").length}, {stade : 2, nb: response.data.filter((item) => item.stade == "2").length}, {stade : 3, nb: response.data.filter((item) => item.stade == "3").length}, {stade : 4, nb: response.data.filter((item) => item.stade == "4").length}])
+            .then(function(response) {
+                setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
+                    stade: 2,
+                    nb: response.data.filter((item) => item.stade == "2").length
+                }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
+                    stade: 4,
+                    nb: response.data.filter((item) => item.stade == "4").length
+                }])
                 setCustomStyles({
                     extBar: {
                         width: '75%',
@@ -20,11 +26,11 @@ function ProgressBarCard(props) {
                         position: 'relative',
                         zIndex: '1',
                         borderRadius: '50px',
-                        margin:'auto',
+                        margin: 'auto',
                         marginBottom: '50px'
                     },
                     intBar: {
-                        width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
+                        width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
                         position: 'relative',
                         background: '#cecaca',
                         textWrap: 'nowrap',
@@ -34,7 +40,7 @@ function ProgressBarCard(props) {
                         filter: "drop-shadow(0px 0px 6px blue)"
                     },
                     yellowBar: {
-                        width: parseFloat(purcents.filter((item) => item.stade == 3).nb/props.item*100).toFixed(2)+"%",
+                        width: parseFloat(purcents.filter((item) => item.stade == 3).nb / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         background: '#e5d330',
                         textWrap: 'nowrap',
@@ -46,7 +52,7 @@ function ProgressBarCard(props) {
                         zIndex: 1
                     },
                     blueBar: {
-                        width: parseFloat(purcents.filter((item) => item.stade == 2).nb/props.item*100).toFixed(2)+"%",
+                        width: parseFloat(purcents.filter((item) => item.stade == 2).nb / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         background: '#81adef',
                         textWrap: 'nowrap',
@@ -58,7 +64,7 @@ function ProgressBarCard(props) {
                         zIndex: 1
                     },
                     greenBar: {
-                        width: parseFloat(purcents.filter((item) => item.stade == 1).nb/props.item*100).toFixed(2)+"%",
+                        width: parseFloat(purcents.filter((item) => item.stade == 1).nb / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         background: '#40b24b',
                         textWrap: 'nowrap',
@@ -70,7 +76,7 @@ function ProgressBarCard(props) {
                         zIndex: 1
                     },
                     rainbowBar: {
-                        width: parseFloat(purcents.filter((item) => item.stade == 4).nb/props.item*100).toFixed(2)+"%",
+                        width: parseFloat(purcents.filter((item) => item.stade == 4).nb / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         textWrap: 'nowrap',
                         padding: '15px',
@@ -79,21 +85,22 @@ function ProgressBarCard(props) {
                         backgroundSize: "200%",
                         animation: "moveGradient 5s linear infinite",
                         color: "#120747",
-                        letterSpacing:0,
+                        letterSpacing: 0,
                         textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
-                        textAlign:"center",
+                        textAlign: "center",
                         top: 0,
                         zIndex: 1
                     },
-                    ribbonClear:{
+                    ribbonClear: {
                         position: "absolute",
                         top: "-35px",
                         right: "-40px",
                         width: "130px"
                     },
-                    ribbonUnclear:{
-                        display:"none"
+                    ribbonUnclear: {
+                        display: "none"
                     }
+                })
             })
     }, []);
     return (
