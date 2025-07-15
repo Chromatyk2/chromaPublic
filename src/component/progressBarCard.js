@@ -109,7 +109,7 @@ function ProgressBarCard(props) {
         customStyles &&
             purcents.length > 0 &&
             <>
-                <div style={{color:"white"}}>
+                <div style={{color: "white",display: "flex",gap: "5px",flexWrap: "wrap",ustifyContent: "center"}}>
                     {purcents.length > 0 &&
                         props.global === false &&
                         <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
