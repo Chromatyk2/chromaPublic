@@ -89,16 +89,20 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         var randomStade = Math.floor(Math.random() * 100);
-                                                        if(randomStade < 25 ){
+                                                        if(tenCards.length == 0){
                                                             var stade = 0;
-                                                        }else if(randomStade > 24 && randomStade < 76 ){
-                                                            var stade = 1;
-                                                        }else if(randomStade > 75 && randomStade < 95 ){
-                                                            var stade = 2;
-                                                        }else if(randomStade > 94 && randomStade < 99 ){
-                                                            var stade = 3;
-                                                        }else if(randomStade == 99){
-                                                            var stade = 4;
+                                                        }else{
+                                                            if(randomStade < 25 ){
+                                                                var stade = 0;
+                                                            }else if(randomStade > 24 && randomStade < 76 ){
+                                                                var stade = 1;
+                                                            }else if(randomStade > 75 && randomStade < 95 ){
+                                                                var stade = 2;
+                                                            }else if(randomStade > 94 && randomStade < 99 ){
+                                                                var stade = 3;
+                                                            }else if(randomStade == 99){
+                                                                var stade = 4;
+                                                            }
                                                         }
                                                         Axios.post('/api/addCard',
                                                             {
@@ -130,16 +134,20 @@ function OpeningCards(props) {
                                                     })
                                         }else{
                                             var randomStade = Math.floor(Math.random() * 100);
-                                            if(randomStade < 25 ){
+                                            if(tenCards.length == 0){
                                                 var stade = 0;
-                                            }else if(randomStade > 24 && randomStade < 76 ){
-                                                var stade = 1;
-                                            }else if(randomStade > 75 && randomStade < 95 ){
-                                                var stade = 2;
-                                            }else if(randomStade > 94 && randomStade < 99 ){
-                                                var stade = 3;
-                                            }else if(randomStade == 99){
-                                                var stade = 4;
+                                            }else{
+                                                if(randomStade < 25 ){
+                                                    var stade = 0;
+                                                }else if(randomStade > 24 && randomStade < 76 ){
+                                                    var stade = 1;
+                                                }else if(randomStade > 75 && randomStade < 95 ){
+                                                    var stade = 2;
+                                                }else if(randomStade > 94 && randomStade < 99 ){
+                                                    var stade = 3;
+                                                }else if(randomStade == 99){
+                                                    var stade = 4;
+                                                }
                                             }
                                             Axios.post('/api/addCard',
                                                 {
