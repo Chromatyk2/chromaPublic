@@ -5,6 +5,7 @@ import Axios from 'axios'
 import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
+import {Tooltip} from "react-tooltip";
 
 function ProgressBarCard(props) {
     const [purcents, setPurcents] = useState([]);
@@ -105,34 +106,41 @@ function ProgressBarCard(props) {
     }, []);
     return (
         customStyles &&
+            purcents.length > 0 &&
         <>
-            <div>
+            <div style={customStyles.extBar} className="anchorTooltip fullProgressBar" data-tooltip-content={
                 <div>
-                    <div></div>
-                    <p>Stade 0 : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>                </div>
-                <div>
-                    <div></div>
-                    <p>Stade 1 : {purcents.filter((item) => item.stade == 1).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 1).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                    <div>
+                        <div></div>
+                        <p>Stade 0
+                            : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
+                    </div>
+                    <div>
+                        <div></div>
+                        <p>Stade 1
+                            : {purcents.filter((item) => item.stade == 1).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 1).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                    </div>
+                    <div>
+                        <div></div>
+                        <p>Stade 2
+                            : {purcents.filter((item) => item.stade == 2).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 2).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                    </div>
+                    <div>
+                        <div></div>
+                        <p>Stade 3
+                            : {purcents.filter((item) => item.stade == 3).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 3).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                    </div>
+                    <div>
+                        <div></div>
+                        <p>Stade 4
+                            : {purcents.filter((item) => item.stade == 4).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 4).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                    </div>
                 </div>
-                <div>
-                    <div></div>
-                    <p>Stade 2 : {purcents.filter((item) => item.stade == 2).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 2).nb / props.item * 100).toFixed(2) + "%)"}</p>
-                </div>
-                <div>
-                    <div></div>
-                    <p>Stade 3 : {purcents.filter((item) => item.stade == 3).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 3).nb / props.item * 100).toFixed(2) + "%)"}</p>
-                </div>
-                <div>
-                    <div></div>
-                    <p>Stade 4 : {purcents.filter((item) => item.stade == 4).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 4).nb / props.item * 100).toFixed(2) + "%)"}</p>
-                </div>
-            </div>
-            <div style={customStyles.extBar} className="fullProgressBar">
+            }>
                 <div
                     style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
 
                 {purcents.length > 0 &&
-                    props.global === false &&
                     purcents.sort((a, b) => b.nb - a.nb).map((val, key) => {
                         return (
                             <div
