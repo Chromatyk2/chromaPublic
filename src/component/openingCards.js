@@ -98,7 +98,7 @@ function OpeningCards(props) {
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, booster:boosterName}]);
+                                                        setTenCards(tenCards => [...tenCards,{stade:stade,card :result, rarity:rarity.rarity, booster:boosterName}]);
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
@@ -115,7 +115,7 @@ function OpeningCards(props) {
                                                     block:props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, booster:boosterName}]);
+                                            setTenCards(tenCards => [...tenCards,{stade:stade,card :result, rarity:rarity.rarity, booster:boosterName}]);
                                             setNbCards (nbCards + 1);
 
                                         }
@@ -180,7 +180,7 @@ function OpeningCards(props) {
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
+                                                        setTenCards(tenCards => [...tenCards,{stade:stade, card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
@@ -210,7 +210,7 @@ function OpeningCards(props) {
                                                     block:props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
+                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName, stade:stade}]);
                                             setNbCards (nbCards + 1);
 
                                         }
@@ -398,7 +398,7 @@ function OpeningCards(props) {
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
                         if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
-                            var stadeC = props.rarities.filter(item => item.nameGuru === val.booster).find((uc) => uc.rarity.toUpperCase() === val.rarity.toUpperCase()).stade;
+                            var stadeC = val.stade;
                         } else {
                             var stadeC = 0;
                         }
