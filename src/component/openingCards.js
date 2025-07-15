@@ -71,7 +71,7 @@ function OpeningCards(props) {
             const boosterGuru = props.rarities.filter(item => item.stade ==  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade == 1 ).length)].nameGuru
             const commonRarities = [{rarity : 'Common', stade:0},{rarity : 'Uncommon', stade:0}]
             var rarity = commonRarities[Math.floor(Math.random() * commonRarities.length)]
-            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterGuru+' !rarity:"'+rarity.rarity+'"')
+            fetch('https://api.tcgdex.net/v2/en/cards?set.id='+props.idBooster+'&rarity='+rarity.rarity)
                 .then(res => res.json())
                 .then(
                     (result) => {
@@ -153,7 +153,7 @@ function OpeningCards(props) {
             }else{
                 var boosterDex = props.idBooster
             }
-            fetch('https://api.pokemontcg.io/v2/cards?q=set.id:'+boosterName+' '+finalRarity)
+            fetch('https://api.tcgdex.net/v2/en/cards?set.id='+props.idBooster+'&rarity='+rarity.rarity)
                 .then(res => res.json())
                 .then(
                     (result) => {
