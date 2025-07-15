@@ -108,35 +108,34 @@ function ProgressBarCard(props) {
         customStyles &&
             purcents.length > 0 &&
         <>
-            <div style={customStyles.extBar} className="anchorTooltip fullProgressBar" data-tooltip-html={
+            <div>
                 <div>
-                    <div>
-                        <div></div>
-                        <p>Stade 0
-                            : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
-                    </div>
-                    <div>
-                        <div></div>
-                        <p>Stade 1
-                            : {purcents.filter((item) => item.stade == 1).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 1).nb / props.item * 100).toFixed(2) + "%)"}</p>
-                    </div>
-                    <div>
-                        <div></div>
-                        <p>Stade 2
-                            : {purcents.filter((item) => item.stade == 2).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 2).nb / props.item * 100).toFixed(2) + "%)"}</p>
-                    </div>
-                    <div>
-                        <div></div>
-                        <p>Stade 3
-                            : {purcents.filter((item) => item.stade == 3).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 3).nb / props.item * 100).toFixed(2) + "%)"}</p>
-                    </div>
-                    <div>
-                        <div></div>
-                        <p>Stade 4
-                            : {purcents.filter((item) => item.stade == 4).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 4).nb / props.item * 100).toFixed(2) + "%)"}</p>
-                    </div>
+                    <div></div>
+                    <p>Stade 0
+                        : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
                 </div>
-            }>
+                <div>
+                    <div></div>
+                    <p>Stade 1
+                        : {purcents.filter((item) => item.stade == 1).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 1).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+                <div>
+                    <div></div>
+                    <p>Stade 2
+                        : {purcents.filter((item) => item.stade == 2).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 2).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+                <div>
+                    <div></div>
+                    <p>Stade 3
+                        : {purcents.filter((item) => item.stade == 3).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 3).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+                <div>
+                    <div></div>
+                    <p>Stade 4
+                        : {purcents.filter((item) => item.stade == 4).nb + " / " + props.item + "(" + parseFloat(purcents.filter((item) => item.stade == 4).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                </div>
+            </div>
+            <div style={customStyles.extBar} className="fullProgressBar">
                 <div
                     style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
 
