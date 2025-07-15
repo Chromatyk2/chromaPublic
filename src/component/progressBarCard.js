@@ -108,7 +108,7 @@ function ProgressBarCard(props) {
         customStyles &&
             purcents.length > 0 &&
         <>
-            <div style={customStyles.extBar} className="anchorTooltip fullProgressBar" data-tooltip-content={
+            <div style={customStyles.extBar} className="anchorTooltip fullProgressBar" data-tooltip-html={
                 <div>
                     <div>
                         <div></div>
