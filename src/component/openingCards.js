@@ -92,15 +92,15 @@ function OpeningCards(props) {
                                                         if(tenCards.length == 0){
                                                             var stade = 0;
                                                         }else{
-                                                            if(randomStade < 25 ){
+                                                            if(randomStade < 20 ){
                                                                 var stade = 0;
-                                                            }else if(randomStade > 24 && randomStade < 76 ){
+                                                            }else if(randomStade > 19 && randomStade < 71 ){
                                                                 var stade = 1;
-                                                            }else if(randomStade > 75 && randomStade < 95 ){
+                                                            }else if(randomStade > 70 && randomStade < 82 ){
                                                                 var stade = 2;
-                                                            }else if(randomStade > 94 && randomStade < 99 ){
+                                                            }else if(randomStade > 81 && randomStade < 94 ){
                                                                 var stade = 3;
-                                                            }else if(randomStade == 99){
+                                                            }else if(randomStade > 93){
                                                                 var stade = 4;
                                                             }
                                                         }
@@ -137,15 +137,15 @@ function OpeningCards(props) {
                                             if(tenCards.length == 0){
                                                 var stade = 0;
                                             }else{
-                                                if(randomStade < 25 ){
+                                                if(randomStade < 20 ){
                                                     var stade = 0;
-                                                }else if(randomStade > 24 && randomStade < 76 ){
+                                                }else if(randomStade > 19 && randomStade < 71 ){
                                                     var stade = 1;
-                                                }else if(randomStade > 75 && randomStade < 95 ){
+                                                }else if(randomStade > 70 && randomStade < 82 ){
                                                     var stade = 2;
-                                                }else if(randomStade > 94 && randomStade < 99 ){
+                                                }else if(randomStade > 81 && randomStade < 94 ){
                                                     var stade = 3;
-                                                }else if(randomStade == 99){
+                                                }else if(randomStade > 93){
                                                     var stade = 4;
                                                 }
                                             }
