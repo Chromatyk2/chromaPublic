@@ -43,9 +43,9 @@ function ProgressBarCard(props) {
         },
         ribbonClear:{
             position: "absolute",
-            top: "-15px",
-            right: "-35px",
-            width: "80px"
+            top: "-35px",
+            right: "-40px",
+            width: "130px"
         },
         ribbonUnclear:{
             position: "absolute",

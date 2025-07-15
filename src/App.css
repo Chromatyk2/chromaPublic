@@ -1541,9 +1541,10 @@ h1 {
     margin: 0 auto;
 }
 img.done {
-    margin-left: 160px;
-    margin-top: 0px;
+    margin-left: 125px;
+    margin-top: -20px;
     position: absolute;
+    width: 130px;
 }
 
 #again {
