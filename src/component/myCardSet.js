@@ -184,7 +184,7 @@ function MyCardsSet(props) {
         <>
             {isLoaded === false ?
                 <>
-                    <ProgressBarCard user={props.user} booster={props.idBooster} getNb={myCards.length} item={items.length}/>
+                    <ProgressBarCard global={false} user={props.user} booster={props.idBooster} getNb={myCards.length} item={items.length}/>
                     <div style={{color:"white",display:"flex",width:"100%",justifyContent:"center",flexWrap:"wrap"}}>
                         {myCards.length != items.length &&
                             <label htmlFor="subscribe">
