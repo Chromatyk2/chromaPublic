@@ -25,7 +25,7 @@ function ProgressBarCard(props) {
     intBar: {
         width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
         position: 'relative',
-        background: '#120747',
+        background: '#cecaca',
         textWrap: 'nowrap',
         color: 'white',
         padding: '15px',
@@ -59,7 +59,7 @@ function ProgressBarCard(props) {
 console.log(purcents);
     return (
     <div style={customStyles.extBar} className="fullProgressBar">
-        <div style={props.getNb == props.item ? customStyles.rainbowBar :customStyles.intBar}>{props.getNb+" / "+props.item+"("+parseFloat(props.getNb/props.item*100).toFixed(2)+"%)"}</div>
+        <div style={customStyles.intBar}>{props.getNb+" / "+props.item+"("+parseFloat(props.getNb/props.item*100).toFixed(2)+"%)"}</div>
         {props.booster && <img style={props.getNb == props.item ? customStyles.ribbonClear :customStyles.ribbonUnclear} src={"/Ribbon/"+props.booster+".png"}/>}
     </div>
     )
