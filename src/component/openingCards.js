@@ -111,7 +111,7 @@ function OpeningCards(props) {
                                                                 block:props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{stade:stade, card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName}]);
+                                                        setTenCards(tenCards => [...tenCards,{stade:stade, card :result, rarity:result.rarity, nbCard:pkmNumber, booster:boosterName}]);
                                                         setNbCards (nbCards + 1);
                                                     }
                                                 )
@@ -146,13 +146,13 @@ function OpeningCards(props) {
                                                     pseudo:props.user,
                                                     idCard:result.id,
                                                     booster:props.idBooster,
-                                                    rarity:rarity.rarity,
+                                                    rarity:result.rarity,
                                                     stade:stade,
                                                     nb:pkmNumber,
                                                     block:props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:rarity.rarity, nbCard:pkmNumber, booster:boosterName, stade:stade}]);
+                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity, nbCard:pkmNumber, booster:boosterName, stade:stade}]);
                                             setNbCards (nbCards + 1);
 
                                         }
