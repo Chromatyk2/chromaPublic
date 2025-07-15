@@ -112,8 +112,8 @@ function ProgressBarCard(props) {
                 <div style={{color:"white"}}>
                     {purcents.length > 0 &&
                         props.global === false &&
-                        <div>
-                            <div></div>
+                        <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
+                            <div style={{width: "10px", height: "10px", background: "#cecaca"}}></div>
                             <p>Stade 0
                                 : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
                         </div>
@@ -122,8 +122,21 @@ function ProgressBarCard(props) {
                         props.global === false &&
                         purcents.sort((a, b) => b.nb - a.nb).map((val, key) => {
                             return (
-                                <div>
-                                    <div></div>
+                                <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
+                                    <div style={{ width: "10px", height: "10px", background: val.stade == 1 ? "#40b24b" : val.stade == 2 ? "#81adef" : val.stade == 3 ? "#e5d330" : "linear-gradient(\n" +
+                                            "        90deg,\n" +
+                                            "        rgba(255, 0, 0, 1) 0%,\n" +
+                                            "        rgba(255, 154, 0, 1) 10%,\n" +
+                                            "        rgba(208, 222, 33, 1) 20%,\n" +
+                                            "        rgba(79, 220, 74, 1) 30%,\n" +
+                                            "        rgba(63, 218, 216, 1) 40%,\n" +
+                                            "        rgba(47, 201, 226, 1) 50%,\n" +
+                                            "        rgba(28, 127, 238, 1) 60%,\n" +
+                                            "        rgba(95, 21, 242, 1) 70%,\n" +
+                                            "        rgba(186, 12, 248, 1) 80%,\n" +
+                                            "        rgba(251, 7, 217, 1) 90%,\n" +
+                                            "        rgba(255, 0, 0, 1) 100%\n" +
+                                            "    )"}}></div>
                                     <p>Stade {key+1} : {purcents.find((item) => item.stade == key+1).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == key+1).nb / props.item * 100).toFixed(2) + "%)"}</p>
                                 </div>
                             )
