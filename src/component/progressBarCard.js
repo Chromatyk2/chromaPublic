@@ -37,37 +37,43 @@ function ProgressBarCard(props) {
         },
         yellowBar: {
             width: parseFloat(purcents.filter((item) => item.stade == 3).nb/props.item*100).toFixed(2)+"%",
-            position: 'relative',
+            position: 'absolute',
             background: '#e5d330',
             textWrap: 'nowrap',
             color: 'white',
             padding: '15px',
             borderRadius: '50px 50px 50px 50px',
-            filter: "drop-shadow(0px 0px 6px blue)"
+            filter: "drop-shadow(0px 0px 6px blue)",
+            top: 0,
+            zIndex: 1
         },
         blueBar: {
             width: parseFloat(purcents.filter((item) => item.stade == 2).nb/props.item*100).toFixed(2)+"%",
-            position: 'relative',
+            position: 'absolute',
             background: '#81adef',
             textWrap: 'nowrap',
             color: 'white',
             padding: '15px',
             borderRadius: '50px 50px 50px 50px',
-            filter: "drop-shadow(0px 0px 6px blue)"
+            filter: "drop-shadow(0px 0px 6px blue)",
+            top: 0,
+            zIndex: 1
         },
         greenBar: {
             width: parseFloat(purcents.filter((item) => item.stade == 1).nb/props.item*100).toFixed(2)+"%",
-            position: 'relative',
+            position: 'absolute',
             background: '#40b24b',
             textWrap: 'nowrap',
             color: 'white',
             padding: '15px',
             borderRadius: '50px 50px 50px 50px',
-            filter: "drop-shadow(0px 0px 6px blue)"
+            filter: "drop-shadow(0px 0px 6px blue)",
+            top: 0,
+            zIndex: 1
         },
         rainbowBar: {
             width: parseFloat(purcents.filter((item) => item.stade == 4).nb/props.item*100).toFixed(2)+"%",
-            position: 'relative',
+            position: 'absolute',
             textWrap: 'nowrap',
             padding: '15px',
             borderRadius: '50px 50px 50px 50px',
@@ -77,7 +83,9 @@ function ProgressBarCard(props) {
             color: "#120747",
             letterSpacing:0,
             textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
-            textAlign:"center"
+            textAlign:"center",
+            top: 0,
+            zIndex: 1
         },
         ribbonClear:{
             position: "absolute",
