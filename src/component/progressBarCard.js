@@ -140,6 +140,7 @@ function ProgressBarCard(props) {
                     style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
 
                 {purcents.length > 0 &&
+                    props.global === false &&
                     purcents.sort((a, b) => b.nb - a.nb).map((val, key) => {
                         return (
                             <div
