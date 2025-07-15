@@ -108,7 +108,6 @@ function ProgressBarCard(props) {
     return (
         customStyles &&
             purcents.length > 0 &&
-        <>
             <>
                 {purcents.length > 0 &&
                     props.global === false &&
@@ -124,8 +123,7 @@ function ProgressBarCard(props) {
                         return (
                             <div>
                                 <div></div>
-                                    <p>Stade {key+1}
-                                        : {purcents.find((item) => item.stade == key+1).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == key+1).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                                    <p>Stade {key+1} : {purcents.find((item) => item.stade == key+1).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == key+1).nb / props.item * 100).toFixed(2) + "%)"}</p>
                                 </div>
                             )
                         })
