@@ -18,6 +18,7 @@ function ProgressBarCard(props) {
     useEffect(() => {
         Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
             .then(function(response) {
+                console.log(response.data.filter((item) => item.stade == "1"))
                 setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
                     stade: 2,
                     nb: response.data.filter((item) => item.stade == "2").length

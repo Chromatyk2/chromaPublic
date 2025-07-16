@@ -58,7 +58,6 @@ function MyCardsSet(props) {
         },
     };
     useEffect(() => {
-        console.log(props.idBooster)
         Axios
             .get("/api/getRaritiesByBooster/"+props.idBooster)
             .then(function(response){
@@ -125,7 +124,6 @@ function MyCardsSet(props) {
             })
     }, []);
     function openModal(e) {
-        console.log(e.target);
         setMyCardImage(e.target.getAttribute("image"));
         setMyCardNb(e.target.getAttribute("myCardNb"));
         setPokemonName(e.target.getAttribute("pokemonId"));
@@ -179,7 +177,6 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
-    console.log(items)
     return (
         <>
             {isLoaded === false ?
