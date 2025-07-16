@@ -189,7 +189,7 @@ function ProgressBarCard(props) {
                         <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear}
                              src={"/Ribbon/" + props.booster + ".png"}/>}
                 </div>
-                <Modal isOpen={modalIsOpen} onRequestClose={closeModal()} style={customStyles} contentLabel="Example Modal">
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                     <img src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
                 </Modal>
             </>
