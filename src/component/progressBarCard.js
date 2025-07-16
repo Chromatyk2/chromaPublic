@@ -10,6 +10,7 @@ import {Tooltip} from "react-tooltip";
 function ProgressBarCard(props) {
     const [purcents, setPurcents] = useState([]);
     const [customStyles, setCustomStyles] = useState(null);
+    const [badges, setBadges] = useState(null);
     useEffect(() => {
         Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
             .then(function(response) {
@@ -106,9 +107,22 @@ function ProgressBarCard(props) {
                         display: "none"
                     }
                 })
+                    Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
+                        .then(function(response) {
+                            setBadges(response.data);
+
+                        })
             })
     }, []);
-    console.log(purcents)
+    useEffect(() => {
+        if(props.global === false){
+            if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
+                if(badges.find((item) => item.stade == 0).length == 0){
+                    alert("Vous pouver obtenir un badge !")
+                }
+            }
+        }
+    }, [badges]);
     return (
         customStyles &&
             purcents.length > 0 &&

@@ -96,11 +96,11 @@ function OpeningCards(props) {
                                                                 var stade = 0;
                                                             }else if(randomStade > 19 && randomStade < 71 ){
                                                                 var stade = 1;
-                                                            }else if(randomStade > 70 && randomStade < 82 ){
+                                                            }else if(randomStade > 70 && randomStade < 86){
                                                                 var stade = 2;
-                                                            }else if(randomStade > 81 && randomStade < 94 ){
+                                                            }else if(randomStade > 85 && randomStade < 97 ){
                                                                 var stade = 3;
-                                                            }else if(randomStade > 93){
+                                                            }else if(randomStade > 96){
                                                                 var stade = 4;
                                                             }
                                                         }
@@ -141,11 +141,11 @@ function OpeningCards(props) {
                                                     var stade = 0;
                                                 }else if(randomStade > 19 && randomStade < 71 ){
                                                     var stade = 1;
-                                                }else if(randomStade > 70 && randomStade < 82 ){
+                                                }else if(randomStade > 70 && randomStade < 86){
                                                     var stade = 2;
-                                                }else if(randomStade > 81 && randomStade < 94 ){
+                                                }else if(randomStade > 85 && randomStade < 97 ){
                                                     var stade = 3;
-                                                }else if(randomStade > 93){
+                                                }else if(randomStade > 96){
                                                     var stade = 4;
                                                 }
                                             }
