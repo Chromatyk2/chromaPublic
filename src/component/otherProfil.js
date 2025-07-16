@@ -35,6 +35,7 @@ function Profil(props) {
     const { pseudo } = useParams()
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
+    const [badgesList, setBadgesList] = useState(null);
     const [myTotalsCards, setMyTotalsCards] = useState(null);
     const [myLastTenCards, setMyLastTenCards] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -149,9 +150,14 @@ function Profil(props) {
                                 Axios
                                     .get("/api/getByUser/"+pseudo)
                                     .then(function(response){
-                                        setIsLoad(false)
                                         setList(response.data);
                                         setPourcent(Math.round((response.data.length / 1025) * 100));
+                                        Axios
+                                            .get("/api/getBadgesByUser/"+pseudo)
+                                            .then(function(response){
+                                                setIsLoad(false)
+                                                setBadgesList(response.data)
+                                            })
                                     })
                             })
                     })
@@ -309,7 +315,7 @@ function Profil(props) {
                                     }
                                     {profil[0].profil_picture ?
                                         <img style={{width: "75px"}}
-                                             src={"/images/Trainers/Trainer"+profil[0].profil_picture+".png"}/>
+                                             src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
                                         :
                                         <img style={{width: "75px"}} src={"/images/random.png"}/>
                                     }
@@ -373,7 +379,7 @@ function Profil(props) {
                                     className="anchorTooltip uniquePokemonContainerTeam">
                                 </button>
                             </div>
-                            { pourcentCard > 0 &&
+                            {pourcentCard > 0 &&
                                 <>
                                     <div className={"profilVisualsCard"}>
                                         <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
@@ -389,10 +395,10 @@ function Profil(props) {
                                         <div className={"profilCards"}>
                                             {myLastTenCards.sort((a, b) => b.stade - a.stade).map((val, key) => {
                                                 {
-                                                    if(val.number !== null && val.block !== null){
-                                                        if(val.booster.startsWith("sv")){
+                                                    if (val.number !== null && val.block !== null) {
+                                                        if (val.booster.startsWith("sv")) {
                                                             var cardNumber = val.number.toString().padStart(3, '0');
-                                                        }else{
+                                                        } else {
                                                             var cardNumber = val.number;
                                                         }
                                                         return (
@@ -401,7 +407,8 @@ function Profil(props) {
                                                                 booster={val.booster}
                                                                 block={val.block}
                                                                 className={val.stade == 4 ? "profilCard glowGetRainbow" : "profilCard"}
-                                                                onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
+                                                                onError={errorImage}
+                                                                alt="Grapefruit slice atop a pile of other slices"
                                                                 style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
                                                                 src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + cardNumber + "/high.png"}/>
 
@@ -415,6 +422,22 @@ function Profil(props) {
                                     </div>
                                 </>
                             }
+                            <p style={{marginTop: "20px", marginBottom: "20px"}}
+                               className={"pseudoProfil"}>Mes Badges</p>
+                            <div style={{display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
+                                {badgesList &&
+                                    badgesList.map((val, key) => {
+                                        return (
+                                            <>
+                                                <img data-tooltip-content={val.description} className={"anchorTooltip"}
+                                                     style={{width: "150px"}}
+                                                     src={"/Ribbon/" + val.image + "_" + val.stade + ".png"}/>
+                                                <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
+                                            </>
+                                        )
+                                    })
+                                }
+                            </div>
                         </>
                     }
                 </div>
