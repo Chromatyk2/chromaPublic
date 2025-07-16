@@ -119,14 +119,13 @@ function ProgressBarCard(props) {
                     })
                 Axios.get("/api/getBoosterByName/"+props.booster)
                     .then(function(response) {
-                        console.log(response.data[0])
                         setBoosterName(response.data[0].fullName);
 
                     })
             })
     }, []);
     useEffect(() => {
-        if(props.global === false && badges !== null){
+        if(props.global === false && badges !== null && boosterName !== null){
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                     openModalZero();
