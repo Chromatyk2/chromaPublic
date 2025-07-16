@@ -29,93 +29,94 @@ function ProgressBarCard(props) {
                             stade: 4,
                             nb: response.data.filter((item) => item.stade == "4").length
                         }])
+
+                        setCustomStyles({
+                            extBar: {
+                                width: '75%',
+                                backgroundColor: '#00368a',
+                                position: 'relative',
+                                zIndex: '1',
+                                borderRadius: '50px',
+                                margin: 'auto',
+                                marginBottom: '50px'
+                            },
+                            intBar: {
+                                width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
+                                position: 'relative',
+                                background: '#cecaca',
+                                textWrap: 'nowrap',
+                                color: 'white',
+                                padding: '15px',
+                                borderRadius: '50px 50px 50px 50px',
+                                filter: "drop-shadow(0px 0px 6px blue)"
+                            },
+                            yellowBar: {
+                                width: parseFloat(response.data.filter((item) => item.stade == "3").length / props.item * 100).toFixed(2) + "%",
+                                position: 'absolute',
+                                background: '#e5d330',
+                                textWrap: 'nowrap',
+                                color: 'white',
+                                padding: '15px',
+                                borderRadius: '50px 50px 50px 50px',
+                                filter: "drop-shadow(0px 0px 6px blue)",
+                                top: 0,
+                                zIndex: 1,
+                                height:"100%"
+                            },
+                            blueBar: {
+                                width: parseFloat(response.data.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
+                                position: 'absolute',
+                                background: '#81adef',
+                                textWrap: 'nowrap',
+                                color: 'white',
+                                padding: '15px',
+                                borderRadius: '50px 50px 50px 50px',
+                                filter: "drop-shadow(0px 0px 6px blue)",
+                                top: 0,
+                                zIndex: 1,
+                                height:"100%"
+                            },
+                            greenBar: {
+                                width: parseFloat(response.data.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
+                                position: 'absolute',
+                                background: '#40b24b',
+                                textWrap: 'nowrap',
+                                color: 'white',
+                                padding: '15px',
+                                borderRadius: '50px 50px 50px 50px',
+                                filter: "drop-shadow(0px 0px 6px blue)",
+                                top: 0,
+                                zIndex: 1,
+                                height:"100%"
+                            },
+                            rainbowBar: {
+                                width: parseFloat(response.data.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
+                                position: 'absolute',
+                                textWrap: 'nowrap',
+                                padding: '15px',
+                                borderRadius: '50px 50px 50px 50px',
+                                background: "linear-gradient(90deg, red 0%, yellow 15%, lime 30%, cyan 50%, blue 65%, magenta 80%, red 100%)",
+                                backgroundSize: "200%",
+                                animation: "moveGradient 5s linear infinite",
+                                color: "#120747",
+                                letterSpacing: 0,
+                                textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
+                                textAlign: "center",
+                                top: 0,
+                                zIndex: 1,
+                                height:"100%"
+                            },
+                            ribbonClear: {
+                                position: "absolute",
+                                top: "-35px",
+                                right: "-40px",
+                                width: "130px"
+                            },
+                            ribbonUnclear: {
+                                display: "none"
+                            }
+                        })
                     })
-                setCustomStyles({
-                    extBar: {
-                        width: '75%',
-                        backgroundColor: '#00368a',
-                        position: 'relative',
-                        zIndex: '1',
-                        borderRadius: '50px',
-                        margin: 'auto',
-                        marginBottom: '50px'
-                    },
-                    intBar: {
-                        width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
-                        position: 'relative',
-                        background: '#cecaca',
-                        textWrap: 'nowrap',
-                        color: 'white',
-                        padding: '15px',
-                        borderRadius: '50px 50px 50px 50px',
-                        filter: "drop-shadow(0px 0px 6px blue)"
-                    },
-                    yellowBar: {
-                        width: parseFloat(response.data.filter((item) => item.stade == "3").length / props.item * 100).toFixed(2) + "%",
-                        position: 'absolute',
-                        background: '#e5d330',
-                        textWrap: 'nowrap',
-                        color: 'white',
-                        padding: '15px',
-                        borderRadius: '50px 50px 50px 50px',
-                        filter: "drop-shadow(0px 0px 6px blue)",
-                        top: 0,
-                        zIndex: 1,
-                        height:"100%"
-                    },
-                    blueBar: {
-                        width: parseFloat(response.data.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
-                        position: 'absolute',
-                        background: '#81adef',
-                        textWrap: 'nowrap',
-                        color: 'white',
-                        padding: '15px',
-                        borderRadius: '50px 50px 50px 50px',
-                        filter: "drop-shadow(0px 0px 6px blue)",
-                        top: 0,
-                        zIndex: 1,
-                        height:"100%"
-                    },
-                    greenBar: {
-                        width: parseFloat(response.data.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
-                        position: 'absolute',
-                        background: '#40b24b',
-                        textWrap: 'nowrap',
-                        color: 'white',
-                        padding: '15px',
-                        borderRadius: '50px 50px 50px 50px',
-                        filter: "drop-shadow(0px 0px 6px blue)",
-                        top: 0,
-                        zIndex: 1,
-                        height:"100%"
-                    },
-                    rainbowBar: {
-                        width: parseFloat(response.data.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
-                        position: 'absolute',
-                        textWrap: 'nowrap',
-                        padding: '15px',
-                        borderRadius: '50px 50px 50px 50px',
-                        background: "linear-gradient(90deg, red 0%, yellow 15%, lime 30%, cyan 50%, blue 65%, magenta 80%, red 100%)",
-                        backgroundSize: "200%",
-                        animation: "moveGradient 5s linear infinite",
-                        color: "#120747",
-                        letterSpacing: 0,
-                        textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
-                        textAlign: "center",
-                        top: 0,
-                        zIndex: 1,
-                        height:"100%"
-                    },
-                    ribbonClear: {
-                        position: "absolute",
-                        top: "-35px",
-                        right: "-40px",
-                        width: "130px"
-                    },
-                    ribbonUnclear: {
-                        display: "none"
-                    }
-                })
                 Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
                     .then(function(response) {
                         setBadges(response.data);
