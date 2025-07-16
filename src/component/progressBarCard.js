@@ -192,7 +192,7 @@ function ProgressBarCard(props) {
                 <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                     <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                     <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
-                    <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à100% avec les cartes de rareté {badgeToWinStade} !!</p>
+                    <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à 100% avec les cartes de rareté {badgeToWinStade} !!</p>
                 </Modal>
             </>
     )
