@@ -6,11 +6,15 @@ import Pagination from './paginate.js';
 import '../App.css'
 import moment from 'moment';
 import {Tooltip} from "react-tooltip";
+import PokedexTeam from "./pokedexTeam";
+import Modal from "react-modal";
 
 function ProgressBarCard(props) {
     const [purcents, setPurcents] = useState([]);
     const [customStyles, setCustomStyles] = useState(null);
     const [badges, setBadges] = useState(null);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
     useEffect(() => {
         Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
             .then(function(response) {
@@ -118,11 +122,18 @@ function ProgressBarCard(props) {
         if(props.global === false && badges !== null){
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
-                    alert("Vous pouver obtenir un badge !")
+                    openModalZero();
                 }
             }
         }
     }, [badges]);
+    function closeModal() {
+        setIsOpen(false);
+    }
+    function openModalZero() {
+        setBadgeToWinStade(0)
+        setIsOpen(true);
+    }
     return (
         customStyles &&
             purcents.length > 0 &&
@@ -178,6 +189,9 @@ function ProgressBarCard(props) {
                         <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear}
                              src={"/Ribbon/" + props.booster + ".png"}/>}
                 </div>
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal()} style={customStyles} contentLabel="Example Modal">
+                    <img src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
+                </Modal>
             </>
     )
 }
