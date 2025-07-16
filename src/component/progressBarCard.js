@@ -134,6 +134,7 @@ function ProgressBarCard(props) {
         setBadgeToWinStade(0)
         setIsOpen(true);
     }
+    console.log(purcents);
     return (
         customStyles &&
             purcents.length > 0 &&
