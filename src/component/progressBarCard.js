@@ -151,6 +151,7 @@ function ProgressBarCard(props) {
         setBadgeToWinStade(0)
         setIsOpen(true);
     }
+    console.log(purcents.sort((a, b) => b.nb - a.nb));
     return (
         customStyles &&
             purcents.length > 0 &&
