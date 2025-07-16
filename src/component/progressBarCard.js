@@ -117,7 +117,7 @@ function ProgressBarCard(props) {
     useEffect(() => {
         if(props.global === false && badges !== null){
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
-                if(typeof badges.find((item) => item.stade === "undefined" || badges.length == 0)){
+                if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                     alert("Vous pouver obtenir un badge !")
                 }
             }
