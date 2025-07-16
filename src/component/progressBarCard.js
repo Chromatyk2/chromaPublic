@@ -333,7 +333,7 @@ function ProgressBarCard(props) {
                         props.global === false &&
                         purcents.map((val, key) => {
                             return (
-                                <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
+                                <div style={{width: "260px", justifyContent: "center", display: "flex", alignItems: "baseline", gap: "5px"}}>
                                     <div style={{ width: "10px", height: "10px", background: val.stade == 1 ? "#40b24b" : val.stade == 2 ? "#81adef" : val.stade == 3 ? "#e5d330" : "linear-gradient(\n" +
                                             "        90deg,\n" +
                                             "        rgba(255, 0, 0, 1) 0%,\n" +
