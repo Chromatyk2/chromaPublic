@@ -5703,6 +5703,7 @@ img.badgeToWin {
     -webkit-animation: bounceInBadge 5s;
     animation: bounceInBadge 5s;
     animation-delay: 1s;
+    transform:scale(0);
 }
 @keyframes bounceInBadge {
     0% {
