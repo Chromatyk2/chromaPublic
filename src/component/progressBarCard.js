@@ -134,7 +134,7 @@ function ProgressBarCard(props) {
                             pseudo:props.user,
                             image:props.booster,
                             stade:0,
-                            description:"100% du set "+boosterName
+                            description:"100% du set "+boosterName+" - Lvl.0"
                         })
                 }
             }
