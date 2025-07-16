@@ -119,8 +119,8 @@ function ProgressBarCard(props) {
                     })
                 Axios.get("/api/getBoosterByName/"+props.booster)
                     .then(function(response) {
-                        console.log(response.data.fullName)
-                        setBoosterName(response.data.fullName);
+                        console.log(response.fullName)
+                        setBoosterName(response.fullName);
 
                     })
             })
