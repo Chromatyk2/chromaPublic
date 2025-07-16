@@ -5700,6 +5700,37 @@ div.fit-picture{
 }
 img.badgeToWin {
     width: 300px;
-    -webkit-animation: bounceIn 1s;
-    animation: bounceIn 1s;
+    -webkit-animation: bounceInBadge 5s;
+    animation: bounceInBadge 5s;
+    animation-delay: 1s;
+}
+@keyframes bounceInBadge {
+    0% {
+        visibility: visible;
+        transform:scale(0.0001);
+    }
+    10% {
+        visibility: visible;
+        transform:scale(1.1);
+    }
+    20% {
+        visibility: visible;
+        transform:scale(0.9);
+    }
+    30% {
+        visibility: visible;
+        transform:scale(1);
+    }
+    60% {
+        visibility: visible;
+        transform:scale(1);
+    }
+    80% {
+        visibility: visible;
+        transform:scale(1);
+    }
+    100% {
+        visibility: visible;
+        height: 300px;
+    }
 }
