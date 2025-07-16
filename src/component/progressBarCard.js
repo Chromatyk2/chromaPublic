@@ -8,6 +8,7 @@ import moment from 'moment';
 import {Tooltip} from "react-tooltip";
 import PokedexTeam from "./pokedexTeam";
 import Modal from "react-modal";
+import $ from "jquery";
 
 function ProgressBarCard(props) {
     const [purcents, setPurcents] = useState([]);
@@ -116,21 +117,111 @@ function ProgressBarCard(props) {
                                 display: "none"
                             }
                         })
-                    })
-                Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
-                    .then(function(response) {
-                        setBadges(response.data);
+                        Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
+                            .then(function(response) {
+                                setBadges(response.data);
+                                Axios.get("/api/getBoosterByName/"+props.booster)
+                                    .then(function(response) {
+                                        setBoosterName(response.data[0].fullName);
 
-                    })
-                Axios.get("/api/getBoosterByName/"+props.booster)
-                    .then(function(response) {
-                        setBoosterName(response.data[0].fullName);
-
+                                        if(props.global === false && badges !== null && boosterName !== null){
+                                            if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
+                                                if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
+                                                    openModalZero();
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:props.user,
+                                                            image:props.booster,
+                                                            stade:0,
+                                                            description:"100% du set "+boosterName+" - Lvl.0"
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(purcents.length > 0){
+                                                    if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100){
+                                                        if(typeof badges.find((item) => item.stade === 1) === "undefined"){
+                                                            openModalZero();
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:props.booster,
+                                                                    stade:1,
+                                                                    description:"100% du set "+boosterName+" - Lvl.1"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }
+                                                    }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100){
+                                                        if(typeof badges.find((item) => item.stade === 2) === "undefined"){
+                                                            openModalZero();
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:props.booster,
+                                                                    stade:1,
+                                                                    description:"100% du set "+boosterName+" - Lvl.2"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }
+                                                    }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100){
+                                                        if(typeof badges.find((item) => item.stade === 3) === "undefined"){
+                                                            openModalZero();
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:props.booster,
+                                                                    stade:1,
+                                                                    description:"100% du set "+boosterName+" - Lvl.3"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }
+                                                    }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100){
+                                                        if(typeof badges.find((item) => item.stade === 4) === "undefined"){
+                                                            openModalZero();
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:props.booster,
+                                                                    stade:1,
+                                                                    description:"100% du set "+boosterName+" - Lvl.4"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    })
+                            })
                     })
             })
     }, []);
-    useEffect(() => {
-        if(props.global === false && badges !== null && boosterName !== null){
+    function closeModal() {
+        setIsOpen(false);
+        setTimeout(function (){
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                     openModalZero();
@@ -140,6 +231,12 @@ function ProgressBarCard(props) {
                             image:props.booster,
                             stade:0,
                             description:"100% du set "+boosterName+" - Lvl.0"
+                        })
+                        .then(function(response) {
+                            Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                .then(function (response) {
+                                    setBadges(response.data);
+                                })
                         })
                 }else if(purcents.length > 0){
                     if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100){
@@ -152,6 +249,12 @@ function ProgressBarCard(props) {
                                     stade:1,
                                     description:"100% du set "+boosterName+" - Lvl.1"
                                 })
+                                .then(function(response) {
+                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                        .then(function (response) {
+                                            setBadges(response.data);
+                                        })
+                                })
                         }
                     }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100){
                         if(typeof badges.find((item) => item.stade === 2) === "undefined"){
@@ -162,6 +265,12 @@ function ProgressBarCard(props) {
                                     image:props.booster,
                                     stade:1,
                                     description:"100% du set "+boosterName+" - Lvl.2"
+                                })
+                                .then(function(response) {
+                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                        .then(function (response) {
+                                            setBadges(response.data);
+                                        })
                                 })
                         }
                     }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100){
@@ -174,6 +283,12 @@ function ProgressBarCard(props) {
                                     stade:1,
                                     description:"100% du set "+boosterName+" - Lvl.3"
                                 })
+                                .then(function(response) {
+                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                        .then(function (response) {
+                                            setBadges(response.data);
+                                        })
+                                })
                         }
                     }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100){
                         if(typeof badges.find((item) => item.stade === 4) === "undefined"){
@@ -185,72 +300,17 @@ function ProgressBarCard(props) {
                                     stade:1,
                                     description:"100% du set "+boosterName+" - Lvl.4"
                                 })
+                                .then(function(response) {
+                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                        .then(function (response) {
+                                            setBadges(response.data);
+                                        })
+                                })
                         }
                     }
                 }
             }
-        }
-    }, [badges]);
-    function closeModal() {
-        setIsOpen(false);
-        if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
-            if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
-                openModalZero();
-                Axios.post('/api/addBadge',
-                    {
-                        pseudo:props.user,
-                        image:props.booster,
-                        stade:0,
-                        description:"100% du set "+boosterName+" - Lvl.0"
-                    })
-            }else if(purcents.length > 0){
-                if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100){
-                    if(typeof badges.find((item) => item.stade === 1) === "undefined"){
-                        openModalZero();
-                        Axios.post('/api/addBadge',
-                            {
-                                pseudo:props.user,
-                                image:props.booster,
-                                stade:1,
-                                description:"100% du set "+boosterName+" - Lvl.1"
-                            })
-                    }
-                }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100){
-                    if(typeof badges.find((item) => item.stade === 2) === "undefined"){
-                        openModalZero();
-                        Axios.post('/api/addBadge',
-                            {
-                                pseudo:props.user,
-                                image:props.booster,
-                                stade:1,
-                                description:"100% du set "+boosterName+" - Lvl.2"
-                            })
-                    }
-                }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100){
-                    if(typeof badges.find((item) => item.stade === 3) === "undefined"){
-                        openModalZero();
-                        Axios.post('/api/addBadge',
-                            {
-                                pseudo:props.user,
-                                image:props.booster,
-                                stade:1,
-                                description:"100% du set "+boosterName+" - Lvl.3"
-                            })
-                    }
-                }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100){
-                    if(typeof badges.find((item) => item.stade === 4) === "undefined"){
-                        openModalZero();
-                        Axios.post('/api/addBadge',
-                            {
-                                pseudo:props.user,
-                                image:props.booster,
-                                stade:1,
-                                description:"100% du set "+boosterName+" - Lvl.4"
-                            })
-                    }
-                }
-            }
-        }
+        },1500);
     }
     function openModalZero() {
         setBadgeToWinStade(0)
