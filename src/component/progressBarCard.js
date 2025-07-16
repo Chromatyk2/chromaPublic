@@ -185,9 +185,6 @@ function ProgressBarCard(props) {
                             )
                         })
                     }
-                    {props.booster &&
-                        <img style={props.getNb == props.item ? customStyles.ribbonClear : customStyles.ribbonUnclear}
-                             src={"/Ribbon/" + props.booster + ".png"}/>}
                 </div>
                 <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                     <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
