@@ -38,6 +38,7 @@ function Profil(props) {
     const [skins, setSkins] = useState(null);
     const [myTotalsCards, setMyTotalsCards] = useState(null);
     const [myLastTenCards, setMyLastTenCards] = useState(null);
+    const [badgesList, setBadgesList] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState("");
@@ -147,7 +148,7 @@ function Profil(props) {
                 setProfil(response.data);
                 Axios.get("/api/getMyTotalCards/"+pseudo)
                     .then(function (response){
-                        setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100).toFixed(5));
+                        setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100));
                         setMyTotalsCards(response.data)
                         Axios.get("/api/getMyLastTenCards/"+pseudo)
                             .then(function(response){
@@ -155,9 +156,14 @@ function Profil(props) {
                                 Axios
                                     .get("/api/getByUser/"+pseudo)
                                     .then(function(response){
-                                        setIsLoad(false)
                                         setList(response.data);
                                         setPourcent(Math.round((response.data.length / 1025) * 100));
+                                        Axios
+                                            .get("/api/getBadgesByUser/"+pseudo)
+                                            .then(function(response){
+                                                setIsLoad(false)
+                                                setBadgesList(response.data)
+                                            })
                                     })
                             })
                     })
@@ -415,31 +421,33 @@ function Profil(props) {
                                     <div className={"profilVisualsCard"}>
                                         <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                                         <img style={{width: "110px"}} className="anchorTooltip"
-                                             data-tooltip-content={pourcentCard+"% du Cartodex Complété"}
+                                             data-tooltip-content={pourcentCard + "% du Cartodex Complété"}
                                              src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
                                     </div>
                                     <p style={{marginTop: "20px", marginBottom: "20px"}}
                                        className={"pseudoProfil"}>Dernier Booster</p>
-                                    <div style={{display:"flex",flexWrap:"wrap"}}>
-                                        <img style={{width:"130px"}} src={"/Boosters/" + myLastTenCards[0].booster + ".png"}/>
+                                    <div style={{display: "flex", flexWrap: "wrap"}}>
+                                        <img style={{width: "130px"}}
+                                             src={"/Boosters/" + myLastTenCards[0].booster + ".png"}/>
                                         <div className={"profilCards"}>
                                             {myLastTenCards.sort((a, b) => b.stade - a.stade).map((val, key) => {
                                                 {
-                                                    if(val.number !== null && val.block !== null){
-                                                        if(val.booster.startsWith("sv")){
+                                                    if (val.number !== null && val.block !== null) {
+                                                        if (val.booster.startsWith("sv")) {
                                                             var cardNumber = val.number.toString().padStart(3, '0');
-                                                        }else{
+                                                        } else {
                                                             var cardNumber = val.number;
                                                         }
                                                         return (
-                                                        <img
-                                                            number={val.number}
-                                                            booster={val.booster}
-                                                            block={val.block}
-                                                            className={val.stade == 4 ? "profilCard glowGetRainbow" : "profilCard"}
-                                                                 onError={errorImage} alt="Grapefruit slice atop a pile of other slices"
-                                                                 style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
-                                                                 src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + cardNumber + "/high.png"}/>
+                                                            <img
+                                                                number={val.number}
+                                                                booster={val.booster}
+                                                                block={val.block}
+                                                                className={val.stade == 4 ? "profilCard glowGetRainbow" : "profilCard"}
+                                                                onError={errorImage}
+                                                                alt="Grapefruit slice atop a pile of other slices"
+                                                                style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
+                                                                src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + cardNumber + "/high.png"}/>
 
                                                         )
                                                     }
@@ -448,6 +456,17 @@ function Profil(props) {
 
                                             }
                                         </div>
+                                    </div>
+                                    <p style={{marginTop: "20px", marginBottom: "20px"}}
+                                       className={"pseudoProfil"}>Mes Badges</p>
+                                    <div>
+                                        {badgesList &&
+                                            badgesList.map((val, key) => {
+                                                return(
+                                                    <img src={"/Ribbon/"+val.image+"_"+val.stade+".png"} />
+                                                )
+                                            })
+                                        }
                                     </div>
                                 </>
                             }

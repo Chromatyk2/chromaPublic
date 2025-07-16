@@ -5607,7 +5607,10 @@ button.navbar-toggler.collapsed {
     gap: 35px;
     justify-content: center;
     margin: 20px;
-    padding-bottom: 140px;
+    padding: 35px;
+    border-bottom: 1px solid #000;
+    border-radius: 50px;
+    box-shadow: 0 6px 5px #000;
 }
 .profilVisualsCard{
     align-items: end;
