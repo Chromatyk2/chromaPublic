@@ -127,7 +127,7 @@ function ProgressBarCard(props) {
                                         if(props.global === false){
                                             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                                                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
-                                                    openModalZero();
+                                                    openModalZero(0);
                                                     Axios.post('/api/addBadge',
                                                         {
                                                             pseudo:props.user,
@@ -144,7 +144,7 @@ function ProgressBarCard(props) {
                                                 }else if(purcents.length > 0){
                                                     if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100){
                                                         if(typeof badges.find((item) => item.stade === 1) === "undefined"){
-                                                            openModalZero();
+                                                            openModalZero(1);
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
@@ -161,7 +161,7 @@ function ProgressBarCard(props) {
                                                         }
                                                     }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100){
                                                         if(typeof badges.find((item) => item.stade === 2) === "undefined"){
-                                                            openModalZero();
+                                                            openModalZero(2);
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
@@ -178,7 +178,7 @@ function ProgressBarCard(props) {
                                                         }
                                                     }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100){
                                                         if(typeof badges.find((item) => item.stade === 3) === "undefined"){
-                                                            openModalZero();
+                                                            openModalZero(3);
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
@@ -195,7 +195,7 @@ function ProgressBarCard(props) {
                                                         }
                                                     }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100){
                                                         if(typeof badges.find((item) => item.stade === 4) === "undefined"){
-                                                            openModalZero();
+                                                            openModalZero(4);
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
@@ -224,7 +224,7 @@ function ProgressBarCard(props) {
         setTimeout(function (){
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
-                    openModalZero();
+                    openModalZero(0);
                     Axios.post('/api/addBadge',
                         {
                             pseudo:props.user,
@@ -241,7 +241,7 @@ function ProgressBarCard(props) {
                 }else if(purcents.length > 0){
                     if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100){
                         if(typeof badges.find((item) => item.stade === 1) === "undefined"){
-                            openModalZero();
+                            openModalZero(1);
                             Axios.post('/api/addBadge',
                                 {
                                     pseudo:props.user,
@@ -258,7 +258,7 @@ function ProgressBarCard(props) {
                         }
                     }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100){
                         if(typeof badges.find((item) => item.stade === 2) === "undefined"){
-                            openModalZero();
+                            openModalZero(2);
                             Axios.post('/api/addBadge',
                                 {
                                     pseudo:props.user,
@@ -275,7 +275,7 @@ function ProgressBarCard(props) {
                         }
                     }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100){
                         if(typeof badges.find((item) => item.stade === 3) === "undefined"){
-                            openModalZero();
+                            openModalZero(3);
                             Axios.post('/api/addBadge',
                                 {
                                     pseudo:props.user,
@@ -292,7 +292,7 @@ function ProgressBarCard(props) {
                         }
                     }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100){
                         if(typeof badges.find((item) => item.stade === 4) === "undefined"){
-                            openModalZero();
+                            openModalZero(4);
                             Axios.post('/api/addBadge',
                                 {
                                     pseudo:props.user,
@@ -312,8 +312,8 @@ function ProgressBarCard(props) {
             }
         },1500);
     }
-    function openModalZero() {
-        setBadgeToWinStade(0)
+    function openModalZero(e) {
+        setBadgeToWinStade(e)
         setIsOpen(true);
     }
     return (
