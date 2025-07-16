@@ -199,7 +199,7 @@ function MyCardsSet(props) {
                     <div id={"cardsContainer"}>
                         {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
                                 if (myCardsId.includes(val.id)) {
-                                    var stadeC = val.stade;
+                                    var stadeC = myCards.find((uc) => uc.card == val.id).stade;
                                     let cardNb = myCards.find((myCard) => myCard.card === val.id);
                                     if(stadeC == 4){
                                         return (
