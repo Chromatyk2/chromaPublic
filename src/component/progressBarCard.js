@@ -50,7 +50,8 @@ function ProgressBarCard(props) {
                         borderRadius: '50px 50px 50px 50px',
                         filter: "drop-shadow(0px 0px 6px blue)",
                         top: 0,
-                        zIndex: 1
+                        zIndex: 1,
+                        height:"100%"
                     },
                     blueBar: {
                         width: parseFloat(response.data.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
@@ -62,7 +63,8 @@ function ProgressBarCard(props) {
                         borderRadius: '50px 50px 50px 50px',
                         filter: "drop-shadow(0px 0px 6px blue)",
                         top: 0,
-                        zIndex: 1
+                        zIndex: 1,
+                        height:"100%"
                     },
                     greenBar: {
                         width: parseFloat(response.data.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
@@ -74,7 +76,8 @@ function ProgressBarCard(props) {
                         borderRadius: '50px 50px 50px 50px',
                         filter: "drop-shadow(0px 0px 6px blue)",
                         top: 0,
-                        zIndex: 1
+                        zIndex: 1,
+                        height:"100%"
                     },
                     rainbowBar: {
                         width: parseFloat(response.data.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
@@ -90,7 +93,8 @@ function ProgressBarCard(props) {
                         textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
                         textAlign: "center",
                         top: 0,
-                        zIndex: 1
+                        zIndex: 1,
+                        height:"100%"
                     },
                     ribbonClear: {
                         position: "absolute",
