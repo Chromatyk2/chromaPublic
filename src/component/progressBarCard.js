@@ -323,14 +323,6 @@ function ProgressBarCard(props) {
                 <div style={{color: "white",display: "flex",gap: "5px",flexWrap: "wrap",justifyContent: "center"}}>
                     {purcents.length > 0 &&
                         props.global === false &&
-                        <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
-                            <div style={{width: "10px", height: "10px", background: "#cecaca"}}></div>
-                            <p>Stade 0
-                                : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
-                        </div>
-                    }
-                    {purcents.length > 0 &&
-                        props.global === false &&
                         purcents.sort((a, b) => a.nb - b.nb).map((val, key) => {
                             return (
                                 <div style={{width: "260px", justifyContent: "center", display: "flex", alignItems: "baseline", gap: "5px"}}>
@@ -352,6 +344,14 @@ function ProgressBarCard(props) {
                                 </div>
                             )
                         })
+                    }
+                    {purcents.length > 0 &&
+                        props.global === false &&
+                        <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
+                            <div style={{width: "10px", height: "10px", background: "#cecaca"}}></div>
+                            <p>Stade 0
+                                : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
+                        </div>
                     }
                 </div>
                 <div style={customStyles.extBar} className="fullProgressBar">
