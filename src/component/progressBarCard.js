@@ -19,13 +19,17 @@ function ProgressBarCard(props) {
     useEffect(() => {
         Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
             .then(function(response) {
-                setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
-                    stade: 2,
-                    nb: response.data.filter((item) => item.stade == "2").length
-                }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
-                    stade: 4,
-                    nb: response.data.filter((item) => item.stade == "4").length
-                }])
+
+                Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.booster)
+                    .then(function(response) {
+                        setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
+                            stade: 2,
+                            nb: response.data.filter((item) => item.stade == "2").length
+                        }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
+                            stade: 4,
+                            nb: response.data.filter((item) => item.stade == "4").length
+                        }])
+                    })
                 setCustomStyles({
                     extBar: {
                         width: '75%',
