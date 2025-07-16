@@ -122,11 +122,9 @@ function ProgressBarCard(props) {
                                 setBadges(response.data);
                                 Axios.get("/api/getBoosterByName/"+props.booster)
                                     .then(function(response) {
-                                        console.log(response.data[0].fullName)
-                                        console.log(response.data[0])
-                                        console.log(response)
                                         setBoosterName(response.data[0].fullName);
-                                        if(props.global === false && badges !== null){
+                                        console.log(badges);
+                                        if(props.global === false){
                                             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                                                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                                                     openModalZero();
@@ -318,7 +316,6 @@ function ProgressBarCard(props) {
         setBadgeToWinStade(0)
         setIsOpen(true);
     }
-    console.log(purcents.sort((a, b) => b.nb - a.nb));
     return (
         customStyles &&
             purcents.length > 0 &&
