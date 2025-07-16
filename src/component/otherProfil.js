@@ -424,7 +424,7 @@ function Profil(props) {
                             }
                             <p style={{marginTop: "20px", marginBottom: "20px"}}
                                className={"pseudoProfil"}>Mes Badges</p>
-                            <div style={{display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
+                            <div style={{margin: "20px",padding: "35px",display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
                                 {badgesList &&
                                     badgesList.map((val, key) => {
                                         return (
