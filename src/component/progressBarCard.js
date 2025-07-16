@@ -15,10 +15,10 @@ function ProgressBarCard(props) {
     const [badges, setBadges] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
+    const [boosterName, setBoosterName] = React.useState(null);
     useEffect(() => {
         Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
             .then(function(response) {
-                console.log(response.data.filter((item) => item.stade == "1"))
                 setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
                     stade: 2,
                     nb: response.data.filter((item) => item.stade == "2").length
@@ -112,11 +112,16 @@ function ProgressBarCard(props) {
                         display: "none"
                     }
                 })
-                    Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
-                        .then(function(response) {
-                            setBadges(response.data);
+                Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
+                    .then(function(response) {
+                        setBadges(response.data);
 
-                        })
+                    })
+                Axios.get("/api/getBoosterByName/"+props.booster)
+                    .then(function(response) {
+                        setBoosterName(response.data.fullName);
+
+                    })
             })
     }, []);
     useEffect(() => {
@@ -129,7 +134,7 @@ function ProgressBarCard(props) {
                             pseudo:props.user,
                             image:props.booster,
                             stade:0,
-                            description:"100% du set en rareté 0"
+                            description:"100% du set "+boosterName+" en rareté 0"
                         })
                 }
             }

@@ -17,10 +17,12 @@ function MyCards(props) {
     const [boosterList, setBoosterList] = useState(null);
     const [page, setPage] = useState(null);
     const [guruName, setGuruName] = useState(null);
-    function displayPage(e,f,g) {
+    const [fullName, setFullName] = useState(null);
+    function displayPage(e,f,g,h) {
         setPage(e);
         setNbCard(f);
         setGuruName(g);
+        setFullName(h);
     }
     function backPage() {
         setPage(null)
