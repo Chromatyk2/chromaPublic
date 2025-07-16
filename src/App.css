@@ -3847,7 +3847,7 @@ span.navbar-brand {
     height: 100vh;
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: 99vw;
 }
 .profilVisualsOther {
     align-items: center;
@@ -5697,4 +5697,7 @@ div.fit-picture{
     transition: height .5s;
     height: auto;
     width: 300px;
+}
+img.badgeToWin {
+    width: 100%;
 }
