@@ -166,7 +166,7 @@ function ProgressBarCard(props) {
                                             "        rgba(251, 7, 217, 1) 90%,\n" +
                                             "        rgba(255, 0, 0, 1) 100%\n" +
                                             "    )"}}></div>
-                                    <p>Stade {key+1} : {purcents.find((item) => item.stade == key+1).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == key+1).nb / props.item * 100).toFixed(2) + "%)"}</p>
+                                    <p>Stade {val.stade} : {purcents.find((item) => item.stade == val.stade).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == val.stade).nb / props.item * 100).toFixed(2) + "%)"}</p>
                                 </div>
                             )
                         })
@@ -190,7 +190,7 @@ function ProgressBarCard(props) {
                     <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                     <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
                     <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à 100% avec les cartes de rareté {badgeToWinStade} !!</p>
-                    <button className={"filterButton"} onClick={closeModal}>Cool !</button>
+                    <button className={"filterButton"}  & onClick={closeModal}>Cool !</button>
                 </Modal>
             </>
     )
