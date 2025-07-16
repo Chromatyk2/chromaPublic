@@ -124,6 +124,13 @@ function ProgressBarCard(props) {
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                     openModalZero();
+                    Axios.post('/api/addBadge',
+                        {
+                            pseudo:props.user,
+                            image:props.booster,
+                            stade:0,
+                            description:"100% du set en rareté 0"
+                        })
                 }
             }
         }
