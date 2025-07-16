@@ -119,6 +119,7 @@ function ProgressBarCard(props) {
                     })
                 Axios.get("/api/getBoosterByName/"+props.booster)
                     .then(function(response) {
+                        console.log(response.data.fullName)
                         setBoosterName(response.data.fullName);
 
                     })
@@ -147,7 +148,6 @@ function ProgressBarCard(props) {
         setBadgeToWinStade(0)
         setIsOpen(true);
     }
-    console.log(purcents);
     return (
         customStyles &&
             purcents.length > 0 &&
