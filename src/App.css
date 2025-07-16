@@ -5700,8 +5700,8 @@ div.fit-picture{
 }
 img.badgeToWin {
     width: 300px;
-    -webkit-animation: bounceInBadge 5s;
-    animation: bounceInBadge 5s;
+    -webkit-animation: bounceInBadge 5s forwards;
+    animation: bounceInBadge 5s forwards;
     animation-delay: 1s;
     transform:scale(0);
 }
