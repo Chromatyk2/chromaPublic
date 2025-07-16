@@ -122,6 +122,9 @@ function ProgressBarCard(props) {
                                 setBadges(response.data);
                                 Axios.get("/api/getBoosterByName/"+props.booster)
                                     .then(function(response) {
+                                        console.log(response.data[0].fullName)
+                                        console.log(response.data[0])
+                                        console.log(response)
                                         setBoosterName(response.data[0].fullName);
                                         if(props.global === false && badges !== null){
                                             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
