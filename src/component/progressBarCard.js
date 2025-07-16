@@ -123,8 +123,7 @@ function ProgressBarCard(props) {
                                 Axios.get("/api/getBoosterByName/"+props.booster)
                                     .then(function(response) {
                                         setBoosterName(response.data[0].fullName);
-
-                                        if(props.global === false && badges !== null && boosterName !== null){
+                                        if(props.global === false && badges !== null){
                                             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                                                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                                                     openModalZero();
@@ -133,7 +132,7 @@ function ProgressBarCard(props) {
                                                             pseudo:props.user,
                                                             image:props.booster,
                                                             stade:0,
-                                                            description:"100% du set "+boosterName+" - Lvl.0"
+                                                            description:"100% du set "+response.data[0].fullName+" - Lvl.0"
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
@@ -150,7 +149,7 @@ function ProgressBarCard(props) {
                                                                     pseudo:props.user,
                                                                     image:props.booster,
                                                                     stade:1,
-                                                                    description:"100% du set "+boosterName+" - Lvl.1"
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.1"
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
@@ -167,7 +166,7 @@ function ProgressBarCard(props) {
                                                                     pseudo:props.user,
                                                                     image:props.booster,
                                                                     stade:1,
-                                                                    description:"100% du set "+boosterName+" - Lvl.2"
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.2"
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
@@ -184,7 +183,7 @@ function ProgressBarCard(props) {
                                                                     pseudo:props.user,
                                                                     image:props.booster,
                                                                     stade:1,
-                                                                    description:"100% du set "+boosterName+" - Lvl.3"
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.3"
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
@@ -201,7 +200,7 @@ function ProgressBarCard(props) {
                                                                     pseudo:props.user,
                                                                     image:props.booster,
                                                                     stade:1,
-                                                                    description:"100% du set "+boosterName+" - Lvl.4"
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.4"
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
