@@ -722,7 +722,7 @@ function Profil(props) {
                          src={"/Ribbon/" + badgeToWinStade + ".png"}/>
                     <p style={{textAlign: "center", fontStyle: "20px"}}>{messageToBadge}</p>
                     <button style={{display: "block", margin: "auto"}} className={"filterButton"}
-                            onClick={closeModal}>Cool !
+                            onClick={closeModalBadge}>Cool !
                     </button>
                 </div>
             </Modal>
