@@ -40,6 +40,7 @@ function Profil(props) {
     const [myLastTenCards, setMyLastTenCards] = useState(null);
     const [badgesList, setBadgesList] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpenBadge, setIsOpenBadge] = React.useState(false);
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState("");
     const [list,setList] = useState([]);
@@ -48,6 +49,9 @@ function Profil(props) {
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [openTime, setOpenTime] = React.useState(false);
     const [isLoad, setIsLoad] = React.useState(true);
+    const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
+    const [messageToBadge, setMessageToBadge] = React.useState(null);
+    const [badges, setBadges] = useState(null);
     useEffect(() => {
         const progressBars = document.querySelectorAll('.progress-container');
 
@@ -129,6 +133,179 @@ function Profil(props) {
                                                     .then(function(response){
                                                         setList(response.data);
                                                         setPourcent(Math.round((response.data.length / 1025) * 100));
+                                                        const pourcent = Math.round((response.data.length / 1025) * 100);
+                                                        Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                            .then(function(response) {
+                                                                const badges = response.data;
+                                                                 if(pourcent > 0){
+                                                                        if(typeof badges.find((item) => item.image === "lv1") === "undefined"){
+                                                                            openModalZero("lv1", "Au moins 1 Pokemon capturé !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv1",
+                                                                                    stade:0,
+                                                                                    description:"Au moins 1 Pokemon capturé !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv2") === "undefined" && pourcent >= 10){
+                                                                         openModalZero("lv2", "10% du Pokédex complété !");
+                                                                         Axios.post('/api/addBadge',
+                                                                             {
+                                                                                 pseudo:pseudo,
+                                                                                 image:"lv2",
+                                                                                 stade:0,
+                                                                                 description:"10% du Pokédex complété !"
+                                                                             })
+                                                                             .then(function(response) {
+                                                                                 Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                     .then(function (response) {
+                                                                                         setBadges(response.data);
+                                                                                     })
+                                                                             })
+                                                                     }else if(typeof badges.find((item) => item.image === "lv3") === "undefined" && pourcent >= 20){
+                                                                            openModalZero("lv3", "20% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv3",
+                                                                                    stade:0,
+                                                                                    description:"20% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv4") === "undefined" && pourcent >= 30){
+                                                                            openModalZero("lv4", "30% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv4",
+                                                                                    stade:0,
+                                                                                    description:"30% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv5") === "undefined" && pourcent >= 40){
+                                                                            openModalZero("lv5", "40% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv5",
+                                                                                    stade:0,
+                                                                                    description:"40% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv6") === "undefined" && pourcent >= 50){
+                                                                            openModalZero("lv6", "50% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv6",
+                                                                                    stade:0,
+                                                                                    description:"50% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv7") === "undefined" && pourcent >= 60){
+                                                                            openModalZero("lv7", "10% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv7",
+                                                                                    stade:0,
+                                                                                    description:"60% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv8") === "undefined" && pourcent >= 70){
+                                                                            openModalZero("lv8", "70% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv8",
+                                                                                    stade:0,
+                                                                                    description:"70% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv9") === "undefined" && pourcent >= 80){
+                                                                            openModalZero("lv9", "80% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv9",
+                                                                                    stade:0,
+                                                                                    description:"80% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv10") === "undefined" && pourcent >= 90){
+                                                                            openModalZero("lv10", "90% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv10",
+                                                                                    stade:0,
+                                                                                    description:"90% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }else if(typeof badges.find((item) => item.image === "lv11") === "undefined" && pourcent === 100){
+                                                                            openModalZero("lv11", "100% du Pokédex complété !");
+                                                                            Axios.post('/api/addBadge',
+                                                                                {
+                                                                                    pseudo:pseudo,
+                                                                                    image:"lv11",
+                                                                                    stade:0,
+                                                                                    description:"100% du Pokédex complété !"
+                                                                                })
+                                                                                .then(function(response) {
+                                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                                        .then(function (response) {
+                                                                                            setBadges(response.data);
+                                                                                        })
+                                                                                })
+                                                                        }
+                                                                }
+                                                            })
                                                     })
                                             })
                                     },1500);
@@ -136,6 +313,11 @@ function Profil(props) {
                         })
                 }
             })
+    }
+    function openModalZero(e, f) {
+        setBadgeToWinStade(e)
+        setMessageToBadge(f)
+        setIsOpenBadge(true);
     }
     function closeModalToken() {
         Axios.get("/api/getProfil/"+pseudo)
@@ -529,6 +711,13 @@ function Profil(props) {
             </Modal>
             <Modal style={{}} overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
                 <SpawnPokemonToken  change={closeModalToken} pseudo={pseudo}/>
+            </Modal>
+
+            <Modal overlayClassName={"overlayModalBadge"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
+                <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+badgeToWinStade+".png"}/>
+                <p style={{textAlign:"center", fontStyle:"20px"}}>{messageToBadge}</p>
+                <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModal}>Cool !</button>
             </Modal>
         </>
     )

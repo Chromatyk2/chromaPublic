@@ -131,7 +131,7 @@ function ProgressBarCard(props) {
                                                     Axios.post('/api/addBadge',
                                                         {
                                                             pseudo:props.user,
-                                                            image:props.booster,
+                                                            image:props.booster+"_0",
                                                             stade:0,
                                                             description:"100% du set "+response.data[0].fullName+" - Lvl.0"
                                                         })
@@ -148,7 +148,7 @@ function ProgressBarCard(props) {
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
-                                                                    image:props.booster,
+                                                                    image:props.booster+"_1",
                                                                     stade:1,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.1"
                                                                 })
@@ -165,7 +165,7 @@ function ProgressBarCard(props) {
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
-                                                                    image:props.booster,
+                                                                    image:props.booster+"_2",
                                                                     stade:1,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.2"
                                                                 })
@@ -182,7 +182,7 @@ function ProgressBarCard(props) {
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
-                                                                    image:props.booster,
+                                                                    image:props.booster+"_3",
                                                                     stade:1,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.3"
                                                                 })
@@ -199,7 +199,7 @@ function ProgressBarCard(props) {
                                                             Axios.post('/api/addBadge',
                                                                 {
                                                                     pseudo:props.user,
-                                                                    image:props.booster,
+                                                                    image:props.booster+"_4",
                                                                     stade:1,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.4"
                                                                 })
@@ -228,7 +228,7 @@ function ProgressBarCard(props) {
                     Axios.post('/api/addBadge',
                         {
                             pseudo:props.user,
-                            image:props.booster,
+                            image:props.booster+"_0",
                             stade:0,
                             description:"100% du set "+boosterName+" - Lvl.0"
                         })
@@ -246,7 +246,7 @@ function ProgressBarCard(props) {
                                 {
                                     pseudo:props.user,
                                     image:props.booster,
-                                    stade:1,
+                                    stade:1+"_1",
                                     description:"100% du set "+boosterName+" - Lvl.1"
                                 })
                                 .then(function(response) {
@@ -262,8 +262,8 @@ function ProgressBarCard(props) {
                             Axios.post('/api/addBadge',
                                 {
                                     pseudo:props.user,
-                                    image:props.booster,
-                                    stade:1,
+                                    image:props.booster+"_2",
+                                    stade:2,
                                     description:"100% du set "+boosterName+" - Lvl.2"
                                 })
                                 .then(function(response) {
@@ -279,8 +279,8 @@ function ProgressBarCard(props) {
                             Axios.post('/api/addBadge',
                                 {
                                     pseudo:props.user,
-                                    image:props.booster,
-                                    stade:1,
+                                    image:props.booster+"_3",
+                                    stade:3,
                                     description:"100% du set "+boosterName+" - Lvl.3"
                                 })
                                 .then(function(response) {
@@ -297,7 +297,7 @@ function ProgressBarCard(props) {
                                 {
                                     pseudo:props.user,
                                     image:props.booster,
-                                    stade:1,
+                                    stade:+"_4",
                                     description:"100% du set "+boosterName+" - Lvl.4"
                                 })
                                 .then(function(response) {
