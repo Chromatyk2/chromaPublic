@@ -380,6 +380,9 @@ function Profil(props) {
     function closeModal() {
         setIsOpen(false);
     }
+    function closeModalBadge() {
+        setIsOpenBadge(false);
+    }
     function changeSkin(e) {
         const skin = e.target.value;
         Axios.post('/api/updateSkin',
@@ -710,7 +713,7 @@ function Profil(props) {
                 <SpawnPokemonToken  change={closeModalToken} pseudo={pseudo}/>
             </Modal>
 
-            <Modal overlayClassName={"overlayModalBadge"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+            <Modal overlayClassName={"overlayModalBadge"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModalBadge} style={customStyles} contentLabel="Example Modal">
                 <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                 <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+badgeToWinStade+".png"}/>
                 <p style={{textAlign:"center", fontStyle:"20px"}}>{messageToBadge}</p>
