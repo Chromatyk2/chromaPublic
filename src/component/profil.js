@@ -48,6 +48,7 @@ function Profil(props) {
     const [pourcentCard, setPourcentCard] = useState();
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [openTime, setOpenTime] = React.useState(false);
+    const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
     const [isLoad, setIsLoad] = React.useState(true);
     const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
     const [messageToBadge, setMessageToBadge] = React.useState(null);
@@ -538,6 +539,11 @@ function Profil(props) {
         setTeamToHandle(teamToUpdate);
         setIsOpenTeam(true);
     }
+    function handleBadge(e) {
+        setOpenBadgeHandle(true);
+    }function closeBadgeHandle(e) {
+        setOpenBadgeHandle(false);
+    }
     function closeModalTeam() {
         setIsOpenTeam(false);
     }
@@ -927,12 +933,12 @@ function Profil(props) {
                     })
             })
     }
-    function changeSkin(e) {
+    function changeBadge(e) {
         const skin = e.target.value;
         Axios.post('/api/updateBadge',
             {
                 user:pseudo,
-                badge:e.target.value
+                image:e.target.value
             }
         )
             .then(function(response){
@@ -1078,7 +1084,7 @@ function Profil(props) {
                                     }
                                     {profil[0].profil_picture ?
                                         <img style={{width: "75px"}}
-                                             src={"/images/Trainers/Trainer"+profil[0].profil_picture+".png"}/>
+                                             src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
                                         :
                                         <img style={{width: "75px"}} src={"/images/random.png"}/>
                                     }
@@ -1097,9 +1103,15 @@ function Profil(props) {
                                            className={"levelProfil"}>{profil[0].xp + " / " + profil[0].level * 25}</p>
                                     </div>
                                 </div>
+
+                                <button
+                                    style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/' + profil[0].badge + ')' : 'url(/images/random.png)'}}
+                                    onClick={handleBadge} value={"first_pokemon"}
+                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                </button>
                                 {pourcent > 0 &&
                                     <div className="anchorTooltip"
-                                         data-tooltip-content={pourcent+"% du Pokedex Complété"}
+                                         data-tooltip-content={pourcent + "% du Pokedex Complété"}
                                          style={{width: "120px"}}>
                                         <img style={{width: "80%"}}
                                              src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
@@ -1271,7 +1283,7 @@ function Profil(props) {
                 </div>
             </Modal>
 
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+            <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles} contentLabel="Example Modal">
                 <p style={{textAlign: "center"}}>Choisis ton Badge</p>
                 <div style={{
                     overflow: "overlay",
