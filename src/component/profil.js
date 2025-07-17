@@ -946,7 +946,7 @@ function Profil(props) {
                     .get("/api/getProfil/"+pseudo)
                     .then(function(response){
                         setProfil(response.data);
-                        setIsOpen(false);
+                        setOpenBadgeHandle(false);
                     })
             })
     }
@@ -1105,18 +1105,10 @@ function Profil(props) {
                                 </div>
 
                                 <button
-                                    style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/' + profil[0].badge + ')' : 'url(/images/random.png)'}}
+                                    style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/'+profil[0].badge+'.png)' : 'url(/images/random.png)'}}
                                     onClick={handleBadge} value={"first_pokemon"}
                                     className="anchorTooltip uniquePokemonContainerTeam">
                                 </button>
-                                {pourcent > 0 &&
-                                    <div className="anchorTooltip"
-                                         data-tooltip-content={pourcent + "% du Pokedex Complété"}
-                                         style={{width: "120px"}}>
-                                        <img style={{width: "80%"}}
-                                             src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
-                                    </div>
-                                }
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
                             <p className={"pseudoProfil"}>Mon équipe</p>
@@ -1302,11 +1294,13 @@ function Profil(props) {
                                         backgroundPosition: "center",
                                         backgroundRepeat: "no-repeat",
                                         backgroundImage: "url(/Ribbon/" + val.image + ".png)",
-                                        border: "solid",
+                                        backgroundSize:"contain",
+                                        border: "none",
                                         borderRadius: "25px",
                                         padding: "20px",
                                         width: "100px",
-                                        height: "100px"
+                                        height: "100px",
+                                        backgroundColor:"transparent"
                                     }} onClick={changeBadge}></button>
                                 </>
                             )
