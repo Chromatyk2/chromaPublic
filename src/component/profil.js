@@ -713,14 +713,21 @@ function Profil(props) {
                 <SpawnPokemonToken  change={closeModalToken} pseudo={pseudo}/>
             </Modal>
 
-            <Modal overlayClassName={"overlayModalBadge"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModalBadge} contentLabel="Example Modal">
-                <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
-                <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+badgeToWinStade+".png"}/>
-                <p style={{textAlign:"center", fontStyle:"20px"}}>{messageToBadge}</p>
-                <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModal}>Cool !</button>
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge}
+                   onRequestClose={closeModalBadge} contentLabel="Example Modal">
+
+                <div style={{flexFlow:"column"}} className="pokemonContentToken">
+                    <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitations !!! </p>
+                    <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                         src={"/Ribbon/" + badgeToWinStade + ".png"}/>
+                    <p style={{textAlign: "center", fontStyle: "20px"}}>{messageToBadge}</p>
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                            onClick={closeModal}>Cool !
+                    </button>
+                </div>
             </Modal>
         </>
-    )
+)
 }
 
 export default Profil
