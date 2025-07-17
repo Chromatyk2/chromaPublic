@@ -927,6 +927,23 @@ function Profil(props) {
                     })
             })
     }
+    function changeSkin(e) {
+        const skin = e.target.value;
+        Axios.post('/api/updateBadge',
+            {
+                user:pseudo,
+                badge:e.target.value
+            }
+        )
+            .then(function(response){
+                Axios
+                    .get("/api/getProfil/"+pseudo)
+                    .then(function(response){
+                        setProfil(response.data);
+                        setIsOpen(false);
+                    })
+            })
+    }
     function openSkin(e) {
         if(profil[0].box - 1 > -1){
             Axios.post('/api/removeBoxSkin',
@@ -1253,8 +1270,40 @@ function Profil(props) {
                     </button>
                 </div>
             </Modal>
+
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                <p style={{textAlign: "center"}}>Choisis ton Badge</p>
+                <div style={{
+                    overflow: "overlay",
+                    display: "flex",
+                    gap: "10px",
+                    flexFlow: "row",
+                    flexWrap: "wrap",
+                    justifyContent: "center"
+                }}>
+                    {badgesList &&
+                        badgesList.map((val, key) => {
+                            return (
+                                <>
+
+                                    <button value={val.image} style={{
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                        border: "solid",
+                                        borderRadius: "25px",
+                                        padding: "20px",
+                                        width: "100px",
+                                        height: "100px"
+                                    }} onClick={changeBadge}></button>
+                                </>
+                            )
+                        })
+                    }
+                < /div>
+            </Modal>
         </>
-)
+    )
 }
 
 export default Profil
