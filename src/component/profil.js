@@ -654,7 +654,7 @@ function Profil(props) {
                                                     <>
                                                         <img data-tooltip-content={val.description}
                                                              className={"anchorTooltip"} style={{width: "150px"}}
-                                                             src={"/Ribbon/" + val.image + "_" + val.stade + ".png"}/>
+                                                             src={"/Ribbon/" + val.image +".png"}/>
                                                         <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                                                     </>
                                                 )
