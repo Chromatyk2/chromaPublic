@@ -506,7 +506,6 @@ function Profil(props) {
                                                                     })
                                                             })
                                                     }
-                                                }
                                             })
                                     })
                             })
