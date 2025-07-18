@@ -116,13 +116,6 @@ function OpeningCards(props) {
                                                                 booster: boosterName,
                                                                 isNew :1
                                                             }]);
-                                                            Axios.post('/api/addPowder',
-                                                                {
-                                                                    user: props.user,
-                                                                    win: stade *10,
-                                                                    wins: stade *10
-                                                                }
-                                                            )
                                                         }else{
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 stade: stade,
@@ -132,6 +125,13 @@ function OpeningCards(props) {
                                                                 booster: boosterName,
                                                                 isNew :0
                                                             }]);
+                                                            Axios.post('/api/addPowder',
+                                                                {
+                                                                    user: props.user,
+                                                                    win: stade *10,
+                                                                    wins: stade *10
+                                                                }
+                                                            )
                                                         }
                                                         Axios.post('/api/addCard',
                                                             {
@@ -186,13 +186,6 @@ function OpeningCards(props) {
                                                     stade: stade,
                                                     isNew:1
                                                 }]);
-                                                Axios.post('/api/addPowder',
-                                                    {
-                                                        user: props.user,
-                                                        win: stade *10,
-                                                        wins: stade *10
-                                                    }
-                                                )
                                             }else{
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
@@ -202,6 +195,13 @@ function OpeningCards(props) {
                                                     stade: stade,
                                                     isNew:0
                                                 }]);
+                                                Axios.post('/api/addPowder',
+                                                    {
+                                                        user: props.user,
+                                                        win: stade *10,
+                                                        wins: stade *10
+                                                    }
+                                                )
                                             }
                                             Axios.post('/api/addCard',
                                                 {
