@@ -68,65 +68,71 @@ function OpeningCards(props) {
     }, [myCards]);
     useEffect(() => {
     Axios.get("/api/getAllMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
-        .then(function(response){
+        .then(function(response) {
             const gettedCards = response.data;
             console.log(gettedCards);
-        if(tenCards.length < 5){
-            var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
-            if(boosterName == "sma"){
-                var boosterDex = "sma"
-            }else{
-                var boosterDex = props.idBooster
-            }
-            fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:'+props.idBooster)
-                .then(res => res.json())
-                .then(
-                    (result) => {
+            if (tenCards.length < 5) {
+                var boosterName = props.rarities.filter(item => item.stade === 1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade === 1).length)].nameGuru
+                if (boosterName == "sma") {
+                    var boosterDex = "sma"
+                } else {
+                    var boosterDex = props.idBooster
+                }
+                fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:' + props.idBooster)
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
                             const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
-                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterDex+'/'+pkmNumber)
+                            fetch('https://api.tcgdex.net/v2/en/sets/' + boosterDex + '/' + pkmNumber)
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
-                                        if(result.status == 404){
-                                            fetch('https://api.tcgdex.net/v2/en/sets/'+boosterDex.replace(".","")+'/'+pkmNumber)
+                                        if (result.status == 404) {
+                                            fetch('https://api.tcgdex.net/v2/en/sets/' + boosterDex.replace(".", "") + '/' + pkmNumber)
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
                                                         var randomStade = Math.floor(Math.random() * 100);
-                                                        if(tenCards.length == 0){
+                                                        if (tenCards.length == 0) {
                                                             var stade = 0;
-                                                        }else{
-                                                            if(randomStade < 20 ){
+                                                        } else {
+                                                            if (randomStade < 20) {
                                                                 var stade = 0;
-                                                            }else if(randomStade > 19 && randomStade < 71 ){
+                                                            } else if (randomStade > 19 && randomStade < 71) {
                                                                 var stade = 1;
-                                                            }else if(randomStade > 70 && randomStade < 86){
+                                                            } else if (randomStade > 70 && randomStade < 86) {
                                                                 var stade = 2;
-                                                            }else if(randomStade > 85 && randomStade < 97 ){
+                                                            } else if (randomStade > 85 && randomStade < 97) {
                                                                 var stade = 3;
-                                                            }else if(randomStade > 96){
+                                                            } else if (randomStade > 96) {
                                                                 var stade = 4;
                                                             }
                                                         }
                                                         Axios.post('/api/addCard',
                                                             {
-                                                                pseudo:props.user,
-                                                                idCard:result.id,
-                                                                booster:props.idBooster,
-                                                                rarity:result.rarity,
-                                                                stade:stade,
-                                                                nb:pkmNumber,
-                                                                block:props.block
+                                                                pseudo: props.user,
+                                                                idCard: result.id,
+                                                                booster: props.idBooster,
+                                                                rarity: result.rarity,
+                                                                stade: stade,
+                                                                nb: pkmNumber,
+                                                                block: props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards,{stade:stade, card :result, rarity:result.rarity, nbCard:pkmNumber, booster:boosterName}]);
-                                                        setNbCards (nbCards + 1);
+                                                        setTenCards(tenCards => [...tenCards, {
+                                                            stade: stade,
+                                                            card: result,
+                                                            rarity: result.rarity,
+                                                            nbCard: pkmNumber,
+                                                            booster: boosterName
+                                                        }]);
+                                                        setNbCards(nbCards + 1);
                                                     }
                                                 )
                                                 .then(
                                                     (result) => {
                                                         setIsLoaded(false);
-                                                        if(tenCards.length === 4){
+                                                        if (tenCards.length === 4) {
                                                             setIsLoaded(false);
                                                             setThings(false)
                                                             const timeoutBooster = setTimeout(() => {
@@ -136,43 +142,49 @@ function OpeningCards(props) {
                                                         }
 
                                                     })
-                                        }else{
+                                        } else {
                                             var randomStade = Math.floor(Math.random() * 100);
-                                            if(tenCards.length == 0){
+                                            if (tenCards.length == 0) {
                                                 var stade = 0;
-                                            }else{
-                                                if(randomStade < 20 ){
+                                            } else {
+                                                if (randomStade < 20) {
                                                     var stade = 0;
-                                                }else if(randomStade > 19 && randomStade < 71 ){
+                                                } else if (randomStade > 19 && randomStade < 71) {
                                                     var stade = 1;
-                                                }else if(randomStade > 70 && randomStade < 86){
+                                                } else if (randomStade > 70 && randomStade < 86) {
                                                     var stade = 2;
-                                                }else if(randomStade > 85 && randomStade < 97 ){
+                                                } else if (randomStade > 85 && randomStade < 97) {
                                                     var stade = 3;
-                                                }else if(randomStade > 96){
+                                                } else if (randomStade > 96) {
                                                     var stade = 4;
                                                 }
                                             }
                                             Axios.post('/api/addCard',
                                                 {
-                                                    pseudo:props.user,
-                                                    idCard:result.id,
-                                                    booster:props.idBooster,
-                                                    rarity:result.rarity,
-                                                    stade:stade,
-                                                    nb:pkmNumber,
-                                                    block:props.block
+                                                    pseudo: props.user,
+                                                    idCard: result.id,
+                                                    booster: props.idBooster,
+                                                    rarity: result.rarity,
+                                                    stade: stade,
+                                                    nb: pkmNumber,
+                                                    block: props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards,{card :result, rarity:result.rarity, nbCard:pkmNumber, booster:boosterName, stade:stade}]);
-                                            setNbCards (nbCards + 1);
+                                            setTenCards(tenCards => [...tenCards, {
+                                                card: result,
+                                                rarity: result.rarity,
+                                                nbCard: pkmNumber,
+                                                booster: boosterName,
+                                                stade: stade
+                                            }]);
+                                            setNbCards(nbCards + 1);
 
                                         }
                                     }
                                 )
                                 .then(
                                     (result) => {
-                                        if(tenCards.length === 4){
+                                        if (tenCards.length === 4) {
                                             setIsLoaded(false);
                                             setThings(false)
                                             const timeoutBooster = setTimeout(() => {
@@ -182,9 +194,10 @@ function OpeningCards(props) {
                                         }
 
                                     })
-                    }
-                )
-        }
+                        }
+                    )
+            }
+        })
     }, [nbCards])
     function showCards() {
         setIsHidden(false);
