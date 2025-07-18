@@ -109,7 +109,7 @@ function OpeningCards(props) {
                                                         }
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
-                                                                stade: stade,
+                                                                grade: stade,
                                                                 card: result,
                                                                 rarity: result.rarity,
                                                                 nbCard: pkmNumber,
@@ -118,7 +118,7 @@ function OpeningCards(props) {
                                                             }]);
                                                         }else{
                                                             setTenCards(tenCards => [...tenCards, {
-                                                                stade: stade,
+                                                                grade: stade,
                                                                 card: result,
                                                                 rarity: result.rarity,
                                                                 nbCard: pkmNumber,
@@ -144,7 +144,7 @@ function OpeningCards(props) {
                                                                 idCard: result.id,
                                                                 booster: props.idBooster,
                                                                 rarity: result.rarity,
-                                                                stade: stade,
+                                                                grade: stade,
                                                                 nb: pkmNumber,
                                                                 block: props.block
                                                             })
@@ -190,7 +190,7 @@ function OpeningCards(props) {
                                                     rarity: result.rarity,
                                                     nbCard: pkmNumber,
                                                     booster: boosterName,
-                                                    stade: stade,
+                                                    grade: stade,
                                                     isNew:1
                                                 }]);
                                             }else{
@@ -199,7 +199,7 @@ function OpeningCards(props) {
                                                     rarity: result.rarity,
                                                     nbCard: pkmNumber,
                                                     booster: boosterName,
-                                                    stade: stade,
+                                                    grade: stade,
                                                     isNew:0
                                                 }]);
                                                 console.log(stade)
@@ -221,7 +221,7 @@ function OpeningCards(props) {
                                                     idCard: result.id,
                                                     booster: props.idBooster,
                                                     rarity: result.rarity,
-                                                    stade: stade,
+                                                    grade: stade,
                                                     nb: pkmNumber,
                                                     block: props.block
                                                 })
