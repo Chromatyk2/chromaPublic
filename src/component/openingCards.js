@@ -130,7 +130,7 @@ function OpeningCards(props) {
                                                             rarity: result.rarity,
                                                             nbCard: pkmNumber,
                                                             booster: boosterName,
-                                                            isNEw :isNew
+                                                            isNew :isNew
                                                         }]);
                                                         setNbCards(nbCards + 1);
                                                     }
