@@ -93,6 +93,7 @@ function OpeningCards(props) {
                                                     (result) => {
                                                         console.log(gettedCards)
                                                         console.log(pkmNumber)
+                                                        console.log(gettedCards.filter((uc) => uc.number == pkmNumber))
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 stade: stade,
@@ -185,6 +186,7 @@ function OpeningCards(props) {
                                             setIsLoaded(true);
                                             console.log(gettedCards)
                                             console.log(pkmNumber)
+                                            console.log(gettedCards.filter((uc) => uc.number == pkmNumber))
 
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
