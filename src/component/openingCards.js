@@ -91,7 +91,7 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        if(gettedCards.find((uc) => uc.number == result.id).length == 0){
+                                                        if(typeof gettedCards.find((uc) => uc.number == result.id) === "undefined"){
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 stade: stade,
                                                                 card: result,
@@ -182,7 +182,7 @@ function OpeningCards(props) {
                                                 })
                                             setIsLoaded(true);
 
-                                            if(gettedCards.find((uc) => uc.number == result.id).length == 0){
+                                            if(typeof gettedCards.find((uc) => uc.number == result.id) === "undefined"){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
                                                     rarity: result.rarity,
