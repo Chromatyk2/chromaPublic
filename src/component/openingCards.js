@@ -126,11 +126,13 @@ function OpeningCards(props) {
                                                                 isNew :0
                                                             }]);
                                                             if(stade > 0){
+                                                                console.log(stade)
+                                                                console.log(stade * 10)
                                                                 Axios.post('/api/addPowder',
                                                                     {
                                                                         user: props.user,
-                                                                        win: stade *10,
-                                                                        wins: stade *10
+                                                                        win: stade * 10,
+                                                                        wins: stade * 10
                                                                     }
                                                                 )
                                                             }
@@ -198,6 +200,8 @@ function OpeningCards(props) {
                                                     isNew:0
                                                 }]);
                                                 if(stade > 0){
+                                                    console.log(stade)
+                                                    console.log(stade * 10)
                                                     Axios.post('/api/addPowder',
                                                         {
                                                             user: props.user,
