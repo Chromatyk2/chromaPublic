@@ -70,7 +70,6 @@ function OpeningCards(props) {
     Axios.get("/api/getAllMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
         .then(function(response) {
             const gettedCards = response.data;
-            console.log(gettedCards);
             if (tenCards.length < 5) {
                 var boosterName = props.rarities.filter(item => item.stade === 1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade === 1).length)].nameGuru
                 if (boosterName == "sma") {
@@ -93,9 +92,23 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         if(gettedCards.find((uc) => uc.number == result.id).length == 0){
-                                                            const isNew = 1;
+                                                            setTenCards(tenCards => [...tenCards, {
+                                                                stade: stade,
+                                                                card: result,
+                                                                rarity: result.rarity,
+                                                                nbCard: pkmNumber,
+                                                                booster: boosterName,
+                                                                isNew :1
+                                                            }]);
                                                         }else{
-                                                            const isNew = 0
+                                                            setTenCards(tenCards => [...tenCards, {
+                                                                stade: stade,
+                                                                card: result,
+                                                                rarity: result.rarity,
+                                                                nbCard: pkmNumber,
+                                                                booster: boosterName,
+                                                                isNew :0
+                                                            }]);
                                                         }
                                                         var randomStade = Math.floor(Math.random() * 100);
                                                         if (tenCards.length == 0) {
@@ -124,14 +137,6 @@ function OpeningCards(props) {
                                                                 block: props.block
                                                             })
                                                         setIsLoaded(true);
-                                                        setTenCards(tenCards => [...tenCards, {
-                                                            stade: stade,
-                                                            card: result,
-                                                            rarity: result.rarity,
-                                                            nbCard: pkmNumber,
-                                                            booster: boosterName,
-                                                            isNew :isNew
-                                                        }]);
                                                         setNbCards(nbCards + 1);
                                                     }
                                                 )
@@ -176,14 +181,26 @@ function OpeningCards(props) {
                                                     block: props.block
                                                 })
                                             setIsLoaded(true);
-                                            setTenCards(tenCards => [...tenCards, {
-                                                card: result,
-                                                rarity: result.rarity,
-                                                nbCard: pkmNumber,
-                                                booster: boosterName,
-                                                stade: stade,
-                                                isNew:isNew
-                                            }]);
+
+                                            if(gettedCards.find((uc) => uc.number == result.id).length == 0){
+                                                setTenCards(tenCards => [...tenCards, {
+                                                    card: result,
+                                                    rarity: result.rarity,
+                                                    nbCard: pkmNumber,
+                                                    booster: boosterName,
+                                                    stade: stade,
+                                                    isNew:1
+                                                }]);
+                                            }else{
+                                                setTenCards(tenCards => [...tenCards, {
+                                                    card: result,
+                                                    rarity: result.rarity,
+                                                    nbCard: pkmNumber,
+                                                    booster: boosterName,
+                                                    stade: stade,
+                                                    isNew:0
+                                                }]);
+                                            }
                                             setNbCards(nbCards + 1);
 
                                         }
