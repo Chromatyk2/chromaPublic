@@ -67,7 +67,10 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
-        console.log(myCards);
+    Axios.get("/api/getAllMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
+        .then(function(response){
+            const gettedCards = response.data;
+            console.log(gettedCards);
         if(tenCards.length < 5){
             var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
             if(boosterName == "sma"){
