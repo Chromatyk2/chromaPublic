@@ -91,25 +91,6 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
-                                                            setTenCards(tenCards => [...tenCards, {
-                                                                stade: stade,
-                                                                card: result,
-                                                                rarity: result.rarity,
-                                                                nbCard: pkmNumber,
-                                                                booster: boosterName,
-                                                                isNew :1
-                                                            }]);
-                                                        }else{
-                                                            setTenCards(tenCards => [...tenCards, {
-                                                                stade: stade,
-                                                                card: result,
-                                                                rarity: result.rarity,
-                                                                nbCard: pkmNumber,
-                                                                booster: boosterName,
-                                                                isNew :0
-                                                            }]);
-                                                        }
                                                         var randomStade = Math.floor(Math.random() * 100);
                                                         if (tenCards.length == 0) {
                                                             var stade = 0;
@@ -125,6 +106,27 @@ function OpeningCards(props) {
                                                             } else if (randomStade > 96) {
                                                                 var stade = 4;
                                                             }
+                                                        }
+                                                        if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
+                                                            const addPowder = 1;
+                                                            setTenCards(tenCards => [...tenCards, {
+                                                                stade: stade,
+                                                                card: result,
+                                                                rarity: result.rarity,
+                                                                nbCard: pkmNumber,
+                                                                booster: boosterName,
+                                                                isNew :1
+                                                            }]);
+                                                        }else{
+                                                            const addPowder = 0;
+                                                            setTenCards(tenCards => [...tenCards, {
+                                                                stade: stade,
+                                                                card: result,
+                                                                rarity: result.rarity,
+                                                                nbCard: pkmNumber,
+                                                                booster: boosterName,
+                                                                isNew :0
+                                                            }]);
                                                         }
                                                         Axios.post('/api/addCard',
                                                             {
@@ -143,6 +145,14 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         setIsLoaded(false);
+                                                        if (addPowder === 1) {
+                                                            Axios.post('/api/addPowder',
+                                                                {
+                                                                    user: props.user,
+                                                                    win: stade *10,
+                                                                    wins: stade *10
+                                                                })
+                                                        }
                                                         if (tenCards.length === 4) {
                                                             setIsLoaded(false);
                                                             setThings(false)
@@ -170,17 +180,6 @@ function OpeningCards(props) {
                                                     var stade = 4;
                                                 }
                                             }
-                                            Axios.post('/api/addCard',
-                                                {
-                                                    pseudo: props.user,
-                                                    idCard: result.id,
-                                                    booster: props.idBooster,
-                                                    rarity: result.rarity,
-                                                    stade: stade,
-                                                    nb: pkmNumber,
-                                                    block: props.block
-                                                })
-                                            setIsLoaded(true);
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
@@ -200,6 +199,17 @@ function OpeningCards(props) {
                                                     isNew:0
                                                 }]);
                                             }
+                                            Axios.post('/api/addCard',
+                                                {
+                                                    pseudo: props.user,
+                                                    idCard: result.id,
+                                                    booster: props.idBooster,
+                                                    rarity: result.rarity,
+                                                    stade: stade,
+                                                    nb: pkmNumber,
+                                                    block: props.block
+                                                })
+                                            setIsLoaded(true);
                                             setNbCards(nbCards + 1);
 
                                         }
@@ -207,6 +217,14 @@ function OpeningCards(props) {
                                 )
                                 .then(
                                     (result) => {
+                                        if(addPowder === 1) {
+                                            Axios.post('/api/addPowder',
+                                                {
+                                                    user: props.user,
+                                                    win: stade *10,
+                                                    wins: stade *10
+                                                })
+                                        }
                                         if (tenCards.length === 4) {
                                             setIsLoaded(false);
                                             setThings(false)
