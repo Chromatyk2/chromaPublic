@@ -125,8 +125,8 @@ function OpeningCards(props) {
                                                                 booster: boosterName,
                                                                 isNew :0
                                                             }]);
+                                                            console.log(stade)
                                                             if(stade > 0){
-                                                                console.log(stade)
                                                                 console.log(stade * 10)
                                                                 Axios.post('/api/addPowder',
                                                                     {
@@ -199,8 +199,8 @@ function OpeningCards(props) {
                                                     stade: stade,
                                                     isNew:0
                                                 }]);
+                                                console.log(stade)
                                                 if(stade > 0){
-                                                    console.log(stade)
                                                     console.log(stade * 10)
                                                     Axios.post('/api/addPowder',
                                                         {
