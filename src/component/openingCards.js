@@ -67,6 +67,7 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
+        console.log(myCards);
         if(tenCards.length < 5){
             var boosterName = props.rarities.filter(item => item.stade ===  1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade ===  1).length)].nameGuru
             if(boosterName == "sma"){
