@@ -91,7 +91,7 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        if(gettedCards.filter((uc) => uc.number == pkmNumber).length == 0){
+                                                        if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 stade: stade,
                                                                 card: result,
@@ -181,7 +181,7 @@ function OpeningCards(props) {
                                                     block: props.block
                                                 })
                                             setIsLoaded(true);
-                                            if(gettedCards.filter((uc) => uc.number == pkmNumber).length == 0){
+                                            if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
                                                     rarity: result.rarity,
