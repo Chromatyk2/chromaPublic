@@ -182,6 +182,7 @@ function OpeningCards(props) {
                                                     var stade = 4;
                                                 }
                                             }
+                                            console.log(stade)
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
