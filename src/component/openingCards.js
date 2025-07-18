@@ -92,6 +92,11 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
+                                                        if(gettedCards.find((uc) => uc.number == result.id).length == 0){
+                                                            const isNew = 1;
+                                                        }else{
+                                                            const isNew = 0
+                                                        }
                                                         var randomStade = Math.floor(Math.random() * 100);
                                                         if (tenCards.length == 0) {
                                                             var stade = 0;
@@ -124,7 +129,8 @@ function OpeningCards(props) {
                                                             card: result,
                                                             rarity: result.rarity,
                                                             nbCard: pkmNumber,
-                                                            booster: boosterName
+                                                            booster: boosterName,
+                                                            isNEw :isNew
                                                         }]);
                                                         setNbCards(nbCards + 1);
                                                     }
@@ -175,7 +181,8 @@ function OpeningCards(props) {
                                                 rarity: result.rarity,
                                                 nbCard: pkmNumber,
                                                 booster: boosterName,
-                                                stade: stade
+                                                stade: stade,
+                                                isNew:isNew
                                             }]);
                                             setNbCards(nbCards + 1);
 
@@ -354,13 +361,6 @@ function OpeningCards(props) {
                          alt="Grapefruit slice atop a pile of other slices"/>
                 </div>
             </div>
-            {isNew === true &&
-                <div style={{position: "absolute"}} id={"shadowBox"}>
-                    <div className={"newContainer"}>
-                        <p className={"rainbow rainbow_text_animated"}>NEW !</p>
-                    </div>
-                </div>
-            }
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
@@ -376,6 +376,13 @@ function OpeningCards(props) {
                         }
                         return (
                             <>
+                                {val.isNew === 1 &&
+                                    <div style={{position: "absolute"}} id={"shadowBox"}>
+                                        <div className={"newContainer"}>
+                                            <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                                        </div>
+                                    </div>
+                                }
                                 {key === 4 ?
                                     <div
                                         stade={stadeC}
