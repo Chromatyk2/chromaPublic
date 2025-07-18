@@ -406,11 +406,7 @@ function OpeningCards(props) {
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
-                        if (val.rarity != "Common" && val.rarity != "Uncommon" && typeof val.rarity !== "undefined") {
-                            var stadeC = val.stade;
-                        } else {
-                            var stadeC = 0;
-                        }
+                        var stadeC = val.stade;
                         if(props.idBooster.startsWith("sv") || props.idBooster.startsWith("swsh")){
                             var boosterImg = props.idBooster
                         }else{
