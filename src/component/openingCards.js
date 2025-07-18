@@ -126,6 +126,7 @@ function OpeningCards(props) {
                                                                 isNew :0
                                                             }]);
                                                             console.log(stade)
+                                                            console.log(pkmNumber)
                                                             if(stade > 0){
                                                                 console.log(stade * 10)
                                                                 Axios.post('/api/addPowder',
@@ -200,6 +201,7 @@ function OpeningCards(props) {
                                                     isNew:0
                                                 }]);
                                                 console.log(stade)
+                                                console.log(pkmNumber)
                                                 if(stade > 0){
                                                     console.log(stade * 10)
                                                     Axios.post('/api/addPowder',
