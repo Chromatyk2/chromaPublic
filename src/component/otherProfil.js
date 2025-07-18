@@ -32,6 +32,7 @@ import Lv9c from "../lv9c.png";
 import Lv8c from "../lv8c.png";
 import Lv7c from "../lv7c.png";
 function Profil(props) {
+    const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
     const { pseudo } = useParams()
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
@@ -252,6 +253,10 @@ function Profil(props) {
                         setIsOpen(false);
                     })
             })
+    }function handleBadge(e) {
+        setOpenBadgeHandle(true);
+    }function closeBadgeHandle(e) {
+        setOpenBadgeHandle(false);
     }
     function errorImage(e){
         e.target.onerror = null;
@@ -433,7 +438,7 @@ function Profil(props) {
                                             <>
                                                 <img data-tooltip-content={val.description} className={"anchorTooltip"}
                                                      style={{width: "150px"}}
-                                                     src={"/Ribbon/" + val.image + "_" + val.stade + ".png"}/>
+                                                     src={"/Ribbon/"+val.image+".png"}/>
                                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                                             </>
                                         )
@@ -443,6 +448,39 @@ function Profil(props) {
                         </>
                     }
                 </div>
+                <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles} contentLabel="Example Modal">
+                    <p style={{textAlign: "center"}}>Ses Badges</p>
+                    <div style={{
+                        overflow: "overlay",
+                        display: "flex",
+                        gap: "10px",
+                        flexFlow: "row",
+                        flexWrap: "wrap",
+                        justifyContent: "center"
+                    }}>
+                        {badgesList &&
+                            badgesList.map((val, key) => {
+                                return (
+                                    <>
+
+                                        <button value={val.image} style={{
+                                            backgroundPosition: "center",
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                            backgroundSize:"contain",
+                                            border: "none",
+                                            borderRadius: "25px",
+                                            padding: "20px",
+                                            width: "100px",
+                                            height: "100px",
+                                            backgroundColor:"transparent"
+                                        }}></button>
+                                    </>
+                                )
+                            })
+                        }
+                    < /div>
+                </Modal>
             </div>
         </>
     )
