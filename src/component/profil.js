@@ -158,8 +158,8 @@ function Profil(props) {
                 setProfil(response.data);
                 Axios.get("/api/getMyTotalCards/"+pseudo)
                     .then(function (response){
-                        setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100));
-                        const pourcentCard = Math.abs((response.data[0].nbCard / 15937) * 100);
+                        setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100).toFixed(2));
+                        const pourcentCard = Math.round((response.data[0].nbCard / 15937) * 100).toFixed(2);
                         setMyTotalsCards(response.data)
                         Axios.get("/api/getMyLastTenCards/"+pseudo)
                             .then(function(response){
@@ -1021,6 +1021,7 @@ function Profil(props) {
                 <div className={"profilContainer"}>
                     {isLoad === false &&
                         profil &&
+                        badgesList &&
                         profil.length > 0 &&
                         <>
                             <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
@@ -1105,6 +1106,7 @@ function Profil(props) {
                                 </div>
 
                                 <button
+                                    data-tooltip-content={profil[0].badge !== null ? badgesList.find((item) => item.image === profil[0].badge).description : "Ajoute un badge"}
                                     style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/'+profil[0].badge+'.png)' : 'url(/images/random.png)'}}
                                     onClick={handleBadge} value={"first_pokemon"}
                                     className="anchorTooltip uniquePokemonContainerTeam">

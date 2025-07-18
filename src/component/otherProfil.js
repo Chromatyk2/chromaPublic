@@ -334,14 +334,16 @@ function Profil(props) {
                                            className={"levelProfil"}>{profil[0].xp + " / " + profil[0].level * 25}</p>
                                     </div>
                                 </div>
-                                {pourcent > 0 &&
+
                                     <div className="anchorTooltip"
-                                         data-tooltip-content={pourcent + "% du Pokedex Complété"}
+                                         data-tooltip-content={profil[0].badge !== null ? badgesList.find((item) => item.image === profil[0].badge).description : "Pas de badge"}
                                          style={{width: "120px"}}>
-                                        <img style={{width: "80%"}}
-                                             src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
+                                        {profil[0].badge !== null &&
+                                            <img style={{width: "110px"}} className="anchorTooltip"
+                                                 data-tooltip-content={badgesList.find((item) => item.image === profil[0].badge).description}
+                                                 src={"/Ribbon/" + profil[0].badge + ".png"}/>
+                                        }
                                     </div>
-                                }
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
                             <p className={"pseudoProfil"}>Mon équipe</p>
