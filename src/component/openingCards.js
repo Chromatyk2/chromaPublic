@@ -91,9 +91,6 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        console.log(gettedCards)
-                                                        console.log(pkmNumber)
-                                                        console.log(gettedCards.filter((uc) => uc.number == pkmNumber))
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 stade: stade,
@@ -184,10 +181,6 @@ function OpeningCards(props) {
                                                     block: props.block
                                                 })
                                             setIsLoaded(true);
-                                            console.log(gettedCards)
-                                            console.log(pkmNumber)
-                                            console.log(gettedCards.filter((uc) => uc.number == pkmNumber))
-
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
@@ -399,13 +392,6 @@ function OpeningCards(props) {
                         }
                         return (
                             <>
-                                {val.isNew === 1 &&
-                                    <div style={{position: "absolute"}} id={"shadowBox"}>
-                                        <div className={"newContainer"}>
-                                            <p className={"rainbow rainbow_text_animated"}>NEW !</p>
-                                        </div>
-                                    </div>
-                                }
                                 {key === 4 ?
                                     <div
                                         stade={stadeC}
@@ -417,6 +403,13 @@ function OpeningCards(props) {
                                         onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
+                                        {val.isNew === 1 &&
+                                            <div style={{position: "absolute"}} id={"shadowBox"}>
+                                                <div className={"newContainer"}>
+                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                                                </div>
+                                            </div>
+                                        }
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
@@ -440,6 +433,13 @@ function OpeningCards(props) {
                                         onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
+                                        {val.isNew === 1 &&
+                                            <div style={{position: "absolute"}} id={"shadowBox"}>
+                                                <div className={"newContainer"}>
+                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                                                </div>
+                                            </div>
+                                        }
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
