@@ -406,7 +406,7 @@ function OpeningCards(props) {
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
-                        var stadeC = val.stade;
+                        var stadeC = val.grade;
                         if(props.idBooster.startsWith("sv") || props.idBooster.startsWith("swsh")){
                             var boosterImg = props.idBooster
                         }else{
