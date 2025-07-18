@@ -9,10 +9,9 @@ function HomePage(props) {
       <>
           <div className={"contentContainer"}>
               <p style={{textAlign: "center", color: "white"}}>Bienvenue, {props.cookies.user.data[0].login}</p>
-              <p style={{textAlign: "center", color: "white"}}>Capture des Pokemons, fait ton profil et collectionne les cartes
-                  avec les points de chaines que tu gagnes sur les streams de chromatyk, tu gagnes un booster sur le site
-                  tous les 2h en plus de ceux dispo avec les tokens ( 300 points de chaine ), rejoins le discord si tu as
-                  des questions et hésite pas à claquer ton follow sur twitch !</p>
+              <p style={{textAlign: "center", color: "white"}}>Ici, tu peux ouvrir un booster Pokémon toutes les 2h, et utiliser tes points de chaîne Twitch pour en ouvrir encore plus ou capturer des Pokémon. <br/>
+                  Construis ton profil, complète ton Pokédex, remplis ta collection de cartes et viens flexer en live !<br/>
+                  Tout ça, c’est un gros taff, alors si tu veux me soutenir, passe sur mes streams et pense à drop un p’tit follow — ça fait grave plaisir !</p>
               <div className="socialContainer">
                   <p className="myNetworks">Mes reseaux</p>
                   <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i
