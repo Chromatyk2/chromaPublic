@@ -18,6 +18,7 @@ function MyCards(props) {
     const [page, setPage] = useState(null);
     const [guruName, setGuruName] = useState(null);
     const [fullName, setFullName] = useState(null);
+    const [powder,setPowder] = useState(0);
     function displayPage(e,f,g,h) {
         setPage(e);
         setNbCard(f);
@@ -43,6 +44,10 @@ function MyCards(props) {
                             return prev + +current.totalCards
                         }, 0));
                         setTotalCard(sumBooster);
+                        Axios.get("/api/getProfil/"+pseudo)
+                            .then(
+                                setPowder(response.data[0].powder)
+                            )
                     })
             })
     }, [])
@@ -51,14 +56,14 @@ function MyCards(props) {
             {totalCard &&
                 !page &&
                 <ProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
-
             }
             <div id={"cardsContainer"}>
+                <p>Poussières TCG : {powder}</p>
                 {totalCard &&
                     page ?
                         <>
                             <button style={{color:"white",width:"100%",margin:"0",padding:"0",marginTop:"30px"}}onClick={backPage} className="backButton">Retour</button>
-                            <MyCardsSet user={props.user} card={nbCard} idBooster={page} guruName={guruName}/>
+                            <MyCardsSet powder={powder} user={props.user} card={nbCard} idBooster={page} guruName={guruName}/>
                         </>
                     :
                         nbCards &&

@@ -16,7 +16,6 @@ import OnStream from "./onStream";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [canOpen,setCanOpen] = useState(-1);
-    const [powder,setPowder] = useState(0);
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
@@ -28,10 +27,6 @@ function CardsHub(props) {
                         Axios.get("/api/getCanOpen/"+pseudo)
                             .then(function(response){
                                 setCanOpen(response.data[0].canOpen)
-                                Axios.get("/api/getProfil/"+pseudo)
-                                    .then(
-                                        setPowder(response.data[0].powder)
-                                    )
                             })
                     })
                 setPoints(response.data[0].points);
@@ -41,7 +36,6 @@ function CardsHub(props) {
         <>
             <div className={"contentContainer"}>
                 <div className={"allCards"}>
-                    <p>Poussières TCG : {powder}</p>
                     {props.page == "myCards" &&
                         <MyCards user={pseudo}/>
                     }

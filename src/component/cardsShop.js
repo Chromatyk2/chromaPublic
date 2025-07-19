@@ -33,6 +33,7 @@ function CardsShop(props) {
     const [block, setBlock] = React.useState(0);
     const [randomBooster, setRandomBooster] = React.useState(null);
     const [globalBooster, setGlobalBoosters] = React.useState(null);
+    const [powder,setPowder] = useState(0);
     const customStyles = {
         content: {
             position:'initial',
@@ -57,6 +58,7 @@ function CardsShop(props) {
                         setPoints(response.data[0].cardToken);
                         Axios.get("/api/getProfil/"+props.user)
                             .then(function(response){
+                                setPowder(response.data[0].powder)
                                 const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                                 const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
                                 if(response.data[0].canOpen == 1){
