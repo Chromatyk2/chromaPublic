@@ -18,7 +18,6 @@ function ProgressBarCard(props) {
     const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
     const [boosterName, setBoosterName] = React.useState(null);
     useEffect(() => {
-        if(typeof props.booster === "undefined"){
             Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
                 .then(function(response) {
 
@@ -219,7 +218,6 @@ function ProgressBarCard(props) {
                                 })
                         })
                 })
-        }
 
     }, []);
     function closeModal() {

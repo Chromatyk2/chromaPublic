@@ -40,10 +40,10 @@ function CardsHub(props) {
     return(
         <>
             <div className={"contentContainer"}>
-            <div className={"allCards"}>
-                    Poussières TCG : {powder}
+                <div className={"allCards"}>
+                    <p>Poussières TCG : {powder}</p>
                     {props.page == "myCards" &&
-                        <MyCards user={pseudo} />
+                        <MyCards user={pseudo}/>
                     }
                     {props.page == "cardsShop" &&
                         <CardsShop canOpen={canOpen} user={pseudo} points={points}/>
@@ -60,7 +60,7 @@ function CardsHub(props) {
                     {props.page == "succes" &&
                         <Succes user={pseudo}/>
                     }
-            </div>
+                </div>
             </div>
         </>
     );
