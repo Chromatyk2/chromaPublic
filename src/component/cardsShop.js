@@ -33,7 +33,7 @@ function CardsShop(props) {
     const [block, setBlock] = React.useState(0);
     const [randomBooster, setRandomBooster] = React.useState(null);
     const [globalBooster, setGlobalBoosters] = React.useState(null);
-    const [powder,setPowder] = useState(0);
+    const [powder,setPowder] = useState(null);
     const customStyles = {
         content: {
             position:'initial',

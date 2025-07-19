@@ -203,7 +203,9 @@ function MyCardsSet(props) {
                             </label>
                         }
                     </div>
-                    <p>Poussières TCG : {props.powder}</p>
+                    {powder &&
+                        <p>Poussières TCG : {props.powder}</p>
+                    }
                     <div id={"cardsContainer"}>
                         {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
                             if (myCardsId.includes(val.id)) {

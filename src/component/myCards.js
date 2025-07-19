@@ -45,9 +45,9 @@ function MyCards(props) {
                         }, 0));
                         setTotalCard(sumBooster);
                         Axios.get("/api/getProfil/"+pseudo)
-                            .then(
+                            .then(function(response) {
                                 setPowder(response.data[0].powder)
-                            )
+                            })
                     })
             })
     }, [])
@@ -60,7 +60,7 @@ function MyCards(props) {
             <div id={"cardsContainer"}>
                 <p>Poussières TCG : {powder}</p>
                 {totalCard &&
-                    page ?
+                page ?
                         <>
                             <button style={{color:"white",width:"100%",margin:"0",padding:"0",marginTop:"30px"}}onClick={backPage} className="backButton">Retour</button>
                             <MyCardsSet powder={powder} user={props.user} card={nbCard} idBooster={page} guruName={guruName}/>
