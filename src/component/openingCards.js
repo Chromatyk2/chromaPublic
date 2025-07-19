@@ -426,11 +426,9 @@ function OpeningCards(props) {
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
                                         {val.isNew === 1 &&
-                                            <div style={{position: "absolute"}} id={"shadowBox"}>
                                                 <div className={"newContainer"}>
                                                     <p className={"rainbow rainbow_text_animated"}>NEW !</p>
                                                 </div>
-                                            </div>
                                         }
                                         <img
                                             cardLocalId={val.card.localId}
@@ -456,11 +454,9 @@ function OpeningCards(props) {
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
                                         {val.isNew === 1 &&
-                                            <div style={{position: "absolute"}} id={"shadowBox"}>
                                                 <div className={"newContainer"}>
                                                     <p className={"rainbow rainbow_text_animated"}>NEW !</p>
                                                 </div>
-                                            </div>
                                         }
                                         <img
                                             cardLocalId={val.card.localId}
