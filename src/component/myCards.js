@@ -44,7 +44,7 @@ function MyCards(props) {
                             return prev + +current.totalCards
                         }, 0));
                         setTotalCard(sumBooster);
-                        Axios.get("/api/getProfil/"+pseudo)
+                        Axios.get("/api/getProfil/"+props.user)
                             .then(function(response) {
                                 setPowder(response.data[0].powder)
                             })
