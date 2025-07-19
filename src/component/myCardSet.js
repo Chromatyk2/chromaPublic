@@ -203,9 +203,12 @@ function MyCardsSet(props) {
                             </label>
                         }
                     </div>
-                    <p>Poussières TCG : {props.powder}</p>
+                    <div>
+                        <img src={"/images/powder.png"}/>
+                        <p>Poussières TCG : {props.powder}</p>
+                    </div>
                     <div id={"cardsContainer"}>
-                        {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                    {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
                             if (myCardsId.includes(val.id)) {
                                 var stadeC = myCards.find((uc) => uc.card == val.id).stade;
                                 let cardNb = myCards.find((myCard) => myCard.card === val.id);

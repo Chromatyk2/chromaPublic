@@ -58,25 +58,34 @@ function MyCards(props) {
                 <ProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
             }
             <div id={"cardsContainer"}>
-                <p>Poussières TCG : {powder}</p>
+                <div>
+                    <img src={"/images/powder.png"}/>
+                    <p>Poussières TCG : {powder}</p>
+                </div>
                 {totalCard &&
                 page ?
-                        <>
-                            <button style={{color:"white",width:"100%",margin:"0",padding:"0",marginTop:"30px"}}onClick={backPage} className="backButton">Retour</button>
-                            <MyCardsSet powder={powder} user={props.user} card={nbCard} idBooster={page} guruName={guruName}/>
-                        </>
+                    <>
+                        <button style={{color: "white", width: "100%", margin: "0", padding: "0", marginTop: "30px"}}
+                                onClick={backPage} className="backButton">Retour
+                        </button>
+                        <MyCardsSet powder={powder} user={props.user} card={nbCard} idBooster={page}
+                                    guruName={guruName}/>
+                    </>
                     :
-                        nbCards &&
-                            totalCard &&
-                                nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                                return(
-                                    <MyUniqueBooster page={val.booster} change = {displayPage} nbCard={val} boosterList={boosterList} maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" :uc.nameGuru == val.booster).totalCards
-                                        : boosterList.find((uc) => uc.name == val.booster).totalCards}/>
-                                )
-                            })
+                    nbCards &&
+                    totalCard &&
+                    nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
+                        return (
+                            <MyUniqueBooster page={val.booster} change={displayPage} nbCard={val}
+                                             boosterList={boosterList}
+                                             maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" : uc.nameGuru == val.booster).totalCards
+                                                 : boosterList.find((uc) => uc.name == val.booster).totalCards}/>
+                        )
+                    })
                 }
             </div>
         </>
     )
 }
+
 export default MyCards
