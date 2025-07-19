@@ -16,6 +16,7 @@ import OnStream from "./onStream";
 function CardsHub(props) {
     const [points,setPoints] = useState(-1);
     const [canOpen,setCanOpen] = useState(-1);
+    const [powder,setPowder] = useState(0);
     const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
@@ -24,6 +25,14 @@ function CardsHub(props) {
                 Axios.get("/api/getCanOpen/"+pseudo)
                     .then(function(response){
                         setCanOpen(response.data[0].canOpen)
+                        Axios.get("/api/getCanOpen/"+pseudo)
+                            .then(function(response){
+                                setCanOpen(response.data[0].canOpen)
+                                Axios.get("/api/getProfil/"+props.user)
+                                    .then(
+                                        setPowder(response.data[0].powder)
+                                    )
+                            })
                     })
                 setPoints(response.data[0].points);
             })
@@ -32,24 +41,7 @@ function CardsHub(props) {
         <>
             <div className={"contentContainer"}>
             <div className={"allCards"}>
-                    {props.page === null &&
-                        <div className={"introTCGtext"}>
-                            <p>
-                                Bienvenue sur la partie du site consacrée à la collection de cartes Pokémon !!!<br />
-                                Ici, l'aventure commence dès que tu cliques sur le bouton rouge !<br />
-                                Le premier clique t'offre 10 000 points pour la boutique !<br />
-                                Ensuite reviens cliquer sur le bouton tous les 1h pour en gagner 1 000 à chaque fois !<br />
-
-                                Ce mini site a été fait par Chromatyk !<br />
-                                Retrouve le en stream ici : <a className={"introTCGLink"} href={"https://twitch.tv/chromatyk"}>Chaîne de Chromatyk</a><br />
-                                Il est également possible de gagner des points grâce aux points de chaines cumulés lors des streams !<br />
-
-                                N'hésite pas à Follow ça fait toujours plaisir !<br />
-
-                                Amuse toi bien !
-                            </p>
-                        </div>
-                    }
+                    Poussières TCG : {powder}
                     {props.page == "myCards" &&
                         <MyCards user={pseudo} />
                     }

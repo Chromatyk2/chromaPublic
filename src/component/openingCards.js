@@ -9,6 +9,7 @@ import Modal from 'react-modal';
 import token from '../token.png'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
+import {returnFocus} from "react-modal/lib/helpers/focusManager";
 
 function OpeningCards(props) {
 
@@ -403,11 +404,18 @@ function OpeningCards(props) {
                          alt="Grapefruit slice atop a pile of other slices"/>
                 </div>
             </div>
+            {isNew === true &&
+                <div style={{position: "absolute"}} id={"shadowBox"}>
+                    <div className={"newContainer"}>
+                        <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                    </div>
+                </div>
+            }
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
                         var stadeC = val.grade;
-                        if(props.idBooster.startsWith("sv") || props.idBooster.startsWith("swsh")){
+                        if (props.idBooster.startsWith("sv") || props.idBooster.startsWith("swsh")){
                             var boosterImg = props.idBooster
                         }else{
                             var boosterImg = props.idBooster.replace(".", "")
@@ -425,11 +433,6 @@ function OpeningCards(props) {
                                         onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
-                                        {val.isNew === 1 &&
-                                                <div className={"newContainer"}>
-                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
-                                                </div>
-                                        }
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
@@ -453,11 +456,6 @@ function OpeningCards(props) {
                                         onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
-                                        {val.isNew === 1 &&
-                                                <div className={"newContainer"}>
-                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
-                                                </div>
-                                        }
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}

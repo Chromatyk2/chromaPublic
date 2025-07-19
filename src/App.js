@@ -38,6 +38,7 @@ import StartPedandex from "./component/startPedandex";
 import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
 import DonationBox from "./component/donationBox";
+import Axios from "axios";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
