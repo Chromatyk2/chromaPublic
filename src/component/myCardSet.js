@@ -205,7 +205,7 @@ function MyCardsSet(props) {
                     </div>
                     <div style={{display: "block", margin: "auto", color: "white"}}>
                         <img style={{width: "45px", marginBottom: "10px"}} src={"/images/powder.png"}/>
-                        <p>Poussières TCG : {powder}</p>
+                        <p>Poussières TCG : {props.powder}</p>
                     </div>
                     <div id={"cardsContainer"}>
                         {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
