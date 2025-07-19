@@ -55,13 +55,15 @@ function MyCards(props) {
         <>
             {totalCard &&
                 !page &&
-                <ProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
+                <>
+                    <ProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
+                    <div style={{display: "block", margin: "auto", color: "white"}}>
+                        <img style={{width: "45px", marginBottom: "10px"}} src={"/images/powder.png"}/>
+                        <p>Poussières TCG : {powder}</p>
+                    </div>
+                </>
             }
             <div id={"cardsContainer"}>
-                <div>
-                    <img src={"/images/powder.png"}/>
-                    <p>Poussières TCG : {powder}</p>
-                </div>
                 {totalCard &&
                 page ?
                     <>

@@ -203,12 +203,12 @@ function MyCardsSet(props) {
                             </label>
                         }
                     </div>
-                    <div>
-                        <img src={"/images/powder.png"}/>
-                        <p>Poussières TCG : {props.powder}</p>
+                    <div style={{display: "block", margin: "auto", color: "white"}}>
+                        <img style={{width: "45px", marginBottom: "10px"}} src={"/images/powder.png"}/>
+                        <p>Poussières TCG : {powder}</p>
                     </div>
                     <div id={"cardsContainer"}>
-                    {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                        {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
                             if (myCardsId.includes(val.id)) {
                                 var stadeC = myCards.find((uc) => uc.card == val.id).stade;
                                 let cardNb = myCards.find((myCard) => myCard.card === val.id);
@@ -372,7 +372,7 @@ function MyCardsSet(props) {
                 </>
                 :
                 <>
-                <div className={"loaderPokemon"}>
+                    <div className={"loaderPokemon"}>
                         <h2 className="u-text-center">Chargement ...</h2>
                         <div className="pokemon"></div>
                     </div>
