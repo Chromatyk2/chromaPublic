@@ -28,7 +28,7 @@ function CardsHub(props) {
                         Axios.get("/api/getCanOpen/"+pseudo)
                             .then(function(response){
                                 setCanOpen(response.data[0].canOpen)
-                                Axios.get("/api/getProfil/"+props.user)
+                                Axios.get("/api/getProfil/"+pseudo)
                                     .then(
                                         setPowder(response.data[0].powder)
                                     )
