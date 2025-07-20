@@ -42,10 +42,17 @@ function MyCardsSet(props) {
             padding:0,
             width:"350px",
             height:"480px",
+            position:"relative"
+        }, buttonMyCardModal: {
+            border:'none',
+            background:'none',
+            padding:0,
+            width:"350px",
+            height:"480px",
             position:"relative",
             margin: "auto",
             marginBottom: "25px",
-        },
+        }
     };
     useEffect(() => {
         Axios
@@ -316,7 +323,7 @@ function MyCardsSet(props) {
                 :
 
                     <button
-                            stade={pickStade} style={customStyles.buttonMyCard}
+                            stade={pickStade} style={customStyles.buttonMyCardModal}
                         className={"cardBox"}>
                     <LazyLoadImage
 
