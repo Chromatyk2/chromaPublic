@@ -156,7 +156,7 @@ function MyCardsSet(props) {
         setIsOpen(false);
     }
     function tradePowder(e) {
-        setPickCard(e.target.getAttribute("card"));
+        setPickCard(e.target.getAttribute("number"));
         var randomStade = Math.floor(Math.random() * 100);
         if (randomStade < 20) {
             var pickStade = 1;
