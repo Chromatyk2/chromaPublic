@@ -358,7 +358,7 @@ function MyCardsSet(props) {
                                     )
                                 }
                             } else if (!onlyMine) {
-                                return (<div>
+                                return (<div style={{position:"relative"}}>
                                     {powder >= 5 &&
                                         <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                             src={"/images/powder.png"}/></button>

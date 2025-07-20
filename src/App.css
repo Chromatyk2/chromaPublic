@@ -5736,3 +5736,20 @@ img.badgeToWin {
         transform:scale(1);
     }
 }
+.buttonToTrade{
+    position: absolute;
+    z-index: 1;
+    font-size: 13px;
+    display: flex;
+    align-items: anchor-center;
+    padding-left: 15px;
+    gap: 5px;
+    border-radius: 0 5px 0 5px;
+}
+.buttonToTrade:hover{
+    background-color: #120747;
+    color: white;
+}
+.buttonToTrade img{
+    width:25px;
+}
