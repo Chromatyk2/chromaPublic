@@ -445,6 +445,7 @@ function OpeningCards(props) {
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {val.isNew == 0 &&
+                                            val.grade > 0 &&
                                         <>
                                             <img
                                                 rarity={4}
@@ -543,6 +544,7 @@ function OpeningCards(props) {
                                             </>
                                         }
                                         {val.isNew == 0 &&
+                                            val.grade > 0 &&
                                             <>
                                                 <img
                                                     rarity={4}
