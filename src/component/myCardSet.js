@@ -220,7 +220,6 @@ function MyCardsSet(props) {
                                 if (stadeC == 4) {
                                     return (
                                         <div
-                                            onClick={tradePowder}
                                             style={{
                                                 width: "350px",
                                                 position: "relative",
@@ -228,7 +227,7 @@ function MyCardsSet(props) {
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 5 &&
-                                                <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                <button className={"buttonToTrade"} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -266,7 +265,6 @@ function MyCardsSet(props) {
                                 } else if (stadeC == 3) {
                                     return (
                                         <div
-                                            onClick={tradePowder}
                                             cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                              image={val.image} stade={stadeC}
                                              style={{
@@ -276,7 +274,7 @@ function MyCardsSet(props) {
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 5 &&
-                                                <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
@@ -315,11 +313,10 @@ function MyCardsSet(props) {
                                 } else {
                                     return (
                                         <button
-                                            onClick={tradePowder}
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
                                             {powder >= 5 &&
-                                                <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -363,11 +360,10 @@ function MyCardsSet(props) {
                             } else if (!onlyMine) {
                                 return (<div>
                                     {powder >= 5 &&
-                                        <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                        <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                             src={"/images/powder.png"}/></button>
                                     }
                                     <LazyLoadImage
-                                        onClick={tradePowder}
                                         number={val.number}
                                         booster={val.booster}
                                         block={val.block}
