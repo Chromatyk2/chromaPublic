@@ -33,6 +33,7 @@ function MyCardsSet(props) {
     const [bonusSet, setBonusSet] = React.useState(false);
     const [lang, setLang] = React.useState(null);
     const [pickStade, setPickStade] = React.useState(null);
+    const [pickCard, setPickCard] = React.useState(null);
     const [powder, setPowder] = React.useState(props.powder);
     const customStyles = {
         content: {
@@ -171,6 +172,7 @@ function MyCardsSet(props) {
         setIsOpen(false);
     }
     function tradePowder(e) {
+        setPickCard(e.target.getAttribute("card"));
         var randomStade = Math.floor(Math.random() * 100);
         if (randomStade < 20) {
             var pickStade = 1;
@@ -294,7 +296,7 @@ function MyCardsSet(props) {
                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                             style: {transitionDelay: "0.1s"},
                                         }}
-                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
                                 </div>
                             </div>
                             : pickStade == 3 ?
@@ -320,7 +322,7 @@ function MyCardsSet(props) {
                                                                 // If you need to, you can tweak the effect transition using the wrapper style.
                                                                 style: {transitionDelay: "0.1s"},
                                                             }}
-                                                            src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
+                                                            src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/>
                                                     </div>
                                 </div>
                 :
@@ -346,7 +348,7 @@ function MyCardsSet(props) {
                             // If you need to, you can tweak the effect transition using the wrapper style.
                             style: {transitionDelay: "0.1s"},
                         }}
-                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
+                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                     {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
                     {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
                     </button>
