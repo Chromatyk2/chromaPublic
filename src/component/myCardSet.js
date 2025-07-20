@@ -562,12 +562,6 @@ function MyCardsSet(props) {
                         })
                         }
                     </div>
-                    <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}
-                           contentLabel="Example Modal">
-                        <UniqueCard stade={stadeCard} pokemonName={pokemonName} onClick={closeModal}
-                                    cardImage={myCardImage} cardNb={myCardNb}
-                                    cardId={cardId} idBooster={props.idBooster} change={handleState} lang={lang}/>
-                    </Modal>
                 </>
                 :
                 <>
