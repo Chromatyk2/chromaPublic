@@ -443,7 +443,43 @@ function OpeningCards(props) {
                                             local={val.nbCard}
                                             src={"https://assets.tcgdex.net/fr/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
-                                            alt="Grapefruit slice atop a pile of other slices"/>
+                                            alt="Grapefruit slice atop a pile of other slices"/>{val.isNew == 1 &&
+                                        <>
+                                            <img
+                                                rarity={4}
+                                                onClick={getLastCard}
+                                                id={"tokenContainer"}
+                                                style={{
+                                                    display: "block",
+                                                    position: "absolute",
+                                                    zIndex: "100",
+                                                    top: "-13px",
+                                                    width: "100px",
+                                                    left: "-13px",
+                                                    margin: 0,
+                                                    filter: "drop-shadow(0px 4px 4px black)"
+                                                }}
+                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                                                src={"/images/powder.png"}
+                                                onError={errorImage}
+                                                alt="Grapefruit slice atop a pile of other slices"/>
+                                            <p style={{
+                                                color: "white",
+                                                fontSize: "30px",
+                                                left: "45px",
+                                                top: "30px",
+                                                display: key == 0 ? "block" : "none",
+                                                position: "absolute",
+                                                zIndex: "100",
+                                                width: "100px",
+                                                margin: 0,
+                                                filter: "drop-shadow(0px 4px 4px black)",
+                                                textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
+                                            }}
+                                               className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+{(val.stade *= 10)}
+                                            </p>
+                                        </>
+                                    }
                                     </div>
                                     :
                                     <div
@@ -467,6 +503,7 @@ function OpeningCards(props) {
                                             src={"https://assets.tcgdex.net/fr/" +block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
+
                                         {getToken === true &&
                                             key === 0 &&
                                             <>
@@ -538,7 +575,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+{val.stade*10}
+                                                   className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+{(val.stade *= 10)}
                                                 </p>
                                             </>
                                         }
