@@ -10,6 +10,7 @@ import UniqueCard from "./UniqueCard.js";
 import Modal from "react-modal";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import {parseWithOptions} from "date-fns/fp";
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
@@ -31,6 +32,7 @@ function MyCardsSet(props) {
     const [onlyMine, setOnlyMine] = React.useState(true);
     const [bonusSet, setBonusSet] = React.useState(false);
     const [lang, setLang] = React.useState(null);
+    const [powder, setPowder] = React.useState(props.powder);
     const customStyles = {
         content: {
             position:'initial',
@@ -225,6 +227,10 @@ function MyCardsSet(props) {
                                                 animation: "glowGetRainbow 10s infinite alternate"
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                            {powder >= 5 &&
+                                                <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                    src={"/images/powder.png"}/></button>
+                                            }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
                                                     zIndex: "1",
@@ -269,6 +275,10 @@ function MyCardsSet(props) {
                                                  filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                            {powder >= 5 &&
+                                                <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                    src={"/images/powder.png"}/></button>
+                                            }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
                                                 className="infoNbCard" style={{
                                                 zIndex: "1",
@@ -308,6 +318,10 @@ function MyCardsSet(props) {
                                             onClick={tradePowder}
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
+                                            {powder >= 5 &&
+                                                <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                    src={"/images/powder.png"}/></button>
+                                            }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
                                                     zIndex: "1",
@@ -347,7 +361,11 @@ function MyCardsSet(props) {
                                     )
                                 }
                             } else if (!onlyMine) {
-                                return (
+                                return (<div>
+                                    {powder >= 5 &&
+                                        <button style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                            src={"/images/powder.png"}/></button>
+                                    }
                                     <LazyLoadImage
                                         onClick={tradePowder}
                                         number={val.number}
@@ -368,7 +386,8 @@ function MyCardsSet(props) {
                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                             style: {width: "350px", transitionDelay: "0.1s"},
                                         }}
-                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>)
+                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
+                                </div>)
                             }
                         })
                         }
