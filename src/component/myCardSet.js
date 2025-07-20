@@ -42,7 +42,9 @@ function MyCardsSet(props) {
             padding:0,
             width:"350px",
             height:"480px",
-            position:"relative"
+            position:"relative",
+            margin: "auto",
+            marginBottom: "25px",
         },
     };
     useEffect(() => {
@@ -266,7 +268,7 @@ function MyCardsSet(props) {
                     <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                         <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                         {pickStade == 4 ?
-                            <div style={{width: "350px",position: "relative",animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                            <div style={{ margin: "auto",marginBottom: "25px",width: "350px",position: "relative",animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                 <div stade={pickStade} className="cardBangerAlertSet">
                                     <LazyLoadImage
                                         alt="Grapefruit slice atop a pile of other slices"
@@ -287,6 +289,7 @@ function MyCardsSet(props) {
                             : pickStade == 3 ?
                                                     <div stade={pickStade}
                                                                          style={{
+                                                                             margin: "auto",marginBottom: "25px",
                                                     width: "350px",
                                                     position: "relative",
                                                     filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
