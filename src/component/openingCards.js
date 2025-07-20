@@ -108,6 +108,7 @@ function OpeningCards(props) {
                                                                 var stade = 4;
                                                             }
                                                         }
+                                                        console.log("stade avant ajout : "+stade)
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 grade: stade,
@@ -126,10 +127,10 @@ function OpeningCards(props) {
                                                                 booster: boosterName,
                                                                 isNew :0
                                                             }]);
-                                                            console.log(stade)
-                                                            console.log(pkmNumber)
+                                                            console.log("stade après ajout : "+stade)
+                                                            console.log("numéro de carte : "+pkmNumber)
                                                             if(stade > 0){
-                                                                console.log(stade * 10)
+                                                                console.log("points ajoutés" + stade * 10)
                                                                 Axios.post('/api/addPowder',
                                                                     {
                                                                         user: props.user,
@@ -183,8 +184,7 @@ function OpeningCards(props) {
                                                     var stade = 4;
                                                 }
                                             }
-                                            console.log(randomStade)
-                                            console.log(stade)
+                                            console.log("stade avant ajout : "+stade)
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
@@ -203,10 +203,10 @@ function OpeningCards(props) {
                                                     grade: stade,
                                                     isNew:0
                                                 }]);
-                                                console.log(stade)
-                                                console.log(pkmNumber)
+                                                console.log("stade après ajout : "+stade)
+                                                console.log("numéro de carte : "+pkmNumber)
                                                 if(stade > 0){
-                                                    console.log(stade * 10)
+                                                    console.log("points ajoutés" + stade * 10)
                                                     Axios.post('/api/addPowder',
                                                         {
                                                             user: props.user,
