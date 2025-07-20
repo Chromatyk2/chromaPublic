@@ -170,7 +170,26 @@ function MyCardsSet(props) {
         setIsOpen(false);
     }
     function tradePowder(e) {
-        alert(e.target.getAttribute("card")+" "+e.target.getAttribute("booster")+" "+e.target.getAttribute("number")+" "+e.target.getAttribute("block"))
+        var randomStade = Math.floor(Math.random() * 100);
+        if (randomStade < 20) {
+            var pickStade = 1;
+        } else if (randomStade > 19 && randomStade < 70) {
+            var pickStade = 2;
+        } else if (randomStade > 69 && randomStade < 90) {
+            var pickStade = 3;
+        } else if (randomStade > 89) {
+            var pickStade = 4;
+        }
+        Axios.post('/api/addCard',
+            {
+                pseudo: props.user,
+                idCard: e.target.getAttribute("card"),
+                booster: e.target.getAttribute("booster"),
+                rarity: "Rare",
+                grade: pickStade,
+                nb: e.target.getAttribute("number"),
+                block: e.target.getAttribute("block")
+            })
     }
     const handleChangeOnlyMine = event => {
         if (event.target.checked) {
