@@ -227,7 +227,7 @@ function MyCardsSet(props) {
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 5 &&
-                                                <button className={"buttonToTrade"} style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
