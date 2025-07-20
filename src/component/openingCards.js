@@ -185,6 +185,7 @@ function OpeningCards(props) {
                                                 }
                                             }
                                             console.log("stade avant ajout : "+stade)
+                                            console.log(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0)
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
