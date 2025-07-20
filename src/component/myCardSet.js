@@ -32,6 +32,7 @@ function MyCardsSet(props) {
     const [onlyMine, setOnlyMine] = React.useState(true);
     const [bonusSet, setBonusSet] = React.useState(false);
     const [lang, setLang] = React.useState(null);
+    const [pickStade, setPickStade] = React.useState(null);
     const [powder, setPowder] = React.useState(props.powder);
     const customStyles = {
         content: {
@@ -173,12 +174,16 @@ function MyCardsSet(props) {
         var randomStade = Math.floor(Math.random() * 100);
         if (randomStade < 20) {
             var pickStade = 1;
+            setPickStade(1);
         } else if (randomStade > 19 && randomStade < 70) {
             var pickStade = 2;
+            setPickStade(2);
         } else if (randomStade > 69 && randomStade < 90) {
             var pickStade = 3;
+            setPickStade(3);
         } else if (randomStade > 89) {
             var pickStade = 4;
+            setPickStade(4);
         }
         if(powder - 500 > -1){
             Axios.post('/api/removePowder',
@@ -218,11 +223,13 @@ function MyCardsSet(props) {
                                                                     .then(
                                                                         (result) => {
                                                                             setItems(result.cards)
+                                                                            setIsOpen(true)
                                                                             if(props.idBooster === "sm11.5"){
                                                                                 fetch("https://api.tcgdex.net/v2/en/sets/sma")
                                                                                     .then(res => res.json())
                                                                                     .then(
                                                                                         (result) => {
+                                                                                            setIsOpen(true)
                                                                                             result.cards.map((val, key) => {
                                                                                                 setItems(items => [...items,val]);
                                                                                             })
@@ -269,6 +276,83 @@ function MyCardsSet(props) {
         <>
             {isLoaded === false ?
                 <>
+                    <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                        <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
+                        {pickStade == 4 ?
+                            <div style={{width: "350px",position: "relative",animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                <div stade={pickStade} className="cardBangerAlertSet">
+                                    <LazyLoadImage
+                                        alt="Grapefruit slice atop a pile of other slices"
+                                        placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
+                                        width={"350"}
+                                        style={{width: "350px", filter: "brightness(1)"}}
+                                        wrapperClassName={"shadowBangerCard"}
+                                        effect="blur"
+                                        threshold={200}
+                                        delayTime={5}
+                                        wrapperProps={{
+                                            // If you need to, you can tweak the effect transition using the wrapper style.
+                                            style: {transitionDelay: "0.1s"},
+                                        }}
+                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                </div>
+                            </div>
+                            : pickStade == 3 ?
+                                                    <div stade={pickStade}
+                                                                         style={{
+                                                    width: "350px",
+                                                    position: "relative",
+                                                    filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
+                                                }}
+                                                id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                                    <div stade={pickStade}
+                                                         className="cardBangerAlertSetThree">
+                                                        <LazyLoadImage
+                                                            alt="Grapefruit slice atop a pile of other slices"
+                                                            delayTime={0}
+                                                            threshold={200}
+                                                            placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
+                                                            width={"350"}
+                                                            style={{width: "350px", filter: "brightness(1.2)"}}
+                                                            wrapperClassName={"shadowBangerCard"}
+                                                            effect="blur"
+                                                            wrapperProps={{
+                                                                // If you need to, you can tweak the effect transition using the wrapper style.
+                                                                style: {transitionDelay: "0.1s"},
+                                                            }}
+                                                            src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
+                                                    </div>
+                                </div>
+                :
+
+                    <button
+                            stade={pickStade} style={customStyles.buttonMyCard}
+                        className={"cardBox"}>
+                    <LazyLoadImage
+
+                        alt="Grapefruit slice atop a pile of other slices"
+                        delayTime={0}
+                        threshold={200}
+                        placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
+                        width={"350"}
+                        stade={pickStade}
+                        style={{
+                            width: "350px",
+                            filter: pickStade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : pickStade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : pickStade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
+                        }}
+                        wrapperClassName={pickStade == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                        effect="blur"
+                        wrapperProps={{
+                            // If you need to, you can tweak the effect transition using the wrapper style.
+                            style: {transitionDelay: "0.1s"},
+                        }}
+                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
+                    {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
+                    {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
+                    </button>
+                        }
+                        <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModal}>Cool !</button>
+                    </Modal>
                     <ProgressBarCard global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length}/>
                     <div style={{
