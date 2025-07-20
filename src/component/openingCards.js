@@ -460,7 +460,7 @@ function OpeningCards(props) {
                                                     margin: 0,
                                                     filter: "drop-shadow(0px 4px 4px black)"
                                                 }}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                                                className={"fit-picture dropCards glowGet"}
                                                 src={"/images/powder.png"}
                                                 onError={errorImage}
                                                 alt="Grapefruit slice atop a pile of other slices"/>
@@ -477,7 +477,7 @@ function OpeningCards(props) {
                                                 filter: "drop-shadow(0px 4px 4px black)",
                                                 textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                             }}
-                                               className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}>+{val.grade * 10}
+                                               className={"fit-picture dropCards glowGet"}>+{val.grade * 10}
                                             </p>
                                         </>
                                     }
@@ -576,7 +576,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}>+{val.grade * 10}
+                                                   className={"fit-picture dropCards glowGet"}>+{val.grade * 10}
                                                 </p>
                                             </>
                                         }
