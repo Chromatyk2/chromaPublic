@@ -169,8 +169,8 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
-    function tradePowder() {
-        alert("Yes")
+    function tradePowder(e) {
+        alert(e.target.getAttribute("card")+" "+e.target.getAttribute("booster")+" "+e.target.getAttribute("number")+" "+e.target.getAttribute("block"))
     }
     const handleChangeOnlyMine = event => {
         if (event.target.checked) {
@@ -227,7 +227,7 @@ function MyCardsSet(props) {
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 5 &&
-                                                <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                <button booster={props.idBooster} block={getRaritiesByBooster} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -258,7 +258,7 @@ function MyCardsSet(props) {
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
                                                     }}
-                                                    src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                                    src={"https://assets.tcgdex.net/" + lang + "/" + getRaritiesByBooster + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
                                             </div>
                                         </div>
                                     )
@@ -274,7 +274,7 @@ function MyCardsSet(props) {
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 5 &&
-                                                <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                <button booster={props.idBooster} block={getRaritiesByBooster} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
@@ -316,7 +316,7 @@ function MyCardsSet(props) {
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
                                             {powder >= 5 &&
-                                                <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                                <button booster={props.idBooster} block={getRaritiesByBooster} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -360,7 +360,7 @@ function MyCardsSet(props) {
                             } else if (!onlyMine) {
                                 return (<div style={{position:"relative"}}>
                                     {powder >= 5 &&
-                                        <button className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
+                                        <button booster={props.idBooster} block={getRaritiesByBooster} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                             src={"/images/powder.png"}/></button>
                                     }
                                     <LazyLoadImage
