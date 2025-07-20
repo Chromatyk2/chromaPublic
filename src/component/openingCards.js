@@ -466,8 +466,8 @@ function OpeningCards(props) {
                                             <p style={{
                                                 color: "white",
                                                 fontSize: "30px",
-                                                left: "45px",
-                                                top: "30px",
+                                                right: "-20px",
+                                                bottom: "15px",
                                                 display: key == 0 ? "block" : "none",
                                                 position: "absolute",
                                                 zIndex: "100",
@@ -565,8 +565,8 @@ function OpeningCards(props) {
                                                 <p style={{
                                                     color: "white",
                                                     fontSize: "30px",
-                                                    left: "45px",
-                                                    top: "30px",
+                                                    right: "-20px",
+                                                    bottom: "15px",
                                                     display: key == 0 ? "block" : "none",
                                                     position: "absolute",
                                                     zIndex: "100",
