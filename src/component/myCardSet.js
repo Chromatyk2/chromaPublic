@@ -36,22 +36,6 @@ function MyCardsSet(props) {
     const [pickCard, setPickCard] = React.useState(null);
     const [powder, setPowder] = React.useState(props.powder);
     const customStyles = {
-        content: {
-            position:'initial',
-            border: 'none',
-            background: 'none',
-            borderRadius: '4px',
-            width: '100%',
-            height: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow:'hidden'
-        },
-        textModal: {
-            fontSize:'30px',
-            textAlign:'center'
-        },
         buttonMyCard: {
             border:'none',
             background:'none',
