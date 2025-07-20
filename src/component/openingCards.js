@@ -443,7 +443,8 @@ function OpeningCards(props) {
                                             local={val.nbCard}
                                             src={"https://assets.tcgdex.net/fr/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
-                                            alt="Grapefruit slice atop a pile of other slices"/>{val.isNew == 1 &&
+                                            alt="Grapefruit slice atop a pile of other slices"/>
+                                        {val.isNew == 0 &&
                                         <>
                                             <img
                                                 rarity={4}
@@ -542,7 +543,7 @@ function OpeningCards(props) {
                                                 </p>
                                             </>
                                         }
-                                        {val.isNew == 1 &&
+                                        {val.isNew == 0 &&
                                             <>
                                                 <img
                                                     rarity={4}
