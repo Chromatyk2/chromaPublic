@@ -167,6 +167,9 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
+    function tradePowder() {
+        alert("Yes")
+    }
     const handleChangeOnlyMine = event => {
         if (event.target.checked) {
             setOnlyMine(false);
@@ -214,11 +217,13 @@ function MyCardsSet(props) {
                                 let cardNb = myCards.find((myCard) => myCard.card === val.id);
                                 if (stadeC == 4) {
                                     return (
-                                        <div style={{
-                                            width: "350px",
-                                            position: "relative",
-                                            animation: "glowGetRainbow 10s infinite alternate"
-                                        }}
+                                        <div
+                                            onClick={tradePowder}
+                                            style={{
+                                                width: "350px",
+                                                position: "relative",
+                                                animation: "glowGetRainbow 10s infinite alternate"
+                                            }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
@@ -254,7 +259,9 @@ function MyCardsSet(props) {
                                     )
                                 } else if (stadeC == 3) {
                                     return (
-                                        <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
+                                        <div
+                                            onClick={tradePowder}
+                                            cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                              image={val.image} stade={stadeC}
                                              style={{
                                                  width: "350px",
@@ -297,7 +304,9 @@ function MyCardsSet(props) {
                                     )
                                 } else {
                                     return (
-                                        <button stade={stadeC} style={customStyles.buttonMyCard}
+                                        <button
+                                            onClick={tradePowder}
+                                            stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
@@ -340,6 +349,7 @@ function MyCardsSet(props) {
                             } else if (!onlyMine) {
                                 return (
                                     <LazyLoadImage
+                                        onClick={tradePowder}
                                         number={val.number}
                                         booster={val.booster}
                                         block={val.block}
