@@ -224,7 +224,8 @@ function ProgressBarCard(props) {
         setIsOpen(false);
         setTimeout(function (){
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
-                console.log(badges.find((item) => item.stade === 0));
+                console.log(badges.find((item) => item.stade == 0));
+                console.log(badges);
                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                     openModalZero(0);
                     Axios.post('/api/addBadge',
