@@ -390,8 +390,7 @@ function MyCardsSet(props) {
                                                 animation: "glowGetRainbow 10s infinite alternate"
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                            {powder >= 50000 &&
-                                                props.user == 'chromatyk' &&
+                                            {powder >= 500 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
@@ -439,7 +438,6 @@ function MyCardsSet(props) {
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 500 &&
-                                                props.user == 'chromatyk' &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
@@ -482,7 +480,6 @@ function MyCardsSet(props) {
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
                                             {powder >= 500 &&
-                                                props.user == 'chromatyk' &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                                     src={"/images/powder.png"}/></button>
                                             }
@@ -527,7 +524,6 @@ function MyCardsSet(props) {
                             } else if (!onlyMine) {
                                 return (<div style={{position:"relative"}}>
                                     {powder >= 500 &&
-                                        props.user == 'chromatyk' &&
                                         <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
                                             src={"/images/powder.png"}/></button>
                                     }
