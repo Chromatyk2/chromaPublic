@@ -448,7 +448,6 @@ function OpeningCards(props) {
                                         <>
                                             <img
                                                 rarity={4}
-                                                onClick={getLastCard}
                                                 id={"tokenContainer"}
                                                 style={{
                                                     display: "block",
@@ -469,7 +468,7 @@ function OpeningCards(props) {
                                                 fontSize: "30px",
                                                 right: "-20px",
                                                 bottom: "15px",
-                                                display: key == 0 ? "block" : "none",
+                                                display: "block",
                                                 position: "absolute",
                                                 zIndex: "100",
                                                 width: "100px",
@@ -559,7 +558,6 @@ function OpeningCards(props) {
                                                         margin: 0,
                                                         filter: "drop-shadow(0px 4px 4px black)"
                                                     }}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
                                                     src={"/images/powder.png"}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
@@ -568,7 +566,7 @@ function OpeningCards(props) {
                                                     fontSize: "30px",
                                                     right: "-20px",
                                                     bottom: "15px",
-                                                    display: key == 0 ? "block" : "none",
+                                                    display: "block",
                                                     position: "absolute",
                                                     zIndex: "100",
                                                     width: "100px",
