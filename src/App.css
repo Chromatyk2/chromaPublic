@@ -1004,6 +1004,7 @@ p.filterTitle {
     background: transparent !important;
      display: flex;
      justify-content: center;
+     flex-flow: column;
 }
 .pokemonContentToken {
     background-color: transparent;
