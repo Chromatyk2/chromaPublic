@@ -406,13 +406,6 @@ function OpeningCards(props) {
                          alt="Grapefruit slice atop a pile of other slices"/>
                 </div>
             </div>
-            {isNew === true &&
-                <div style={{position: "absolute"}} id={"shadowBox"}>
-                    <div className={"newContainer"}>
-                        <p className={"rainbow rainbow_text_animated"}>NEW !</p>
-                    </div>
-                </div>
-            }
             {isLoaded === false &&
                 <>
                     {tenCards.slice(0).reverse().map((val, key) => {
@@ -435,6 +428,14 @@ function OpeningCards(props) {
                                         onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
+
+                                        {val.isNew === 1 &&
+                                            <div style={{position: "absolute"}} id={"shadowBox"}>
+                                                <div className={"newContainer"}>
+                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                                                </div>
+                                            </div>
+                                        }
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
@@ -495,6 +496,14 @@ function OpeningCards(props) {
                                         onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
+
+                                        {val.isNew === 1 &&
+                                            <div style={{position: "absolute"}} id={"shadowBox"}>
+                                                <div className={"newContainer"}>
+                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                                                </div>
+                                            </div>
+                                        }
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
