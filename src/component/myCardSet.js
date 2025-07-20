@@ -180,16 +180,80 @@ function MyCardsSet(props) {
         } else if (randomStade > 89) {
             var pickStade = 4;
         }
-        Axios.post('/api/addCard',
-            {
-                pseudo: props.user,
-                idCard: e.target.getAttribute("card"),
-                booster: e.target.getAttribute("booster"),
-                rarity: "Rare",
-                grade: pickStade,
-                nb: e.target.getAttribute("number"),
-                block: e.target.getAttribute("block")
+        if(powder - 500 > -1){
+            Axios.post('/api/removePowder',
+                {
+                    user:props.user
+                }
+            )
+            .then(function(response){
+                Axios.post('/api/addCard',
+                    {
+                        pseudo: props.user,
+                        idCard: e.target.getAttribute("card"),
+                        booster: e.target.getAttribute("booster"),
+                        rarity: "Rare",
+                        grade: pickStade,
+                        nb: e.target.getAttribute("number"),
+                        block: e.target.getAttribute("block")
+                    })
+                    .then(function(){
+                        Axios.get("/api/getProfil/"+props.user)
+                            .then(function(response) {
+                                setPowder(response.data[0].powder)
+                                        Axios
+                                            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+                                            .then(function(response){
+                                                setMyCards(response.data);
+                                                response.data.map((val, key) => {
+                                                    setMyCardsId(myCardsId => [...myCardsId,val.card]);
+                                                })
+                                                fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+                                                    .then(res => res.json())
+                                                    .then(
+                                                        (result) => {
+                                                            if(result.status == 404){
+                                                                fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".",""))
+                                                                    .then(res => res.json())
+                                                                    .then(
+                                                                        (result) => {
+                                                                            setItems(result.cards)
+                                                                            if(props.idBooster === "sm11.5"){
+                                                                                fetch("https://api.tcgdex.net/v2/en/sets/sma")
+                                                                                    .then(res => res.json())
+                                                                                    .then(
+                                                                                        (result) => {
+                                                                                            result.cards.map((val, key) => {
+                                                                                                setItems(items => [...items,val]);
+                                                                                            })
+                                                                                        },
+                                                                                        (error) => {
+                                                                                            setError(error);
+                                                                                        }
+                                                                                    )
+                                                                            }
+                                                                        },
+                                                                        (error) => {
+                                                                            setIsLoaded(true);
+                                                                            setError(error);
+                                                                        }
+                                                                    )
+                                                            }else{
+                                                                setItems(result.cards)
+                                                                setIsLoaded(false);
+
+                                                            }
+                                                        },
+                                                        (error) => {
+                                                            setIsLoaded(true);
+                                                            setError(error);
+                                                        }
+                                                    )
+                                            })
+                            })
+                    })
             })
+        }
     }
     const handleChangeOnlyMine = event => {
         if (event.target.checked) {
@@ -229,7 +293,7 @@ function MyCardsSet(props) {
                     </div>
                     <div style={{display: "block", margin: "auto", color: "white"}}>
                         <img style={{width: "45px", marginBottom: "10px"}} src={"/images/powder.png"}/>
-                        <p>Poussières TCG : {props.powder}</p>
+                        <p>Poussières TCG : {powder}</p>
                     </div>
                     <div id={"cardsContainer"}>
                         {items.sort((a, b) => a.localId - b.localId).map((val, key) => {
