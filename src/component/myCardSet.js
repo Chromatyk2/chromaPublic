@@ -222,7 +222,7 @@ function MyCardsSet(props) {
                                                 })
                                                 Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
                                                     .then(function(response) {
-                                                        setMyCardWithStade(response.data
+                                                        setMyCardWithStade(response.data);
                                                         fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
                                                             .then(res => res.json())
                                                             .then(
