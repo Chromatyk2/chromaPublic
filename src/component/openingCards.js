@@ -497,7 +497,7 @@ function OpeningCards(props) {
                                                 margin: 0,
                                                 filter: "drop-shadow(0px 4px 4px black)"
                                             }}
-                                            src={"/images/" + val.grade == 0 ? "stade_0" : val.grade == 1 ? "stade_1" : val.grade == 2 ? "stade_2" : val.grade == 3 ? "stade_3" : "stade_4" + ".png"}
+                                            src={"/images/stade_"+val.grade+".png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
@@ -620,7 +620,7 @@ function OpeningCards(props) {
                                                 margin: 0,
                                                 filter: "drop-shadow(0px 4px 4px black)"
                                             }}
-                                            src={"/images/"+val.grade == 0 ? "stade_0" : val.grade == 1 ? "stade_1" : val.grade == 2 ? "stade_2" : val.grade == 3 ? "stade_3" : "stade_4" +".png"}
+                                            src={"/images/stade_"+val.grade+".png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
