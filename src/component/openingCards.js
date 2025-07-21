@@ -449,41 +449,57 @@ function OpeningCards(props) {
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {val.isNew == 0 &&
                                             val.grade > 0 &&
-                                        <>
-                                            <img
-                                                rarity={4}
-                                                id={"tokenContainer"}
-                                                style={{
+                                            <>
+                                                <img
+                                                    rarity={4}
+                                                    id={"tokenContainer"}
+                                                    style={{
+                                                        display: "block",
+                                                        position: "absolute",
+                                                        zIndex: "100",
+                                                        bottom: "25px",
+                                                        width: "100px",
+                                                        right: "-13px",
+                                                        margin: 0,
+                                                        filter: "drop-shadow(0px 4px 4px black)"
+                                                    }}
+                                                    className={"fit-picture dropCards glowGet"}
+                                                    src={"/images/powder.png"}
+                                                    onError={errorImage}
+                                                    alt="Grapefruit slice atop a pile of other slices"/>
+                                                <p style={{
+                                                    color: "white",
+                                                    fontSize: "30px",
+                                                    right: "-20px",
+                                                    bottom: "15px",
                                                     display: "block",
                                                     position: "absolute",
                                                     zIndex: "100",
-                                                    bottom: "25px",
                                                     width: "100px",
-                                                    right: "-13px",
                                                     margin: 0,
-                                                    filter: "drop-shadow(0px 4px 4px black)"
+                                                    filter: "drop-shadow(0px 4px 4px black)",
+                                                    textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                className={"fit-picture dropCards glowGet"}
-                                                src={"/images/powder.png"}
-                                                onError={errorImage}
-                                                alt="Grapefruit slice atop a pile of other slices"/>
-                                            <p style={{
-                                                color: "white",
-                                                fontSize: "30px",
-                                                right: "-20px",
-                                                bottom: "15px",
+                                                   className={"fit-picture dropCards glowGet"}>+{val.grade * 10}
+                                                </p>
+                                            </>
+                                        }
+                                        <img
+                                            onClick={getLastCard}
+                                            id={"tokenContainer"}
+                                            style={{
                                                 display: "block",
                                                 position: "absolute",
                                                 zIndex: "100",
+                                                bottom: "25px",
                                                 width: "100px",
+                                                left: "-13px",
                                                 margin: 0,
-                                                filter: "drop-shadow(0px 4px 4px black)",
-                                                textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
+                                                filter: "drop-shadow(0px 4px 4px black)"
                                             }}
-                                               className={"fit-picture dropCards glowGet"}>+{val.grade * 10}
-                                            </p>
-                                        </>
-                                    }
+                                            src={"/images/" + val.grade == 0 ? "stade_0" : val.grade == 1 ? "stade_1" : val.grade == 2 ? "stade_2" : val.grade == 3 ? "stade_3" : "stade_4" + ".png"}
+                                            onError={errorImage}
+                                            alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
                                     :
                                     <div
@@ -500,7 +516,7 @@ function OpeningCards(props) {
                                         {val.isNew === 1 &&
                                             <div style={{position: "absolute"}} id={"shadowBox"}>
                                                 <div className={"newContainer"}>
-                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
+                                                <p className={"rainbow rainbow_text_animated"}>NEW !</p>
                                                 </div>
                                             </div>
                                         }
@@ -512,7 +528,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" +block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
 
@@ -520,37 +536,37 @@ function OpeningCards(props) {
                                             key === 0 &&
                                             <>
                                                 <img
-                                                rarity={4}
-                                                onClick={getLastCard}
-                                                id={"tokenContainer"}
-                                                style={{
-                                                display: "block",
-                                                position: "absolute",
-                                                zIndex: "100",
-                                                top: "-13px",
-                                                width: "100px",
-                                                left: "-13px",
-                                                margin: 0,
-                                                filter: "drop-shadow(0px 4px 4px black)"
-                                                 }}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
-                                                src={token}
-                                                onError={errorImage}
-                                                alt="Grapefruit slice atop a pile of other slices"/>
+                                                    rarity={4}
+                                                    onClick={getLastCard}
+                                                    id={"tokenContainer"}
+                                                    style={{
+                                                        display: "block",
+                                                        position: "absolute",
+                                                        zIndex: "100",
+                                                        top: "-13px",
+                                                        width: "100px",
+                                                        left: "-13px",
+                                                        margin: 0,
+                                                        filter: "drop-shadow(0px 4px 4px black)"
+                                                    }}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                                                    src={token}
+                                                    onError={errorImage}
+                                                    alt="Grapefruit slice atop a pile of other slices"/>
                                                 <p style={{
-                                                color: "white",
-                                                fontSize: "30px",
-                                                left: "45px",
-                                                top: "30px",
-                                                display: key == 0 ? "block" : "none",
-                                                position: "absolute",
-                                                zIndex: "100",
-                                                width: "100px",
-                                                margin: 0,
-                                                filter: "drop-shadow(0px 4px 4px black)",
-                                                textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
+                                                    color: "white",
+                                                    fontSize: "30px",
+                                                    left: "45px",
+                                                    top: "30px",
+                                                    display: key == 0 ? "block" : "none",
+                                                    position: "absolute",
+                                                    zIndex: "100",
+                                                    width: "100px",
+                                                    margin: 0,
+                                                    filter: "drop-shadow(0px 4px 4px black)",
+                                                    textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
+                                                   className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
                                                 </p>
                                             </>
                                         }
@@ -591,6 +607,22 @@ function OpeningCards(props) {
                                                 </p>
                                             </>
                                         }
+                                        <img
+                                            onClick={getLastCard}
+                                            id={"tokenContainer"}
+                                            style={{
+                                                display: "block",
+                                                position: "absolute",
+                                                zIndex: "100",
+                                                bottom: "25px",
+                                                width: "100px",
+                                                left: "-13px",
+                                                margin: 0,
+                                                filter: "drop-shadow(0px 4px 4px black)"
+                                            }}
+                                            src={"/images/"+val.grade == 0 ? "stade_0" : val.grade == 1 ? "stade_1" : val.grade == 2 ? "stade_2" : val.grade == 3 ? "stade_3" : "stade_4" +".png"}
+                                            onError={errorImage}
+                                            alt="Grapefruit slice atop a pile of other slices"/>
                                     </div>
                                 }
                             </>
