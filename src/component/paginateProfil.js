@@ -17,7 +17,7 @@ function Items(props) {
                     profilList.map((val, key) => {
                         return (
                             <>
-                                <div style={{background:"rgba(0,0,0,.5)",borderRadius:"50px",padding: "20px 0 0px 0"}}>
+                                <div style={{background:"rgba(0,0,0,.5)",borderRadius:"50px",padding: "20px 20px 0px 20px"}}>
                                     <p className={"pseudoProfilList"}>{val.pseudo}</p>
                                     <p className={"levelProfilList"}>Niveau {val.level} <small>( {val.xp} xp )</small></p>
                                     <div className={"profilVisualsList"}>
