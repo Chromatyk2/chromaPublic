@@ -38,6 +38,7 @@ function MyCardsSet(props) {
     const [pickCardId, setPickCardId] = React.useState(null);
     const [myCardWithStade, setMyCardWithStade] = React.useState(null);
     const [powder, setPowder] = React.useState(props.powder);
+    const [refresh, setRefresh] = React.useState(0);
 
     const customStyles = {
         buttonMyCard: {
@@ -140,7 +141,7 @@ function MyCardsSet(props) {
 
     function closeModal() {
         setIsOpen(false);
-
+        setRefresh(refresh+1)
     }
     function handleState() {
         setIsOpen(false);
@@ -387,7 +388,7 @@ function MyCardsSet(props) {
                                 onClick={closeModal}>Cool !
                         </button>
                     </Modal>
-                    <ProgressBarCard global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
+                    <ProgressBarCard refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length}/>
                     <div style={{
                         color: "white",

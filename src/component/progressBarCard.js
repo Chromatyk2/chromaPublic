@@ -224,7 +224,7 @@ function ProgressBarCard(props) {
                         })
                 })
 
-    }, []);
+    }, [props.refresh]);
     function closeModal() {
         setIsOpen(false);
         setTimeout(function (){
