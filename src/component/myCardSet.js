@@ -76,7 +76,7 @@ function MyCardsSet(props) {
                 response.data.map((val, key) => {
                     setMyCardsId(myCardsId => [...myCardsId,val.card]);
                 })
-                Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.booster)
+                Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
                     .then(function(response) {
                         setMyCardWithStade(response.data)
                         fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
