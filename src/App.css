@@ -5744,6 +5744,8 @@ img.badgeToWin {
     background-position: right;
     padding-right: 25px;
     height: 31px;
+    right: 0;
+    border-radius: 0 5px 0 5px;
 }
 .buttonToTrade:hover{
     background-color: #120747;
