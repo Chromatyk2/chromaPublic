@@ -491,9 +491,9 @@ function OpeningCards(props) {
                                                 display: "block",
                                                 position: "absolute",
                                                 zIndex: "100",
-                                                bottom: "25px",
-                                                width: "100px",
-                                                left: "-13px",
+                                                bottom: "0",
+                                                width: "75px",
+                                                left: "0",
                                                 margin: 0,
                                                 filter: "drop-shadow(0px 4px 4px black)"
                                             }}
@@ -614,9 +614,9 @@ function OpeningCards(props) {
                                                 display: "block",
                                                 position: "absolute",
                                                 zIndex: "100",
-                                                bottom: "25px",
-                                                width: "100px",
-                                                left: "-13px",
+                                                bottom: "0",
+                                                width: "75px",
+                                                left: "0",
                                                 margin: 0,
                                                 filter: "drop-shadow(0px 4px 4px black)"
                                             }}
