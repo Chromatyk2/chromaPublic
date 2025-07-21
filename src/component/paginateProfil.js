@@ -62,7 +62,7 @@ function Items(props) {
                                     </div>
                                     <div className={"linkList"}>
                                         <Link className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img src={"/images/pokedex.png"}/></Link>
-                                        <Link className="navLink linkFromNav" to={"/profil/"+val.pseudo}><img src={"/images/card.png"}/></Link>
+                                        <Link className="navLink linkFromNav" to={"/profil/"+val.pseudo}><img src={"/images/profil.png"}/></Link>
                                     </div>
                                 </div>
                             </>
