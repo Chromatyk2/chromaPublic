@@ -458,4 +458,4 @@ function OtherMyCardsSet(props) {
         </>
     )
 }
-export default MyCardsSet
+export default OtherMyCardsSet

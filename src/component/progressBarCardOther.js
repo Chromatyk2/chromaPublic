@@ -181,4 +181,4 @@ function OtherProgressBarCard(props) {
     )
 }
 
-export default ProgressBarCard
+export default OtherProgressBarCard

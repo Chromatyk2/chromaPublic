@@ -92,4 +92,4 @@ function OtherMyCards(props) {
     )
 }
 
-export default MyCards
+export default OtherMyCards
