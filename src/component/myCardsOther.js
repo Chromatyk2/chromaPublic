@@ -7,11 +7,9 @@ import '../App.css'
 import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
 import MyUniqueBooster from "./myUniqueBooster";
-import OtherProgressBarCard from "./progressBarCardOther";
-import OtherMyCardsSet from "./myCardSetOther";
+import ProgressBarCard from "./progressBarCard";
 
 function OtherMyCards(props) {
-    const { pseudo } = useParams()
     const [nbCards, setNbCards] = useState(null);
     const [nbCard, setNbCard] = useState(null);
     const [totalCard, setTotalCard] = useState(null);
@@ -32,7 +30,7 @@ function OtherMyCards(props) {
     }
     useEffect(() => {
         Axios
-            .get("/api/getNbCards/"+pseudo)
+            .get("/api/getNbCards/"+props.user)
             .then(function(response){
                 setNbCards(response.data);
                 let sum = (response.data.reduce(function(prev, current) {
@@ -46,7 +44,7 @@ function OtherMyCards(props) {
                             return prev + +current.totalCards
                         }, 0));
                         setTotalCard(sumBooster);
-                        Axios.get("/api/getProfil/"+pseudo)
+                        Axios.get("/api/getProfil/"+props.user)
                             .then(function(response) {
                                 setPowder(response.data[0].powder)
                             })
@@ -58,7 +56,7 @@ function OtherMyCards(props) {
             {totalCard &&
                 !page &&
                 <>
-                    <OtherProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
+                    <ProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
                     <div style={{display: "block", margin: "auto", color: "white"}}>
                         <img style={{width: "45px", marginBottom: "10px"}} src={"/images/powder.png"}/>
                         <p>Poussières TCG : {powder}</p>
@@ -72,7 +70,7 @@ function OtherMyCards(props) {
                         <button style={{color: "white", width: "100%", margin: "0", padding: "0", marginTop: "30px"}}
                                 onClick={backPage} className="backButton">Retour
                         </button>
-                        <OtherMyCardsSet powder={powder} user={pseudo} card={nbCard} idBooster={page}
+                        <MyCardsSet powder={powder} user={props.user} card={nbCard} idBooster={page}
                                     guruName={guruName}/>
                     </>
                     :

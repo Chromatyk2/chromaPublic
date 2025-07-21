@@ -39,7 +39,7 @@ import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
 import DonationBox from "./component/donationBox";
 import Axios from "axios";
-import OtherMyCards from "./component/myCardsOther";
+import CardsHubOther from "./component/cardsHubOther";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
@@ -82,7 +82,11 @@ function App() {
           <Route path="/29ct92B3ZrvxGSp" element={<SpawnPokemonRob cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies} />} />
           <Route path="/profil/:pseudo" element={<OtherProfil cookies={cookies} />} />
-          <Route path="/tcg/cartes/:pseudo" element={<OtherMyCards page={"myCards"} cookies={cookies} />} />
+          <Route path="/tcg/cartes/:pseudo" element={<CardsHubOther page={"myCards"} cookies={cookies} />} />
+          <Route path="/tcg/boosters/:pseudo" element={<CardsHub page={"myBoosters"} cookies={cookies} />} />
+          <Route path="/tcg/boutique/:pseudo" element={<CardsHub page={"cardsShop"} cookies={cookies} />} />
+          <Route path="/tcg/echange/:pseudo" element={<CardsHub page={"sellCards"} cookies={cookies} />} />
+          <Route path="/tcg/liste/:pseudo" element={<CardsHub page={"listuserTcg"} cookies={cookies} />} />
           <Route path="/allProfils" element={<AllProfils cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies} />} />
           <Route path="/pedandex" element={<Pedandex cookies={cookies} />} />
