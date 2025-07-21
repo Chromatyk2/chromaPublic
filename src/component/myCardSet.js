@@ -433,8 +433,7 @@ function MyCardsSet(props) {
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 500 &&
-                                                <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
-                                                    src={"/images/powder.png"}/></button>
+                                                <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
@@ -504,8 +503,7 @@ function MyCardsSet(props) {
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 500 &&
-                                                <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
-                                                    src={"/images/powder.png"}/></button>
+                                                <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
                                                 className="infoNbCard" style={{
@@ -571,8 +569,7 @@ function MyCardsSet(props) {
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
                                             {powder >= 500 &&
-                                                <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser <img
-                                                    src={"/images/powder.png"}/></button>
+                                                <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
@@ -640,8 +637,7 @@ function MyCardsSet(props) {
                             } else if (!onlyMine) {
                                 return (<div style={{position:"relative"}}>
                                     {powder >= 500 &&
-                                        <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder}>Utiliser <img
-                                            src={"/images/powder.png"}/></button>
+                                        <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder}>Utiliser </button>
                                     }
                                     <LazyLoadImage
                                         number={val.number}
