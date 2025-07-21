@@ -286,32 +286,14 @@ function MyCardsSet(props) {
                         {pickStade == 4 ?
                             <div style={{ margin: "auto",marginBottom: "25px",width: "350px",position: "relative",animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                 <div stade={pickStade} className="cardBangerAlertSet">
-                                    {myCardWithStade &&
-                                        <div style={{
-                                            zIndex: "1",
-                                            left: "8px",
-                                            bottom: "2px",
-                                            display:"flex",
-                                            flexFlow:"row",
-                                            position:"absolute"
-                                        }}>
-                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 0) &&
-                                                <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
-                                            }
-                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 1) &&
-                                                <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
-                                            }
-                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 2) &&
-                                                <img style={{width:"50px"}} src={"/images/stade_2.png"}/>
-                                            }
-                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 3) &&
-                                                <img style={{width:"50px"}} src={"/images/stade_3.png"}/>
-                                            }
-                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 4) &&
-                                                <img style={{width:"50px"}} src={"/images/stade_4.png"}/>
-                                            }
-                                        </div>
-                                    }
+                                    <img style={{
+                                        zIndex: "1",
+                                        left: "8px",
+                                        bottom: "2px",
+                                        display: "flex",
+                                        flexFlow: "row",
+                                        position: "absolute"
+                                    }} src={"/images/stade_"+pickStade+".png"}/>
                                     <LazyLoadImage
                                         alt="Grapefruit slice atop a pile of other slices"
                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
@@ -339,86 +321,50 @@ function MyCardsSet(props) {
                                                 id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                     <div stade={pickStade}
                                                          className="cardBangerAlertSetThree">
-                                                        {myCardWithStade &&
-                                                        <div style={{
+                                                        <img style={{
                                                             zIndex: "1",
                                                             left: "8px",
                                                             bottom: "2px",
-                                                            display:"flex",
-                                                            flexFlow:"row",
-                                                            position:"absolute"
-                                                        }}>
-                                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 0) &&
-                                                                <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
-                                                            }
-                                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 1) &&
-                                                                <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
-                                                            }
-                                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 2) &&
-                                                                <img style={{width:"50px"}} src={"/images/stade_2.png"}/>
-                                                            }
-                                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 3) &&
-                                                                <img style={{width:"50px"}} src={"/images/stade_3.png"}/>
-                                                            }
-                                                            {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 4) &&
-                                                                <img style={{width:"50px"}} src={"/images/stade_4.png"}/>
-                                                            }
-                                                        </div>
-                                                    }
-                                                    <div>
-                                                        {myCardWithStade &&
-                                                            <div style={{
+                                                            display: "flex",
+                                                            flexFlow: "row",
+                                                            position: "absolute"
+                                                        }} src={"/images/stade_"+pickStade+".png"}/>
+                                                        <div>
+                                                            <img style={{
                                                                 zIndex: "1",
                                                                 left: "8px",
                                                                 bottom: "2px",
-                                                                display:"flex",
-                                                                flexFlow:"row",
-                                                                position:"absolute"
-                                                            }}>
-                                                                {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 0) &&
-                                                                    <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
-                                                                }
-                                                                {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 1) &&
-                                                                    <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
-                                                                }
-                                                                {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 2) &&
-                                                                    <img style={{width:"50px"}} src={"/images/stade_2.png"}/>
-                                                                }
-                                                                {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 3) &&
-                                                                    <img style={{width:"50px"}} src={"/images/stade_3.png"}/>
-                                                                }
-                                                                {myCardWithStade.find((uc) => uc.card == pickCardId && uc.stade == 4) &&
-                                                                    <img style={{width:"50px"}} src={"/images/stade_4.png"}/>
-                                                                }
-                                                            </div>
-                                                        }
-                                                        <LazyLoadImage
-                                                        alt="Grapefruit slice atop a pile of other slices"
-                                                        delayTime={0}
-                                                        threshold={200}
-                                                        placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
-                                                        width={"350"}
-                                                        style={{width: "350px", filter: "brightness(1.2)"}}
-                                                        wrapperClassName={"shadowBangerCard"}
-                                                        effect="blur"
-                                                        wrapperProps={{
-                                                            // If you need to, you can tweak the effect transition using the wrapper style.
-                                                            style: {transitionDelay: "0.1s"},
-                                                        }}
-                                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/>
+                                                                display: "flex",
+                                                                flexFlow: "row",
+                                                                position: "absolute"
+                                                            }} src={"/images/stade_" + pickStade + ".png"}/>
+                                                            <LazyLoadImage
+                                                                alt="Grapefruit slice atop a pile of other slices"
+                                                                delayTime={0}
+                                                                threshold={200}
+                                                                placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
+                                                                width={"350"}
+                                                                style={{width: "350px", filter: "brightness(1.2)"}}
+                                                                wrapperClassName={"shadowBangerCard"}
+                                                                effect="blur"
+                                                                wrapperProps={{
+                                                                    // If you need to, you can tweak the effect transition using the wrapper style.
+                                                                    style: {transitionDelay: "0.1s"},
+                                                                }}
+                                                                src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/>
+                                                        </div>
                                                     </div>
-                                               </div>
-                                </div>
-                :
+                                                    </div>
+                                :
 
-                    <button
-                            stade={pickStade} style={customStyles.buttonMyCardModal}
-                        className={"cardBox"}>
-                    <LazyLoadImage
+                                <button
+                                    stade={pickStade} style={customStyles.buttonMyCardModal}
+                                    className={"cardBox"}>
+                                    <LazyLoadImage
 
-                        alt="Grapefruit slice atop a pile of other slices"
-                        delayTime={0}
-                        threshold={200}
+                                        alt="Grapefruit slice atop a pile of other slices"
+                                        delayTime={0}
+                                        threshold={200}
                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                         width={"350"}
                         stade={pickStade}
