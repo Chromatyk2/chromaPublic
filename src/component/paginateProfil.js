@@ -61,9 +61,9 @@ function Items(props) {
                                         </div>
                                     </div>
                                     <div className={"linkList"}>
-                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img src={"/images/pokedex.png"}/></Link>
-                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/profil/"+val.pseudo}><img src={"/images/profil.png"}/></Link>
-                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/tcg/cartes/"+val.pseudo}><img src={"/images/card.png"}/></Link>
+                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img style={{width:"100%"}} src={"/images/pokedex.png"}/></Link>
+                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/profil/"+val.pseudo}><img style={{width:"100%"}} src={"/images/profil.png"}/></Link>
+                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/tcg/cartes/"+val.pseudo}><img style={{width:"100%"}} src={"/images/card.png"}/></Link>
                                     </div>
                                 </div>
                             </>
