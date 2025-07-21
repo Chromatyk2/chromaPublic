@@ -321,15 +321,6 @@ function MyCardsSet(props) {
                                                 id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                                     <div stade={pickStade}
                                                          className="cardBangerAlertSetThree">
-                                                        <img style={{
-                                                            zIndex: "1",
-                                                            left: "8px",
-                                                            bottom: "2px",
-                                                            display: "flex",
-                                                            flexFlow: "row",
-                                                            position: "absolute"
-                                                        }} src={"/images/stade_"+pickStade+".png"}/>
-                                                        <div>
                                                             <img style={{
                                                                 zIndex: "1",
                                                                 left: "8px",
@@ -354,36 +345,45 @@ function MyCardsSet(props) {
                                                                 src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/>
                                                         </div>
                                                     </div>
-                                                    </div>
                                 :
 
                                 <button
                                     stade={pickStade} style={customStyles.buttonMyCardModal}
                                     className={"cardBox"}>
+                                    <img style={{
+                                        zIndex: "1",
+                                        left: "8px",
+                                        bottom: "2px",
+                                        display: "flex",
+                                        flexFlow: "row",
+                                        position: "absolute"
+                                    }} src={"/images/stade_" + pickStade + ".png"}/>
                                     <LazyLoadImage
 
                                         alt="Grapefruit slice atop a pile of other slices"
                                         delayTime={0}
                                         threshold={200}
-                        placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
-                        width={"350"}
-                        stade={pickStade}
-                        style={{
-                            width: "350px",
-                            filter: pickStade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : pickStade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : pickStade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
-                        }}
-                        wrapperClassName={pickStade == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
-                        effect="blur"
-                        wrapperProps={{
-                            // If you need to, you can tweak the effect transition using the wrapper style.
-                            style: {transitionDelay: "0.1s"},
-                        }}
-                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
-                    {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
-                    {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
-                    </button>
+                                        placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
+                                        width={"350"}
+                                        stade={pickStade}
+                                        style={{
+                                            width: "350px",
+                                            filter: pickStade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : pickStade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : pickStade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
+                                        }}
+                                        wrapperClassName={pickStade == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                        effect="blur"
+                                        wrapperProps={{
+                                            // If you need to, you can tweak the effect transition using the wrapper style.
+                                            style: {transitionDelay: "0.1s"},
+                                        }}
+                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
+                                    {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
+                                    {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
+                                </button>
                         }
-                        <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModal}>Cool !</button>
+                        <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                                onClick={closeModal}>Cool !
+                        </button>
                     </Modal>
                     <ProgressBarCard global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length}/>
@@ -394,7 +394,7 @@ function MyCardsSet(props) {
                         justifyContent: "center",
                         flexWrap: "wrap"
                     }}>
-                        {myCards.length != items.length &&
+                    {myCards.length != items.length &&
                             <label htmlFor="subscribe">
                                 <input
                                     style={{marginRight: "10px"}}
