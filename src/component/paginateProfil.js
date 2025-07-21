@@ -17,7 +17,7 @@ function Items(props) {
                     profilList.map((val, key) => {
                         return (
                             <>
-                                <div style={{background:"rgba(0,0,0,.5)",borderRadius:"50px",padding:"20px"}}>
+                                <div style={{background:"rgba(0,0,0,.5)",borderRadius:"50px",padding: "20px 0 0px 0"}}>
                                     <p className={"pseudoProfilList"}>{val.pseudo}</p>
                                     <p className={"levelProfilList"}>Niveau {val.level} <small>( {val.xp} xp )</small></p>
                                     <div className={"profilVisualsList"}>
@@ -61,8 +61,8 @@ function Items(props) {
                                         </div>
                                     </div>
                                     <div className={"linkList"}>
-                                        <Link className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img src={"/images/pokedex.png"}/></Link>
-                                        <Link className="navLink linkFromNav" to={"/profil/"+val.pseudo}><img src={"/images/profil.png"}/></Link>
+                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img src={"/images/pokedex.png"}/></Link>
+                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/profil/"+val.pseudo}><img src={"/images/profil.png"}/></Link>
                                     </div>
                                 </div>
                             </>

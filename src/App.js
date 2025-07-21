@@ -39,6 +39,7 @@ import SpecificPedandex from "./component/specificPedandex";
 import CardsHubTest from "./component/test/cardsHub";
 import DonationBox from "./component/donationBox";
 import Axios from "axios";
+import OtherMyCards from "./component/myCardsOther";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
@@ -81,6 +82,7 @@ function App() {
           <Route path="/29ct92B3ZrvxGSp" element={<SpawnPokemonRob cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies} />} />
           <Route path="/profil/:pseudo" element={<OtherProfil cookies={cookies} />} />
+          <Route path="/cards/:pseudo" element={<OtherMyCardss cookies={cookies} />} />
           <Route path="/allProfils" element={<AllProfils cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies} />} />
           <Route path="/pedandex" element={<Pedandex cookies={cookies} />} />
