@@ -383,29 +383,9 @@ function ProgressBarCard(props) {
                 </div>
                 <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                     <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
-                    <div>
-                        <img
-                            id={"tokenContainer"}
-                            style={{
-                                display: "block",
-                                position: "absolute",
-                                zIndex: "100",
-                                bottom: "0",
-                                width: "75px",
-                                left: "0",
-                                margin: 0,
-                                filter: "drop-shadow(0px 4px 4px black)"
-                            }}
-                            src={"/images/stade_" +badgeToWinStade + ".png"}
-                            alt="Grapefruit slice atop a pile of other slices"/>
-                        <img style={{marginBottom: "30px"}} className={"badgeToWin"}
-                    </div>
-                         src={"/Ribbon/" + props.booster + "_" + badgeToWinStade + ".png"}/>
-                    <p style={{textAlign: "center", fontStyle: "20px"}}>Set rempli à
-                        100% {badgeToWinStade != 0 && "avec les cartes de rareté " + badgeToWinStade} !!</p>
-                    <button style={{display: "block", margin: "auto"}} className={"filterButton"}
-                            onClick={closeModal}>Cool !
-                    </button>
+                    <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
+                    <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à 100% {badgeToWinStade != 0 && "avec les cartes de rareté "+ badgeToWinStade} !!</p>
+                    <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModal}>Cool !</button>
                 </Modal>
             </>
     )
