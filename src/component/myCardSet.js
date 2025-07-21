@@ -11,6 +11,7 @@ import Modal from "react-modal";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import {parseWithOptions} from "date-fns/fp";
+import progressBarCard from "./progressBarCard";
 
 function MyCardsSet(props) {
     const [error, setError] = useState(null);
@@ -139,6 +140,7 @@ function MyCardsSet(props) {
 
     function closeModal() {
         setIsOpen(false);
+
     }
     function handleState() {
         setIsOpen(false);
@@ -447,9 +449,7 @@ function MyCardsSet(props) {
                                                     flexFlow:"row",
                                                     position:"absolute"
                                                 }}>
-                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
-                                                        <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
-                                                    }
+
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
                                                         <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
                                                     }
@@ -521,9 +521,7 @@ function MyCardsSet(props) {
                                                     flexFlow:"row",
                                                     position:"absolute"
                                                 }}>
-                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
-                                                        <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
-                                                    }
+
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
                                                         <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
                                                     }
@@ -590,9 +588,7 @@ function MyCardsSet(props) {
                                                     flexFlow:"row",
                                                     position:"absolute"
                                                 }}>
-                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
-                                                        <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
-                                                    }
+
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
                                                         <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
                                                     }

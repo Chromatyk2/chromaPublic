@@ -362,7 +362,7 @@ function ProgressBarCard(props) {
                         props.global === false &&
                         <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
                             <div style={{width: "10px", height: "10px", background: "#cecaca"}}></div>
-                            <p>Stade 0
+                            <p>Global
                                 : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
                         </div>
                     }

@@ -484,6 +484,7 @@ function OpeningCards(props) {
                                                 </p>
                                             </>
                                         }
+                                        {val.grade > 0 &&
                                         <img
                                             onClick={getLastCard}
                                             id={"tokenContainer"}
@@ -500,6 +501,7 @@ function OpeningCards(props) {
                                             src={"/images/stade_"+val.grade+".png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
+                                        }
                                     </div>
                                     :
                                     <div
@@ -607,6 +609,7 @@ function OpeningCards(props) {
                                                 </p>
                                             </>
                                         }
+                                        {val.grade > 0 &&
                                         <img
                                             onClick={getLastCard}
                                             id={"tokenContainer"}
@@ -623,6 +626,7 @@ function OpeningCards(props) {
                                             src={"/images/stade_"+val.grade+".png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
+                                        }
                                     </div>
                                 }
                             </>
