@@ -34,7 +34,9 @@ function MyCardsSet(props) {
     const [lang, setLang] = React.useState(null);
     const [pickStade, setPickStade] = React.useState(null);
     const [pickCard, setPickCard] = React.useState(null);
+    const [myCardWithStade, setMyCardWithStade] = React.useState(null);
     const [powder, setPowder] = React.useState(props.powder);
+
     const customStyles = {
         buttonMyCard: {
             border:'none',
@@ -74,50 +76,55 @@ function MyCardsSet(props) {
                 response.data.map((val, key) => {
                     setMyCardsId(myCardsId => [...myCardsId,val.card]);
                 })
-                fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            if(result.status == 404){
-                                fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".",""))
-                                    .then(res => res.json())
-                                    .then(
-                                        (result) => {
+                Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.booster)
+                    .then(function(response) {
+                        setMyCardWithStade(response.data)
+                        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+                        .then(res => res.json())
+                        .then(
+                            (result) => {
+                                if(result.status == 404){
+                                    fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".",""))
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
                                                 setItems(result.cards)
                                                 setIsLoaded(false);
-                                            if(props.idBooster === "sm11.5"){
-                                                fetch("https://api.tcgdex.net/v2/en/sets/sma")
-                                                    .then(res => res.json())
-                                                    .then(
-                                                        (result) => {
-                                                            result.cards.map((val, key) => {
-                                                                setItems(items => [...items,val]);
-                                                            })
-                                                            setIsLoaded(false);
-                                                        },
-                                                        (error) => {
-                                                            setIsLoaded(true);
-                                                            setError(error);
-                                                        }
-                                                    )
+                                                if(props.idBooster === "sm11.5"){
+                                                    fetch("https://api.tcgdex.net/v2/en/sets/sma")
+                                                        .then(res => res.json())
+                                                        .then(
+                                                            (result) => {
+                                                                result.cards.map((val, key) => {
+                                                                    setItems(items => [...items,val]);
+                                                                })
+                                                                setIsLoaded(false);
+                                                            },
+                                                            (error) => {
+                                                                setIsLoaded(true);
+                                                                setError(error);
+                                                            }
+                                                        )
+                                                }
+                                            },
+                                            (error) => {
+                                                setIsLoaded(true);
+                                                setError(error);
                                             }
-                                        },
-                                        (error) => {
-                                            setIsLoaded(true);
-                                            setError(error);
-                                        }
-                                    )
-                            }else{
-                                setItems(result.cards)
-                                setIsLoaded(false);
+                                        )
+                                }else{
+                                    setItems(result.cards)
+                                    setIsLoaded(false);
 
+                                }
+                            },
+                            (error) => {
+                                setIsLoaded(true);
+                                setError(error);
                             }
-                        },
-                        (error) => {
-                            setIsLoaded(true);
-                            setError(error);
-                        }
-                    )
+                        )
+
+                    })
             })
     }, []);
     function openModal(e) {
@@ -403,6 +410,31 @@ function MyCardsSet(props) {
                                                     left: "8px",
                                                     top: "2px"
                                                 }}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+                                            {myCardWithStade &&
+                                                <div style={{
+                                                    zIndex: "1",
+                                                    left: "8px",
+                                                    bottom: "2px",
+                                                    display:"flex",
+                                                    flexFlow:"row"
+                                                }}>
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
+                                                        <img src={"/images/stade_0.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
+                                                        <img src={"/images/stade_1.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 2) &&
+                                                        <img src={"/images/stade_2.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 3) &&
+                                                        <img src={"/images/stade_3.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 4) &&
+                                                        <img src={"/images/stade_4.png"}/>
+                                                    }
+                                                </div>
+                                            }
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} stade={stadeC} className="cardBangerAlertSet">
                                                 <LazyLoadImage
@@ -450,6 +482,31 @@ function MyCardsSet(props) {
                                                 left: "8px",
                                                 top: "2px"
                                             }}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+                                            {myCardWithStade &&
+                                                <div style={{
+                                                    zIndex: "1",
+                                                    left: "8px",
+                                                    bottom: "2px",
+                                                    display:"flex",
+                                                    flexFlow:"row"
+                                                }}>
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
+                                                        <img src={"/images/stade_0.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
+                                                        <img src={"/images/stade_1.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 2) &&
+                                                        <img src={"/images/stade_2.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 3) &&
+                                                        <img src={"/images/stade_3.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 4) &&
+                                                        <img src={"/images/stade_4.png"}/>
+                                                    }
+                                                </div>
+                                            }
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} stade={stadeC}
                                                  className="cardBangerAlertSetThree">
@@ -492,6 +549,31 @@ function MyCardsSet(props) {
                                                     left: "8px",
                                                     top: "2px"
                                                 }}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+                                            {myCardWithStade &&
+                                                <div style={{
+                                                    zIndex: "1",
+                                                    left: "8px",
+                                                    bottom: "2px",
+                                                    display:"flex",
+                                                    flexFlow:"row"
+                                                }}>
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
+                                                        <img src={"/images/stade_0.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
+                                                        <img src={"/images/stade_1.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 2) &&
+                                                        <img src={"/images/stade_2.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 3) &&
+                                                        <img src={"/images/stade_3.png"}/>
+                                                    }
+                                                    {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 4) &&
+                                                        <img src={"/images/stade_4.png"}/>
+                                                    }
+                                                </div>
+                                            }
                                             <LazyLoadImage
                                                 number={val.number}
                                                 booster={val.booster}
