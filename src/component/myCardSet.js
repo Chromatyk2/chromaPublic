@@ -416,22 +416,23 @@ function MyCardsSet(props) {
                                                     left: "8px",
                                                     bottom: "2px",
                                                     display:"flex",
-                                                    flexFlow:"row"
+                                                    flexFlow:"row",
+                                                    position:"absolute"
                                                 }}>
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
-                                                        <img src={"/images/stade_0.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
-                                                        <img src={"/images/stade_1.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 2) &&
-                                                        <img src={"/images/stade_2.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_2.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 3) &&
-                                                        <img src={"/images/stade_3.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_3.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 4) &&
-                                                        <img src={"/images/stade_4.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_4.png"}/>
                                                     }
                                                 </div>
                                             }
@@ -482,28 +483,30 @@ function MyCardsSet(props) {
                                                 left: "8px",
                                                 top: "2px"
                                             }}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+
                                             {myCardWithStade &&
                                                 <div style={{
                                                     zIndex: "1",
                                                     left: "8px",
                                                     bottom: "2px",
                                                     display:"flex",
-                                                    flexFlow:"row"
+                                                    flexFlow:"row",
+                                                    position:"absolute"
                                                 }}>
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
-                                                        <img src={"/images/stade_0.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
-                                                        <img src={"/images/stade_1.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 2) &&
-                                                        <img src={"/images/stade_2.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_2.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 3) &&
-                                                        <img src={"/images/stade_3.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_3.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 4) &&
-                                                        <img src={"/images/stade_4.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_4.png"}/>
                                                     }
                                                 </div>
                                             }
@@ -549,28 +552,30 @@ function MyCardsSet(props) {
                                                     left: "8px",
                                                     top: "2px"
                                                 }}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
+
                                             {myCardWithStade &&
                                                 <div style={{
                                                     zIndex: "1",
                                                     left: "8px",
                                                     bottom: "2px",
                                                     display:"flex",
-                                                    flexFlow:"row"
+                                                    flexFlow:"row",
+                                                    position:"absolute"
                                                 }}>
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 0) &&
-                                                        <img src={"/images/stade_0.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_0.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
-                                                        <img src={"/images/stade_1.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_1.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 2) &&
-                                                        <img src={"/images/stade_2.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_2.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 3) &&
-                                                        <img src={"/images/stade_3.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_3.png"}/>
                                                     }
                                                     {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 4) &&
-                                                        <img src={"/images/stade_4.png"}/>
+                                                        <img style={{width:"50px"}} src={"/images/stade_4.png"}/>
                                                     }
                                                 </div>
                                             }
