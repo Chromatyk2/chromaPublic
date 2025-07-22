@@ -208,7 +208,7 @@ function Profil(props) {
                     .then(function (response) {
                         setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100));
                         const pourcentCard = Math.abs((response.data[0].nbCard / 15937) * 100);
-                        const pourcentShiny = response.data.find((item) => item.shiny === 1).length;
+                        const pourcentShiny = response.data.filter(item => item.shiny == 1).length;
                         setMyTotalsCards(response.data)
                         Axios.get("/api/getMyLastTenCards/" + pseudo)
                             .then(function (response) {
