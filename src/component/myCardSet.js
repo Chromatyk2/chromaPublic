@@ -192,7 +192,7 @@ function MyCardsSet(props) {
             var pickStade = 4;
             setPickStade(4);
         }
-        while (myCardWithStade.find((uc) => uc.card == e.target.getAttribute("card") && uc.stade == pickStade).length != 0) {
+        while (myCardWithStade.filter((uc) => uc.card == e.target.getAttribute("card") && uc.stade == pickStade).length != 0) {
             randomStade = Math.floor(Math.random() * 100);
             if (randomStade < 20) {
                 pickStade = 1;
