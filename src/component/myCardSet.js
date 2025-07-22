@@ -192,7 +192,7 @@ function MyCardsSet(props) {
             var pickStade = 4;
             setPickStade(4);
         }
-        if(powder - 500 > -1){
+        if(powder - 300 > -1){
             Axios.post('/api/removePowder',
                 {
                     user:props.user
@@ -432,7 +432,7 @@ function MyCardsSet(props) {
                                                 animation: "glowGetRainbow 10s infinite alternate"
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                            {powder >= 500 &&
+                                            {powder >= 300 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -502,7 +502,7 @@ function MyCardsSet(props) {
                                                  filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                            {powder >= 500 &&
+                                            {powder >= 300 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
@@ -568,7 +568,7 @@ function MyCardsSet(props) {
                                         <button
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
-                                            {powder >= 500 &&
+                                            {powder >= 300 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -636,7 +636,7 @@ function MyCardsSet(props) {
                                 }
                             } else if (!onlyMine) {
                                 return (<div style={{position:"relative"}}>
-                                    {powder >= 500 &&
+                                    {powder >= 300 &&
                                         <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder}>Utiliser </button>
                                     }
                                     <LazyLoadImage

@@ -64,8 +64,8 @@ function CardsShop(props) {
                                 if(response.data[0].canOpen == 1){
                                     setCanOpenLive(response.data[0].canOpen)
                                 }else{
-                                    setNextFree(moment(lastDrawing).valueOf() + 7200000);
-                                    if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
+                                    setNextFree(moment(lastDrawing).valueOf() + 3600000);
+                                    if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
                                         setCanOpenLive(1)
                                     }else{
                                         setCanOpenLive(0)
@@ -229,8 +229,8 @@ function CardsShop(props) {
                                             if(response.data[0].canOpen == 1){
                                                 setCanOpenLive(response.data[0].canOpen)
                                             }else{
-                                                setNextFree(moment(lastDrawing).valueOf() + 7200000);
-                                                if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 7200000){
+                                                setNextFree(moment(lastDrawing).valueOf() + 3600000);
+                                                if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
                                                     setCanOpenLive(1)
                                                 }else{
                                                     setCanOpenLive(0)
