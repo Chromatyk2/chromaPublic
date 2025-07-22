@@ -768,25 +768,33 @@ function Profil(props) {
                     user:pseudo
                 }
             )
-                .then(function(response){
-                    Axios.post('/api/addSkin',
-                        {
-                            user:pseudo,
-                            skin:Math.floor((Math.random() * 2153) + 1)
+            .then(function(response){
+                Axios
+                    .get("/api/getSkins/"+pseudo)
+                    .then(function(response){
+                        setSkins(response.data);
+                        var n = Math.floor((Math.random() * 2153) + 1);
+                        while (response.data.filter(item => item.skin == n).length == 0) {
+                            n = Math.floor((Math.random() * 2153) + 1);
                         }
-                    )
+                        Axios.post('/api/addSkin',
+                            {
+                                user:pseudo,
+                                skin:n
+                            }
+                        )
                         .then(function(response){
                             Axios.get("/api/getProfil/"+pseudo)
                                 .then(function(response){
                                     setProfil(response.data);
-                                    Axios
-                                        .get("/api/getSkins/"+pseudo)
-                                        .then(function(response){
+                                Axios.get("/api/getSkins/"+pseudo)
+                                        .then(function(response) {
                                             setSkins(response.data);
                                         })
                                 })
                         })
-                })
+                    })
+            })
         }
     }
     function handleState() {
