@@ -906,12 +906,6 @@ function Profil(props) {
                                             <div className="infoNbBox">{profil[0].box}</div>
                                         </div>
                                     }
-                                    {profil[0].profil_picture ?
-                                        <img style={{width: "75px"}}
-                                             src={"/images/Trainers/Trainer" + profil[0].profil_picture + ".png"}/>
-                                        :
-                                        <img style={{width: "75px"}} src={"/images/random.png"}/>
-                                    }
                                     <div className="infoPkm">
                                         <div className="infoEdit"><i style={{marginLeft: "-6px", marginTop: "4px"}}
                                                                      className="fa-solid fa-pencil"></i></div>
