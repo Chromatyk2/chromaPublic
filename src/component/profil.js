@@ -893,7 +893,7 @@ function Profil(props) {
                                 <button style={{
                                     backgroundPosition: "center center",
                                     backgroundRepeat: "no-repeat",
-                                    backgroundImage: profil[0].profil_picture ? 'url('+ '/images/Trainers/'+ profil[0].profil_picture +'.png)' : 'url(/images/random.png)',
+                                    backgroundImage: profil[0].profil_picture ? 'url('+ '/images/Trainers/Trainer'+ profil[0].profil_picture +'.png)' : 'url(/images/random.png)',
                                     borderRadius: "25px",
                                     padding: "20px",
                                     width: "100px",
