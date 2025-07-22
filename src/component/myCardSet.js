@@ -192,6 +192,22 @@ function MyCardsSet(props) {
             var pickStade = 4;
             setPickStade(4);
         }
+        while (myCardWithStade.find((uc) => uc.card == e.target.getAttribute("card") && uc.stade == pickStade).length != 0) {
+            randomStade = Math.floor(Math.random() * 100);
+            if (randomStade < 20) {
+                pickStade = 1;
+                setPickStade(1);
+            } else if (randomStade > 19 && randomStade < 70) {
+                pickStade = 2;
+                setPickStade(2);
+            } else if (randomStade > 69 && randomStade < 90) {
+                pickStade = 3;
+                setPickStade(3);
+            } else if (randomStade > 89) {
+                pickStade = 4;
+                setPickStade(4);
+            }
+        }
         if(powder - 300 > -1){
             Axios.post('/api/removePowder',
                 {
@@ -433,6 +449,7 @@ function MyCardsSet(props) {
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 300 &&
+                                                myCardWithStade.length < 5 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -503,6 +520,7 @@ function MyCardsSet(props) {
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 300 &&
+                                                myCardWithStade.length < 5 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
@@ -569,6 +587,7 @@ function MyCardsSet(props) {
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
                                             {powder >= 300 &&
+                                                myCardWithStade.length < 5 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -637,6 +656,7 @@ function MyCardsSet(props) {
                             } else if (!onlyMine) {
                                 return (<div style={{position:"relative"}}>
                                     {powder >= 300 &&
+                                        myCardWithStade.length < 5 &&
                                         <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder}>Utiliser </button>
                                     }
                                     <LazyLoadImage
