@@ -328,171 +328,6 @@ function Profil(props) {
                                                 setBadges(response.data);
                                             })
                                     })
-                            } else if (typeof badges.find((item) => item.image === "lv1c") === "undefined" && pourcentCard > 0) {
-                                openModalZero("lv1c", "Au moins 1 carte obtenue !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv1c",
-                                        stade: 0,
-                                        description: "Au moins 1 carte obtenue !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv2c") === "undefined" && pourcentCard >= 10) {
-                                openModalZero("lv2c", "10% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv2c",
-                                        stade: 0,
-                                        description: "10% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv3c") === "undefined" && pourcentCard >= 20) {
-                                openModalZero("lv3c", "20% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv3c",
-                                        stade: 0,
-                                        description: "20% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv4c") === "undefined" && pourcentCard >= 30) {
-                                openModalZero("lv4c", "30% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv4c",
-                                        stade: 0,
-                                        description: "30% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv5c") === "undefined" && pourcentCard >= 40) {
-                                openModalZero("lv5c", "40% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv5c",
-                                        stade: 0,
-                                        description: "40% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv6c") === "undefined" && pourcentCard >= 50) {
-                                openModalZero("lv6c", "50% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv6c",
-                                        stade: 0,
-                                        description: "50% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv7c") === "undefined" && pourcentCard >= 60) {
-                                openModalZero("lv7c", "60% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv7c",
-                                        stade: 0,
-                                        description: "60% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv8c") === "undefined" && pourcentCard >= 70) {
-                                openModalZero("lv8c", "70% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv8c",
-                                        stade: 0,
-                                        description: "70% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv9c") === "undefined" && pourcentCard >= 80) {
-                                openModalZero("lv9c", "80% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv9c",
-                                        stade: 0,
-                                        description: "80% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv10c") === "undefined" && pourcentCard >= 90) {
-                                openModalZero("lv10c", "90% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv10c",
-                                        stade: 0,
-                                        description: "90% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
-                            } else if (typeof badges.find((item) => item.image === "lv11c") === "undefined" && pourcentCard === 100) {
-                                openModalZero("lv11c", "100% de la Cartodex complétée !");
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "lv11c",
-                                        stade: 0,
-                                        description: "100% de la Cartodex complétée !"
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadges(response.data);
-                                            })
-                                    })
                             }else if(typeof badges.find((item) => item.image === "shiny1") === "undefined" && pourcentShiny > 0){
                                 openModalZero("shiny1", "Au moins 1 Shiny capturé !");
                                 Axios.post('/api/addBadge',
@@ -683,7 +518,6 @@ function Profil(props) {
                                         setPourcent(Math.round((response.data.length / 1025) * 100));
                                         const pourcent = Math.round((response.data.length / 1025) * 100);
                                         const pourcentShiny = response.data.filter(item => item.shiny == 1).length;
-                                        console.log(pourcentShiny)
                                         Axios
                                             .get("/api/getBadgesByUser/"+pseudo)
                                             .then(function(response){
@@ -1241,6 +1075,7 @@ function Profil(props) {
                         .then(function (response) {
                             setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100));
                             const pourcentCard = Math.abs((response.data[0].nbCard / 15937) * 100);
+                            const pourcentShiny = response.data.find((item) => item.shiny === 1).length;
                             setMyTotalsCards(response.data)
                             Axios.get("/api/getMyLastTenCards/" + pseudo)
                                 .then(function (response) {
@@ -1587,7 +1422,172 @@ function Profil(props) {
                                                                                 setBadges(response.data);
                                                                             })
                                                                     })
-                                                            }
+                                                            }else if(typeof badges.find((item) => item.image === "shiny1") === "undefined" && pourcentShiny > 0){
+                                                            openModalZero("shiny1", "Au moins 1 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny1",
+                                                                    stade:0,
+                                                                    description:"Au moins 1 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny2") === "undefined" && pourcentShiny >= 10){
+                                                            openModalZero("shiny2", "Au moins 10 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny2",
+                                                                    stade:0,
+                                                                    description:"Au moins 10 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny3") === "undefined" && pourcentShiny >= 50){
+                                                            openModalZero("shiny3", "Au moins 50 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny3",
+                                                                    stade:0,
+                                                                    description:"Au moins 50 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny4") === "undefined" && pourcentShiny >= 100){
+                                                            openModalZero("shiny4", "Au moins 100 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny4",
+                                                                    stade:0,
+                                                                    description:"Au moins 100 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny5") === "undefined" && pourcentShiny >= 150){
+                                                            openModalZero("shiny5", "Au moins 150 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny5",
+                                                                    stade:0,
+                                                                    description:"Au moins 150 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny6") === "undefined" && pourcentShiny >= 200){
+                                                            openModalZero("shiny6", "Au moins 200 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny6",
+                                                                    stade:0,
+                                                                    description:"Au moins 200 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny7") === "undefined" && pourcentShiny >= 250){
+                                                            openModalZero("shiny7", "Au moins 250 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny7",
+                                                                    stade:0,
+                                                                    description:"Au moins 250 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny8") === "undefined" && pourcentShiny >= 300){
+                                                            openModalZero("shiny8", "Au moins 300 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny8",
+                                                                    stade:0,
+                                                                    description:"Au moins 300 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny9") === "undefined" && pourcentShiny >= 350){
+                                                            openModalZero("shiny9", "Au moins 350 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny9",
+                                                                    stade:0,
+                                                                    description:"Au moins 350 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny10") === "undefined" && pourcentShiny >= 400){
+                                                            openModalZero("shiny10", "Au moins 400 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny10",
+                                                                    stade:0,
+                                                                    description:"Au moins 400 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }else if(typeof badges.find((item) => item.image === "shiny11") === "undefined" && pourcentShiny >= 500){
+                                                            openModalZero("shiny11", "Au moins 500 Shiny capturé !");
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:pseudo,
+                                                                    image:"shiny11",
+                                                                    stade:0,
+                                                                    description:"Au moins 500 Shiny capturé !"
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
+                                                        }
                                                 })
                                         })
                                 })
