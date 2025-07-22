@@ -1043,7 +1043,8 @@ function Profil(props) {
                                     borderRadius: "25px",
                                     padding: "20px",
                                     width: "100px",
-                                    height: "100px"
+                                    height: "100px",
+                                    backgroundSize:"contain"
                                 }} onClick={changeSkin}></button>
                             )
                         })
