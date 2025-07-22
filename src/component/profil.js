@@ -774,7 +774,7 @@ function Profil(props) {
                     .then(function(response){
                         setSkins(response.data);
                         var n = Math.floor((Math.random() * 2153) + 1);
-                        while (response.data.filter(item => item.skin == n).length == 0) {
+                        while (response.data.filter(item => item.skin == n).length != 0) {
                             n = Math.floor((Math.random() * 2153) + 1);
                         }
                         Axios.post('/api/addSkin',
