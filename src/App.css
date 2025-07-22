@@ -1658,6 +1658,7 @@ object{
     gap: 14px;
     margin: auto;
     justify-content: center;
+    margin-bottom: 40px;
 }
 .myPointsDisplay button{
     background: none;
