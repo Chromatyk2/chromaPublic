@@ -682,7 +682,7 @@ function Profil(props) {
                                         setList(response.data);
                                         setPourcent(Math.round((response.data.length / 1025) * 100));
                                         const pourcent = Math.round((response.data.length / 1025) * 100);
-                                        const pourcentShiny = response.data.find((item) => item.shiny === 1).length;
+                                        const pourcentShiny = response.data.filter(item => item.shiny == 1).length;
                                         console.log(pourcentShiny)
                                         Axios
                                             .get("/api/getBadgesByUser/"+pseudo)
