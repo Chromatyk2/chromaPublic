@@ -108,7 +108,6 @@ function OpeningCards(props) {
                                                                 var stade = 4;
                                                             }
                                                         }
-                                                        console.log("stade avant ajout : "+stade)
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 grade: stade,
@@ -118,6 +117,16 @@ function OpeningCards(props) {
                                                                 booster: boosterName,
                                                                 isNew :1
                                                             }]);
+                                                            Axios.post('/api/addCard',
+                                                                {
+                                                                    pseudo: props.user,
+                                                                    idCard: result.id,
+                                                                    booster: props.idBooster,
+                                                                    rarity: result.rarity,
+                                                                    grade: stade,
+                                                                    nb: pkmNumber,
+                                                                    block: props.block
+                                                                })
                                                         }else{
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 grade: stade,
@@ -127,8 +136,6 @@ function OpeningCards(props) {
                                                                 booster: boosterName,
                                                                 isNew :0
                                                             }]);
-                                                            console.log("stade après ajout : "+stade)
-                                                            console.log("numéro de carte : "+pkmNumber)
                                                             if(stade > 0){
                                                                 console.log("points ajoutés" + stade * 10)
                                                                 Axios.post('/api/addPowder',
@@ -140,16 +147,6 @@ function OpeningCards(props) {
                                                                 )
                                                             }
                                                         }
-                                                        Axios.post('/api/addCard',
-                                                            {
-                                                                pseudo: props.user,
-                                                                idCard: result.id,
-                                                                booster: props.idBooster,
-                                                                rarity: result.rarity,
-                                                                grade: stade,
-                                                                nb: pkmNumber,
-                                                                block: props.block
-                                                            })
                                                         setIsLoaded(true);
                                                         setNbCards(nbCards + 1);
                                                     }
@@ -184,9 +181,6 @@ function OpeningCards(props) {
                                                     var stade = 4;
                                                 }
                                             }
-                                            console.log("numéro de la carte avant ajout : " + pkmNumber)
-                                            console.log("stade avant ajout : "+stade)
-                                            console.log(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade))
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
@@ -196,6 +190,17 @@ function OpeningCards(props) {
                                                     grade: stade,
                                                     isNew:1
                                                 }]);
+
+                                                Axios.post('/api/addCard',
+                                                    {
+                                                        pseudo: props.user,
+                                                        idCard: result.id,
+                                                        booster: props.idBooster,
+                                                        rarity: result.rarity,
+                                                        grade: stade,
+                                                        nb: pkmNumber,
+                                                        block: props.block
+                                                    })
                                             }else{
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
@@ -205,8 +210,6 @@ function OpeningCards(props) {
                                                     grade: stade,
                                                     isNew:0
                                                 }]);
-                                                console.log("numéro de carte après ajout : "+pkmNumber)
-                                                console.log("stade après ajout : "+stade)
                                                 if(stade > 0){
                                                     console.log("points ajoutés" + stade * 10)
                                                     Axios.post('/api/addPowder',
@@ -218,16 +221,6 @@ function OpeningCards(props) {
                                                     )
                                                 }
                                             }
-                                            Axios.post('/api/addCard',
-                                                {
-                                                    pseudo: props.user,
-                                                    idCard: result.id,
-                                                    booster: props.idBooster,
-                                                    rarity: result.rarity,
-                                                    grade: stade,
-                                                    nb: pkmNumber,
-                                                    block: props.block
-                                                })
                                             setIsLoaded(true);
                                             setNbCards(nbCards + 1);
 
