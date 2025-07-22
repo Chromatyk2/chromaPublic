@@ -891,10 +891,14 @@ function Profil(props) {
                                     </svg>
                                     <span>
                                 <button style={{
+                                    backgroundPosition: "center center",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundImage: "url("+profil[0].profil_picture ? "/images/Trainers/"+ profil[0].profil_picture +".png)" : "/images/random.png)",
+                                    borderRadius: "25px",
+                                    padding: "20px",
                                     width: "100px",
-                                    display: "block",
-                                    margin: "auto",
-                                    borderRadius: "100px"
+                                    height:"100px",
+                                    backgroundSize: "contain"
                                 }}
                                         className="uniquePokemonContainer">
                                     {profil[0].box > 0 &&
