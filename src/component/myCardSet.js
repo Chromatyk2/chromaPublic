@@ -449,7 +449,7 @@ function MyCardsSet(props) {
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 300 &&
-                                                myCardWithStade.length < 5 &&
+                                                myCardWithStade.find((uc) => uc.card == val.id).length < 5 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -520,7 +520,7 @@ function MyCardsSet(props) {
                                              }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 300 &&
-                                                myCardWithStade.length < 5 &&
+                                                myCardWithStade.find((uc) => uc.card == val.id).length < 5 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
@@ -587,7 +587,7 @@ function MyCardsSet(props) {
                                             stade={stadeC} style={customStyles.buttonMyCard}
                                                 className={"cardBox"}>
                                             {powder >= 300 &&
-                                                myCardWithStade.length < 5 &&
+                                                myCardWithStade.find((uc) => uc.card == val.id).length < 5 &&
                                                 <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder} style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                             }
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
@@ -656,7 +656,7 @@ function MyCardsSet(props) {
                             } else if (!onlyMine) {
                                 return (<div style={{position:"relative"}}>
                                     {powder >= 300 &&
-                                        myCardWithStade.length < 5 &&
+                                        myCardWithStade.find((uc) => uc.card == val.id).length < 5 &&
                                         <button booster={props.idBooster} block={rarities[0].block} number={val.localId} card={val.id} className={"buttonToTrade"} onClick={tradePowder}>Utiliser </button>
                                     }
                                     <LazyLoadImage
