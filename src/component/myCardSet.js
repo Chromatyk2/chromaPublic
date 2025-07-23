@@ -307,8 +307,8 @@ function MyCardsSet(props) {
                     <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                         <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                         {pickStade == 4 ?
-                            <div style={{ margin: "auto",marginBottom: "25px",width: "350px",position: "relative",animation: "glowGetRainbow 10s infinite alternate"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                <div stade={pickStade} className="cardBangerAlertSet">
+                            <div style={{ margin: "auto",marginBottom: "25px",width: "350px",position: "relative"}} id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                <div stade={pickStade}>
                                     <img style={{
                                         zIndex: "1",
                                         left: "8px",
@@ -342,8 +342,7 @@ function MyCardsSet(props) {
                                                     filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
                                                 }}
                                                 id={"lastBangerContainer"} className={"lastBangerContainer"}>
-                                                    <div stade={pickStade}
-                                                         className="cardBangerAlertSetThree">
+                                                    <div stade={pickStade}>
                                                             <img style={{
                                                                 zIndex: "1",
                                                                 left: "8px",
@@ -444,8 +443,7 @@ function MyCardsSet(props) {
                                         <div
                                             style={{
                                                 width: "350px",
-                                                position: "relative",
-                                                animation: "glowGetRainbow 10s infinite alternate"
+                                                position: "relative"
                                             }}
                                              id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {powder >= 300 &&
@@ -486,7 +484,7 @@ function MyCardsSet(props) {
                                                 </div>
                                             }
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} stade={stadeC} className="cardBangerAlertSet">
+                                                 image={val.image} stade={stadeC}>
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
@@ -559,7 +557,7 @@ function MyCardsSet(props) {
                                             }
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                                  image={val.image} stade={stadeC}
-                                                 className="cardBangerAlertSetThree">
+
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
