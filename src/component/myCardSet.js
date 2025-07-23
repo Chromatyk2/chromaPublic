@@ -500,7 +500,7 @@ function MyCardsSet(props) {
                                             }}
                                             cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
                                             image={val.image}
-                                            wrapperClassName={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}
+                                            wrapperClassName={stadeC == 4 ? "fit-picture-card" : "fit-picture-card"}
                                             effect="blur"
                                             wrapperProps={{
                                                 // If you need to, you can tweak the effect transition using the wrapper style.
