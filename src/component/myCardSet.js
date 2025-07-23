@@ -653,7 +653,7 @@ function MyCardsSet(props) {
                                         </button>
                                     )
                                 }
-                            } else if (!onlyMine) {
+                            } else if (!myCardsId.includes(val.id) && !onlyMine) {
                                 return (<div style={{position:"relative"}}>
                                     {powder >= 300 &&
                                         myCardWithStade.filter((uc) => uc.card == val.id).length < 4 &&
