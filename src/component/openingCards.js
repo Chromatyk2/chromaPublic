@@ -137,12 +137,19 @@ function OpeningCards(props) {
                                                                 isNew :0
                                                             }]);
                                                             if(stade > 0){
-                                                                console.log("points ajoutés" + stade * 10)
                                                                 Axios.post('/api/addPowder',
                                                                     {
                                                                         user: props.user,
-                                                                        win: stade * 10,
-                                                                        wins: stade * 10
+                                                                        win: stade * 15,
+                                                                        wins: stade * 15
+                                                                    }
+                                                                )
+                                                            }else if(stade === 0){
+                                                                Axios.post('/api/addPowder',
+                                                                    {
+                                                                        user: props.user,
+                                                                        win: 5,
+                                                                        wins: 5
                                                                     }
                                                                 )
                                                             }
@@ -211,12 +218,19 @@ function OpeningCards(props) {
                                                     isNew:0
                                                 }]);
                                                 if(stade > 0){
-                                                    console.log("points ajoutés" + stade * 10)
                                                     Axios.post('/api/addPowder',
                                                         {
                                                             user: props.user,
-                                                            win: stade *10,
-                                                            wins: stade *10
+                                                            win: stade *15,
+                                                            wins: stade *15
+                                                        }
+                                                    )
+                                                }else if(stade == 0){
+                                                    Axios.post('/api/addPowder',
+                                                        {
+                                                            user: props.user,
+                                                            win: 5,
+                                                            wins: 5
                                                         }
                                                     )
                                                 }
@@ -473,7 +487,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={"fit-picture dropCards glowGet"}>+{val.grade * 10}
+                                                   className={"fit-picture dropCards glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
                                                 </p>
                                             </>
                                         }
@@ -598,7 +612,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={"fit-picture dropCards glowGet"}>+{val.grade * 10}
+                                                   className={"fit-picture dropCards glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
                                                 </p>
                                             </>
                                         }
