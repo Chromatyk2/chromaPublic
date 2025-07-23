@@ -433,7 +433,7 @@ function OpeningCards(props) {
                                         cardId={val.card.id}
                                         cardLocalId={val.card.localId}
                                         onClick={key == 0 ? getLastCard : getCard}
-                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
 
                                         {val.isNew === 1 &&
@@ -446,7 +446,7 @@ function OpeningCards(props) {
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
@@ -519,7 +519,7 @@ function OpeningCards(props) {
                                         cardId={val.card.id}
                                         cardLocalId={val.card.localId}
                                         onClick={key == 0 ? getLastCard : getCard}
-                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
 
                                         {val.isNew === 1 &&
@@ -532,7 +532,7 @@ function OpeningCards(props) {
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards gettedCard endPull cardBangerAlert" : stadeC > 2 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards gettedCard endPull cardBangerAlert" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
