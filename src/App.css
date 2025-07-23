@@ -5753,3 +5753,21 @@ img.badgeToWin {
     background-color: #120747;
     color: white;
 }
+.cardBox:hover{
+    .starGradeContainer{
+        display: flex;
+    }
+}
+.starGradeContainer{
+    z-index: 1;
+    right: 0;
+    left: 0;
+    bottom: -1px;
+    display: flex;
+    flex-flow: row;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0px 0px 15px 15px;
+    padding: 5px 5px 5px 5px;
+    display: "none";
+}

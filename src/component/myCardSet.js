@@ -461,14 +461,7 @@ function MyCardsSet(props) {
                                             }}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
 
                                         {myCardWithStade &&
-                                            <div style={{
-                                                zIndex: "1",
-                                                left: "8px",
-                                                bottom: "2px",
-                                                display: "flex",
-                                                flexFlow: "row",
-                                                position: "absolute"
-                                            }}>
+                                            <div className={"starGradeContainer"}>
 
                                                 {myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1) &&
                                                     <img style={{width: "50px"}} src={"/images/stade_1.png"}/>
