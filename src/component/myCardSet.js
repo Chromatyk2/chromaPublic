@@ -556,7 +556,7 @@ function MyCardsSet(props) {
                                                 </div>
                                             }
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} stade={stadeC}
+                                                 image={val.image} stade={stadeC}>
 
                                                 <LazyLoadImage
                                                     number={val.number}
