@@ -450,16 +450,6 @@ function MyCardsSet(props) {
                                                     onClick={tradePowder}
                                                     style={{position: "absolute", zIndex: 1}}>Utiliser</button>
                                         }
-                                        {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
-                                            <div className="infoNbCard" style={{
-                                                zIndex: "1",
-                                                width: "30px",
-                                                height: "30px",
-                                                lineHeight: "30px",
-                                                left: "8px",
-                                                top: "2px"
-                                            }}>X{myCards.find((uc) => uc.card == val.id).nbCard}</div>}
-
                                         {myCardWithStade &&
                                             <div className={"starGradeContainer"}>
 
