@@ -16,6 +16,7 @@ function SpawnPokemon(props) {
     const [getToken, setGetToken] = useState(false);
     const [getBadge, setGetBadge] = useState(false);
     const [getPkmId, setGetPkmId] = useState(null);
+    const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
     useEffect(() => {
 
         setTimeout(function (){
@@ -39,8 +40,19 @@ function SpawnPokemon(props) {
                     const isShiny = Math.floor((Math.random() * 100) + 1);
                     const name = result.names.find((element) => element.language.name == "fr").name;
                     const getBadge = Math.floor((Math.random() * 30) + 1);
+                    const getRareBadge = Math.floor((Math.random() * 1000) + 1);
                     setGetPkmId(result.id);
-                    if(getBadge == 16 && tokenBonus != 0){
+                    if(getRareBadge == 22 && tokenBonus != 0){
+                        const rareBadgeId = Math.floor((Math.random() * 10) + 1);
+                        setGetRareBadgeId(rareBadgeId);
+                        Axios.post('/api/addBadge',
+                            {
+                                pseudo: queryParameters.get("pseudo"),
+                                image: "rare"+rareBadgeId,
+                                stade: 0,
+                                description: "Badge obtenu en capturant "+name+" !"
+                            })
+                    }else if(getBadge == 16 && tokenBonus != 0){
                         setGetBadge(true);
                         Axios.post('/api/addBadge',
                             {
@@ -288,7 +300,11 @@ function SpawnPokemon(props) {
                             </div>
                             <div className="mon">
                                 {getToken === true && <div className="fav-token"><img src={card} style={{width:"50px"}} /><p className={"moreToken"}>+1</p></div> }
-                                {getBadge === true && <div className="fav-token"><img src={"/Ribbon/pokemon"+getPkmId+".png"} style={{width: "100px",
+                                {getBadge === true && getRareBadgeId == -1 && <div className="fav-token"><img src={"/Ribbon/pokemon"+getPkmId+".png"} style={{width: "100px",
+                                    bottom: "-140px",
+                                    position: "absolute",
+                                    right: "-60px"}} /></div> }
+                                {getRareBadgeId > -1 && <div className="fav-token"><img src={"/Ribbon/rare"+getPkmId+".png"} style={{width: "100px",
                                     bottom: "-140px",
                                     position: "absolute",
                                     right: "-60px"}} /></div> }
