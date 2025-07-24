@@ -42,12 +42,12 @@ function SpawnPokemonToken(props) {
                     const getRareBadge = 22;
                     setGetPkmId(result.id);
                     if(getRareBadge == 22 && tokenBonus != 0){
-                        const rareBadgeId = Math.floor((Math.random() * 10) + 1);
-                        setGetRareBadgeId(rareBadgeId);
+                        const rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                        setGetRareBadgeId(rareBadgeValue);
                         Axios.post('/api/addBadge',
                             {
                                 pseudo: queryParameters.get("pseudo"),
-                                image: "rare"+rareBadgeId,
+                                image: "rare"+rareBadgeValue,
                                 stade: 0,
                                 description: "Badge obtenu en capturant "+name+" !"
                             })
