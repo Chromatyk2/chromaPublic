@@ -304,7 +304,7 @@ function SpawnPokemon(props) {
                                     bottom: "-140px",
                                     position: "absolute",
                                     right: "-60px"}} /></div> }
-                                {getRareBadgeId > -1 && <div className="fav-token"><img src={"/Ribbon/rare"+getPkmId+".png"} style={{width: "100px",
+                                {getRareBadgeId > -1 && <div className="fav-token"><img src={"/Ribbon/rare"+getRareBadgeId+".png"} style={{width: "100px",
                                     bottom: "-140px",
                                     position: "absolute",
                                     right: "-60px"}} /></div> }
