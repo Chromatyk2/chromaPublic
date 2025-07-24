@@ -45,7 +45,7 @@ function SpawnPokemon(props) {
                         Axios.post('/api/addBadge',
                             {
                                 pseudo: queryParameters.get("pseudo"),
-                                image: "pokemon_("+result.id+")",
+                                image: "pokemon_ ("+result.id+")",
                                 stade: 0,
                                 description: "Badge obtenu en capturant "+name+" !"
                             })
@@ -288,7 +288,7 @@ function SpawnPokemon(props) {
                             </div>
                             <div className="mon">
                                 {getToken === true && <div className="fav-token"><img src={card} style={{width:"50px"}} /><p className={"moreToken"}>+1</p></div> }
-                                {getBadge === true && <div className="fav-token"><img src={"/Ribbon/Pokemon_("+getPkmId+")"} style={{width:"50px"}} /></div> }
+                                {getBadge === true && <div className="fav-token"><img src={"/Ribbon/Pokemon_ ("+getPkmId+".png)"} style={{width:"50px"}} /></div> }
                                 {shiny === true &&
                                     <div className="fav">
                                         <svg className="fav-star" viewBox="0 0 114 110">
