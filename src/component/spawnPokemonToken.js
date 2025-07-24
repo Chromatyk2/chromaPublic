@@ -13,6 +13,8 @@ function SpawnPokemonToken(props) {
     const [reloadFetch, setReloadFetch] = useState(0);
     const [shiny, setShiny] = useState(false);
     const [getToken, setGetToken] = useState(false);
+    const [getBadge, setGetBadge] = useState(false);
+    const [getPkmId, setGetPkmId] = useState(null);
     // setTimeout(() => {
     //     props.change();
     // }, 6000);
@@ -35,6 +37,18 @@ function SpawnPokemonToken(props) {
                     const queryParameters = new URLSearchParams(window.location.search)
                     const isShiny = Math.floor((Math.random() * 100) + 1);
                     const name = result.names.find((element) => element.language.name == "fr").name;
+                    const getBadge = Math.floor((Math.random() * 50) + 1);
+                    setGetPkmId(result.id);
+                    if(getBadge == 16 && tokenBonus != 0){
+                        setGetBadge(true);
+                        Axios.post('/api/addBadge',
+                            {
+                                pseudo: queryParameters.get("pseudo"),
+                                image: "pokemon_("+result.id+")",
+                                stade: 0,
+                                description: "Badge obtenu en capturant "+name+" !"
+                            })
+                    }
                     switch (result.is_legendary){
                         case true:
                             switch (isLegendary){
@@ -268,6 +282,7 @@ function SpawnPokemonToken(props) {
                             </div>
                             <div className="mon">
                                 {getToken === true && <div className="fav-token"><img src={card} style={{width:"50px"}} /><p className={"moreToken"}>+1</p></div> }
+                                {getBadge === true && <div className="fav-token"><img src={"/Ribbon/Pokemon_("+getPkmId+")"} style={{width:"50px"}} /></div> }
                                 {shiny === true &&
                                     <div className="fav">
                                         <svg className="fav-star" viewBox="0 0 114 110">

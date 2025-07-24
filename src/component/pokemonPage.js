@@ -61,7 +61,7 @@ function changeSprite() {
     }
 }
     function convertShiny() {
-        if(captures.length > 4){
+        if(captures.length - 5 > -1){
             setIsLoadedConvert(true);
             Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
                 .then(
@@ -77,6 +77,54 @@ function changeSprite() {
                                         })
                                 })
                     })
+        }
+    }
+    function convertBadge() {
+        if(captures.length - 5 > -1){
+            setIsLoadedConvert(true);
+            Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
+                .then((result) => {
+                    Axios.post('/api/addBadge',
+                        {
+                            pseudo: pseudo,
+                            image: "pokemon_("+id+")",
+                            stade: 0,
+                            description: "Badge obtenu en capturant "+name[4].name+" !"
+                        })
+                        .then(
+                            (result) => {
+                                Axios
+                                    .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
+                                    .then(function(response){
+                                        setCaptures(response.data);
+                                        setIsLoadedConvert(false);
+                                    })
+                            })
+                })
+        }
+    }
+    function convertBadgeShiny() {
+        if(captures.filter(item => item.shiny == 1).length - 5 > -1){
+            setIsLoadedConvert(true);
+            Axios.delete('/api/deleteShinyBadge/'+id+"/"+pseudo)
+                .then((result) => {
+                    Axios.post('/api/addBadge',
+                        {
+                            pseudo: pseudo,
+                            image: "pokemon_shiny_(" + id + ")",
+                            stade: 0,
+                            description: "Badge obtenu en obtenant 3 " + name[4].name + " shiny !"
+                        })
+                        .then(
+                            (result) => {
+                                Axios
+                                    .get("/api/getByUserAndPokemon/" + pseudo + "/" + id)
+                                    .then(function (response) {
+                                        setCaptures(response.data);
+                                        setIsLoadedConvert(false);
+                                    })
+                            })
+                })
         }
     }
  if (error) {
@@ -102,16 +150,30 @@ function changeSprite() {
                 </div>
                 <div>
                     <MyCaptures captures={captures} />
-                    {captures.length > 4 &&
+                    {captures.filter(item => item.shiny == 0).length > 4 &&
                         isLoadConvert === false &&
-                        <button style={{width:"fit-content"}} className={"filterButton"} onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny</button>
+                        <>
+                            <button style={{width: "fit-content"}} className={"filterButton"}
+                                    onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny
+                            </button>
+                            <button style={{width: "fit-content"}} className={"filterButton"}
+                                    onClick={convertBadge}> Sacrifier 5 pour obtenir le badge
+                            </button>
+                        </>
+                    }
+                    {captures.filter(item => item.shiny == 1).length > 2 &&
+                        isLoadConvert === false &&
+                            <button style={{width: "fit-content"}} className={"filterButton"}
+                                    onClick={convertBadgeShiny}> Sacrifier 3 pour obtenir le badge shiny
+                            </button>
                     }
                 </div>
-              </div>
+             </div>
          </div>
      </>
    );
-  }
+     }
  }
 }
+
 export default PokemonPage
