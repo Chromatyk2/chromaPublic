@@ -38,7 +38,7 @@ function SpawnPokemonToken(props) {
                     const queryParameters = new URLSearchParams(window.location.search)
                     const isShiny = Math.floor((Math.random() * 100) + 1);
                     const name = result.names.find((element) => element.language.name == "fr").name;
-                    const getBadge = 16;
+                    const getBadge = Math.floor((Math.random() * 30) + 1);
                     const getRareBadge = Math.floor((Math.random() * 1000) + 1);
                     setGetPkmId(result.id);
                     if(getRareBadge == 22 && tokenBonus != 0){
@@ -46,7 +46,7 @@ function SpawnPokemonToken(props) {
                         setGetRareBadgeId(rareBadgeValue);
                         Axios.post('/api/addBadge',
                             {
-                                pseudo: queryParameters.get("pseudo"),
+                                pseudo: pseudo,
                                 image: "rare"+rareBadgeValue,
                                 stade: 0,
                                 description: "Badge obtenu en capturant "+name+" !"
@@ -55,7 +55,7 @@ function SpawnPokemonToken(props) {
                         setGetBadge(true);
                         Axios.post('/api/addBadge',
                             {
-                                pseudo: queryParameters.get("pseudo"),
+                                pseudo: pseudo,
                                 image: "pokemon"+result.id,
                                 stade: 0,
                                 description: "Badge obtenu en capturant "+name+" !"
