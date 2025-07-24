@@ -433,7 +433,7 @@ function OpeningCards(props) {
                                         cardId={val.card.id}
                                         cardLocalId={val.card.localId}
                                         onClick={key == 0 ? getLastCard : getCard}
-                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards" : "fit-picture dropCards"}
                                         id={"cardNb" + key}>
 
                                         {val.isNew === 1 &&
@@ -446,7 +446,7 @@ function OpeningCards(props) {
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards" : "fit-picture dropCards"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
@@ -469,7 +469,7 @@ function OpeningCards(props) {
                                                         margin: 0,
                                                         filter: "drop-shadow(0px 4px 4px black)"
                                                     }}
-                                                    className={"fit-picture dropCards glowGet"}
+                                                    className={"fit-picture dropCards"}
                                                     src={"/images/powder.png"}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
@@ -486,7 +486,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={"fit-picture dropCards glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
+                                                   className={"fit-picture dropCards"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
                                                 </p>
                                             </>
                                         }
@@ -518,7 +518,7 @@ function OpeningCards(props) {
                                         cardId={val.card.id}
                                         cardLocalId={val.card.localId}
                                         onClick={key == 0 ? getLastCard : getCard}
-                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                        className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true && key == 0 ? "fit-picture dropCards endPull" : stadeC > 3 ? "fit-picture dropCards" : "fit-picture dropCards"}
                                         id={"cardNb" + key}>
 
                                         {val.isNew === 1 &&
@@ -531,7 +531,7 @@ function OpeningCards(props) {
                                         <img
                                             cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
-                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards gettedCard endPull cardBangerAlert" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
+                                            className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards gettedCard endPull" : stadeC > 3 ? "fit-picture dropCards" : "fit-picture dropCards"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
@@ -557,7 +557,7 @@ function OpeningCards(props) {
                                                         margin: 0,
                                                         filter: "drop-shadow(0px 4px 4px black)"
                                                     }}
-                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards"}
                                                     src={token}
                                                     onError={errorImage}
                                                     alt="Grapefruit slice atop a pile of other slices"/>
@@ -574,7 +574,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards glowGet" : "fit-picture dropCards glowGet"}>+1
+                                                   className={isHidden === true ? "fit-picture dropCards hiddenCards" : endPull === true ? "fit-picture dropCards showCards gettedCard endPull" : key == 9 ? "fit-picture dropCards showCards" : "fit-picture dropCards"}>+1
                                                 </p>
                                             </>
                                         }
@@ -610,7 +610,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={"fit-picture dropCards glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
+                                                   className={"fit-picture dropCards"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
                                                 </p>
                                             </>
                                         }
