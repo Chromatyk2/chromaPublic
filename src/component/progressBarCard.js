@@ -472,13 +472,13 @@ function ProgressBarCard(props) {
                         <div style={{display: "flex", alignItems: "baseline", gap: "5px"}}>
                             <div style={{width: "10px", height: "10px", background: "#cecaca"}}></div>
                             <p>Global
-                                : {props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
+                                : {props.getNb + " / " + props.item + " (" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</p>
                         </div>
                     }
                 </div>
                 <div style={customStyles.extBar} className="fullProgressBar">
                     <div
-                        style={customStyles.intBar}>{props.getNb + " / " + props.item + "(" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+                        style={customStyles.intBar}>{props.getNb + " / " + props.item + " (" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
 
                     {purcents.length > 0 &&
                         props.global === false &&

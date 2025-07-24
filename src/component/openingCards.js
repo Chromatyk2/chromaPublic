@@ -270,15 +270,6 @@ function OpeningCards(props) {
         var next = document.getElementById("cardNb"+nextId);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
-        if(stadeCurrent == 1){
-            next.classList.toggle('glowGetGreen');
-        }else if(stadeCurrent == 2){
-            next.classList.toggle('glowGetBlue');
-        }else if(stadeCurrent == 3){
-            next.classList.toggle('glowGetGold');
-        }else if(stadeCurrent == 4){
-            next.classList.toggle('glowGetRainbow');
-        }
         if(!myCardsId.includes(nextCardId)){
             setIsNew(true);
         }else{
@@ -286,15 +277,7 @@ function OpeningCards(props) {
         }
         next.style.display = "block";
 
-        if(e.target.getAttribute("stade") == 1){
-            e.target.classList.toggle('glowGetGreen');
-        }else if(e.target.getAttribute("stade") == 2){
-            e.target.classList.toggle('glowGetBlue');
-        }else if(e.target.getAttribute("stade") == 3){
-            e.target.classList.toggle('glowGetGold');
-        }else if(e.target.getAttribute("stade") == 4){
-            e.target.classList.toggle('glowGetRainbow');
-        }
+
         e.target.classList.toggle('glowGet');
         e.target.classList.toggle('gettedCard');
         setIndex(index + 1);
@@ -306,15 +289,6 @@ function OpeningCards(props) {
         var next = document.getElementById("cardNb"+nextId);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
-        if(stadeCurrent == 1){
-            next.classList.toggle('glowGetGreen');
-        }else if(stadeCurrent == 2){
-            next.classList.toggle('glowGetBlue');
-        }else if(stadeCurrent == 3){
-            next.classList.toggle('glowGetGold');
-        }else if(stadeCurrent == 4){
-            next.classList.toggle('glowGetRainbow');
-        }
         if(!myCardsId.includes(nextCardId)){
             setIsNew(true);
         }else{
@@ -323,15 +297,6 @@ function OpeningCards(props) {
         next.style.display = "block";
         e.target.classList.toggle('glowGet');
         e.target.classList.toggle('gettedCard');
-        if(e.target.getAttribute("stade") == 1){
-            e.target.classList.toggle('glowGetGreen');
-        }else if(e.target.getAttribute("stade") == 2){
-            e.target.classList.toggle('glowGetBlue');
-        }else if(e.target.getAttribute("stade") == 3){
-            e.target.classList.toggle('glowGetGold');
-        }else if(e.target.getAttribute("stade") == 4){
-            e.target.classList.toggle('glowGetRainbow');
-        }
         setIndex(index + 1);
     }
     function getLastCard(e) {
