@@ -38,7 +38,7 @@ function SpawnPokemon(props) {
                     const queryParameters = new URLSearchParams(window.location.search)
                     const isShiny = Math.floor((Math.random() * 100) + 1);
                     const name = result.names.find((element) => element.language.name == "fr").name;
-                    const getBadge = Math.floor((Math.random() * 30) + 1);
+                    const getBadge = 16;
                     setGetPkmId(result.id);
                     if(getBadge == 16 && tokenBonus != 0){
                         setGetBadge(true);
@@ -288,7 +288,10 @@ function SpawnPokemon(props) {
                             </div>
                             <div className="mon">
                                 {getToken === true && <div className="fav-token"><img src={card} style={{width:"50px"}} /><p className={"moreToken"}>+1</p></div> }
-                                {getBadge === true && <div className="fav-token"><img src={"/Ribbon/pokemon"+getPkmId+".png"} style={{width:"50px"}} /></div> }
+                                {getBadge === true && <div className="fav-token"><img src={"/Ribbon/pokemon"+getPkmId+".png"} style={{width: "100px",
+                                    bottom: "-140px",
+                                    position: "absolute",
+                                    right: "-60px"}} /></div> }
                                 {shiny === true &&
                                     <div className="fav">
                                         <svg className="fav-star" viewBox="0 0 114 110">
