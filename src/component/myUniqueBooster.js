@@ -69,7 +69,7 @@ function MyUniqueBooster(props) {
                 setStadeToDisplay(0)
                 setCustomStyles({
                     shadow: {
-                        filter : 'drop-shadow(0px 0px 10px gray) drop-shadow(0px 0px 0 white)'
+                        filter : 'drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0 white)'
                     }
                 })
             }else{
