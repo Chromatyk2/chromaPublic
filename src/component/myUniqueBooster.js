@@ -43,14 +43,14 @@ function MyUniqueBooster(props) {
                         setStadeToDisplay(2)
                         setCustomStyles({
                             shadow: {
-                                filter : 'drop-shadow(0px 0px 10px lightblue) drop-shadow(0px 0px 0 white)'
+                                filter : 'drop-shadow(0px 0px 10px blue) drop-shadow(0px 0px 0 blue)'
                             }
                         })
                     }else if(typeof response.data.find((item) => item.stade === 1) !== "undefined"){
                         setStadeToDisplay(1)
                         setCustomStyles({
                             shadow: {
-                                filter : 'drop-shadow(0px 0px 10px green) drop-shadow(0px 0px 0 white)'
+                                filter : 'drop-shadow(0px 0px 10px lightgreen) drop-shadow(0px 0px 0 lightgreen)'
                             }
                         })
                     }else if(typeof response.data.find((item) => item.stade === 0) !== "undefined"){
@@ -74,13 +74,12 @@ function MyUniqueBooster(props) {
         <>
             {customStyles &&
                 <div
-                    style={customStyles.shadow}
                     className="uniqueMyCardContainer">
                     {stadeToDisplay > -1 &&
                         <img className={"done"} src={"/Ribbon/" + booster[0].name + "_"+stadeToDisplay+".png"}/>
                     }
                     <div className={"containerImgBooster"}>
-                        <img className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
+                        <img style={customStyles.shadow} className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
                              alt="Grapefruit slice atop a pile of other slices"/>
                     </div>
                     <SmallProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
