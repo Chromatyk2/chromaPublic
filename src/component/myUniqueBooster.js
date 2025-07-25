@@ -70,23 +70,33 @@ function MyUniqueBooster(props) {
                         filter : 'drop-shadow(0px 0px 10px gray) drop-shadow(0px 0px 0 white)'
                     }
                 })
+            }else{
+                setStadeToDisplay(-1)
+                setCustomStyles({
+                    shadow: {
+                        filter : 'drop-shadow(0px 0px 0 transparent) drop-shadow(0px 0px 0 transparent)'
+                    }
+                })
             }
         }
 
     }, [badges]);
     return (
         <>
-            {badges &&
+            {stadeToDisplay &&
+                customStyles &&
                 <div
                     style={customStyles.shadow}
                     className="uniqueMyCardContainer">
                     {props.maxBooster == props.nbCard.nbCard &&
                         <img className={"done"} src={"/Ribbon/" + booster[0].name + "_"+stadeToDisplay+".png"}/>
                     }
-                    <div className={"containerImgBooster"}>
-                        <img className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
-                             alt="Grapefruit slice atop a pile of other slices"/>
-                    </div>
+                    {stadeToDisplay > -1 &&
+                        <div className={"containerImgBooster"}>
+                            <img className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
+                                 alt="Grapefruit slice atop a pile of other slices"/>
+                        </div>
+                    }
                     <SmallProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
                     <button guruName={booster[0].nameGuru} value={booster[0].name} onClick={displayPage}
                             className="guessTradeButton">Voir toute mes cartes
