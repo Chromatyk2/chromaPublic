@@ -70,7 +70,7 @@ function MyUniqueBooster(props) {
                 }
             })
         }
-    }, []);
+    }, [badges]);
     return (
         <>
             {badges &&
