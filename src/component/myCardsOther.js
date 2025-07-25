@@ -8,6 +8,7 @@ import moment from 'moment';
 import MyCardsSet from './myCardSet.js';
 import MyUniqueBooster from "./myUniqueBooster";
 import ProgressBarCard from "./progressBarCard";
+import OtherMyCardsSet from "./myCardSetOther";
 
 function OtherMyCards(props) {
     const [nbCards, setNbCards] = useState(null);
@@ -66,7 +67,7 @@ function OtherMyCards(props) {
                         <button style={{color: "white", width: "100%", margin: "0", padding: "0", marginTop: "30px"}}
                                 onClick={backPage} className="backButton">Retour
                         </button>
-                        <MyCardsSet powder={powder} user={props.user} card={nbCard} idBooster={page}
+                        <OtherMyCardsSet myPseudo={props.myPseudo} powder={powder} user={props.user} card={nbCard} idBooster={page}
                                     guruName={guruName}/>
                     </>
                     :

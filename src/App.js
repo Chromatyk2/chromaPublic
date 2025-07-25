@@ -83,10 +83,10 @@ function App() {
           <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies} />} />
           <Route path="/profil/:pseudo" element={<OtherProfil cookies={cookies} />} />
           <Route path="/tcg/cartes/:pseudo" element={<CardsHubOther page={"myCards"} cookies={cookies} />} />
-          <Route path="/tcg/boosters/:pseudo" element={<CardsHub page={"myBoosters"} cookies={cookies} />} />
-          <Route path="/tcg/boutique/:pseudo" element={<CardsHub page={"cardsShop"} cookies={cookies} />} />
-          <Route path="/tcg/echange/:pseudo" element={<CardsHub page={"sellCards"} cookies={cookies} />} />
-          <Route path="/tcg/liste/:pseudo" element={<CardsHub page={"listuserTcg"} cookies={cookies} />} />
+          <Route path="/tcg/boosters/:pseudo" element={<CardsHubOther page={"myBoosters"} cookies={cookies} />} />
+          <Route path="/tcg/boutique/:pseudo" element={<CardsHubOther page={"cardsShop"} cookies={cookies} />} />
+          <Route path="/tcg/echange/:pseudo" element={<CardsHubOther page={"sellCards"} cookies={cookies} />} />
+          <Route path="/tcg/liste/:pseudo" element={<CardsHubOther page={"listuserTcg"} cookies={cookies} />} />
           <Route path="/allProfils" element={<AllProfils cookies={cookies} />} />
           <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies} />} />
           <Route path="/pedandex" element={<Pedandex cookies={cookies} />} />

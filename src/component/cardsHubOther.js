@@ -18,6 +18,7 @@ function CardsHubOther(props) {
     const [points,setPoints] = useState(-1);
     const [canOpen,setCanOpen] = useState(-1);
     const { pseudo } = useParams()
+    const myPseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)
@@ -38,7 +39,7 @@ function CardsHubOther(props) {
             <div className={"contentContainer"}>
                 <div className={"allCards"}>
                     {props.page == "myCards" &&
-                        <OtherMyCards user={pseudo}/>
+                        <OtherMyCards myPseudo={myPseudo} user={pseudo}/>
                     }
                     {props.page == "cardsShop" &&
                         <CardsShop canOpen={canOpen} user={pseudo} points={points}/>

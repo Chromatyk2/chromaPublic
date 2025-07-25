@@ -37,7 +37,6 @@ function OtherMyCardsSet(props) {
     const [pickCard, setPickCard] = React.useState(null);
     const [pickCardId, setPickCardId] = React.useState(null);
     const [myCardWithStade, setMyCardWithStade] = React.useState(null);
-    const [powder, setPowder] = React.useState(props.powder);
     const [refresh, setRefresh] = React.useState(0);
 
     const customStyles = {
