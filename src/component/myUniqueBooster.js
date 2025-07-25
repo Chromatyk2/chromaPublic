@@ -12,6 +12,8 @@ function MyUniqueBooster(props) {
 
     const [booster, setBooster] = useState([typeof props.boosterList.find((uc) => uc.name == props.nbCard.booster) === "undefined" ? props.boosterList.find((uc) => uc.nameGuru == props.nbCard.booster) : props.boosterList.find((uc) => uc.name == props.nbCard.booster)]);
     const [badges, setBadges] = React.useState(null);
+    const [customStyles, setCustomStyles] = useState(null);
+    const [stadeToDisplay, setStadeToDisplay] = useState(null);
     function displayPage(e) {
         var page = e.target.value;
         var nbCard = e.target.getAttribute("nbCard")
@@ -25,20 +27,58 @@ function MyUniqueBooster(props) {
                     setBadges(response.data);
                 })
     }, []);
+    useEffect(() => {
+        if(typeof badges.find((item) => item.stade === 4) !== "undefined"){
+            setStadeToDisplay(4)
+            setCustomStyles({
+                shadow: {
+                    filter : 'drop-shadow(5px 5px 4px #FF0000) \n' +
+                        '        drop-shadow(5px 5px 4px #FF7F00)  \n' +
+                        '        drop-shadow(5px 5px 4px #FFFF00)  \n' +
+                        '        drop-shadow(5px 5px 4px #00FF00)  \n' +
+                        '        drop-shadow(5px 5px 4px #0000FF)  \n' +
+                        '        drop-shadow(5px 5px 4px #2E2B5F)  \n' +
+                        '        drop-shadow(5px 5px 4px #8B00FF) '
+                }
+            })
+        }else if(typeof badges.find((item) => item.stade === 3) !== "undefined"){
+            setStadeToDisplay(3)
+            setCustomStyles({
+                shadow: {
+                    filter : 'drop-shadow(0px 0px 10px orange) drop-shadow(0px 0px 0 yellow)'
+                }
+            })
+        }else if(typeof badges.find((item) => item.stade === 2) !== "undefined"){
+            setStadeToDisplay(2)
+            setCustomStyles({
+                shadow: {
+                    filter : 'drop-shadow(0px 0px 10px lightblue) drop-shadow(0px 0px 0 white)'
+                }
+            })
+        }else if(typeof badges.find((item) => item.stade === 1) !== "undefined"){
+            setStadeToDisplay(1)
+            setCustomStyles({
+                shadow: {
+                    filter : 'drop-shadow(0px 0px 10px green) drop-shadow(0px 0px 0 white)'
+                }
+            })
+        }else if(typeof badges.find((item) => item.stade === 0) !== "undefined"){
+            setStadeToDisplay(0)
+            setCustomStyles({
+                shadow: {
+                    filter : 'drop-shadow(0px 0px 10px gray) drop-shadow(0px 0px 0 white)'
+                }
+            })
+        }
+    }, []);
     return (
         <>
             {badges &&
                 <div
-                    style={{filter: typeof badges.find((item) => item.stade === 4) !== "undefined" ? 'drop-shadow(5px 5px 4px #FF0000) \n' +
-                            '        drop-shadow(5px 5px 4px #FF7F00)  \n' +
-                            '        drop-shadow(5px 5px 4px #FFFF00)  \n' +
-                            '        drop-shadow(5px 5px 4px #00FF00)  \n' +
-                            '        drop-shadow(5px 5px 4px #0000FF)  \n' +
-                            '        drop-shadow(5px 5px 4px #2E2B5F)  \n' +
-                            '        drop-shadow(5px 5px 4px #8B00FF) ': typeof badges.find((item) => item.stade === 3) !== "undefined" ? 'drop-shadow(0px 0px 10px orange) drop-shadow(0px 0px 0 yellow)' : typeof badges.find((item) => item.stade === 2) !== "undefined" ? 'drop-shadow(0px 0px 10px lightblue) drop-shadow(0px 0px 0 yellow)' : typeof badges.find((item) => item.stade === 1) !== "undefined" ? 'drop-shadow(0px 0px 10px green) drop-shadow(0px 0px 0 yellow)' : typeof badges.find((item) => item.stade === 0) !== "undefined" && 'drop-shadow(0px 0px 10px gray) drop-shadow(0px 0px 0 yellow)'}}
+                    style={customStyles.shadow}
                     className="uniqueMyCardContainer">
                     {props.maxBooster == props.nbCard.nbCard &&
-                        <img className={"done"} src={typeof badges.find((item) => item.stade === 4) !== "undefined" ? "/Ribbon/" + booster[0].name + "_4.png": typeof badges.find((item) => item.stade === 3) !== "undefined" ? "/Ribbon/" + booster[0].name + "_3.png" : typeof badges.find((item) => item.stade === 2) !== "undefined" ? "/Ribbon/" + booster[0].name + "_2.png" : typeof badges.find((item) => item.stade === 1) !== "undefined" ? "/Ribbon/" + booster[0].name + "_1.png" : typeof badges.find((item) => item.stade === 0) !== "undefined" && "/Ribbon/" + booster[0].name + "_0.png"}/>
+                        <img className={"done"} src={"/Ribbon/" + booster[0].name + "_"+stadeToDisplay+".png"}/>
                     }
                     <div className={"containerImgBooster"}>
                         <img className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
