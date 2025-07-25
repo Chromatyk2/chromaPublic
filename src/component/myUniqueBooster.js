@@ -13,7 +13,7 @@ function MyUniqueBooster(props) {
     const [booster, setBooster] = useState([typeof props.boosterList.find((uc) => uc.name == props.nbCard.booster) === "undefined" ? props.boosterList.find((uc) => uc.nameGuru == props.nbCard.booster) : props.boosterList.find((uc) => uc.name == props.nbCard.booster)]);
     const [badges, setBadges] = React.useState(null);
     const [customStyles, setCustomStyles] = useState(null);
-    const [stadeToDisplay, setStadeToDisplay] = useState(null);
+    const [stadeToDisplay, setStadeToDisplay] = useState(-1);
     function displayPage(e) {
         var page = e.target.value;
         var nbCard = e.target.getAttribute("nbCard")
@@ -78,6 +78,7 @@ function MyUniqueBooster(props) {
     }, []);
     return (
         <>
+            {stadeToDisplay &&
                 <div
                     style={customStyles.shadow}
                     className="uniqueMyCardContainer">
@@ -93,6 +94,7 @@ function MyUniqueBooster(props) {
                             className="guessTradeButton">Voir toute mes cartes
                     </button>
                 </div>
+            }
         </>
 )
 }
