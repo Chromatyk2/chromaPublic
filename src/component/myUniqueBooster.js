@@ -75,8 +75,10 @@ function MyUniqueBooster(props) {
                             }
                         })
                     }
-                }).finally(setOnLoad(false))
+                })
     }, []);
+    console.log(stadeToDisplay);
+    console.log(customStyles);
     return (
         <>
             {onLoad === false &&
