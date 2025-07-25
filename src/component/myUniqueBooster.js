@@ -76,13 +76,10 @@ function MyUniqueBooster(props) {
                     }
                 })
     }, []);
-    console.log(stadeToDisplay);
-    console.log(customStyles);
     return (
         <>
             {stadeToDisplay &&
                 <div
-                    style={customStyles.shadow}
                     className="uniqueMyCardContainer">
                     {stadeToDisplay > -1 &&
                         <img className={"done"} src={"/Ribbon/" + booster[0].name + "_"+stadeToDisplay+".png"}/>
