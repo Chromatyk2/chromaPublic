@@ -67,7 +67,7 @@ function MyUniqueBooster(props) {
                                 filter : 'drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0 white)'
                             }
                         })
-                    }else{
+                    }else if(response.data.length === 0){
                         setStadeToDisplay(-1)
                         setCustomStyles({
                             shadow: {
