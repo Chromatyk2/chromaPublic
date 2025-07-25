@@ -28,7 +28,8 @@ function MyUniqueBooster(props) {
                 })
     }, []);
     useEffect(() => {
-        if(typeof badges.find((item) => item.stade === 4) !== "undefined"){
+        if(badges !== null){
+            if(typeof badges.find((item) => item.stade === 4) !== "undefined"){
             setStadeToDisplay(4)
             setCustomStyles({
                 shadow: {
@@ -41,35 +42,37 @@ function MyUniqueBooster(props) {
                         '        drop-shadow(5px 5px 4px #8B00FF) '
                 }
             })
-        }else if(typeof badges.find((item) => item.stade === 3) !== "undefined"){
-            setStadeToDisplay(3)
-            setCustomStyles({
-                shadow: {
-                    filter : 'drop-shadow(0px 0px 10px orange) drop-shadow(0px 0px 0 yellow)'
-                }
-            })
-        }else if(typeof badges.find((item) => item.stade === 2) !== "undefined"){
-            setStadeToDisplay(2)
-            setCustomStyles({
-                shadow: {
-                    filter : 'drop-shadow(0px 0px 10px lightblue) drop-shadow(0px 0px 0 white)'
-                }
-            })
-        }else if(typeof badges.find((item) => item.stade === 1) !== "undefined"){
-            setStadeToDisplay(1)
-            setCustomStyles({
-                shadow: {
-                    filter : 'drop-shadow(0px 0px 10px green) drop-shadow(0px 0px 0 white)'
-                }
-            })
-        }else if(typeof badges.find((item) => item.stade === 0) !== "undefined"){
-            setStadeToDisplay(0)
-            setCustomStyles({
-                shadow: {
-                    filter : 'drop-shadow(0px 0px 10px gray) drop-shadow(0px 0px 0 white)'
-                }
-            })
+            }else if(typeof badges.find((item) => item.stade === 3) !== "undefined"){
+                setStadeToDisplay(3)
+                setCustomStyles({
+                    shadow: {
+                        filter : 'drop-shadow(0px 0px 10px orange) drop-shadow(0px 0px 0 yellow)'
+                    }
+                })
+            }else if(typeof badges.find((item) => item.stade === 2) !== "undefined"){
+                setStadeToDisplay(2)
+                setCustomStyles({
+                    shadow: {
+                        filter : 'drop-shadow(0px 0px 10px lightblue) drop-shadow(0px 0px 0 white)'
+                    }
+                })
+            }else if(typeof badges.find((item) => item.stade === 1) !== "undefined"){
+                setStadeToDisplay(1)
+                setCustomStyles({
+                    shadow: {
+                        filter : 'drop-shadow(0px 0px 10px green) drop-shadow(0px 0px 0 white)'
+                    }
+                })
+            }else if(typeof badges.find((item) => item.stade === 0) !== "undefined"){
+                setStadeToDisplay(0)
+                setCustomStyles({
+                    shadow: {
+                        filter : 'drop-shadow(0px 0px 10px gray) drop-shadow(0px 0px 0 white)'
+                    }
+                })
+            }
         }
+
     }, [badges]);
     return (
         <>
