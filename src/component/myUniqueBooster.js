@@ -81,9 +81,9 @@ function MyUniqueBooster(props) {
             {stadeToDisplay &&
                 <div
                     className="uniqueMyCardContainer">
-                    {stadeToDisplay > -1 &&
-                        <img className={"done"} src={"/Ribbon/" + booster[0].name + "_"+stadeToDisplay+".png"}/>
-                    }
+                    {/*{stadeToDisplay > -1 &&*/}
+                    {/*    <img className={"done"} src={"/Ribbon/" + booster[0].name + "_"+stadeToDisplay+".png"}/>*/}
+                    {/*}*/}
                     <div className={"containerImgBooster"}>
                         <img className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
                              alt="Grapefruit slice atop a pile of other slices"/>
