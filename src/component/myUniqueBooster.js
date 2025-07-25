@@ -25,64 +25,57 @@ function MyUniqueBooster(props) {
             Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + booster[0].name)
                 .then(function (response) {
                     setBadges(response.data);
+                    if(typeof response.data.find((item) => item.stade === 4) !== "undefined"){
+                        setStadeToDisplay(4)
+                        setCustomStyles({
+                            shadow: {
+                                filter : 'drop-shadow(5px 5px 4px #FF0000) \n' +
+                                    '        drop-shadow(5px 5px 4px #FF7F00)  \n' +
+                                    '        drop-shadow(5px 5px 4px #FFFF00)  \n' +
+                                    '        drop-shadow(5px 5px 4px #00FF00)  \n' +
+                                    '        drop-shadow(5px 5px 4px #0000FF)  \n' +
+                                    '        drop-shadow(5px 5px 4px #2E2B5F)  \n' +
+                                    '        drop-shadow(5px 5px 4px #8B00FF) '
+                            }
+                        })
+                    }else if(typeof response.data.find((item) => item.stade === 3) !== "undefined"){
+                        setStadeToDisplay(3)
+                        setCustomStyles({
+                            shadow: {
+                                filter : 'drop-shadow(0px 0px 10px orange) drop-shadow(0px 0px 0 yellow)'
+                            }
+                        })
+                    }else if(typeof response.data.find((item) => item.stade === 2) !== "undefined"){
+                        setStadeToDisplay(2)
+                        setCustomStyles({
+                            shadow: {
+                                filter : 'drop-shadow(0px 0px 10px lightblue) drop-shadow(0px 0px 0 white)'
+                            }
+                        })
+                    }else if(typeof response.data.find((item) => item.stade === 1) !== "undefined"){
+                        setStadeToDisplay(1)
+                        setCustomStyles({
+                            shadow: {
+                                filter : 'drop-shadow(0px 0px 10px green) drop-shadow(0px 0px 0 white)'
+                            }
+                        })
+                    }else if(typeof response.data.find((item) => item.stade === 0) !== "undefined"){
+                        setStadeToDisplay(0)
+                        setCustomStyles({
+                            shadow: {
+                                filter : 'drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0 white)'
+                            }
+                        })
+                    }else{
+                        setStadeToDisplay(-1)
+                        setCustomStyles({
+                            shadow: {
+                                filter : 'drop-shadow(0px 0px 0 transparent) drop-shadow(0px 0px 0 transparent)'
+                            }
+                        })
+                    }
                 })
     }, []);
-    useEffect(() => {
-        if(badges !== null){
-            console.log( badges.find((item) => item.stade === 4))
-            console.log( badges.find((item) => item.stade === 0))
-            if(typeof badges.find((item) => item.stade === 4) !== "undefined"){
-            setStadeToDisplay(4)
-            setCustomStyles({
-                shadow: {
-                    filter : 'drop-shadow(5px 5px 4px #FF0000) \n' +
-                        '        drop-shadow(5px 5px 4px #FF7F00)  \n' +
-                        '        drop-shadow(5px 5px 4px #FFFF00)  \n' +
-                        '        drop-shadow(5px 5px 4px #00FF00)  \n' +
-                        '        drop-shadow(5px 5px 4px #0000FF)  \n' +
-                        '        drop-shadow(5px 5px 4px #2E2B5F)  \n' +
-                        '        drop-shadow(5px 5px 4px #8B00FF) '
-                }
-            })
-            }else if(typeof badges.find((item) => item.stade === 3) !== "undefined"){
-                setStadeToDisplay(3)
-                setCustomStyles({
-                    shadow: {
-                        filter : 'drop-shadow(0px 0px 10px orange) drop-shadow(0px 0px 0 yellow)'
-                    }
-                })
-            }else if(typeof badges.find((item) => item.stade === 2) !== "undefined"){
-                setStadeToDisplay(2)
-                setCustomStyles({
-                    shadow: {
-                        filter : 'drop-shadow(0px 0px 10px lightblue) drop-shadow(0px 0px 0 white)'
-                    }
-                })
-            }else if(typeof badges.find((item) => item.stade === 1) !== "undefined"){
-                setStadeToDisplay(1)
-                setCustomStyles({
-                    shadow: {
-                        filter : 'drop-shadow(0px 0px 10px green) drop-shadow(0px 0px 0 white)'
-                    }
-                })
-            }else if(typeof badges.find((item) => item.stade === 0) !== "undefined"){
-                setStadeToDisplay(0)
-                setCustomStyles({
-                    shadow: {
-                        filter : 'drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0 white)'
-                    }
-                })
-            }else{
-                setStadeToDisplay(-1)
-                setCustomStyles({
-                    shadow: {
-                        filter : 'drop-shadow(0px 0px 0 transparent) drop-shadow(0px 0px 0 transparent)'
-                    }
-                })
-            }
-        }
-
-    }, [badges]);
     return (
         <>
             {stadeToDisplay &&
