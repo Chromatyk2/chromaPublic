@@ -854,7 +854,7 @@ function Profil(props) {
                                                 style={{
                                                     width: "120px",
                                                     backgroundSize: "80%",
-                                                    filter: "drop-shadow(white 0 0 4px)",
+                                                    filter: "drop-shadow(0px 0px 5px lightblue) drop-shadow(0px 0px 0 lightblue)",
                                                     backgroundImage: "url(/token.png)",
                                                 }}>
                                             <div className="infoPkm">
