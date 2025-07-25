@@ -74,14 +74,12 @@ function OtherMyCards(props) {
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
-                        nbCards.sort((a, b) => b.nbCard/boosterList.find((uc) => uc.nameGuru == val.booster.totalCards*100 - a.nbCard/boosterList.find((uc) => uc.nameGuru == val.booster.totalCards*100).map((val, key) => {
-                            return (
-                                <MyUniqueBooster user={props.user} page={val.booster} change={displayPage} nbCard={val}
-                                                 boosterList={boosterList}
-                                                 maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" : uc.nameGuru == val.booster).totalCards
-                                                     : boosterList.find((uc) => uc.name == val.booster).totalCards}/>
-                            )
-                        }))
+                        return (
+                            <MyUniqueBooster user={props.user} page={val.booster} change={displayPage} nbCard={val}
+                                             boosterList={boosterList}
+                                             maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" : uc.nameGuru == val.booster).totalCards
+                                                 : boosterList.find((uc) => uc.name == val.booster).totalCards}/>
+                        )
                     })
                 }
             </div>
