@@ -2553,6 +2553,11 @@ a.linkOnAirOff {
     filter: drop-shadow(2px 4px 30px blue);
     animation: glowGetRainbow 2s infinite alternate, bounceInCards 1s forwards;
 }
+.glowGetRainbowCard{
+    box-shadow: -15px 15px 50px #0000ff, 15px -15px 50px #ffd700, 15px 15px 50px #fe015b, -15px -15px 50px #00ff78;
+    display: block;
+
+}
 
 .cardOnListRainbow{
     animation : glowGetRainbow 2s infinite alternate;

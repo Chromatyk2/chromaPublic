@@ -29,13 +29,7 @@ function MyUniqueBooster(props) {
                         setStadeToDisplay(4)
                         setCustomStyles({
                             shadow: {
-                                filter : 'drop-shadow(5px 5px 4px #FF0000) \n' +
-                                    '        drop-shadow(5px 5px 4px #FF7F00)  \n' +
-                                    '        drop-shadow(5px 5px 4px #FFFF00)  \n' +
-                                    '        drop-shadow(5px 5px 4px #00FF00)  \n' +
-                                    '        drop-shadow(5px 5px 4px #0000FF)  \n' +
-                                    '        drop-shadow(5px 5px 4px #2E2B5F)  \n' +
-                                    '        drop-shadow(5px 5px 4px #8B00FF) '
+                                boxShadow: "-15px 15px 50px #0000ff, 15px -15px 50px #ffd700, 15px 15px 50px #fe015b, -15px -15px 50px #00ff78"
                             }
                         })
                     }else if(typeof response.data.find((item) => item.stade === 3) !== "undefined"){
