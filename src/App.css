@@ -4280,83 +4280,9 @@ span.navbar-brand {
 #icomp-neon p span{
     color:#BA01FF;
 }
-#icomp-neon p span{
-    -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon6 1.5s ease-in-out infinite alternate;
-    animation: neon6 1.5s ease-in-out infinite alternate;
-}
 
 #icomp-neon p span{
     color:#ffffff;
-}
-@-webkit-keyframes neon6 {
-    from {
-        text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff,
-        0 0 40px #24275D,
-        0 0 70px #24275D,
-        0 0 80px #24275D,
-        0 0 100px #24275D,
-        0 0 150px #24275D;
-    }
-    to {
-        text-shadow: 0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 15px #fff,
-        0 0 20px #24275D,
-        0 0 35px #24275D,
-        0 0 40px #24275D,
-        0 0 50px #24275D,
-        0 0 75px #24275D;
-    }
-}
-
-
-@-moz-keyframes neon6 {
-    from {
-        text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff,
-        0 0 40px #24275D,
-        0 0 70px #24275D,
-        0 0 80px #24275D,
-        0 0 100px #24275D,
-        0 0 150px #24275D;
-    }
-    to {
-        text-shadow: 0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 15px #fff,
-        0 0 20px #24275D,
-        0 0 35px #24275D,
-        0 0 40px #24275D,
-        0 0 50px #24275D,
-        0 0 75px #24275D;
-    }
-}
-
-@keyframes neon6 {
-    from {
-        text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff,
-        0 0 40px #24275D,
-        0 0 70px #24275D,
-        0 0 80px #24275D,
-        0 0 100px #24275D,
-        0 0 150px #24275D;
-    }
-    to {
-        text-shadow: 0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 15px #fff,
-        0 0 20px #24275D,
-        0 0 35px #24275D,
-        0 0 40px #24275D,
-        0 0 50px #24275D,
-        0 0 75px #24275D;
-    }
 }
 .newTokenContainer {
     background: rgba(71, 117, 179, .5);
