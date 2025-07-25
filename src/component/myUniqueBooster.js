@@ -29,6 +29,8 @@ function MyUniqueBooster(props) {
     }, []);
     useEffect(() => {
         if(badges !== null){
+            console.log( badges.find((item) => item.stade === 4))
+            console.log( badges.find((item) => item.stade === 0))
             if(typeof badges.find((item) => item.stade === 4) !== "undefined"){
             setStadeToDisplay(4)
             setCustomStyles({
