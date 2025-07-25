@@ -88,15 +88,13 @@ function MyUniqueBooster(props) {
                 <div
                     style={customStyles.shadow}
                     className="uniqueMyCardContainer">
-                    {props.maxBooster == props.nbCard.nbCard &&
+                    {stadeToDisplay > -1 &&
                         <img className={"done"} src={"/Ribbon/" + booster[0].name + "_"+stadeToDisplay+".png"}/>
                     }
-                    {stadeToDisplay > -1 &&
-                        <div className={"containerImgBooster"}>
-                            <img className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
-                                 alt="Grapefruit slice atop a pile of other slices"/>
-                        </div>
-                    }
+                    <div className={"containerImgBooster"}>
+                        <img className="fit-picture" src={"/Boosters/" + booster[0].name + ".png"}
+                             alt="Grapefruit slice atop a pile of other slices"/>
+                    </div>
                     <SmallProgressBarCard getNb={props.nbCard.nbCard} item={props.maxBooster}/>
                     <button guruName={booster[0].nameGuru} value={booster[0].name} onClick={displayPage}
                             className="guessTradeButton">Voir toute mes cartes
