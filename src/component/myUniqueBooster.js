@@ -14,6 +14,7 @@ function MyUniqueBooster(props) {
     const [badges, setBadges] = React.useState(null);
     const [customStyles, setCustomStyles] = useState(null);
     const [stadeToDisplay, setStadeToDisplay] = useState(null);
+    const [onLoad, setOnLoad] = useState(true);
     function displayPage(e) {
         var page = e.target.value;
         var nbCard = e.target.getAttribute("nbCard")
@@ -74,12 +75,11 @@ function MyUniqueBooster(props) {
                             }
                         })
                     }
-                })
+                }).finally(setOnLoad(false))
     }, []);
     return (
         <>
-            {stadeToDisplay &&
-                customStyles &&
+            {onLoad === false &&
                 <div
                     style={customStyles.shadow}
                     className="uniqueMyCardContainer">
