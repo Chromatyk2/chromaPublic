@@ -78,7 +78,7 @@ function MyUniqueBooster(props) {
     }, []);
     return (
         <>
-            {stadeToDisplay &&
+            {customStyles &&
                 <div
                     style={customStyles.shadow}
                     className="uniqueMyCardContainer">
