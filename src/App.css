@@ -2206,12 +2206,10 @@ button.buttonToSell:hover {
     letter-spacing: 5px;
 }
 .rainbow_text_animated {
-    -webkit-animation: rainbow_animation 6s ease-in-out infinite;
-    animation: rainbow_animation 2s ease-in-out infinite;
-    background: linear-gradient(90deg,#66f,#09f,#0f0,#f39,#66f);
+    background: linear-gradient(295deg, #09f, #0f0, #f39, #09f);
     -webkit-background-clip: text;
     background-clip: text;
-    background-size: 400% 100%;
+    background-size: 100%;
     color: transparent;
     font-size: 50px;
     text-align: center;
