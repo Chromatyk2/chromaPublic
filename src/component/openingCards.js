@@ -302,7 +302,7 @@ function OpeningCards(props) {
     function getLastCard(e) {
         setIsNew(false);
         setEndPull(true);
-        props.change();
+        props.change(props.idBooster);
         e.target.classList.toggle('endPull');
     }
 
