@@ -34,6 +34,11 @@ function CardsShop(props) {
     const [randomBooster, setRandomBooster] = React.useState(null);
     const [globalBooster, setGlobalBoosters] = React.useState(null);
     const [powder,setPowder] = useState(null);
+    const [purcents, setPurcents] = useState([]);
+    const [badges, setBadges] = useState(null);
+    const [boosterName, setBoosterName] = React.useState(null);
+    const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
+    const [modalIsOpenBadge, setIsOpenBadge] = React.useState(false);
     const customStyles = {
         content: {
             position:'initial',
@@ -248,6 +253,13 @@ function CardsShop(props) {
     function closeModal() {
         setIsOpen(false);
     }
+    function closeModalBadge() {
+        setIsOpenBadge(false);
+    }
+    function openModalZero(e) {
+        setBadgeToWinStade(e)
+        setIsOpenBadge(true);
+    }
     function handleState(e,f) {
         setRandomBooster(Math.floor(Math.random() * items.length));
         setOnOpen(false);
@@ -377,6 +389,12 @@ function CardsShop(props) {
     }
     return (
         <>
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+                <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
+                <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
+                <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à 100% {badgeToWinStade != 0 && "avec les cartes de rareté "+ badgeToWinStade} !!</p>
+                <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModalBadge}>Cool !</button>
+            </Modal>
             {onOpen === true ?
                 <OpeningBooster change={(e,f) => handleState(e,f)} idBooster={boosterId} user={props.user} boosterGuru={nameGuru} block={block}/>
                 :

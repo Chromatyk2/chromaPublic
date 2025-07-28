@@ -12,11 +12,11 @@ import $ from "jquery";
 
 function ProgressBarCard(props) {
     const [purcents, setPurcents] = useState([]);
-    const [customStyles, setCustomStyles] = useState(null);
     const [badges, setBadges] = useState(null);
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
     const [boosterName, setBoosterName] = React.useState(null);
+    const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
+    const [customStyles, setCustomStyles] = useState(null);
+    const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
             Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
                 .then(function(response) {
