@@ -284,7 +284,7 @@ function CardsShop(props) {
                                         .then(function(response) {
                                             setBoosterName(response.data[0].fullName);
                                             if(props.global === false){
-                                                if(parseFloat(myCard.length / f * 100).toFixed(2) == 100){
+                                                if(parseFloat(myCard.length / response.data[0].totalcards * 100).toFixed(2) == 100){
                                                     if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                                                         openModalZero(0);
                                                         Axios.post('/api/addBadge',
@@ -302,7 +302,7 @@ function CardsShop(props) {
                                                                     })
                                                             })
                                                     }else if(purcents.length > 0){
-                                                        if(parseFloat(purcents.find((item) => item.stade == 1).nb / f * 100).toFixed(2) == 100){
+                                                        if(parseFloat(purcents.find((item) => item.stade == 1).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
                                                             if(typeof badges.find((item) => item.stade === 1) === "undefined"){
                                                                 openModalZero(1);
                                                                 Axios.post('/api/addBadge',
@@ -320,7 +320,7 @@ function CardsShop(props) {
                                                                             })
                                                                     })
                                                             }
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / f * 100).toFixed(2) == 100){
+                                                        }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
                                                             if(typeof badges.find((item) => item.stade === 2) === "undefined"){
                                                                 openModalZero(2);
                                                                 Axios.post('/api/addBadge',
@@ -338,7 +338,7 @@ function CardsShop(props) {
                                                                             })
                                                                     })
                                                             }
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / f * 100).toFixed(2) == 100){
+                                                        }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
                                                             if(typeof badges.find((item) => item.stade === 3) === "undefined"){
                                                                 openModalZero(3);
                                                                 Axios.post('/api/addBadge',
@@ -356,7 +356,7 @@ function CardsShop(props) {
                                                                             })
                                                                     })
                                                             }
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / f * 100).toFixed(2) == 100){
+                                                        }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
                                                             if(typeof badges.find((item) => item.stade === 4) === "undefined"){
                                                                 openModalZero(4);
                                                                 Axios.post('/api/addBadge',
