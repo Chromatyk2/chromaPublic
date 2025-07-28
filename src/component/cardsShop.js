@@ -283,7 +283,6 @@ function CardsShop(props) {
                                     Axios.get("/api/getBoosterByName/"+e)
                                         .then(function(response) {
                                             setBoosterName(response.data[0].fullName);
-                                            if(props.global === false){
                                                 if(parseFloat(myCard.length / response.data[0].totalcards * 100).toFixed(2) == 100){
                                                     if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                                                         openModalZero(0);
@@ -377,7 +376,6 @@ function CardsShop(props) {
                                                         }
                                                     }
                                                 }
-                                            }
                                         })
                                 })
                         })
