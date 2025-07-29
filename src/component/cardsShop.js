@@ -274,7 +274,6 @@ function CardsShop(props) {
     function handleState(e,f) {
         setRandomBooster(Math.floor(Math.random() * items.length));
         setOnOpen(false);
-        setTimeout(() => {
             setBoosterToDisplay(e);
             Axios.get("/api/getMyCardsBySet/"+props.user+"/"+e)
                 .then(function(response) {
@@ -288,6 +287,13 @@ function CardsShop(props) {
                                 stade: 4,
                                 nb: response.data.filter((item) => item.stade == "4").length
                             }])
+                            const purcents = [{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
+                                stade: 2,
+                                nb: response.data.filter((item) => item.stade == "2").length
+                            }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
+                                stade: 4,
+                                nb: response.data.filter((item) => item.stade == "4").length
+                            }]
                             Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
                                 .then(function(response) {
                                     setBadges(response.data);
@@ -392,7 +398,6 @@ function CardsShop(props) {
                                 })
                         })
                 })
-        }, 1000);
     }
     function changeCarousel(e) {
         setSelectedBoosterId(e)
