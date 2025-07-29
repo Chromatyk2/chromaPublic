@@ -319,8 +319,7 @@ function CardsShop(props) {
                                                                     })
                                                             })
                                                     }else if(purcents.length > 0){
-                                                        if(parseFloat(purcents.find((item) => item.stade == 1).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
-                                                            if(typeof badges.find((item) => item.stade === 1) === "undefined"){
+                                                        if(parseFloat(purcents.find((item) => item.stade == 1).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 1) === "undefined"){
                                                                 openModalZero(1);
                                                                 Axios.post('/api/addBadge',
                                                                     {
@@ -336,9 +335,7 @@ function CardsShop(props) {
                                                                                 setBadges(response.data);
                                                                             })
                                                                     })
-                                                            }
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
-                                                            if(typeof badges.find((item) => item.stade === 2) === "undefined"){
+                                                        }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 2) === "undefined"){
                                                                 openModalZero(2);
                                                                 Axios.post('/api/addBadge',
                                                                     {
@@ -354,9 +351,7 @@ function CardsShop(props) {
                                                                                 setBadges(response.data);
                                                                             })
                                                                     })
-                                                            }
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
-                                                            if(typeof badges.find((item) => item.stade === 3) === "undefined"){
+                                                        }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 3) === "undefined"){
                                                                 openModalZero(3);
                                                                 Axios.post('/api/addBadge',
                                                                     {
@@ -372,9 +367,7 @@ function CardsShop(props) {
                                                                                 setBadges(response.data);
                                                                             })
                                                                     })
-                                                            }
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / response.data[0].totalcards * 100).toFixed(2) == 100){
-                                                            if(typeof badges.find((item) => item.stade === 4) === "undefined"){
+                                                        }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 4) === "undefined"){
                                                                 openModalZero(4);
                                                                 Axios.post('/api/addBadge',
                                                                     {
@@ -390,7 +383,6 @@ function CardsShop(props) {
                                                                                 setBadges(response.data);
                                                                             })
                                                                     })
-                                                            }
                                                         }
                                                     }
                                                 }
