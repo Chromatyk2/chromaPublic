@@ -952,7 +952,7 @@ function Profil(props) {
                                 {profil[0].pseudo == "stryxlis"
                                     ?
                                     <button
-                                        style={{backgroundImage:'url(/images/lugia.webp)'}}
+                                        style={{backgroundImage:'url(/images/lugia.png)'}}
                                         value={"second_pokemon"}
                                         className="anchorTooltip uniquePokemonContainerTeam">
                                     </button>
