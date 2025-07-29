@@ -30,7 +30,13 @@ function ProgressBarCard(props) {
                                 stade: 4,
                                 nb: response.data.filter((item) => item.stade == "4").length
                             }])
-
+                            const purcents = [{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
+                                stade: 2,
+                                nb: response.data.filter((item) => item.stade == "2").length
+                            }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
+                                stade: 4,
+                                nb: response.data.filter((item) => item.stade == "4").length
+                            }]
                             setCustomStyles({
                                 extBar: {
                                     width: '75%',
@@ -229,8 +235,6 @@ function ProgressBarCard(props) {
         setIsOpen(false);
         setTimeout(function (){
             if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
-                console.log(badges.find((item) => item.stade == 0));
-                console.log(badges);
                 if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                     openModalZero(0);
                     Axios.post('/api/addBadge',
