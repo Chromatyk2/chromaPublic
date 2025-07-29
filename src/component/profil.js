@@ -41,6 +41,7 @@ function Profil(props) {
     const [badgesList, setBadgesList] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalIsOpenBadge, setIsOpenBadge] = React.useState(false);
+    const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [teamToHandle, setTeamToHandle] = React.useState("");
     const [list,setList] = useState([]);
@@ -51,6 +52,7 @@ function Profil(props) {
     const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
     const [isLoad, setIsLoad] = React.useState(true);
     const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
+    const [skinToWin, setSkinToWin] = React.useState(null);
     const [messageToBadge, setMessageToBadge] = React.useState(null);
     const [badges, setBadges] = useState(null);
     useEffect(() => {
@@ -147,6 +149,10 @@ function Profil(props) {
         setMessageToBadge(f)
         setIsOpenBadge(true);
     }
+    function openModalSkin(e) {
+        setSkinToWin(e)
+        setIsOpenSkin(true);
+    }
     function closeModalToken() {
         setIsOpenToken(false);
         setTimeout(() => {
@@ -198,6 +204,9 @@ function Profil(props) {
         setTimeout(() => {
             checkBadges();
         }, 500)
+    }
+    function closeModalSkin() {
+        setIsOpenSkin(false);
     }
     function checkBadges() {
         Axios
@@ -777,6 +786,7 @@ function Profil(props) {
                         while (response.data.filter(item => item.skin == n).length != 0) {
                             n = Math.floor((Math.random() * 2153) + 1);
                         }
+                        openModalSkin(n);
                         Axios.post('/api/addSkin',
                             {
                                 user:pseudo,
@@ -1069,6 +1079,19 @@ function Profil(props) {
                     <p style={{textAlign: "center", fontStyle: "20px"}}>{messageToBadge}</p>
                     <button style={{display: "block", margin: "auto"}} className={"filterButton"}
                             onClick={closeModalBadge}>Cool !
+                    </button>
+                </div>
+            </Modal>
+
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
+                   onRequestClose={closeModalSkin} contentLabel="Example Modal">
+
+                <div style={{flexFlow:"column"}} className="pokemonContentToken">
+                    <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitations !!! </p>
+                    <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                         src={"/images/Trainers/Trainer"+skinToWin+".png"}/>
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                            onClick={closeModalSkin}>Cool !
                     </button>
                 </div>
             </Modal>
