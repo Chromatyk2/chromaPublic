@@ -264,7 +264,7 @@ function ProgressBarCard(props) {
                                                 setBadges(response.data);
                                             })
                                     })
-                            } else if (parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 2) === "undefined") {
+                            } else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 2) === "undefined") {
                                 openModalZero(2);
                                 Axios.post('/api/addBadge',
                                     {
@@ -281,7 +281,7 @@ function ProgressBarCard(props) {
                                             })
                                     })
 
-                            } else if (parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 3) === "undefined") {
+                            } else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 3) === "undefined") {
                                 openModalZero(3);
                                 Axios.post('/api/addBadge',
                                     {
@@ -321,7 +321,6 @@ function ProgressBarCard(props) {
     }
 
     useEffect(() => {
-        console.log("call");
         Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
             .then(function(response) {
                 setBadges(response.data);
@@ -348,8 +347,7 @@ function ProgressBarCard(props) {
                                                 })
                                         })
                                 }else if(purcents.length > 0){
-                                    if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100){
-                                        if(typeof badges.find((item) => item.stade === 1) === "undefined"){
+                                    if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 1) === "undefined"){
                                             openModalZero(1);
                                             Axios.post('/api/addBadge',
                                                 {
@@ -365,9 +363,7 @@ function ProgressBarCard(props) {
                                                             setBadges(response.data);
                                                         })
                                                 })
-                                        }
-                                    }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100){
-                                        if(typeof badges.find((item) => item.stade === 2) === "undefined"){
+                                    }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 2) === "undefined"){
                                             openModalZero(2);
                                             Axios.post('/api/addBadge',
                                                 {
@@ -383,9 +379,7 @@ function ProgressBarCard(props) {
                                                             setBadges(response.data);
                                                         })
                                                 })
-                                        }
-                                    }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100){
-                                        if(typeof badges.find((item) => item.stade === 3) === "undefined"){
+                                    }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 3) === "undefined"){
                                             openModalZero(3);
                                             Axios.post('/api/addBadge',
                                                 {
@@ -401,9 +395,7 @@ function ProgressBarCard(props) {
                                                             setBadges(response.data);
                                                         })
                                                 })
-                                        }
-                                    }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100){
-                                        if(typeof badges.find((item) => item.stade === 4) === "undefined"){
+                                    }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 4) === "undefined"){
                                             openModalZero(4);
                                             Axios.post('/api/addBadge',
                                                 {
@@ -419,7 +411,6 @@ function ProgressBarCard(props) {
                                                             setBadges(response.data);
                                                         })
                                                 })
-                                        }
                                     }
                                 }
                             }
