@@ -230,8 +230,6 @@ function ProgressBarCard(props) {
                 .then(function(response) {
                     setBadges(response.data);
                     const badges = response.data;
-                    console.log(badges)
-                    console.log(badges.find((item) => item.stade === 1))
                     if (parseFloat(props.getNb / props.item * 100).toFixed(2) == 100) {
                         if (typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0) {
                             openModalZero(0);
@@ -332,7 +330,6 @@ function ProgressBarCard(props) {
                     Axios.get("/api/getBoosterByName/"+props.booster)
                         .then(function(response) {
                             setBoosterName(response.data[0].fullName);
-                            if(props.global === false){
                                 if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
                                     if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                                         openModalZero(0);
@@ -418,7 +415,6 @@ function ProgressBarCard(props) {
                                         }
                                     }
                                 }
-                            }
                         })
                 })
         }
