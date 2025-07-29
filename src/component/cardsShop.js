@@ -55,6 +55,16 @@ function CardsShop(props) {
             fontSize:'30px',
             textAlign:'center'
         },
+        modal: {
+            border: 'none',
+            background: 'none',
+            borderRadius: '4px',
+            width: '100%',
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
     };
     useEffect(() => {
                 Axios
@@ -387,7 +397,7 @@ function CardsShop(props) {
     }
     return (
         <>
-            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModal} style={customStyles.modal} contentLabel="Example Modal">
                 <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                 <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
                 <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à 100% {badgeToWinStade != 0 && "avec les cartes de rareté "+ badgeToWinStade} !!</p>
