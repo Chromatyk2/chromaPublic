@@ -312,7 +312,7 @@ function ProgressBarCard(props) {
                     }
                 }
             }
-        },500);
+        },1500);
     }
 
     useEffect(() => {
