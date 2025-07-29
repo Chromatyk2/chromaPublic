@@ -93,20 +93,14 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         var randomStade = Math.floor(Math.random() * 100);
-                                                        if (tenCards.length == 0) {
-                                                            var stade = 0;
-                                                        } else {
-                                                            if (randomStade < 20) {
-                                                                var stade = 0;
-                                                            } else if (randomStade > 19 && randomStade < 71) {
-                                                                var stade = 1;
-                                                            } else if (randomStade > 70 && randomStade < 86) {
-                                                                var stade = 2;
-                                                            } else if (randomStade > 85 && randomStade < 97) {
-                                                                var stade = 3;
-                                                            } else if (randomStade > 96) {
-                                                                var stade = 4;
-                                                            }
+                                                        if (randomStade < 50) {
+                                                            var stade = 1;
+                                                        } else if (randomStade > 49 && randomStade < 70) {
+                                                            var stade = 2;
+                                                        } else if (randomStade > 69 && randomStade < 90) {
+                                                            var stade = 3;
+                                                        } else if (randomStade > 89) {
+                                                            var stade = 4;
                                                         }
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
@@ -173,20 +167,14 @@ function OpeningCards(props) {
                                                     })
                                         } else {
                                             var randomStade = Math.floor(Math.random() * 100);
-                                            if (tenCards.length == 0) {
-                                                var stade = 0;
-                                            } else {
-                                                if (randomStade < 20) {
-                                                    var stade = 0;
-                                                } else if (randomStade > 19 && randomStade < 71) {
-                                                    var stade = 1;
-                                                } else if (randomStade > 70 && randomStade < 86) {
-                                                    var stade = 2;
-                                                } else if (randomStade > 85 && randomStade < 97) {
-                                                    var stade = 3;
-                                                } else if (randomStade > 96) {
-                                                    var stade = 4;
-                                                }
+                                            if (randomStade < 50) {
+                                                var stade = 1;
+                                            } else if (randomStade > 49 && randomStade < 70) {
+                                                var stade = 2;
+                                            } else if (randomStade > 69 && randomStade < 90) {
+                                                var stade = 3;
+                                            } else if (randomStade > 89) {
+                                                var stade = 4;
                                             }
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                 setTenCards(tenCards => [...tenCards, {
