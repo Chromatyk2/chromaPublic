@@ -949,11 +949,20 @@ function Profil(props) {
                                     onClick={handleTeam} value={"first_pokemon"}
                                     className="anchorTooltip uniquePokemonContainerTeam">
                                 </button>
-                                <button
-                                    style={{backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}}
-                                    onClick={handleTeam} value={"second_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
-                                </button>
+                                {profil[0].pseudo == "stryxlis"
+                                    ?
+                                    <button
+                                        style={{backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/lugia.gif)'}}
+                                        value={"second_pokemon"}
+                                        className="anchorTooltip uniquePokemonContainerTeam">
+                                    </button>
+                                    :
+                                    <button
+                                        style={{backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}}
+                                        onClick={handleTeam} value={"second_pokemon"}
+                                        className="anchorTooltip uniquePokemonContainerTeam">
+                                    </button>
+                                }
                                 <button
                                     style={{backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'}}
                                     onClick={handleTeam} value={"third_pokemon"}
