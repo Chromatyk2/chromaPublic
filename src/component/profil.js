@@ -787,22 +787,24 @@ function Profil(props) {
                             n = Math.floor((Math.random() * 2153) + 1);
                         }
                         openModalSkin(n);
-                        Axios.post('/api/addSkin',
-                            {
-                                user:pseudo,
-                                skin:n
-                            }
-                        )
-                        .then(function(response){
-                            Axios.get("/api/getProfil/"+pseudo)
+                        setTimeout(function (){
+                            Axios.post('/api/addSkin',
+                                {
+                                    user:pseudo,
+                                    skin:n
+                                }
+                            )
                                 .then(function(response){
-                                    setProfil(response.data);
-                                Axios.get("/api/getSkins/"+pseudo)
-                                        .then(function(response) {
-                                            setSkins(response.data);
+                                    Axios.get("/api/getProfil/"+pseudo)
+                                        .then(function(response){
+                                            setProfil(response.data);
+                                            Axios.get("/api/getSkins/"+pseudo)
+                                                .then(function(response) {
+                                                    setSkins(response.data);
+                                                })
                                         })
                                 })
-                        })
+                        },3000);
                     })
             })
         }
