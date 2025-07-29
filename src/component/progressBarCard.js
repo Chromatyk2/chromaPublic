@@ -317,7 +317,7 @@ function ProgressBarCard(props) {
                         }
                     }
                 })
-        },1500);
+        },100);
     }
 
     useEffect(() => {
