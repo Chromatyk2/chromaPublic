@@ -4853,6 +4853,7 @@ img#imgModal {
     animation: holoSparkle 36001s ease infinite;
     background-repeat: no-repeat;
     bottom: 0;
+    content: "";
     left: 0;
     position: absolute;
     right: 0;
@@ -4860,6 +4861,7 @@ img#imgModal {
     transform: translateZ(0);
 }
 .cardBangerAlert:before {
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
