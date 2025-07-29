@@ -39,10 +39,10 @@ function RandomProfil(props) {
                         left:"300px",
                         top:"300px"
                     }}>
-                        {/*{ allProfil[randomIndex].badge !== null &&*/}
-                        {/*    <img style={{position: "absolute",top: "-80px",right: "-80px",width: "250px"}} src={"/Ribbon/"+allProfil[randomIndex].badge+".png"}/>*/}
-                        {/*}*/}
-                        <img style={{position: "absolute",top: "-80px",right: "-80px",width: "250px"}} src={"/Ribbon/lv11.png"}/>
+                        { allProfil[randomIndex].badge !== null &&
+                            <img style={{position: "absolute",top: "-80px",right: "-80px",width: "250px"}} src={"/Ribbon/"+allProfil[randomIndex].badge+".png"}/>
+                        }
+                        {/*<img style={{position: "absolute",top: "-80px",right: "-80px",width: "250px"}} src={"/Ribbon/lv11.png"}/>*/}
                         <p className={"pseudoProfilList"}>{allProfil[randomIndex].pseudo}</p>
                         <p className={"levelProfilList"}>Niveau {allProfil[randomIndex].level}
                             <small> ( {allProfil[randomIndex].xp} xp )</small>
