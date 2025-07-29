@@ -18,9 +18,7 @@ function OpeningBooster(props) {
     let [state, setState] = useState("Initial");
     let [rarities, setRarities] = useState(null);
     function handleState() {
-        setTimeout(() => {
             props.change(props.idBooster, items.length);
-        }, 1000);
     }
 
     useEffect(() => {
