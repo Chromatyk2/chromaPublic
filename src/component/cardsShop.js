@@ -341,7 +341,7 @@ function CardsShop(props) {
                                                                     {
                                                                         pseudo:props.user,
                                                                         image:e+"_2",
-                                                                        stade:1,
+                                                                        stade:2,
                                                                         description:"100% du set "+response.data[0].fullName+" - Lvl.2",
                                                                         booster:e
                                                                     })
@@ -357,7 +357,7 @@ function CardsShop(props) {
                                                                     {
                                                                         pseudo:props.user,
                                                                         image:e+"_3",
-                                                                        stade:1,
+                                                                        stade:3,
                                                                         description:"100% du set "+response.data[0].fullName+" - Lvl.3",
                                                                         booster:e
                                                                     })
@@ -373,7 +373,7 @@ function CardsShop(props) {
                                                                     {
                                                                         pseudo:props.user,
                                                                         image:e+"_4",
-                                                                        stade:1,
+                                                                        stade:4,
                                                                         description:"100% du set "+response.data[0].fullName+" - Lvl.4",
                                                                         booster:e
                                                                     })
