@@ -925,7 +925,7 @@ function Profil(props) {
                                 </button>
                             </span>
                                     <div
-                                        style={{width: "max-content", left: "-20px", position: "absolute", top: "85px"}}
+                                        style={{width: "max-content", left: "-35px", position: "absolute", top: "85px"}}
                                         className={"xpText"}>
                                         <p style={{fontSize: "13px", textAlign: "left", width: "fit-content"}}
                                            className={"levelProfil"}>N.{profil[0].level}</p>
