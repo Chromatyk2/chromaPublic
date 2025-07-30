@@ -157,19 +157,19 @@ function Profil(props) {
             setBadgesListFiltered(null);
         }
         if(e.target.value == "pokedex"){
-            const regex = new RegExp('/lv\d{1,2}$/');
+            const regex = /lv\d{1,2}$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "cartes"){
-            const regex = new RegExp('/lv\d{1,2}c$/');
+            const regex = /lv\d{1,2}c$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "pokemon"){
-            const regex = new RegExp('/pokemon\d{1,4}$/');
+            const regex = /pokemon\d{1,4}$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "shiny"){
-            const regex = new RegExp('^lv\d{1,2}s$');
+            const regex = /lv\d{1,2}s$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
     }
