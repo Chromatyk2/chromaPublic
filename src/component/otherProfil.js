@@ -485,11 +485,11 @@ function Profil(props) {
                         flexWrap: "wrap",
                         justifyContent: "center"
                     }}>
-                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"all"}>Tous</button>
-                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"pokedex"}>Pokédex</button>
-                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"cartes"}>Cartes</button>
-                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
-                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"shiny"}>Shiny</button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"all"}>Tous</button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"pokedex"}>Pokédex</button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"cartes"}>Cartes</button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"shiny"}>Shiny</button>
                     </div>
                     <div style={{
                         overflow: "overlay",
