@@ -490,8 +490,7 @@ function Profil(props) {
                         <button onClick={filteredBadges} value={"cartes"}>Cartes</button>
                         <button onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
                         <button onClick={filteredBadges}value={"shiny"}>Shiny</button>
-                        {badgesList &&
-                            badgesListFiltered ?
+                        {badgesListFiltered ?
                             badgesListFiltered.map((val, key) => {
                                 return (
                                     <>
@@ -511,6 +510,7 @@ function Profil(props) {
                                 )
                             })
                             :
+                            badgesList &&
                             badgesList.map((val, key) => {
                                 return (
                                     <>
