@@ -52,6 +52,7 @@ function Profil(props) {
     const [myTotalsCards, setMyTotalsCards] = useState(null);
     const [myLastTenCards, setMyLastTenCards] = useState(null);
     const [badgesList, setBadgesList] = useState(null);
+    const [badgesListFiltered, setBadgesListFiltered] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalIsOpenBadge, setIsOpenBadge] = React.useState(false);
     const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
@@ -157,6 +158,27 @@ function Profil(props) {
                         })
                 }
             })
+    }
+    function filteredBadges(e) {
+        if(e.target.value == "all"){
+            setBadgesListFiltered(null);
+        }
+        if(e.target.value == "pokedex"){
+            const regex = /lv\d{1,2}$/gi;
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
+        }
+        if(e.target.value == "cartes"){
+            const regex = /lv\d{1,2}c$/gi;
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
+        }
+        if(e.target.value == "pokemon"){
+            const regex = /pokemon\d{1,4}$/gi;
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
+        }
+        if(e.target.value == "shiny"){
+            const regex = /lv\d{1,2}s$/gi;
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
+        }
     }
     function openModalZero(e, f) {
         setBadgeToWinStade(e)
@@ -1152,7 +1174,8 @@ function Profil(props) {
                 </div>
             </Modal>
 
-            <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles} contentLabel="Example Modal">
+            <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles}
+                   contentLabel="Example Modal">
                 <p style={{textAlign: "center"}}>Choisis ton Badge</p>
                 <div style={{
                     overflow: "overlay",
@@ -1162,26 +1185,66 @@ function Profil(props) {
                     flexWrap: "wrap",
                     justifyContent: "center"
                 }}>
-                    {badgesList &&
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"all"}>Tous
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"pokedex"}>Pokédex
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"cartes"}>Cartes
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"pokemon"}>Pokémon
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"shiny"}>Shiny
+                    </button>
+                </div>
+                <div style={{
+                    overflow: "overlay",
+                    display: "flex",
+                    gap: "10px",
+                    flexFlow: "row",
+                    flexWrap: "wrap",
+                    justifyContent: "center"
+                }}>
+                    {badgesListFiltered ?
+                        badgesListFiltered.map((val, key) => {
+                            return (
+                                <>
+                                    <button value={val.image} style={{
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                        backgroundSize: "contain",
+                                        border: "none",
+                                        borderRadius: "25px",
+                                        padding: "20px",
+                                        width: "100px",
+                                        height: "100px",
+                                        backgroundColor: "transparent"
+                                    }}></button>
+                                </>
+                            )
+                        })
+                        :
+                        badgesList &&
                         badgesList.map((val, key) => {
                             return (
                                 <>
-                                    <button className={"anchorTooltip"} data-tooltip-content={badgesList.find((item) => item.image === profil[0].badge).description}
-                                            value={val.image}
-                                            style={{
-                                                backgroundPosition: "center",
-                                                backgroundRepeat: "no-repeat",
-                                                backgroundImage: "url(/Ribbon/" + val.image + ".png)",
-                                                backgroundSize:"contain",
-                                                border: "none",
-                                                borderRadius: "25px",
-                                                padding: "20px",
-                                                width: "100px",
-                                                height: "100px",
-                                                backgroundColor:"transparent"
-                                            }}
-                                            onClick={changeBadge}>
-                                    </button>
+                                    <button value={val.image} style={{
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                        backgroundSize: "contain",
+                                        border: "none",
+                                        borderRadius: "25px",
+                                        padding: "20px",
+                                        width: "100px",
+                                        height: "100px",
+                                        backgroundColor: "transparent"
+                                    }}></button>
                                 </>
                             )
                         })
