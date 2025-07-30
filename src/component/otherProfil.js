@@ -141,6 +141,7 @@ function Profil(props) {
                                             setList(response.data);
                                             setPourcent(Math.round((response.data.length / 1025) * 100));
                                             setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
+                                            console.log(response.data.filter(item => item.shiny == 1).length);
                                         })
                                 })
                         })
