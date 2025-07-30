@@ -1069,7 +1069,7 @@ function Profil(props) {
                                             { pourcentShiny > 0 &&
                                                 <img style={{width: "110px"}} className="anchorTooltip"
                                                      data-tooltip-content={pourcentShiny + " Shiny obtenus !"}
-                                                     src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcent >= 400 ? Lv10s : pourcent >= 350 ? Lv9s : pourcent >= 300 ? Lv8s : pourcent >= 250 ? Lv7s : pourcent >= 200 ? Lv6s : pourcent >= 150 ? Lv5s : pourcent >= 100 ? Lv4s : pourcent >= 50 ? Lv3s : pourcent >= 10 && pourcent < 50 ? Lv2s : Lv1s}/>
+                                                     src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcentShiny >= 400 ? Lv10s : pourcentShiny >= 350 ? Lv9s : pourcentShiny >= 300 ? Lv8s : pourcentShiny >= 250 ? Lv7s : pourcentShiny >= 200 ? Lv6s : pourcentShiny >= 150 ? Lv5s : pourcentShiny >= 100 ? Lv4s : pourcentShiny >= 50 ? Lv3s : pourcentShiny >= 10  ? Lv2s : Lv1s}/>
                                             }
                                         </div>
                                     </div>
