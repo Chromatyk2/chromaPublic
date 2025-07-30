@@ -1052,7 +1052,7 @@ function Profil(props) {
                                     <div style={{display: "flex", flexWrap: "wrap"}}>
                                         <div className={"profilVisualsCard"}>
                                             <p style={{marginTop: "20px", marginBottom: "20px"}}
-                                               className={"pseudoProfil"}>Statistiques</p>
+                                               className={"pseudoProfil"}>Statistiques</p><br/>
                                             <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                                             { pourcentCard > 0 &&
                                                 <img style={{width: "110px"}} className="anchorTooltip"
@@ -1066,7 +1066,7 @@ function Profil(props) {
                                             }
                                             { pourcentShiny > 0 &&
                                                 <img style={{width: "110px"}} className="anchorTooltip"
-                                                     data-tooltip-content={pourcentShiny + "Shiny obtenus !"}
+                                                     data-tooltip-content={pourcentShiny + " Shiny obtenus !"}
                                                      src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcent >= 400 ? Lv10s : pourcent >= 350 ? Lv9s : pourcent >= 300 ? Lv8s : pourcent >= 250 ? Lv7s : pourcent >= 200 ? Lv6s : pourcent >= 150 ? Lv5s : pourcent >= 100 ? Lv4s : pourcent >= 50 ? Lv3s : pourcent >= 10 ? Lv2s : Lv1s}/>
                                             }
                                             </div>
