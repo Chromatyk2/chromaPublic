@@ -485,11 +485,20 @@ function Profil(props) {
                         flexWrap: "wrap",
                         justifyContent: "center"
                     }}>
-                        <button onClick={filteredBadges} value={"all"}>Tous</button>
-                        <button onClick={filteredBadges} value={"pokedex"}>Pokédex</button>
-                        <button onClick={filteredBadges} value={"cartes"}>Cartes</button>
-                        <button onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
-                        <button onClick={filteredBadges}value={"shiny"}>Shiny</button>
+                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"all"}>Tous</button>
+                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"pokedex"}>Pokédex</button>
+                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"cartes"}>Cartes</button>
+                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
+                        <button style={{border: "none", background: "none", width: "fit-content"}} onClick={filteredBadges} value={"shiny"}>Shiny</button>
+                    </div>
+                    <div style={{
+                        overflow: "overlay",
+                        display: "flex",
+                        gap: "10px",
+                        flexFlow: "row",
+                        flexWrap: "wrap",
+                        justifyContent: "center"
+                    }}>
                         {badgesListFiltered ?
                             badgesListFiltered.map((val, key) => {
                                 return (
