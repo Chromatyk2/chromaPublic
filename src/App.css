@@ -5533,7 +5533,6 @@ button.navbar-toggler.collapsed {
     box-shadow: 0 -6px 5px #000;
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
     gap: 0;
     justify-content: space-around;
     padding: 10px;
