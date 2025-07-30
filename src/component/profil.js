@@ -1051,8 +1051,8 @@ function Profil(props) {
                                 <>
                                     <div style={{display: "flex", flexWrap: "wrap"}}>
                                         <div className={"profilVisualsCard"}>
-                                            <p style={{marginTop: "20px", marginBottom: "20px"}}
-                                               className={"pseudoProfil"}>Statistiques</p><br/>
+                                            <p style={{marginTop: "20px", marginBottom: "20px", width:"100%"}}
+                                               className={"pseudoProfil"}>Statistiques</p>
                                             <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                                             { pourcentCard > 0 &&
                                                 <img style={{width: "110px"}} className="anchorTooltip"
