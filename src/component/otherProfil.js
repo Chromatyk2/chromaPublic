@@ -495,6 +495,26 @@ function Profil(props) {
                         <button value={"pokemon"}>Pokémon</button>
                         <button value={"shiny"}>Shiny</button>
                         {badgesList &&
+                            badgesListFiltered ?
+                            badgesListFiltered.map((val, key) => {
+                                return (
+                                    <>
+                                        <button value={val.image} style={{
+                                            backgroundPosition: "center",
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                            backgroundSize: "contain",
+                                            border: "none",
+                                            borderRadius: "25px",
+                                            padding: "20px",
+                                            width: "100px",
+                                            height: "100px",
+                                            backgroundColor: "transparent"
+                                        }}></button>
+                                    </>
+                                )
+                            })
+                            :
                             badgesList.map((val, key) => {
                                 return (
                                     <>
