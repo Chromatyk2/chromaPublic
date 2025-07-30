@@ -31,6 +31,19 @@ import Lv10c from "../lv10c.png";
 import Lv9c from "../lv9c.png";
 import Lv8c from "../lv8c.png";
 import Lv7c from "../lv7c.png";
+import Lv13s from "../lv13s.png";
+import Lv12s from "../lv12s.png";
+import Lv11s from "../lv11s.png";
+import Lv10s from "../lv10s.png";
+import Lv9s from "../lv9s.png";
+import Lv8s from "../lv8s.png";
+import Lv7s from "../lv7s.png";
+import Lv6s from "../lv6s.png";
+import Lv5s from "../lv5s.png";
+import Lv4s from "../lv4s.png";
+import Lv3s from "../lv3s.png";
+import Lv2s from "../lv2s.png";
+import Lv1s from "../lv1s.png";
 function Profil(props) {
     const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
     const { pseudo } = useParams()
@@ -48,6 +61,7 @@ function Profil(props) {
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [openTime, setOpenTime] = React.useState(false);
     const [isLoad, setIsLoad] = React.useState(true);
+    const [pourcentShiny, setPourcentShiny] = useState();
     useEffect(() => {
         const progressBars = document.querySelectorAll('.progress-container');
 
@@ -126,6 +140,7 @@ function Profil(props) {
                                         .then(function(response){
                                             setList(response.data);
                                             setPourcent(Math.round((response.data.length / 1025) * 100));
+                                            setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
                                         })
                                 })
                         })
@@ -412,65 +427,32 @@ function Profil(props) {
                                     className="anchorTooltip uniquePokemonContainerTeam">
                                 </button>
                             </div>
-                            {pourcentCard > 0 &&
-                                <>
+                            <>
+                                <div style={{display: "flex", flexWrap: "wrap"}}>
                                     <div className={"profilVisualsCard"}>
+                                        <p style={{marginTop: "20px", marginBottom: "20px", width:"100%"}}
+                                           className={"pseudoProfil"}>Statistiques</p>
+                                    </div>
+                                    <div style={{display:"flex", justifyContent:"space-around", marginBottom:"40px", width:"100%"}}>
                                         <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
-                                        <img style={{width: "110px"}} className="anchorTooltip"
-                                             data-tooltip-content={pourcentCard + "% du Cartodex Complété"}
-                                             src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
+                                        { pourcentCard > 0 &&
+                                            <img style={{width: "110px"}} className="anchorTooltip"
+                                                 data-tooltip-content={pourcent + "% du Pokedex Complété"}
+                                                 src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
+                                        }
+                                        { pourcentCard > 0 &&
+                                            <img style={{width: "110px"}} className="anchorTooltip"
+                                                 data-tooltip-content={pourcentCard + "% du Cartodex Complété"}
+                                                 src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
+                                        }
+                                        { pourcentShiny > 0 &&
+                                            <img style={{width: "110px"}} className="anchorTooltip"
+                                                 data-tooltip-content={pourcentShiny + " Shiny obtenus !"}
+                                                 src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcentShiny >= 400 ? Lv10s : pourcentShiny >= 350 ? Lv9s : pourcentShiny >= 300 ? Lv8s : pourcentShiny >= 250 ? Lv7s : pourcentShiny >= 200 ? Lv6s : pourcentShiny >= 150 ? Lv5s : pourcentShiny >= 100 ? Lv4s : pourcentShiny >= 50 ? Lv3s : pourcentShiny >= 10  ? Lv2s : Lv1s}/>
+                                        }
                                     </div>
-                                    <p style={{marginTop: "20px", marginBottom: "20px"}}
-                                       className={"pseudoProfil"}>Dernier Booster</p>
-                                    <div style={{display: "flex", flexWrap: "wrap"}}>
-                                        <img style={{width: "130px"}}
-                                             src={"/Boosters/" + myLastTenCards[0].booster + ".png"}/>
-                                        <div className={"profilCards"}>
-                                            {myLastTenCards.sort((a, b) => b.stade - a.stade).map((val, key) => {
-                                                {
-                                                    if (val.number !== null && val.block !== null) {
-                                                        if (val.booster.startsWith("sv")) {
-                                                            var cardNumber = val.number.toString().padStart(3, '0');
-                                                        } else {
-                                                            var cardNumber = val.number;
-                                                        }
-                                                        return (
-                                                            <img
-                                                                number={val.number}
-                                                                booster={val.booster}
-                                                                block={val.block}
-                                                                className={val.stade == 4 ? "profilCard glowGetRainbow" : "profilCard"}
-                                                                onError={errorImage}
-                                                                alt="Grapefruit slice atop a pile of other slices"
-                                                                style={{filter: val.stade == 1 ? "drop-shadow(rgb(17, 208, 154) 0px 0px 5px) drop-shadow(rgb(17, 210, 154) 0px 0px 5px) drop-shadow(rgb(17, 208, 154) 0px 0px 5px)" : val.stade == 2 ? "drop-shadow(rgb(14, 208, 214) 0px 0px 3px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px) drop-shadow(rgb(14, 208, 214) 0px 0px 5px)" : val.stade == 3 && "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"}}
-                                                                src={"https://assets.tcgdex.net/fr/" + val.block + "/" + val.booster + "/" + cardNumber + "/high.png"}/>
-
-                                                        )
-                                                    }
-                                                }
-                                            })
-
-                                            }
-                                        </div>
-                                    </div>
-                                </>
-                            }
-                            <p style={{marginTop: "20px", marginBottom: "20px"}}
-                               className={"pseudoProfil"}>Mes Badges</p>
-                            <div style={{margin: "20px",padding: "35px",display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
-                                {badgesList &&
-                                    badgesList.map((val, key) => {
-                                        return (
-                                            <>
-                                                <img data-tooltip-content={val.description} className={"anchorTooltip"}
-                                                     style={{width: "150px"}}
-                                                     src={"/Ribbon/"+val.image+".png"}/>
-                                                <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
-                                            </>
-                                        )
-                                    })
-                                }
-                            </div>
+                                </div>
+                            </>
                         </>
                     }
                 </div>
