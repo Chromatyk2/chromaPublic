@@ -50,6 +50,7 @@ function Profil(props) {
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
     const [badgesList, setBadgesList] = useState(null);
+    const [badgesListFiltered, setBadgesListFiltered] = useState(null);
     const [myTotalsCards, setMyTotalsCards] = useState(null);
     const [myLastTenCards, setMyLastTenCards] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -150,6 +151,31 @@ function Profil(props) {
     function closeModalToken() {
         Axios.get("/api/getProfil/"+pseudo)
         setIsOpenToken(false);
+    }
+    function filteredBadges(e) {
+        if(e.target.value == "all"){
+            badgesListFiltered(null);
+        }
+        if(e.target.value == "pokedex"){
+            badgesListFiltered(null);
+            const regex = new RegExp('^lv[0-9][0-9]');
+            badgesListFiltered(badgesList.filter(item => item.image == regex));
+        }
+        if(e.target.value == "cartes"){
+            badgesListFiltered(null);
+            const regex = new RegExp('^lv[0-9][0-9]c');
+            badgesListFiltered(badgesList.filter(item => item.image == regex));
+        }
+        if(e.target.value == "pokemon"){
+            badgesListFiltered(null);
+            const regex = new RegExp('^pokemon[0-9][0-9][0-9][0-9]');
+            badgesListFiltered(badgesList.filter(item => item.image == regex));
+        }
+        if(e.target.value == "shiny"){
+            badgesListFiltered(null);
+            const regex = new RegExp('^lv[0-9][0-9]s');
+            badgesListFiltered(badgesList.filter(item => item.image == regex));
+        }
     }
     useEffect(() => {
         Axios
@@ -463,22 +489,26 @@ function Profil(props) {
                         flexWrap: "wrap",
                         justifyContent: "center"
                     }}>
+                        <button value={"all"}>Tous</button>
+                        <button value={"pokedex"}>Pokédex</button>
+                        <button value={"cartes"}>Cartes</button>
+                        <button value={"pokemon"}>Pokémon</button>
+                        <button value={"shiny"}>Shiny</button>
                         {badgesList &&
                             badgesList.map((val, key) => {
                                 return (
                                     <>
-
                                         <button value={val.image} style={{
                                             backgroundPosition: "center",
                                             backgroundRepeat: "no-repeat",
                                             backgroundImage: "url(/Ribbon/" + val.image + ".png)",
-                                            backgroundSize:"contain",
+                                            backgroundSize: "contain",
                                             border: "none",
                                             borderRadius: "25px",
                                             padding: "20px",
                                             width: "100px",
                                             height: "100px",
-                                            backgroundColor:"transparent"
+                                            backgroundColor: "transparent"
                                         }}></button>
                                     </>
                                 )
