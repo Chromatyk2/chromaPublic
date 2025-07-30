@@ -1166,19 +1166,22 @@ function Profil(props) {
                         badgesList.map((val, key) => {
                             return (
                                 <>
-
-                                    <button value={val.image} style={{
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundImage: "url(/Ribbon/" + val.image + ".png)",
-                                        backgroundSize:"contain",
-                                        border: "none",
-                                        borderRadius: "25px",
-                                        padding: "20px",
-                                        width: "100px",
-                                        height: "100px",
-                                        backgroundColor:"transparent"
-                                    }} onClick={changeBadge}></button>
+                                    <button className={"anchorTooltip"} data-tooltip-content={badgesList.find((item) => item.image === profil[0].badge).description}
+                                            value={val.image}
+                                            style={{
+                                                backgroundPosition: "center",
+                                                backgroundRepeat: "no-repeat",
+                                                backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                                backgroundSize:"contain",
+                                                border: "none",
+                                                borderRadius: "25px",
+                                                padding: "20px",
+                                                width: "100px",
+                                                height: "100px",
+                                                backgroundColor:"transparent"
+                                            }}
+                                            onClick={changeBadge}>
+                                    </button>
                                 </>
                             )
                         })
