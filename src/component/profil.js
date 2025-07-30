@@ -42,6 +42,8 @@ import Lv8s from "../lv8s.png";
 import Lv9s from "../lv9s.png";
 import Lv10s from "../lv10s.png";
 import Lv11s from "../lv11s.png";
+import Lv12s from "../lv12s.png";
+import Lv13s from "../lv13s.png";
 import $ from "jquery";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
@@ -58,6 +60,7 @@ function Profil(props) {
     const [list,setList] = useState([]);
     const [pourcent, setPourcent] = useState();
     const [pourcentCard, setPourcentCard] = useState();
+    const [pourcentShiny, setPourcentShiny] = useState();
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [openTime, setOpenTime] = React.useState(false);
     const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
@@ -226,7 +229,7 @@ function Profil(props) {
                 setProfil(response.data);
                 Axios.get("/api/getMyTotalCards/" + pseudo)
                     .then(function (response) {
-                        setPourcentCard(Math.abs((response.data[0].nbCard / 15937) * 100));
+                        setPourcentCard(Math.round((response.data[0].nbCard / 15937) * 100));
                         const pourcentCard = Math.abs((response.data[0].nbCard / 15937) * 100);
                         setMyTotalsCards(response.data)
                         Axios.get("/api/getMyLastTenCards/" + pseudo)
@@ -239,6 +242,7 @@ function Profil(props) {
                                         setPourcent(Math.round((response.data.length / 1025) * 100));
                                         const pourcent = Math.round((response.data.length / 1025) * 100);
                                         const pourcentShiny = response.data.filter(item => item.shiny == 1).length;
+                                        setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
                                         Axios
                                             .get("/api/getBadgesByUser/" + pseudo)
                                             .then(function (response) {
@@ -1044,25 +1048,30 @@ function Profil(props) {
                                     className="anchorTooltip uniquePokemonContainerTeam">
                                 </button>
                             </div>
-                            { pourcentCard > 0 &&
                                 <>
-                                    <p style={{marginTop: "20px", marginBottom: "20px"}} className={"pseudoProfil"}>Statistiques</p>
                                     <div style={{display: "flex", flexWrap: "wrap"}}>
                                         <div className={"profilVisualsCard"}>
+                                            <p style={{marginTop: "20px", marginBottom: "20px"}}
+                                               className={"pseudoProfil"}>Statistiques</p>
                                             <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
-                                            <img style={{width: "110px"}} className="anchorTooltip"
-                                                 data-tooltip-content={pourcent + "% du Pokedex Complété"}
-                                                 src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
-                                            <img style={{width: "110px"}} className="anchorTooltip"
-                                                 data-tooltip-content={pourcentCard + "% du Cartodex Complété"}
-                                                 src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
-                                            <img style={{width: "110px"}} className="anchorTooltip"
-                                                 data-tooltip-content={pourcent + "% du Pokedex Complété"}
-                                                 src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
-                                        </div>
+                                            { pourcentCard > 0 &&
+                                                <img style={{width: "110px"}} className="anchorTooltip"
+                                                     data-tooltip-content={pourcent + "% du Pokedex Complété"}
+                                                     src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
+                                            }
+                                            { pourcentCard > 0 &&
+                                                <img style={{width: "110px"}} className="anchorTooltip"
+                                                     data-tooltip-content={pourcentCard + "% du Cartodex Complété"}
+                                                     src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
+                                            }
+                                            { pourcentShiny > 0 &&
+                                                <img style={{width: "110px"}} className="anchorTooltip"
+                                                     data-tooltip-content={pourcentShiny + "Shiny obtenus !"}
+                                                     src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcent >= 400 ? Lv10s : pourcent >= 350 ? Lv9s : pourcent >= 300 ? Lv8s : pourcent >= 250 ? Lv7s : pourcent >= 200 ? Lv6s : pourcent >= 150 ? Lv5s : pourcent >= 100 ? Lv4s : pourcent >= 50 ? Lv3s : pourcent >= 10 ? Lv2s : Lv1s}/>
+                                            }
+                                            </div>
                                     </div>
                                 </>
-                            }
                         </>
                     }
                 </div>
