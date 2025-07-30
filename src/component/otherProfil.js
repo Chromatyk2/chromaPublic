@@ -141,7 +141,6 @@ function Profil(props) {
                                             setList(response.data);
                                             setPourcent(Math.round((response.data.length / 1025) * 100));
                                             setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
-                                            console.log(response.data.filter(item => item.shiny == 1).length);
                                         })
                                 })
                         })
@@ -169,6 +168,7 @@ function Profil(props) {
                                     .then(function(response){
                                         setList(response.data);
                                         setPourcent(Math.round((response.data.length / 1025) * 100));
+                                        setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
                                         Axios
                                             .get("/api/getBadgesByUser/"+pseudo)
                                             .then(function(response){
@@ -355,16 +355,12 @@ function Profil(props) {
                                            className={"levelProfil"}>{profil[0].xp + " / " + profil[0].level * 25}</p>
                                     </div>
                                 </div>
-
-                                    <div className="anchorTooltip"
-                                         data-tooltip-content={profil[0].badge !== null ? badgesList.find((item) => item.image === profil[0].badge).description : "Pas de badge"}
-                                         style={{width: "120px"}}>
-                                        {profil[0].badge !== null &&
-                                            <img style={{width: "110px"}} className="anchorTooltip"
-                                                 data-tooltip-content={badgesList.find((item) => item.image === profil[0].badge).description}
-                                                 src={"/Ribbon/" + profil[0].badge + ".png"}/>
-                                        }
-                                    </div>
+                                <button
+                                    data-tooltip-content={profil[0].badge !== null ? badgesList.find((item) => item.image === profil[0].badge).description : "Ajoute un badge"}
+                                    style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/' + profil[0].badge + '.png)' : 'url(/images/random.png)'}}
+                                    onClick={handleBadge} value={"first_pokemon"}
+                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                </button>
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
                             <p className={"pseudoProfil"}>Mon équipe</p>
