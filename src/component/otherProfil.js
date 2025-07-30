@@ -154,27 +154,23 @@ function Profil(props) {
     }
     function filteredBadges(e) {
         if(e.target.value == "all"){
-            badgesListFiltered(null);
+            setBadgesListFiltered(null);
         }
         if(e.target.value == "pokedex"){
-            badgesListFiltered(null);
             const regex = new RegExp('^lv[0-9][0-9]');
-            badgesListFiltered(badgesList.filter(item => item.image == regex));
+            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
         }
         if(e.target.value == "cartes"){
-            badgesListFiltered(null);
             const regex = new RegExp('^lv[0-9][0-9]c');
-            badgesListFiltered(badgesList.filter(item => item.image == regex));
+            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
         }
         if(e.target.value == "pokemon"){
-            badgesListFiltered(null);
             const regex = new RegExp('^pokemon[0-9][0-9][0-9][0-9]');
-            badgesListFiltered(badgesList.filter(item => item.image == regex));
+            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
         }
         if(e.target.value == "shiny"){
-            badgesListFiltered(null);
             const regex = new RegExp('^lv[0-9][0-9]s');
-            badgesListFiltered(badgesList.filter(item => item.image == regex));
+            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
         }
     }
     useEffect(() => {
@@ -489,11 +485,11 @@ function Profil(props) {
                         flexWrap: "wrap",
                         justifyContent: "center"
                     }}>
-                        <button value={"all"}>Tous</button>
-                        <button value={"pokedex"}>Pokédex</button>
-                        <button value={"cartes"}>Cartes</button>
-                        <button value={"pokemon"}>Pokémon</button>
-                        <button value={"shiny"}>Shiny</button>
+                        <button onClick={filteredBadges} value={"all"}>Tous</button>
+                        <button onClick={filteredBadges} value={"pokedex"}>Pokédex</button>
+                        <button onClick={filteredBadges} value={"cartes"}>Cartes</button>
+                        <button onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
+                        <button onClick={filteredBadges}value={"shiny"}>Shiny</button>
                         {badgesList &&
                             badgesListFiltered ?
                             badgesListFiltered.map((val, key) => {
