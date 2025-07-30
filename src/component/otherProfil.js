@@ -157,20 +157,20 @@ function Profil(props) {
             setBadgesListFiltered(null);
         }
         if(e.target.value == "pokedex"){
-            const regex = new RegExp('^lv[0-9][0-9]');
-            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
+            const regex = new RegExp('/lv\d{1,2}$/');
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "cartes"){
-            const regex = new RegExp('^lv[0-9][0-9]c');
-            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
+            const regex = new RegExp('/lv\d{1,2}c$/');
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "pokemon"){
-            const regex = new RegExp('^pokemon[0-9][0-9][0-9][0-9]');
-            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
+            const regex = new RegExp('/pokemon\d{1,4}$/');
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "shiny"){
-            const regex = new RegExp('^lv[0-9][0-9]s');
-            setBadgesListFiltered(badgesList.filter(item => item.image == regex));
+            const regex = new RegExp('^lv\d{1,2}s$');
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
     }
     useEffect(() => {
