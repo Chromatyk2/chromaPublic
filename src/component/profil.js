@@ -1134,12 +1134,14 @@ function Profil(props) {
                 </div>
             </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <p style={{textAlign: "center"}}>Choisis ton Skin <button style={{
+                <p style={{textAlign: "center",display: "flex",justifyContent: "center",gap: "10px"}}>Choisis ton Skin <button style={{
                     background: "none", border: "none",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     backgroundImage: "url(/images/shuffle.png)",
                     backgroundSize: "contain",
+                    width: "25px",
+                    height: "25px"
                 }} onClick={changeSkinRandom}></button></p>
                 {profil &&
                     profil.length > 0 &&
@@ -1215,12 +1217,14 @@ function Profil(props) {
 
             <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles}
                    contentLabel="Example Modal">
-                    <p style={{textAlign: "center"}}>Choisis ton Badge
+                    <p style={{textAlign: "center",display: "flex",justifyContent: "center",gap: "10px"}}>Choisis ton Badge
                         <button style={{background: "none", border: "none",
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
                             backgroundImage: "url(/images/shuffle.png)",
-                            backgroundSize: "contain",}} onClick={changeBadgeRandom}></button>
+                            backgroundSize: "contain",
+                            width: "25px",
+                            height: "25px"}} onClick={changeBadgeRandom}></button>
                     </p>
                 <div style={{
                     overflow: "overlay",
