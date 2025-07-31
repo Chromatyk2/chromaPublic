@@ -50,7 +50,7 @@ function SpawnPokemon(props) {
                                 pseudo: queryParameters.get("pseudo"),
                                 image: "rare"+rareBadgeValue,
                                 stade: 0,
-                                description: "Badge obtenu en capturant "+name+" !"
+                                description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
                             })
                     }else if(getBadge == 16 && tokenBonus != 0){
                         setGetBadge(true);
