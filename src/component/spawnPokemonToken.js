@@ -3,6 +3,7 @@ import '../App.css'
 import Axios from "axios";
 import moment from "moment/moment";
 import card from "../cards.png"
+import $ from "jquery";
 function SpawnPokemonToken(props) {
     const pseudo = props.pseudo;
     const [pokemon, setPokemon] = useState([])
@@ -33,115 +34,45 @@ function SpawnPokemonToken(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    const isLegendary = Math.floor((Math.random() * 3) + 1);
-                    const isMythical = Math.floor((Math.random() * 5) + 1);
-                    const queryParameters = new URLSearchParams(window.location.search)
-                    const isShiny = Math.floor((Math.random() * 100) + 1);
-                    const name = result.names.find((element) => element.language.name == "fr").name;
-                    const getBadge = Math.floor((Math.random() * 30) + 1);
-                    const getRareBadge = Math.floor((Math.random() * 1360) + 1);
-                    setGetPkmId(result.id);
-                    if(getRareBadge == 22 && tokenBonus != 0){
-                        var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
-                        setGetRareBadgeId(rareBadgeValue);
-                        while (response.data.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
-                            rareBadgeValue = Math.floor((Math.random() * 10) + 1);
-                        }
-                        Axios.post('/api/addBadge',
-                            {
-                                pseudo: pseudo,
-                                image: "rare"+rareBadgeValue,
-                                stade: 0,
-                                description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
-                            })
-                    }else if(getBadge == 16 && tokenBonus != 0 && response.data.filter(item => item.image == "pokemon"+result.id).length == 0){
-                        setGetBadge(true);
-                        Axios.post('/api/addBadge',
-                            {
-                                pseudo: pseudo,
-                                image: "pokemon"+result.id,
-                                stade: 0,
-                                description: "Badge obtenu en capturant "+name+" !"
-                            })
-                    }
-                    switch (result.is_legendary){
-                        case true:
-                            switch (isLegendary){
-                                case 1 :
-                                    setUseBall("master")
-                                    fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
-                                        .then(res => res.json())
-                                        .then(
-                                            (result) => {
-                                                let root = document.querySelector(':root');
-                                                switch (isShiny){
-                                                    case 1 :
-                                                        setIsLoaded(false);
-                                                        setShiny(true);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
-                                                        Axios.post('/api/addXp',
-                                                            {
-                                                                user: pseudo,
-                                                                win: 999999999,
-                                                                wins: 999999999
-                                                            }
-                                                        )
-                                                            .then(function(response){
-                                                                Axios.get("/api/getProfil/"+pseudo)
-                                                                    .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 25){
-                                                                            Axios.post('/api/levelUp',
-                                                                                {
-                                                                                    pseudo: pseudo
-                                                                                }
-                                                                            )
-                                                                        }
-                                                                    })
-                                                            })
-                                                        break;
-                                                    default :
-                                                        setIsLoaded(false);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
-                                                        Axios.post('/api/addXp',
-                                                            {
-                                                                user: pseudo,
-                                                                win: 100,
-                                                                wins: 100
-                                                            }
-                                                        )
-                                                            .then(function(response){
-                                                                Axios.get("/api/getProfil/"+pseudo)
-                                                                    .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 25){
-                                                                            Axios.post('/api/levelUp',
-                                                                                {
-                                                                                    pseudo: pseudo
-                                                                                }
-                                                                            )
-                                                                        }
-                                                                    })
-                                                            })
-                                                }
-                                            },
-                                            (error) => {
-                                                setIsLoaded(true);
-                                                setError(error);
-                                            }
-                                        )
-                                    break;
-                                default:
-                                    console.log("Légendaire Refusé")
-                                    setReloadFetch(reloadFetch + 1);
+                    Axios.get("/api/getBadgesByUser/" + pseudo)
+                        .then(function (response) {
+
+                            const isLegendary = Math.floor((Math.random() * 3) + 1);
+                            const isMythical = Math.floor((Math.random() * 5) + 1);
+                            const queryParameters = new URLSearchParams(window.location.search)
+                            const isShiny = Math.floor((Math.random() * 100) + 1);
+                            const name = result.names.find((element) => element.language.name == "fr").name;
+                            const getBadge = Math.floor((Math.random() * 30) + 1);
+                            const getRareBadge = Math.floor((Math.random() * 1360) + 1);
+                            setGetPkmId(result.id);
+                            if(getRareBadge == 22 && tokenBonus != 0){
+                                var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                setGetRareBadgeId(rareBadgeValue);
+                                while (response.data.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
+                                    rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                }
+                                Axios.post('/api/addBadge',
+                                    {
+                                        pseudo: queryParameters.get("pseudo"),
+                                        image: "rare"+rareBadgeValue,
+                                        stade: 0,
+                                        description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                                    })
+                            }else if(getBadge == 16 && tokenBonus != 0 && response.data.filter(item => item.image == "pokemon"+result.id).length == 0){
+                                setGetBadge(true);
+                                Axios.post('/api/addBadge',
+                                    {
+                                        pseudo: queryParameters.get("pseudo"),
+                                        image: "pokemon"+result.id,
+                                        stade: 0,
+                                        description: "Badge obtenu en capturant "+name+" !"
+                                    })
                             }
-                            break;
-                        default :
-                            switch (result.is_mythical){
+                            switch (result.is_legendary){
                                 case true:
-                                    switch (isMythical){
+                                    switch (isLegendary){
                                         case 1 :
-                                            setUseBall("cherish")
+                                            setUseBall("master")
                                             fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
                                                 .then(res => res.json())
                                                 .then(
@@ -152,21 +83,21 @@ function SpawnPokemonToken(props) {
                                                                 setIsLoaded(false);
                                                                 setShiny(true);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                 Axios.post('/api/addXp',
                                                                     {
-                                                                        user: pseudo,
+                                                                        user: queryParameters.get("pseudo"),
                                                                         win: 999999999,
                                                                         wins: 999999999
                                                                     }
                                                                 )
                                                                     .then(function(response){
-                                                                        Axios.get("/api/getProfil/"+pseudo)
+                                                                        Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
                                                                             .then(function(response){
                                                                                 if(response.data[0].xp >= response.data[0].level * 25){
                                                                                     Axios.post('/api/levelUp',
                                                                                         {
-                                                                                            pseudo: pseudo
+                                                                                            pseudo: queryParameters.get("pseudo")
                                                                                         }
                                                                                     )
                                                                                 }
@@ -176,21 +107,21 @@ function SpawnPokemonToken(props) {
                                                             default :
                                                                 setIsLoaded(false);
                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                 Axios.post('/api/addXp',
                                                                     {
-                                                                        user: pseudo,
-                                                                        win: 300,
-                                                                        wins: 300
+                                                                        user: queryParameters.get("pseudo"),
+                                                                        win: 100,
+                                                                        wins: 100
                                                                     }
                                                                 )
                                                                     .then(function(response){
-                                                                        Axios.get("/api/getProfil/"+pseudo)
+                                                                        Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
                                                                             .then(function(response){
                                                                                 if(response.data[0].xp >= response.data[0].level * 25){
                                                                                     Axios.post('/api/levelUp',
                                                                                         {
-                                                                                            pseudo: pseudo
+                                                                                            pseudo: queryParameters.get("pseudo")
                                                                                         }
                                                                                     )
                                                                                 }
@@ -204,76 +135,154 @@ function SpawnPokemonToken(props) {
                                                     }
                                                 )
                                             break;
-                                        default :
-                                            console.log("Mythique non Autorisé !")
+                                        default:
+                                            console.log("Légendaire Refusé")
                                             setReloadFetch(reloadFetch + 1);
                                     }
                                     break;
-                                default:
-                                    setUseBall(balls[Math.floor(Math.random() * balls.length)])
-                                    fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
-                                        .then(res => res.json())
-                                        .then(
-                                            (result) => {
-                                                let root = document.querySelector(':root');
-                                                switch (isShiny){
-                                                    case 1 :
-                                                        setIsLoaded(false);
-                                                        setShiny(true);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
-                                                        Axios.post('/api/addXp',
-                                                            {
-                                                                user: pseudo,
-                                                                win: 999999999,
-                                                                wins: 999999999
+                                default :
+                                    switch (result.is_mythical){
+                                        case true:
+                                            switch (isMythical){
+                                                case 1 :
+                                                    setUseBall("cherish")
+                                                    fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                                        .then(res => res.json())
+                                                        .then(
+                                                            (result) => {
+                                                                let root = document.querySelector(':root');
+                                                                switch (isShiny){
+                                                                    case 1 :
+                                                                        setIsLoaded(false);
+                                                                        setShiny(true);
+                                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                        Axios.post('/api/addXp',
+                                                                            {
+                                                                                user: queryParameters.get("pseudo"),
+                                                                                win: 999999999,
+                                                                                wins: 999999999
+                                                                            }
+                                                                        )
+                                                                            .then(function(response){
+                                                                                Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                    .then(function(response){
+                                                                                        if(response.data[0].xp >= response.data[0].level * 25){
+                                                                                            Axios.post('/api/levelUp',
+                                                                                                {
+                                                                                                    pseudo: queryParameters.get("pseudo")
+                                                                                                }
+                                                                                            )
+                                                                                        }
+                                                                                    })
+                                                                            })
+                                                                        break;
+                                                                    default :
+                                                                        setIsLoaded(false);
+                                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                        Axios.post('/api/addXp',
+                                                                            {
+                                                                                user: queryParameters.get("pseudo"),
+                                                                                win: 300,
+                                                                                wins: 300
+                                                                            }
+                                                                        )
+                                                                            .then(function(response){
+                                                                                Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                    .then(function(response){
+                                                                                        if(response.data[0].xp >= response.data[0].level * 25){
+                                                                                            Axios.post('/api/levelUp',
+                                                                                                {
+                                                                                                    pseudo: queryParameters.get("pseudo")
+                                                                                                }
+                                                                                            )
+                                                                                        }
+                                                                                    })
+                                                                            })
+                                                                }
+                                                            },
+                                                            (error) => {
+                                                                setIsLoaded(true);
+                                                                setError(error);
                                                             }
                                                         )
-                                                            .then(function(response){
-                                                                Axios.get("/api/getProfil/"+pseudo)
-                                                                    .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 25){
-                                                                            Axios.post('/api/levelUp',
-                                                                                {
-                                                                                    pseudo: pseudo
-                                                                                }
-                                                                            )
-                                                                        }
-                                                                    })
-                                                            })
-                                                        break;
-                                                    default :
-                                                        setIsLoaded(false);
-                                                        root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
-                                                        Axios.post('/api/addXp',
-                                                            {
-                                                                user: pseudo,
-                                                                win: 20,
-                                                                wins: 20
-                                                            }
-                                                        )
-                                                            .then(function(response){
-                                                                Axios.get("/api/getProfil/"+pseudo)
-                                                                    .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 25){
-                                                                            Axios.post('/api/levelUp',
-                                                                                {
-                                                                                    pseudo: pseudo
-                                                                                }
-                                                                            )
-                                                                        }
-                                                                    })
-                                                            })
-                                                }
-                                            },
-                                            (error) => {
-                                                setIsLoaded(true);
-                                                setError(error);
+                                                    break;
+                                                default :
+                                                    console.log("Mythique non Autorisé !")
+                                                    setReloadFetch(reloadFetch + 1);
                                             }
-                                        )
+                                            break;
+                                        default:
+                                            setUseBall(balls[Math.floor(Math.random() * balls.length)])
+                                            fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                                .then(res => res.json())
+                                                .then(
+                                                    (result) => {
+                                                        let root = document.querySelector(':root');
+                                                        switch (isShiny){
+                                                            case 1 :
+                                                                setIsLoaded(false);
+                                                                setShiny(true);
+                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                Axios.post('/api/addXp',
+                                                                    {
+                                                                        user: queryParameters.get("pseudo"),
+                                                                        win: 999999999,
+                                                                        wins: 999999999
+                                                                    }
+                                                                )
+                                                                    .then(function(response){
+                                                                        Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                            .then(function(response){
+                                                                                if(response.data[0].xp >= response.data[0].level * 25){
+                                                                                    Axios.post('/api/levelUp',
+                                                                                        {
+                                                                                            pseudo: queryParameters.get("pseudo")
+                                                                                        }
+                                                                                    )
+                                                                                }
+                                                                            })
+                                                                    })
+                                                                break;
+                                                            default :
+                                                                setIsLoaded(false);
+                                                                root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
+                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                Axios.post('/api/addXp',
+                                                                    {
+                                                                        user: queryParameters.get("pseudo"),
+                                                                        win: 10,
+                                                                        wins: 10
+                                                                    }
+                                                                )
+                                                                    .then(function(response){
+                                                                        Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                            .then(function(response){
+                                                                                if(response.data[0].xp >= response.data[0].level * 25){
+                                                                                    Axios.post('/api/levelUp',
+                                                                                        {
+                                                                                            pseudo: queryParameters.get("pseudo")
+                                                                                        }
+                                                                                    )
+                                                                                }
+                                                                            })
+                                                                    })
+                                                        }
+                                                    },
+                                                    (error) => {
+                                                        setIsLoaded(true);
+                                                        setError(error);
+                                                    }
+                                                )
+                                    }
                             }
-                    }
+                            setTimeout(function (){
+                                $("#pkmLeft").toggleClass('hiddePokemon');
+                                $("#pkmRight").toggleClass('hiddePokemon');
+                            },6500);
+                        })
                 },
                 (error) => {
                     setIsLoaded(true);
