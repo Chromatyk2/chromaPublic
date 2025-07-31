@@ -1002,10 +1002,11 @@ function Profil(props) {
                                 </div>
 
                                 <button
+                                    className="anchorTooltip uniquePokemonContainerTeam"
                                     data-tooltip-content={profil[0].badge !== null ? badgesList.find((item) => item.image === profil[0].badge).description : "Ajoute un badge"}
                                     style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/'+profil[0].badge+'.png)' : 'url(/images/random.png)'}}
                                     onClick={handleBadge} value={"first_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                    >
                                 </button>
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
@@ -1213,7 +1214,10 @@ function Profil(props) {
                         badgesListFiltered.map((val, key) => {
                             return (
                                 <>
-                                    <button value={val.image} style={{
+                                    <button
+                                        className="anchorTooltip"
+                                        data-tooltip-content={val.description}
+                                        onClick={changeBadge} value={val.image} style={{
                                         backgroundPosition: "center",
                                         backgroundRepeat: "no-repeat",
                                         backgroundImage: "url(/Ribbon/" + val.image + ".png)",
@@ -1233,7 +1237,10 @@ function Profil(props) {
                         badgesList.map((val, key) => {
                             return (
                                 <>
-                                    <button value={val.image} style={{
+                                    <button
+                                        className="anchorTooltip"
+                                        data-tooltip-content={val.description}
+                                        onClick={changeBadge} value={val.image} style={{
                                         backgroundPosition: "center",
                                         backgroundRepeat: "no-repeat",
                                         backgroundImage: "url(/Ribbon/" + val.image + ".png)",
