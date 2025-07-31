@@ -30,13 +30,14 @@ function SpawnPokemon(props) {
                 }
             )
         }
-        fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
-            .then(res => res.json())
-            .then(
-                (result) => {
+
                 Axios.get("/api/getBadgesByUser/" + pseudo)
                         .then(function (response) {
-
+                                const badgeList = response.data;
+                                fetch("https://pokeapi.co/api/v2/pokemon-species/"+Math.floor((Math.random() * 1025) + 1))
+                                    .then(res => res.json())
+                                    .then(
+                                        (result) => {
                             const isLegendary = Math.floor((Math.random() * 3) + 1);
                             const isMythical = Math.floor((Math.random() * 5) + 1);
                             const queryParameters = new URLSearchParams(window.location.search)
@@ -48,7 +49,7 @@ function SpawnPokemon(props) {
                             if(getRareBadge == 22 && tokenBonus != 0){
                                 var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
                                 setGetRareBadgeId(rareBadgeValue);
-                                while (response.data.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
+                                while (badgeList.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
                                     rareBadgeValue = Math.floor((Math.random() * 10) + 1);
                                 }
                                 Axios.post('/api/addBadge',
@@ -58,7 +59,7 @@ function SpawnPokemon(props) {
                                         stade: 0,
                                         description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
                                     })
-                            }else if(getBadge == 16 && tokenBonus != 0 && response.data.filter(item => item.image == "pokemon"+result.id).length == 0){
+                            }else if(getBadge == 16 && tokenBonus != 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length == 0){
                                 setGetBadge(true);
                                 Axios.post('/api/addBadge',
                                     {
