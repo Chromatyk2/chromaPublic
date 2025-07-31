@@ -1202,6 +1202,7 @@ function Profil(props) {
                             onClick={filteredBadges} value={"shiny"}>Shiny
                     </button>
                 </div>
+                <Tooltip style={{zIndex: "1000"}} anchorSelect=".anchorTooltipBadge"/>
                 <div style={{
                     overflow: "overlay",
                     display: "flex",
@@ -1215,7 +1216,7 @@ function Profil(props) {
                             return (
                                 <>
                                     <button
-                                        className="anchorTooltip"
+                                        className="anchorTooltipBadge"
                                         data-tooltip-content={val.description}
                                         onClick={changeBadge} value={val.image} style={{
                                         backgroundPosition: "center",
@@ -1238,7 +1239,7 @@ function Profil(props) {
                             return (
                                 <>
                                     <button
-                                        className="anchorTooltip"
+                                        className="anchorTooltipBadge"
                                         data-tooltip-content={val.description}
                                         onClick={changeBadge} value={val.image} style={{
                                         backgroundPosition: "center",

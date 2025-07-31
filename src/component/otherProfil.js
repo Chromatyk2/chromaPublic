@@ -491,6 +491,7 @@ function Profil(props) {
                         <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
                         <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"shiny"}>Shiny</button>
                     </div>
+                    <Tooltip style={{zIndex: "1000"}} anchorSelect=".anchorTooltipBadge"/>
                     <div style={{
                         overflow: "overlay",
                         display: "flex",
@@ -503,7 +504,10 @@ function Profil(props) {
                             badgesListFiltered.map((val, key) => {
                                 return (
                                     <>
-                                        <button value={val.image} style={{
+                                        <button
+                                            className="anchorTooltipBadge"
+                                            data-tooltip-content={val.description}
+                                            value={val.image} style={{
                                             backgroundPosition: "center",
                                             backgroundRepeat: "no-repeat",
                                             backgroundImage: "url(/Ribbon/" + val.image + ".png)",
@@ -523,7 +527,9 @@ function Profil(props) {
                             badgesList.map((val, key) => {
                                 return (
                                     <>
-                                        <button value={val.image} style={{
+                                        <button
+                                            className="anchorTooltipBadge"
+                                            data-tooltip-content={val.description} value={val.image} style={{
                                             backgroundPosition: "center",
                                             backgroundRepeat: "no-repeat",
                                             backgroundImage: "url(/Ribbon/" + val.image + ".png)",
