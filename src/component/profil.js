@@ -837,6 +837,22 @@ function Profil(props) {
                     })
             })
     }
+    function changeBadgeRandom() {
+        Axios.post('/api/updateBadge',
+            {
+                user:pseudo,
+                image:badgesList[Math.floor(Math.random() * badgesList.length)].image
+            }
+        )
+            .then(function(response){
+                Axios
+                    .get("/api/getProfil/"+pseudo)
+                    .then(function(response){
+                        setProfil(response.data);
+                        setOpenBadgeHandle(false);
+                    })
+            })
+    }
     function openSkin(e) {
         if(profil[0].box - 1 > -1){
             Axios.post('/api/removeBoxSkin',
@@ -1177,14 +1193,11 @@ function Profil(props) {
 
             <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles}
                    contentLabel="Example Modal">
-                {badgesList &&
                     <p style={{textAlign: "center"}}>Choisis ton Badge
                         <button style={{background: "none", border: "none"}}
-                                value={badgesList[Math.floor(Math.random() * badgesList.length)].image}
-                                onClick={changeBadge}><i className="fa-solid fa-shuffle" style="color: #ffffff;"></i>
+                                onClick={changeBadgeRandom}><i className="fa-solid fa-shuffle" style="color: #ffffff;"></i>
                         </button>
                     </p>
-                }
                 <div style={{
                     overflow: "overlay",
                     display: "flex",
