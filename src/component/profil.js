@@ -820,6 +820,22 @@ function Profil(props) {
                     })
             })
     }
+    function changeSkinRandom() {
+        Axios.post('/api/updateSkin',
+            {
+                user:pseudo,
+                skin:skins[Math.floor(Math.random() * skins.length)].skin
+            }
+        )
+            .then(function(response){
+                Axios
+                    .get("/api/getProfil/"+pseudo)
+                    .then(function(response){
+                        setProfil(response.data);
+                        setIsOpen(false);
+                    })
+            })
+    }
     function changeBadge(e) {
         const skin = e.target.value;
         Axios.post('/api/updateBadge',
@@ -1118,14 +1134,20 @@ function Profil(props) {
                 </div>
             </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <p style={{textAlign: "center"}}>Choisis ton Skin</p>
+                <p style={{textAlign: "center"}}>Choisis ton Skin <button style={{
+                    background: "none", border: "none",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundImage: "url(/images/shuffle.png)",
+                    backgroundSize: "contain",
+                }} onClick={changeSkinRandom}></button></p>
                 {profil &&
                     profil.length > 0 &&
                     profil[0].box > 0 &&
                     <button className={"openSkinBox"} onClick={openSkin}
                             style={{backgroundImage: "url(/images/skinClose.png)"}}>
                         <div className="infoPkm">
-                            <div className="infoNbBoxSkin">{profil[0].box}</div>
+                        <div className="infoNbBoxSkin">{profil[0].box}</div>
                         </div>
                     </button>
                 }
@@ -1194,7 +1216,11 @@ function Profil(props) {
             <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles}
                    contentLabel="Example Modal">
                     <p style={{textAlign: "center"}}>Choisis ton Badge
-                        <button style={{background: "none", border: "none"}} onClick={changeBadgeRandom}>Shuffle</button>
+                        <button style={{background: "none", border: "none",
+                            backgroundPosition: "center",
+                            backgroundRepeat: "no-repeat",
+                            backgroundImage: "url(/images/shuffle.png)",
+                            backgroundSize: "contain",}} onClick={changeBadgeRandom}></button>
                     </p>
                 <div style={{
                     overflow: "overlay",
