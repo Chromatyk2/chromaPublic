@@ -78,7 +78,7 @@ function OpeningCards(props) {
                 } else {
                     var boosterDex = props.idBooster
                 }
-                fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:' + props.idBooster)
+                fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:' + boosterDexr)
                     .then(res => res.json())
                     .then(
                         (result) => {
