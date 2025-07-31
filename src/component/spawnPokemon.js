@@ -43,8 +43,11 @@ function SpawnPokemon(props) {
                     const getRareBadge = Math.floor((Math.random() * 1360) + 1);
                     setGetPkmId(result.id);
                     if(getRareBadge == 22 && tokenBonus != 0){
-                        const rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                        var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
                         setGetRareBadgeId(rareBadgeValue);
+                        while (response.data.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
+                            rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                        }
                         Axios.post('/api/addBadge',
                             {
                                 pseudo: queryParameters.get("pseudo"),
@@ -52,7 +55,7 @@ function SpawnPokemon(props) {
                                 stade: 0,
                                 description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
                             })
-                    }else if(getBadge == 16 && tokenBonus != 0){
+                    }else if(getBadge == 16 && tokenBonus != 0 && response.data.filter(item => item.image == "pokemon"+result.id).length == 0){
                         setGetBadge(true);
                         Axios.post('/api/addBadge',
                             {
