@@ -1177,7 +1177,7 @@ function Profil(props) {
 
             <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles}
                    contentLabel="Example Modal">
-                <p style={{textAlign: "center"}}>Choisis ton Badge</p>
+                <p style={{textAlign: "center"}}>Choisis ton Badge<button style={{background: "none", border:"none"}} value={badgesListFiltered[Math.floor(Math.random() * badgesListFiltered.length)].image} onClick={changeBadge}><i  className="fa-solid fa-shuffle" style="color: #ffffff;"></i></button></p>
                 <div style={{
                     overflow: "overlay",
                     display: "flex",
