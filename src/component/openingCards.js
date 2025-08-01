@@ -28,9 +28,11 @@ function OpeningCards(props) {
     const [block, setBlock] = useState(null);
     const [things, setThings] = useState(true);
     const [thingsBooster, setThingsBooster] = useState(true);
+    const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
 
     useEffect(() => {
         var tokenBonus = Math.floor(Math.random() * 5);
+        const getRareBadge = Math.floor((Math.random() * 4096) + 1)
         if(tokenBonus === 2){
             setGetToken(true);
             Axios.post('/api/addPkmToken',
@@ -38,6 +40,20 @@ function OpeningCards(props) {
                     user:props.user
                 }
             )
+        }else if(getRareBadge === 16){
+            var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+            setGetRareBadgeId(rareBadgeValue);
+            while (badgeList.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
+                rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+            }
+            Axios.post('/api/addBadge',
+                {
+                    pseudo: pseudo,
+                    image: "rare"+rareBadgeValue,
+                    stade: 0,
+                    description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                })
+
         }
         Axios
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
@@ -595,6 +611,43 @@ function OpeningCards(props) {
                                                 </p>
                                             </>
                                         }
+                                        {getRareBadgeId > -1 &&
+                                            key === 0 &&
+                                            <>
+                                                <img
+                                                    rarity={4}
+                                                    onClick={getLastCard}
+                                                    id={"tokenContainer"}
+                                                    style={{
+                                                        display: "block",
+                                                        position: "absolute",
+                                                        zIndex: "100",
+                                                        top: "-13px",
+                                                        width: "100px",
+                                                        left: "-13px",
+                                                        margin: 0,
+                                                        filter: "drop-shadow(0px 4px 4px black)"
+                                                    }}
+                                                    className={isHidden === true ? "fit-picture dropCards hiddenCards" : "fit-picture dropCards glowGet"}
+                                                    src={"/Ribbon/rare"+getRareBadgeId+".png"}
+                                                    onError={errorImage}
+                                                    alt="Grapefruit slice atop a pile of other slices"/>
+                                                <p style={{
+                                                    color: "white",
+                                                    fontSize: "30px",
+                                                    left: "45px",
+                                                    top: "30px",
+                                                    display: key == 0 ? "block" : "none",
+                                                    position: "absolute",
+                                                    zIndex: "100",
+                                                    width: "100px",
+                                                    margin: 0,
+                                                    filter: "drop-shadow(0px 4px 4px black)",
+                                                    textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
+                                                }}
+                                                   className={isHidden === true ? "fit-picture  hiddenCards" : endPull === true ? "fit-picture showCards gettedCard endPull" : key == 9 ? "fit-picture showCards glowGet" : "fit-picture  glowGet"}>+1
+                                                </p>
+                                            </>}
                                         {val.isNew == 0 &&
                                             <>
                                                 <img

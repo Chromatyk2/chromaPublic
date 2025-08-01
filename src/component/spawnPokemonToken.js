@@ -44,7 +44,7 @@ function SpawnPokemonToken(props) {
                             const isShiny = Math.floor((Math.random() * 100) + 1);
                             const name = result.names.find((element) => element.language.name == "fr").name;
                             const getBadge = Math.floor((Math.random() * 30) + 1);
-                            const getRareBadge = Math.floor((Math.random() * 1360) + 1);
+                            const getRareBadge = Math.floor((Math.random() * 4096) + 1);
                             setGetPkmId(result.id);
                             if(getRareBadge == 22 && tokenBonus != 0){
                                 var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
