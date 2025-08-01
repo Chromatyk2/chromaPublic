@@ -124,8 +124,8 @@ function OpeningCards(props) {
                                                             Axios.post('/api/addXp',
                                                                 {
                                                                     user: props.user,
-                                                                    win: stade*5,
-                                                                    wins: stade*5
+                                                                    win: stade*10,
+                                                                    wins: stade*10
                                                                 }
                                                             )
                                                             .then(function(response){
@@ -211,8 +211,8 @@ function OpeningCards(props) {
                                                 Axios.post('/api/addXp',
                                                     {
                                                         user: props.user,
-                                                        win: stade*5,
-                                                        wins: stade*5
+                                                        win: stade*10,
+                                                        wins: stade*10
                                                     }
                                                 )
                                                     .then(function(response){
