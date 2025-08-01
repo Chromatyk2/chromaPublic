@@ -153,8 +153,8 @@ function OpeningCards(props) {
                                                                 Axios.post('/api/addPowder',
                                                                     {
                                                                         user: props.user,
-                                                                        win: stade * 5,
-                                                                        wins: stade * 5
+                                                                        win: stade * 10,
+                                                                        wins: stade * 10
                                                                     }
                                                                 )
                                                             }
@@ -211,8 +211,8 @@ function OpeningCards(props) {
                                                 Axios.post('/api/addXp',
                                                     {
                                                         user: props.user,
-                                                        win: stade*2,
-                                                        wins: stade*2
+                                                        win: stade*5,
+                                                        wins: stade*5
                                                     }
                                                 )
                                                     .then(function(response){
