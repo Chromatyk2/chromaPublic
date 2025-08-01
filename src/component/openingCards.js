@@ -134,8 +134,8 @@ function OpeningCards(props) {
                                                                 Axios.post('/api/addPowder',
                                                                     {
                                                                         user: props.user,
-                                                                        win: stade * 15,
-                                                                        wins: stade * 15
+                                                                        win: stade * 5,
+                                                                        wins: stade * 5
                                                                     }
                                                                 )
                                                             }
@@ -201,8 +201,8 @@ function OpeningCards(props) {
                                                     Axios.post('/api/addPowder',
                                                         {
                                                             user: props.user,
-                                                            win: stade *15,
-                                                            wins: stade *15
+                                                            win: stade *5,
+                                                            wins: stade *5
                                                         }
                                                     )
                                                 }
@@ -423,7 +423,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={"fit-picture glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
+                                                   className={"fit-picture glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 5}
                                                 </p>
                                             </>
                                         }
@@ -547,7 +547,7 @@ function OpeningCards(props) {
                                                     filter: "drop-shadow(0px 4px 4px black)",
                                                     textShadow: "4px 0 #000, -2px 0 #000, 0 4px #000, 0 -4px #000, 4px 3px #000, -1px -1px #000, 4px -3px #000, -8px 1px #000"
                                                 }}
-                                                   className={"fit-picture glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 15}
+                                                   className={"fit-picture glowGet"}>{val.grade == 0 ? "+5" : "+"+val.grade * 5}
                                                 </p>
                                             </>
                                         }
