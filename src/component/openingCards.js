@@ -128,18 +128,18 @@ function OpeningCards(props) {
                                                                     wins: stade*10
                                                                 }
                                                             )
-                                                            .then(function(response){
-                                                                Axios.get("/api/getProfil/"+props.user)
-                                                                    .then(function(response){
-                                                                        if(response.data[0].xp >= response.data[0].level * 25){
-                                                                            Axios.post('/api/levelUp',
-                                                                                {
-                                                                                    pseudo: props.user
-                                                                                }
-                                                                            )
-                                                                        }
-                                                                    })
-                                                            })
+                                                                .then(function(response){
+                                                                    Axios.get("/api/getProfil/"+props.user)
+                                                                        .then(function(response){
+                                                                            if(response.data[0].xp >= response.data[0].level * 25){
+                                                                                Axios.post('/api/levelUp',
+                                                                                    {
+                                                                                        pseudo: props.user
+                                                                                    }
+                                                                                )
+                                                                            }
+                                                                        })
+                                                                })
                                                         }else{
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 grade: stade,
@@ -158,6 +158,26 @@ function OpeningCards(props) {
                                                                     }
                                                                 )
                                                             }
+
+                                                            Axios.post('/api/addXp',
+                                                                {
+                                                                    user: props.user,
+                                                                    win: stade*10,
+                                                                    wins: stade*10
+                                                                }
+                                                            )
+                                                                .then(function(response){
+                                                                    Axios.get("/api/getProfil/"+props.user)
+                                                                        .then(function(response){
+                                                                            if(response.data[0].xp >= response.data[0].level * 25){
+                                                                                Axios.post('/api/levelUp',
+                                                                                    {
+                                                                                        pseudo: props.user
+                                                                                    }
+                                                                                )
+                                                                            }
+                                                                        })
+                                                                })
                                                         }
                                                         setIsLoaded(true);
                                                         setNbCards(nbCards + 1);
@@ -245,6 +265,27 @@ function OpeningCards(props) {
                                                         }
                                                     )
                                                 }
+
+
+                                                Axios.post('/api/addXp',
+                                                    {
+                                                        user: props.user,
+                                                        win: stade*10,
+                                                        wins: stade*10
+                                                    }
+                                                )
+                                                    .then(function(response){
+                                                        Axios.get("/api/getProfil/"+props.user)
+                                                            .then(function(response){
+                                                                if(response.data[0].xp >= response.data[0].level * 25){
+                                                                    Axios.post('/api/levelUp',
+                                                                        {
+                                                                            pseudo: props.user
+                                                                        }
+                                                                    )
+                                                                }
+                                                            })
+                                                    })
                                             }
                                             setIsLoaded(true);
                                             setNbCards(nbCards + 1);
