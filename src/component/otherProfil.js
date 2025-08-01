@@ -160,16 +160,16 @@ function Profil(props) {
             const regex = /lv\d{1,2}$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
-        if(e.target.value == "cartes"){
-            const regex = /lv\d{1,2}c$/gi;
-            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
-        }
         if(e.target.value == "pokemon"){
             const regex = /pokemon\d{1,4}$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "shiny"){
             const regex = /lv\d{1,2}s$/gi;
+            setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
+        }
+        if(e.target.value == "cartes"){
+            const regex = /lv\d{1,2}c$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
         if(e.target.value == "set"){
