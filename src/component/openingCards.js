@@ -131,7 +131,7 @@ function OpeningCards(props) {
                                                                 .then(function(response){
                                                                     Axios.get("/api/getProfil/"+props.user)
                                                                         .then(function(response){
-                                                                            if(response.data[0].xp >= response.data[0].level * 25){
+                                                                            if(response.data[0].xp >= response.data[0].level * 50){
                                                                                 Axios.post('/api/levelUp',
                                                                                     {
                                                                                         pseudo: props.user
@@ -169,7 +169,7 @@ function OpeningCards(props) {
                                                                 .then(function(response){
                                                                     Axios.get("/api/getProfil/"+props.user)
                                                                         .then(function(response){
-                                                                            if(response.data[0].xp >= response.data[0].level * 25){
+                                                                            if(response.data[0].xp >= response.data[0].level * 50){
                                                                                 Axios.post('/api/levelUp',
                                                                                     {
                                                                                         pseudo: props.user
@@ -238,7 +238,7 @@ function OpeningCards(props) {
                                                     .then(function(response){
                                                         Axios.get("/api/getProfil/"+props.user)
                                                             .then(function(response){
-                                                                if(response.data[0].xp >= response.data[0].level * 25){
+                                                                if(response.data[0].xp >= response.data[0].level * 50){
                                                                     Axios.post('/api/levelUp',
                                                                         {
                                                                             pseudo: props.user
@@ -277,7 +277,7 @@ function OpeningCards(props) {
                                                     .then(function(response){
                                                         Axios.get("/api/getProfil/"+props.user)
                                                             .then(function(response){
-                                                                if(response.data[0].xp >= response.data[0].level * 25){
+                                                                if(response.data[0].xp >= response.data[0].level * 50){
                                                                     Axios.post('/api/levelUp',
                                                                         {
                                                                             pseudo: props.user
