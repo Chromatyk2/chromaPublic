@@ -517,7 +517,7 @@ function Profil(props) {
                         justifyContent: "center"
                     }}>
                         {badgesListFiltered ?
-                            badgesListFiltered.map((val, key) => {
+                            badgesListFiltered.sort((a, b) => a.image - b.image).map((val, key) => {
                                 return (
                                     <>
                                         <button
@@ -540,7 +540,7 @@ function Profil(props) {
                             })
                             :
                             badgesList &&
-                            badgesList.map((val, key) => {
+                            badgesList.sort((a, b) => a.image - b.image).map((val, key) => {
                                 return (
                                     <>
                                         <button
