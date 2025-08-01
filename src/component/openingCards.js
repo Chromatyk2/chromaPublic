@@ -93,15 +93,13 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         var randomStade = Math.floor(Math.random() * 100);
-                                                        if (randomStade < 20) {
-                                                            var stade = 0;
-                                                        } else if (randomStade > 19 && randomStade < 50 ) {
+                                                        if (randomStade < 50 ) {
                                                             var stade = 1;
-                                                        } else if (randomStade > 49 && randomStade < 70) {
+                                                        } else if (randomStade > 49 && randomStade < 80) {
                                                             var stade = 2;
-                                                        } else if (randomStade > 69 && randomStade < 90) {
+                                                        } else if (randomStade > 79 && randomStade < 95) {
                                                             var stade = 3;
-                                                        } else if (randomStade > 89) {
+                                                        } else if (randomStade > 94) {
                                                             var stade = 4;
                                                         }
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
@@ -140,14 +138,6 @@ function OpeningCards(props) {
                                                                         wins: stade * 15
                                                                     }
                                                                 )
-                                                            }else if(stade === 0){
-                                                                Axios.post('/api/addPowder',
-                                                                    {
-                                                                        user: props.user,
-                                                                        win: 5,
-                                                                        wins: 5
-                                                                    }
-                                                                )
                                                             }
                                                         }
                                                         setIsLoaded(true);
@@ -169,15 +159,13 @@ function OpeningCards(props) {
                                                     })
                                         } else {
                                             var randomStade = Math.floor(Math.random() * 100);
-                                            if (randomStade < 30) {
-                                                var stade = 0;
-                                            } else if (randomStade < 29 && randomStade < 50 ) {
+                                            if (randomStade < 50 ) {
                                                 var stade = 1;
-                                            } else if (randomStade > 49 && randomStade < 70) {
+                                            } else if (randomStade > 49 && randomStade < 80) {
                                                 var stade = 2;
-                                            } else if (randomStade > 69 && randomStade < 90) {
+                                            } else if (randomStade > 79 && randomStade < 95) {
                                                 var stade = 3;
-                                            } else if (randomStade > 89) {
+                                            } else if (randomStade > 94) {
                                                 var stade = 4;
                                             }
                                             if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
@@ -215,14 +203,6 @@ function OpeningCards(props) {
                                                             user: props.user,
                                                             win: stade *15,
                                                             wins: stade *15
-                                                        }
-                                                    )
-                                                }else if(stade == 0){
-                                                    Axios.post('/api/addPowder',
-                                                        {
-                                                            user: props.user,
-                                                            win: 5,
-                                                            wins: 5
                                                         }
                                                     )
                                                 }
