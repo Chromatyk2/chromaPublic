@@ -41,20 +41,24 @@ function OpeningCards(props) {
                 }
             )
         }else if(getRareBadge === 16){
-            var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
-            setGetRareBadgeId(rareBadgeValue);
-            while (badgeList.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
-                rareBadgeValue = Math.floor((Math.random() * 10) + 1);
-            }
-            Axios.post('/api/addBadge',
-                {
-                    pseudo: pseudo,
-                    image: "rare"+rareBadgeValue,
-                    stade: 0,
-                    description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+            Axios.get("/api/getBadgesByUser/" + props.user)
+                .then(function (response) {
+                    const badgeList = response.data;
+                    var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                    setGetRareBadgeId(rareBadgeValue);
+                    while (badgeList.filter(item => item.image == "rare" + rareBadgeValue).length != 0) {
+                        rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                    }
+                    Axios.post('/api/addBadge',
+                        {
+                            pseudo: props.user,
+                            image: "rare" + rareBadgeValue,
+                            stade: 0,
+                            description: "Badge Ultra Rare N°" + rareBadgeValue + " !"
+                        })
                 })
-
         }
+
         Axios
             .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
             .then(function(response){
