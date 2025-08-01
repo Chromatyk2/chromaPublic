@@ -121,6 +121,25 @@ function OpeningCards(props) {
                                                                     nb: pkmNumber,
                                                                     block: props.block
                                                                 })
+                                                            Axios.post('/api/addXp',
+                                                                {
+                                                                    user: queryParameters.get("pseudo"),
+                                                                    win: stade*5,
+                                                                    wins: stade*5
+                                                                }
+                                                            )
+                                                            .then(function(response){
+                                                                Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                    .then(function(response){
+                                                                        if(response.data[0].xp >= response.data[0].level * 25){
+                                                                            Axios.post('/api/levelUp',
+                                                                                {
+                                                                                    pseudo: queryParameters.get("pseudo")
+                                                                                }
+                                                                            )
+                                                                        }
+                                                                    })
+                                                            })
                                                         }else{
                                                             setTenCards(tenCards => [...tenCards, {
                                                                 grade: stade,
@@ -134,8 +153,8 @@ function OpeningCards(props) {
                                                                 Axios.post('/api/addPowder',
                                                                     {
                                                                         user: props.user,
-                                                                        win: stade * 10,
-                                                                        wins: stade * 10
+                                                                        win: stade * 5,
+                                                                        wins: stade * 5
                                                                     }
                                                                 )
                                                             }
@@ -187,6 +206,26 @@ function OpeningCards(props) {
                                                         grade: stade,
                                                         nb: pkmNumber,
                                                         block: props.block
+                                                    })
+
+                                                Axios.post('/api/addXp',
+                                                    {
+                                                        user: queryParameters.get("pseudo"),
+                                                        win: stade*2,
+                                                        wins: stade*2
+                                                    }
+                                                )
+                                                    .then(function(response){
+                                                        Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                            .then(function(response){
+                                                                if(response.data[0].xp >= response.data[0].level * 25){
+                                                                    Axios.post('/api/levelUp',
+                                                                        {
+                                                                            pseudo: queryParameters.get("pseudo")
+                                                                        }
+                                                                    )
+                                                                }
+                                                            })
                                                     })
                                             }else{
                                                 setTenCards(tenCards => [...tenCards, {
