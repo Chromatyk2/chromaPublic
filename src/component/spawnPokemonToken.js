@@ -46,33 +46,33 @@ function SpawnPokemonToken(props) {
                             const getBadge = Math.floor((Math.random() * 30) + 1);
                             const getRareBadge = Math.floor((Math.random() * 4096) + 1);
                             setGetPkmId(result.id);
-                            if(getRareBadge == 22 && tokenBonus != 0){
-                                var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
-                                setGetRareBadgeId(rareBadgeValue);
-                                while (badgeList.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
-                                    rareBadgeValue = Math.floor((Math.random() * 10) + 1);
-                                }
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "rare"+rareBadgeValue,
-                                        stade: 0,
-                                        description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
-                                    })
-                            }else if(getBadge == 16 && tokenBonus != 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length == 0){
-                                setGetBadge(true);
-                                Axios.post('/api/addBadge',
-                                    {
-                                        pseudo: pseudo,
-                                        image: "pokemon"+result.id,
-                                        stade: 0,
-                                        description: "Badge obtenu en capturant "+name+" !"
-                                    })
-                            }
                             switch (result.is_legendary){
                                 case true:
                                     switch (isLegendary){
                                         case 1 :
+                                            if(getRareBadge == 22 && tokenBonus != 0){
+                                                var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                                setGetRareBadgeId(rareBadgeValue);
+                                                while (badgeList.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
+                                                    rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                                }
+                                                Axios.post('/api/addBadge',
+                                                    {
+                                                        pseudo: pseudo,
+                                                        image: "rare"+rareBadgeValue,
+                                                        stade: 0,
+                                                        description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                                                    })
+                                            }else if(getBadge == 16 && tokenBonus != 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length == 0){
+                                                setGetBadge(true);
+                                                Axios.post('/api/addBadge',
+                                                    {
+                                                        pseudo: pseudo,
+                                                        image: "pokemon"+result.id,
+                                                        stade: 0,
+                                                        description: "Badge obtenu en capturant "+name+" !"
+                                                    })
+                                            }
                                             setUseBall("master")
                                             fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
                                                 .then(res => res.json())
@@ -146,6 +146,29 @@ function SpawnPokemonToken(props) {
                                         case true:
                                             switch (isMythical){
                                                 case 1 :
+                                                    if(getRareBadge == 22 && tokenBonus != 0){
+                                                        var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                                        setGetRareBadgeId(rareBadgeValue);
+                                                        while (badgeList.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
+                                                            rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                                        }
+                                                        Axios.post('/api/addBadge',
+                                                            {
+                                                                pseudo: pseudo,
+                                                                image: "rare"+rareBadgeValue,
+                                                                stade: 0,
+                                                                description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                                                            })
+                                                    }else if(getBadge == 16 && tokenBonus != 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length == 0){
+                                                        setGetBadge(true);
+                                                        Axios.post('/api/addBadge',
+                                                            {
+                                                                pseudo: pseudo,
+                                                                image: "pokemon"+result.id,
+                                                                stade: 0,
+                                                                description: "Badge obtenu en capturant "+name+" !"
+                                                            })
+                                                    }
                                                     setUseBall("cherish")
                                                     fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
                                                         .then(res => res.json())
@@ -215,6 +238,29 @@ function SpawnPokemonToken(props) {
                                             }
                                             break;
                                         default:
+                                            if(getRareBadge == 22 && tokenBonus != 0){
+                                                var rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                                setGetRareBadgeId(rareBadgeValue);
+                                                while (badgeList.filter(item => item.image == "rare"+rareBadgeValue).length != 0) {
+                                                    rareBadgeValue = Math.floor((Math.random() * 10) + 1);
+                                                }
+                                                Axios.post('/api/addBadge',
+                                                    {
+                                                        pseudo: pseudo,
+                                                        image: "rare"+rareBadgeValue,
+                                                        stade: 0,
+                                                        description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                                                    })
+                                            }else if(getBadge == 16 && tokenBonus != 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length == 0){
+                                                setGetBadge(true);
+                                                Axios.post('/api/addBadge',
+                                                    {
+                                                        pseudo: pseudo,
+                                                        image: "pokemon"+result.id,
+                                                        stade: 0,
+                                                        description: "Badge obtenu en capturant "+name+" !"
+                                                    })
+                                            }
                                             setUseBall(balls[Math.floor(Math.random() * balls.length)])
                                             fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
                                                 .then(res => res.json())
