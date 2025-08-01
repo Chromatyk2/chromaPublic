@@ -93,9 +93,9 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         var randomStade = Math.floor(Math.random() * 100);
-                                                        if (randomStade < 30) {
+                                                        if (randomStade < 20) {
                                                             var stade = 0;
-                                                        } else if (randomStade < 29 && randomStade < 50 ) {
+                                                        } else if (randomStade > 19 && randomStade < 50 ) {
                                                             var stade = 1;
                                                         } else if (randomStade > 49 && randomStade < 70) {
                                                             var stade = 2;

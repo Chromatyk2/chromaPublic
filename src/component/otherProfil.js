@@ -172,6 +172,9 @@ function Profil(props) {
             const regex = /lv\d{1,2}s$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
+        if(e.target.value == "set"){
+            setBadgesListFiltered(badgesList.filter(item => item.booster !== null));
+        }
     }
     useEffect(() => {
         Axios
@@ -485,11 +488,24 @@ function Profil(props) {
                         flexWrap: "wrap",
                         justifyContent: "center"
                     }}>
-                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"all"}>Tous</button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"pokedex"}>Pokédex</button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"cartes"}>Cartes</button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"pokemon"}>Pokémon</button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color:"white"}} onClick={filteredBadges} value={"shiny"}>Shiny</button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                                onClick={filteredBadges} value={"all"}>Tous
+                        </button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                                onClick={filteredBadges} value={"pokedex"}>Pokédex
+                        </button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                                onClick={filteredBadges} value={"cartes"}>Cartes
+                        </button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                                onClick={filteredBadges} value={"set"}>Sets
+                        </button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                                onClick={filteredBadges} value={"pokemon"}>Pokémon
+                        </button>
+                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                                onClick={filteredBadges} value={"shiny"}>Shiny
+                        </button>
                     </div>
                     <Tooltip style={{zIndex: "1000"}} anchorSelect=".anchorTooltipBadge"/>
                     <div style={{

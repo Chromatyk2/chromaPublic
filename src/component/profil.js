@@ -179,6 +179,9 @@ function Profil(props) {
             const regex = /lv\d{1,2}s$/gi;
             setBadgesListFiltered(badgesList.filter(item => item.image.match(regex)));
         }
+        if(e.target.value == "set"){
+            setBadgesListFiltered(badgesList.filter(item => item.booster !== null));
+        }
     }
     function openModalZero(e, f) {
         setBadgeToWinStade(e)
@@ -1242,6 +1245,9 @@ function Profil(props) {
                     </button>
                     <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
                             onClick={filteredBadges} value={"cartes"}>Cartes
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"set"}>Sets
                     </button>
                     <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
                             onClick={filteredBadges} value={"pokemon"}>Pokémon
