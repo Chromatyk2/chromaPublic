@@ -25,6 +25,7 @@ function Compagnon(props) {
     const [customStyles,setCustomStyles] = useState(null);
     const [name,setName] = useState(null);
     const [profil,setProfil] = useState(null);
+    const [load,setLoad] = useState(false);
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {Axios
         .get("/api/getProfil/"+pseudo)
@@ -169,6 +170,7 @@ function Compagnon(props) {
         }
     }
     function handleState(e,f) {
+        setLoad(true)
         Axios
             .get("/api/getCompagnonList/"+pseudo)
             .then(function(response) {
@@ -221,6 +223,7 @@ function Compagnon(props) {
                                                     (result) => {
                                                         setName(result.names);
                                                         setIsOpenTeam(false);
+                                                        setLoad(false);
                                                     }
                                                 )
                                         })
@@ -268,6 +271,7 @@ function Compagnon(props) {
                                                     (result) => {
                                                         setName(result.names);
                                                         setIsOpenTeam(false);
+                                                        setLoad(false);
                                                     }
                                                 )
                                         })
@@ -302,7 +306,7 @@ function Compagnon(props) {
                                 Changer le compagnon
                             </button>
                             <p style={{lineHeight: "normal",marginTop: "15px"}} className="namePokemonPage">{name[4].name}</p>
-                            <button style={{border:"none", background:"none"}} onClick={xpPokemon}>
+                            <button disabled={load} style={{border:"none", background:"none"}} onClick={xpPokemon}>
                                 <img style={{
                                 width: "280px",
                                 marginBottom: "30px",
