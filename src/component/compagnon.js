@@ -67,8 +67,7 @@ function Compagnon(props) {
     }
 
     function handleState(e,f) {
-        console.log(e)
-        console.log(f)
+        console.log(compagnonList.find((item) => item.pokemon === e));
         if(compagnonList.length == 0 || typeof compagnonList.find((item) => item.pokemon === e) === "undefined"){
             Axios.post('/api/updateCompagnon',
                 {
