@@ -41,7 +41,7 @@ function Items(props) {
                                 <button
                                     onClick={updateTeam}
                                     value={val.pkmImage}
-                                    id={val.id}
+                                    id={val.pkmId}
                                     style={{
                                         backgroundImage:"url("+val.pkmImage+")",
                                         height:"100px",
