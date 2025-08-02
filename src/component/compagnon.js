@@ -46,7 +46,14 @@ function Compagnon(props) {
     }
 
     function handleState(e) {
-        console.log(e)
+        Axios.post('/api/addBadge',
+            {
+                user: pseudo,
+                pokemon: e,
+                pkm: e,
+                level: 1,
+                xp:0
+            })
     }
     return (
         <>
