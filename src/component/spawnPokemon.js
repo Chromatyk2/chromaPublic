@@ -17,20 +17,27 @@ function SpawnPokemon(props) {
     const [getBadge, setGetBadge] = useState(false);
     const [getPkmId, setGetPkmId] = useState(null);
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
+    const [berryToWins, setBerryToWins] = useState(null);
     useEffect(() => {
 
         setTimeout(function (){
-        var tokenBonus = Math.floor(Math.random() * 10);
-        const queryParameters = new URLSearchParams(window.location.search)
-        if(tokenBonus == 0){
-            setGetToken(true);
-            Axios.post('/api/addCardsPointTw',
+            var tokenBonus = Math.floor(Math.random() * 10);
+            const queryParameters = new URLSearchParams(window.location.search)
+            if(tokenBonus == 0){
+                setGetToken(true);
+                Axios.post('/api/addCardsPointTw',
+                    {
+                        user:queryParameters.get("pseudo")
+                    }
+                )
+            }
+            var berryToWin = Math.floor(Math.random() * 20 + 1);
+            setBerryToWins(berryToWin);
+            Axios.post('/api/addBerry',
                 {
-                    user:queryParameters.get("pseudo")
-                }
-            )
-        }
-
+                    user:pseudo,
+                    berry:berryToWin
+                })
                 Axios.get("/api/getBadgesByUser/" + pseudo)
                         .then(function (response) {
                                 const badgeList = response.data;

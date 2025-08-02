@@ -29,8 +29,17 @@ function OpeningCards(props) {
     const [things, setThings] = useState(true);
     const [thingsBooster, setThingsBooster] = useState(true);
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
+    const [berryToWins, setBerryToWins] = useState(null);
 
     useEffect(() => {
+
+        var berryToWin = Math.floor(Math.random() * 20 + 1);
+        setBerryToWins(berryToWin);
+        Axios.post('/api/addBerry',
+            {
+                user:pseudo,
+                berry:berryToWin
+            })
         var tokenBonus = Math.floor(Math.random() * 5);
         const getRareBadge = Math.floor((Math.random() * 4096) + 1)
         if(tokenBonus === 2){
