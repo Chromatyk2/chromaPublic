@@ -5,13 +5,13 @@ import '../App.css'
 import PkmListTeam from './pkmListTeam.js'
 
 function PokedexTeam(props) {
-    function handleState() {
-        props.change();
+    function handleState(e) {
+        props.change(e);
     }
     return (
         <>
             <div  style={{paddingTop:"15px",minHeight:"100%"}} className={"contentContainer"}>
-                <PkmListTeam change={handleState} pkmToUpdate={props.pkmToUpdate} list={props.list}/>
+                <PkmListTeam change={(e) => handleState(e)} pkmToUpdate={props.pkmToUpdate} list={props.list}/>
             </div>
         </>
     )

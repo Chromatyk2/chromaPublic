@@ -45,23 +45,17 @@ function Compagnon(props) {
         setIsOpenTeam(false);
     }
 
-    function handleState() {
-        Axios.get("/api/getProfil/"+pseudo)
-            .then(function(response){
-                Axios
-                    .get("/api/getSkins/"+pseudo)
-                    .then(function(response){
-                        setIsOpenTeam(false);
-                    })
-            })
+    function handleState(e) {
+        console.log(e)
     }
     return (
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles}
                    contentLabel="Example Modal">
-                <PokedexTeam pkmToUpdate={"none"} list={list} change={handleState} cookies={props.cookies}/>
+                <PokedexTeam pkmToUpdate={"none"} list={list} change={(e) => handleState(e)} cookies={props.cookies}/>
             </Modal>
             <button
+                style={{position:"absolute", top:"300px", left:"500px"}}
                 onClick={handleTeam}
                 className="anchorTooltip uniquePokemonContainerTeam">
                 Changer le compagnon
