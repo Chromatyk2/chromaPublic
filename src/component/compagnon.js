@@ -226,7 +226,7 @@ function Compagnon(props) {
                                 animation: "floatArrow 5s linear infinite",
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
-                                 src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
+                                 src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             {profil.berry > 0 && <div style={{display: "flex",justifyContent: "flex-end",gap: "10px",alignItems: "start", position:"absolute", right:"0",marginRight: "10px",marginTop: "-10px",color:"white"}}><img style={{margin:0,height:"30px",width:"30px"}} src={"/images/berry.png"}/> <p style={{margin:0}}>{"x"+profil.berry}</p></div>}
                             <p style={{color:"white",margin:"0 0 0 10px", marginTop:"20px"}}>{"N."+compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
