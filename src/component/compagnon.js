@@ -144,7 +144,7 @@ function Compagnon(props) {
             </Modal>
             <div style={{display:"flex",justifyContent:"center",alignItems:"center", width: '100%', height: '100vh', backgroundImage: "url(/images/pasture.jpg)"}}>
 
-                <div>
+                <div style={{marginTop:"-50px"}}>
                     {compagnon ?
                         name &&
                         <>
