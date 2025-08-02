@@ -46,13 +46,16 @@ function Compagnon(props) {
     }
 
     function handleState(e) {
-        Axios.post('/api/addBadge',
+        Axios.post('/api/addCompagnon',
             {
                 user: pseudo,
                 pokemon: e,
                 pkm: e,
                 level: 1,
                 xp:0
+            })
+            .then(function(response){
+                setIsOpenTeam(false);
             })
     }
     return (

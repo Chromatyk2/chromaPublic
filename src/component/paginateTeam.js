@@ -18,16 +18,20 @@ function Items(props) {
         const imgToAdd = e.target.value;
         const id = e.target.id;
         const pkToUpdate = pkmToUpdate;
-        Axios.post('/api/updatePokemonTeam',
-            {
-                pkm:pkToUpdate,
-                image:imgToAdd,
-                user:user.user.data[0].login
-            }
-        )
-            .then(function(response){
-                props.change(id);
-            })
+        if(pkmToUpdate !== "none"){
+            Axios.post('/api/updatePokemonTeam',
+                {
+                    pkm:pkToUpdate,
+                    image:imgToAdd,
+                    user:user.user.data[0].login
+                }
+            )
+                .then(function(response){
+                    props.change();
+                })
+        }else{
+            props.change(id);
+        }
     }
     return (
         <>
