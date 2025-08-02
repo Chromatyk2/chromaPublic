@@ -63,29 +63,65 @@ function Compagnon(props) {
     function handleState(e,f) {
         console.log(e)
         console.log(f)
-        Axios.post('/api/addCompagnon',
-            {
-                user: pseudo,
-                pokemon: e,
-                pkm: e,
-                level: 1,
-                xp:0,
-                shiny:f,
-                shine:f
-            })
-            .then(function(response){
-                Axios.get("/api/getCompagnon/"+pseudo)
-                    .then(function(response) {
-                        setCompagnon(response.data[0])
-                        fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
-                            .then(res => res.json())
-                            .then(
-                                (result) => {
-                                    setName(result.names);
-                                }
-                            )
-                    })
-            })
+        if(typeof compagnon.find((item) => item.pokemon === e) === "undefined"){
+            Axios.post('/api/updateCompagnon',
+                {
+                    pseudo: pseudo
+                })
+                .then(function(response){
+                    Axios.post('/api/addCompagnon',
+                        {
+                            user: pseudo,
+                            pokemon: e,
+                            pkm: e,
+                            level: 1,
+                            xp:0,
+                            shiny:f,
+                            shine:f,
+                            actif:1
+                        })
+                        .then(function(response){
+                            Axios.get("/api/getCompagnon/"+pseudo)
+                                .then(function(response) {
+                                    setCompagnon(response.data[0])
+                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                setName(result.names);
+                                                setIsOpenTeam(false);
+                                            }
+                                        )
+                                })
+                        })
+                })
+        }else{
+            Axios.post('/api/updateCompagnon',
+                {
+                    pseudo: pseudo
+                })
+                .then(function(response){
+                    Axios.post('/api/activeCompagnon',
+                        {
+                            pseudo: pseudo,
+                            pokemon: e
+                        })
+                        .then(function(response){
+                            Axios.get("/api/getCompagnon/"+pseudo)
+                                .then(function(response) {
+                                    setCompagnon(response.data[0])
+                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                setName(result.names);
+                                                setIsOpenTeam(false);
+                                            }
+                                        )
+                                })
+                        })
+                })
+        }
     }
     return (
         <>
