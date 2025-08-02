@@ -21,6 +21,7 @@ function Compagnon(props) {
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [list,setList] = useState([]);
     const [compagnon,setCompagnon] = useState(null);
+    const [compagnonList,setCompagnonList] = useState(null);
     const [name,setName] = useState(null);
     const pseudo = cookies.user.data[0].login;
     const customStyles = {
@@ -38,18 +39,23 @@ function Compagnon(props) {
             .get("/api/getByUser/"+pseudo)
             .then(function(response){
                 setList(response.data);
-                Axios.get("/api/getCompagnon/"+pseudo)
-                    .then(function(response) {
-                        if(response.data.length > 0){
-                            setCompagnon(response.data[0])
-                            fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        setName(result.names);
-                                    }
-                                )
-                        }
+                Axios
+                    .get("/api/getCompagnonList/"+pseudo)
+                    .then(function(response){
+                        setCompagnonList(response.data);
+                        Axios.get("/api/getCompagnon/"+pseudo)
+                            .then(function(response) {
+                                if(response.data.length > 0){
+                                    setCompagnon(response.data[0])
+                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                setName(result.names);
+                                            }
+                                        )
+                                }
+                            })
                     })
             })
     }, []);
@@ -63,7 +69,7 @@ function Compagnon(props) {
     function handleState(e,f) {
         console.log(e)
         console.log(f)
-        if(typeof compagnon.find((item) => item.pokemon === e) === "undefined"){
+        if(compagnonList.length == 0 || typeof compagnonList.find((item) => item.pokemon === e) === "undefined"){
             Axios.post('/api/updateCompagnon',
                 {
                     pseudo: pseudo
