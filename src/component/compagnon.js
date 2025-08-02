@@ -25,14 +25,26 @@ function Compagnon(props) {
     const [name,setName] = useState(null);
     const pseudo = cookies.user.data[0].login;
     const customStyles = {
+
         extBar: {
+            width: '100%',
             backgroundColor: '#00368a',
             position: 'relative',
             zIndex: '1',
             borderRadius: '50px',
-            height:'30px',
-            width:'300px'
-        }
+            margin:'auto',
+            marginBottom: '15px'
+        },
+        intBar: {
+            width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
+            position: 'relative',
+            background: '#120747',
+            textWrap: 'nowrap',
+            color: 'white',
+            padding: '0 15px 0 15px',
+            borderRadius: '50px 50px 50px 50px',
+            filter: "drop-shadow(0px 0px 6px blue)"
+        },
     };
     useEffect(() => {
         Axios
@@ -169,6 +181,10 @@ function Compagnon(props) {
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
+                            <div style={customStyles.extBar} className="fullProgressBar">
+                                <div
+                                    style={customStyles.intBar}>{props.getNb + " / " + props.item + " (" + parseFloat(props.getNb / props.item * 100).toFixed(2) + "%)"}</div>
+                            </div>
                         </>
                         :
                         <button
