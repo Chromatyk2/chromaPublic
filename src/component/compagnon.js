@@ -26,28 +26,6 @@ function Compagnon(props) {
     const [name,setName] = useState(null);
     const pseudo = cookies.user.data[0].login;
     useEffect(() => {
-        setCustomStyles({
-            extBar: {
-                width: '100%',
-                backgroundColor: '#00368a',
-                position: 'relative',
-                zIndex: '1',
-                borderRadius: '50px',
-                margin:'auto',
-                marginBottom: '15px'
-            },
-            intBar: {
-                width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
-                position: 'relative',
-                background: '#120747',
-                textWrap: 'nowrap',
-                color: 'white',
-                padding: '0 15px 0 15px',
-                borderRadius: '50px 50px 50px 50px',
-                filter: "drop-shadow(0px 0px 6px blue)",
-                transition: "width 2s"
-            },
-        });
         Axios
             .get("/api/getByUser/"+pseudo)
             .then(function(response){
@@ -58,6 +36,28 @@ function Compagnon(props) {
                         setCompagnonList(response.data);
                         Axios.get("/api/getCompagnon/"+pseudo)
                             .then(function(response) {
+                                setCustomStyles({
+                                    extBar: {
+                                        width: '100%',
+                                        backgroundColor: '#00368a',
+                                        position: 'relative',
+                                        zIndex: '1',
+                                        borderRadius: '50px',
+                                        margin:'auto',
+                                        marginBottom: '15px'
+                                    },
+                                    intBar: {
+                                        width: parseFloat((response.data[0].xp/(response.data[0].level*25))*100).toFixed(2)+"%",
+                                        position: 'relative',
+                                        background: '#120747',
+                                        textWrap: 'nowrap',
+                                        color: 'white',
+                                        padding: '0 15px 0 15px',
+                                        borderRadius: '50px 50px 50px 50px',
+                                        filter: "drop-shadow(0px 0px 6px blue)",
+                                        transition: "width 2s"
+                                    },
+                                });
                                 if(response.data.length > 0){
                                     setCompagnon(response.data[0])
                                     fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
@@ -224,7 +224,7 @@ function Compagnon(props) {
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
-                                    style={customStyles.intBar}>{compagnon.xp + " / " + props.level * 25 + " (" + parseFloat(compagnon.xp / (props.level * 25) * 100).toFixed(2) + "%)"}</div>
+                                    style={customStyles.intBar}>{compagnon.xp + " / " + props.level * 25 + " (" + parseFloat(compagnon.xp / (compagnon.level * 25) * 100).toFixed(2) + "%)"}</div>
                             </div>
                         </>
                         :
