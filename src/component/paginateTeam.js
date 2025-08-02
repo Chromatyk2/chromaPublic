@@ -19,6 +19,8 @@ function Items(props) {
         const id = e.target.id;
         const shiny = e.target.shiny;
         const pkToUpdate = pkmToUpdate;
+        console.log(id)
+        console.log(shiny)
         if(pkmToUpdate !== "none"){
             Axios.post('/api/updatePokemonTeam',
                 {
@@ -94,8 +96,8 @@ function PaginationTeam(props) {
         const newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
         setItemOffset(newOffset);
     };
-    function handleState(e, f) {
-        props.change(e, f);
+    function handleState(e,f) {
+        props.change(e,f);
     }
     return (
         <>
