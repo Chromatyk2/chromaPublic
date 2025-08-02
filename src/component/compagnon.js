@@ -102,7 +102,7 @@ function Compagnon(props) {
                                 if(response.data[0].xp >= response.data[0].level * 10 ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
-                                            user: pseudo,
+                                            pseudo: pseudo,
                                             pokemon:compagnon.pokemon
                                         })
                                     Axios.get("/api/getCompagnon/" + pseudo)
