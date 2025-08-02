@@ -97,7 +97,7 @@ function Compagnon(props) {
 
                 <div>
                     {compagnon ?
-                        pokemon &&
+                        name &&
                         <>
                             <p className="namePokemonPage">{name[4].name}</p>
                             <img style={{
