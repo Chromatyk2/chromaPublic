@@ -70,6 +70,9 @@ function Profil(props) {
     const [skinToWin, setSkinToWin] = React.useState(null);
     const [messageToBadge, setMessageToBadge] = React.useState(null);
     const [badges, setBadges] = useState(null);
+    const [name,setName] = useState(null);
+    const [compagnon,setCompagnon] = useState(null);
+    const [customStyleCompagnon,setCustomStyleCompagnon] = useState(null);
     useEffect(() => {
         const progressBars = document.querySelectorAll('.progress-container');
 
@@ -199,7 +202,41 @@ function Profil(props) {
         }, 500)
     }
     useEffect(() => {
-        checkBadges();
+        Axios.get("/api/getCompagnon/" + pseudo)
+            .then(function (response) {
+                if (response.data.length > 0) {
+                    setCompagnon(response.data[0])
+                    setCustomStyleCompagnon({
+                        extBar: {
+                            width: '100%',
+                            backgroundColor: '#fff',
+                            position: 'relative',
+                            zIndex: '1',
+                            borderRadius: '50px',
+                            margin: 'auto',
+                            marginBottom: '15px'
+                        },
+                        intBar: {
+                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                            position: 'relative',
+                            background: '#15a3ea',
+                            textWrap: 'nowrap',
+                            color: 'white',
+                            borderRadius: '50px 50px 50px 50px',
+                            filter: "drop-shadow(0px 0px 6px blue)",
+                            transition: "width 2s"
+                        },
+                    });
+                    fetch("https://pokeapi.co/api/v2/pokemon-species/" + response.data[0].pokemon + "/")
+                        .then(res => res.json())
+                        .then(
+                            (result) => {
+                                setName(result.names);
+                            }
+                        )
+                }
+                checkBadges();
+            })
     }, [])
     useEffect(() => {
         Axios
@@ -1046,6 +1083,31 @@ function Profil(props) {
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
                             <p className={"pseudoProfil"}>Mon équipe</p>
+                            {compagnon &&
+                                name &&
+                                <>
+                                    <p style={{lineHeight: "normal", marginTop: "15px"}}
+                                       className="namePokemonPage">{name[4].name}</p>
+                                    <img style={{
+                                        width: "280px",
+                                        marginBottom: "30px",
+                                        animation: "floatArrow 5s linear infinite",
+                                        filter: "drop-shadow(0px 0px 6px #066d04)"
+                                    }}
+                                         src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
+                                    <p style={{
+                                        color: "white",
+                                        margin: "0 0 0 10px",
+                                        marginTop: "20px"
+                                    }}>{"N." + compagnon.level}</p>
+                                    <div style={customStyleCompagnon.extBar} className="fullProgressBar">
+                                        <div
+                                            style={customStyleCompagnon.intBar}><p
+                                            style={{marginLeft: "15px"}}>{compagnon.xp + " / " + compagnon.level * 2 + " (" + parseFloat(compagnon.xp / (compagnon.level * 2) * 100).toFixed(2) + "%)"}</p>
+                                        </div>
+                                    </div>
+                                </>
+                            }
                             <div className={"threePokemon"}>
                                 <button
                                     style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
@@ -1055,7 +1117,7 @@ function Profil(props) {
                                 {profil[0].pseudo == "stryxlis"
                                     ?
                                     <button
-                                        style={{backgroundImage:'url(/images/lugia.png)'}}
+                                        style={{backgroundImage: 'url(/images/lugia.png)'}}
                                         value={"second_pokemon"}
                                         className="anchorTooltip uniquePokemonContainerTeam">
                                     </button>

@@ -20,10 +20,10 @@ function Compagnon(props) {
     const [cookies, setCookie] = useCookies();
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [list,setList] = useState([]);
-    const [compagnon,setCompagnon] = useState(null);
     const [compagnonList,setCompagnonList] = useState(null);
     const [customStyles,setCustomStyles] = useState(null);
     const [name,setName] = useState(null);
+    const [compagnon,setCompagnon] = useState(null);
     const [profil,setProfil] = useState(null);
     const [load,setLoad] = useState(false);
     const pseudo = cookies.user.data[0].login;
