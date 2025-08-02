@@ -171,114 +171,116 @@ function Compagnon(props) {
     }
     function handleState(e,f) {
         setLoad(true)
-        Axios
-            .get("/api/getCompagnonList/"+pseudo)
-            .then(function(response) {
-                const compagnonList = response.data;
-                if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == e).length == 0) {
-                    Axios.post('/api/updateCompagnon',
-                        {
-                            pseudo: pseudo
-                        })
-                        .then(function (response) {
-                            Axios.post('/api/addCompagnon',
-                                {
-                                    user: pseudo,
-                                    pokemon: e,
-                                    pkm: e,
-                                    level: 1,
-                                    xp: 0,
-                                    shiny: f,
-                                    shine: f,
-                                    actif: 1
-                                })
-                                .then(function (response) {
-                                    Axios.get("/api/getCompagnon/" + pseudo)
-                                        .then(function (response) {
-                                            setCustomStyles({
-                                                extBar: {
-                                                    width: '100%',
-                                                    backgroundColor: '#fff',
-                                                    position: 'relative',
-                                                    zIndex: '1',
-                                                    borderRadius: '50px',
-                                                    margin:'auto',
-                                                    marginBottom: '15px'
-                                                },
-                                                intBar: {
-                                                    width: parseFloat((response.data[0].xp/(response.data[0].level*2))*100).toFixed(2)+"%",
-                                                    position: 'relative',
-                                                    background: '#15a3ea',
-                                                    textWrap: 'nowrap',
-                                                    color: 'white',
-                                                    borderRadius: '50px 50px 50px 50px',
-                                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                                    transition: "width 2s"
-                                                },
-                                            });
-                                            setCompagnon(response.data[0])
-                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
-                                                .then(res => res.json())
-                                                .then(
-                                                    (result) => {
-                                                        setName(result.names);
-                                                        setIsOpenTeam(false);
-                                                        setLoad(false);
-                                                    }
-                                                )
-                                        })
-                                })
-                        })
-                } else {
-                    Axios.post('/api/updateCompagnon',
-                        {
-                            pseudo: pseudo
-                        })
-                        .then(function (response) {
-                            Axios.post('/api/activeCompagnon',
-                                {
-                                    pseudo: pseudo,
-                                    pokemon: e
-                                })
-                                .then(function (response) {
-                                    Axios.get("/api/getCompagnon/" + pseudo)
-                                        .then(function (response) {
-                                            setCustomStyles({
-                                                extBar: {
-                                                    width: '100%',
-                                                    backgroundColor: '#fff',
-                                                    position: 'relative',
-                                                    zIndex: '1',
-                                                    borderRadius: '50px',
-                                                    margin:'auto',
-                                                    marginBottom: '15px'
-                                                },
-                                                intBar: {
-                                                    width: parseFloat(response.data[0].xp/(response.data[0].level*2)*100).toFixed(2)+"%",
-                                                    position: 'relative',
-                                                    background: '#15a3ea',
-                                                    textWrap: 'nowrap',
-                                                    color: 'white',
-                                                    borderRadius: '50px 50px 50px 50px',
-                                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                                    transition: "width 2s"
-                                                },
-                                            });
-                                            setCompagnon(response.data[0])
-                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
-                                                .then(res => res.json())
-                                                .then(
-                                                    (result) => {
-                                                        setName(result.names);
-                                                        setIsOpenTeam(false);
-                                                        setLoad(false);
-                                                    }
-                                                )
-                                        })
-                                })
-                        })
-                }
-            })
+        setTimeout(function() {
+            Axios
+                .get("/api/getCompagnonList/"+pseudo)
+                .then(function(response) {
+                    const compagnonList = response.data;
+                    if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == e).length == 0) {
+                        Axios.post('/api/updateCompagnon',
+                            {
+                                pseudo: pseudo
+                            })
+                            .then(function (response) {
+                                Axios.post('/api/addCompagnon',
+                                    {
+                                        user: pseudo,
+                                        pokemon: e,
+                                        pkm: e,
+                                        level: 1,
+                                        xp: 0,
+                                        shiny: f,
+                                        shine: f,
+                                        actif: 1
+                                    })
+                                    .then(function (response) {
+                                        Axios.get("/api/getCompagnon/" + pseudo)
+                                            .then(function (response) {
+                                                setCustomStyles({
+                                                    extBar: {
+                                                        width: '100%',
+                                                        backgroundColor: '#fff',
+                                                        position: 'relative',
+                                                        zIndex: '1',
+                                                        borderRadius: '50px',
+                                                        margin:'auto',
+                                                        marginBottom: '15px'
+                                                    },
+                                                    intBar: {
+                                                        width: parseFloat((response.data[0].xp/(response.data[0].level*2))*100).toFixed(2)+"%",
+                                                        position: 'relative',
+                                                        background: '#15a3ea',
+                                                        textWrap: 'nowrap',
+                                                        color: 'white',
+                                                        borderRadius: '50px 50px 50px 50px',
+                                                        filter: "drop-shadow(0px 0px 6px blue)",
+                                                        transition: "width 2s"
+                                                    },
+                                                });
+                                                setCompagnon(response.data[0])
+                                                fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
+                                                    .then(res => res.json())
+                                                    .then(
+                                                        (result) => {
+                                                            setName(result.names);
+                                                            setIsOpenTeam(false);
+                                                            setLoad(false);
+                                                        }
+                                                    )
+                                            })
+                                    })
+                            })
+                    } else {
+                        Axios.post('/api/updateCompagnon',
+                            {
+                                pseudo: pseudo
+                            })
+                            .then(function (response) {
+                                Axios.post('/api/activeCompagnon',
+                                    {
+                                        pseudo: pseudo,
+                                        pokemon: e
+                                    })
+                                    .then(function (response) {
+                                        Axios.get("/api/getCompagnon/" + pseudo)
+                                            .then(function (response) {
+                                                setCustomStyles({
+                                                    extBar: {
+                                                        width: '100%',
+                                                        backgroundColor: '#fff',
+                                                        position: 'relative',
+                                                        zIndex: '1',
+                                                        borderRadius: '50px',
+                                                        margin:'auto',
+                                                        marginBottom: '15px'
+                                                    },
+                                                    intBar: {
+                                                        width: parseFloat(response.data[0].xp/(response.data[0].level*2)*100).toFixed(2)+"%",
+                                                        position: 'relative',
+                                                        background: '#15a3ea',
+                                                        textWrap: 'nowrap',
+                                                        color: 'white',
+                                                        borderRadius: '50px 50px 50px 50px',
+                                                        filter: "drop-shadow(0px 0px 6px blue)",
+                                                        transition: "width 2s"
+                                                    },
+                                                });
+                                                setCompagnon(response.data[0])
+                                                fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
+                                                    .then(res => res.json())
+                                                    .then(
+                                                        (result) => {
+                                                            setName(result.names);
+                                                            setIsOpenTeam(false);
+                                                            setLoad(false);
+                                                        }
+                                                    )
+                                            })
+                                    })
+                            })
+                    }
+                })
+        }.bind(this), 500)
     }
     return (
         <>
