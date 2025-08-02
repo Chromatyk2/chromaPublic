@@ -21,6 +21,7 @@ function Compagnon(props) {
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [list,setList] = useState([]);
     const [compagnon,setCompagnon] = useState(null);
+    const [name,setName] = useState(null);
     const pseudo = cookies.user.data[0].login;
     const customStyles = {
         extBar: {
@@ -39,13 +40,16 @@ function Compagnon(props) {
                 setList(response.data);
                 Axios.get("/api/getCompagnon/"+pseudo)
                     .then(function(response) {
-                        setCompagnon(response.data[0])
-                        fetch("https://pokeapi.co/api/v2/pokemon/"+response.data[0].pokemon)
-                            .then(res => res.json())
-                            .then(
-                                (result) => {
-
-                                })
+                        if(response.data.length > 0){
+                            setCompagnon(response.data[0])
+                            fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        setName(result.names);
+                                    }
+                                )
+                        }
                     })
             })
     }, []);
@@ -73,12 +77,13 @@ function Compagnon(props) {
                 Axios.get("/api/getCompagnon/"+pseudo)
                     .then(function(response) {
                         setCompagnon(response.data[0])
-                        fetch("https://pokeapi.co/api/v2/pokemon/"+response.data[0].pokemon)
+                        fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
                             .then(res => res.json())
                             .then(
                                 (result) => {
-                                    setIsOpenTeam(false);
-                                })
+                                    setName(result.names);
+                                }
+                            )
                     })
             })
     }
@@ -92,8 +97,15 @@ function Compagnon(props) {
 
                 <div>
                     {compagnon ?
+                        pokemon &&
                         <>
-                            <img style={{width: "280px", marginBottom: "30px",animation: "floatArrow 5s linear infinite",filter:"drop-shadow(0px 0px 6px #066d04)"}}
+                            <p className="namePokemonPage">{name[4].name}</p>
+                            <img style={{
+                                width: "280px",
+                                marginBottom: "30px",
+                                animation: "floatArrow 5s linear infinite",
+                                filter: "drop-shadow(0px 0px 6px #066d04)"
+                            }}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             <button
                                 onClick={handleTeam}
