@@ -87,17 +87,22 @@ function Compagnon(props) {
                             actif:1
                         })
                         .then(function(response){
-                            Axios.get("/api/getCompagnon/"+pseudo)
+                            Axios
+                                .get("/api/getCompagnonList/"+pseudo)
                                 .then(function(response) {
-                                    setCompagnon(response.data[0])
-                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
-                                        .then(res => res.json())
-                                        .then(
-                                            (result) => {
-                                                setName(result.names);
-                                                setIsOpenTeam(false);
-                                            }
-                                        )
+                                    setCompagnonList(response.data);
+                                    Axios.get("/api/getCompagnon/" + pseudo)
+                                        .then(function (response) {
+                                            setCompagnon(response.data[0])
+                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
+                                                .then(res => res.json())
+                                                .then(
+                                                    (result) => {
+                                                        setName(result.names);
+                                                        setIsOpenTeam(false);
+                                                    }
+                                                )
+                                        })
                                 })
                         })
                 })
@@ -116,7 +121,7 @@ function Compagnon(props) {
                             Axios.get("/api/getCompagnon/"+pseudo)
                                 .then(function(response) {
                                     setCompagnon(response.data[0])
-                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
+                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+e+"/")
                                         .then(res => res.json())
                                         .then(
                                             (result) => {
