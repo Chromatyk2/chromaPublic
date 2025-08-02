@@ -202,7 +202,7 @@ function Compagnon(props) {
             </Modal>
             <div style={{display:"flex",justifyContent:"center",alignItems:"center", width: '100%', height: '100vh', backgroundImage: "url(/images/pasture.jpg)"}}>
 
-                <div style={{marginTop:"-40px"}}>
+                <div style={{position:"relative",marginTop:"-40px"}}>
                     {compagnon ?
                         name &&
                         <>
@@ -227,8 +227,8 @@ function Compagnon(props) {
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
-                            {profil.berry > 0 && <div><img style={{width:"30px"}} src={"/images/berry.png"}/> <p>{"x"+profil.berry}</p></div>}
-                            <p style={{color:"white",margin:"0 0 0 10px"}}>{"N."+compagnon.level}</p>
+                            {profil.berry > 0 && <div style={{display: "flex",justifyContent: "flex-end",gap: "10px",alignItems: "start", position:"absolute", right:"0",marginRight: "10px",marginTop: "5px",color:"white"}}><img style={{margin:0,height:"30px",width:"30px"}} src={"/images/berry.png"}/> <p style={{margin:0}}>{"x"+profil.berry}</p></div>}
+                            <p style={{color:"white",margin:"0 0 0 10px", marginTop:"20px"}}>{"N."+compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
                                     style={customStyles.intBar}>{compagnon.xp + " / " + compagnon.level * 10 + " (" + parseFloat(compagnon.xp / (compagnon.level * 10) * 100).toFixed(2) + "%)"}</div>
