@@ -177,28 +177,63 @@ function Profil(props) {
         }
     }
     useEffect(() => {
-        Axios
-            .get("/api/getProfil/"+pseudo)
-            .then(function (response){
-                setProfil(response.data);
-                Axios.get("/api/getMyTotalCards/"+pseudo)
+        Axios.get("/api/getCompagnon/" + pseudo)
+            .then(function (response) {
+                if (response.data.length > 0) {
+                    setCompagnon(response.data[0])
+                    setCustomStyleCompagnon({
+                        extBar: {
+                            width: '100%',
+                            backgroundColor: '#fff',
+                            position: 'relative',
+                            zIndex: '1',
+                            borderRadius: '50px',
+                            margin: 'auto',
+                            marginBottom: '50px'
+                        },
+                        intBar: {
+                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                            position: 'relative',
+                            background: '#15a3ea',
+                            textWrap: 'nowrap',
+                            color: 'white',
+                            borderRadius: '50px 50px 50px 50px',
+                            filter: "drop-shadow(0px 0px 6px blue)",
+                            transition: "width 2s"
+                        },
+                    });
+                    fetch("https://pokeapi.co/api/v2/pokemon-species/" + response.data[0].pokemon + "/")
+                        .then(res => res.json())
+                        .then(
+                            (result) => {
+                                setName(result.names);
+                            }
+                        )
+                }
+
+                Axios
+                    .get("/api/getProfil/"+pseudo)
                     .then(function (response){
-                        setPourcentCard(Math.round((response.data[0].nbCard / 15937) * 100));
-                        setMyTotalsCards(response.data)
-                        Axios.get("/api/getMyLastTenCards/"+pseudo)
-                            .then(function(response){
-                                setMyLastTenCards(response.data)
-                                Axios
-                                    .get("/api/getByUser/"+pseudo)
+                        setProfil(response.data);
+                        Axios.get("/api/getMyTotalCards/"+pseudo)
+                            .then(function (response){
+                                setPourcentCard(Math.round((response.data[0].nbCard / 15937) * 100));
+                                setMyTotalsCards(response.data)
+                                Axios.get("/api/getMyLastTenCards/"+pseudo)
                                     .then(function(response){
-                                        setList(response.data);
-                                        setPourcent(Math.round((response.data.length / 1025) * 100));
-                                        setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
+                                        setMyLastTenCards(response.data)
                                         Axios
-                                            .get("/api/getBadgesByUser/"+pseudo)
+                                            .get("/api/getByUser/"+pseudo)
                                             .then(function(response){
-                                                setIsLoad(false)
-                                                setBadgesList(response.data)
+                                                setList(response.data);
+                                                setPourcent(Math.round((response.data.length / 1025) * 100));
+                                                setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
+                                                Axios
+                                                    .get("/api/getBadgesByUser/"+pseudo)
+                                                    .then(function(response){
+                                                        setIsLoad(false)
+                                                        setBadgesList(response.data)
+                                                    })
                                             })
                                     })
                             })
@@ -389,6 +424,31 @@ function Profil(props) {
                                 <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
                             <p className={"pseudoProfil"}>Mon équipe</p>
+                            {compagnon &&
+                                name &&
+                                <>
+                                    <p style={{lineHeight: "normal", marginTop: "15px"}}
+                                       className="namePokemonPage">{name[4].name}</p>
+                                    <img style={{
+                                        width: "280px",
+                                        marginBottom: "30px",
+                                        animation: "floatArrow 5s linear infinite",
+                                        filter: "drop-shadow(0px 0px 6px rgb(124, 146, 234))"
+                                    }}
+                                         src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
+                                    <p style={{
+                                        color: "white",
+                                        margin: "0 0 0 10px",
+                                        marginTop: "0"
+                                    }}>{"N." + compagnon.level}</p>
+                                    <div style={customStyleCompagnon.extBar} className="fullProgressBar">
+                                        <div
+                                            style={customStyleCompagnon.intBar}><p
+                                            style={{marginLeft: "15px"}}>{compagnon.xp + " / " + compagnon.level * 2 + " (" + parseFloat(compagnon.xp / (compagnon.level * 2) * 100).toFixed(2) + "%)"}</p>
+                                        </div>
+                                    </div>
+                                </>
+                            }
                             <div className={"threePokemon"}>
                                 <button
                                     style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
