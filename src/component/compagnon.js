@@ -108,6 +108,28 @@ function Compagnon(props) {
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
                                             setCompagnon(response.data[0]);
+                                            setCustomStyles({
+                                                extBar: {
+                                                    width: '100%',
+                                                    backgroundColor: '#fff',
+                                                    position: 'relative',
+                                                    zIndex: '1',
+                                                    borderRadius: '50px',
+                                                    margin: 'auto',
+                                                    marginBottom: '15px'
+                                                },
+                                                intBar: {
+                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 10)) * 100).toFixed(2) + "%",
+                                                    position: 'relative',
+                                                    background: '#15a3ea',
+                                                    textWrap: 'nowrap',
+                                                    color: 'white',
+                                                    padding: '0 15px 0 15px',
+                                                    borderRadius: '50px 50px 50px 50px',
+                                                    filter: "drop-shadow(0px 0px 6px blue)",
+                                                    transition: "width 2s"
+                                                },
+                                            });
                                             Axios
                                                 .get("/api/getProfil/"+pseudo)
                                                 .then(function(response) {
@@ -116,6 +138,28 @@ function Compagnon(props) {
                                         })
                                 }else{
                                     setCompagnon(response.data[0])
+                                    setCustomStyles({
+                                        extBar: {
+                                            width: '100%',
+                                            backgroundColor: '#fff',
+                                            position: 'relative',
+                                            zIndex: '1',
+                                            borderRadius: '50px',
+                                            margin: 'auto',
+                                            marginBottom: '15px'
+                                        },
+                                        intBar: {
+                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 10)) * 100).toFixed(2) + "%",
+                                            position: 'relative',
+                                            background: '#15a3ea',
+                                            textWrap: 'nowrap',
+                                            color: 'white',
+                                            padding: '0 15px 0 15px',
+                                            borderRadius: '50px 50px 50px 50px',
+                                            filter: "drop-shadow(0px 0px 6px blue)",
+                                            transition: "width 2s"
+                                        },
+                                    });
                                     Axios
                                         .get("/api/getProfil/"+pseudo)
                                         .then(function(response) {
