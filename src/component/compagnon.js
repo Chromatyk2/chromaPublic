@@ -51,7 +51,7 @@ function Compagnon(props) {
                                             marginBottom: '15px'
                                         },
                                         intBar: {
-                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 10)) * 100).toFixed(2) + "%",
+                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
                                             position: 'relative',
                                             background: '#15a3ea',
                                             textWrap: 'nowrap',
@@ -98,7 +98,7 @@ function Compagnon(props) {
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
                             .then(function (response) {
-                                if(response.data[0].xp >= response.data[0].level * 10 ){
+                                if(response.data[0].xp >= response.data[0].level * 2 ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
@@ -118,7 +118,7 @@ function Compagnon(props) {
                                                     marginBottom: '15px'
                                                 },
                                                 intBar: {
-                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 10)) * 100).toFixed(2) + "%",
+                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
                                                     position: 'relative',
                                                     background: '#15a3ea',
                                                     textWrap: 'nowrap',
@@ -147,7 +147,7 @@ function Compagnon(props) {
                                             marginBottom: '15px'
                                         },
                                         intBar: {
-                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 10)) * 100).toFixed(2) + "%",
+                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
                                             position: 'relative',
                                             background: '#15a3ea',
                                             textWrap: 'nowrap',
@@ -204,7 +204,7 @@ function Compagnon(props) {
                                                     marginBottom: '15px'
                                                 },
                                                 intBar: {
-                                                    width: parseFloat((response.data[0].xp/(response.data[0].level*10))*100).toFixed(2)+"%",
+                                                    width: parseFloat((response.data[0].xp/(response.data[0].level*2))*100).toFixed(2)+"%",
                                                     position: 'relative',
                                                     background: '#15a3ea',
                                                     textWrap: 'nowrap',
@@ -251,7 +251,7 @@ function Compagnon(props) {
                                                     marginBottom: '15px'
                                                 },
                                                 intBar: {
-                                                    width: parseFloat(response.data[0].xp/(response.data[0].level*10)*100).toFixed(2)+"%",
+                                                    width: parseFloat(response.data[0].xp/(response.data[0].level*2)*100).toFixed(2)+"%",
                                                     position: 'relative',
                                                     background: '#15a3ea',
                                                     textWrap: 'nowrap',
@@ -315,7 +315,7 @@ function Compagnon(props) {
                             <p style={{color:"white",margin:"0 0 0 10px", marginTop:"20px"}}>{"N."+compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
-                                    style={customStyles.intBar}><p style={{marginLeft:"15px"}}>{compagnon.xp + " / " + compagnon.level * 10 + " (" + parseFloat(compagnon.xp / (compagnon.level * 10) * 100).toFixed(2) + "%)"}</p></div>
+                                    style={customStyles.intBar}><p style={{marginLeft:"15px"}}>{compagnon.xp + " / " + compagnon.level * 2 + " (" + parseFloat(compagnon.xp / (compagnon.level * 2) * 100).toFixed(2) + "%)"}</p></div>
                             </div>
                         </>
                         :
