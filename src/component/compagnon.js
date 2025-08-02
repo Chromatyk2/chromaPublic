@@ -64,7 +64,7 @@ function Compagnon(props) {
                    contentLabel="Example Modal">
                 <PokedexTeam pkmToUpdate={"none"} list={list} change={(e) => handleState(e)} cookies={props.cookies}/>
             </Modal>
-            <div style={{width:'300px', height:'300px', backgroundImage: "url(/images/pasture.jpg)"}}>
+            <div style={{width:'100%', height:'auto', backgroundImage: "url(/images/pasture.jpg)"}}>
 
             </div>
             <button
