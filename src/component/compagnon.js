@@ -161,7 +161,7 @@ function Compagnon(props) {
                                 className="anchorTooltip uniquePokemonContainerTeam">
                                 Changer le compagnon
                             </button>
-                            <p className="namePokemonPage">{name[4].name}</p>
+                            <p style={{lineHeight: "normal"}} className="namePokemonPage">{name[4].name}</p>
                             <img style={{
                                 width: "280px",
                                 marginBottom: "30px",
