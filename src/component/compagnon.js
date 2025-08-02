@@ -27,6 +27,27 @@ function Compagnon(props) {
     const [profil,setProfil] = useState(null);
     const [load,setLoad] = useState(false);
     const pseudo = cookies.user.data[0].login;
+    var customStyles = {
+        extBar: {
+            width: '100%',
+            backgroundColor: '#fff',
+            position: 'relative',
+            zIndex: '1',
+            borderRadius: '50px',
+            margin: 'auto',
+            marginBottom: '15px'
+        },
+        intBar: {
+            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+            position: 'relative',
+            background: '#15a3ea',
+            textWrap: 'nowrap',
+            color: 'white',
+            borderRadius: '50px 50px 50px 50px',
+            filter: "drop-shadow(0px 0px 6px blue)",
+            transition: "width 2s"
+        }
+    };
     useEffect(() => {Axios
         .get("/api/getProfil/"+pseudo)
         .then(function(response) {
