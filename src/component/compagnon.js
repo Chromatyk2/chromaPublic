@@ -227,7 +227,7 @@ function Compagnon(props) {
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
-                            {profil.berry > 0 && <img style={{width:"30px"}} src={"/images/berry.png"}/>}
+                            {profil.berry > 0 && <div><img style={{width:"30px"}} src={"/images/berry.png"}/> <p>{"x"+profil.berry}</p></div>}
                             <p style={{color:"white",margin:"0 0 0 10px"}}>{"N."+compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
