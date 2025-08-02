@@ -67,31 +67,28 @@ function Compagnon(props) {
     }
 
     function handleState(e,f) {
-        console.log(compagnonList);
-        console.log(e);
-        console.log(compagnonList.filter((item) => item.pokemon === e));
-        if(compagnonList.length == 0 || typeof compagnonList.find((item) => item.pokemon === e) === "undefined"){
-            Axios.post('/api/updateCompagnon',
-                {
-                    pseudo: pseudo
-                })
-                .then(function(response){
-                    Axios.post('/api/addCompagnon',
+        Axios
+            .get("/api/getCompagnonList/"+pseudo)
+            .then(function(response) {
+                const compagnonList =response.data;
+                if (compagnonList.length == 0 || typeof compagnonList.find((item) => item.pokemon === e) === "undefined") {
+                    Axios.post('/api/updateCompagnon',
                         {
-                            user: pseudo,
-                            pokemon: e,
-                            pkm: e,
-                            level: 1,
-                            xp:0,
-                            shiny:f,
-                            shine:f,
-                            actif:1
+                            pseudo: pseudo
                         })
-                        .then(function(response){
-                            Axios
-                                .get("/api/getCompagnonList/"+pseudo)
-                                .then(function(response) {
-                                    setCompagnonList(response.data);
+                        .then(function (response) {
+                            Axios.post('/api/addCompagnon',
+                                {
+                                    user: pseudo,
+                                    pokemon: e,
+                                    pkm: e,
+                                    level: 1,
+                                    xp: 0,
+                                    shiny: f,
+                                    shine: f,
+                                    actif: 1
+                                })
+                                .then(function (response) {
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
                                             setCompagnon(response.data[0])
@@ -106,34 +103,34 @@ function Compagnon(props) {
                                         })
                                 })
                         })
-                })
-        }else{
-            Axios.post('/api/updateCompagnon',
-                {
-                    pseudo: pseudo
-                })
-                .then(function(response){
-                    Axios.post('/api/activeCompagnon',
+                } else {
+                    Axios.post('/api/updateCompagnon',
                         {
-                            pseudo: pseudo,
-                            pokemon: e
+                            pseudo: pseudo
                         })
-                        .then(function(response){
-                            Axios.get("/api/getCompagnon/"+pseudo)
-                                .then(function(response) {
-                                    setCompagnon(response.data[0])
-                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+e+"/")
-                                        .then(res => res.json())
-                                        .then(
-                                            (result) => {
-                                                setName(result.names);
-                                                setIsOpenTeam(false);
-                                            }
-                                        )
+                        .then(function (response) {
+                            Axios.post('/api/activeCompagnon',
+                                {
+                                    pseudo: pseudo,
+                                    pokemon: e
+                                })
+                                .then(function (response) {
+                                    Axios.get("/api/getCompagnon/" + pseudo)
+                                        .then(function (response) {
+                                            setCompagnon(response.data[0])
+                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
+                                                .then(res => res.json())
+                                                .then(
+                                                    (result) => {
+                                                        setName(result.names);
+                                                        setIsOpenTeam(false);
+                                                    }
+                                                )
+                                        })
                                 })
                         })
-                })
-        }
+                }
+            })
     }
     return (
         <>
