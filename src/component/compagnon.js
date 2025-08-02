@@ -37,7 +37,7 @@ function Compagnon(props) {
             .get("/api/getByUser/"+pseudo)
             .then(function(response){
                 setList(response.data);
-                Axios.get("/api/getCompagnon/"+props.user)
+                Axios.get("/api/getCompagnon/"+pseudo)
                     .then(function(response) {
                         setCompagnon(response.data[0])
                         fetch("https://pokeapi.co/api/v2/pokemon/"+response.data[0].pokemon)
