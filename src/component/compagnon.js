@@ -56,7 +56,6 @@ function Compagnon(props) {
                                             background: '#15a3ea',
                                             textWrap: 'nowrap',
                                             color: 'white',
-                                            padding: '0 15px 0 15px',
                                             borderRadius: '50px 50px 50px 50px',
                                             filter: "drop-shadow(0px 0px 6px blue)",
                                             transition: "width 2s"
@@ -124,7 +123,6 @@ function Compagnon(props) {
                                                     background: '#15a3ea',
                                                     textWrap: 'nowrap',
                                                     color: 'white',
-                                                    padding: '0 15px 0 15px',
                                                     borderRadius: '50px 50px 50px 50px',
                                                     filter: "drop-shadow(0px 0px 6px blue)",
                                                     transition: "width 2s"
@@ -154,7 +152,6 @@ function Compagnon(props) {
                                             background: '#15a3ea',
                                             textWrap: 'nowrap',
                                             color: 'white',
-                                            padding: '0 15px 0 15px',
                                             borderRadius: '50px 50px 50px 50px',
                                             filter: "drop-shadow(0px 0px 6px blue)",
                                             transition: "width 2s"
@@ -212,7 +209,6 @@ function Compagnon(props) {
                                                     background: '#15a3ea',
                                                     textWrap: 'nowrap',
                                                     color: 'white',
-                                                    padding: '0 15px 0 15px',
                                                     borderRadius: '50px 50px 50px 50px',
                                                     filter: "drop-shadow(0px 0px 6px blue)",
                                                     transition: "width 2s"
@@ -260,7 +256,6 @@ function Compagnon(props) {
                                                     background: '#15a3ea',
                                                     textWrap: 'nowrap',
                                                     color: 'white',
-                                                    padding: '0 15px 0 15px',
                                                     borderRadius: '50px 50px 50px 50px',
                                                     filter: "drop-shadow(0px 0px 6px blue)",
                                                     transition: "width 2s"
@@ -320,7 +315,7 @@ function Compagnon(props) {
                             <p style={{color:"white",margin:"0 0 0 10px", marginTop:"20px"}}>{"N."+compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
-                                    style={customStyles.intBar}>{compagnon.xp + " / " + compagnon.level * 10 + " (" + parseFloat(compagnon.xp / (compagnon.level * 10) * 100).toFixed(2) + "%)"}</div>
+                                    style={customStyles.intBar}><p style={{marginLeft:"15px"}}>{compagnon.xp + " / " + compagnon.level * 10 + " (" + parseFloat(compagnon.xp / (compagnon.level * 10) * 100).toFixed(2) + "%)"}</p></div>
                             </div>
                         </>
                         :
