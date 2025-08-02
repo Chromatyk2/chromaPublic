@@ -22,31 +22,31 @@ function Compagnon(props) {
     const [list,setList] = useState([]);
     const [compagnon,setCompagnon] = useState(null);
     const [compagnonList,setCompagnonList] = useState(null);
+    const [customStyles,setCustomStyles] = useState(null);
     const [name,setName] = useState(null);
     const pseudo = cookies.user.data[0].login;
-    const customStyles = {
-
-        extBar: {
-            width: '100%',
-            backgroundColor: '#00368a',
-            position: 'relative',
-            zIndex: '1',
-            borderRadius: '50px',
-            margin:'auto',
-            marginBottom: '15px'
-        },
-        intBar: {
-            width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
-            position: 'relative',
-            background: '#120747',
-            textWrap: 'nowrap',
-            color: 'white',
-            padding: '0 15px 0 15px',
-            borderRadius: '50px 50px 50px 50px',
-            filter: "drop-shadow(0px 0px 6px blue)"
-        },
-    };
     useEffect(() => {
+        setCustomStyles({
+            extBar: {
+                width: '100%',
+                backgroundColor: '#00368a',
+                position: 'relative',
+                zIndex: '1',
+                borderRadius: '50px',
+                margin:'auto',
+                marginBottom: '15px'
+            },
+            intBar: {
+                width: parseFloat(props.getNb/props.item*100).toFixed(2)+"%",
+                position: 'relative',
+                background: '#120747',
+                textWrap: 'nowrap',
+                color: 'white',
+                padding: '0 15px 0 15px',
+                borderRadius: '50px 50px 50px 50px',
+                filter: "drop-shadow(0px 0px 6px blue)"
+            },
+        });
         Axios
             .get("/api/getByUser/"+pseudo)
             .then(function(response){
@@ -83,10 +83,6 @@ function Compagnon(props) {
             .get("/api/getCompagnonList/"+pseudo)
             .then(function(response) {
                 const compagnonList = response.data;
-                console.log(compagnonList)
-                console.log(e)
-                console.log(compagnonList.find((item) => item.pokemon == e))
-                console.log(compagnonList.filter((item) => item.pokemon == e))
                 if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == e).length == 0) {
                     Axios.post('/api/updateCompagnon',
                         {
@@ -107,6 +103,27 @@ function Compagnon(props) {
                                 .then(function (response) {
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
+                                            setCustomStyles({
+                                                extBar: {
+                                                    width: '100%',
+                                                    backgroundColor: '#00368a',
+                                                    position: 'relative',
+                                                    zIndex: '1',
+                                                    borderRadius: '50px',
+                                                    margin:'auto',
+                                                    marginBottom: '15px'
+                                                },
+                                                intBar: {
+                                                    width: parseFloat((response.data[0].xp/(response.data[0].level*25))*100).toFixed(2)+"%",
+                                                    position: 'relative',
+                                                    background: '#120747',
+                                                    textWrap: 'nowrap',
+                                                    color: 'white',
+                                                    padding: '0 15px 0 15px',
+                                                    borderRadius: '50px 50px 50px 50px',
+                                                    filter: "drop-shadow(0px 0px 6px blue)"
+                                                },
+                                            });
                                             setCompagnon(response.data[0])
                                             fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
                                                 .then(res => res.json())
@@ -133,6 +150,27 @@ function Compagnon(props) {
                                 .then(function (response) {
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
+                                            setCustomStyles({
+                                                extBar: {
+                                                    width: '100%',
+                                                    backgroundColor: '#00368a',
+                                                    position: 'relative',
+                                                    zIndex: '1',
+                                                    borderRadius: '50px',
+                                                    margin:'auto',
+                                                    marginBottom: '15px'
+                                                },
+                                                intBar: {
+                                                    width: parseFloat((response.data[0].xp/(response.data[0].level*25))*100).toFixed(2)+"%",
+                                                    position: 'relative',
+                                                    background: '#120747',
+                                                    textWrap: 'nowrap',
+                                                    color: 'white',
+                                                    padding: '0 15px 0 15px',
+                                                    borderRadius: '50px 50px 50px 50px',
+                                                    filter: "drop-shadow(0px 0px 6px blue)"
+                                                },
+                                            });
                                             setCompagnon(response.data[0])
                                             fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
                                                 .then(res => res.json())
