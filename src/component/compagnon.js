@@ -85,7 +85,7 @@ function Compagnon(props) {
     }
     function xpPokemon() {
         if(profil.berry - 1 > -1 && compagnon.level < 100){
-            Axios.get("/api/removeBerry/" + pseudo)
+            Axios.post("/api/removeBerry/" + pseudo)
                 .then(function (response) {
                     Axios.post('/api/addXpPokemon',
                         {
