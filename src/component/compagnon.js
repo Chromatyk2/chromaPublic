@@ -70,7 +70,9 @@ function Compagnon(props) {
         Axios
             .get("/api/getCompagnonList/"+pseudo)
             .then(function(response) {
-                const compagnonList =response.data;
+                const compagnonList = response.data;
+                console.log(compagnonList.find((item) => item.pokemon === e))
+                console.log(compagnonList.filter((item) => item.pokemon === e))
                 if (compagnonList.length == 0 || typeof compagnonList.find((item) => item.pokemon === e) === "undefined") {
                     Axios.post('/api/updateCompagnon',
                         {
