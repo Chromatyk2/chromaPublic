@@ -35,7 +35,7 @@ function SpawnPokemon(props) {
             setBerryToWins(berryToWin);
             Axios.post('/api/addBerry',
                 {
-                    user:pseudo,
+                    user:queryParameters.get("pseudo"),
                     berry:berryToWin
                 })
                 Axios.get("/api/getBadgesByUser/" + pseudo)
