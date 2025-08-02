@@ -161,7 +161,7 @@ function Compagnon(props) {
                                                     marginBottom: '15px'
                                                 },
                                                 intBar: {
-                                                    width: parseFloat((response.data[0].xp/(response.data[0].level*25))*100).toFixed(2)+"%",
+                                                    width: parseFloat(response.data[0].xp/(response.data[0].level*25)*100).toFixed(2)+"%",
                                                     position: 'relative',
                                                     background: '#120747',
                                                     textWrap: 'nowrap',
@@ -221,7 +221,7 @@ function Compagnon(props) {
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
-                                    style={customStyles.intBar}>{compagnon.xp + " / " + props.level * 25 + " (" + parseFloat((compagnon.xp / (props.level * 25)) * 100).toFixed(2) + "%)"}</div>
+                                    style={customStyles.intBar}>{compagnon.xp + " / " + props.level * 25 + " (" + parseFloat(compagnon.xp / (props.level * 25) * 100).toFixed(2) + "%)"}</div>
                             </div>
                         </>
                         :
