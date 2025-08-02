@@ -24,53 +24,58 @@ function Compagnon(props) {
     const [compagnonList,setCompagnonList] = useState(null);
     const [customStyles,setCustomStyles] = useState(null);
     const [name,setName] = useState(null);
+    const [profil,setProfil] = useState(null);
     const pseudo = cookies.user.data[0].login;
-    useEffect(() => {
-        Axios
-            .get("/api/getByUser/"+pseudo)
-            .then(function(response){
-                setList(response.data);
-                Axios
-                    .get("/api/getCompagnonList/"+pseudo)
-                    .then(function(response){
-                        setCompagnonList(response.data);
-                        Axios.get("/api/getCompagnon/"+pseudo)
-                            .then(function(response) {
-                                setCustomStyles({
-                                    extBar: {
-                                        width: '100%',
-                                        backgroundColor: '#fff',
-                                        position: 'relative',
-                                        zIndex: '1',
-                                        borderRadius: '50px',
-                                        margin:'auto',
-                                        marginBottom: '15px'
-                                    },
-                                    intBar: {
-                                        width: parseFloat((response.data[0].xp/(response.data[0].level*10))*100).toFixed(2)+"%",
-                                        position: 'relative',
-                                        background: '#15a3ea',
-                                        textWrap: 'nowrap',
-                                        color: 'white',
-                                        padding: '0 15px 0 15px',
-                                        borderRadius: '50px 50px 50px 50px',
-                                        filter: "drop-shadow(0px 0px 6px blue)",
-                                        transition: "width 2s"
-                                    },
-                                });
-                                if(response.data.length > 0){
-                                    setCompagnon(response.data[0])
-                                    fetch("https://pokeapi.co/api/v2/pokemon-species/"+response.data[0].pokemon+"/")
-                                        .then(res => res.json())
-                                        .then(
-                                            (result) => {
-                                                setName(result.names);
-                                            }
-                                        )
-                                }
-                            })
-                    })
-            })
+    useEffect(() => {Axios
+        .get("/api/getProfil/"+pseudo)
+        .then(function(response) {
+            setProfil(response.data[0])
+            Axios
+                .get("/api/getByUser/" + pseudo)
+                .then(function (response) {
+                    setList(response.data);
+                    Axios
+                        .get("/api/getCompagnonList/" + pseudo)
+                        .then(function (response) {
+                            setCompagnonList(response.data);
+                            Axios.get("/api/getCompagnon/" + pseudo)
+                                .then(function (response) {
+                                    setCustomStyles({
+                                        extBar: {
+                                            width: '100%',
+                                            backgroundColor: '#fff',
+                                            position: 'relative',
+                                            zIndex: '1',
+                                            borderRadius: '50px',
+                                            margin: 'auto',
+                                            marginBottom: '15px'
+                                        },
+                                        intBar: {
+                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 10)) * 100).toFixed(2) + "%",
+                                            position: 'relative',
+                                            background: '#15a3ea',
+                                            textWrap: 'nowrap',
+                                            color: 'white',
+                                            padding: '0 15px 0 15px',
+                                            borderRadius: '50px 50px 50px 50px',
+                                            filter: "drop-shadow(0px 0px 6px blue)",
+                                            transition: "width 2s"
+                                        },
+                                    });
+                                    if (response.data.length > 0) {
+                                        setCompagnon(response.data[0])
+                                        fetch("https://pokeapi.co/api/v2/pokemon-species/" + response.data[0].pokemon + "/")
+                                            .then(res => res.json())
+                                            .then(
+                                                (result) => {
+                                                    setName(result.names);
+                                                }
+                                            )
+                                    }
+                                })
+                        })
+                })
+        })
     }, []);
     function handleTeam(e) {
         setIsOpenTeam(true);
@@ -222,7 +227,7 @@ function Compagnon(props) {
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
-
+                            {profil.berry > 0 && <img style={{width:"30px"}} src={"/images/berry.png"}/>}
                             <p style={{color:"white",margin:"0 0 0 10px"}}>{"N."+compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
