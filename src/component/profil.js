@@ -214,7 +214,7 @@ function Profil(props) {
                             zIndex: '1',
                             borderRadius: '50px',
                             margin: 'auto',
-                            marginBottom: '15px'
+                            marginBottom: '50px'
                         },
                         intBar: {
                             width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
@@ -1092,13 +1092,13 @@ function Profil(props) {
                                         width: "280px",
                                         marginBottom: "30px",
                                         animation: "floatArrow 5s linear infinite",
-                                        filter: "drop-shadow(0px 0px 6px #066d04)"
+                                        filter: "drop-shadow(0px 0px 6px rgb(124, 146, 234))"
                                     }}
                                          src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                                     <p style={{
                                         color: "white",
                                         margin: "0 0 0 10px",
-                                        marginTop: "20px"
+                                        marginTop: "0"
                                     }}>{"N." + compagnon.level}</p>
                                     <div style={customStyleCompagnon.extBar} className="fullProgressBar">
                                         <div
