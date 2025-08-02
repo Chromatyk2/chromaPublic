@@ -93,7 +93,7 @@ function Compagnon(props) {
                 <div>
                     {compagnon ?
                         <>
-                            <img style={{width: "280px", marginBottom: "30px"}}
+                            <img style={{width: "280px", marginBottom: "30px",animation: "floatArrow 5s linear infinite"}}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             <button
                                 onClick={handleTeam}
