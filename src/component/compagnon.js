@@ -40,6 +40,12 @@ function Compagnon(props) {
                 Axios.get("/api/getCompagnon/"+props.user)
                     .then(function(response) {
                         setCompagnon(response.data[0])
+                        fetch("https://pokeapi.co/api/v2/pokemon/"+response.data[0].pokemon)
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+
+                                })
                     })
             })
     }, []);
