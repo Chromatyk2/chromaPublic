@@ -17,7 +17,7 @@ function Items(props) {
     function updateTeam(e) {
         const imgToAdd = e.target.value;
         const id = e.target.id;
-        const shiny = e.target.shiny;
+        const shiny = e.target.getAttribute("shiny");
         const pkToUpdate = pkmToUpdate;
         console.log(e.target)
         if(pkmToUpdate !== "none"){
