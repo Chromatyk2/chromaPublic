@@ -223,7 +223,7 @@ function Compagnon(props) {
                             }}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
 
-                            <p style={{color:"white"}}>{"N."+compagnon.level}</p>
+                            <p style={{color:"white",margin:0}}>{"N."+compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
                                     style={customStyles.intBar}>{compagnon.xp + " / " + compagnon.level * 25 + " (" + parseFloat(compagnon.xp / (compagnon.level * 25) * 100).toFixed(2) + "%)"}</div>
