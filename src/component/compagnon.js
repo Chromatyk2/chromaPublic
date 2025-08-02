@@ -39,7 +39,7 @@ function Compagnon(props) {
                                 setCustomStyles({
                                     extBar: {
                                         width: '100%',
-                                        backgroundColor: '#00368a',
+                                        backgroundColor: '#fff',
                                         position: 'relative',
                                         zIndex: '1',
                                         borderRadius: '50px',
@@ -49,7 +49,7 @@ function Compagnon(props) {
                                     intBar: {
                                         width: parseFloat((response.data[0].xp/(response.data[0].level*25))*100).toFixed(2)+"%",
                                         position: 'relative',
-                                        background: '#120747',
+                                        background: '#15a3ea',
                                         textWrap: 'nowrap',
                                         color: 'white',
                                         padding: '0 15px 0 15px',
@@ -107,7 +107,7 @@ function Compagnon(props) {
                                             setCustomStyles({
                                                 extBar: {
                                                     width: '100%',
-                                                    backgroundColor: '#00368a',
+                                                    backgroundColor: '#fff',
                                                     position: 'relative',
                                                     zIndex: '1',
                                                     borderRadius: '50px',
@@ -117,7 +117,7 @@ function Compagnon(props) {
                                                 intBar: {
                                                     width: parseFloat((response.data[0].xp/(response.data[0].level*25))*100).toFixed(2)+"%",
                                                     position: 'relative',
-                                                    background: '#120747',
+                                                    background: '#15a3ea',
                                                     textWrap: 'nowrap',
                                                     color: 'white',
                                                     padding: '0 15px 0 15px',
@@ -155,7 +155,7 @@ function Compagnon(props) {
                                             setCustomStyles({
                                                 extBar: {
                                                     width: '100%',
-                                                    backgroundColor: '#00368a',
+                                                    backgroundColor: '#fff',
                                                     position: 'relative',
                                                     zIndex: '1',
                                                     borderRadius: '50px',
@@ -165,7 +165,7 @@ function Compagnon(props) {
                                                 intBar: {
                                                     width: parseFloat(response.data[0].xp/(response.data[0].level*25)*100).toFixed(2)+"%",
                                                     position: 'relative',
-                                                    background: '#120747',
+                                                    background: '#15a3ea',
                                                     textWrap: 'nowrap',
                                                     color: 'white',
                                                     padding: '0 15px 0 15px',
