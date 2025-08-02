@@ -37,7 +37,7 @@ function OpeningCards(props) {
         setBerryToWins(berryToWin);
         Axios.post('/api/addBerry',
             {
-                user:pseudo,
+                user:props.user,
                 berry:berryToWin
             })
         var tokenBonus = Math.floor(Math.random() * 5);
