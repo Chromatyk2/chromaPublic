@@ -148,6 +148,19 @@ function Compagnon(props) {
                     {compagnon ?
                         name &&
                         <>
+                            <button
+                                style={{
+                                    width: "fit-content",
+                                    display: "block",
+                                    margin: "auto",
+                                    borderRadius: "10px",
+                                    height: "50px",
+                                    color: "white"
+                                }}
+                                onClick={handleTeam}
+                                className="anchorTooltip uniquePokemonContainerTeam">
+                                Changer le compagnon
+                            </button>
                             <p className="namePokemonPage">{name[4].name}</p>
                             <img style={{
                                 width: "280px",
@@ -156,14 +169,17 @@ function Compagnon(props) {
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
-                            <button
-                                onClick={handleTeam}
-                                className="anchorTooltip uniquePokemonContainerTeam">
-                                Changer le compagnon
-                            </button>
                         </>
                         :
                         <button
+                            style={{
+                                width: "fit-content",
+                                display: "block",
+                                margin: "auto",
+                                borderRadius: "10px",
+                                height: "50px",
+                                color: "white"
+                            }}
                             onClick={handleTeam}
                             className="anchorTooltip uniquePokemonContainerTeam">
                             Choisir un compagnon
