@@ -75,7 +75,7 @@ function Compagnon(props) {
                 console.log(e)
                 console.log(compagnonList.find((item) => item.pokemon == e))
                 console.log(compagnonList.filter((item) => item.pokemon == e))
-                if (compagnonList.length == 0 || typeof compagnonList.find((item) => item.pokemon === e) === "undefined") {
+                if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == e).length == 0) {
                     Axios.post('/api/updateCompagnon',
                         {
                             pseudo: pseudo
