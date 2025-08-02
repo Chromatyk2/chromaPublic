@@ -83,7 +83,46 @@ function Compagnon(props) {
     function closeModalTeam() {
         setIsOpenTeam(false);
     }
-
+    function xpPokemon() {
+        if(profil.berry - 1 > -1 && compagnon.level > 100){
+            Axios.get("/api/removeBerry/" + pseudo)
+                .then(function (response) {
+                    Axios.post('/api/addXpPokemon',
+                        {
+                            user: pseudo,
+                            pokemon:compagnon.pokemon
+                        }
+                    ).then(function (response) {
+                        Axios.get("/api/getCompagnon/" + pseudo)
+                            .then(function (response) {
+                                if(response.data[0].xp >= response.data[0].level*25 ){
+                                    Axios.post('/api/lvlUpPokemon',
+                                        {
+                                            user: pseudo,
+                                            pokemon:compagnon.pokemon
+                                        })
+                                    Axios.get("/api/getCompagnon/" + pseudo)
+                                        .then(function (response) {
+                                            setCompagnon(response.data[0]);
+                                            Axios
+                                                .get("/api/getProfil/"+pseudo)
+                                                .then(function(response) {
+                                                    setProfil(response.data[0])
+                                                })
+                                        })
+                                }else{
+                                    setCompagnon(response.data[0])
+                                    Axios
+                                        .get("/api/getProfil/"+pseudo)
+                                        .then(function(response) {
+                                            setProfil(response.data[0])
+                                        })
+                                }
+                            })
+                    })
+                })
+        }
+    }
     function handleState(e,f) {
         Axios
             .get("/api/getCompagnonList/"+pseudo)
@@ -220,7 +259,7 @@ function Compagnon(props) {
                                 Changer le compagnon
                             </button>
                             <p style={{lineHeight: "normal",marginTop: "15px"}} className="namePokemonPage">{name[4].name}</p>
-                            <img style={{
+                            <img onClick={xpPokemon} style={{
                                 width: "280px",
                                 marginBottom: "30px",
                                 animation: "floatArrow 5s linear infinite",
