@@ -63,6 +63,9 @@ function Profil(props) {
     const [openTime, setOpenTime] = React.useState(false);
     const [isLoad, setIsLoad] = React.useState(true);
     const [pourcentShiny, setPourcentShiny] = useState();
+    const [name,setName] = useState(null);
+    const [compagnon,setCompagnon] = useState(null);
+    const [customStyleCompagnon,setCustomStyleCompagnon] = useState(null);
     useEffect(() => {
         const progressBars = document.querySelectorAll('.progress-container');
 
