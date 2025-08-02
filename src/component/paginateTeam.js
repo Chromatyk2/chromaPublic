@@ -19,8 +19,7 @@ function Items(props) {
         const id = e.target.id;
         const shiny = e.target.shiny;
         const pkToUpdate = pkmToUpdate;
-        console.log(id)
-        console.log(shiny)
+        console.log(e.target)
         if(pkmToUpdate !== "none"){
             Axios.post('/api/updatePokemonTeam',
                 {
