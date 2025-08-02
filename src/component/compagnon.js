@@ -93,12 +93,12 @@ function Compagnon(props) {
                 <div>
                     {compagnon ?
                         <>
-                            <img style={{width: "280px", marginBottom: "30px",animation: "floatArrow 5s linear infinite"}}
+                            <img style={{width: "280px", marginBottom: "30px",animation: "floatArrow 5s linear infinite",filter:"drop-shadow(0px 0px 6px #066d04)"}}
                                  src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             <button
                                 onClick={handleTeam}
                                 className="anchorTooltip uniquePokemonContainerTeam">
-                                Choisir un compagnon
+                                Changer le compagnon
                             </button>
                         </>
                         :
