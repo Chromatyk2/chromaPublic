@@ -20,6 +20,7 @@ function Compagnon(props) {
     const [cookies, setCookie] = useCookies();
     const [modalTeamIsOpen, setIsOpenTeam] = React.useState(false);
     const [list,setList] = useState([]);
+    const [compagnon,setCompagnon] = useState(null);
     const pseudo = cookies.user.data[0].login;
     const customStyles = {
         extBar: {
@@ -36,6 +37,10 @@ function Compagnon(props) {
             .get("/api/getByUser/"+pseudo)
             .then(function(response){
                 setList(response.data);
+                Axios.get("/api/getCompagnon/"+props.user)
+                    .then(function(response) {
+                        setCompagnon(response.data[0])
+                    })
             })
     }, []);
     function handleTeam(e) {
@@ -45,14 +50,16 @@ function Compagnon(props) {
         setIsOpenTeam(false);
     }
 
-    function handleState(e) {
+    function handleState(e,f) {
         Axios.post('/api/addCompagnon',
             {
                 user: pseudo,
                 pokemon: e,
                 pkm: e,
                 level: 1,
-                xp:0
+                xp:0,
+                shiny:f,
+                shine:f
             })
             .then(function(response){
                 setIsOpenTeam(false);
@@ -62,17 +69,21 @@ function Compagnon(props) {
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles}
                    contentLabel="Example Modal">
-                <PokedexTeam pkmToUpdate={"none"} list={list} change={(e) => handleState(e)} cookies={props.cookies}/>
+                <PokedexTeam pkmToUpdate={"none"} list={list} change={(e,f) => handleState(e,f)} cookies={props.cookies}/>
             </Modal>
-            <div style={{width:'100%', height:'auto', backgroundImage: "url(/images/pasture.jpg)"}}>
+            <div style={{display:"flex",justifyContent:"center",alignItems:"center", width: '100%', height: '100vh', backgroundImage: "url(/images/pasture.jpg)"}}>
 
+                <div>
+                    {compagnon &&
+                        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/"+compagnon.pokemon+".png"} />
+                    }
+                    <button
+                        onClick={handleTeam}
+                        className="anchorTooltip uniquePokemonContainerTeam">
+                        Changer le compagnon
+                    </button>
+                </div>
             </div>
-            <button
-                style={{position:"absolute", top:"300px", left:"500px"}}
-                onClick={handleTeam}
-                className="anchorTooltip uniquePokemonContainerTeam">
-                Changer le compagnon
-            </button>
         </>
     );
 }

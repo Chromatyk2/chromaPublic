@@ -17,6 +17,7 @@ function Items(props) {
     function updateTeam(e) {
         const imgToAdd = e.target.value;
         const id = e.target.id;
+        const shiny = e.target.shiny;
         const pkToUpdate = pkmToUpdate;
         if(pkmToUpdate !== "none"){
             Axios.post('/api/updatePokemonTeam',
@@ -30,7 +31,7 @@ function Items(props) {
                     props.change();
                 })
         }else{
-            props.change(id);
+            props.change(id, shiny);
         }
     }
     return (
@@ -46,6 +47,7 @@ function Items(props) {
                                     onClick={updateTeam}
                                     value={val.pkmImage}
                                     id={val.pkmId}
+                                    shiny={val.shiny}
                                     style={{
                                         backgroundImage:"url("+val.pkmImage+")",
                                         height:"100px",
@@ -92,8 +94,8 @@ function PaginationTeam(props) {
         const newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
         setItemOffset(newOffset);
     };
-    function handleState(e) {
-        props.change(e);
+    function handleState(e, f) {
+        props.change(e, f);
     }
     return (
         <>
@@ -104,7 +106,7 @@ function PaginationTeam(props) {
                     <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
                 </div>
             }
-            <Items change={(e) => handleState(e)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
+            <Items change={(e,f) => handleState(e,f)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."
