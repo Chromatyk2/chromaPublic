@@ -44,7 +44,8 @@ function Compagnon(props) {
                 color: 'white',
                 padding: '0 15px 0 15px',
                 borderRadius: '50px 50px 50px 50px',
-                filter: "drop-shadow(0px 0px 6px blue)"
+                filter: "drop-shadow(0px 0px 6px blue)",
+                transition: "width 2s"
             },
         });
         Axios
@@ -121,7 +122,8 @@ function Compagnon(props) {
                                                     color: 'white',
                                                     padding: '0 15px 0 15px',
                                                     borderRadius: '50px 50px 50px 50px',
-                                                    filter: "drop-shadow(0px 0px 6px blue)"
+                                                    filter: "drop-shadow(0px 0px 6px blue)",
+                                                    transition: "width 2s"
                                                 },
                                             });
                                             setCompagnon(response.data[0])
@@ -168,7 +170,8 @@ function Compagnon(props) {
                                                     color: 'white',
                                                     padding: '0 15px 0 15px',
                                                     borderRadius: '50px 50px 50px 50px',
-                                                    filter: "drop-shadow(0px 0px 6px blue)"
+                                                    filter: "drop-shadow(0px 0px 6px blue)",
+                                                    transition: "width 2s"
                                                 },
                                             });
                                             setCompagnon(response.data[0])
