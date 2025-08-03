@@ -35,6 +35,7 @@ function Items(props) {
             props.change(id, shiny);
         }
     }
+    cnsole.log(compagnonList)
     return (
         <>
             <div className="pokemonGlobalContainer">
@@ -55,7 +56,7 @@ function Items(props) {
                                         width:"100px",
                                         border:"none",
                                     }}
-                                    className={compagnonList.find((item) => item.pokemon == val.pkmId && item.level == 100) ? "maxLevelFrame" : ""}>
+                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100).length == 0 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
