@@ -31,6 +31,7 @@ function Compagnon(props) {
     const [berryToWin, setBerryToWin] = React.useState(null);
     const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
     const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
+    const [powderToWin, setPowderToWin] = React.useState(null);
     useEffect(() => {Axios
         .get("/api/getProfil/"+pseudo)
         .then(function(response) {
@@ -142,12 +143,14 @@ function Compagnon(props) {
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
                                                             var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
                                                             var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
+                                                            var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
                                                             var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
                                                             var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
+                                                            var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }
                                                     }
                                                     Axios
@@ -247,12 +250,15 @@ function Compagnon(props) {
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
                                                             var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
                                                             var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
+                                                            var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
                                                             var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
                                                             var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }
                                                     }
                                                     Axios
@@ -350,14 +356,16 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
-                                                        }else{
-                                                            var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
                                                             var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
                                                             var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
+                                                            var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                                        }else{
+                                                            var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }
                                                     }
                                                     Axios
@@ -516,7 +524,7 @@ function Compagnon(props) {
                 })
         }.bind(this), 500)
     }
-    function openModalBerry(e,f,g) {
+    function openModalBerry(e,f,g,h) {
         Axios.post('/api/addBerry',
             {
                 user:pseudo,
@@ -535,6 +543,18 @@ function Compagnon(props) {
                                 nbToken:f
                             })
                             .then(function(response) {
+                                Axios.post('/api/addPowder',
+                                    {
+                                        user:pseudo,
+                                        win:h,
+                                        wins:h
+                                    })
+                                    .then(function(response) {
+                                        setProfil(response.data[0])
+                                        setTimeout(function() { setLoad(false)}.bind(this), 500)
+                                    })
+                            })
+                            .then(function(response) {
                                 Axios
                                     .get("/api/getProfil/"+pseudo)
                                     .then(function(response) {
@@ -547,6 +567,7 @@ function Compagnon(props) {
         setBerryToWin(e)
         setTokenCardToWin(f)
         setTokenPkmToWin(g)
+        setPowderToWin(h)
         setIsOpenSkin(true);
     }
     function closeModalBerry() {
@@ -562,16 +583,7 @@ function Compagnon(props) {
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">
 
                 <div style={{flexFlow:"column"}} className="pokemonContentToken">
-                    <div style={{display: "flex", justifyContent: "center",marginTop: "150px"}}>
-                        <div>
-                            <p style={{
-                                textAlign: "center",
-                                fontSize: "30px",
-                                marginTop: "-100px"
-                            }}>{"X " + berryToWin}</p>
-                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
-                                 src={"/images/berry.png"}/>
-                        </div>
+                    <div style={{display: "flex", justifyContent: "center", marginTop: "150px"}}>
                         <div>
                             <p style={{
                                 textAlign: "center",
@@ -589,6 +601,24 @@ function Compagnon(props) {
                             }}>{"X " + tokenPkmToWin}</p>
                             <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
                                  src={"/token.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + powderToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/images/powder.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + berryToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/images/berry.png"}/>
                         </div>
                     </div>
                     <button style={{display: "block", margin: "auto"}} className={"filterButton"}
