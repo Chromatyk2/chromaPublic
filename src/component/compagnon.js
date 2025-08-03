@@ -671,7 +671,7 @@ function Compagnon(props) {
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
                                     style={customStyles.intBar}><p
-                                    style={{marginLeft: "15px"}}>{compagnon.xp + " / " + (compagnon.level + 1) * 2 + " (" + parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2) + "%)"}</p></div>
+                                    style={{marginLeft: "15px"}}>{compagnon.xp + " / " + (compagnon.level + 1) * 2 + " (" + parseFloat((response.data[0].xp / ((rcompagnon.level + 1 ) * 2)) * 100).toFixed(2) + "%)"}</p></div>
                             </div>
                         </>
                         :
