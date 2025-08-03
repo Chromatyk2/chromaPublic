@@ -562,7 +562,7 @@ function Compagnon(props) {
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">
 
                 <div style={{flexFlow:"column"}} className="pokemonContentToken">
-                    <div style={{display: "flex", justifyContent: "center"}}>
+                    <div style={{display: "flex", justifyContent: "center",marginTop: "150px"}}>
                         <div>
                             <p style={{
                                 textAlign: "center",
