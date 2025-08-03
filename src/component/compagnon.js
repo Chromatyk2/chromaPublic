@@ -490,6 +490,7 @@ function Compagnon(props) {
                                 src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             </button>
                             {profil.berry > 0 &&
+                                compagnon.level < 100 &&
                                 <div style={{
                                     display: "flex",
                                     justifyContent: "flex-end",
