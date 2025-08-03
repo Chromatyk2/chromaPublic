@@ -35,7 +35,7 @@ function Items(props) {
             props.change(id, shiny);
         }
     }
-    cnsole.log(compagnonList)
+    console.log(compagnonList)
     return (
         <>
             <div className="pokemonGlobalContainer">
