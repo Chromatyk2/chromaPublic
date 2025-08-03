@@ -105,7 +105,7 @@ function Compagnon(props) {
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
                             .then(function (response) {
-                                if(response.data[0].xp >= response.data[0].level * 2 ){
+                                if(response.data[0].xp >= (response.data[0].level + 1) * 2 ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
@@ -213,7 +213,7 @@ function Compagnon(props) {
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
                             .then(function (response) {
-                                if(response.data[0].xp >= response.data[0].level * 2 ){
+                                if(response.data[0].xp >= (response.data[0].level + 1) * 2 ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
@@ -320,7 +320,7 @@ function Compagnon(props) {
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
                             .then(function (response) {
-                                if(response.data[0].xp >= response.data[0].level * 2 ){
+                                if(response.data[0].xp >= (response.data[0].level + 1) * 2 ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
