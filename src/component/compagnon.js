@@ -136,12 +136,7 @@ function Compagnon(props) {
                                                     transition: "width 2s"
                                                 },
                                             });
-                                            Axios
-                                                .get("/api/getProfil/"+pseudo)
-                                                .then(function(response) {
-                                                    setProfil(response.data[0])
-                                                    openModalBerry(berryToWin);
-                                                })
+                                            openModalBerry(berryToWin);
                                         })
                                 }else{
                                     setCompagnon(response.data[0])
@@ -479,6 +474,13 @@ function Compagnon(props) {
             {
                 user:pseudo,
                 berry:e
+            })
+            .then(function(response) {
+                Axios
+                    .get("/api/getProfil/"+pseudo)
+                    .then(function(response) {
+                        setProfil(response.data[0])
+                    })
             })
         setBerryToWin(e)
         setIsOpenSkin(true);
