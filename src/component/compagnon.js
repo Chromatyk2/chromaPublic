@@ -670,7 +670,7 @@ function Compagnon(props) {
                             <p style={{
                                 color: "white",
                                 margin: "0 0 0 10px",
-                                marginTop: "20px"
+                                marginTop: "-30px"
                             }}>{"N." + compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
