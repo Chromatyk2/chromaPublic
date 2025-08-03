@@ -458,7 +458,7 @@ function Compagnon(props) {
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam}
                    contentLabel="Example Modal">
-                <PokedexTeam pkmToUpdate={"none"} list={list} change={(e,f) => handleState(e,f)} cookies={props.cookies}/>
+                <PokedexTeam compagnonList={compagnonList} pkmToUpdate={"none"} list={list} change={(e,f) => handleState(e,f)} cookies={props.cookies}/>
             </Modal>
             <div style={{display:"flex",justifyContent:"center",alignItems:"center", width: '100%', height: '100vh', backgroundImage: "url(/images/pasture.jpg)"}}>
 

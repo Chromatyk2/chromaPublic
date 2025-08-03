@@ -19,7 +19,6 @@ function Items(props) {
         const id = e.target.id;
         const shiny = e.target.getAttribute("shiny");
         const pkToUpdate = pkmToUpdate;
-        console.log(e.target)
         if(pkmToUpdate !== "none"){
             Axios.post('/api/updatePokemonTeam',
                 {
@@ -55,7 +54,7 @@ function Items(props) {
                                         width:"100px",
                                         border:"none",
                                     }}
-                                    lassName="navLink">
+                                    className={compagnonList.filter((item) => item.pokemon == e).length == 0 && compagnonList.filter((item) => item.pokemon == e).level == 100 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
@@ -107,7 +106,7 @@ function PaginationTeam(props) {
                     <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
                 </div>
             }
-            <Items change={(e,f) => handleState(e,f)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
+            <Items  compagnonList={props.compagnonList} change={(e,f) => handleState(e,f)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."

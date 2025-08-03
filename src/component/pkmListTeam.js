@@ -18,6 +18,7 @@ function PkmListTeam(props) {
                 <p className="labelStats">Total<br/><span className="valueStats">{nbTotal}</span></p>
             </div>
             <PaginationTeam
+                compagnonList={props.compagnonList}
                 change={(e,f) => handleState(e,f)}
                 pkmToUpdate={props.pkmToUpdate}
                 itemsPerPage={32}
