@@ -9,15 +9,21 @@ function Otherdex(props) {
     const [list,setList] = useState([]);
     const [totalPkm,setTotalPkm] = useState(null);
     const { pseudo } = useParams()
+    const [compagnonList,setCompagnonList] = useState(null);
     useEffect(() => {
         Axios
-            .get("/api/getByUser/"+pseudo)
-            .then(function(response){
-                setList(response.data);
+            .get("/api/getCompagnonList/" + pseudo)
+            .then(function (response) {
+                setCompagnonList(response.data);
                 Axios
-                    .get("/api/getTotalPokemon/"+pseudo)
+                    .get("/api/getByUser/"+pseudo)
                     .then(function(response){
-                        setTotalPkm(response.data[0].totalCapture);
+                        setList(response.data);
+                        Axios
+                            .get("/api/getTotalPokemon/"+pseudo)
+                            .then(function(response){
+                                setTotalPkm(response.data[0].totalCapture);
+                            })
                     })
             })
     }, [])
@@ -25,7 +31,7 @@ function Otherdex(props) {
         <>
             {totalPkm &&
                 <div className={"contentContainer"}>
-                    <PkmList list={list} totalPkm={totalPkm}/>
+                    <PkmList compagnonList={compagnonList} list={list} totalPkm={totalPkm}/>
                 </div>
 
             }

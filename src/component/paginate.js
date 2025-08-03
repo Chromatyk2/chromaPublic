@@ -24,7 +24,7 @@ function Items(props) {
              return (
                <>
                 <Link
-                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100).length > 0 ? "navLink maxLevelFrame" : "navLink"} to={"/pokemon/"+val.pkmId}>
+                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 ? "navLink maxLevelFrame" : "navLink"} to={"/pokemon/"+val.pkmId}>
                  <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
