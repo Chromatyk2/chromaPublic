@@ -11,7 +11,6 @@ function PokedexTeam(props) {
     }
 
     useEffect(() => {
-
         Axios
             .get("/api/getCompagnonList/" + props.pseudo)
             .then(function (response) {
@@ -20,9 +19,12 @@ function PokedexTeam(props) {
     }, [])
     return (
         <>
-            <div  style={{paddingTop:"15px",minHeight:"100%"}} className={"contentContainer"}>
-                <PkmListTeam compagnonList={compagnonList} change={(e,f) => handleState(e,f)} pkmToUpdate={props.pkmToUpdate} list={props.list}/>
-            </div>
+            {compagnonList &&
+                <div style={{paddingTop: "15px", minHeight: "100%"}} className={"contentContainer"}>
+                    <PkmListTeam compagnonList={compagnonList} change={(e, f) => handleState(e, f)}
+                                 pkmToUpdate={props.pkmToUpdate} list={props.list}/>
+                </div>
+            }
         </>
     )
 }
