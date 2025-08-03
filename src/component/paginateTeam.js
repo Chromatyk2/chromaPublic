@@ -59,7 +59,7 @@ function Items(props) {
                                         backgroundSize:"80px"
 
                                     }}
-                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>
+                                    className={pkmToUpdate !== "none" && compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
