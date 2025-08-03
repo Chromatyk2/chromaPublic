@@ -1247,7 +1247,7 @@ function Profil(props) {
             </Modal>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam} style={customStyles}
                    contentLabel="Example Modal">
-                <PokedexTeam list={list} change={handleState} pkmToUpdate={teamToHandle} cookies={props.cookies}/>
+                <PokedexTeam pseudo={pseudo} list={list} change={handleState} pkmToUpdate={teamToHandle} cookies={props.cookies}/>
             </Modal>
             <Modal style={{}} overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
                 <SpawnPokemonToken  change={closeModalToken} pseudo={pseudo}/>

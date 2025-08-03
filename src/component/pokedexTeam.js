@@ -13,7 +13,7 @@ function PokedexTeam(props) {
     useEffect(() => {
 
         Axios
-            .get("/api/getCompagnonList/" + pseudo)
+            .get("/api/getCompagnonList/" + props.pseudo)
             .then(function (response) {
                 setCompagnonList(response.data);
             })
