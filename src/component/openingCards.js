@@ -33,7 +33,7 @@ function OpeningCards(props) {
 
     useEffect(() => {
 
-        var berryToWin = Math.floor(Math.random() * 20 + 1);
+        var berryToWin = Math.floor(Math.random() * 50 + 1);
         setBerryToWins(berryToWin);
         Axios.post('/api/addBerry',
             {
