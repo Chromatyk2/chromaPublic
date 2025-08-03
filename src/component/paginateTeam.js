@@ -55,7 +55,7 @@ function Items(props) {
                                         width:"100px",
                                         border:"none",
                                     }}
-                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId).length == 0 && compagnonList.filter((item) => item.pokemon == val.pkmId).level == 100 ? "maxLevelFrame" : ""}>
+                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId).length == 0 && compagnonList.find((item) => item.pokemon == val.pkmId).level == 100 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
