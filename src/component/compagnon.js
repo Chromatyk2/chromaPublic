@@ -14,6 +14,7 @@ import 'reactjs-popup/dist/index.css';
 import Modal from "react-modal";
 import UniqueBoxV2 from "./uniqueBoxV2";
 import PokedexTeam from "./pokedexTeam";
+const [berryToWin, setBerryToWin] = React.useState(null);
 
 
 function Compagnon(props) {
@@ -27,6 +28,7 @@ function Compagnon(props) {
     const [profil,setProfil] = useState(null);
     const [load,setLoad] = useState(false);
     const pseudo = cookies.user.data[0].login;
+    const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
     useEffect(() => {Axios
         .get("/api/getProfil/"+pseudo)
         .then(function(response) {
@@ -107,6 +109,11 @@ function Compagnon(props) {
                                         })
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
+                                            if(response.data[0].shiny == 1){
+                                                var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                            }else{
+                                                var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                            }
                                             setCompagnon(response.data[0]);
                                             setCustomStyles({
                                                 extBar: {
@@ -133,6 +140,7 @@ function Compagnon(props) {
                                                 .get("/api/getProfil/"+pseudo)
                                                 .then(function(response) {
                                                     setProfil(response.data[0])
+                                                    openModalBerry(berryToWin);
                                                 })
                                         })
                                 }else{
@@ -193,6 +201,11 @@ function Compagnon(props) {
                                         })
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
+                                            if(response.data[0].shiny == 1){
+                                                var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                            }else{
+                                                var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                            }
                                             setCompagnon(response.data[0]);
                                             setCustomStyles({
                                                 extBar: {
@@ -219,6 +232,7 @@ function Compagnon(props) {
                                                 .get("/api/getProfil/"+pseudo)
                                                 .then(function(response) {
                                                     setProfil(response.data[0])
+                                                    openModalBerry(berryToWin);
                                                 })
                                         })
                                 }else{
@@ -279,6 +293,11 @@ function Compagnon(props) {
                                         })
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
+                                            if(response.data[0].shiny == 1){
+                                                var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                            }else{
+                                                var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                            }
                                             setCompagnon(response.data[0]);
                                             setCustomStyles({
                                                 extBar: {
@@ -305,6 +324,7 @@ function Compagnon(props) {
                                                 .get("/api/getProfil/"+pseudo)
                                                 .then(function(response) {
                                                     setProfil(response.data[0])
+                                                    openModalBerry(berryToWin);
                                                 })
                                         })
                                 }else{
@@ -454,11 +474,35 @@ function Compagnon(props) {
                 })
         }.bind(this), 500)
     }
+    function openModalBerry(e) {
+        Axios.post('/api/addBerry',
+            {
+                user:queryParameters.get("pseudo"),
+                berry:berryToWin
+            })
+        setBerryToWin(e)
+        setIsOpenSkin(true);
+    }
+    function closeModalBerry() {
+        setIsOpenSkin(false);
+    }
     return (
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam}
                    contentLabel="Example Modal">
                 <PokedexTeam pseudo={pseudo} pkmToUpdate={"none"} list={list} change={(e,f) => handleState(e,f)} cookies={props.cookies}/>
+            </Modal>
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
+                   onRequestClose={closeModalBerry} contentLabel="Example Modal">
+
+                <div style={{flexFlow:"column"}} className="pokemonContentToken">
+                    <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>{"X "+berryToWin}</p>
+                    <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                         src={"/images/berry.png"}/>
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                            onClick={closeModalBerry}>Cool !
+                    </button>
+                </div>
             </Modal>
             <div style={{display:"flex",justifyContent:"center",alignItems:"center", width: '100%', height: '100vh', backgroundImage: "url(/images/pasture.jpg)"}}>
 
