@@ -331,20 +331,17 @@ function Compagnon(props) {
                                 }}>
                                     {profil.berry > 0 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}
-                                                style={{position: "absolute", zIndex: 1}}> {"Utiliser 1 : x" + profil.berry}
+                                                onClick={xpPokemon}> {"x1" + profil.berry}
                                         </button>
                                     }
                                     {profil.berry > 10 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}
-                                                style={{position: "absolute", zIndex: 1}}> {"Utiliser 10 : x" + profil.berry}
+                                                onClick={xpPokemon}> {"x10" + profil.berry}
                                         </button>
                                     }
                                     {profil.berry > 100 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}
-                                                style={{position: "absolute", zIndex: 1}}> {"Utiliser 100 : x" + profil.berry}
+                                                onClick={xpPokemon}> {"x100" + profil.berry}
                                         </button>
                                     }
                                 </div>}

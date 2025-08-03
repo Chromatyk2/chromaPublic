@@ -5670,8 +5670,6 @@ img.badgeToWin {
     color: white;
 }
 .buttonToXp{
-    position: absolute;
-    z-index: 1;
     background-image: url('../public/images/berry.png');
     background-size: 25px;
     background-repeat: no-repeat;
