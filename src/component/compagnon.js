@@ -169,6 +169,178 @@ function Compagnon(props) {
                 })
         }
     }
+    function xpPokemonDix() {
+        if(profil.berry - 1 > -1 && compagnon.level < 100){
+            Axios.post("/api/removeBerryDix/" + pseudo,
+                {
+                    user: pseudo,
+                    pokemon:compagnon.pokemon
+                })
+                .then(function (response) {
+                    Axios.post('/api/addXpPokemonDix',
+                        {
+                            user: pseudo,
+                            pokemon:compagnon.pokemon
+                        }
+                    ).then(function (response) {
+                        Axios.get("/api/getCompagnon/" + pseudo)
+                            .then(function (response) {
+                                if(response.data[0].xp >= response.data[0].level * 2 ){
+                                    Axios.post('/api/lvlUpPokemon',
+                                        {
+                                            pseudo: pseudo,
+                                            pokemon:compagnon.pokemon
+                                        })
+                                    Axios.get("/api/getCompagnon/" + pseudo)
+                                        .then(function (response) {
+                                            setCompagnon(response.data[0]);
+                                            setCustomStyles({
+                                                extBar: {
+                                                    width: '100%',
+                                                    backgroundColor: '#fff',
+                                                    position: 'relative',
+                                                    zIndex: '1',
+                                                    borderRadius: '50px',
+                                                    margin: 'auto',
+                                                    marginBottom: '15px'
+                                                },
+                                                intBar: {
+                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                                    position: 'relative',
+                                                    background: '#15a3ea',
+                                                    textWrap: 'nowrap',
+                                                    color: 'white',
+                                                    borderRadius: '50px 50px 50px 50px',
+                                                    filter: "drop-shadow(0px 0px 6px blue)",
+                                                    transition: "width 2s"
+                                                },
+                                            });
+                                            Axios
+                                                .get("/api/getProfil/"+pseudo)
+                                                .then(function(response) {
+                                                    setProfil(response.data[0])
+                                                })
+                                        })
+                                }else{
+                                    setCompagnon(response.data[0])
+                                    setCustomStyles({
+                                        extBar: {
+                                            width: '100%',
+                                            backgroundColor: '#fff',
+                                            position: 'relative',
+                                            zIndex: '1',
+                                            borderRadius: '50px',
+                                            margin: 'auto',
+                                            marginBottom: '15px'
+                                        },
+                                        intBar: {
+                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                            position: 'relative',
+                                            background: '#15a3ea',
+                                            textWrap: 'nowrap',
+                                            color: 'white',
+                                            borderRadius: '50px 50px 50px 50px',
+                                            filter: "drop-shadow(0px 0px 6px blue)",
+                                            transition: "width 2s"
+                                        },
+                                    });
+                                    Axios
+                                        .get("/api/getProfil/"+pseudo)
+                                        .then(function(response) {
+                                            setProfil(response.data[0])
+                                        })
+                                }
+                            })
+                    })
+                })
+        }
+    }
+    function xpPokemonCent() {
+        if(profil.berry - 1 > -1 && compagnon.level < 100){
+            Axios.post("/api/removeBerryCent/" + pseudo,
+                {
+                    user: pseudo,
+                    pokemon:compagnon.pokemon
+                })
+                .then(function (response) {
+                    Axios.post('/api/addXpPokemonCent',
+                        {
+                            user: pseudo,
+                            pokemon:compagnon.pokemon
+                        }
+                    ).then(function (response) {
+                        Axios.get("/api/getCompagnon/" + pseudo)
+                            .then(function (response) {
+                                if(response.data[0].xp >= response.data[0].level * 2 ){
+                                    Axios.post('/api/lvlUpPokemon',
+                                        {
+                                            pseudo: pseudo,
+                                            pokemon:compagnon.pokemon
+                                        })
+                                    Axios.get("/api/getCompagnon/" + pseudo)
+                                        .then(function (response) {
+                                            setCompagnon(response.data[0]);
+                                            setCustomStyles({
+                                                extBar: {
+                                                    width: '100%',
+                                                    backgroundColor: '#fff',
+                                                    position: 'relative',
+                                                    zIndex: '1',
+                                                    borderRadius: '50px',
+                                                    margin: 'auto',
+                                                    marginBottom: '15px'
+                                                },
+                                                intBar: {
+                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                                    position: 'relative',
+                                                    background: '#15a3ea',
+                                                    textWrap: 'nowrap',
+                                                    color: 'white',
+                                                    borderRadius: '50px 50px 50px 50px',
+                                                    filter: "drop-shadow(0px 0px 6px blue)",
+                                                    transition: "width 2s"
+                                                },
+                                            });
+                                            Axios
+                                                .get("/api/getProfil/"+pseudo)
+                                                .then(function(response) {
+                                                    setProfil(response.data[0])
+                                                })
+                                        })
+                                }else{
+                                    setCompagnon(response.data[0])
+                                    setCustomStyles({
+                                        extBar: {
+                                            width: '100%',
+                                            backgroundColor: '#fff',
+                                            position: 'relative',
+                                            zIndex: '1',
+                                            borderRadius: '50px',
+                                            margin: 'auto',
+                                            marginBottom: '15px'
+                                        },
+                                        intBar: {
+                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                            position: 'relative',
+                                            background: '#15a3ea',
+                                            textWrap: 'nowrap',
+                                            color: 'white',
+                                            borderRadius: '50px 50px 50px 50px',
+                                            filter: "drop-shadow(0px 0px 6px blue)",
+                                            transition: "width 2s"
+                                        },
+                                    });
+                                    Axios
+                                        .get("/api/getProfil/"+pseudo)
+                                        .then(function(response) {
+                                            setProfil(response.data[0])
+                                        })
+                                }
+                            })
+                    })
+                })
+        }
+    }
     function handleState(e,f) {
         setLoad(true)
         setTimeout(function() {
@@ -307,7 +479,7 @@ function Compagnon(props) {
                                 className="anchorTooltip uniquePokemonContainerTeam">
                                 Changer le compagnon
                             </button>
-                            <p style={{lineHeight: "normal", marginTop: "15px"}} className="namePokemonPage">{name[4].name}<img style={{margin: 0, height: "30px", width: "30px"}} src={"/images/berry.png"}/><span style={{fontSize:"15px"}}>{"x" + profil.berry}</span></p>
+                            <p style={{display: "flex",alignItems: "anchor-center",justifyContent: "end",gap: "10px",lineHeight: "normal", marginTop: "15px"}} className="namePokemonPage">{name[4].name}<img style={{margin: 0, height: "20px", width: "20px"}} src={"/images/berry.png"}/><span style={{fontSize:"15px"}}>{"x" + profil.berry}</span></p>
                             <button disabled={load} style={{border: "none", background: "none"}} onClick={xpPokemon}>
                                 <img style={{
                                     width: "280px",
@@ -336,12 +508,12 @@ function Compagnon(props) {
                                     }
                                     {profil.berry > 10 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}> {"x10"}
+                                                onClick={xpPokemonDix}> {"x10"}
                                         </button>
                                     }
                                     {profil.berry > 100 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}> {"x100"}
+                                                onClick={xpPokemonCent}> {"x100"}
                                         </button>
                                     }
                                 </div>}
