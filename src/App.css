@@ -5622,6 +5622,13 @@ img.badgeToWin {
     animation-delay: 1s;
     transform:scale(0);
 }
+img.badgeToWinXp {
+    width: 100px;
+    -webkit-animation: bounceInBadgeXp 5s forwards;
+    animation: bounceInBadgeXp 5s forwards;
+    animation-delay: 1s;
+    transform:scale(0);
+}
 @keyframes bounceInBadge {
     0% {
         visibility: visible;
@@ -5650,6 +5657,37 @@ img.badgeToWin {
     100% {
         visibility: visible;
         height: 300px;
+        transform:scale(1);
+    }
+}
+@keyframes bounceInBadgeXp {
+    0% {
+        visibility: visible;
+        transform:scale(0.0001);
+    }
+    10% {
+        visibility: visible;
+        transform:scale(1.1);
+    }
+    20% {
+        visibility: visible;
+        transform:scale(0.9);
+    }
+    30% {
+        visibility: visible;
+        transform:scale(1);
+    }
+    60% {
+        visibility: visible;
+        transform:scale(1);
+    }
+    80% {
+        visibility: visible;
+        transform:scale(1);
+    }
+    100% {
+        visibility: visible;
+        height: 100px;
         transform:scale(1);
     }
 }

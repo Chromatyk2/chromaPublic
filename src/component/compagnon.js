@@ -562,32 +562,32 @@ function Compagnon(props) {
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">
 
                 <div style={{flexFlow:"column"}} className="pokemonContentToken">
-                    <div>
+                    <div style={{display: "flex", justifyContent: "center"}}>
                         <div>
                             <p style={{
                                 textAlign: "center",
-                                fontSize: "40px",
+                                fontSize: "30px",
                                 marginTop: "-100px"
                             }}>{"X " + berryToWin}</p>
-                            <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
                                  src={"/images/berry.png"}/>
                         </div>
                         <div>
                             <p style={{
                                 textAlign: "center",
-                                fontSize: "40px",
+                                fontSize: "30px",
                                 marginTop: "-100px"
                             }}>{"X " + tokenCardToWin}</p>
-                            <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
                                  src={"/cards.png"}/>
                         </div>
                         <div>
                             <p style={{
                                 textAlign: "center",
-                                fontSize: "40px",
+                                fontSize: "30px",
                                 marginTop: "-100px"
                             }}>{"X " + tokenPkmToWin}</p>
-                            <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
                                  src={"/token.png"}/>
                         </div>
                     </div>
