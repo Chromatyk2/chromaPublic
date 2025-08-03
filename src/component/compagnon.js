@@ -507,11 +507,13 @@ function Compagnon(props) {
                                         </button>
                                     }
                                     {profil.berry > 10 &&
+                                        (compagnon.level * 2) - compagnon.xp >= 10 &&
                                         <button className={"buttonToXp"}
                                                 onClick={xpPokemonDix}> {"x10"}
                                         </button>
                                     }
                                     {profil.berry > 100 &&
+                                        (compagnon.level * 2) - compagnon.xp >= 100 &&
                                         <button className={"buttonToXp"}
                                                 onClick={xpPokemonCent}> {"x100"}
                                         </button>
