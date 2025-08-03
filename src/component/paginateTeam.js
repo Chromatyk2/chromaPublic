@@ -56,7 +56,7 @@ function Items(props) {
                                         width:"100px",
                                         backgroundRepeat:"no-repeat",
                                         backgroundPosition:"center",
-                                        background: "rgba(37, 87, 72, .2)"
+                                        backgroundColor: "rgba(37, 87, 72, .2)"
 
                                     }}
                                     className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100).length > 0 ? "maxLevelFrame" : ""}>
