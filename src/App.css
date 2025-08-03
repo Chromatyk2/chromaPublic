@@ -5669,6 +5669,22 @@ img.badgeToWin {
     background-color: #120747;
     color: white;
 }
+.buttonToXp{
+    position: absolute;
+    z-index: 1;
+    background-image: url('../public/images/berry.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 25px;
+    height: 31px;
+    right: 0;
+    border-radius: 0 5px 0 5px;
+}
+.buttonToXp:hover{
+    background-color: #120747;
+    color: white;
+}
 .cardBox:hover {
     .starGradeContainer{
         opacity: 1;

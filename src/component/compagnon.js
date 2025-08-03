@@ -317,11 +317,46 @@ function Compagnon(props) {
                             }}
                                 src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             </button>
-                            {profil.berry > 0 && <div style={{display: "flex",justifyContent: "flex-end",gap: "10px",alignItems: "start", position:"absolute", right:"0",marginRight: "10px",marginTop: "-10px",color:"white"}}><img style={{margin:0,height:"30px",width:"30px"}} src={"/images/berry.png"}/> <p style={{margin:0}}>{"x"+profil.berry}</p></div>}
-                            <p style={{color:"white",margin:"0 0 0 10px", marginTop:"20px"}}>{"N."+compagnon.level}</p>
+                            {profil.berry > 0 &&
+                                <div style={{
+                                    display: "flex",
+                                    justifyContent: "flex-end",
+                                    gap: "10px",
+                                    alignItems: "start",
+                                    position: "absolute",
+                                    right: "0",
+                                    marginRight: "10px",
+                                    marginTop: "-10px",
+                                    color: "white"
+                                }}>
+                                    {profile.berr > 0 &&
+                                        <button className={"buttonToXp"}
+                                                onClick={xpPokemon}
+                                                style={{position: "absolute", zIndex: 1}}> {"Utiliser 1 : x" + profil.berry}
+                                        </button>
+                                    }
+                                    {profile.berr > 10 &&
+                                        <button className={"buttonToXp"}
+                                                onClick={xpPokemon}
+                                                style={{position: "absolute", zIndex: 1}}> {"Utiliser 10 : x" + profil.berry}
+                                        </button>
+                                    }
+                                    {profile.berr > 100 &&
+                                        <button className={"buttonToXp"}
+                                                onClick={xpPokemon}
+                                                style={{position: "absolute", zIndex: 1}}> {"Utiliser 100 : x" + profil.berry}
+                                        </button>
+                                    }
+                                </div>}
+                            <p style={{
+                                color: "white",
+                                margin: "0 0 0 10px",
+                                marginTop: "20px"
+                            }}>{"N." + compagnon.level}</p>
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
-                                    style={customStyles.intBar}><p style={{marginLeft:"15px"}}>{compagnon.xp + " / " + compagnon.level * 2 + " (" + parseFloat(compagnon.xp / (compagnon.level * 2) * 100).toFixed(2) + "%)"}</p></div>
+                                    style={customStyles.intBar}><p
+                                    style={{marginLeft: "15px"}}>{compagnon.xp + " / " + compagnon.level * 2 + " (" + parseFloat(compagnon.xp / (compagnon.level * 2) * 100).toFixed(2) + "%)"}</p></div>
                             </div>
                         </>
                         :
