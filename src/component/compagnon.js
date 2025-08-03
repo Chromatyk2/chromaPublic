@@ -170,7 +170,7 @@ function Compagnon(props) {
         }
     }
     function xpPokemonDix() {
-        if(profil.berry - 1 > -1 && compagnon.level < 100){
+        if(profil.berry - 10 > -1 && compagnon.level < 100){
             Axios.post("/api/removeBerryDix/" + pseudo,
                 {
                     user: pseudo,
@@ -256,7 +256,7 @@ function Compagnon(props) {
         }
     }
     function xpPokemonCent() {
-        if(profil.berry - 1 > -1 && compagnon.level < 100){
+        if(profil.berry - 100 > -1 && compagnon.level < 100){
             Axios.post("/api/removeBerryCent/" + pseudo,
                 {
                     user: pseudo,
