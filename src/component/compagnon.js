@@ -14,7 +14,6 @@ import 'reactjs-popup/dist/index.css';
 import Modal from "react-modal";
 import UniqueBoxV2 from "./uniqueBoxV2";
 import PokedexTeam from "./pokedexTeam";
-const [berryToWin, setBerryToWin] = React.useState(null);
 
 
 function Compagnon(props) {
@@ -29,6 +28,7 @@ function Compagnon(props) {
     const [load,setLoad] = useState(false);
     const pseudo = cookies.user.data[0].login;
     const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
+    const [berryToWin, setBerryToWin] = React.useState(null);
     useEffect(() => {Axios
         .get("/api/getProfil/"+pseudo)
         .then(function(response) {
