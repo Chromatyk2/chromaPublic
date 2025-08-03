@@ -109,11 +109,6 @@ function Compagnon(props) {
                                         })
                                     Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
-                                            if(response.data[0].shiny == 1){
-                                                var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                            }else{
-                                                var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                            }
                                             setCompagnon(response.data[0]);
                                             setCustomStyles({
                                                 extBar: {
@@ -136,7 +131,15 @@ function Compagnon(props) {
                                                     transition: "width 2s"
                                                 },
                                             });
-                                            openModalBerry(berryToWin);
+                                            if(response.data[0].level == 100){
+                                                if(response.data[0].shiny == 1){
+                                                    var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                                    openModalBerry(berryToWin);
+                                                }else{
+                                                    var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                                    openModalBerry(berryToWin);
+                                                }
+                                            }
                                         })
                                 }else{
                                     setCompagnon(response.data[0])
