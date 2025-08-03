@@ -630,7 +630,7 @@ function Compagnon(props) {
                             <button disabled={load} style={{border: "none", background: "none"}} onClick={xpPokemon}>
                                 <img style={{
                                     width: "280px",
-                                    marginBottom: "30px",
+                                    marginBottom: "50px",
                                     animation: "floatArrow 5s linear infinite",
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
