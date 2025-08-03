@@ -108,44 +108,48 @@ function Compagnon(props) {
                                             pseudo: pseudo,
                                             pokemon:compagnon.pokemon
                                         })
-                                    Axios.get("/api/getCompagnon/" + pseudo)
+
                                         .then(function (response) {
-                                            setCompagnon(response.data[0]);
-                                            setCustomStyles({
-                                                extBar: {
-                                                    width: '100%',
-                                                    backgroundColor: '#fff',
-                                                    position: 'relative',
-                                                    zIndex: '1',
-                                                    borderRadius: '50px',
-                                                    margin: 'auto',
-                                                    marginBottom: '15px'
-                                                },
-                                                intBar: {
-                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
-                                                    position: 'relative',
-                                                    background: '#15a3ea',
-                                                    textWrap: 'nowrap',
-                                                    color: 'white',
-                                                    borderRadius: '50px 50px 50px 50px',
-                                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                                    transition: "width 2s"
-                                                },
-                                            });
-                                            if(response.data[0].level == 100){
-                                                if(response.data[0].shiny == 1){
-                                                    var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                    openModalBerry(berryToWin);
-                                                }else{
-                                                    var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                    openModalBerry(berryToWin);
-                                                }
-                                            }
-                                            Axios
-                                                .get("/api/getProfil/"+pseudo)
-                                                .then(function(response) {
-                                                    setProfil(response.data[0])
-                                                    setLoad(false)
+                                            Axios.get("/api/getCompagnon/" + pseudo)
+                                                .then(function (response) {
+                                                    setCompagnon(response.data[0]);
+                                                    setCustomStyles({
+                                                        extBar: {
+                                                            width: '100%',
+                                                            backgroundColor: '#fff',
+                                                            position: 'relative',
+                                                            zIndex: '1',
+                                                            borderRadius: '50px',
+                                                            margin: 'auto',
+                                                            marginBottom: '15px'
+                                                        },
+                                                        intBar: {
+                                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                                            position: 'relative',
+                                                            background: '#15a3ea',
+                                                            textWrap: 'nowrap',
+                                                            color: 'white',
+                                                            borderRadius: '50px 50px 50px 50px',
+                                                            filter: "drop-shadow(0px 0px 6px blue)",
+                                                            transition: "width 2s"
+                                                        },
+                                                    });
+
+                                                    if(response.data[0].level == 100){
+                                                        if(response.data[0].shiny == 1){
+                                                            var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                                            openModalBerry(berryToWin);
+                                                        }else{
+                                                            var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                                            openModalBerry(berryToWin);
+                                                        }
+                                                    }
+                                                    Axios
+                                                        .get("/api/getProfil/"+pseudo)
+                                                        .then(function(response) {
+                                                            setProfil(response.data[0])
+                                                            setLoad(false)
+                                                        })
                                                 })
                                         })
                                 }else{
@@ -206,45 +210,47 @@ function Compagnon(props) {
                                             pseudo: pseudo,
                                             pokemon:compagnon.pokemon
                                         })
-                                    Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
-                                            setCompagnon(response.data[0]);
-                                            setCustomStyles({
-                                                extBar: {
-                                                    width: '100%',
-                                                    backgroundColor: '#fff',
-                                                    position: 'relative',
-                                                    zIndex: '1',
-                                                    borderRadius: '50px',
-                                                    margin: 'auto',
-                                                    marginBottom: '15px'
-                                                },
-                                                intBar: {
-                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
-                                                    position: 'relative',
-                                                    background: '#15a3ea',
-                                                    textWrap: 'nowrap',
-                                                    color: 'white',
-                                                    borderRadius: '50px 50px 50px 50px',
-                                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                                    transition: "width 2s"
-                                                },
-                                            });
+                                            Axios.get("/api/getCompagnon/" + pseudo)
+                                                .then(function (response) {
+                                                    setCompagnon(response.data[0]);
+                                                    setCustomStyles({
+                                                        extBar: {
+                                                            width: '100%',
+                                                            backgroundColor: '#fff',
+                                                            position: 'relative',
+                                                            zIndex: '1',
+                                                            borderRadius: '50px',
+                                                            margin: 'auto',
+                                                            marginBottom: '15px'
+                                                        },
+                                                        intBar: {
+                                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                                            position: 'relative',
+                                                            background: '#15a3ea',
+                                                            textWrap: 'nowrap',
+                                                            color: 'white',
+                                                            borderRadius: '50px 50px 50px 50px',
+                                                            filter: "drop-shadow(0px 0px 6px blue)",
+                                                            transition: "width 2s"
+                                                        },
+                                                    });
 
-                                            if(response.data[0].level == 100){
-                                                if(response.data[0].shiny == 1){
-                                                    var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                    openModalBerry(berryToWin);
-                                                }else{
-                                                    var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                    openModalBerry(berryToWin);
-                                                }
-                                            }
-                                            Axios
-                                                .get("/api/getProfil/"+pseudo)
-                                                .then(function(response) {
-                                                    setProfil(response.data[0])
-                                                    setLoad(false)
+                                                    if(response.data[0].level == 100){
+                                                        if(response.data[0].shiny == 1){
+                                                            var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                                            openModalBerry(berryToWin);
+                                                        }else{
+                                                            var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                                            openModalBerry(berryToWin);
+                                                        }
+                                                    }
+                                                    Axios
+                                                        .get("/api/getProfil/"+pseudo)
+                                                        .then(function(response) {
+                                                            setProfil(response.data[0])
+                                                            setLoad(false)
+                                                        })
                                                 })
                                         })
                                 }else{
@@ -305,44 +311,47 @@ function Compagnon(props) {
                                             pseudo: pseudo,
                                             pokemon:compagnon.pokemon
                                         })
-                                    Axios.get("/api/getCompagnon/" + pseudo)
                                         .then(function (response) {
-                                            setCompagnon(response.data[0]);
-                                            setCustomStyles({
-                                                extBar: {
-                                                    width: '100%',
-                                                    backgroundColor: '#fff',
-                                                    position: 'relative',
-                                                    zIndex: '1',
-                                                    borderRadius: '50px',
-                                                    margin: 'auto',
-                                                    marginBottom: '15px'
-                                                },
-                                                intBar: {
-                                                    width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
-                                                    position: 'relative',
-                                                    background: '#15a3ea',
-                                                    textWrap: 'nowrap',
-                                                    color: 'white',
-                                                    borderRadius: '50px 50px 50px 50px',
-                                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                                    transition: "width 2s"
-                                                },
-                                            });
-                                            if(response.data[0].level == 100){
-                                                if(response.data[0].shiny == 1){
-                                                    var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                    openModalBerry(berryToWin);
-                                                }else{
-                                                    var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                    openModalBerry(berryToWin);
-                                                }
-                                            }
-                                            Axios
-                                                .get("/api/getProfil/"+pseudo)
-                                                .then(function(response) {
-                                                    setProfil(response.data[0])
-                                                    setTimeout(function() { setLoad(false)}.bind(this), 500)
+                                            Axios.get("/api/getCompagnon/" + pseudo)
+                                                .then(function (response) {
+                                                    setCompagnon(response.data[0]);
+                                                    setCustomStyles({
+                                                        extBar: {
+                                                            width: '100%',
+                                                            backgroundColor: '#fff',
+                                                            position: 'relative',
+                                                            zIndex: '1',
+                                                            borderRadius: '50px',
+                                                            margin: 'auto',
+                                                            marginBottom: '15px'
+                                                        },
+                                                        intBar: {
+                                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                                            position: 'relative',
+                                                            background: '#15a3ea',
+                                                            textWrap: 'nowrap',
+                                                            color: 'white',
+                                                            borderRadius: '50px 50px 50px 50px',
+                                                            filter: "drop-shadow(0px 0px 6px blue)",
+                                                            transition: "width 2s"
+                                                        },
+                                                    });
+
+                                                    if(response.data[0].level == 100){
+                                                        if(response.data[0].shiny == 1){
+                                                            var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                                            openModalBerry(berryToWin);
+                                                        }else{
+                                                            var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                                            openModalBerry(berryToWin);
+                                                        }
+                                                    }
+                                                    Axios
+                                                        .get("/api/getProfil/"+pseudo)
+                                                        .then(function(response) {
+                                                            setProfil(response.data[0])
+                                                            setLoad(false)
+                                                        })
                                                 })
                                         })
                                 }else{
