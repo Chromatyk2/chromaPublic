@@ -13,6 +13,7 @@ function Items(props) {
   const shinys = pkmList.filter(item => item.shiny == 1);
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
+  const compagnonList = props.compagnonList;
   return (
     <>
       <div className="pokemonGlobalContainer">
@@ -22,7 +23,8 @@ function Items(props) {
            pkmList.map((val, key) => {
              return (
                <>
-                <Link className="navLink" to={"/pokemon/"+val.pkmId}>
+                <Link
+                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100).length > 0 ? "navLink maxLevelFrame" : "navLink"} to={"/pokemon/"+val.pkmId}>
                  <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
@@ -136,7 +138,7 @@ function Pagination(props) {
                   <button className="filterButton" onClick={handlePokemon} value="3">Remettre dans l'ordre</button>
               }
             </div>
-            <Items currentItems={currentItems}/>
+            <Items compagnonList={props.compagnonList} currentItems={currentItems}/>
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."

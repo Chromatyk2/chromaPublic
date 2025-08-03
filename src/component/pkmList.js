@@ -19,6 +19,7 @@ function PkmList(props) {
             <Pagination
                 itemsPerPage={32}
                 items={props.list}
+                compagnonList={props.compagnonList}
             />
         </>
     );
