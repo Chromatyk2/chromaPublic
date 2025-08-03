@@ -350,13 +350,13 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }
                                                     }
