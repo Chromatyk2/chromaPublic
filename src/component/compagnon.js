@@ -29,6 +29,8 @@ function Compagnon(props) {
     const pseudo = cookies.user.data[0].login;
     const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
     const [berryToWin, setBerryToWin] = React.useState(null);
+    const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
+    const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
     useEffect(() => {Axios
         .get("/api/getProfil/"+pseudo)
         .then(function(response) {
@@ -138,10 +140,14 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            openModalBerry(berryToWin);
+                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                            openModalBerry(berryToWin);
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }
                                                     }
                                                     Axios
@@ -239,10 +245,14 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            openModalBerry(berryToWin);
+                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                            openModalBerry(berryToWin);
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }
                                                     }
                                                     Axios
@@ -340,10 +350,14 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            openModalBerry(berryToWin);
+                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                            openModalBerry(berryToWin);
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin);
                                                         }
                                                     }
                                                     Axios
@@ -502,21 +516,37 @@ function Compagnon(props) {
                 })
         }.bind(this), 500)
     }
-    function openModalBerry(e) {
+    function openModalBerry(e,f,g) {
         Axios.post('/api/addBerry',
             {
                 user:pseudo,
                 berry:e
             })
             .then(function(response) {
-                Axios
-                    .get("/api/getProfil/"+pseudo)
+                Axios.post('/api/addPkmPointRoulette',
+                    {
+                        user:pseudo,
+                        nbToken:g
+                    })
                     .then(function(response) {
-                        setProfil(response.data[0])
-                        setTimeout(function() { setLoad(false)}.bind(this), 500)
+                        Axios.post('/api/addCardsPointRoulette',
+                            {
+                                user:pseudo,
+                                nbToken:f
+                            })
+                            .then(function(response) {
+                                Axios
+                                    .get("/api/getProfil/"+pseudo)
+                                    .then(function(response) {
+                                        setProfil(response.data[0])
+                                        setTimeout(function() { setLoad(false)}.bind(this), 500)
+                                    })
+                            })
                     })
             })
         setBerryToWin(e)
+        setTokenCardToWin(f)
+        setTokenPkmToWin(g)
         setIsOpenSkin(true);
     }
     function closeModalBerry() {
@@ -532,17 +562,50 @@ function Compagnon(props) {
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">
 
                 <div style={{flexFlow:"column"}} className="pokemonContentToken">
-                    <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>{"X "+berryToWin}</p>
-                    <img style={{marginBottom: "30px"}} className={"badgeToWin"}
-                         src={"/images/berry.png"}/>
+                    <div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "40px",
+                                marginTop: "-100px"
+                            }}>{"X " + berryToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                                 src={"/images/berry.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "40px",
+                                marginTop: "-100px"
+                            }}>{"X " + tokenCardToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                                 src={"/cards.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "40px",
+                                marginTop: "-100px"
+                            }}>{"X " + tokenPkmToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                                 src={"/token.png"}/>
+                        </div>
+                    </div>
                     <button style={{display: "block", margin: "auto"}} className={"filterButton"}
                             onClick={closeModalBerry}>Cool !
                     </button>
                 </div>
             </Modal>
-            <div style={{display:"flex",justifyContent:"center",alignItems:"center", width: '100%', height: '100vh', backgroundImage: "url(/images/pasture.jpg)"}}>
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: '100%',
+                height: '100vh',
+                backgroundImage: "url(/images/pasture.jpg)"
+            }}>
 
-                <div style={{position:"relative",marginTop:"-40px"}}>
+                <div style={{position: "relative", marginTop: "-40px"}}>
                     {compagnon ?
                         name &&
                         <>
