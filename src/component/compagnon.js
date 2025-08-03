@@ -58,7 +58,7 @@ function Compagnon(props) {
                                         intBar: {
                                             width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
                                             position: 'relative',
-                                            background: '#15a3ea',
+                                            background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                             textWrap: 'nowrap',
                                             color: 'white',
                                             borderRadius: '50px 50px 50px 50px',
@@ -128,7 +128,7 @@ function Compagnon(props) {
                                                         intBar: {
                                                             width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
                                                             position: 'relative',
-                                                            background: '#15a3ea',
+                                                            background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                                             textWrap: 'nowrap',
                                                             color: 'white',
                                                             borderRadius: '50px 50px 50px 50px',
@@ -173,7 +173,7 @@ function Compagnon(props) {
                                         intBar: {
                                             width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
                                             position: 'relative',
-                                            background: '#15a3ea',
+                                            background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                             textWrap: 'nowrap',
                                             color: 'white',
                                             borderRadius: '50px 50px 50px 50px',
@@ -233,7 +233,7 @@ function Compagnon(props) {
                                                         intBar: {
                                                             width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2) + "%",
                                                             position: 'relative',
-                                                            background: '#15a3ea',
+                                                            background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                                             textWrap: 'nowrap',
                                                             color: 'white',
                                                             borderRadius: '50px 50px 50px 50px',
@@ -278,7 +278,7 @@ function Compagnon(props) {
                                         intBar: {
                                             width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2) + "%",
                                             position: 'relative',
-                                            background: '#15a3ea',
+                                            background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                             textWrap: 'nowrap',
                                             color: 'white',
                                             borderRadius: '50px 50px 50px 50px',
@@ -338,7 +338,7 @@ function Compagnon(props) {
                                                         intBar: {
                                                             width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2) + "%",
                                                             position: 'relative',
-                                                            background: '#15a3ea',
+                                                            background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                                             textWrap: 'nowrap',
                                                             color: 'white',
                                                             borderRadius: '50px 50px 50px 50px',
@@ -383,7 +383,7 @@ function Compagnon(props) {
                                         intBar: {
                                             width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
                                             position: 'relative',
-                                            background: '#15a3ea',
+                                            background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                             textWrap: 'nowrap',
                                             color: 'white',
                                             borderRadius: '50px 50px 50px 50px',
@@ -443,7 +443,7 @@ function Compagnon(props) {
                                                     intBar: {
                                                         width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
                                                         position: 'relative',
-                                                        background: '#15a3ea',
+                                                        background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                                         textWrap: 'nowrap',
                                                         color: 'white',
                                                         borderRadius: '50px 50px 50px 50px',
@@ -491,7 +491,7 @@ function Compagnon(props) {
                                                     intBar: {
                                                         width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
                                                         position: 'relative',
-                                                        background: '#15a3ea',
+                                                        background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(0, 251, 255, 1) 100%)",
                                                         textWrap: 'nowrap',
                                                         color: 'white',
                                                         borderRadius: '50px 50px 50px 50px',
