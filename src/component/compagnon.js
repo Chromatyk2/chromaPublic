@@ -549,10 +549,6 @@ function Compagnon(props) {
                                         win:h,
                                         wins:h
                                     })
-                                    .then(function(response) {
-                                        setProfil(response.data[0])
-                                        setTimeout(function() { setLoad(false)}.bind(this), 500)
-                                    })
                             })
                             .then(function(response) {
                                 Axios
