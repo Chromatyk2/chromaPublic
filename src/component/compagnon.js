@@ -573,19 +573,19 @@ function Compagnon(props) {
                                     color: "white"
                                 }}>
                                     {profil.berry > 0 &&
-                                        <button disabled={} className={"buttonToXp"}
+                                        <button disabled={load} className={"buttonToXp"}
                                                 onClick={xpPokemon}> {"x1"}
                                         </button>
                                     }
                                     {profil.berry > 10 &&
                                         (compagnon.level * 2) - compagnon.xp >= 10 &&
-                                        <button disabled={} className={"buttonToXp"}
+                                        <button disabled={load} className={"buttonToXp"}
                                                 onClick={xpPokemonDix}> {"x10"}
                                         </button>
                                     }
                                     {profil.berry > 100 &&
                                         (compagnon.level * 2) - compagnon.xp >= 100 &&
-                                        <button disabled={} className={"buttonToXp"}
+                                        <button disabled={load} className={"buttonToXp"}
                                                 onClick={xpPokemonCent}> {"x100"}
                                         </button>
                                     }
