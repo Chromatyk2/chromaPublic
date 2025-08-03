@@ -14,6 +14,7 @@ function Items(props) {
     const shinys = pkmList.filter(item => item.shiny == 1);
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
+    const compagnonList = props.compagnonList;
     function updateTeam(e) {
         const imgToAdd = e.target.value;
         const id = e.target.id;
@@ -54,7 +55,7 @@ function Items(props) {
                                         width:"100px",
                                         border:"none",
                                     }}
-                                    className={compagnonList.filter((item) => item.pokemon == e).length == 0 && compagnonList.filter((item) => item.pokemon == e).level == 100 ? "maxLevelFrame" : ""}>
+                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId).length == 0 && compagnonList.filter((item) => item.pokemon == val.pkmId).level == 100 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
