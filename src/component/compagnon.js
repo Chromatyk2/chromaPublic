@@ -477,8 +477,8 @@ function Compagnon(props) {
     function openModalBerry(e) {
         Axios.post('/api/addBerry',
             {
-                user:queryParameters.get("pseudo"),
-                berry:berryToWin
+                user:pseudo,
+                berry:e
             })
         setBerryToWin(e)
         setIsOpenSkin(true);
