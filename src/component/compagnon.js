@@ -141,14 +141,14 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
                                                             var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
                                                             var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }
@@ -248,15 +248,14 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
                                                             var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
                                                             var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }
@@ -356,14 +355,14 @@ function Compagnon(props) {
                                                     if(response.data[0].level == 100){
                                                         if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
                                                             var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
                                                             var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
                                                             var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }
