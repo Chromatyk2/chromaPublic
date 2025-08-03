@@ -54,11 +54,12 @@ function Items(props) {
                                         backgroundImage:"url("+val.pkmImage+")",
                                         height:"100px",
                                         width:"100px",
-                                        border:"none",
                                         backgroundRepeat:"no-repeat",
-                                        backgroundPosition:"center"
+                                        backgroundPosition:"center",
+                                        background: "rgba(37, 87, 72, .2)"
+
                                     }}
-                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100).length == 0 ? "maxLevelFrame" : ""}>
+                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100).length > 0 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
