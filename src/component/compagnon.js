@@ -307,12 +307,13 @@ function Compagnon(props) {
                                 className="anchorTooltip uniquePokemonContainerTeam">
                                 Changer le compagnon
                             </button>
-                            <p style={{lineHeight: "normal",marginTop: "15px"}} className="namePokemonPage">{name[4].name}</p>
-                            <button disabled={load} style={{border:"none", background:"none"}} onClick={xpPokemon}>
+                            <p style={{lineHeight: "normal", marginTop: "15px"}}
+                               className="namePokemonPage">{name[4].name}<img style={{margin: 0, height: "30px", width: "30px"}} src={"/images/berry.png"}/>{" x" + profil.berry}</p>
+                            <button disabled={load} style={{border: "none", background: "none"}} onClick={xpPokemon}>
                                 <img style={{
-                                width: "280px",
-                                marginBottom: "30px",
-                                animation: "floatArrow 5s linear infinite",
+                                    width: "280px",
+                                    marginBottom: "30px",
+                                    animation: "floatArrow 5s linear infinite",
                                 filter: "drop-shadow(0px 0px 6px #066d04)"
                             }}
                                 src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
@@ -331,17 +332,17 @@ function Compagnon(props) {
                                 }}>
                                     {profil.berry > 0 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}> {"x1" + profil.berry}
+                                                onClick={xpPokemon}> {"x1"}
                                         </button>
                                     }
                                     {profil.berry > 10 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}> {"x10" + profil.berry}
+                                                onClick={xpPokemon}> {"x10"}
                                         </button>
                                     }
                                     {profil.berry > 100 &&
                                         <button className={"buttonToXp"}
-                                                onClick={xpPokemon}> {"x100" + profil.berry}
+                                                onClick={xpPokemon}> {"x100"}
                                         </button>
                                     }
                                 </div>}
