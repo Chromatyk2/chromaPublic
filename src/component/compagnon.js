@@ -646,7 +646,7 @@ function Compagnon(props) {
                                     position: "absolute",
                                     right: "0",
                                     marginRight: "10px",
-                                    marginTop: "-10px",
+                                    marginTop: "-40px",
                                     color: "white"
                                 }}>
                                     {profil.berry > 0 &&
