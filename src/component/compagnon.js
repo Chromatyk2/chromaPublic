@@ -372,6 +372,7 @@ function Compagnon(props) {
                                         .get("/api/getProfil/"+pseudo)
                                         .then(function(response) {
                                             setProfil(response.data[0])
+                                            setLoad(false)
                                         })
                                 }
                             })
