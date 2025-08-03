@@ -175,7 +175,7 @@ function Compagnon(props) {
                                         .get("/api/getProfil/"+pseudo)
                                         .then(function(response) {
                                             setProfil(response.data[0])
-                                            setLoad(false)
+                                            setTimeout(function() { setLoad(false)}.bind(this), 500)
                                         })
                                 }
                             })
@@ -274,7 +274,7 @@ function Compagnon(props) {
                                         .get("/api/getProfil/"+pseudo)
                                         .then(function(response) {
                                             setProfil(response.data[0])
-                                            setLoad(false)
+                                            setTimeout(function() { setLoad(false)}.bind(this), 500)
                                         })
                                 }
                             })
@@ -342,7 +342,7 @@ function Compagnon(props) {
                                                 .get("/api/getProfil/"+pseudo)
                                                 .then(function(response) {
                                                     setProfil(response.data[0])
-                                                    setLoad(false)
+                                                    setTimeout(function() { setLoad(false)}.bind(this), 500)
                                                 })
                                         })
                                 }else{
@@ -372,7 +372,7 @@ function Compagnon(props) {
                                         .get("/api/getProfil/"+pseudo)
                                         .then(function(response) {
                                             setProfil(response.data[0])
-                                            setLoad(false)
+                                            setTimeout(function() { setLoad(false)}.bind(this), 500)
                                         })
                                 }
                             })
@@ -504,7 +504,7 @@ function Compagnon(props) {
                     .get("/api/getProfil/"+pseudo)
                     .then(function(response) {
                         setProfil(response.data[0])
-                        setLoad(false)
+                        setTimeout(function() { setLoad(false)}.bind(this), 500)
                     })
             })
         setBerryToWin(e)
