@@ -558,8 +558,11 @@ function Compagnon(props) {
                                 Axios
                                     .get("/api/getProfil/"+pseudo)
                                     .then(function(response) {
+                                        console.log(response.data[0])
                                         setProfil(response.data[0])
-                                        setTimeout(function() { setLoad(false)}.bind(this), 500)
+                                        setTimeout(function() {
+                                            setLoad(false)}.bind(this), 500
+                                        )
                                     })
                             })
                     })
