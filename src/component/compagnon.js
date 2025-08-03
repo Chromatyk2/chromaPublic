@@ -86,6 +86,7 @@ function Compagnon(props) {
         setIsOpenTeam(false);
     }
     function xpPokemon() {
+        setLoad(true)
         if(profil.berry - 1 > -1 && compagnon.level < 100){
             Axios.post("/api/removeBerry/" + pseudo,
                 {
@@ -140,6 +141,12 @@ function Compagnon(props) {
                                                     openModalBerry(berryToWin);
                                                 }
                                             }
+                                            Axios
+                                                .get("/api/getProfil/"+pseudo)
+                                                .then(function(response) {
+                                                    setProfil(response.data[0])
+                                                    setLoad(false)
+                                                })
                                         })
                                 }else{
                                     setCompagnon(response.data[0])
@@ -168,6 +175,7 @@ function Compagnon(props) {
                                         .get("/api/getProfil/"+pseudo)
                                         .then(function(response) {
                                             setProfil(response.data[0])
+                                            setLoad(false)
                                         })
                                 }
                             })
@@ -176,6 +184,7 @@ function Compagnon(props) {
         }
     }
     function xpPokemonDix() {
+        setLoad(true)
         if(profil.berry - 10 > -1 && compagnon.level < 100){
             Axios.post("/api/removeBerryDix/" + pseudo,
                 {
@@ -231,6 +240,12 @@ function Compagnon(props) {
                                                     openModalBerry(berryToWin);
                                                 }
                                             }
+                                            Axios
+                                                .get("/api/getProfil/"+pseudo)
+                                                .then(function(response) {
+                                                    setProfil(response.data[0])
+                                                    setLoad(false)
+                                                })
                                         })
                                 }else{
                                     setCompagnon(response.data[0])
@@ -259,6 +274,7 @@ function Compagnon(props) {
                                         .get("/api/getProfil/"+pseudo)
                                         .then(function(response) {
                                             setProfil(response.data[0])
+                                            setLoad(false)
                                         })
                                 }
                             })
@@ -267,6 +283,7 @@ function Compagnon(props) {
         }
     }
     function xpPokemonCent() {
+        setLoad(true)
         if(profil.berry - 100 > -1 && compagnon.level < 100){
             Axios.post("/api/removeBerryCent/" + pseudo,
                 {
@@ -321,6 +338,12 @@ function Compagnon(props) {
                                                     openModalBerry(berryToWin);
                                                 }
                                             }
+                                            Axios
+                                                .get("/api/getProfil/"+pseudo)
+                                                .then(function(response) {
+                                                    setProfil(response.data[0])
+                                                    setLoad(false)
+                                                })
                                         })
                                 }else{
                                     setCompagnon(response.data[0])
@@ -480,6 +503,7 @@ function Compagnon(props) {
                     .get("/api/getProfil/"+pseudo)
                     .then(function(response) {
                         setProfil(response.data[0])
+                        setLoad(false)
                     })
             })
         setBerryToWin(e)
@@ -549,19 +573,19 @@ function Compagnon(props) {
                                     color: "white"
                                 }}>
                                     {profil.berry > 0 &&
-                                        <button className={"buttonToXp"}
+                                        <button disabled={} className={"buttonToXp"}
                                                 onClick={xpPokemon}> {"x1"}
                                         </button>
                                     }
                                     {profil.berry > 10 &&
                                         (compagnon.level * 2) - compagnon.xp >= 10 &&
-                                        <button className={"buttonToXp"}
+                                        <button disabled={} className={"buttonToXp"}
                                                 onClick={xpPokemonDix}> {"x10"}
                                         </button>
                                     }
                                     {profil.berry > 100 &&
                                         (compagnon.level * 2) - compagnon.xp >= 100 &&
-                                        <button className={"buttonToXp"}
+                                        <button disabled={} className={"buttonToXp"}
                                                 onClick={xpPokemonCent}> {"x100"}
                                         </button>
                                     }
