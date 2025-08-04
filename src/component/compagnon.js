@@ -762,7 +762,7 @@ function Compagnon(props) {
                                             :
                                         profil.berry > 0 &&
                                         <button disabled={load} className={"buttonToXp"}
-                                                onClick={xpPokemonDix}> {"x10"}
+                                                onClick={xpPokemon}> {"x1"}
                                         </button>
                                     }
                                 </div>}
