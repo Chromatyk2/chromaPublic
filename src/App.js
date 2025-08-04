@@ -41,6 +41,7 @@ import DonationBox from "./component/donationBox";
 import Axios from "axios";
 import CardsHubOther from "./component/cardsHubOther";
 import Compagnon from "./component/compagnon";
+import Prediction from "./component/prediction";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
@@ -94,6 +95,7 @@ function App() {
           <Route path="/oldpedandex" element={<SpecificPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qs" element={<StartPedandex cookies={cookies} />} />
           <Route path="/49Vs5sWVS2e7qds" element={<CardsHubTest page={"cardsShop"} cookies={cookies} />} />
+          <Route path="/49Vs5sWVS2e7pre" element={<Prediction />} />
           <Route path="/compagnon" element={<Compagnon cookies={cookies} />} />
         </Routes>
       </BrowserRouter>
