@@ -88,6 +88,72 @@ function Compagnon(props) {
     function closeModalTeam() {
         setIsOpenTeam(false);
     }
+    function levelUpPokemon() {
+        setLoad(true)
+        if(profil.berry - (((compagnon.level + 1) * 2) - compagnon.xp) > -1 && compagnon.level < 100){
+            Axios.post("/api/removeBerryLevelUp",
+                {
+                    user: pseudo,
+                    win:((compagnon.level + 1) * 2) - compagnon.xp
+                })
+                .then(function (response) {
+                        Axios.post('/api/lvlUpPokemon',
+                            {
+                                pseudo: pseudo,
+                                pokemon:compagnon.pokemon
+                            })
+                            .then(function (response) {
+                                Axios.get("/api/getCompagnon/" + pseudo)
+                                    .then(function (response) {
+                                        setCompagnon(response.data[0]);
+                                        setCustomStyles({
+                                            extBar: {
+                                                width: '100%',
+                                                backgroundColor: '#fff',
+                                                position: 'relative',
+                                                zIndex: '1',
+                                                borderRadius: '50px',
+                                                margin: 'auto',
+                                                marginBottom: '15px'
+                                            },
+                                            intBar: {
+                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
+                                                position: 'relative',
+                                                background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
+                                                textWrap: 'nowrap',
+                                                color: 'white',
+                                                borderRadius: '50px 50px 50px 50px',
+                                                filter: "drop-shadow(0px 0px 6px blue)",
+                                                transition: "width 2s"
+                                            },
+                                        });
+
+                                        if(response.data[0].level == 100){
+                                            if(response.data[0].shiny == 1){
+                                                var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                                var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
+                                                openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                            }else{
+                                                var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                                var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
+                                                openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                            }
+                                        }
+                                        Axios
+                                            .get("/api/getProfil/"+pseudo)
+                                            .then(function(response) {
+                                                setProfil(response.data[0])
+                                                setLoad(false)
+                                            })
+                                    })
+                            })
+                })
+        }
+    }
     function xpPokemon() {
         setLoad(true)
         if(profil.berry - 1 > -1 && compagnon.level < 100){
@@ -655,12 +721,12 @@ function Compagnon(props) {
                                 <img style={{margin: 0, height: "20px", width: "20px"}} src={"/images/berry.png"}/>
                                 <span style={{fontSize:"15px",color:"white"}}>{"x" + profil.berry}</span>
                             </div>
-                            <button disabled={load} style={{border: "none", background: "none"}} onClick={xpPokemon}>
+                            <button disabled={load} style={{border: "none", background: "none"}} onClick={profil.berry >= ((compagnon.level + 1) * 2) - compagnon.xp ? levelUpPokemon : xpPokemon}>
                                 <img style={{
                                     width: "280px",
                                     marginBottom: "50px",
                                     animation: "floatArrow 5s linear infinite",
-                                filter: "drop-shadow(0px 0px 6px #066d04)"
+                                    filter: profil.berry >= ((compagnon.level + 1) * 2) - compagnon.xp ? "drop-shadow(0px 0px 6px yellow)" : "drop-shadow(0px 0px 6px #066d04)"
                             }}
                                 src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             </button>
