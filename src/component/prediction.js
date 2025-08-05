@@ -16,7 +16,7 @@ function Prediction() {
     return (
         <>
             {guess &&
-                <>
+                <div>
                     <p>!prediction</p>
                     <table>
                         <tr>
@@ -34,7 +34,7 @@ function Prediction() {
                             })
                         }
                     </table>
-                </>
+                </div>
             }
         </>
     );
