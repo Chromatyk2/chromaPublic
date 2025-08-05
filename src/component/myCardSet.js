@@ -410,11 +410,32 @@ function MyCardsSet(props) {
                     </Modal>
                     <ProgressBarCard refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length}/>
-                    <div>
-                        <button style={{backgroundImage: 'url("/images/stade_1.png")'}} value={1}></button>
-                        <button style={{backgroundImage: 'url("/images/stade_2.png")'}} value={2}></button>
-                        <button style={{backgroundImage: 'url("/images/stade_3.png")'}} value={3}></button>
-                        <button style={{backgroundImage: 'url("/images/stade_4.png")'}} value={4}></button>
+                    <div style={{width:"100%", display:"flex", justifyContent:"center", gap:"10px"}}>
+                        <button style={{width: "70px",
+                            height: "70px",
+                            backgroundColor: "transparent",
+                            border: "none",
+                            backgroundSize: "contain",
+                            backgroundPosition: "center",
+                            backgroundImage: 'url("/images/stade_1.png")'}} value={1}></button>
+                        <button style={{width: "70px",
+                            height: "70px",
+                            backgroundColor: "transparent",
+                            border: "none",
+                            backgroundSize: "contain",
+                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_2.png")'}} value={2}></button>
+                        <button style={{width: "70px",
+                            height: "70px",
+                            backgroundColor: "transparent",
+                            border: "none",
+                            backgroundSize: "contain",
+                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_3.png")'}} value={3}></button>
+                        <button style={{width: "70px",
+                            height: "70px",
+                            backgroundColor: "transparent",
+                            border: "none",
+                            backgroundSize: "contain",
+                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_4.png")'}} value={4}></button>
                     </div>
                     <div style={{
                         color: "white",
