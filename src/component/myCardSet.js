@@ -175,16 +175,7 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
-    function filterEmptyCard(e) {
-        Axios
-            .get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
-            .then(function(response) {
-                setMyCards(response.data);
-                response.data.filter((uc) => uc.stade != e.target.value).map((val, key) => {
-                    setMyCardsId(myCardsId => [...myCardsId, val.card]);
-                })
-            })
-    }
+
     function tradePowder(e) {
         setPickCard(e.target.getAttribute("number"));
         setPickCardId(e.target.getAttribute("card"));
@@ -310,6 +301,17 @@ function MyCardsSet(props) {
     const handleRarity = event => {
         setFilterRarity(event.target.value);
     };
+    function filterEmptyCard(e) {
+        setMyCardsId([])
+        Axios
+            .get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
+            .then(function(response) {
+                setMyCards(response.data);
+                response.data.filter((uc) => uc.stade != e.target.value).map((val, key) => {
+                    setMyCardsId(myCardsId => [...myCardsId, val.card]);
+                })
+            })
+    }
     return (
         <>
             {isLoaded === false ?
