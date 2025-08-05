@@ -175,7 +175,7 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
-    function filterEmptyCard() {
+    function filterEmptyCard(e) {
         Axios
             .get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
             .then(function(response) {
