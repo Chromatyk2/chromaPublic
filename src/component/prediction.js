@@ -16,6 +16,7 @@ function Prediction() {
     return (
         <>
             {guess &&
+                guess.length > 0 &&
                 <div style={{position: "absolute",left: "500px",top: "200px",backgroundColor: "#120747",color: "white",borderRadius: "10px 0 0 10px",padding: "15px",width:"500px"}}>
                     <p style={{textAlign:"center", fontSize:"25px", fontWeight:"bold"}}>!PREDICTION</p>
                     <table style={{width:"470px"}}>
