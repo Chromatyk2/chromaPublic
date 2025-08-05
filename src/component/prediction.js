@@ -27,14 +27,14 @@ function Prediction() {
                             guess.map((val, key) => {
                                 if(key % 2){
                                     return (
-                                        <tr>
+                                        <tr style={{backgroundColor: "white", color: "#120747", textAlign:"center"}}>
                                             <td>{val.pseudo}</td>
                                             <td>{val.guess}</td>
                                         </tr>
                                     )
                                 }else{
                                     return (
-                                        <tr style={{backgroundColor: "#120747", color: "white"}}>
+                                        <tr style={{backgroundColor: "#120747", color: "white", textAlign:"center"}}>
                                             <td>{val.pseudo}</td>
                                             <td>{val.guess}</td>
                                         </tr>
