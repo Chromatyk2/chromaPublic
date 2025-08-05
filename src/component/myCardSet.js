@@ -306,6 +306,7 @@ function MyCardsSet(props) {
         Axios
             .get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
             .then(function(response) {
+                console.log(response.data.filter((uc) => uc.stade != e.target.value));
                 setMyCards(response.data);
                 response.data.filter((uc) => uc.stade != e.target.value).map((val, key) => {
                     setMyCardsId(myCardsId => [...myCardsId, val.card]);
