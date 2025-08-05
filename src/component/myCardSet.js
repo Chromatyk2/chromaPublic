@@ -410,6 +410,12 @@ function MyCardsSet(props) {
                     </Modal>
                     <ProgressBarCard refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length}/>
+                    <div>
+                        <button style={{backgroundImage: 'url("/images/stade_1.png")'}} value={1}></button>
+                        <button style={{backgroundImage: 'url("/images/stade_2.png")'}} value={2}></button>
+                        <button style={{backgroundImage: 'url("/images/stade_3.png")'}} value={3}></button>
+                        <button style={{backgroundImage: 'url("/images/stade_4.png")'}} value={4}></button>
+                    </div>
                     <div style={{
                         color: "white",
                         display: "flex",
@@ -417,7 +423,7 @@ function MyCardsSet(props) {
                         justifyContent: "center",
                         flexWrap: "wrap"
                     }}>
-                    {myCards.length != items.length &&
+                        {myCards.length != items.length &&
                             <label htmlFor="subscribe">
                                 <input
                                     style={{marginRight: "10px"}}
