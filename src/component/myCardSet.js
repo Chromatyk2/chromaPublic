@@ -304,7 +304,7 @@ function MyCardsSet(props) {
     function filterEmptyCard(e) {
         setMyCardsId([]);
         items.sort((a, b) => a.localId - b.localId).map((val, key) => {
-            if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == 1)){
+            if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == e.target.value)){
                 setMyCardsId(myCardsId => [...myCardsId,val.id]);
             }
         })
