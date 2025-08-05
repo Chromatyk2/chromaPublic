@@ -25,16 +25,21 @@ function Prediction() {
                         </tr>
                         {guess &&
                             guess.map((val, key) => {
-                                key % 2 ?
-                                    <tr>
-                                        <td>{val.pseudo}</td>
-                                        <td>{val.guess}</td>
-                                    </tr>
-                                :
-                                    <tr style={{backgroundColor: "#120747",color: "white"}}>
-                                        <td>{val.pseudo}</td>
-                                        <td>{val.guess}</td>
-                                    </tr>
+                                if(key % 2){
+                                    return (
+                                        <tr>
+                                            <td>{val.pseudo}</td>
+                                            <td>{val.guess}</td>
+                                        </tr>
+                                    )
+                                }else{
+                                    return (
+                                        <tr style={{backgroundColor: "#120747", color: "white"}}>
+                                            <td>{val.pseudo}</td>
+                                            <td>{val.guess}</td>
+                                        </tr>
+                                    )
+                                }
                             })
                         }
                     </table>
