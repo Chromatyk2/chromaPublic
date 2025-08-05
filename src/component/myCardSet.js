@@ -309,7 +309,9 @@ function MyCardsSet(props) {
                 console.log(response.data.filter((uc) => uc.stade != e.target.value));
                 setMyCards(response.data);
                 response.data.filter((uc) => uc.stade != e.target.value).map((val, key) => {
-                    setMyCardsId(myCardsId => [...myCardsId, val.card]);
+                    if(!myCardsId.find((uc) => uc.card = val.card)){
+                        setMyCardsId(myCardsId => [...myCardsId, val.card]);
+                    }
                 })
             })
     }
