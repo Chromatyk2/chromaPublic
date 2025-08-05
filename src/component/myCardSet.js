@@ -177,7 +177,7 @@ function MyCardsSet(props) {
     }
     function filterEmptyCard() {
         Axios
-            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
             .then(function(response) {
                 setMyCards(response.data);
                 response.data.filter((uc) => uc.stade != e.target.value).map((val, key) => {
