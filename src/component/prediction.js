@@ -24,7 +24,7 @@ function Prediction() {
                             <th>Prédiction</th>
                         </tr>
                         {guess &&
-                            guess.data.map((val, key) => {
+                            guess.map((val, key) => {
                                 return (
                                     <tr>
                                         <td>{val.pseudo}</td>
