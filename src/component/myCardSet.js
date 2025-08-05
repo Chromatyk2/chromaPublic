@@ -175,6 +175,16 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
+    function filterEmptyCard() {
+        Axios
+            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+            .then(function(response) {
+                setMyCards(response.data);
+                response.data.filter((uc) => uc.stade != e.target.value).map((val, key) => {
+                    setMyCardsId(myCardsId => [...myCardsId, val.card]);
+                })
+            })
+    }
     function tradePowder(e) {
         setPickCard(e.target.getAttribute("number"));
         setPickCardId(e.target.getAttribute("card"));
@@ -410,32 +420,32 @@ function MyCardsSet(props) {
                     </Modal>
                     <ProgressBarCard refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length}/>
-                    <div style={{width:"100%", display:"flex", justifyContent:"center", gap:"10px"}}>
+                    <div style={{width:"100%", display:"flex", justifyContent:"center", gap:"10px", marginTop:"-50px"}}>
                         <button style={{width: "70px",
                             height: "70px",
                             backgroundColor: "transparent",
                             border: "none",
                             backgroundSize: "contain",
                             backgroundPosition: "center",
-                            backgroundImage: 'url("/images/stade_1.png")'}} value={1}></button>
+                            backgroundImage: 'url("/images/stade_1.png")'}} value={1} onClick={filterEmptyCard}></button>
                         <button style={{width: "70px",
                             height: "70px",
                             backgroundColor: "transparent",
                             border: "none",
                             backgroundSize: "contain",
-                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_2.png")'}} value={2}></button>
+                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_2.png")'}} value={2} onClick={filterEmptyCard}></button>
                         <button style={{width: "70px",
                             height: "70px",
                             backgroundColor: "transparent",
                             border: "none",
                             backgroundSize: "contain",
-                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_3.png")'}} value={3}></button>
+                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_3.png")'}} value={3} onClick={filterEmptyCard}></button>
                         <button style={{width: "70px",
                             height: "70px",
                             backgroundColor: "transparent",
                             border: "none",
                             backgroundSize: "contain",
-                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_4.png")'}} value={4}></button>
+                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_4.png")'}} value={4} onClick={filterEmptyCard}></button>
                     </div>
                     <div style={{
                         color: "white",
