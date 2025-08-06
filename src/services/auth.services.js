@@ -47,19 +47,17 @@ function AuthService() {
 
   const isAuthenticated = () => {
       const params = getUrlParams();
-        setCookie('oauth', params.code,{days:1} );
         Axios.post(
         'https://id.twitch.tv/oauth2/token',
         {
           client_id:CLIENT_ID,
           client_secret:CLIENT_SECRET,
-          grant_type:"authorization_code",
+          grant_type:"client_credentials",
           redirect_uri:"https://chromatyk.fr/"
         }
       )
       .then(
         (result) => {
-            setCookie('token', result.data,{days:1} );
             Axios.get(
               'https://api.twitch.tv/helix/users',
               {
@@ -76,7 +74,6 @@ function AuthService() {
             )
           }
         );
-      return params["access_token"] !== undefined;
   }
 
   useEffect(() => {
