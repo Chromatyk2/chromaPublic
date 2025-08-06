@@ -24,7 +24,7 @@ function AuthService() {
     const params = {
         client_id: CLIENT_ID,
         redirect_uri: REDIRECT_URI,
-        response_type: "token"
+        response_type: "code"
     };
       const queryString = encodeQueryString(params);
       const authenticationUrl = `https://id.twitch.tv/oauth2/authorize?${queryString}`;
@@ -46,43 +46,40 @@ function AuthService() {
   };
 
   const isAuthenticated = () => {
-      const params = {
-          client_id: CLIENT_ID,
-          redirect_uri: REDIRECT_URI,
-          response_type: "code"
-      };
-      const queryString = encodeQueryString(params);
-        Axios.get('https://id.twitch.tv/oauth2/authorize?'+queryString)
-    .then(
-        (result) => {
-            Axios.get(
-                'https://id.twitch.tv/oauth2/validate',
-                {
-                    headers:{
-                        'Authorization': `Bearer ${result.data.access_token}`
-                    }
-                }
-            )
-                .then(
-                    (result) => {
-                        Axios.get(
-                            'https://api.twitch.tv/helix/users?id='+result.data.user_id,
-                            {
-                                headers:{
-                                    'Authorization': `Bearer ${result.data.access_token}`,
-                                    'Client-Id': CLIENT_ID
-                                }
-                            }
-                        )
-                            .then(
-                                (result) => {
-                                    setCookie('user', result.data,{days:1} );
-                                }
-                            )
-                    }
-                )
+      const params = getUrlParams();
+      if(Object.keys(params).length > 0){
+        setCookie('oauth', params.code,{days:1} );
+        Axios.post(
+        'https://id.twitch.tv/oauth2/token',
+        {
+          client_id:CLIENT_ID,
+          client_secret:CLIENT_SECRET,
+          code:params.code,
+          grant_type:"authorization_code",
+          redirect_uri:"https://chromatyk.fr/"
         }
-    );
+      )
+      .then(
+        (result) => {
+            setCookie('token', result.data,{days:1} );
+            Axios.get(
+              'https://api.twitch.tv/helix/users',
+              {
+                headers:{
+                  'Authorization': `Bearer ${result.data.access_token}`,
+                  'Client-Id': CLIENT_ID
+                }
+              }
+            )
+            .then(
+              (result) => {
+                setCookie('user', result.data,{days:1} );
+              }
+            )
+          }
+        );
+      }
+      return params["access_token"] !== undefined;
   }
 
   useEffect(() => {
