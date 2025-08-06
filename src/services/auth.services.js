@@ -56,7 +56,7 @@ function AuthService() {
           client_secret:CLIENT_SECRET,
           code:params.code,
           grant_type:"authorization_code",
-          redirect_uri:"https://chromatyk.fr/log"
+          redirect_uri:"https://chromatyk.fr/"
         }
       )
       .then(
@@ -74,7 +74,6 @@ function AuthService() {
             .then(
               (result) => {
                 setCookie('user', result.data,{days:1} );
-                  return <Navigate to="/" replace />;
               }
             )
           }
