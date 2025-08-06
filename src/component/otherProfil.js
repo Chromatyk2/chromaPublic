@@ -209,7 +209,7 @@ function Profil(props) {
                         .then(res => res.json())
                         .then(
                             (result) => {
-                                setName(result.names);
+                                setName(result.names.find((uc) => uc.language.name === "fr"));
                             }
                         )
                 }
@@ -431,7 +431,7 @@ function Profil(props) {
                                 name &&
                                 <>
                                     <p style={{lineHeight: "normal", marginTop: "15px"}}
-                                       className="namePokemonPage">{name[4].name}</p>
+                                       className="namePokemonPage">{name.name}</p>
                                     <img style={{
                                         width: "280px",
                                         marginBottom: "30px",
