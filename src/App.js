@@ -55,6 +55,7 @@ function App() {
           <NavBar cookies={cookies} />
         <OnStream />
         <Routes>
+          <Route path="/log" element={<HomePage cookies={cookies} />} />
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
           <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies} />} />

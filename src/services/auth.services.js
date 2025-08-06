@@ -56,7 +56,7 @@ function AuthService() {
           client_secret:CLIENT_SECRET,
           code:params.code,
           grant_type:"authorization_code",
-          redirect_uri:"https://chromatyk.fr/"
+          redirect_uri:"https://chromatyk.fr/profil"
         }
       )
       .then(
