@@ -56,24 +56,36 @@ function AuthService() {
           redirect_uri:"https://chromatyk.fr/"
         }
       )
-      .then(
+    .then(
         (result) => {
             Axios.get(
-              'https://api.twitch.tv/helix/users',
-              {
-                headers:{
-                  'Authorization': `Bearer ${result.data.access_token}`,
-                  'Client-Id': CLIENT_ID
+                'https://id.twitch.tv/oauth2/validate',
+                {
+                    headers:{
+                        'Authorization': `Bearer ${result.data.access_token}`
+                    }
                 }
-              }
             )
-            .then(
-              (result) => {
-                setCookie('user', result.data,{days:1} );
-              }
-            )
-          }
-        );
+                .then(
+                    (result) => {
+                        Axios.get(
+                            'https://api.twitch.tv/helix/users?id='+result.data.user_id,
+                            {
+                                headers:{
+                                    'Authorization': `Bearer ${result.data.access_token}`,
+                                    'Client-Id': CLIENT_ID
+                                }
+                            }
+                        )
+                            .then(
+                                (result) => {
+                                    setCookie('user', result.data,{days:1} );
+                                }
+                            )
+                    }
+                )
+        }
+    );
   }
 
   useEffect(() => {
