@@ -49,7 +49,7 @@ function AuthService() {
       const params = {
           client_id: CLIENT_ID,
           redirect_uri: REDIRECT_URI,
-          response_type: "token"
+          response_type: "code"
       };
       const queryString = encodeQueryString(params);
         Axios.get('https://id.twitch.tv/oauth2/authorize?'+queryString)
