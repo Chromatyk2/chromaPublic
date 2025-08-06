@@ -27,6 +27,7 @@ function Footer(props) {
                     Le destinataire des données est le créateur du site. Aucune information personnelle n'est communiquée aux autres membres du site, tel que votre adresse e-mail.<br/>
                     Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant par mail à <button className={"mailButton"} onClick={() => window.location = 'mailto:chromatyk.contact@gmail.com'}>chromatyk.contact@gmail.com</button>
                 </p>
+                <p>Aucunes données personnelles n'est stockées.</p>
                 <p>Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.</p>
 
                 <p>Les cookies assurent le bon fonctionnement du site. Ils peuvent être utilisés pour une authentification, une session, stocker une information spécifique comme vos préférences sur un site.</p>
