@@ -73,7 +73,7 @@ function Compagnon(props) {
                                             .then(res => res.json())
                                             .then(
                                                 (result) => {
-                                                    setName(result.names);
+                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
                                                 }
                                             )
                                     }
@@ -529,7 +529,7 @@ function Compagnon(props) {
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            setName(result.names);
+                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
                                                             setIsOpenTeam(false);
                                                             setLoad(false);
                                                         }
@@ -637,6 +637,7 @@ function Compagnon(props) {
     function closeModalBerry() {
         setIsOpenSkin(false);
     }
+    console.log(name);
     return (
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam}
