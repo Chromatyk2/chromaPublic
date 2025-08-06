@@ -12,9 +12,9 @@ function Footer(props) {
       return (
         <>
           <div className={"footerContainer"}>
-            <p>© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
+            <p>© 2025 Pokémon. © 1995–2025 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par The Pokémon Company International, Game Freak et Nintendo</p>
             <p>© Chromatyk 2023</p>
-              <Link className="navLink mentionLink" to="/Mentions">Mentions légales</Link>
+            <p>Les images appartiennent à leur auteur respectif. Site fait par un fan pour des fans.</p><Link className="navLink mentionLink" to="/Mentions">Mentions légales</Link>
           </div>
         </>
       );

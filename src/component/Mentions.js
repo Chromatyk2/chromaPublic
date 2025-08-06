@@ -31,8 +31,7 @@ function Footer(props) {
 
                 <p>Les cookies assurent le bon fonctionnement du site. Ils peuvent être utilisés pour une authentification, une session, stocker une information spécifique comme vos préférences sur un site.</p>
 
-                <p>Le contenu de ce site est protégé par le droit de la propriété intellectuelle.
-                Toute duplication des textes ou images de ce site sans autorisation est interdite.</p>
+                <p>Le contenu de ce site est protégé par le droit de la propriété intellectuelle.</p>
             </div>
         </>
     );
