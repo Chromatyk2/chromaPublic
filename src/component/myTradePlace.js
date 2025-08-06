@@ -6,7 +6,7 @@ import MyTrades from './myTrades.js';
 import '../App.css'
 
 function MyTradePlace(props) {
-const pseudo = props.cookies.login;
+const pseudo = props.cookies.user.data[0].login;
    return (
      <>
       <div className="tradePlaceContainer">

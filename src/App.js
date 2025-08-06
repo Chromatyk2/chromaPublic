@@ -45,12 +45,12 @@ import Prediction from "./component/prediction";
 import Footer from "./component/footer";
 function App() {
   const [cookies, setCookie] = useCookies();
-  if(typeof cookies.login === "undefined") {
+  if(Object.keys(cookies).length == 0) {
     return <Login />
   }
   return(
     <>
-      {typeof cookies.login !== "undefined" &&
+      {cookies.login !== undefined &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
         <OnStream />

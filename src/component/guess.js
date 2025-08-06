@@ -13,7 +13,7 @@ function Guess(props) {
   const [allGuess, setAllGuess] = useState([]);
   const [disable, setDisable] = useState(false);
   const { id } = useParams()
-  const pseudo = props.cookies.login;
+  const pseudo = props.cookies.user.data[0].login;
   useEffect(() => {
      Axios.get('/api/getGuess/'+id)
      .then(function(response){

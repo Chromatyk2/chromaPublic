@@ -15,7 +15,7 @@ function GuessTrade(props) {
   const [allreadyGuess, setAllreadyGuess] = useState([]);
   const [choosingGuess, setChoosingGuess] = useState(null);
   const { id } = useParams()
-  const pseudo = props.cookies.login;
+  const pseudo = props.cookies.user.data[0].login;
   useEffect(() => {
      Axios.get('/api/getTradeById/'+id)
      .then(function(response){

@@ -7,7 +7,7 @@ function LaderBoard(props) {
     const [laderBoard,setLaderboard] = useState([]);
     const [topThree,setTopThree] = useState([]);
     const [others,setOthers] = useState([]);
-    const pseudo = props.cookies.login;
+    const pseudo = props.cookies.user.data[0].login;
     function displayNormalLaderboard(e) {
       let shiny = e.target.value;
         Axios

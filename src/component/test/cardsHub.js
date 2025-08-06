@@ -11,7 +11,7 @@ import OnStream from "../onStream";
 function CardsHubTest(props) {
     const [points,setPoints] = useState(-1);
     const [canOpen,setCanOpen] = useState(-1);
-    const pseudo = props.cookies.login;
+    const pseudo = props.cookies.user.data[0].login;
     useEffect(() => {
         Axios
             .get("/api/getCardsPoint/"+pseudo)

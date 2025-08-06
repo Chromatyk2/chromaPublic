@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css'
 function SpawnPokemonRob(props) {
-    const pseudo = props.cookies.login;
+    const pseudo = props.cookies.user.data[0].login;
     const [pokemon, setPokemon] = useState([])
     const [balls, setBalls] = useState(['poke','great','ultra','safari','premier','sport','net','dive','nest','repeat','timer','luxury','dusk','heal','quick','fast','level','lure','heavy','love','friend','moon','park','dream','beast']);
     const [useBall, setUseBall] = useState(null);
