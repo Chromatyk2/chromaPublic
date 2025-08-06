@@ -45,6 +45,7 @@ import Prediction from "./component/prediction";
 import Footer from "./component/footer";
 function App() {
   const [cookies, setCookie] = useCookies();
+  console.log(cookies)
   if(Object.keys(cookies).length == 0 || cookies.token === undefined ) {
     return <Login />
   }
