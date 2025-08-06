@@ -5057,8 +5057,8 @@ img#imgModal {
     justify-content: center;
     align-items: center;
     height: 183px;
-    background-color: #90e5b5;
-    margin-top: 125px;
+    background-color: #120747;
+    color:white;
 }
 button.uniqueBoxContainer:last-child{
     display:none;
