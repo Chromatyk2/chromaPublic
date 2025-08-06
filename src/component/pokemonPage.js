@@ -9,7 +9,7 @@ import '../App.css'
 import moment from "moment";
 
 function PokemonPage(props) {
-const pseudo = props.cookies.user.data[0].login;
+const pseudo = props.cookies.login;
 const [pokemon, setPokemon] = useState([]);
 const [name, setName] = useState([]);
 const [captures, setCaptures] = useState([]);

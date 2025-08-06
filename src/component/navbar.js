@@ -11,7 +11,7 @@ import env from "react-dotenv";
 function NavBar(props) {
   const [count, setCount] = useState(0);
   const [stream, setStream] = useState(null);
-  const pseudo = props.cookies.user.data[0].login;
+  const pseudo = props.cookies.login;
   const [expanded, setExpanded] = useState(false);
     useEffect(() => {
         Axios

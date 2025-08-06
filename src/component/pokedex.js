@@ -8,7 +8,7 @@ import OnStream from "./onStream";
 function Pokedex(props) {
 const [list,setList] = useState([]);
 const [totalPkm,setTotalPkm] = useState(0);
-const pseudo = props.cookies.user.data[0].login;
+const pseudo = props.cookies.login;
 const [compagnonList,setCompagnonList] = useState(null);
   useEffect(() => {
 

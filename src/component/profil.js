@@ -46,7 +46,7 @@ import Lv12s from "../lv12s.png";
 import Lv13s from "../lv13s.png";
 import $ from "jquery";
 function Profil(props) {
-    const pseudo = props.cookies.user.data[0].login;
+    const pseudo = props.cookies.login;
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
     const [myTotalsCards, setMyTotalsCards] = useState(null);

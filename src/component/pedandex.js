@@ -20,7 +20,7 @@ function Pedandex(props) {
     const [dailyGame, setDailyGame] = useState(null);
     const [triesWin, setTriesWin] = useState(0);
     const inputRef = useRef();
-    const pseudo = props.cookies.user.data[0].login;
+    const pseudo = props.cookies.login;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalIsOpenHistory, setIsOpenHistory] = React.useState(false);
     const [canTips, setCanTips] = React.useState(false);

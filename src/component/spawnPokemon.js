@@ -5,7 +5,7 @@ import moment from "moment/moment";
 import card from "../cards.png"
 import $ from 'jquery';
 function SpawnPokemon(props) {
-    const pseudo = props.cookies.user.data[0].login;
+    const pseudo = props.cookies.login;
     const [pokemon, setPokemon] = useState([])
     const [balls, setBalls] = useState(['poke','great','ultra','safari','premier','sport','net','dive','nest','repeat','timer','luxury','dusk','heal','quick','fast','level','lure','heavy','love','friend','moon','park','dream','beast']);
     const [useBall, setUseBall] = useState(null);

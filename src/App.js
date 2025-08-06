@@ -8,7 +8,6 @@ import Pokedex from './component/pokedex.js';
 import LaderBoard from './component/laderboard.js';
 import NavBar from './component/navbar.js';
 import Login from './services/auth.services.js';
-import Log from './services/redirect.js';
 import PokemonPage from './component/pokemonPage.js';
 import MyTradePlace from './component/myTradePlace.js';
 import TradePlace from './component/tradePlace.js';
@@ -56,7 +55,6 @@ function App() {
           <NavBar cookies={cookies} />
         <OnStream />
         <Routes>
-          <Route path="/log" element={<Log cookies={cookies} />} />
           <Route path="/" element={<HomePage cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
           <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies} />} />
