@@ -50,7 +50,7 @@ function App() {
   }
   return(
     <>
-      {props.cookies.user.data[0].login &&
+      {cookies.user.data[0].login &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
         <OnStream />
