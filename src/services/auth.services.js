@@ -47,15 +47,7 @@ function AuthService() {
 
   const isAuthenticated = () => {
       const params = getUrlParams();
-        Axios.post(
-        'https://id.twitch.tv/oauth2/token',
-        {
-          client_id:CLIENT_ID,
-          client_secret:CLIENT_SECRET,
-          grant_type:"client_credentials",
-          redirect_uri:"https://chromatyk.fr/"
-        }
-      )
+        Axios.get('https://id.twitch.tv/oauth2/authorize?response_type=token&client_id='+CLIENT_ID+'&redirect_uri=https://chromatyk.fr/')
     .then(
         (result) => {
             Axios.get(
