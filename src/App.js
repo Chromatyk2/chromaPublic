@@ -45,12 +45,12 @@ import Prediction from "./component/prediction";
 import Footer from "./component/footer";
 function App() {
   const [cookies, setCookie] = useCookies();
-  if(typeof cookies === "undefined") {
+  if(typeof cookies.user === "undefined") {
     return <Login />
   }
   return(
     <>
-      {typeof cookies !== "undefined" &&
+      {typeof cookies.user !== "undefined" &&
         cookies.user.data[0].login &&
       <BrowserRouter>
           <NavBar cookies={cookies} />
