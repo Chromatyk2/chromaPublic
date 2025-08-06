@@ -2,8 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { useCookies } from 'react-cookie';
 import Axios from 'axios'
 import env from "react-dotenv";
-import { Redirect } from 'react-router-dom';
-
+import {Navigate} from "react-router-dom";
 
 
 function AuthService() {
@@ -75,7 +74,7 @@ function AuthService() {
             .then(
               (result) => {
                 setCookie('user', result.data,{days:1} );
-                  return <Redirect to="/" />;
+                  return <Navigate to="/" replace />;
               }
             )
           }
