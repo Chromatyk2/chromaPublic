@@ -24,7 +24,7 @@ function AuthService() {
     const params = {
         client_id: CLIENT_ID,
         redirect_uri: REDIRECT_URI,
-        response_type: "code"
+        response_type: "token"
     };
       const queryString = encodeQueryString(params);
       const authenticationUrl = `https://id.twitch.tv/oauth2/authorize?${queryString}`;
@@ -47,7 +47,7 @@ function AuthService() {
 
   const isAuthenticated = () => {
       const params = getUrlParams();
-        Axios.get('https://id.twitch.tv/oauth2/authorize?response_type=token&client_id='+CLIENT_ID+'&redirect_uri=https://chromatyk.fr/')
+        Axios.get('https://id.twitch.tv/oauth2/authorize?response_type=code&client_id='+CLIENT_ID+'&redirect_uri=https://chromatyk.fr/')
     .then(
         (result) => {
             Axios.get(
