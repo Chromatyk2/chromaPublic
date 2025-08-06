@@ -72,6 +72,7 @@ function AuthService() {
             .then(
               (result) => {
                 setCookie('user', result.data,{days:1} );
+                  window.location.reload();
               }
             )
           }
