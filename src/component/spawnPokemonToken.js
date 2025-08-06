@@ -31,7 +31,7 @@ function SpawnPokemonToken(props) {
                 }
             )
         }
-        var berryToWin = Math.floor(Math.random() * 30 + 1);
+        var berryToWin = Math.floor(Math.random() * 50 + 1);
         setBerryToWins(berryToWin);
         Axios.post('/api/addBerry',
             {
