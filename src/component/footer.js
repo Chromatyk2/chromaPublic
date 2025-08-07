@@ -1,12 +1,6 @@
-import React,{useState, useEffect} from 'react';
-import {Link, useParams} from 'react-router-dom'
-import ReactPaginate from 'react-paginate';
-import Axios from 'axios'
-import Pagination from './paginate.js';
-import CreateTrade from './createTrade.js';
-import NbProposition from './nbProposition.js';
+import React from 'react';
+import {Link} from 'react-router-dom'
 import '../App.css'
-import moment from 'moment';
 
 function Footer(props) {
       return (
