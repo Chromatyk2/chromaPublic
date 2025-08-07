@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css'
 import Axios from "axios";
-import moment from "moment/moment";
-import OpeningBooster from "./openingBooster";
 import Modal from 'react-modal';
 import PokedexTeam from "./pokedexTeam";
-import {useParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
-import OnStream from "./onStream";
 import SpawnPokemonToken from "./spawnPokemonToken";
 import Lv1 from "../lv1.png";
 import Lv2 from "../lv2.png";
@@ -49,8 +45,6 @@ function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
-    const [myTotalsCards, setMyTotalsCards] = useState(null);
-    const [myLastTenCards, setMyLastTenCards] = useState(null);
     const [badgesList, setBadgesList] = useState(null);
     const [badgesListFiltered, setBadgesListFiltered] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -293,10 +287,8 @@ function Profil(props) {
                     .then(function (response) {
                         setPourcentCard(Math.round((response.data[0].nbCard / 15937) * 100));
                         const pourcentCard = Math.abs((response.data[0].nbCard / 15937) * 100);
-                        setMyTotalsCards(response.data)
                         Axios.get("/api/getMyLastTenCards/" + pseudo)
                             .then(function (response) {
-                                setMyLastTenCards(response.data)
                                 Axios
                                     .get("/api/getByUser/" + pseudo)
                                     .then(function (response) {

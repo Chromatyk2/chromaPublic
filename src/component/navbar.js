@@ -45,7 +45,6 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/allProfils">Classement</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Ouverture Booster</Link>
-                      <Link style={{color:"red"}} onClick={() => setExpanded(false)} className="navLink linkFromNav" target={"_blank"} to="https://streamlabs.com/chromatyk/tip">Me soutenir</Link>
                   </Nav>
               </Navbar.Collapse>
           </Container>
