@@ -31,6 +31,7 @@ function App() {
   if(typeof cookies.user === "undefined") {
     return <Login />
   }
+  console.log("test")
   return(
     <>
       {typeof cookies.user !== "undefined" &&
