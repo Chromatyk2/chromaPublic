@@ -9,7 +9,7 @@ function AuthService() {
 
   const [cookies, setCookie, removeCookie] = useCookies();
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-  const REDIRECT_URI = "https://chromatyk.fr/";
+  const REDIRECT_URI = "https://chromatyk.fr/profil";
   const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 
   const encodeQueryString = (params) => {
