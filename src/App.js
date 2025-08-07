@@ -43,6 +43,7 @@ import CardsHubOther from "./component/cardsHubOther";
 import Compagnon from "./component/compagnon";
 import Prediction from "./component/prediction";
 import Footer from "./component/footer";
+import Log from "./services/log";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(typeof cookies.user === "undefined") {
@@ -57,6 +58,7 @@ function App() {
         <OnStream />
         <Routes>
           <Route path="/" element={<HomePage cookies={cookies} />} />
+          <Route path="/log" element={<Log cookies={cookies} />} />
           <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
           <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies} />} />
           <Route path="/leaderboard" element={<LaderBoard cookies={cookies} />} />
