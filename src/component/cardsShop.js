@@ -423,22 +423,17 @@ function CardsShop(props) {
                         {array.length > 0 &&
                             array.map((val, key) => {
                                 return(
-                                    <div className="uniqueTradeContainer">
-                                        <div className={"containerImgBooster"}>
-                                            <LazyLoadImage
-                                                delayTime={0}
-                                                threshold={200}
-                                                placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
-                                                width={"150"}
-                                                style={{width: "220px", filter: "brightness(1) drop-shadow(2px 4px 6px black)",borderRadius: "25px"}}
-                                                effect="opacity"
-                                                delayTime={5}
-                                                wrapperProps={{
-                                                    // If you need to, you can tweak the effect transition using the wrapper style.
-                                                    style: {transitionDelay: "0.1s"},
-                                                }}
-                                                src={"/Boosters/" + val.name + ".png"}/>
-                                        </div>
+                                    <div style={{
+                                        alignItems: "center",
+                                        display: "flex",
+                                        height: "300px",
+                                        justifyContent: "center",
+                                        backgroundImage: "url(/Boosters/"+val.name+".png)",
+                                        width: "220px",
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
+                                        borderRadius: "10px"
+                                    }}>
                                         <div className={"buttonsBooster"}>
                                              {points > 0 ?
                                                  loading === false ?
