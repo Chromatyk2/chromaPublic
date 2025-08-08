@@ -436,30 +436,34 @@ function CardsShop(props) {
                                         position:"relative"
                                     }}>
                                         <div className={"buttonsBooster"}>
-                                             {canOpenLive == 0 &&
-                                                 points > 0 &&
-                                                     <button style={{fontSize: "13px", width: "180px", margin:"0"}}
-                                                                 value={val.name}
-                                                                 nameGuru={val.nameGuru}
-                                                                    block={val.block}
-                                                                 onClick={openModal}
-                                                                 className="guessTradeButton">Ouvrir
-                                                     </button>
-                                             }
-                                             {canOpenLive == 1 &&
-                                                <button style={{fontSize: "13px", width: "180px", margin:"0"}}
-                                                             value={val.name}
-                                                             nameGuru={val.nameGuru}
-                                                             block={val.block}
-                                                             onClick={freeBooster}
-                                                             className="guessTradeButton">Booster Gratuit
-                                                 </button>
-                                             }
-                                             <p style={{fontFamily: 'bungee',color: 'white',textAlign: 'center'}}>{val.fullName}</p>
+                                            <p style={{
+                                                fontFamily: 'bungee',
+                                                color: 'white',
+                                                textAlign: 'center'
+                                            }}>{val.fullName}</p>
+                                            {canOpenLive == 0 &&
+                                                points > 0 &&
+                                                <button style={{fontSize: "13px", width: "180px", margin: "0"}}
+                                                        value={val.name}
+                                                        nameGuru={val.nameGuru}
+                                                        block={val.block}
+                                                        onClick={openModal}
+                                                        className="guessTradeButton">Ouvrir
+                                                </button>
+                                            }
+                                            {canOpenLive == 1 &&
+                                                <button style={{fontSize: "13px", width: "180px", margin: "0"}}
+                                                        value={val.name}
+                                                        nameGuru={val.nameGuru}
+                                                        block={val.block}
+                                                        onClick={freeBooster}
+                                                        className="guessTradeButton">Booster Gratuit
+                                                </button>
+                                            }
                                         </div>
                                     </div>
 
-                                    )
+                                )
                             })
                             // <div style={{width: "100%"}}>
                             //     <Carousel onChange={(item) => changeCarousel(item)}
