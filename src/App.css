@@ -5595,7 +5595,7 @@ ul.react-responsive-3d-carousel__list {
     backdrop-filter: blur(5px);
     padding: 10px;
     border-radius: 10px;
-    flex-flow: row;
+    flex-flow: column;
     width:100%;
     justify-content:center;
 }
