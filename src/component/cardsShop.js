@@ -106,8 +106,8 @@ function CardsShop(props) {
         setArray([])
         console.log(e)
         console.log(items);
-        console.log(items.find(item => item.gen == e))
-        items.find(item => item.gen == e.target.value).map((val, key) => {
+        console.log(items.filter(item => item.gen == e.target.value))
+        items.filter(item => item.gen == e.target.value).map((val, key) => {
             setArray(array => [...array,val])
         })
     }
