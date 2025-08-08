@@ -5056,9 +5056,9 @@ img#imgModal {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    height: 183px;
     background-color: #120747;
     color:white;
+    text-align: center;
 }
 button.uniqueBoxContainer:last-child{
     display:none;

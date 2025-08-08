@@ -403,7 +403,7 @@ function CardsShop(props) {
                 <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModalBadge}>Cool !</button>
             </Modal>
             {onOpen === true ?
-                <OpeningBooster change={(e,f) => handleState(e,f)} idBooster={boosterId} user={props.user} boosterGuru={nameGuru} block={block}/>
+                <OpeningBooster change={(e,f) => handleState(e,f)} idBooster={boosterId} user={props.user} boosterGuru={nameGuru} block={block} gen={selectedBoosterId}/>
                 :
                 canOpenLive !== null &&
                 <>
@@ -522,6 +522,11 @@ function CardsShop(props) {
                                     </div>
                                 </Carousel>
                             </div>
+                        }
+                        {array.length > 0 &&
+                            array.map((val, key) => {
+                                return({val})
+                            })
                         }
                     </div>
                 </>
