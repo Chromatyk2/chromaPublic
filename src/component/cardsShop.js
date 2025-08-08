@@ -455,7 +455,7 @@ function CardsShop(props) {
                                                              className="guessTradeButton">Booster Gratuit
                                                  </button>
                                              }
-                                             <p style={{fontFamily: 'bungee';color: 'white',textAlign: 'center'}}>{val.fullName}</p>
+                                             <p style={{fontFamily: 'bungee',color: 'white',textAlign: 'center'}}>{val.fullName}</p>
                                         </div>
                                     </div>
 
