@@ -435,7 +435,8 @@ function CardsShop(props) {
                                         borderRadius: "10px",
                                         position:"relative",
                                         gap:'5px',
-                                        backgroundRepeat:'no-repeat'
+                                        backgroundRepeat:'no-repeat',
+                                        backgroundPositionY: "-15px"
                                     }}>
                                         <div className={"buttonsBooster"}>
                                             <p style={{
