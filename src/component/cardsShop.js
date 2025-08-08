@@ -104,7 +104,7 @@ function CardsShop(props) {
     }
     function selectGen(e) {
         setArray([])
-        items.filter(item => item.gen == e).map((val, key) => {
+        items.find(item => item.gen == e).map((val, key) => {
             setArray(array => [...array,val])
         })
     }
