@@ -93,7 +93,9 @@ function CardsShop(props) {
                                 setRandomBooster(Math.floor(Math.random() * response.data.length));
                                 setItems(response.data);
                                 response.data.filter(item => item.gen == 1).map((val, key) => {
-                                    setArray(array => [...array,val])
+                                    setTimeout(function() { //Start the timer
+                                        setArray(array => [...array,val])
+                                    }.bind(this), 500)
                                 })
                             })
                     })
