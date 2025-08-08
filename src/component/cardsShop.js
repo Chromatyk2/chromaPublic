@@ -433,13 +433,15 @@ function CardsShop(props) {
                                         backgroundSize: "cover",
                                         backgroundPosition: "center",
                                         borderRadius: "10px",
-                                        position:"relative"
+                                        position:"relative",
+                                        gap:'5px'
                                     }}>
                                         <div className={"buttonsBooster"}>
                                             <p style={{
                                                 fontFamily: 'bungee',
                                                 color: 'white',
-                                                textAlign: 'center'
+                                                textAlign: 'center',
+                                                margin:0
                                             }}>{val.fullName}</p>
                                             {canOpenLive == 0 &&
                                                 points > 0 &&
