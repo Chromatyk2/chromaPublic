@@ -392,9 +392,9 @@ function CardsShop(props) {
                                     {points > 0 ?
                                         loading === false ?
                                                 <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}
-                                                        value={globalBooster[randomBooster].name}
-                                                        nameGuru={globalBooster[randomBooster].nameGuru}
-                                                        block={globalBooster[randomBooster].block}
+                                                        value={items[randomBooster].name}
+                                                        nameGuru={items[randomBooster].nameGuru}
+                                                        block={items[randomBooster].block}
                                                         onClick={openModal}
                                                         className="guessTradeButton">Ouvrir
                                                 </button>
@@ -405,9 +405,9 @@ function CardsShop(props) {
                                     }
                                     {canOpenLive == 1 &&
                                             <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}
-                                                    value={globalBooster[randomBooster].name}
-                                                    nameGuru={globalBooster[randomBooster].nameGuru}
-                                                    block={globalBooster[randomBooster].block}
+                                                    value={items[randomBooster].name}
+                                                    nameGuru={items[randomBooster].nameGuru}
+                                                    block={items[randomBooster].block}
                                                     onClick={freeBooster}
                                                     className="guessTradeButton">Booster Gratuit
                                             </button>
