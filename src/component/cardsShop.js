@@ -439,6 +439,32 @@ function CardsShop(props) {
                                                 }}
                                                 src={"/Boosters/" + val.name + ".png"}/>
                                         </div>
+                                        <div className={"buttonsBooster"}>
+                                             {points > 0 ?
+                                                 loading === false ?
+                                                     <button
+                                                                 style={{fontSize: "13px", width: "180px", margin:"0"}}
+                                                                 value={val.name}
+                                                                 nameGuru={val.nameGuru}
+                                                                block={val.block}
+                                                                 onClick={openModal}
+                                                                 className="guessTradeButton">Ouvrir
+                                                         </button>
+                                                     :
+                                                         <button style={{fontSize: "13px", width: "180px", margin:"0"}} className="guessTradeButton">Chargement</button>
+                                                 :
+                                                     <button style={{fontSize: "13px", width: "180px", margin:"0"}} className="guessTradeButton">Aucun Token</button>
+                                             }
+                                             {canOpenLive == 1 &&
+                                                <button style={{fontSize: "13px", width: "180px", margin:"0"}}
+                                                             value={val.name}
+                                                             nameGuru={val.nameGuru}
+                                                             block={val.block}
+                                                             onClick={freeBooster}
+                                                             className="guessTradeButton">Booster Gratuit
+                                                 </button>
+                                             }
+                                        </div>
                                     </div>
 
                                     )
