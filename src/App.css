@@ -5595,7 +5595,8 @@ ul.react-responsive-3d-carousel__list {
     backdrop-filter: blur(5px);
     padding: 10px;
     border-radius: 10px;
-    flex-flow: row;
+    flex-flow: row
+    width:100%;
 }
 @keyframes moveGradient {
     0% {
