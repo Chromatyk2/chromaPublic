@@ -438,17 +438,13 @@ function CardsShop(props) {
                                         <div className={"buttonsBooster"}>
                                              {canOpenLive == 0 &&
                                                  points > 0 &&
-                                                 loading === false ?
-                                                     <button
-                                                                 style={{fontSize: "13px", width: "180px", margin:"0"}}
+                                                     <button style={{fontSize: "13px", width: "180px", margin:"0"}}
                                                                  value={val.name}
                                                                  nameGuru={val.nameGuru}
-                                                                block={val.block}
+                                                                    block={val.block}
                                                                  onClick={openModal}
                                                                  className="guessTradeButton">Ouvrir
-                                                         </button>
-                                                     :
-                                                         <button style={{fontSize: "13px", width: "180px", margin:"0"}} className="guessTradeButton">Chargement</button>
+                                                     </button>
                                              }
                                              {canOpenLive == 1 &&
                                                 <button style={{fontSize: "13px", width: "180px", margin:"0"}}
