@@ -430,11 +430,12 @@ function CardsShop(props) {
                                         justifyContent: "center",
                                         backgroundImage: "url(/Boosters/"+val.name+".png)",
                                         width: "220px",
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
+                                        backgroundSize: "contain",
+                                        backgroundPosition: "top",
                                         borderRadius: "10px",
                                         position:"relative",
-                                        gap:'5px'
+                                        gap:'5px',
+                                        backgroundRepeat:'no-repeat'
                                     }}>
                                         <div className={"buttonsBooster"}>
                                             <p style={{
