@@ -443,11 +443,12 @@ function CardsShop(props) {
                                                 fontFamily: 'bungee',
                                                 color: 'white',
                                                 textAlign: 'center',
-                                                margin:0
+                                                margin:0,
+                                                fontSize:"13px"
                                             }}>{val.fullName}</p>
                                             {canOpenLive == 0 &&
                                                 points > 0 &&
-                                                <button style={{fontSize: "13px", width: "180px", margin: "0"}}
+                                                <button style={{fontSize: "13px", width: "180px", margin: "0", height:"22px", lineHeight:"3px"}}
                                                         value={val.name}
                                                         nameGuru={val.nameGuru}
                                                         block={val.block}
@@ -456,7 +457,7 @@ function CardsShop(props) {
                                                 </button>
                                             }
                                             {canOpenLive == 1 &&
-                                                <button style={{fontSize: "13px", width: "180px", margin: "0"}}
+                                                <button style={{fontSize: "13px", width: "180px", margin: "0", height:"22px", lineHeight:"3px"}}
                                                         value={val.name}
                                                         nameGuru={val.nameGuru}
                                                         block={val.block}
