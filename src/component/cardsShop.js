@@ -432,10 +432,12 @@ function CardsShop(props) {
                                         width: "220px",
                                         backgroundSize: "cover",
                                         backgroundPosition: "center",
-                                        borderRadius: "10px"
+                                        borderRadius: "10px",
+                                        position:"relative"
                                     }}>
                                         <div className={"buttonsBooster"}>
-                                             {points > 0 ?
+                                             {canOpenLive == 0 &&
+                                                 points > 0 ?
                                                  loading === false ?
                                                      <button
                                                                  style={{fontSize: "13px", width: "180px", margin:"0"}}
