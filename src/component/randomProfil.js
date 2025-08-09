@@ -2,10 +2,6 @@ import React,{useState, useEffect} from 'react';
 import { Cookies, useCookies } from 'react-cookie';
 import Axios from 'axios'
 import '../App.css'
-import PkmList from './pkmList.js'
-import ProfilList from "./profilList";
-import {Link} from "react-router-dom";
-import allProfils from "./allProfils";
 
 function RandomProfil(props) {
     const [allProfil,setAllProfil] = useState([]);
