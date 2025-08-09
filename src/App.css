@@ -1397,9 +1397,13 @@ ul.paginateLay {
     justify-content: center;
     flex-flow: row;
     text-align: center;
+    width: 100%;
 }
 .paginateLay li:hover {
     background: none;
+}
+ul.paginateLay li a{
+    font-size: 20px;
 }
 span.myCountProposition {
     background-color: red;
