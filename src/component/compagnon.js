@@ -697,7 +697,8 @@ function Compagnon(props) {
                 alignItems: "center",
                 width: '100%',
                 height: '100vh',
-                backgroundImage: "url(/images/pasture.jpg)"
+                backgroundImage: "url(/images/pasture.jpg)",
+                marginTop:'-75px'
             }}>
 
                 <div style={{position: "relative", marginTop: "-40px"}}>
