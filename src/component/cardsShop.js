@@ -388,53 +388,83 @@ function CardsShop(props) {
                     <div id={"cardsContainer"}>
                         {randomBooster &&
                             <div className="uniqueTradeContainerRandom">
-                                <div style={{height:"70px"}} className={"containerImgBooster"}>
-                                    <img style={{width:"70px"}} className="fit-picture" src={"/images/random.png"}
+                                <div style={{height: "70px"}} className={"containerImgBooster"}>
+                                    <img style={{width: "70px"}} className="fit-picture" src={"/images/random.png"}
                                          alt="Grapefruit slice atop a pile of other slices"/>
                                 </div>
                                 <div>
                                     {points > 0 ?
                                         loading === false ?
-                                                <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}
-                                                        value={items[randomBooster].name}
-                                                        nameGuru={items[randomBooster].nameGuru}
-                                                        block={items[randomBooster].block}
-                                                        onClick={openModal}
-                                                        className="guessTradeButton">Ouvrir
-                                                </button>
-                                            :
-                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Chargement</button>
-                                        :
-                                        <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px"}}  className="guessTradeButton">Aucun Token</button>
-                                    }
-                                    {canOpenLive == 1 &&
-                                            <button style={{fontSize:"13px",margin:" 0px",fontsize: "13px",height: "25px",lineHeight: "8px",width: "180px", marginTop:"10px"}}
+                                            <button style={{
+                                                fontSize: "13px",
+                                                margin: " 0px",
+                                                fontsize: "13px",
+                                                height: "25px",
+                                                lineHeight: "8px",
+                                                width: "180px"
+                                            }}
                                                     value={items[randomBooster].name}
                                                     nameGuru={items[randomBooster].nameGuru}
                                                     block={items[randomBooster].block}
-                                                    onClick={freeBooster}
-                                                    className="guessTradeButton">Booster Gratuit
+                                                    onClick={openModal}
+                                                    className="guessTradeButton">Ouvrir
                                             </button>
+                                            :
+                                            <button style={{
+                                                fontSize: "13px",
+                                                margin: " 0px",
+                                                fontsize: "13px",
+                                                height: "25px",
+                                                lineHeight: "8px",
+                                                width: "180px"
+                                            }} className="guessTradeButton">Chargement</button>
+                                        :
+                                        <button style={{
+                                            fontSize: "13px",
+                                            margin: " 0px",
+                                            fontsize: "13px",
+                                            height: "25px",
+                                            lineHeight: "8px",
+                                            width: "180px"
+                                        }} className="guessTradeButton">Aucun Token</button>
+                                    }
+                                    {canOpenLive == 1 &&
+                                        <button style={{
+                                            fontSize: "13px",
+                                            margin: " 0px",
+                                            fontsize: "13px",
+                                            height: "25px",
+                                            lineHeight: "8px",
+                                            width: "180px",
+                                            marginTop: "10px"
+                                        }}
+                                                value={items[randomBooster].name}
+                                                nameGuru={items[randomBooster].nameGuru}
+                                                block={items[randomBooster].block}
+                                                onClick={freeBooster}
+                                                className="guessTradeButton">Booster Gratuit
+                                        </button>
                                     }
                                 </div>
                             </div>
                         }
+                        <img style={{display:"block",margin:"auto"}} src={"/images/" +array[0].blockName+".png"}/>
                         {array.length > 0 &&
                             array.map((val, key) => {
-                                return(
+                                return (
                                     <div style={{
                                         alignItems: "center",
                                         display: "flex",
                                         height: "300px",
                                         justifyContent: "center",
-                                        backgroundImage: "url(/Boosters/"+val.name+".png)",
+                                        backgroundImage: "url(/Boosters/" + val.name + ".png)",
                                         width: "220px",
                                         backgroundSize: "contain",
                                         backgroundPosition: "top",
                                         borderRadius: "10px",
-                                        position:"relative",
-                                        gap:'5px',
-                                        backgroundRepeat:'no-repeat',
+                                        position: "relative",
+                                        gap: '5px',
+                                        backgroundRepeat: 'no-repeat',
                                         backgroundPositionY: "-15px",
                                         filter: "drop-shadow(0px 0px 6px black)"
                                     }}>
@@ -443,12 +473,18 @@ function CardsShop(props) {
                                                 fontFamily: 'bungee',
                                                 color: 'white',
                                                 textAlign: 'center',
-                                                margin:0,
-                                                fontSize:"13px"
+                                                margin: 0,
+                                                fontSize: "13px"
                                             }}>{val.fullName}</p>
                                             {canOpenLive == 0 &&
                                                 points > 0 &&
-                                                <button style={{fontSize: "13px", width: "180px", margin: "0", height:"22px", lineHeight:"3px"}}
+                                                <button style={{
+                                                    fontSize: "13px",
+                                                    width: "180px",
+                                                    margin: "0",
+                                                    height: "22px",
+                                                    lineHeight: "3px"
+                                                }}
                                                         value={val.name}
                                                         nameGuru={val.nameGuru}
                                                         block={val.block}
@@ -457,7 +493,13 @@ function CardsShop(props) {
                                                 </button>
                                             }
                                             {canOpenLive == 1 &&
-                                                <button style={{fontSize: "13px", width: "180px", margin: "0", height:"22px", lineHeight:"3px"}}
+                                                <button style={{
+                                                    fontSize: "13px",
+                                                    width: "180px",
+                                                    margin: "0",
+                                                    height: "22px",
+                                                    lineHeight: "3px"
+                                                }}
                                                         value={val.name}
                                                         nameGuru={val.nameGuru}
                                                         block={val.block}
@@ -512,8 +554,8 @@ function CardsShop(props) {
                 </>
             }
 
-</>
-)
+        </>
+    )
 }
 
 export default CardsShop
