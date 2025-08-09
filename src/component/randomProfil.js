@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import { Cookies, useCookies } from 'react-cookie';
 import Axios from 'axios'
-import '../App.css'
+import '../index.css'
 
 function RandomProfil(props) {
     const [allProfil,setAllProfil] = useState([]);
