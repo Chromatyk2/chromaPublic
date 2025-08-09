@@ -381,7 +381,7 @@ function CardsShop(props) {
                         <option value="Appel des légendes">Appel des légendes</option>
                         <option value="Noir et Blanc">Noir et Blanc</option>
                         <option value="XY">XY</option>
-                        <option value="Soleil let Lune">Soleil let Lune</option>
+                        <option value="Soleil let Lune">Soleil et Lune</option>
                         <option value="Épée et Bouclier">Épée et Bouclier</option>
                         <option value="Écarlate et Violet">Écarlate et Violet</option>
                     </select>
