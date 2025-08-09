@@ -448,7 +448,9 @@ function CardsShop(props) {
                                 </div>
                             </div>
                         }
-                        <img style={{display:"block",margin:"auto"}} src={"/images/" +array[0].blockName+".png"}/>
+                        {array.length > 0 &&
+                            <img style={{display:"block",margin:"auto"}} src={"/images/" +array[0].blockName+".png"}/>
+                        }
                         {array.length > 0 &&
                             array.map((val, key) => {
                                 return (
