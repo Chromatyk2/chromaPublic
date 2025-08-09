@@ -35,12 +35,11 @@ function App() {
     <>
       {typeof cookies.user !== "undefined" &&
         cookies.user.data[0].login &&
-          <>
-            <NavBar cookies={cookies} />
-            <OnStream />
-            <div className={"contentContainer"}>
-              <BrowserRouter>
-                <Routes>
+          <div className={"contentContainer"}>
+            <BrowserRouter>
+                <NavBar cookies={cookies} />
+              <OnStream />
+              <Routes>
                   <Route path="/log" element={<Log cookies={cookies}/>}/>
                   <Route path="/" element={<HomePage cookies={cookies}/>}/>
                   <Route path="/profil" element={<Profil cookies={cookies}/>}/>
@@ -67,11 +66,10 @@ function App() {
                   <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies}/>}/>
                   <Route path="/49Vs5sWVS2e7pre" element={<Prediction/>}/>
                   <Route path="/compagnon" element={<Compagnon cookies={cookies}/>}/>
-                </Routes>
-              </BrowserRouter>
-            </div>
-            <Footer/>
-          </>
+              </Routes>
+              <Footer/>
+            </BrowserRouter>
+          </div>
       }
     </>
   );
