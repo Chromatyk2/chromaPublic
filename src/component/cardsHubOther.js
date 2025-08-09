@@ -36,7 +36,6 @@ function CardsHubOther(props) {
     }, [])
     return(
         <>
-            <div className={"contentContainer"}>
                 <div className={"allCards"}>
                     {props.page == "myCards" &&
                         <OtherMyCards myPseudo={myPseudo} user={pseudo}/>
@@ -57,7 +56,6 @@ function CardsHubOther(props) {
                         <Succes user={pseudo}/>
                     }
                 </div>
-            </div>
         </>
     );
 }

@@ -363,7 +363,6 @@ function Profil(props) {
     }
     return (
         <>
-            <div className={"contentContainer"}>
                 <div className={"profilContainer"}>
                     {isLoad === false &&
                         profil &&
@@ -626,7 +625,6 @@ function Profil(props) {
                         }
                     < /div>
                 </Modal>
-            </div>
         </>
     )
 }

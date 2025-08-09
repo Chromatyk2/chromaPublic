@@ -17,9 +17,7 @@ function AllProfils(props) {
     }, [])
     return (
         <>
-            <div className={"contentContainer"}>
                 <ProfilList list={allProfil}/>
-            </div>
         </>
     )
 }

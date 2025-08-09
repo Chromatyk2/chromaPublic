@@ -979,7 +979,6 @@ function Profil(props) {
     }
     return (
         <>
-            <div className={"contentContainer"}>
                 <div className={"profilContainer"}>
                     {isLoad === false &&
                         profil &&
@@ -1189,7 +1188,6 @@ function Profil(props) {
                         </>
                     }
                 </div>
-            </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
                 <p style={{textAlign: "center",display: "flex",justifyContent: "center",gap: "10px"}}>Choisis ton Skin <button style={{
                     background: "none", border: "none",

@@ -17,7 +17,6 @@ function CardsHub(props) {
     const pseudo = props.cookies.user.data[0].login;
     return(
         <>
-            <div className={"contentContainer"}>
                 <div className={"allCards"}>
                     {props.page == "myCards" &&
                         <MyCards user={pseudo}/>
@@ -38,7 +37,6 @@ function CardsHub(props) {
                         <Succes user={pseudo}/>
                     }
                 </div>
-            </div>
         </>
     );
 }

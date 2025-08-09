@@ -30,9 +30,7 @@ function Otherdex(props) {
     return (
         <>
             {totalPkm &&
-                <div className={"contentContainer"}>
                     <PkmList compagnonList={compagnonList} list={list} totalPkm={totalPkm}/>
-                </div>
 
             }
         </>

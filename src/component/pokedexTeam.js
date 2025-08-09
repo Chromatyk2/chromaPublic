@@ -20,10 +20,8 @@ function PokedexTeam(props) {
     return (
         <>
             {compagnonList &&
-                <div style={{paddingTop: "15px", minHeight: "100%"}} className={"contentContainer"}>
                     <PkmListTeam compagnonList={compagnonList} change={(e, f) => handleState(e, f)}
                                  pkmToUpdate={props.pkmToUpdate} list={props.list}/>
-                </div>
             }
         </>
     )

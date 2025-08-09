@@ -39,34 +39,36 @@ function App() {
           <NavBar cookies={cookies} />
         <OnStream />
         <Routes>
-          <Route path="/log" element={<Log cookies={cookies} />} />
-          <Route path="/" element={<HomePage cookies={cookies} />} />
-          <Route path="/profil" element={<Profil cookies={cookies} />} />
-          <Route path="/pokedex" element={<Pokedex cookies={cookies} />} />
-          <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies} />} />
-          <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGS" element={<NostalPickV2 cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies} />} />
-          <Route path="/tcg/cartes" element={<CardsHub page={"myCards"} cookies={cookies} />} />
-          <Route path="/tcg/boosters" element={<CardsHub page={"myBoosters"} cookies={cookies} />} />
-          <Route path="/tcg/boutique" element={<CardsHub page={"cardsShop"} cookies={cookies} />} />
-          <Route path="/tcg/echange" element={<CardsHub page={"sellCards"} cookies={cookies} />} />
-          <Route path="/tcg/liste" element={<CardsHub page={"listuserTcg"} cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies} />} />
-          <Route path="/Mentions" element={<Mentions cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies} />} />
-          <Route path="/profil/:pseudo" element={<OtherProfil cookies={cookies} />} />
-          <Route path="/tcg/cartes/:pseudo" element={<CardsHubOther page={"myCards"} cookies={cookies} />} />
-          <Route path="/tcg/boosters/:pseudo" element={<CardsHubOther page={"myBoosters"} cookies={cookies} />} />
-          <Route path="/tcg/boutique/:pseudo" element={<CardsHubOther page={"cardsShop"} cookies={cookies} />} />
-          <Route path="/tcg/echange/:pseudo" element={<CardsHubOther page={"sellCards"} cookies={cookies} />} />
-          <Route path="/tcg/liste/:pseudo" element={<CardsHubOther page={"listuserTcg"} cookies={cookies} />} />
-          <Route path="/allProfils" element={<AllProfils cookies={cookies} />} />
-          <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies} />} />
-          <Route path="/49Vs5sWVS2e7pre" element={<Prediction />} />
-          <Route path="/compagnon" element={<Compagnon cookies={cookies} />} />
+          <div className={"contentContainer"}>
+            <Route path="/log" element={<Log cookies={cookies}/>}/>
+            <Route path="/" element={<HomePage cookies={cookies}/>}/>
+            <Route path="/profil" element={<Profil cookies={cookies}/>}/>
+            <Route path="/pokedex" element={<Pokedex cookies={cookies}/>}/>
+            <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies}/>}/>
+            <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies}/>}/>
+            <Route path="/29ct92B3ZrvxGS" element={<NostalPickV2 cookies={cookies}/>}/>
+            <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies}/>}/>
+            <Route path="/tcg/cartes" element={<CardsHub page={"myCards"} cookies={cookies}/>}/>
+            <Route path="/tcg/boosters" element={<CardsHub page={"myBoosters"} cookies={cookies}/>}/>
+            <Route path="/tcg/boutique" element={<CardsHub page={"cardsShop"} cookies={cookies}/>}/>
+            <Route path="/tcg/echange" element={<CardsHub page={"sellCards"} cookies={cookies}/>}/>
+            <Route path="/tcg/liste" element={<CardsHub page={"listuserTcg"} cookies={cookies}/>}/>
+            <Route path="/29ct92B3ZrvxGK" element={<LastBangerAlert cookies={cookies}/>}/>
+            <Route path="/Mentions" element={<Mentions cookies={cookies}/>}/>
+            <Route path="/29ct92B3ZrvxGSpw" element={<SpawnPokemon cookies={cookies}/>}/>
+            <Route path="/profil/:pseudo" element={<OtherProfil cookies={cookies}/>}/>
+            <Route path="/tcg/cartes/:pseudo" element={<CardsHubOther page={"myCards"} cookies={cookies}/>}/>
+            <Route path="/tcg/boosters/:pseudo" element={<CardsHubOther page={"myBoosters"} cookies={cookies}/>}/>
+            <Route path="/tcg/boutique/:pseudo" element={<CardsHubOther page={"cardsShop"} cookies={cookies}/>}/>
+            <Route path="/tcg/echange/:pseudo" element={<CardsHubOther page={"sellCards"} cookies={cookies}/>}/>
+            <Route path="/tcg/liste/:pseudo" element={<CardsHubOther page={"listuserTcg"} cookies={cookies}/>}/>
+            <Route path="/allProfils" element={<AllProfils cookies={cookies}/>}/>
+            <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies}/>}/>
+            <Route path="/49Vs5sWVS2e7pre" element={<Prediction/>}/>
+            <Route path="/compagnon" element={<Compagnon cookies={cookies}/>}/>
+          </div>
         </Routes>
-        <Footer />
+        <Footer/>
       </BrowserRouter>
       }
     </>

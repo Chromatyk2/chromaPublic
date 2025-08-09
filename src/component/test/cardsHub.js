@@ -25,7 +25,6 @@ function CardsHubTest(props) {
     }, [])
     return(
         <>
-            <div className={"contentContainer"}>
             <div className={"allCards"}>
                     {props.page === null &&
                         <div className={"introTCGtext"}>
@@ -63,7 +62,6 @@ function CardsHubTest(props) {
                     {props.page == "succes" &&
                         <Succes user={pseudo}/>
                     }
-            </div>
             </div>
         </>
     );
