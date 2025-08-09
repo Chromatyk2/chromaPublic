@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import Axios from "axios";
 import './App.css';
@@ -32,14 +32,14 @@ function App() {
     return <Login />
   }
   return(
-    <>
-      {typeof cookies.user !== "undefined" &&
-        cookies.user.data[0].login &&
-          <div className={"contentContainer"}>
-            <BrowserRouter>
-                <NavBar cookies={cookies} />
-              <OnStream />
-              <Routes>
+      <>
+        {typeof cookies.user !== "undefined" &&
+            cookies.user.data[0].login &&
+            <div className={"contentContainer"}>
+              <BrowserRouter>
+                <NavBar cookies={cookies}/>
+                <OnStream/>
+                <Routes>
                   <Route path="/log" element={<Log cookies={cookies}/>}/>
                   <Route path="/" element={<HomePage cookies={cookies}/>}/>
                   <Route path="/profil" element={<Profil cookies={cookies}/>}/>
@@ -66,12 +66,18 @@ function App() {
                   <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies}/>}/>
                   <Route path="/49Vs5sWVS2e7pre" element={<Prediction/>}/>
                   <Route path="/compagnon" element={<Compagnon cookies={cookies}/>}/>
-              </Routes>
-              <Footer/>
-            </BrowserRouter>
-          </div>
-      }
-    </>
+                </Routes>
+              </BrowserRouter>
+            </div>
+        }
+        <div className={"footerContainer"}>
+          <p>© 2025 Pokémon. © 1995–2025 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par The Pokémon
+            Company International, Game Freak et Nintendo</p>
+          <p>© Chromatyk 2023</p>
+          <p>Les images appartiennent à leur auteur respectif. Site fait par un fan pour des fans.</p><Link
+            className="navLink mentionLink" to="/Mentions">Mentions légales</Link>
+        </div>
+      </>
   );
 }
 
