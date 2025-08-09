@@ -92,7 +92,7 @@ function CardsShop(props) {
                             .then(function(response){
                                 setRandomBooster(Math.floor(Math.random() * response.data.length));
                                 setItems(response.data);
-                                response.data.filter(item => item.gen == 1).map((val, key) => {
+                                response.data.filter(item => item.blockName == "Wizards").map((val, key) => {
                                     setTimeout(function() { //Start the timer
                                         setArray(array => [...array,val])
                                     }.bind(this), 500)
@@ -106,10 +106,7 @@ function CardsShop(props) {
     }
     function selectGen(e) {
         setArray([])
-        console.log(e)
-        console.log(items);
-        console.log(items.filter(item => item.gen == e.target.value))
-        items.filter(item => item.gen == e.target.value).map((val, key) => {
+        items.filter(item => item.blockName == e.target.value).map((val, key) => {
             setArray(array => [...array,val])
         })
     }
@@ -376,15 +373,17 @@ function CardsShop(props) {
                         <p style={{color: "red", textAlign: "center"}}>Obtiens plus de boosters sur le stream de Chroma quand il est en live <a style={{fontSize:"15px"}} href={"https://twitch.tv/chromatyk"} target={"_blank"}>ici</a></p>
                     </div>
                     <select className={"selectGen"} onChange={selectGen} name="pets" id="pet-select">
-                    <option value="1">Gen 1</option>
-                        <option value="2">Gen 2</option>
-                        <option value="3">Gen 3</option>
-                        <option value="4">Gen 4</option>
-                        <option value="5">Gen 5</option>
-                        <option value="6">Gen 6</option>
-                        <option value="7">Gen 7</option>
-                        <option value="8">Gen 8</option>
-                        <option value="9">Gen 9</option>
+                    <option value="Wizards">Wizards</option>
+                        <option value="Ex">Ex</option>
+                        <option value="Diamant et Perle">Diamant et Perle</option>
+                        <option value="Platine">Platine</option>
+                        <option value="HeartGold SoulSilver">HeartGold SoulSilver</option>
+                        <option value="Appel des légendes">Appel des légendes</option>
+                        <option value="Noir et Blanc">Noir et Blanc</option>
+                        <option value="XY">XY</option>
+                        <option value="Soleil let Lune">Soleil let Lune</option>
+                        <option value="Épée et Bouclier">Épée et Bouclier</option>
+                        <option value="Écarlate et Violet">Écarlate et Violet</option>
                     </select>
                     <div id={"cardsContainer"}>
                         {randomBooster &&
