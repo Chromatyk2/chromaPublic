@@ -1398,6 +1398,7 @@ ul.paginateLay {
     flex-flow: row;
     text-align: center;
     width: 100%;
+    padding:15px
 }
 .paginateLay li:hover {
     background: none;
