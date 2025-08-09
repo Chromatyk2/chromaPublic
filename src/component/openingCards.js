@@ -32,7 +32,7 @@ function OpeningCards(props) {
     const [berryToWins, setBerryToWins] = useState(null);
 
     useEffect(() => {
-
+        window.scrollTo(0, 0)
         var berryToWin = Math.floor(Math.random() * 50 + 1);
         setBerryToWins(berryToWin);
         Axios.post('/api/addBerry',
