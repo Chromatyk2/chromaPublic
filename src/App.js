@@ -35,7 +35,7 @@ function App() {
       <>
         {typeof cookies.user !== "undefined" &&
             cookies.user.data[0].login &&
-              <div className={"contentContainer"}>
+              <div style={{backgroundColor: location.href.startsWith('https://chromatyk.fr/29ct92B3Zrvx') && 'transparent'}} className={"contentContainer"}>
                 <BrowserRouter>
                   <NavBar cookies={cookies}/>
                   <OnStream/>
