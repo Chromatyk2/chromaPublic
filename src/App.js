@@ -35,7 +35,6 @@ function App() {
       <>
         {typeof cookies.user !== "undefined" &&
             cookies.user.data[0].login &&
-            <>
               <div className={"contentContainer"}>
                 <BrowserRouter>
                   <NavBar cookies={cookies}/>
@@ -70,15 +69,6 @@ function App() {
                   </Routes>
                 </BrowserRouter>
               </div>
-              <div className={"footerContainer"}>
-                <p>© 2025 Pokémon. © 1995–2025 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par The
-                  Pokémon
-                  Company International, Game Freak et Nintendo</p>
-                <p>© Chromatyk 2023</p>
-                <p>Les images appartiennent à leur auteur respectif. Site fait par un fan pour des fans.</p><Link
-                  className="navLink mentionLink" to="/Mentions">Mentions légales</Link>
-              </div>
-            </>
         }
       </>
   );
