@@ -1571,8 +1571,8 @@ img.done {
     justify-content: center;
     gap: 44px;
     position: relative;
-    top: 80px;
-    margin-top:200px;
+    top: 0;
+    margin-top:0;
 }
 img.imgBox {
     width: 226px;
@@ -1743,6 +1743,7 @@ img.gettedBoxImg {
     z-index: 1;
     margin-left: 600px;
     bottom: -100px;
+    top:-70px
 }
 .textResultBoxRare {
     -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
