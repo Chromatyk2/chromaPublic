@@ -210,35 +210,38 @@ function CardsShop(props) {
         setIsOpenBadge(true);
     }
     function handleState(e,f) {
-        setRandomBooster(Math.floor(Math.random() * items.length));
-        setOnOpen(false);
-            setBoosterToDisplay(e);
-            Axios.get("/api/getMyCardsBySet/"+props.user+"/"+e)
-                .then(function(response) {
-                    const myCard = response.data;
-                    Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+e)
-                        .then(function(response) {
-                            setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
-                                stade: 2,
-                                nb: response.data.filter((item) => item.stade == "2").length
-                            }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
-                                stade: 4,
-                                nb: response.data.filter((item) => item.stade == "4").length
-                            }])
-                            const purcents = [{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
-                                stade: 2,
-                                nb: response.data.filter((item) => item.stade == "2").length
-                            }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
-                                stade: 4,
-                                nb: response.data.filter((item) => item.stade == "4").length
-                            }]
-                            Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
-                                .then(function(response) {
-                                    setBadges(response.data);
-                                    const badges = response.data;
-                                    Axios.get("/api/getBoosterByName/"+e)
-                                        .then(function(response) {
-                                            setBoosterName(response.data[0].fullName);
+        Axios.get("/api/getMyCardsByStade/"+props.user)
+            .then(function(response) {
+                setPurcents(response.data)
+                setRandomBooster(Math.floor(Math.random() * items.length));
+                setOnOpen(false);
+                setBoosterToDisplay(e);
+                Axios.get("/api/getMyCardsBySet/"+props.user+"/"+e)
+                    .then(function(response) {
+                        const myCard = response.data;
+                        Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+e)
+                            .then(function(response) {
+                                setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
+                                    stade: 2,
+                                    nb: response.data.filter((item) => item.stade == "2").length
+                                }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
+                                    stade: 4,
+                                    nb: response.data.filter((item) => item.stade == "4").length
+                                }])
+                                const purcents = [{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
+                                    stade: 2,
+                                    nb: response.data.filter((item) => item.stade == "2").length
+                                }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
+                                    stade: 4,
+                                    nb: response.data.filter((item) => item.stade == "4").length
+                                }]
+                                Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
+                                    .then(function(response) {
+                                        setBadges(response.data);
+                                        const badges = response.data;
+                                        Axios.get("/api/getBoosterByName/"+e)
+                                            .then(function(response) {
+                                                setBoosterName(response.data[0].fullName);
                                                 if(parseFloat(myCard.length / response.data[0].totalcards * 100).toFixed(2) == 100){
                                                     if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
                                                         openModalZero(0);
@@ -258,76 +261,77 @@ function CardsShop(props) {
                                                             })
                                                     }else if(purcents.length > 0){
                                                         if(parseFloat(purcents.find((item) => item.stade == 1).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 1) === "undefined"){
-                                                                openModalZero(1);
-                                                                Axios.post('/api/addBadge',
-                                                                    {
-                                                                        pseudo:props.user,
-                                                                        image:e+"_1",
-                                                                        stade:1,
-                                                                        description:"100% du set "+response.data[0].fullName+" - Lvl.1",
-                                                                        booster:e
-                                                                    })
-                                                                    .then(function(response) {
-                                                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
-                                                                            .then(function (response) {
-                                                                                setBadges(response.data);
-                                                                            })
-                                                                    })
+                                                            openModalZero(1);
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:e+"_1",
+                                                                    stade:1,
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.1",
+                                                                    booster:e
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
                                                         }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 2) === "undefined"){
-                                                                openModalZero(2);
-                                                                Axios.post('/api/addBadge',
-                                                                    {
-                                                                        pseudo:props.user,
-                                                                        image:e+"_2",
-                                                                        stade:2,
-                                                                        description:"100% du set "+response.data[0].fullName+" - Lvl.2",
-                                                                        booster:e
-                                                                    })
-                                                                    .then(function(response) {
-                                                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
-                                                                            .then(function (response) {
-                                                                                setBadges(response.data);
-                                                                            })
-                                                                    })
+                                                            openModalZero(2);
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:e+"_2",
+                                                                    stade:2,
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.2",
+                                                                    booster:e
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
                                                         }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 3) === "undefined"){
-                                                                openModalZero(3);
-                                                                Axios.post('/api/addBadge',
-                                                                    {
-                                                                        pseudo:props.user,
-                                                                        image:e+"_3",
-                                                                        stade:3,
-                                                                        description:"100% du set "+response.data[0].fullName+" - Lvl.3",
-                                                                        booster:e
-                                                                    })
-                                                                    .then(function(response) {
-                                                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
-                                                                            .then(function (response) {
-                                                                                setBadges(response.data);
-                                                                            })
-                                                                    })
+                                                            openModalZero(3);
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:e+"_3",
+                                                                    stade:3,
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.3",
+                                                                    booster:e
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
                                                         }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / response.data[0].totalcards * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 4) === "undefined"){
-                                                                openModalZero(4);
-                                                                Axios.post('/api/addBadge',
-                                                                    {
-                                                                        pseudo:props.user,
-                                                                        image:e+"_4",
-                                                                        stade:4,
-                                                                        description:"100% du set "+response.data[0].fullName+" - Lvl.4",
-                                                                        booster:e
-                                                                    })
-                                                                    .then(function(response) {
-                                                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
-                                                                            .then(function (response) {
-                                                                                setBadges(response.data);
-                                                                            })
-                                                                    })
+                                                            openModalZero(4);
+                                                            Axios.post('/api/addBadge',
+                                                                {
+                                                                    pseudo:props.user,
+                                                                    image:e+"_4",
+                                                                    stade:4,
+                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.4",
+                                                                    booster:e
+                                                                })
+                                                                .then(function(response) {
+                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
+                                                                        .then(function (response) {
+                                                                            setBadges(response.data);
+                                                                        })
+                                                                })
                                                         }
                                                     }
                                                 }
-                                        })
-                                })
-                        })
-                })
+                                            })
+                                    })
+                            })
+                    })
+            })
     }
     function changeCarousel(e) {
         setSelectedBoosterId(e)
