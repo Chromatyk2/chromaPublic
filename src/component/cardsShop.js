@@ -466,9 +466,9 @@ function CardsShop(props) {
                         {array.length > 0 &&
                             array.map((val, key) => {
                                 return (
-                                    <div style={{backgroundColor: "rgba(255, 255, 255, 0.1)", padding: "15px", borderRadius: "10px"}}>
+                                    <div style={{backgroundColor: "rgba(255, 255, 255, 0.1)", padding: "15px", borderRadius: "10px", position:"relative"}}>
                                         {allBadges.find((uc) => uc.booster == val.name) &&
-                                            <img src={"/Ribbon/" + allBadges.sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
+                                            <img style={{position: "absolute",zIndex: 1,right: "-35px",top: "-35px",width: "130px"}} src={"/Ribbon/" + allBadges.find((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.find((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
                                         }
                                         <div style={{
                                             alignItems: "center",
