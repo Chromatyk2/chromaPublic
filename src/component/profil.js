@@ -1242,7 +1242,7 @@ function Profil(props) {
             <Modal style={{}} overlayClassName={"overlayModalToken"} className={"modalTokenProfil"}
                    isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
                 <SpawnPokemonToken change={closeModalToken} pseudo={pseudo}/>
-                <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                <button style={{marginTop:"50px", display: "block", margin: "auto"}} className={"filterButton"}
                         onClick={closeModalToken}>Cool !
                 </button>
             </Modal>
