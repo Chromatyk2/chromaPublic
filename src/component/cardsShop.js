@@ -553,20 +553,7 @@ function CardsShop(props) {
                                             <p style={{color: "white"}}>Stade 3
                                                 : {purcents.filter((item) => item.booster == val.name && item.stade == "3").length + " / " + val.totalcards} </p>
                                         </div>
-                                        <div style={{width: "10px", height: "10px", background: "linear-gradient(\n" +
-                                                "        90deg,\n" +
-                                                "        rgba(255, 0, 0, 1) 0%,\n" +
-                                                "        rgba(255, 154, 0, 1) 10%,\n" +
-                                                "        rgba(208, 222, 33, 1) 20%,\n" +
-                                                "        rgba(79, 220, 74, 1) 30%,\n" +
-                                                "        rgba(63, 218, 216, 1) 40%,\n" +
-                                                "        rgba(47, 201, 226, 1) 50%,\n" +
-                                                "        rgba(28, 127, 238, 1) 60%,\n" +
-                                                "        rgba(95, 21, 242, 1) 70%,\n" +
-                                                "        rgba(186, 12, 248, 1) 80%,\n" +
-                                                "        rgba(251, 7, 217, 1) 90%,\n" +
-                                                "        rgba(255, 0, 0, 1) 100%\n" +
-                                                "    )"}}>
+                                        <div style={{width: "10px", height: "10px", background: "linear-gradient(90deg,rgba(255, 0, 0, 1) 0%,rgba(255, 154, 0, 1) 10%,rgba(208, 222, 33, 1) 20%,rgba(79, 220, 74, 1) 30%,rgba(63, 218, 216, 1) 40%,rgba(47, 201, 226, 1) 50%,rgba(28, 127, 238, 1) 60%,rgba(95, 21, 242, 1) 70%,rgba(186, 12, 248, 1) 80%,rgba(251, 7, 217, 1) 90%,rgba(255, 0, 0, 1) 100%)"}}>
                                             <p style={{color: "white"}}>Stade 4
                                                 : {purcents.filter((item) => item.booster == val.name && item.stade == "4").length + " / " + val.totalcards} </p>
                                         </div>
