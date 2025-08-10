@@ -475,7 +475,7 @@ function CardsShop(props) {
                                         }}>
                                             <div className={"buttonsBooster"}>
                                                 <p style={{
-                                                    fontFamily: 'bungee',
+                                                    fontFamily: 'Russo One',
                                                     color: 'white',
                                                     textAlign: 'center',
                                                     margin: 0,
@@ -523,30 +523,56 @@ function CardsShop(props) {
                                             {/*    <div style={{*/}
                                             {/*        width: "10px",*/}
                                             {/*        height: "10px",*/}
-                                            {/*        background: val.stade == 1 ? "#40b24b" : val.stade == 2 ? "#81adef" : val.stade == 3 ? "#e5d330" : "linear-gradient(\n" +*/}
-                                            {/*            "        90deg,\n" +*/}
-                                            {/*            "        rgba(255, 0, 0, 1) 0%,\n" +*/}
-                                            {/*            "        rgba(255, 154, 0, 1) 10%,\n" +*/}
-                                            {/*            "        rgba(208, 222, 33, 1) 20%,\n" +*/}
-                                            {/*            "        rgba(79, 220, 74, 1) 30%,\n" +*/}
-                                            {/*            "        rgba(63, 218, 216, 1) 40%,\n" +*/}
-                                            {/*            "        rgba(47, 201, 226, 1) 50%,\n" +*/}
-                                            {/*            "        rgba(28, 127, 238, 1) 60%,\n" +*/}
-                                            {/*            "        rgba(95, 21, 242, 1) 70%,\n" +*/}
-                                            {/*            "        rgba(186, 12, 248, 1) 80%,\n" +*/}
-                                            {/*            "        rgba(251, 7, 217, 1) 90%,\n" +*/}
-                                            {/*            "        rgba(255, 0, 0, 1) 100%\n" +*/}
-                                            {/*            "    )"*/}
+                                                    background: val.stade == 1 ? "#40b24b" : val.stade == 2 ? "#81adef" : val.stade == 3 ? "#e5d330" : "linear-gradient(\n" +
+                                                        "        90deg,\n" +
+                                                        "        rgba(255, 0, 0, 1) 0%,\n" +
+                                                        "        rgba(255, 154, 0, 1) 10%,\n" +
+                                                        "        rgba(208, 222, 33, 1) 20%,\n" +
+                                                        "        rgba(79, 220, 74, 1) 30%,\n" +
+                                                        "        rgba(63, 218, 216, 1) 40%,\n" +
+                                                        "        rgba(47, 201, 226, 1) 50%,\n" +
+                                                        "        rgba(28, 127, 238, 1) 60%,\n" +
+                                                        "        rgba(95, 21, 242, 1) 70%,\n" +
+                                                        "        rgba(186, 12, 248, 1) 80%,\n" +
+                                                        "        rgba(251, 7, 217, 1) 90%,\n" +
+                                                        "        rgba(255, 0, 0, 1) 100%\n" +
+                                                        "    )"
                                             {/*    }}></div>*/}
                                             {/*    <p>Stade {val.stade} : {purcents.find((item) => item.stade == val.stade).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == val.stade).nb / props.item * 100).toFixed(2) + "%)"}</p>*/}
                                             {/*</div>*/}
                                         </div>
                                         <div style={{width: "10px", height: "10px", background: "#40b24b"}}>
-                                            <p style={{color:"white"}}>Stade 1 : {purcents.filter((item) => item.booster == val.name && item.stade == "1").length + " / " + val.totalcards} </p>
+                                            <p style={{color: "white"}}>Stade 1
+                                                : {purcents.filter((item) => item.booster == val.name && item.stade == "1").length + " / " + val.totalcards} </p>
+                                        </div>
+                                        <div style={{width: "10px", height: "10px", background: "#81adef"}}>
+                                            <p style={{color: "white"}}>Stade 2
+                                                : {purcents.filter((item) => item.booster == val.name && item.stade == "2").length + " / " + val.totalcards} </p>
+                                        </div>
+                                        <div style={{width: "10px", height: "10px", background: "#e5d330"}}>
+                                            <p style={{color: "white"}}>Stade 3
+                                                : {purcents.filter((item) => item.booster == val.name && item.stade == "3").length + " / " + val.totalcards} </p>
+                                        </div>
+                                        <div style={{width: "10px", height: "10px", background: "linear-gradient(\n" +
+                                                "        90deg,\n" +
+                                                "        rgba(255, 0, 0, 1) 0%,\n" +
+                                                "        rgba(255, 154, 0, 1) 10%,\n" +
+                                                "        rgba(208, 222, 33, 1) 20%,\n" +
+                                                "        rgba(79, 220, 74, 1) 30%,\n" +
+                                                "        rgba(63, 218, 216, 1) 40%,\n" +
+                                                "        rgba(47, 201, 226, 1) 50%,\n" +
+                                                "        rgba(28, 127, 238, 1) 60%,\n" +
+                                                "        rgba(95, 21, 242, 1) 70%,\n" +
+                                                "        rgba(186, 12, 248, 1) 80%,\n" +
+                                                "        rgba(251, 7, 217, 1) 90%,\n" +
+                                                "        rgba(255, 0, 0, 1) 100%\n" +
+                                                "    )"}}>
+                                            <p style={{color: "white"}}>Stade 4
+                                                : {purcents.filter((item) => item.booster == val.name && item.stade == "4").length + " / " + val.totalcards} </p>
                                         </div>
                                     </div>
 
-                            )
+                                )
                             })
                             // <div style={{width: "100%"}}>
                             //     <Carousel onChange={(item) => changeCarousel(item)}
