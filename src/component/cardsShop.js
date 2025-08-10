@@ -35,6 +35,7 @@ function CardsShop(props) {
     const [purcents, setPurcents] = useState(null);
     const [purcentsCards, setPurcentsCards] = useState(null);
     const [badges, setBadges] = useState(null);
+    const [allBadges, setAllBadges] = useState(null);
     const [boosterName, setBoosterName] = React.useState(null);
     const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
     const [boosterToDisplay, setBoosterToDisplay] = React.useState(null);
@@ -68,39 +69,43 @@ function CardsShop(props) {
     };
 
     useEffect(() => {
-        Axios.get("/api/getMyCardsByStade/"+props.user)
+        Axios.get("/api/getBadgesByUser/"+props.user)
             .then(function(response) {
-                setPurcentsCards(response.data)
-                Axios
-                    .get("/api/getCardsPoint/"+props.user)
-                    .then(function(response){
-                        setPoints(response.data[0].cardToken);
-                        Axios.get("/api/getProfil/"+props.user)
+                setAllBadges(response.data)
+                Axios.get("/api/getMyCardsByStade/"+props.user)
+                    .then(function(response) {
+                        setPurcentsCards(response.data)
+                        Axios
+                            .get("/api/getCardsPoint/"+props.user)
                             .then(function(response){
-                                setPowder(response.data[0].powder)
-                                const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                                const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                                if(response.data[0].canOpen == 1){
-                                    setCanOpenLive(response.data[0].canOpen)
-                                }else{
-                                    setNextFree(moment(lastDrawing).valueOf() + 3600000);
-                                    if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
-                                        setCanOpenLive(1)
-                                    }else{
-                                        setCanOpenLive(0)
-                                    }
-                                }
-
-                                Axios
-                                    .get("/api/getBoostersList")
+                                setPoints(response.data[0].cardToken);
+                                Axios.get("/api/getProfil/"+props.user)
                                     .then(function(response){
-                                        setRandomBooster(Math.floor(Math.random() * response.data.length));
-                                        setItems(response.data);
-                                        response.data.filter(item => item.blockName == "Wizards").map((val, key) => {
-                                            setTimeout(function() { //Start the timer
-                                                setArray(array => [...array,val])
-                                            }.bind(this), 500)
-                                        })
+                                        setPowder(response.data[0].powder)
+                                        const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                                        const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
+                                        if(response.data[0].canOpen == 1){
+                                            setCanOpenLive(response.data[0].canOpen)
+                                        }else{
+                                            setNextFree(moment(lastDrawing).valueOf() + 3600000);
+                                            if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
+                                                setCanOpenLive(1)
+                                            }else{
+                                                setCanOpenLive(0)
+                                            }
+                                        }
+
+                                        Axios
+                                            .get("/api/getBoostersList")
+                                            .then(function(response){
+                                                setRandomBooster(Math.floor(Math.random() * response.data.length));
+                                                setItems(response.data);
+                                                response.data.filter(item => item.blockName == "Wizards").map((val, key) => {
+                                                    setTimeout(function() { //Start the timer
+                                                        setArray(array => [...array,val])
+                                                    }.bind(this), 500)
+                                                })
+                                            })
                                     })
                             })
                     })
@@ -462,6 +467,9 @@ function CardsShop(props) {
                             array.map((val, key) => {
                                 return (
                                     <div style={{backgroundColor: "rgba(255, 255, 255, 0.1)", padding: "15px", borderRadius: "10px"}}>
+                                        {allBadges.find((uc) => uc.booster == val.name) &&
+                                            <img src={"/Ribbon/" + allBadges.sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
+                                        }
                                         <div style={{
                                             alignItems: "center",
                                             display: "flex",
