@@ -32,7 +32,7 @@ function CardsShop(props) {
     const [randomBooster, setRandomBooster] = React.useState(null);
     const [globalBooster, setGlobalBoosters] = React.useState(null);
     const [powder,setPowder] = useState(null);
-    const [purcents, setPurcents] = useState([]);
+    const [purcents, setPurcents] = useState(null);
     const [badges, setBadges] = useState(null);
     const [boosterName, setBoosterName] = React.useState(null);
     const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
@@ -67,40 +67,44 @@ function CardsShop(props) {
     };
 
     useEffect(() => {
-        Axios
-            .get("/api/getCardsPoint/"+props.user)
-            .then(function(response){
-                setPoints(response.data[0].cardToken);
-                Axios.get("/api/getProfil/"+props.user)
+        Axios.get("/api/getMyCardsByStade/"+props.user)
+            .then(function(response) {
+                setPurcents(response.data)
+                Axios
+                    .get("/api/getCardsPoint/"+props.user)
                     .then(function(response){
-                        setPowder(response.data[0].powder)
-                        const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                        const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                        if(response.data[0].canOpen == 1){
-                            setCanOpenLive(response.data[0].canOpen)
-                        }else{
-                            setNextFree(moment(lastDrawing).valueOf() + 3600000);
-                            if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
-                                setCanOpenLive(1)
-                            }else{
-                                setCanOpenLive(0)
-                            }
-                        }
-
-                        Axios
-                            .get("/api/getBoostersList")
+                        setPoints(response.data[0].cardToken);
+                        Axios.get("/api/getProfil/"+props.user)
                             .then(function(response){
-                                setRandomBooster(Math.floor(Math.random() * response.data.length));
-                                setItems(response.data);
-                                response.data.filter(item => item.blockName == "Wizards").map((val, key) => {
-                                    setTimeout(function() { //Start the timer
-                                        setArray(array => [...array,val])
-                                    }.bind(this), 500)
-                                })
+                                setPowder(response.data[0].powder)
+                                const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                                const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
+                                if(response.data[0].canOpen == 1){
+                                    setCanOpenLive(response.data[0].canOpen)
+                                }else{
+                                    setNextFree(moment(lastDrawing).valueOf() + 3600000);
+                                    if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
+                                        setCanOpenLive(1)
+                                    }else{
+                                        setCanOpenLive(0)
+                                    }
+                                }
+
+                                Axios
+                                    .get("/api/getBoostersList")
+                                    .then(function(response){
+                                        setRandomBooster(Math.floor(Math.random() * response.data.length));
+                                        setItems(response.data);
+                                        response.data.filter(item => item.blockName == "Wizards").map((val, key) => {
+                                            setTimeout(function() { //Start the timer
+                                                setArray(array => [...array,val])
+                                            }.bind(this), 500)
+                                        })
+                                    })
                             })
                     })
             })
-    }, [])
+            }, [])
     function checkEndCountdown() {
         setCanOpenLive(1)
     }
@@ -110,6 +114,7 @@ function CardsShop(props) {
             setArray(array => [...array,val])
         })
     }
+
     function openModal(e) {
         setOnOpen(true);
         var button = e.currentTarget;
@@ -506,6 +511,36 @@ function CardsShop(props) {
                                                         className="guessTradeButton">Booster Gratuit
                                                 </button>
                                             }
+                                        </div>
+                                        <div style={{
+                                            width: "260px",
+                                            justifyContent: "center",
+                                            display: "flex",
+                                            alignItems: "baseline",
+                                            gap: "5px"
+                                        }}>
+                                            <div  style={{width: "10px",height: "10px",background: "#40b24b"}}>
+                                                <p>Stade 1 : {purcents.filter((item)=>item.booster == val.name && item.stade == "1").length+" / "+val.totalcards} </p>
+                                            </div>
+                                            {/*<div style={{*/}
+                                            {/*    width: "10px",*/}
+                                            {/*    height: "10px",*/}
+                                            {/*    background: val.stade == 1 ? "#40b24b" : val.stade == 2 ? "#81adef" : val.stade == 3 ? "#e5d330" : "linear-gradient(\n" +*/}
+                                            {/*        "        90deg,\n" +*/}
+                                            {/*        "        rgba(255, 0, 0, 1) 0%,\n" +*/}
+                                            {/*        "        rgba(255, 154, 0, 1) 10%,\n" +*/}
+                                            {/*        "        rgba(208, 222, 33, 1) 20%,\n" +*/}
+                                            {/*        "        rgba(79, 220, 74, 1) 30%,\n" +*/}
+                                            {/*        "        rgba(63, 218, 216, 1) 40%,\n" +*/}
+                                            {/*        "        rgba(47, 201, 226, 1) 50%,\n" +*/}
+                                            {/*        "        rgba(28, 127, 238, 1) 60%,\n" +*/}
+                                            {/*        "        rgba(95, 21, 242, 1) 70%,\n" +*/}
+                                            {/*        "        rgba(186, 12, 248, 1) 80%,\n" +*/}
+                                            {/*        "        rgba(251, 7, 217, 1) 90%,\n" +*/}
+                                            {/*        "        rgba(255, 0, 0, 1) 100%\n" +*/}
+                                            {/*        "    )"*/}
+                                            {/*}}></div>*/}
+                                            {/*<p>Stade {val.stade} : {purcents.find((item) => item.stade == val.stade).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == val.stade).nb / props.item * 100).toFixed(2) + "%)"}</p>*/}
                                         </div>
                                     </div>
 
