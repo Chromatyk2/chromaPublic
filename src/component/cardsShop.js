@@ -542,7 +542,7 @@ function CardsShop(props) {
                                             {/*</div>*/}
                                         </div>
                                         <div style={{background: "#40b24b"}}>
-                                            <p style={{color: "white", textAlign: "center"}>Stade 1
+                                            <p style={{color: "white", textAlign: "center"}}>Stade 1
                                                 : {purcents.filter((item) => item.booster == val.name && item.stade == "1").length + " / " + val.totalcards} </p>
                                         </div>
                                         <div style={{background: "#81adef"}}>
