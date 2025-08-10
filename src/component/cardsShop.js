@@ -456,95 +456,97 @@ function CardsShop(props) {
                         {array.length > 0 &&
                             array.map((val, key) => {
                                 return (
-                                    <div style={{
-                                        alignItems: "center",
-                                        display: "flex",
-                                        height: "300px",
-                                        justifyContent: "center",
-                                        backgroundImage: "url(/Boosters/" + val.name + ".png)",
-                                        width: "220px",
-                                        backgroundSize: "contain",
-                                        backgroundPosition: "top",
-                                        borderRadius: "10px",
-                                        position: "relative",
-                                        gap: '5px',
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundPositionY: "-15px",
-                                        filter: "drop-shadow(0px 0px 6px black)"
-                                    }}>
-                                        <div className={"buttonsBooster"}>
-                                            <p style={{
-                                                fontFamily: 'bungee',
-                                                color: 'white',
-                                                textAlign: 'center',
-                                                margin: 0,
-                                                fontSize: "13px"
-                                            }}>{val.fullName}</p>
-                                            {canOpenLive == 0 &&
-                                                points > 0 &&
-                                                <button style={{
-                                                    fontSize: "13px",
-                                                    width: "180px",
-                                                    margin: "0",
-                                                    height: "22px",
-                                                    lineHeight: "3px"
-                                                }}
-                                                        value={val.name}
-                                                        nameGuru={val.nameGuru}
-                                                        block={val.block}
-                                                        onClick={openModal}
-                                                        className="guessTradeButton">Ouvrir
-                                                </button>
-                                            }
-                                            {canOpenLive == 1 &&
-                                                <button style={{
-                                                    fontSize: "13px",
-                                                    width: "180px",
-                                                    margin: "0",
-                                                    height: "22px",
-                                                    lineHeight: "3px"
-                                                }}
-                                                        value={val.name}
-                                                        nameGuru={val.nameGuru}
-                                                        block={val.block}
-                                                        onClick={freeBooster}
-                                                        className="guessTradeButton">Booster Gratuit
-                                                </button>
-                                            }
-                                        </div>
+                                    <div>
                                         <div style={{
-                                            width: "260px",
-                                            justifyContent: "center",
+                                            alignItems: "center",
                                             display: "flex",
-                                            alignItems: "baseline",
-                                            gap: "5px"
+                                            height: "300px",
+                                            justifyContent: "center",
+                                            backgroundImage: "url(/Boosters/" + val.name + ".png)",
+                                            width: "220px",
+                                            backgroundSize: "contain",
+                                            backgroundPosition: "top",
+                                            borderRadius: "10px",
+                                            position: "relative",
+                                            gap: '5px',
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundPositionY: "-15px",
+                                            filter: "drop-shadow(0px 0px 6px black)"
                                         }}>
-                                            <div  style={{width: "10px",height: "10px",background: "#40b24b"}}>
-                                                <p>Stade 1 : {purcents.filter((item)=>item.booster == val.name && item.stade == "1").length+" / "+val.totalcards} </p>
+                                            <div className={"buttonsBooster"}>
+                                                <p style={{
+                                                    fontFamily: 'bungee',
+                                                    color: 'white',
+                                                    textAlign: 'center',
+                                                    margin: 0,
+                                                    fontSize: "13px"
+                                                }}>{val.fullName}</p>
+                                                {canOpenLive == 0 &&
+                                                    points > 0 &&
+                                                    <button style={{
+                                                        fontSize: "13px",
+                                                        width: "180px",
+                                                        margin: "0",
+                                                        height: "22px",
+                                                        lineHeight: "3px"
+                                                    }}
+                                                            value={val.name}
+                                                            nameGuru={val.nameGuru}
+                                                            block={val.block}
+                                                            onClick={openModal}
+                                                            className="guessTradeButton">Ouvrir
+                                                    </button>
+                                                }
+                                                {canOpenLive == 1 &&
+                                                    <button style={{
+                                                        fontSize: "13px",
+                                                        width: "180px",
+                                                        margin: "0",
+                                                        height: "22px",
+                                                        lineHeight: "3px"
+                                                    }}
+                                                            value={val.name}
+                                                            nameGuru={val.nameGuru}
+                                                            block={val.block}
+                                                            onClick={freeBooster}
+                                                            className="guessTradeButton">Booster Gratuit
+                                                    </button>
+                                                }
                                             </div>
                                             {/*<div style={{*/}
-                                            {/*    width: "10px",*/}
-                                            {/*    height: "10px",*/}
-                                            {/*    background: val.stade == 1 ? "#40b24b" : val.stade == 2 ? "#81adef" : val.stade == 3 ? "#e5d330" : "linear-gradient(\n" +*/}
-                                            {/*        "        90deg,\n" +*/}
-                                            {/*        "        rgba(255, 0, 0, 1) 0%,\n" +*/}
-                                            {/*        "        rgba(255, 154, 0, 1) 10%,\n" +*/}
-                                            {/*        "        rgba(208, 222, 33, 1) 20%,\n" +*/}
-                                            {/*        "        rgba(79, 220, 74, 1) 30%,\n" +*/}
-                                            {/*        "        rgba(63, 218, 216, 1) 40%,\n" +*/}
-                                            {/*        "        rgba(47, 201, 226, 1) 50%,\n" +*/}
-                                            {/*        "        rgba(28, 127, 238, 1) 60%,\n" +*/}
-                                            {/*        "        rgba(95, 21, 242, 1) 70%,\n" +*/}
-                                            {/*        "        rgba(186, 12, 248, 1) 80%,\n" +*/}
-                                            {/*        "        rgba(251, 7, 217, 1) 90%,\n" +*/}
-                                            {/*        "        rgba(255, 0, 0, 1) 100%\n" +*/}
-                                            {/*        "    )"*/}
-                                            {/*}}></div>*/}
-                                            {/*<p>Stade {val.stade} : {purcents.find((item) => item.stade == val.stade).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == val.stade).nb / props.item * 100).toFixed(2) + "%)"}</p>*/}
+                                            {/*    width: "260px",*/}
+                                            {/*    justifyContent: "center",*/}
+                                            {/*    display: "flex",*/}
+                                            {/*    alignItems: "baseline",*/}
+                                            {/*    gap: "5px"*/}
+                                            {/*}}>*/}
+                                            {/*    <div style={{*/}
+                                            {/*        width: "10px",*/}
+                                            {/*        height: "10px",*/}
+                                            {/*        background: val.stade == 1 ? "#40b24b" : val.stade == 2 ? "#81adef" : val.stade == 3 ? "#e5d330" : "linear-gradient(\n" +*/}
+                                            {/*            "        90deg,\n" +*/}
+                                            {/*            "        rgba(255, 0, 0, 1) 0%,\n" +*/}
+                                            {/*            "        rgba(255, 154, 0, 1) 10%,\n" +*/}
+                                            {/*            "        rgba(208, 222, 33, 1) 20%,\n" +*/}
+                                            {/*            "        rgba(79, 220, 74, 1) 30%,\n" +*/}
+                                            {/*            "        rgba(63, 218, 216, 1) 40%,\n" +*/}
+                                            {/*            "        rgba(47, 201, 226, 1) 50%,\n" +*/}
+                                            {/*            "        rgba(28, 127, 238, 1) 60%,\n" +*/}
+                                            {/*            "        rgba(95, 21, 242, 1) 70%,\n" +*/}
+                                            {/*            "        rgba(186, 12, 248, 1) 80%,\n" +*/}
+                                            {/*            "        rgba(251, 7, 217, 1) 90%,\n" +*/}
+                                            {/*            "        rgba(255, 0, 0, 1) 100%\n" +*/}
+                                            {/*            "    )"*/}
+                                            {/*    }}></div>*/}
+                                            {/*    <p>Stade {val.stade} : {purcents.find((item) => item.stade == val.stade).nb + " / " + props.item + "(" + parseFloat(purcents.find((item) => item.stade == val.stade).nb / props.item * 100).toFixed(2) + "%)"}</p>*/}
+                                            {/*</div>*/}
+                                        </div>
+                                        <div style={{width: "10px", height: "10px", background: "#40b24b"}}>
+                                            <p style={{color:"white"}}>Stade 1 : {purcents.filter((item) => item.booster == val.name && item.stade == "1").length + " / " + val.totalcards} </p>
                                         </div>
                                     </div>
 
-                                )
+                            )
                             })
                             // <div style={{width: "100%"}}>
                             //     <Carousel onChange={(item) => changeCarousel(item)}
