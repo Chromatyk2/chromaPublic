@@ -466,7 +466,20 @@ function CardsShop(props) {
                         {array.length > 0 &&
                             array.map((val, key) => {
                                 return (
-                                    <div style={{backgroundColor: "rgba(255, 255, 255, 0.1)", padding: "15px", borderRadius: "10px", position:"relative"}}>
+                                    <div style={{backgroundColor: allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 4 ? "linear-gradient(\n" +
+                                            "        90deg,\n" +
+                                            "        rgba(255, 0, 0, 1) 0%,\n" +
+                                            "        rgba(255, 154, 0, 1) 10%,\n" +
+                                            "        rgba(208, 222, 33, 1) 20%,\n" +
+                                            "        rgba(79, 220, 74, 1) 30%,\n" +
+                                            "        rgba(63, 218, 216, 1) 40%,\n" +
+                                            "        rgba(47, 201, 226, 1) 50%,\n" +
+                                            "        rgba(28, 127, 238, 1) 60%,\n" +
+                                            "        rgba(95, 21, 242, 1) 70%,\n" +
+                                            "        rgba(186, 12, 248, 1) 80%,\n" +
+                                            "        rgba(251, 7, 217, 1) 90%,\n" +
+                                            "        rgba(255, 0, 0, 1) 100%\n" +
+                                            "    )" : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 3 ? "gold" : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 2 ? "blue" : "green", padding: "15px", borderRadius: "10px", position:"relative"}}>
                                         {allBadges.find((uc) => uc.booster == val.name) &&
                                             <img style={{position: "absolute",zIndex: 1,right: "-35px",top: "-35px",width: "130px"}} src={"/Ribbon/" + allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
                                         }
