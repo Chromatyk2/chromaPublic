@@ -456,7 +456,7 @@ function CardsShop(props) {
                         {array.length > 0 &&
                             array.map((val, key) => {
                                 return (
-                                    <div style={{backgroundColor: "rgba(255, 255, 255, 0.1)", padding: "15px 15px 0px 15px", borderRadius: "10px"}}>
+                                    <div style={{backgroundColor: "rgba(255, 255, 255, 0.1)", padding: "15px", borderRadius: "10px"}}>
                                         <div style={{
                                             alignItems: "center",
                                             display: "flex",
