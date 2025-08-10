@@ -143,7 +143,7 @@ function MyCardsSet(props) {
 
         setTimeout(function (){
             window.scrollTo(0, 0)
-        },100);
+        },10);
         setIsOpen(false);
         setRefresh(refresh+1)
     }
