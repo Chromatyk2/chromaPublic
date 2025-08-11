@@ -86,6 +86,9 @@ function SpawnPokemon(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
+                                                        if(result.sprites.front_default === null){
+                                                            setReloadFetch(reloadFetch + 1);
+                                                        }
                                                         let root = document.querySelector(':root');
                                                         switch (isShiny){
                                                             case 1 :
@@ -183,6 +186,9 @@ function SpawnPokemon(props) {
                                                         .then(res => res.json())
                                                         .then(
                                                             (result) => {
+                                                                if(result.sprites.front_default === null){
+                                                                    setReloadFetch(reloadFetch + 1);
+                                                                }
                                                                 let root = document.querySelector(':root');
                                                                 switch (isShiny){
                                                                     case 1 :
@@ -276,6 +282,9 @@ function SpawnPokemon(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
+                                                        if(result.sprites.front_default === null){
+                                                            setReloadFetch(reloadFetch + 1);
+                                                        }
                                                         let root = document.querySelector(':root');
                                                         switch (isShiny){
                                                             case 1 :
