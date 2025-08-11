@@ -107,7 +107,12 @@ function changeSprite() {
                                     .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
                                     .then(function(response){
                                         setCaptures(response.data);
-                                        setIsLoadedConvert(false);
+                                        Axios
+                                            .get("/api/getBadgesByUser/" + pseudo)
+                                            .then(function (response) {
+                                                setBadgesList(response.data)
+                                                setIsLoadedConvert(false);
+                                            })
                                     })
                             })
                 })
@@ -120,6 +125,13 @@ function changeSprite() {
                 image: "pokemonshiny"+idPkm,
                 stade: 0,
                 description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !"
+            })
+            .then((result) => {
+            Axios
+                .get("/api/getBadgesByUser/" + pseudo)
+                .then(function (response) {
+                    setBadgesList(response.data)
+                })
             })
     }
  if (error) {
