@@ -71,7 +71,6 @@ function SpawnPokemon(props) {
                                                                 .then(res => res.json())
                                                                 .then(
                                                                     (result) => {
-                                                                        var finalId = idPkm
                                                                         if(result.names.find((element) => element.language.name == "fr")){
                                                                             var name = result.names.find((element) => element.language.name == "fr").name;
                                                                         }else{
@@ -106,7 +105,7 @@ function SpawnPokemon(props) {
                                                                                 setIsLoaded(false);
                                                                                 setShiny(true);
                                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:finalId, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                 Axios.post('/api/addXp',
                                                                                     {
                                                                                         user: queryParameters.get("pseudo"),
@@ -184,7 +183,6 @@ function SpawnPokemon(props) {
                                                                         .then(res => res.json())
                                                                         .then(
                                                                             (result) => {
-                                                                                var finalId = idPkm
                                                                                 if (result.names.find((element) => element.language.name == "fr")) {
                                                                                     var name = result.names.find((element) => element.language.name == "fr").name;
                                                                                 } else {
@@ -220,7 +218,7 @@ function SpawnPokemon(props) {
                                                                                         setIsLoaded(false);
                                                                                         setShiny(true);
                                                                                         root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:finalId, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                        Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                         Axios.post('/api/addXp',
                                                                                             {
                                                                                                 user: queryParameters.get("pseudo"),
@@ -294,7 +292,6 @@ function SpawnPokemon(props) {
                                                                 .then(res => res.json())
                                                                 .then(
                                                                     (result) => {
-                                                                        var finalId = idPkm
                                                                         if (result.names.find((element) => element.language.name == "fr")) {
                                                                             var name = result.names.find((element) => element.language.name == "fr").name;
                                                                         } else {
@@ -330,7 +327,7 @@ function SpawnPokemon(props) {
                                                                                 setIsLoaded(false);
                                                                                 setShiny(true);
                                                                                 root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:finalId, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                 Axios.post('/api/addXp',
                                                                                     {
                                                                                         user: queryParameters.get("pseudo"),

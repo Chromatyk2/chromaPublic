@@ -4354,6 +4354,7 @@ span.navbar-brand {
         width: 60%;
     }
 }
+
 @media screen and (min-width: 380px) and (max-width: 943px) {
     button.anchorTooltip.uniquePokemonContainerTeam {
         width: 100px;
