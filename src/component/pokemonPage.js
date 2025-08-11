@@ -13,6 +13,7 @@ const pseudo = props.cookies.user.data[0].login;
 const [pokemon, setPokemon] = useState([]);
 const [name, setName] = useState([]);
 const [captures, setCaptures] = useState([]);
+const [idPkm, setIdPkm] = useState(null);
 const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
 const [isShiny, setIsShiny] = useState(false);
@@ -31,6 +32,7 @@ useEffect(() => {
                  (result) => {
                      setIsLoaded(true);
                      setName(result.names);
+                     setIdPkm(result.id)
                  },
                  (error) => {
                      setIsLoaded(true);
@@ -85,7 +87,7 @@ function changeSprite() {
                     Axios.post('/api/addBadge',
                         {
                             pseudo: pseudo,
-                            image: "pokemon_("+id+")",
+                            image: "pokemon_("+idPkm+")",
                             stade: 0,
                             description: "Badge obtenu en capturant "+name[4].name+" !"
                         })
@@ -109,7 +111,7 @@ function changeSprite() {
                     Axios.post('/api/addBadge',
                         {
                             pseudo: pseudo,
-                            image: "pokemon_shiny_(" + id + ")",
+                            image: "pokemon_shiny_(" + idPkm + ")",
                             stade: 0,
                             description: "Badge obtenu en obtenant 3 " + name[4].name + " shiny !"
                         })
