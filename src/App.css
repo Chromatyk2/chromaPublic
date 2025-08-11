@@ -2323,7 +2323,6 @@ a.linkOnAirOff {
 }
 .contentContainer{
     min-height: 100vh;
-    padding-top: 100px;
     background: linear-gradient(140deg, rgba(18, 7, 71, 1) 0%, rgba(3, 80, 120, 1) 100%);
 }
 .countdown {
