@@ -541,10 +541,6 @@ function Compagnon(props) {
                                                                         setName(result.names.find((uc) => uc.language.name === "fr"));
                                                                         setIsOpenTeam(false);
                                                                         setLoad(false);
-                                                                    },
-                                                                    (error) => {
-                                                                        setIsLoaded(true);
-                                                                        setError(error);
                                                                     }
                                                                 )
                                                         }
