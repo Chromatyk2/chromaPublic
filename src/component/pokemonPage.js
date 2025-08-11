@@ -25,26 +25,24 @@ useEffect(() => {
      (result) => {
        setIsLoaded(true);
        setPokemon(result);
+         fetch(result.species.url)
+             .then(res => res.json())
+             .then(
+                 (result) => {
+                     setIsLoaded(true);
+                     setName(result.names);
+                 },
+                 (error) => {
+                     setIsLoaded(true);
+                     setError(error);
+                 }
+             )
      },
      (error) => {
        setIsLoaded(true);
        setError(error);
      }
    )
-}, [])
-useEffect(() => {
-fetch("https://pokeapi.co/api/v2/pokemon-species/"+id+"/")
-  .then(res => res.json())
-  .then(
-    (result) => {
-      setIsLoaded(true);
-      setName(result.names);
-    },
-    (error) => {
-      setIsLoaded(true);
-      setError(error);
-    }
-  )
 }, [])
 useEffect(() => {
   Axios
