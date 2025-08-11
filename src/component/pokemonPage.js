@@ -20,31 +20,36 @@ const [isShiny, setIsShiny] = useState(false);
 const [isLoadConvert, setIsLoadedConvert] = useState(false);
 const { id } = useParams()
 useEffect(() => {
- fetch("https://pokeapi.co/api/v2/pokemon/"+id)
-   .then(res => res.json())
-   .then(
-     (result) => {
-       setIsLoaded(true);
-       setPokemon(result);
-         fetch(result.species.url)
-             .then(res => res.json())
-             .then(
-                 (result) => {
-                     setIsLoaded(true);
-                     setName(result.names);
-                     setIdPkm(result.id)
-                 },
-                 (error) => {
-                     setIsLoaded(true);
-                     setError(error);
-                 }
-             )
-     },
-     (error) => {
-       setIsLoaded(true);
-       setError(error);
-     }
-   )
+    fetch("https://pokeapi.co/api/v2/pokemon-form/"+id)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                fetch(result.pokemon.url)
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            setIsLoaded(true);
+                            setPokemon(result);
+                            fetch(result.species.url)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        setIsLoaded(true);
+                                        setName(result.names);
+                                        setIdPkm(result.id)
+                                    },
+                                    (error) => {
+                                        setIsLoaded(true);
+                                        setError(error);
+                                    }
+                                )
+                        },
+                        (error) => {
+                            setIsLoaded(true);
+                            setError(error);
+                        }
+                    )
+            })
 }, [])
 useEffect(() => {
   Axios
