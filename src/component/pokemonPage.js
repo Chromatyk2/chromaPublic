@@ -138,15 +138,9 @@ function changeSprite() {
          <div className={"pagePokemonContainer"}>
              <div className="pokemonPageContainer">
                 <div>
-                  <img onClick={changeSprite} className="imgPokemonPage" src={isShiny === false ? pokemon.sprites.other.home.front_default : pokemon.sprites.other.home.front_shiny}></img>
-                  <p className="numberPokemonPage"># {pokemon.id}</p>
+                  <img onClick={changeSprite} className="imgPokemonPage" src={isShiny === false ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/"+captures[0].id+".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/"+captures[0].id+".png"}></img>
+                  <p className="numberPokemonPage"># {captures[0].id}</p>
                   <p className="namePokemonPage">{captures[0].pkmName}</p>
-                  <div className="pokemonTypeContainer">
-                    <img src={`/images/${pokemon.types[0].type.name}.png`}></img>
-                    {pokemon.types[1] &&
-                      <img src={`/images/${pokemon.types[1].type.name}.png`}></img>
-                    }
-                  </div>
                 </div>
                 <div>
                     <MyCaptures captures={captures} />
