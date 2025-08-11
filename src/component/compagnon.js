@@ -69,28 +69,34 @@ function Compagnon(props) {
                                     });
                                     if (response.data.length > 0) {
                                         setCompagnon(response.data[0])
-                                        fetch("https://pokeapi.co/api/v2/pokemon-form/" + response.data[0].pokemon + "/")
+                                        fetch("https://pokeapi.co/api/v2/pokemon/" + response.data[0].pokemon + "/")
                                             .then(res => res.json())
                                             .then(
                                                 (result) => {
-                                                    if(result.names.find((uc) => uc.language.name === "fr")){
-                                                        setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                        setIsOpenTeam(false);
-                                                        setLoad(false);
-                                                    }else{
-                                                        fetch("https://pokeapi.co/api/v2/pokemon-species/" + response.data[0].pokemon + "/")
-                                                            .then(res => res.json())
-                                                            .then(
-                                                                (result) => {
-                                                                    if(result.status == 404){
-                                                                    }else{
-                                                                        setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                        setIsOpenTeam(false);
-                                                                        setLoad(false);
-                                                                    }
+                                                    fetch(result.forms.url)
+                                                        .then(res => res.json())
+                                                        .then(
+                                                            (result) => {
+                                                                if(result.names.find((uc) => uc.language.name === "fr")){
+                                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                    setIsOpenTeam(false);
+                                                                    setLoad(false);
+                                                                }else{
+                                                                    fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
+                                                                        .then(res => res.json())
+                                                                        .then(
+                                                                            (result) => {
+                                                                                if(result.status == 404){
+                                                                                }else{
+                                                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                                    setIsOpenTeam(false);
+                                                                                    setLoad(false);
+                                                                                }
+                                                                            }
+                                                                        )
                                                                 }
-                                                            )
-                                                    }
+                                                            }
+                                                        )
                                                 }
                                             )
                                     }
@@ -542,28 +548,34 @@ function Compagnon(props) {
                                                     },
                                                 });
                                                 setCompagnon(response.data[0])
-                                                fetch("https://pokeapi.co/api/v2/pokemon-form/" + e + "/")
+                                                fetch("https://pokeapi.co/api/v2/pokemon/" + response.data[0].pokemon + "/")
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            if(result.names.find((uc) => uc.language.name === "fr")){
-                                                                setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                setIsOpenTeam(false);
-                                                                setLoad(false);
-                                                            }else{
-                                                                fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
-                                                                    .then(res => res.json())
-                                                                    .then(
-                                                                        (result) => {
-                                                                            if(result.status == 404){
-                                                                            }else{
-                                                                                setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                                setIsOpenTeam(false);
-                                                                                setLoad(false);
-                                                                            }
+                                                            fetch(result.forms.url)
+                                                                .then(res => res.json())
+                                                                .then(
+                                                                    (result) => {
+                                                                        if(result.names.find((uc) => uc.language.name === "fr")){
+                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                            setIsOpenTeam(false);
+                                                                            setLoad(false);
+                                                                        }else{
+                                                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
+                                                                                .then(res => res.json())
+                                                                                .then(
+                                                                                    (result) => {
+                                                                                        if(result.status == 404){
+                                                                                        }else{
+                                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                                            setIsOpenTeam(false);
+                                                                                            setLoad(false);
+                                                                                        }
+                                                                                    }
+                                                                                )
                                                                         }
-                                                                    )
-                                                            }
+                                                                    }
+                                                                )
                                                         }
                                                     )
                                             })
@@ -605,28 +617,34 @@ function Compagnon(props) {
                                                     },
                                                 });
                                                 setCompagnon(response.data[0])
-                                                fetch("https://pokeapi.co/api/v2/pokemon-form/" + e + "/")
+                                                fetch("https://pokeapi.co/api/v2/pokemon/" + response.data[0].pokemon + "/")
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            if(result.names.find((uc) => uc.language.name === "fr")){
-                                                                setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                setIsOpenTeam(false);
-                                                                setLoad(false);
-                                                            }else{
-                                                                fetch("https://pokeapi.co/api/v2/pokemon-species/" + e + "/")
-                                                                    .then(res => res.json())
-                                                                    .then(
-                                                                        (result) => {
-                                                                            if(result.status == 404){
-                                                                            }else{
-                                                                                setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                                setIsOpenTeam(false);
-                                                                                setLoad(false);
-                                                                            }
+                                                            fetch(result.forms.url)
+                                                                .then(res => res.json())
+                                                                .then(
+                                                                    (result) => {
+                                                                        if(result.names.find((uc) => uc.language.name === "fr")){
+                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                            setIsOpenTeam(false);
+                                                                            setLoad(false);
+                                                                        }else{
+                                                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
+                                                                                .then(res => res.json())
+                                                                                .then(
+                                                                                    (result) => {
+                                                                                        if(result.status == 404){
+                                                                                        }else{
+                                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                                            setIsOpenTeam(false);
+                                                                                            setLoad(false);
+                                                                                        }
+                                                                                    }
+                                                                                )
                                                                         }
-                                                                    )
-                                                            }
+                                                                    }
+                                                                )
                                                         }
                                                     )
                                             })
