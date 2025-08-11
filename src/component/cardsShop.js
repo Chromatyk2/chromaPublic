@@ -466,7 +466,7 @@ function CardsShop(props) {
                         {array.length > 0 &&
                             array.map((val, key) => {
                                 return (
-                                    <div style={{backgroundColor:
+                                    <div style={{background:
                                             !allBadges.find((uc) => uc.booster == val.name) ?
                                                 "rgba(255, 255, 255, 0.1)"
                                                 :
@@ -477,7 +477,7 @@ function CardsShop(props) {
                                                     : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 1 ? "rgba(52, 139, 72, 0.5)"
                                                         : "rgba(165, 156, 156, 0.6)", padding: "15px", borderRadius: "10px", position:"relative"}}>
                                         {allBadges.find((uc) => uc.booster == val.name) &&
-                                            <img style={{position: "absolute",zIndex: 1,right: "-35px",top: "-35px",width: "130px"}} src={"/Ribbon/" + allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
+                                            <img style={{position: "absolute",zIndex: 1,right: "-25px",top: "-25px",width: "120px"}} src={"/Ribbon/" + allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
                                         }
                                         <div style={{
                                             alignItems: "center",
