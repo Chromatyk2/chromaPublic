@@ -69,7 +69,7 @@ function changeSprite() {
             Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
                 .then(
                     (result) => {
-                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:pokemon.sprites.front_shiny,pkmId:id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: captures[0].pkmName, pkmImage:pokemon.sprites.front_shiny,pkmId:id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                             .then(
                                 (result) => {
                                     Axios
@@ -92,7 +92,7 @@ function changeSprite() {
                             pseudo: pseudo,
                             image: "pokemon"+idPkm,
                             stade: 0,
-                            description: "Badge obtenu en capturant "+name[4].name+" !"
+                            description: "Badge obtenu en capturant "+captures[0].pkmName+" !"
                         })
                         .then(
                             (result) => {
@@ -116,7 +116,7 @@ function changeSprite() {
                             pseudo: pseudo,
                             image: "pokemonshiny"+idPkm,
                             stade: 0,
-                            description: "Badge obtenu en obtenant 3 " + name[4].name + " shiny !"
+                            description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !"
                         })
                         .then(
                             (result) => {
