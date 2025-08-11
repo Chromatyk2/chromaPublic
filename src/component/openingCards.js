@@ -236,7 +236,7 @@ function OpeningCards(props) {
                                             } else if (randomStade > 94) {
                                                 var stade = 4;
                                             }
-                                            if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
+                                            if(!gettedCards.find((uc) => uc.number == pkmNumber && uc.stade == stade)){
                                                 setTenCards(tenCards => [...tenCards, {
                                                     card: result,
                                                     rarity: result.rarity,
