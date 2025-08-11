@@ -87,7 +87,7 @@ function changeSprite() {
                     Axios.post('/api/addBadge',
                         {
                             pseudo: pseudo,
-                            image: "pokemon_("+idPkm+")",
+                            image: "pokemon"+idPkm,
                             stade: 0,
                             description: "Badge obtenu en capturant "+name[4].name+" !"
                         })
