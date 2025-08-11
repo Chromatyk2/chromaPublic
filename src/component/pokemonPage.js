@@ -111,7 +111,7 @@ function changeSprite() {
                     Axios.post('/api/addBadge',
                         {
                             pseudo: pseudo,
-                            image: "pokemon_shiny_(" + idPkm + ")",
+                            image: "pokemonshiny"+idPkm,
                             stade: 0,
                             description: "Badge obtenu en obtenant 3 " + name[4].name + " shiny !"
                         })
