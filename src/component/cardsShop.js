@@ -501,7 +501,9 @@ function CardsShop(props) {
                                                     color: 'white',
                                                     textAlign: 'center',
                                                     margin: 0,
-                                                    fontSize: "13px"
+                                                    fontSize: "13px",
+                                                    fontWeight: "bold",
+                                                    letterSpacing: "1px"
                                                 }}>{val.fullName}</p>
                                                 {canOpenLive == 0 &&
                                                     points > 0 &&
@@ -537,19 +539,27 @@ function CardsShop(props) {
                                             </div>
                                         </div>
                                         <div style={{background: "#40b24b"}}>
-                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0}}>Stade 1
+                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0,
+                                                fontWeight: "bold",
+                                                letterSpacing: "1px"}}>Stade 1
                                                 : {purcentsCards.filter((item) => item.booster == val.name && item.stade == "1").length + " / " + val.totalcards} </p>
                                         </div>
                                         <div style={{background: "#81adef"}}>
-                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0}}>Stade 2
+                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0,
+                                                fontWeight: "bold",
+                                                letterSpacing: "1px"}}>Stade 2
                                                 : {purcentsCards.filter((item) => item.booster == val.name && item.stade == "2").length + " / " + val.totalcards} </p>
                                         </div>
                                         <div style={{background: "#e5d330"}}>
-                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0}}>Stade 3
+                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0,
+                                                fontWeight: "bold",
+                                                letterSpacing: "1px"}}>Stade 3
                                                 : {purcentsCards.filter((item) => item.booster == val.name && item.stade == "3").length + " / " + val.totalcards} </p>
                                         </div>
                                         <div style={{borderRadius:"0 0 10px 10px", background: "linear-gradient(90deg,rgba(255, 0, 0, 1) 0%,rgba(255, 154, 0, 1) 10%,rgba(208, 222, 33, 1) 20%,rgba(79, 220, 74, 1) 30%,rgba(63, 218, 216, 1) 40%,rgba(47, 201, 226, 1) 50%,rgba(28, 127, 238, 1) 60%,rgba(95, 21, 242, 1) 70%,rgba(186, 12, 248, 1) 80%,rgba(251, 7, 217, 1) 90%,rgba(255, 0, 0, 1) 100%)"}}>
-                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0}}>Stade 4
+                                            <p style={{filter: "drop-shadow(0px 2px 1px black)",color: "white", textAlign: "center", margin:0,
+                                                fontWeight: "bold",
+                                                letterSpacing: "1px"}}>Stade 4
                                                 : {purcentsCards.filter((item) => item.booster == val.name && item.stade == "4").length + " / " + val.totalcards} </p>
                                         </div>
                                     </div>
