@@ -140,7 +140,7 @@ function changeSprite() {
                 <div>
                   <img onClick={changeSprite} className="imgPokemonPage" src={isShiny === false ? pokemon.sprites.other.home.front_default : pokemon.sprites.other.home.front_shiny}></img>
                   <p className="numberPokemonPage"># {pokemon.id}</p>
-                  <p className="namePokemonPage">{name[4].name}</p>
+                  <p className="namePokemonPage">{captures[0].pkmName}</p>
                   <div className="pokemonTypeContainer">
                     <img src={`/images/${pokemon.types[0].type.name}.png`}></img>
                     {pokemon.types[1] &&

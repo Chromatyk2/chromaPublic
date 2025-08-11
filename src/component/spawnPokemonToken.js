@@ -63,6 +63,7 @@ function SpawnPokemonToken(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
+                                            var idPkm = result.id;
                                             if(result.sprites.front_default === null){
                                                 setReloadFetch(reloadFetch + 1);
                                             }else {
@@ -70,6 +71,7 @@ function SpawnPokemonToken(props) {
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
+                                                            var finalId = idPkm
                                                             if (result.names.find((element) => element.language.name == "fr")) {
                                                                 var name = result.names.find((element) => element.language.name == "fr").name;
                                                             } else {
@@ -104,7 +106,7 @@ function SpawnPokemonToken(props) {
                                                                     setIsLoaded(false);
                                                                     setShiny(true);
                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                    Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                    Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:finalId, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                     Axios.post('/api/addXp',
                                                                         {
                                                                             user: pseudo,
@@ -174,6 +176,7 @@ function SpawnPokemonToken(props) {
                                             .then(res => res.json())
                                             .then(
                                                 (result) => {
+                                                    var idPkm = result.id;
                                                     if(result.sprites.front_default === null){
                                                         setReloadFetch(reloadFetch + 1);
                                                     }else {
@@ -181,6 +184,7 @@ function SpawnPokemonToken(props) {
                                                             .then(res => res.json())
                                                             .then(
                                                                 (result) => {
+                                                                    var finalId = idPkm
                                                                     if (result.names.find((element) => element.language.name == "fr")) {
                                                                         var name = result.names.find((element) => element.language.name == "fr").name;
                                                                     } else {
@@ -216,7 +220,7 @@ function SpawnPokemonToken(props) {
                                                                             setIsLoaded(false);
                                                                             setShiny(true);
                                                                             root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                            Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                            Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:finalId, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                             Axios.post('/api/addXp',
                                                                                 {
                                                                                     user: pseudo,
@@ -282,6 +286,7 @@ function SpawnPokemonToken(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
+                                            var idPkm = result.id;
                                             if(result.sprites.front_default === null){
                                                 setReloadFetch(reloadFetch + 1);
                                             }else {
@@ -289,6 +294,7 @@ function SpawnPokemonToken(props) {
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
+                                                            var finalId = idPkm;
                                                             if (result.names.find((element) => element.language.name == "fr")) {
                                                                 var name = result.names.find((element) => element.language.name == "fr").name;
                                                             } else {
@@ -324,7 +330,7 @@ function SpawnPokemonToken(props) {
                                                                     setIsLoaded(false);
                                                                     setShiny(true);
                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                    Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:result.id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                    Axios.post('/api/capture', {pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:finalId, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                     Axios.post('/api/addXp',
                                                                         {
                                                                             user: pseudo,
