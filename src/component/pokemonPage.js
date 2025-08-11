@@ -19,42 +19,49 @@ const [isLoaded, setIsLoaded] = useState(false);
 const [isShiny, setIsShiny] = useState(false);
 const [isLoadConvert, setIsLoadedConvert] = useState(false);
 const { id } = useParams()
+    const [badgesList, setBadgesList] = useState(null);
 useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon-form/"+id)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                fetch(result.pokemon.url)
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            setIsLoaded(true);
-                            setPokemon(result);
-                            fetch(result.species.url)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        setIsLoaded(true);
-                                        setName(result.names);
-                                        setIdPkm(result.id)
-                                        Axios
-                                            .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
-                                            .then(function(response){
-                                                setCaptures(response.data);
-                                            })
-                                    },
-                                    (error) => {
-                                        setIsLoaded(true);
-                                        setError(error);
-                                    }
-                                )
-                        },
-                        (error) => {
-                            setIsLoaded(true);
-                            setError(error);
-                        }
-                    )
-            })
+    Axios
+        .get("/api/getBadgesByUser/" + pseudo)
+        .then(function (response) {
+            setBadgesList(response.data)
+
+            fetch("https://pokeapi.co/api/v2/pokemon-form/"+id)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        fetch(result.pokemon.url)
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    setIsLoaded(true);
+                                    setPokemon(result);
+                                    fetch(result.species.url)
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                setIsLoaded(true);
+                                                setName(result.names);
+                                                setIdPkm(result.id)
+                                                Axios
+                                                    .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
+                                                    .then(function(response){
+                                                        setCaptures(response.data);
+                                                    })
+                                            },
+                                            (error) => {
+                                                setIsLoaded(true);
+                                                setError(error);
+                                            }
+                                        )
+                                },
+                                (error) => {
+                                    setIsLoaded(true);
+                                    setError(error);
+                                }
+                            )
+                    })
+        })
 }, [])
 function changeSprite() {
     if(isShiny === true){
@@ -107,28 +114,13 @@ function changeSprite() {
         }
     }
     function convertBadgeShiny() {
-        if(captures.filter(item => item.shiny == 1).length - 5 > -1){
-            setIsLoadedConvert(true);
-            Axios.delete('/api/deleteShinyBadge/'+id+"/"+pseudo)
-                .then((result) => {
-                    Axios.post('/api/addBadge',
-                        {
-                            pseudo: pseudo,
-                            image: "pokemonshiny"+idPkm,
-                            stade: 0,
-                            description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !"
-                        })
-                        .then(
-                            (result) => {
-                                Axios
-                                    .get("/api/getByUserAndPokemon/" + pseudo + "/" + id)
-                                    .then(function (response) {
-                                        setCaptures(response.data);
-                                        setIsLoadedConvert(false);
-                                    })
-                            })
-                })
-        }
+        Axios.post('/api/addBadge',
+            {
+                pseudo: pseudo,
+                image: "pokemonshiny"+idPkm,
+                stade: 0,
+                description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !"
+            })
     }
  if (error) {
    return <div>Error: {error.message}</div>;
@@ -139,7 +131,6 @@ function changeSprite() {
    return (
      <>
          {captures.length > 0 &&
-
              <div className={"pagePokemonContainer"}>
                  <div className="pokemonPageContainer">
                      <div>
@@ -152,17 +143,20 @@ function changeSprite() {
                          <MyCaptures captures={captures}/>
                          {captures.filter(item => item.shiny == 0).length > 4 &&
                              isLoadConvert === false &&
-                             <>
                                  <button style={{width: "fit-content"}} className={"filterButton"}
                                          onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny
                                  </button>
-                                 <button style={{width: "fit-content"}} className={"filterButton"}
-                                         onClick={convertBadge}> Sacrifier 5 pour obtenir le badge
-                                 </button>
-                             </>
+                         }
+                         {captures.filter(item => item.shiny == 0).length > 4 &&
+                             isLoadConvert === false &&
+                              !badgesList.fin((item) => item.image == 'pokemon'+idPkm) &&
+                             <button style={{width: "fit-content"}} className={"filterButton"}
+                                     onClick={convertBadge}> Sacrifier 5 pour obtenir le badge
+                             </button>
                          }
                          {captures.filter(item => item.shiny == 1).length > 2 &&
                              isLoadConvert === false &&
+                                !badgesList.fin((item) => item.image == 'pokemonshiny'+idPkm) &&
                              <button style={{width: "fit-content"}} className={"filterButton"}
                                      onClick={convertBadgeShiny}> Sacrifier 3 pour obtenir le badge shiny
                              </button>
