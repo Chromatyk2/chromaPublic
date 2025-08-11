@@ -475,7 +475,7 @@ function CardsShop(props) {
                                             : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 3 ? "rgb(229, 211, 48)"
                                                 : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 2 ? "rgb(129, 173, 239)"
                                                     : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 1 ? "rgb(64, 178, 75)"
-                                                        : "rgba(165, 156, 156, 0.6)", padding: "15px", borderRadius: "10px", position:"relative"}}>
+                                                        : "rgba(211, 211, 211, 1)", padding: "15px", borderRadius: "10px", position:"relative"}}>
                                         {allBadges.find((uc) => uc.booster == val.name) &&
                                             <img style={{filter: "drop-shadow(black 0px 0px 5px)",position: "absolute",zIndex: 1,right: "-25px",top: "-25px",width: "120px"}} src={"/Ribbon/" + allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
                                         }
