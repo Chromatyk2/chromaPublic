@@ -149,14 +149,14 @@ function changeSprite() {
                          }
                          {captures.filter(item => item.shiny == 0).length > 4 &&
                              isLoadConvert === false &&
-                              !badgesList.fin((item) => item.image == 'pokemon'+idPkm) &&
+                              !badgesList.find((item) => item.image == 'pokemon'+idPkm) &&
                              <button style={{width: "fit-content"}} className={"filterButton"}
                                      onClick={convertBadge}> Sacrifier 5 pour obtenir le badge
                              </button>
                          }
                          {captures.filter(item => item.shiny == 1).length > 2 &&
                              isLoadConvert === false &&
-                                !badgesList.fin((item) => item.image == 'pokemonshiny'+idPkm) &&
+                                !badgesList.find((item) => item.image == 'pokemonshiny'+idPkm) &&
                              <button style={{width: "fit-content"}} className={"filterButton"}
                                      onClick={convertBadgeShiny}> Sacrifier 3 pour obtenir le badge shiny
                              </button>
