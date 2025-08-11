@@ -73,7 +73,7 @@ function Compagnon(props) {
                                             .then(res => res.json())
                                             .then(
                                                 (result) => {
-                                                    fetch(result.forms.url)
+                                                    fetch(result.forms[0].url)
                                                         .then(res => res.json())
                                                         .then(
                                                             (result) => {
@@ -552,7 +552,7 @@ function Compagnon(props) {
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            fetch(result.forms.url)
+                                                            fetch(result.forms[0].url)
                                                                 .then(res => res.json())
                                                                 .then(
                                                                     (result) => {
@@ -621,7 +621,7 @@ function Compagnon(props) {
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            fetch(result.forms.url)
+                                                            fetch(result.forms[0].url)
                                                                 .then(res => res.json())
                                                                 .then(
                                                                     (result) => {
