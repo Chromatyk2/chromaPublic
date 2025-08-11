@@ -37,6 +37,11 @@ useEffect(() => {
                                         setIsLoaded(true);
                                         setName(result.names);
                                         setIdPkm(result.id)
+                                        Axios
+                                            .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
+                                            .then(function(response){
+                                                setCaptures(response.data);
+                                            })
                                     },
                                     (error) => {
                                         setIsLoaded(true);
@@ -50,13 +55,6 @@ useEffect(() => {
                         }
                     )
             })
-}, [])
-useEffect(() => {
-  Axios
-    .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
-    .then(function(response){
-        setCaptures(response.data);
-  })
 }, [])
 function changeSprite() {
     if(isShiny === true){
@@ -147,7 +145,7 @@ function changeSprite() {
                      <div>
                          <img onClick={changeSprite} className="imgPokemonPage"
                               src={captures[0].pkmImage}></img>
-                         <p className="numberPokemonPage"># {captures[0].id}</p>
+                         <p className="numberPokemonPage"># {idPkm}</p>
                          <p className="namePokemonPage">{captures[0].pkmName}</p>
                      </div>
                      <div>
