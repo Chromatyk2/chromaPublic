@@ -144,7 +144,7 @@ function changeSprite() {
                  <div className="pokemonPageContainer">
                      <div>
                          <img onClick={changeSprite} className="imgPokemonPage"
-                              src={captures[0].pkmImage}></img>
+                              src={isShiny === false ? pokemon.sprites.home.front_default :pokemon.sprites.home.front_shiny }></img>
                          <p className="numberPokemonPage"># {idPkm}</p>
                          <p className="namePokemonPage">{captures[0].pkmName}</p>
                      </div>
