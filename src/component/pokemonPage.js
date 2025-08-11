@@ -135,35 +135,39 @@ function changeSprite() {
      if(name[4] !== undefined && pokemon.sprites !== undefined){
    return (
      <>
-         <div className={"pagePokemonContainer"}>
-             <div className="pokemonPageContainer">
-                <div>
-                  <img onClick={changeSprite} className="imgPokemonPage" src={isShiny === false ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/"+captures[0].id+".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/"+captures[0].id+".png"}></img>
-                  <p className="numberPokemonPage"># {captures[0].id}</p>
-                  <p className="namePokemonPage">{captures[0].pkmName}</p>
-                </div>
-                <div>
-                    <MyCaptures captures={captures} />
-                    {captures.filter(item => item.shiny == 0).length > 4 &&
-                        isLoadConvert === false &&
-                        <>
-                            <button style={{width: "fit-content"}} className={"filterButton"}
-                                    onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny
-                            </button>
-                            <button style={{width: "fit-content"}} className={"filterButton"}
-                                    onClick={convertBadge}> Sacrifier 5 pour obtenir le badge
-                            </button>
-                        </>
-                    }
-                    {captures.filter(item => item.shiny == 1).length > 2 &&
-                        isLoadConvert === false &&
-                            <button style={{width: "fit-content"}} className={"filterButton"}
-                                    onClick={convertBadgeShiny}> Sacrifier 3 pour obtenir le badge shiny
-                            </button>
-                    }
-                </div>
+         {captures.length > 0 &&
+
+             <div className={"pagePokemonContainer"}>
+                 <div className="pokemonPageContainer">
+                     <div>
+                         <img onClick={changeSprite} className="imgPokemonPage"
+                              src={isShiny === false ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + captures[0].id + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + captures[0].id + ".png"}></img>
+                         <p className="numberPokemonPage"># {captures[0].id}</p>
+                         <p className="namePokemonPage">{captures[0].pkmName}</p>
+                     </div>
+                     <div>
+                         <MyCaptures captures={captures}/>
+                         {captures.filter(item => item.shiny == 0).length > 4 &&
+                             isLoadConvert === false &&
+                             <>
+                                 <button style={{width: "fit-content"}} className={"filterButton"}
+                                         onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny
+                                 </button>
+                                 <button style={{width: "fit-content"}} className={"filterButton"}
+                                         onClick={convertBadge}> Sacrifier 5 pour obtenir le badge
+                                 </button>
+                             </>
+                         }
+                         {captures.filter(item => item.shiny == 1).length > 2 &&
+                             isLoadConvert === false &&
+                             <button style={{width: "fit-content"}} className={"filterButton"}
+                                     onClick={convertBadgeShiny}> Sacrifier 3 pour obtenir le badge shiny
+                             </button>
+                         }
+                     </div>
+                 </div>
              </div>
-         </div>
+         }
      </>
    );
      }
