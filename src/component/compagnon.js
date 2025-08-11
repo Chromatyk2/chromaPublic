@@ -532,6 +532,21 @@ function Compagnon(props) {
                                                             setName(result.names.find((uc) => uc.language.name === "fr"));
                                                             setIsOpenTeam(false);
                                                             setLoad(false);
+                                                        },
+                                                        (error) => {
+                                                            fetch("https://pokeapi.co/api/v2/pokemon-form/" + e + "/")
+                                                                .then(res => res.json())
+                                                                .then(
+                                                                    (result) => {
+                                                                        setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                        setIsOpenTeam(false);
+                                                                        setLoad(false);
+                                                                    },
+                                                                    (error) => {
+                                                                        setIsLoaded(true);
+                                                                        setError(error);
+                                                                    }
+                                                                )
                                                         }
                                                     )
                                             })
