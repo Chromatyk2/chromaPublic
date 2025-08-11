@@ -81,7 +81,8 @@ function SpawnPokemon(props) {
                                                     })
                                             }
                                             setUseBall("master")
-                                            fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                            const variety = result.varieties[Math.floor(Math.random()*result.varieties.length)]
+                                            fetch(variety.pokemon.url)
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
@@ -177,7 +178,8 @@ function SpawnPokemon(props) {
                                                             })
                                                     }
                                                     setUseBall("cherish")
-                                                    fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                                    const variety = result.varieties[Math.floor(Math.random()*result.varieties.length)]
+                                                    fetch(variety.pokemon.url)
                                                         .then(res => res.json())
                                                         .then(
                                                             (result) => {
@@ -269,7 +271,8 @@ function SpawnPokemon(props) {
                                                     })
                                             }
                                             setUseBall(balls[Math.floor(Math.random() * balls.length)])
-                                            fetch("https://pokeapi.co/api/v2/pokemon/"+result.id)
+                                            const variety = result.varieties[Math.floor(Math.random()*result.varieties.length)]
+                                            fetch(variety.pokemon.url)
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
