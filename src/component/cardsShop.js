@@ -485,10 +485,10 @@ function CardsShop(props) {
                                             "        rgba(251, 7, 217, 1) 90%,\n" +
                                             "        rgba(255, 0, 0, 1) 100%\n" +
                                             "    )"
-                                            : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 3 ? "gold"
-                                                : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 2 ? "blue"
-                                                    : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 1 ? "green"
-                                                        : "gray", padding: "15px", borderRadius: "10px", position:"relative"}}>
+                                            : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 3 ? "rgba(255, 226, 0,0.5)"
+                                                : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 2 ? "rgba(27, 189, 217,0.5)"
+                                                    : allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade == 1 ? "rgba(52, 139, 72, 0.5);"
+                                                        : "rgba(165, 156, 156, 0.6)", padding: "15px", borderRadius: "10px", position:"relative"}}>
                                         {allBadges.find((uc) => uc.booster == val.name) &&
                                             <img style={{position: "absolute",zIndex: 1,right: "-35px",top: "-35px",width: "130px"}} src={"/Ribbon/" + allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].booster + "_"+allBadges.filter((uc) => uc.booster == val.name).sort((a, b) => b.stade - a.stade)[0].stade+".png"}/>
                                         }
