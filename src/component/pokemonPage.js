@@ -76,7 +76,7 @@ function changeSprite() {
     }
 }
     function convertShiny() {
-        if(captures.length - 5 > -1){
+        if(captures.filter(item => item.shiny == 0).length - 5 > -1){
             setIsLoadedConvert(true);
             Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
                 .then(
