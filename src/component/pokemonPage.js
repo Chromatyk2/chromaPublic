@@ -76,72 +76,84 @@ function changeSprite() {
     }
 }
     function convertShiny() {
-        if(captures.filter(item => item.shiny == 0).length - 5 > -1){
-            setIsLoadedConvert(true);
-            Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
-                .then(
-                    (result) => {
-                        Axios.post('/api/capture', {pseudo: pseudo, pkmName: captures[0].pkmName, pkmImage:pokemon.sprites.front_shiny,pkmId:id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
-                            .then(
-                                (result) => {
-                                    Axios
-                                        .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
-                                        .then(function(response){
-                                            setCaptures(response.data);
-                                            setIsLoadedConvert(false);
+        Axios
+            .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
+            .then(function(response){
+                if(response.data.filter(item => item.shiny == 0).length - 5 > -1){
+                    setIsLoadedConvert(true);
+                    Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
+                        .then(
+                            (result) => {
+                                Axios.post('/api/capture', {pseudo: pseudo, pkmName: captures[0].pkmName, pkmImage:pokemon.sprites.front_shiny,pkmId:id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                    .then(
+                                        (result) => {
+                                            Axios
+                                                .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
+                                                .then(function(response){
+                                                    setCaptures(response.data);
+                                                    setIsLoadedConvert(false);
+                                                })
                                         })
-                                })
-                    })
-        }
+                            })
+                }
+            })
     }
     function convertBadge() {
-        openModalZero("pokemon"+idPkm, "Badge obtenu en capturant " + captures[0].pkmName + " !");
-        if(!badgesList.find((item) => item.image == 'pokemon'+idPkm)){
-            setIsLoadedConvert(true);
-            Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
-                .then((result) => {
+        Axios
+            .get("/api/getBadgesByUser/" + pseudo)
+            .then(function (response) {
+                openModalZero("pokemon"+idPkm, "Badge obtenu en capturant " + captures[0].pkmName + " !");
+                if(!response.data.find((item) => item.image == 'pokemon'+idPkm)){
+                    setIsLoadedConvert(true);
+                    Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
+                        .then((result) => {
+                            Axios.post('/api/addBadge',
+                                {
+                                    pseudo: pseudo,
+                                    image: "pokemon"+idPkm,
+                                    stade: 0,
+                                    description: "Badge obtenu en capturant "+captures[0].pkmName+" !"
+                                })
+                                .then(
+                                    (result) => {
+                                        Axios
+                                            .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
+                                            .then(function(response){
+                                                setCaptures(response.data);
+                                                Axios
+                                                    .get("/api/getBadgesByUser/" + pseudo)
+                                                    .then(function (response) {
+                                                        setBadgesList(response.data)
+                                                        setIsLoadedConvert(false);
+                                                    })
+                                            })
+                                    })
+                        })
+                }
+            })
+    }
+    function convertBadgeShiny() {
+        Axios
+            .get("/api/getBadgesByUser/" + pseudo)
+            .then(function (response) {
+                if(!response.data.find((item) => item.image == 'pokemonshiny'+idPkm)){
+                    openModalZero("pokemonshiny"+idPkm, "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !");
                     Axios.post('/api/addBadge',
                         {
                             pseudo: pseudo,
-                            image: "pokemon"+idPkm,
+                            image: "pokemonshiny"+idPkm,
                             stade: 0,
-                            description: "Badge obtenu en capturant "+captures[0].pkmName+" !"
+                            description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !"
                         })
-                        .then(
-                            (result) => {
-                                Axios
-                                    .get("/api/getByUserAndPokemon/"+pseudo+"/"+id)
-                                    .then(function(response){
-                                        setCaptures(response.data);
-                                        Axios
-                                            .get("/api/getBadgesByUser/" + pseudo)
-                                            .then(function (response) {
-                                                setBadgesList(response.data)
-                                                setIsLoadedConvert(false);
-                                            })
-                                    })
-                            })
-                })
-        }
-    }
-    function convertBadgeShiny() {
-        if(!badgesList.find((item) => item.image == 'pokemonshiny'+idPkm)){
-            openModalZero("pokemonshiny"+idPkm, "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !");
-            Axios.post('/api/addBadge',
-                {
-                    pseudo: pseudo,
-                    image: "pokemonshiny"+idPkm,
-                    stade: 0,
-                    description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !"
-                })
-                .then((result) => {
-                    Axios
-                        .get("/api/getBadgesByUser/" + pseudo)
-                        .then(function (response) {
-                            setBadgesList(response.data)
+                        .then((result) => {
+                            Axios
+                                .get("/api/getBadgesByUser/" + pseudo)
+                                .then(function (response) {
+                                    setBadgesList(response.data)
+                                })
                         })
-                })
-        }
+                }
+            })
     }
     function openModalZero(e, f) {
         setBadgeToWinStade(e)
