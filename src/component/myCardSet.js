@@ -152,29 +152,7 @@ function MyCardsSet(props) {
     }
     function errorImages(e, booster, number){
         e.target.onerror = null;
-        if(booster == "sm3.5"){
-            e.target.src = "https://images.pokemontcg.io/sm35/"+number+"_hires.png";
-        }else if(booster == "sm7.5"){
-            e.target.src = "https://images.pokemontcg.io/sm75/"+number+"_hires.png";
-        }else if(booster == "sm11.5"){
-            e.target.src = "https://images.pokemontcg.io/sm115/"+number+"_hires.png";
-        }else if(booster == "swsh3.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh35/"+number+"_hires.png";
-        }else if(booster == "swsh4.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh4.5/"+number+"_hires.png";
-        }else if(booster == "swsh12.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh12pt5/"+number+"_hires.png";
-        }else if(booster == "sv03.5"){
-            e.target.src = "https://images.pokemontcg.io/sv3pt5/"+number+"_hires.png";
-        }else if(booster == "sv04.5"){
-            e.target.src = "https://images.pokemontcg.io/sv4pt5/"+number+"_hires.png";
-        }else if(booster == "sv06.5"){
-            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+number+"_hires.png";
-        }else if(booster == "sma"){
-            e.target.src = "https://images.pokemontcg.io/sma/"+number+"_hires.png";
-        }else{
-            e.target.src = "https://images.pokemontcg.io/"+booster+"/"+number+"_hires.png";
-        }
+        e.target.src = "https://assets.tcgdex.net/en/"+rarities[0].block+"/"+props.idBooster+"/"+number+"/high.png";
     }
     function handleState() {
         setIsOpen(false);
