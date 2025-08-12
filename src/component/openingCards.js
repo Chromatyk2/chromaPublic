@@ -407,31 +407,7 @@ function OpeningCards(props) {
     };
     function errorImage(e){
         e.target.onerror = null;
-        if(e.target.getAttribute("booster") == "sm3.5"){
-            e.target.src = "https://images.pokemontcg.io/sm35/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sm7.5"){
-            e.target.src = "https://images.pokemontcg.io/sm75/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sma"){
-            e.target.src = "https://images.pokemontcg.io/sma/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sm11.5"){
-            e.target.src = "https://images.pokemontcg.io/sm115/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "swsh3.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh35/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "swsh4.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh4.5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "swsh12.5"){
-            e.target.src = "https://images.pokemontcg.io/swsh12pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv03.5"){
-            e.target.src = "https://images.pokemontcg.io/sv3pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv04.5"){
-            e.target.src = "https://images.pokemontcg.io/sv4pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv06.5"){
-            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else if(e.target.getAttribute("booster") == "sv06.5"){
-            e.target.src = "https://images.pokemontcg.io/sv6pt5/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }else{
-            e.target.src = "https://images.pokemontcg.io/"+props.boosterGuru+"/"+e.target.getAttribute("cardLocalId")+"_hires.png";
-        }
+        e.target.src = "https://assets.tcgdex.net/en/"+props.block+"/"+props.idBooster+"/"+e.target.getAttribute("cardLocalId")+"/high.png";
     }
     useEffect(() => {
             const timeout = setTimeout(() => {
