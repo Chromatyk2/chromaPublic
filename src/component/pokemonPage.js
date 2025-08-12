@@ -102,8 +102,8 @@ function changeSprite() {
         Axios
             .get("/api/getBadgesByUser/" + pseudo)
             .then(function (response) {
-                openModalZero("pokemon"+idPkm, "Badge obtenu en capturant " + captures[0].pkmName + " !");
                 if(!response.data.find((item) => item.image == 'pokemon'+idPkm)){
+                    openModalZero("pokemon"+idPkm, "Badge obtenu en capturant " + captures[0].pkmName + " !");
                     setIsLoadedConvert(true);
                     Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
                         .then((result) => {
@@ -188,7 +188,7 @@ function changeSprite() {
                                          onClick={convertShiny}> Sacrifier 5 pour avoir ce pokemon en shiny
                                  </button>
                          }
-                         {captures.filter(item => item.shiny == 0).length > 4 &&
+                         {captures.filter(item => item.shiny == 0).length > 5 &&
                              isLoadConvert === false &&
                               !badgesList.find((item) => item.image == 'pokemon'+idPkm) &&
                              <button style={{width: "fit-content"}} className={"filterButton"}

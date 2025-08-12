@@ -213,87 +213,91 @@ function MyCardsSet(props) {
                 setPickStade(4);
             }
         }
-        if(powder - 300 > -1){
-            Axios.post('/api/removePowder',
-                {
-                    user:props.user
-                }
-            )
-            .then(function(response){
-                Axios.post('/api/addCard',
-                    {
-                        pseudo: props.user,
-                        idCard: e.target.getAttribute("card"),
-                        booster: e.target.getAttribute("booster"),
-                        rarity: "Rare",
-                        grade: pickStade,
-                        nb: e.target.getAttribute("number"),
-                        block: e.target.getAttribute("block")
-                    })
-                    .then(function(){
-                        Axios.get("/api/getProfil/"+props.user)
-                            .then(function(response) {
-                                setPowder(response.data[0].powder)
-                                        Axios
-                                            .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
-                                            .then(function(response){
-                                                setMyCards(response.data);
-                                                response.data.map((val, key) => {
-                                                    setMyCardsId(myCardsId => [...myCardsId,val.card]);
-                                                })
-                                                Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
-                                                    .then(function(response) {
-                                                        setMyCardWithStade(response.data);
-                                                        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
-                                                            .then(res => res.json())
-                                                            .then(
-                                                                (result) => {
-                                                                    if(result.status == 404){
-                                                                        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".",""))
-                                                                            .then(res => res.json())
-                                                                            .then(
-                                                                                (result) => {
-                                                                                    setItems(result.cards)
-                                                                                    setIsOpen(true)
-                                                                                    if(props.idBooster === "sm11.5"){
-                                                                                        fetch("https://api.tcgdex.net/v2/en/sets/sma")
-                                                                                            .then(res => res.json())
-                                                                                            .then(
-                                                                                                (result) => {
-                                                                                                    setIsOpen(true)
-                                                                                                    result.cards.map((val, key) => {
-                                                                                                        setItems(items => [...items,val]);
-                                                                                                    })
-                                                                                                },
-                                                                                                (error) => {
-                                                                                                    setError(error);
-                                                                                                }
-                                                                                            )
-                                                                                    }
-                                                                                },
-                                                                                (error) => {
-                                                                                    setIsLoaded(true);
-                                                                                    setError(error);
-                                                                                }
-                                                                            )
-                                                                    }else{
-                                                                        setIsOpen(true)
-                                                                        setItems(result.cards)
-                                                                        setIsLoaded(false);
 
-                                                                    }
-                                                                },
-                                                                (error) => {
-                                                                    setIsLoaded(true);
-                                                                    setError(error);
-                                                                }
-                                                            )
+        Axios.get("/api/getProfil/"+props.user)
+            .then(function(response) {
+                if(response.data[0].powder - 300 > -1){
+                    Axios.post('/api/removePowder',
+                        {
+                            user:props.user
+                        }
+                    )
+                        .then(function(response){
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo: props.user,
+                                    idCard: e.target.getAttribute("card"),
+                                    booster: e.target.getAttribute("booster"),
+                                    rarity: "Rare",
+                                    grade: pickStade,
+                                    nb: e.target.getAttribute("number"),
+                                    block: e.target.getAttribute("block")
+                                })
+                                .then(function(){
+                                    Axios.get("/api/getProfil/"+props.user)
+                                        .then(function(response) {
+                                            setPowder(response.data[0].powder)
+                                            Axios
+                                                .get("/api/getMyCardsBySet/"+props.user+"/"+props.idBooster)
+                                                .then(function(response){
+                                                    setMyCards(response.data);
+                                                    response.data.map((val, key) => {
+                                                        setMyCardsId(myCardsId => [...myCardsId,val.card]);
                                                     })
-                                            })
-                            })
-                    })
+                                                    Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
+                                                        .then(function(response) {
+                                                            setMyCardWithStade(response.data);
+                                                            fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+                                                                .then(res => res.json())
+                                                                .then(
+                                                                    (result) => {
+                                                                        if(result.status == 404){
+                                                                            fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".",""))
+                                                                                .then(res => res.json())
+                                                                                .then(
+                                                                                    (result) => {
+                                                                                        setItems(result.cards)
+                                                                                        setIsOpen(true)
+                                                                                        if(props.idBooster === "sm11.5"){
+                                                                                            fetch("https://api.tcgdex.net/v2/en/sets/sma")
+                                                                                                .then(res => res.json())
+                                                                                                .then(
+                                                                                                    (result) => {
+                                                                                                        setIsOpen(true)
+                                                                                                        result.cards.map((val, key) => {
+                                                                                                            setItems(items => [...items,val]);
+                                                                                                        })
+                                                                                                    },
+                                                                                                    (error) => {
+                                                                                                        setError(error);
+                                                                                                    }
+                                                                                                )
+                                                                                        }
+                                                                                    },
+                                                                                    (error) => {
+                                                                                        setIsLoaded(true);
+                                                                                        setError(error);
+                                                                                    }
+                                                                                )
+                                                                        }else{
+                                                                            setIsOpen(true)
+                                                                            setItems(result.cards)
+                                                                            setIsLoaded(false);
+
+                                                                        }
+                                                                    },
+                                                                    (error) => {
+                                                                        setIsLoaded(true);
+                                                                        setError(error);
+                                                                    }
+                                                                )
+                                                        })
+                                                })
+                                        })
+                                })
+                        })
+                }
             })
-        }
     }
     const handleChangeOnlyMine = event => {
         if (event.target.checked) {
