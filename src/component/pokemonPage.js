@@ -7,6 +7,8 @@ import MyCaptures from './myCaptures.js';
 import OtherCaptures from './otherCaptures.js';
 import '../App.css'
 import moment from "moment";
+import Modal from "react-modal";
+import SpawnPokemonToken from "./spawnPokemonToken";
 
 function PokemonPage(props) {
 const pseudo = props.cookies.user.data[0].login;
@@ -18,6 +20,9 @@ const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
 const [isShiny, setIsShiny] = useState(false);
 const [isLoadConvert, setIsLoadedConvert] = useState(false);
+const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
+    const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
+    const [messageToBadge, setMessageToBadge] = React.useState(null);
 const { id } = useParams()
     const [badgesList, setBadgesList] = useState(null);
 useEffect(() => {
@@ -119,6 +124,7 @@ function changeSprite() {
         }
     }
     function convertBadgeShiny() {
+        openModalZero("pokemonshiny"+idPkm, "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !");
         Axios.post('/api/addBadge',
             {
                 pseudo: pseudo,
@@ -133,6 +139,14 @@ function changeSprite() {
                     setBadgesList(response.data)
                 })
             })
+    }
+    function openModalZero(e, f) {
+        setBadgeToWinStade(e)
+        setMessageToBadge(f)
+        setOpenBadgeHandle(true);
+    }
+    function closeModalBadge() {
+        setOpenBadgeHandle(false);
     }
  if (error) {
    return <div>Error: {error.message}</div>;
@@ -177,6 +191,19 @@ function changeSprite() {
                  </div>
              </div>
          }
+         <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge}
+                onRequestClose={closeModalBadge} contentLabel="Example Modal">
+
+             <div style={{flexFlow:"column"}} className="pokemonContentToken">
+                 <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitations !!! </p>
+                 <img style={{marginBottom: "30px"}} className={"badgeToWin"}
+                      src={"/Ribbon/" + badgeToWinStade + ".png"}/>
+                 <p style={{textAlign: "center", fontStyle: "20px"}}>{messageToBadge}</p>
+                 <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                         onClick={closeModalBadge}>Cool !
+                 </button>
+             </div>
+         </Modal>
      </>
    );
      }
