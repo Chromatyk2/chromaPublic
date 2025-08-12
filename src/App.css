@@ -2321,6 +2321,7 @@ a.linkOnAirOff {
     width: 100%;
     justify-content: center;
     margin-top: -100px;
+    padding-top: 50px;
 }
 .contentContainer{
     min-height: 100vh;
