@@ -502,156 +502,166 @@ function Compagnon(props) {
     function handleState(e,f) {
         setLoad(true)
         setTimeout(function() {
-            Axios
-                .get("/api/getCompagnonList/"+pseudo)
-                .then(function(response) {
-                    const compagnonList = response.data;
-                    if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == e).length == 0) {
-                        Axios.post('/api/updateCompagnon',
-                            {
-                                pseudo: pseudo
-                            })
-                            .then(function (response) {
-                                Axios.post('/api/addCompagnon',
-                                    {
-                                        user: pseudo,
-                                        pokemon: e,
-                                        pkm: e,
-                                        level: 1,
-                                        xp: 0,
-                                        shiny: f,
-                                        shine: f,
-                                        actif: 1
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getCompagnon/" + pseudo)
-                                            .then(function (response) {
-                                                setCustomStyles({
-                                                    extBar: {
-                                                        width: '100%',
-                                                        backgroundColor: '#fff',
-                                                        position: 'relative',
-                                                        zIndex: '1',
-                                                        borderRadius: '50px',
-                                                        margin:'auto',
-                                                        marginBottom: '15px'
-                                                    },
-                                                    intBar: {
-                                                        width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
-                                                        position: 'relative',
-                                                        background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
-                                                        textWrap: 'nowrap',
-                                                        color: 'white',
-                                                        borderRadius: '50px 50px 50px 50px',
-                                                        filter: "drop-shadow(0px 0px 6px blue)",
-                                                        transition: "width 2s"
-                                                    },
-                                                });
-                                                setCompagnon(response.data[0])
-                                                fetch("https://pokeapi.co/api/v2/pokemon/" + response.data[0].pokemon + "/")
-                                                    .then(res => res.json())
-                                                    .then(
-                                                        (result) => {
-                                                            fetch(result.forms[0].url)
-                                                                .then(res => res.json())
-                                                                .then(
-                                                                    (result) => {
-                                                                        if(result.names.find((uc) => uc.language.name === "fr")){
-                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                            setIsOpenTeam(false);
-                                                                            setLoad(false);
-                                                                        }else{
-                                                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
-                                                                                .then(res => res.json())
-                                                                                .then(
-                                                                                    (result) => {
-                                                                                        if(result.status == 404){
-                                                                                        }else{
-                                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                                            setIsOpenTeam(false);
-                                                                                            setLoad(false);
-                                                                                        }
-                                                                                    }
-                                                                                )
-                                                                        }
-                                                                    }
-                                                                )
-                                                        }
-                                                    )
-                                            })
-                                    })
-                            })
-                    } else {
-                        Axios.post('/api/updateCompagnon',
-                            {
-                                pseudo: pseudo
-                            })
-                            .then(function (response) {
-                                Axios.post('/api/activeCompagnon',
-                                    {
-                                        pseudo: pseudo,
-                                        pokemon: e
-                                    })
-                                    .then(function (response) {
-                                        Axios.get("/api/getCompagnon/" + pseudo)
-                                            .then(function (response) {
-                                                setCustomStyles({
-                                                    extBar: {
-                                                        width: '100%',
-                                                        backgroundColor: '#fff',
-                                                        position: 'relative',
-                                                        zIndex: '1',
-                                                        borderRadius: '50px',
-                                                        margin:'auto',
-                                                        marginBottom: '15px'
-                                                    },
-                                                    intBar: {
-                                                        width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
-                                                        position: 'relative',
-                                                        background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
-                                                        textWrap: 'nowrap',
-                                                        color: 'white',
-                                                        borderRadius: '50px 50px 50px 50px',
-                                                        filter: "drop-shadow(0px 0px 6px blue)",
-                                                        transition: "width 2s"
-                                                    },
-                                                });
-                                                setCompagnon(response.data[0])
-                                                fetch("https://pokeapi.co/api/v2/pokemon/" + response.data[0].pokemon + "/")
-                                                    .then(res => res.json())
-                                                    .then(
-                                                        (result) => {
-                                                            fetch(result.forms[0].url)
-                                                                .then(res => res.json())
-                                                                .then(
-                                                                    (result) => {
-                                                                        if(result.names.find((uc) => uc.language.name === "fr")){
-                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                            setIsOpenTeam(false);
-                                                                            setLoad(false);
-                                                                        }else{
-                                                                            fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
-                                                                                .then(res => res.json())
-                                                                                .then(
-                                                                                    (result) => {
-                                                                                        if(result.status == 404){
-                                                                                        }else{
-                                                                                            setName(result.names.find((uc) => uc.language.name === "fr"));
-                                                                                            setIsOpenTeam(false);
-                                                                                            setLoad(false);
-                                                                                        }
-                                                                                    }
-                                                                                )
-                                                                        }
-                                                                    }
-                                                                )
-                                                        }
-                                                    )
-                                            })
-                                    })
-                            })
-                    }
-                })
+            fetch("https://pokeapi.co/api/v2/pokemon-form/"+id)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        fetch(result.pokemon.url)
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    Axios
+                                        .get("/api/getCompagnonList/"+pseudo)
+                                        .then(function(response) {
+                                            const compagnonList = response.data;
+                                            if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == result.id).length == 0) {
+                                                Axios.post('/api/updateCompagnon',
+                                                    {
+                                                        pseudo: pseudo
+                                                    })
+                                                    .then(function (response) {
+                                                        Axios.post('/api/addCompagnon',
+                                                            {
+                                                                user: pseudo,
+                                                                pokemon: result.id,
+                                                                pkm: result.id,
+                                                                level: 1,
+                                                                xp: 0,
+                                                                shiny: f,
+                                                                shine: f,
+                                                                actif: 1
+                                                            })
+                                                            .then(function (response) {
+                                                                Axios.get("/api/getCompagnon/" + pseudo)
+                                                                    .then(function (response) {
+                                                                        setCustomStyles({
+                                                                            extBar: {
+                                                                                width: '100%',
+                                                                                backgroundColor: '#fff',
+                                                                                position: 'relative',
+                                                                                zIndex: '1',
+                                                                                borderRadius: '50px',
+                                                                                margin:'auto',
+                                                                                marginBottom: '15px'
+                                                                            },
+                                                                            intBar: {
+                                                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
+                                                                                position: 'relative',
+                                                                                background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
+                                                                                textWrap: 'nowrap',
+                                                                                color: 'white',
+                                                                                borderRadius: '50px 50px 50px 50px',
+                                                                                filter: "drop-shadow(0px 0px 6px blue)",
+                                                                                transition: "width 2s"
+                                                                            },
+                                                                        });
+                                                                        setCompagnon(response.data[0])
+                                                                        fetch("https://pokeapi.co/api/v2/pokemon/" + response.data[0].pokemon + "/")
+                                                                            .then(res => res.json())
+                                                                            .then(
+                                                                                (result) => {
+                                                                                    fetch(result.forms[0].url)
+                                                                                        .then(res => res.json())
+                                                                                        .then(
+                                                                                            (result) => {
+                                                                                                if(result.names.find((uc) => uc.language.name === "fr")){
+                                                                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                                                    setIsOpenTeam(false);
+                                                                                                    setLoad(false);
+                                                                                                }else{
+                                                                                                    fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
+                                                                                                        .then(res => res.json())
+                                                                                                        .then(
+                                                                                                            (result) => {
+                                                                                                                if(result.status == 404){
+                                                                                                                }else{
+                                                                                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                                                                    setIsOpenTeam(false);
+                                                                                                                    setLoad(false);
+                                                                                                                }
+                                                                                                            }
+                                                                                                        )
+                                                                                                }
+                                                                                            }
+                                                                                        )
+                                                                                }
+                                                                            )
+                                                                    })
+                                                            })
+                                                    })
+                                            } else {
+                                                Axios.post('/api/updateCompagnon',
+                                                    {
+                                                        pseudo: pseudo
+                                                    })
+                                                    .then(function (response) {
+                                                        Axios.post('/api/activeCompagnon',
+                                                            {
+                                                                pseudo: pseudo,
+                                                                pokemon: result.id
+                                                            })
+                                                            .then(function (response) {
+                                                                Axios.get("/api/getCompagnon/" + pseudo)
+                                                                    .then(function (response) {
+                                                                        setCustomStyles({
+                                                                            extBar: {
+                                                                                width: '100%',
+                                                                                backgroundColor: '#fff',
+                                                                                position: 'relative',
+                                                                                zIndex: '1',
+                                                                                borderRadius: '50px',
+                                                                                margin:'auto',
+                                                                                marginBottom: '15px'
+                                                                            },
+                                                                            intBar: {
+                                                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
+                                                                                position: 'relative',
+                                                                                background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
+                                                                                textWrap: 'nowrap',
+                                                                                color: 'white',
+                                                                                borderRadius: '50px 50px 50px 50px',
+                                                                                filter: "drop-shadow(0px 0px 6px blue)",
+                                                                                transition: "width 2s"
+                                                                            },
+                                                                        });
+                                                                        setCompagnon(response.data[0])
+                                                                        fetch("https://pokeapi.co/api/v2/pokemon/" + response.data[0].pokemon + "/")
+                                                                            .then(res => res.json())
+                                                                            .then(
+                                                                                (result) => {
+                                                                                    fetch(result.forms[0].url)
+                                                                                        .then(res => res.json())
+                                                                                        .then(
+                                                                                            (result) => {
+                                                                                                if(result.names.find((uc) => uc.language.name === "fr")){
+                                                                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                                                    setIsOpenTeam(false);
+                                                                                                    setLoad(false);
+                                                                                                }else{
+                                                                                                    fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
+                                                                                                        .then(res => res.json())
+                                                                                                        .then(
+                                                                                                            (result) => {
+                                                                                                                if(result.status == 404){
+                                                                                                                }else{
+                                                                                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                                                                    setIsOpenTeam(false);
+                                                                                                                    setLoad(false);
+                                                                                                                }
+                                                                                                            }
+                                                                                                        )
+                                                                                                }
+                                                                                            }
+                                                                                        )
+                                                                                }
+                                                                            )
+                                                                    })
+                                                            })
+                                                    })
+                                            }
+                                        })
+                                }                            )
+                    })
         }.bind(this), 500)
     }
     function openModalBerry(e,f,g,h) {
@@ -702,7 +712,6 @@ function Compagnon(props) {
     function closeModalBerry() {
         setIsOpenSkin(false);
     }
-    console.log(name);
     return (
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam}
