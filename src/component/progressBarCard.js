@@ -51,7 +51,8 @@ function ProgressBarCard(props) {
                 color: 'white',
                 padding: '15px',
                 borderRadius: '50px 50px 50px 50px',
-                filter: "drop-shadow(0px 0px 6px blue)"
+                filter: "drop-shadow(0px 0px 6px blue)",
+                transition:"width 2s"
             },
             yellowBar: {
                 width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "3").length / props.item * 100).toFixed(2) + "%",
@@ -64,7 +65,8 @@ function ProgressBarCard(props) {
                 filter: "drop-shadow(0px 0px 6px blue)",
                 top: 0,
                 zIndex: 1,
-                height:"100%"
+                height:"100%",
+                transition:"width 2s"
             },
             blueBar: {
                 width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
@@ -77,7 +79,8 @@ function ProgressBarCard(props) {
                 filter: "drop-shadow(0px 0px 6px blue)",
                 top: 0,
                 zIndex: 1,
-                height:"100%"
+                height:"100%",
+                transition:"width 2s"
             },
             greenBar: {
                 width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
@@ -90,7 +93,8 @@ function ProgressBarCard(props) {
                 filter: "drop-shadow(0px 0px 6px blue)",
                 top: 0,
                 zIndex: 1,
-                height:"100%"
+                height:"100%",
+                transition:"width 2s"
             },
             rainbowBar: {
                 width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
@@ -107,7 +111,8 @@ function ProgressBarCard(props) {
                 textAlign: "center",
                 top: 0,
                 zIndex: 1,
-                height:"100%"
+                height:"100%",
+                transition:"width 2s"
             },
             ribbonClear: {
                 position: "absolute",

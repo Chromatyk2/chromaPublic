@@ -856,6 +856,9 @@ button.filterButton {
     padding: 10px;
     width: 175px;
     color: white;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 2s;
 }
 button.filterButton:hover {
     background: white;
@@ -864,6 +867,10 @@ button.filterButton:hover {
     font-size: 20px;
     padding: 10px;
     width: 175px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 p.filterTitle {
     font-size: 35px;
