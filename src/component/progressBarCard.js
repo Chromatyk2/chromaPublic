@@ -20,7 +20,7 @@ function ProgressBarCard(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
         if(props.global === true){
-            setPurcents[2]
+            setPurcents([2])
             setCustomStyles({
                 extBar: {
                     width: '75%',
