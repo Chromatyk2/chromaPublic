@@ -244,7 +244,7 @@ function MyCardsSet(props) {
                                                                                             setItems([])
                                                                                             result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
                                                                                                 if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
-                                                                                                    setMyCardsId(myCardsId => [...myCardsId,val.id]);
+                                                                                                    setItems(myCardsId => [...myCardsId,val.id]);
                                                                                                 }
                                                                                             })
                                                                                         }else{
@@ -261,7 +261,7 @@ function MyCardsSet(props) {
                                                                                                             setItems([])
                                                                                                             result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
                                                                                                                 if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
-                                                                                                                    setMyCardsId(myCardsId => [...myCardsId,val.id]);
+                                                                                                                    setItems(myCardsId => [...myCardsId,val.id]);
                                                                                                                 }
                                                                                                             })
                                                                                                         }else{
@@ -285,7 +285,7 @@ function MyCardsSet(props) {
                                                                                 setItems([])
                                                                                 result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
                                                                                     if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
-                                                                                        setMyCardsId(myCardsId => [...myCardsId,val.id]);
+                                                                                        setItems(myCardsId => [...myCardsId,val.id]);
                                                                                     }
                                                                                 })
                                                                             }else{
