@@ -408,7 +408,7 @@ function MyCardsSet(props) {
                         </button>
                     </Modal>
                     <ProgressBarCard badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
-                                     item={items.length} myCards={myCards} myCardsWithStade={myCardWithStade}/>
+                                     item={items.length} myCards={myCards} myCardWithStade={myCardWithStade}/>
                     <div style={{width:"100%", display:"flex", justifyContent:"center", gap:"10px", marginTop:"-50px"}}>
                         <button style={{width: "70px",
                             height: "70px",
