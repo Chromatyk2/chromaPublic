@@ -30,7 +30,7 @@ function MyCards(props) {
         setPage(null)
     }
     useEffect(() => {
-        Axios.get("api/getBadgesByUser/"+props.user)
+        Axios.get("/api/getBadgesByUser/"+props.user)
             .then(function(response){
                 setBadges(response.data)
                 Axios
