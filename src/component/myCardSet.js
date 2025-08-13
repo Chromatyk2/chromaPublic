@@ -37,6 +37,7 @@ function MyCardsSet(props) {
     const [pickCard, setPickCard] = React.useState(null);
     const [pickCardId, setPickCardId] = React.useState(null);
     const [myCardWithStade, setMyCardWithStade] = React.useState(null);
+    const [stadeToFilter, setStadeToFilter] = React.useState(null);
     const [powder, setPowder] = React.useState(props.powder);
     const [refresh, setRefresh] = React.useState(0);
 
@@ -229,6 +230,7 @@ function MyCardsSet(props) {
                                                     Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
                                                         .then(function(response) {
                                                             setMyCardWithStade(response.data);
+                                                            var myCardWithStade = response.data;
                                                             fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
                                                                 .then(res => res.json())
                                                                 .then(
@@ -238,7 +240,16 @@ function MyCardsSet(props) {
                                                                                 .then(res => res.json())
                                                                                 .then(
                                                                                     (result) => {
-                                                                                        setItems(result.cards)
+                                                                                        if(stadeToFilter){
+                                                                                            setItems([])
+                                                                                            result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                                                                                                if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
+                                                                                                    setMyCardsId(myCardsId => [...myCardsId,val.id]);
+                                                                                                }
+                                                                                            })
+                                                                                        }else{
+                                                                                            setItems(result.cards)
+                                                                                        }
                                                                                         setIsOpen(true)
                                                                                         if(props.idBooster === "sm11.5"){
                                                                                             fetch("https://api.tcgdex.net/v2/en/sets/sma")
@@ -246,9 +257,16 @@ function MyCardsSet(props) {
                                                                                                 .then(
                                                                                                     (result) => {
                                                                                                         setIsOpen(true)
-                                                                                                        result.cards.map((val, key) => {
-                                                                                                            setItems(items => [...items,val]);
-                                                                                                        })
+                                                                                                        if(stadeToFilter){
+                                                                                                            setItems([])
+                                                                                                            result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                                                                                                                if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
+                                                                                                                    setMyCardsId(myCardsId => [...myCardsId,val.id]);
+                                                                                                                }
+                                                                                                            })
+                                                                                                        }else{
+                                                                                                            setItems(result.cards)
+                                                                                                        }
                                                                                                     },
                                                                                                     (error) => {
                                                                                                         setError(error);
@@ -263,7 +281,16 @@ function MyCardsSet(props) {
                                                                                 )
                                                                         }else{
                                                                             setIsOpen(true)
-                                                                            setItems(result.cards)
+                                                                            if(stadeToFilter){
+                                                                                setItems([])
+                                                                                result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                                                                                    if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
+                                                                                        setMyCardsId(myCardsId => [...myCardsId,val.id]);
+                                                                                    }
+                                                                                })
+                                                                            }else{
+                                                                                setItems(result.cards)
+                                                                            }
                                                                             setIsLoaded(false);
 
                                                                         }
@@ -292,6 +319,7 @@ function MyCardsSet(props) {
         setFilterRarity(event.target.value);
     };
     function filterEmptyCard(e) {
+        setStadeToFilter(e);
         setMyCardsId([]);
         items.sort((a, b) => a.localId - b.localId).map((val, key) => {
             if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == e.target.value)){
