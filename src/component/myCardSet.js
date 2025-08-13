@@ -284,6 +284,9 @@ function MyCardsSet(props) {
                                                                             if(stadeToFilter){
                                                                                 setItems([])
                                                                                 result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
+                                                                                    console.log(val.id)
+                                                                                    console.log(stadeToFilter)
+                                                                                    console.log(myCardWithStade)
                                                                                     if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
                                                                                         setItems(myCardsId => [...myCardsId,val]);
                                                                                     }
