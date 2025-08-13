@@ -407,8 +407,8 @@ function MyCardsSet(props) {
                                 onClick={closeModal}>Cool !
                         </button>
                     </Modal>
-                    <ProgressBarCard refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
-                                     item={items.length}/>
+                    <ProgressBarCard badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
+                                     item={items.length} myCards={myCards} myCardsWithStade={myCardWithStade}/>
                     <div style={{width:"100%", display:"flex", justifyContent:"center", gap:"10px", marginTop:"-50px"}}>
                         <button style={{width: "70px",
                             height: "70px",

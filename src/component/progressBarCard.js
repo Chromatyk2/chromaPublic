@@ -19,210 +19,199 @@ function ProgressBarCard(props) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
         if(props.global === false){
-
-            Axios.get("/api/getMyCardsBySet/"+props.user+"/"+props.booster)
-                .then(function(response) {
-
-                    Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.booster)
-                        .then(function(response) {
-                            setPurcents([{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
-                                stade: 2,
-                                nb: response.data.filter((item) => item.stade == "2").length
-                            }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
-                                stade: 4,
-                                nb: response.data.filter((item) => item.stade == "4").length
-                            }])
-                            const purcents = [{stade: 1, nb: response.data.filter((item) => item.stade == "1").length}, {
-                                stade: 2,
-                                nb: response.data.filter((item) => item.stade == "2").length
-                            }, {stade: 3, nb: response.data.filter((item) => item.stade == "3").length}, {
-                                stade: 4,
-                                nb: response.data.filter((item) => item.stade == "4").length
-                            }]
-                            setCustomStyles({
-                                extBar: {
-                                    width: '75%',
-                                    backgroundColor: '#00368a',
-                                    position: 'relative',
-                                    zIndex: '1',
-                                    borderRadius: '50px',
-                                    margin: 'auto',
-                                    marginBottom: '50px'
-                                },
-                                intBar: {
-                                    width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
-                                    position: 'relative',
-                                    background: '#cecaca',
-                                    textWrap: 'nowrap',
-                                    color: 'white',
-                                    padding: '15px',
-                                    borderRadius: '50px 50px 50px 50px',
-                                    filter: "drop-shadow(0px 0px 6px blue)"
-                                },
-                                yellowBar: {
-                                    width: parseFloat(response.data.filter((item) => item.stade == "3").length / props.item * 100).toFixed(2) + "%",
-                                    position: 'absolute',
-                                    background: '#e5d330',
-                                    textWrap: 'nowrap',
-                                    color: 'white',
-                                    padding: '15px',
-                                    borderRadius: '50px 50px 50px 50px',
-                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                    top: 0,
-                                    zIndex: 1,
-                                    height:"100%"
-                                },
-                                blueBar: {
-                                    width: parseFloat(response.data.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
-                                    position: 'absolute',
-                                    background: '#81adef',
-                                    textWrap: 'nowrap',
-                                    color: 'white',
-                                    padding: '15px',
-                                    borderRadius: '50px 50px 50px 50px',
-                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                    top: 0,
-                                    zIndex: 1,
-                                    height:"100%"
-                                },
-                                greenBar: {
-                                    width: parseFloat(response.data.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
-                                    position: 'absolute',
-                                    background: '#40b24b',
-                                    textWrap: 'nowrap',
-                                    color: 'white',
-                                    padding: '15px',
-                                    borderRadius: '50px 50px 50px 50px',
-                                    filter: "drop-shadow(0px 0px 6px blue)",
-                                    top: 0,
-                                    zIndex: 1,
-                                    height:"100%"
-                                },
-                                rainbowBar: {
-                                    width: parseFloat(response.data.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
-                                    position: 'absolute',
-                                    textWrap: 'nowrap',
-                                    padding: '15px',
-                                    borderRadius: '50px 50px 50px 50px',
-                                    background: "linear-gradient(90deg, red 0%, yellow 15%, lime 30%, cyan 50%, blue 65%, magenta 80%, red 100%)",
-                                    backgroundSize: "200%",
-                                    animation: "moveGradient 5s linear infinite",
-                                    color: "#120747",
-                                    letterSpacing: 0,
-                                    textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
-                                    textAlign: "center",
-                                    top: 0,
-                                    zIndex: 1,
-                                    height:"100%"
-                                },
-                                ribbonClear: {
-                                    position: "absolute",
-                                    top: "-35px",
-                                    right: "-40px",
-                                    width: "130px"
-                                },
-                                ribbonUnclear: {
-                                    display: "none"
-                                }
-                            })
-                            Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.booster)
+        setPurcents([{stade: 1, nb: myCardWithStade.filter((item) => item.stade == "1").length}, {
+            stade: 2,
+            nb: myCardWithStade.filter((item) => item.stade == "2").length
+        }, {stade: 3, nb: myCardWithStade.filter((item) => item.stade == "3").length}, {
+            stade: 4,
+            nb: rmyCardWithStade.filter((item) => item.stade == "4").length
+        }])
+        const purcents = [{stade: 1, nb: myCardWithStade.filter((item) => item.stade == "1").length}, {
+            stade: 2,
+            nb: myCardWithStade.filter((item) => item.stade == "2").length
+        }, {stade: 3, nb: myCardWithStade.filter((item) => item.stade == "3").length}, {
+            stade: 4,
+            nb: myCardWithStade.filter((item) => item.stade == "4").length
+        }]
+        setCustomStyles({
+            extBar: {
+                width: '75%',
+                backgroundColor: '#00368a',
+                position: 'relative',
+                zIndex: '1',
+                borderRadius: '50px',
+                margin: 'auto',
+                marginBottom: '50px'
+            },
+            intBar: {
+                width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
+                position: 'relative',
+                background: '#cecaca',
+                textWrap: 'nowrap',
+                color: 'white',
+                padding: '15px',
+                borderRadius: '50px 50px 50px 50px',
+                filter: "drop-shadow(0px 0px 6px blue)"
+            },
+            yellowBar: {
+                width: parseFloat(myCardWithStade.filter((item) => item.stade == "3").length / props.item * 100).toFixed(2) + "%",
+                position: 'absolute',
+                background: '#e5d330',
+                textWrap: 'nowrap',
+                color: 'white',
+                padding: '15px',
+                borderRadius: '50px 50px 50px 50px',
+                filter: "drop-shadow(0px 0px 6px blue)",
+                top: 0,
+                zIndex: 1,
+                height:"100%"
+            },
+            blueBar: {
+                width: parseFloat(myCardWithStade.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
+                position: 'absolute',
+                background: '#81adef',
+                textWrap: 'nowrap',
+                color: 'white',
+                padding: '15px',
+                borderRadius: '50px 50px 50px 50px',
+                filter: "drop-shadow(0px 0px 6px blue)",
+                top: 0,
+                zIndex: 1,
+                height:"100%"
+            },
+            greenBar: {
+                width: parseFloat(myCardWithStade.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
+                position: 'absolute',
+                background: '#40b24b',
+                textWrap: 'nowrap',
+                color: 'white',
+                padding: '15px',
+                borderRadius: '50px 50px 50px 50px',
+                filter: "drop-shadow(0px 0px 6px blue)",
+                top: 0,
+                zIndex: 1,
+                height:"100%"
+            },
+            rainbowBar: {
+                width: parseFloat(myCardWithStade.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
+                position: 'absolute',
+                textWrap: 'nowrap',
+                padding: '15px',
+                borderRadius: '50px 50px 50px 50px',
+                background: "linear-gradient(90deg, red 0%, yellow 15%, lime 30%, cyan 50%, blue 65%, magenta 80%, red 100%)",
+                backgroundSize: "200%",
+                animation: "moveGradient 5s linear infinite",
+                color: "#120747",
+                letterSpacing: 0,
+                textShadow: "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
+                textAlign: "center",
+                top: 0,
+                zIndex: 1,
+                height:"100%"
+            },
+            ribbonClear: {
+                position: "absolute",
+                top: "-35px",
+                right: "-40px",
+                width: "130px"
+            },
+            ribbonUnclear: {
+                display: "none"
+            }
+        })
+        setBadges(props.badges);
+        const badges = props.badges;
+        Axios.get("/api/getBoosterByName/"+props.booster)
+            .then(function(response) {
+                setBoosterName(response.data[0].fullName);
+                if(props.global === false){
+                    if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
+                        if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
+                            openModalZero(0);
+                            Axios.post('/api/addBadge',
+                                {
+                                    pseudo:props.user,
+                                    image:props.booster+"_0",
+                                    stade:0,
+                                    description:"100% du set "+response.data[0].fullName+" - Lvl.0",
+                                    booster:props.booster
+                                })
                                 .then(function(response) {
-                                    setBadges(response.data);
-                                    const badges = response.data;
-                                    Axios.get("/api/getBoosterByName/"+props.booster)
-                                        .then(function(response) {
-                                            setBoosterName(response.data[0].fullName);
-                                            if(props.global === false){
-                                                if(parseFloat(props.getNb / props.item * 100).toFixed(2) == 100){
-                                                    if(typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0){
-                                                        openModalZero(0);
-                                                        Axios.post('/api/addBadge',
-                                                            {
-                                                                pseudo:props.user,
-                                                                image:props.booster+"_0",
-                                                                stade:0,
-                                                                description:"100% du set "+response.data[0].fullName+" - Lvl.0",
-                                                                booster:props.booster
-                                                            })
-                                                            .then(function(response) {
-                                                                Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
-                                                                    .then(function (response) {
-                                                                        setBadges(response.data);
-                                                                    })
-                                                            })
-                                                    }else if(purcents.length > 0){
-                                                        if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 1) === "undefined"){
-                                                            openModalZero(1);
-                                                            Axios.post('/api/addBadge',
-                                                                {
-                                                                    pseudo:props.user,
-                                                                    image:props.booster+"_1",
-                                                                    stade:1,
-                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.1",
-                                                                    booster:props.booster
-                                                                })
-                                                                .then(function(response) {
-                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
-                                                                        .then(function (response) {
-                                                                            setBadges(response.data);
-                                                                        })
-                                                                })
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 2) === "undefined"){
-                                                            openModalZero(2);
-                                                            Axios.post('/api/addBadge',
-                                                                {
-                                                                    pseudo:props.user,
-                                                                    image:props.booster+"_2",
-                                                                    stade:2,
-                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.2",
-                                                                    booster:props.booster
-                                                                })
-                                                                .then(function(response) {
-                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
-                                                                        .then(function (response) {
-                                                                            setBadges(response.data);
-                                                                        })
-                                                                })
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 3) === "undefined"){
-                                                            openModalZero(3);
-                                                            Axios.post('/api/addBadge',
-                                                                {
-                                                                    pseudo:props.user,
-                                                                    image:props.booster+"_3",
-                                                                    stade:3,
-                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.3",
-                                                                    booster:props.booster
-                                                                })
-                                                                .then(function(response) {
-                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
-                                                                        .then(function (response) {
-                                                                            setBadges(response.data);
-                                                                        })
-                                                                })
-                                                        }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 4) === "undefined"){
-                                                            openModalZero(4);
-                                                            Axios.post('/api/addBadge',
-                                                                {
-                                                                    pseudo:props.user,
-                                                                    image:props.booster+"_4",
-                                                                    stade:4,
-                                                                    description:"100% du set "+response.data[0].fullName+" - Lvl.4",
-                                                                    booster:props.booster
-                                                                })
-                                                                .then(function(response) {
-                                                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
-                                                                        .then(function (response) {
-                                                                            setBadges(response.data);
-                                                                        })
-                                                                })
-                                                        }
-                                                    }
-                                                }
-                                            }
+                                    Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                        .then(function (response) {
+                                            setBadges(response.data);
                                         })
                                 })
-                        })
-                })
+                        }else if(purcents.length > 0){
+                            if(parseFloat(purcents.find((item) => item.stade == 1).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 1) === "undefined"){
+                                openModalZero(1);
+                                Axios.post('/api/addBadge',
+                                    {
+                                        pseudo:props.user,
+                                        image:props.booster+"_1",
+                                        stade:1,
+                                        description:"100% du set "+response.data[0].fullName+" - Lvl.1",
+                                        booster:props.booster
+                                    })
+                                    .then(function(response) {
+                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                            .then(function (response) {
+                                                setBadges(response.data);
+                                            })
+                                    })
+                            }else if(parseFloat(purcents.find((item) => item.stade == 2).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 2) === "undefined"){
+                                openModalZero(2);
+                                Axios.post('/api/addBadge',
+                                    {
+                                        pseudo:props.user,
+                                        image:props.booster+"_2",
+                                        stade:2,
+                                        description:"100% du set "+response.data[0].fullName+" - Lvl.2",
+                                        booster:props.booster
+                                    })
+                                    .then(function(response) {
+                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                            .then(function (response) {
+                                                setBadges(response.data);
+                                            })
+                                    })
+                            }else if(parseFloat(purcents.find((item) => item.stade == 3).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 3) === "undefined"){
+                                openModalZero(3);
+                                Axios.post('/api/addBadge',
+                                    {
+                                        pseudo:props.user,
+                                        image:props.booster+"_3",
+                                        stade:3,
+                                        description:"100% du set "+response.data[0].fullName+" - Lvl.3",
+                                        booster:props.booster
+                                    })
+                                    .then(function(response) {
+                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                            .then(function (response) {
+                                                setBadges(response.data);
+                                            })
+                                    })
+                            }else if(parseFloat(purcents.find((item) => item.stade == 4).nb / props.item * 100).toFixed(2) == 100 && typeof badges.find((item) => item.stade === 4) === "undefined"){
+                                openModalZero(4);
+                                Axios.post('/api/addBadge',
+                                    {
+                                        pseudo:props.user,
+                                        image:props.booster+"_4",
+                                        stade:4,
+                                        description:"100% du set "+response.data[0].fullName+" - Lvl.4",
+                                        booster:props.booster
+                                    })
+                                    .then(function(response) {
+                                        Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
+                                            .then(function (response) {
+                                                setBadges(response.data);
+                                            })
+                                    })
+                            }
+                        }
+                    }
+                }
+            })
         }
 
     }, []);

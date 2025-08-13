@@ -76,7 +76,7 @@ function MyCards(props) {
                         <button style={{color: "white", width: "100%", margin: "0", padding: "0", marginTop: "30px"}}
                                 onClick={backPage} className="backButton">Retour
                         </button>
-                        <MyCardsSet powder={powder} user={props.user} card={nbCard} idBooster={page}
+                        <MyCardsSet badges={badges} powder={powder} user={props.user} card={nbCard} idBooster={page}
                                     guruName={guruName}/>
                     </>
                     :
