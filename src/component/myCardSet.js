@@ -60,15 +60,19 @@ function MyCardsSet(props) {
         }
     };
     useEffect(() => {
-        Axios
-            .get("/api/getRaritiesByBooster/"+props.idBooster)
-            .then(function(response){
-                setRarities(response.data);
-                if(response.data[0].block == "gym" ||response.data[0].block == "col"){
-                    setLang("en")
-                }else{
-                    setLang("fr")
-                }
+        Axios.get("/api/getProfil/"+props.user)
+            .then(function(response) {
+                setPowder(response.data[0].powder)
+                Axios
+                    .get("/api/getRaritiesByBooster/"+props.idBooster)
+                    .then(function(response){
+                        setRarities(response.data);
+                        if(response.data[0].block == "gym" ||response.data[0].block == "col"){
+                            setLang("en")
+                        }else{
+                            setLang("fr")
+                        }
+                    })
             })
     }, [])
     useEffect(() => {
