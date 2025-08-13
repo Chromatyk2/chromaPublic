@@ -24,7 +24,7 @@ function ProgressBarCard(props) {
             nb: props.myCardWithStade.filter((item) => item.stade == "2").length
         }, {stade: 3, nb: props.myCardWithStade.filter((item) => item.stade == "3").length}, {
             stade: 4,
-            nb: rprops.myCardWithStade.filter((item) => item.stade == "4").length
+            nb: props.myCardWithStade.filter((item) => item.stade == "4").length
         }])
         const purcents = [{stade: 1, nb: props.myCardWithStade.filter((item) => item.stade == "1").length}, {
             stade: 2,
