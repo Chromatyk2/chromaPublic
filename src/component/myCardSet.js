@@ -96,7 +96,6 @@ function MyCardsSet(props) {
                                         .then(res => res.json())
                                         .then(
                                             (result) => {
-                                                setTotalCard(result.cards.length)
                                                 setItems(result.cards)
                                                 setIsLoaded(false);
                                                 if(props.idBooster === "sm11.5"){
