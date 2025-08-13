@@ -214,7 +214,7 @@ function ProgressBarCard(props) {
             })
         }
 
-    }, []);
+    }, [props.myCardWithStade]);
     function closeModal() {
         setIsOpen(false);
         setTimeout(function (){
