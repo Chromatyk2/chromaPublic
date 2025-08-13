@@ -64,7 +64,7 @@ function App() {
                     <Route path="/tcg/liste/:pseudo" element={<CardsHubOther page={"listuserTcg"} cookies={cookies}/>}/>
                     <Route path="/allProfils" element={<AllProfils cookies={cookies}/>}/>
                     <Route path="/29ct92B3ZrvxGSrp" element={<RandomProfil cookies={cookies}/>}/>
-                    <Route path="/49Vs5sWVS2e7pre" element={<Prediction/>}/>
+                    <Route path="/29ct92B3Zrvxpre" element={<Prediction/>}/>
                     <Route path="/compagnon" element={<Compagnon cookies={cookies}/>}/>
                   </Routes>
                 </BrowserRouter>
