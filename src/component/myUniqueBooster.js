@@ -11,7 +11,6 @@ import SmallProgressBarCard from "./smallProgressBar";
 function MyUniqueBooster(props) {
 
     const [booster, setBooster] = useState([typeof props.boosterList.find((uc) => uc.name == props.nbCard.booster) === "undefined" ? props.boosterList.find((uc) => uc.nameGuru == props.nbCard.booster) : props.boosterList.find((uc) => uc.name == props.nbCard.booster)]);
-    const [badges, setBadges] = React.useState(null);
     const [customStyles, setCustomStyles] = useState(null);
     const [stadeToDisplay, setStadeToDisplay] = useState(-1);
     function displayPage(e) {
@@ -22,45 +21,42 @@ function MyUniqueBooster(props) {
     }
 
     useEffect(() => {
-            Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + booster[0].name)
-                .then(function (response) {
-                    setBadges(response.data);
-                    if(typeof response.data.find((item) => item.stade === 4) !== "undefined"){
+                    if(typeof props.badges.find((item) => item.stade === 4 && item.booster == booster[0].name) !== "undefined"){
                         setStadeToDisplay(4)
                         setCustomStyles({
                             shadow: {
                                 boxShadow: "-15px 15px 50px #0000ff, 15px -15px 50px #ffd700, 15px 15px 50px #fe015b, -15px -15px 50px #00ff78"
                             }
                         })
-                    }else if(typeof response.data.find((item) => item.stade === 3) !== "undefined"){
+                    }else if(typeof props.badges.find((item) => item.stade === 3 && item.booster == booster[0].name) !== "undefined"){
                         setStadeToDisplay(3)
                         setCustomStyles({
                             shadow: {
                                 filter : 'drop-shadow(0px 0px 10px orange) drop-shadow(0px 0px 0 yellow)'
                             }
                         })
-                    }else if(typeof response.data.find((item) => item.stade === 2) !== "undefined"){
+                    }else if(typeof props.badges.find((item) => item.stade === 2 && item.booster == booster[0].name) !== "undefined"){
                         setStadeToDisplay(2)
                         setCustomStyles({
                             shadow: {
                                 filter : 'drop-shadow(0px 0px 10px blue) drop-shadow(0px 0px 0 blue)'
                             }
                         })
-                    }else if(typeof response.data.find((item) => item.stade === 1) !== "undefined"){
+                    }else if(typeof props.badges.find((item) => item.stade === 1 && item.booster == booster[0].name) !== "undefined"){
                         setStadeToDisplay(1)
                         setCustomStyles({
                             shadow: {
                                 filter : 'drop-shadow(0px 0px 10px lightgreen) drop-shadow(0px 0px 0 lightgreen)'
                             }
                         })
-                    }else if(typeof response.data.find((item) => item.stade === 0) !== "undefined"){
+                    }else if(typeof props.badges.find((item) => item.stade === 0 && item.booster == booster[0].name) !== "undefined"){
                         setStadeToDisplay(0)
                         setCustomStyles({
                             shadow: {
                                 filter : 'drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0 white)'
                             }
                         })
-                    }else if(response.data.length === 0){
+                    }else if(!props.badges.find((item) => item.stade === 0 && item.booster == booster[0].name)){
                         setStadeToDisplay(-1)
                         setCustomStyles({
                             shadow: {
@@ -68,7 +64,6 @@ function MyUniqueBooster(props) {
                             }
                         })
                     }
-                })
     }, []);
     return (
         <>

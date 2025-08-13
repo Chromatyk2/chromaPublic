@@ -19,6 +19,7 @@ function MyCards(props) {
     const [guruName, setGuruName] = useState(null);
     const [fullName, setFullName] = useState(null);
     const [powder,setPowder] = useState(0);
+    const [badges,setBadges] = useState(null);
     function displayPage(e,f,g,h) {
         setPage(e);
         setNbCard(f);
@@ -29,25 +30,29 @@ function MyCards(props) {
         setPage(null)
     }
     useEffect(() => {
-        Axios
-            .get("/api/getNbCards/"+props.user)
+        Axios.get("api/getBadgesByUser/"+props.user)
             .then(function(response){
-                setNbCards(response.data);
-                let sum = (response.data.reduce(function(prev, current) {
-                    return prev + +current.nbCard
-                }, 0));
-                setTotalCardUser(sum);
-                Axios.get("/api/getBoosterTotalCard")
+                setBadges(response.data)
+                Axios
+                    .get("/api/getNbCards/"+props.user)
                     .then(function(response){
-                        setBoosterList(response.data);
-                        let sumBooster = (response.data.reduce(function(prev, current) {
-                            return prev + +current.totalCards
+                        setNbCards(response.data);
+                        let sum = (response.data.reduce(function(prev, current) {
+                            return prev + +current.nbCard
                         }, 0));
-                        setTotalCard(sumBooster);
-                        Axios.get("/api/getProfil/"+props.user)
-                            .then(function(response) {
-                                setPowder(response.data[0].powder
-                                )
+                        setTotalCardUser(sum);
+                        Axios.get("/api/getBoosterTotalCard")
+                            .then(function(response){
+                                setBoosterList(response.data);
+                                let sumBooster = (response.data.reduce(function(prev, current) {
+                                    return prev + +current.totalCards
+                                }, 0));
+                                setTotalCard(sumBooster);
+                                Axios.get("/api/getProfil/"+props.user)
+                                    .then(function(response) {
+                                        setPowder(response.data[0].powder
+                                        )
+                                    })
                             })
                     })
             })
@@ -79,7 +84,7 @@ function MyCards(props) {
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                         return (
-                            <MyUniqueBooster user={props.user} page={val.booster} change={displayPage} nbCard={val}
+                            <MyUniqueBooster badges={badges} user={props.user} page={val.booster} change={displayPage} nbCard={val}
                                              boosterList={boosterList}
                                              maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" : uc.nameGuru == val.booster).totalCards
                                                  : boosterList.find((uc) => uc.name == val.booster).totalCards}/>

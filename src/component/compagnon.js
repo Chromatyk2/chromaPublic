@@ -500,7 +500,6 @@ function Compagnon(props) {
         }
     }
     function handleState(e,f) {
-        setLoad(true)
             fetch("https://pokeapi.co/api/v2/pokemon-form/"+e)
                 .then(res => res.json())
                 .then(
