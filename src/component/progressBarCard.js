@@ -19,6 +19,29 @@ function ProgressBarCard(props) {
     const [totalCards, setTotalCards] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     useEffect(() => {
+        if(props.global === true){
+            setCustomStyles({
+                extBar: {
+                    width: '75%',
+                    backgroundColor: '#00368a',
+                    position: 'relative',
+                    zIndex: '1',
+                    borderRadius: '50px',
+                    margin: 'auto',
+                    marginBottom: '50px'
+                },
+                intBar: {
+                    width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
+                    position: 'relative',
+                    background: '#cecaca',
+                    textWrap: 'nowrap',
+                    color: 'white',
+                    padding: '15px',
+                    borderRadius: '50px 50px 50px 50px',
+                    filter: "drop-shadow(0px 0px 6px blue)"
+                }
+            })
+        }
         if(props.global === false){
         setPurcents([{stade: 1, nb: props.myCardWithStade.filter((item) => item.stade == "1").length}, {
             stade: 2,
@@ -52,7 +75,7 @@ function ProgressBarCard(props) {
                         marginBottom: '50px'
                     },
                     intBar: {
-                        width: parseFloat(props.getNb / totalCards * 100).toFixed(2) + "%",
+                        width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
                         position: 'relative',
                         background: '#cecaca',
                         textWrap: 'nowrap',
@@ -63,7 +86,7 @@ function ProgressBarCard(props) {
                         transition:"width 2s"
                     },
                     yellowBar: {
-                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "3").length / totalCards * 100).toFixed(2) + "%",
+                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "3").length / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         background: '#e5d330',
                         textWrap: 'nowrap',
@@ -77,7 +100,7 @@ function ProgressBarCard(props) {
                         transition:"width 2s"
                     },
                     blueBar: {
-                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "2").length / totalCards * 100).toFixed(2) + "%",
+                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         background: '#81adef',
                         textWrap: 'nowrap',
@@ -91,7 +114,7 @@ function ProgressBarCard(props) {
                         transition:"width 2s"
                     },
                     greenBar: {
-                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "1").length / totalCards * 100).toFixed(2) + "%",
+                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         background: '#40b24b',
                         textWrap: 'nowrap',
@@ -105,7 +128,7 @@ function ProgressBarCard(props) {
                         transition:"width 2s"
                     },
                     rainbowBar: {
-                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "4").length / totalCards * 100).toFixed(2) + "%",
+                        width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
                         position: 'absolute',
                         textWrap: 'nowrap',
                         padding: '15px',
@@ -358,7 +381,7 @@ function ProgressBarCard(props) {
                                             marginBottom: '50px'
                                         },
                                         intBar: {
-                                            width: parseFloat(props.getNb / totalCards * 100).toFixed(2) + "%",
+                                            width: parseFloat(props.getNb / props.item * 100).toFixed(2) + "%",
                                             position: 'relative',
                                             background: '#cecaca',
                                             textWrap: 'nowrap',
@@ -369,7 +392,7 @@ function ProgressBarCard(props) {
                                             transition:"width 2s"
                                         },
                                         yellowBar: {
-                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "3").length / totalCards * 100).toFixed(2) + "%",
+                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "3").length / props.item * 100).toFixed(2) + "%",
                                             position: 'absolute',
                                             background: '#e5d330',
                                             textWrap: 'nowrap',
@@ -383,7 +406,7 @@ function ProgressBarCard(props) {
                                             transition:"width 2s"
                                         },
                                         blueBar: {
-                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "2").length / totalCards * 100).toFixed(2) + "%",
+                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "2").length / props.item * 100).toFixed(2) + "%",
                                             position: 'absolute',
                                             background: '#81adef',
                                             textWrap: 'nowrap',
@@ -397,7 +420,7 @@ function ProgressBarCard(props) {
                                             transition:"width 2s"
                                         },
                                         greenBar: {
-                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "1").length / totalCards * 100).toFixed(2) + "%",
+                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "1").length / props.item * 100).toFixed(2) + "%",
                                             position: 'absolute',
                                             background: '#40b24b',
                                             textWrap: 'nowrap',
@@ -411,7 +434,7 @@ function ProgressBarCard(props) {
                                             transition:"width 2s"
                                         },
                                         rainbowBar: {
-                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "4").length / totalCards * 100).toFixed(2) + "%",
+                                            width: parseFloat(props.myCardWithStade.filter((item) => item.stade == "4").length / props.item * 100).toFixed(2) + "%",
                                             position: 'absolute',
                                             textWrap: 'nowrap',
                                             padding: '15px',
