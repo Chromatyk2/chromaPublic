@@ -322,7 +322,7 @@ function MyCardsSet(props) {
         setFilterRarity(event.target.value);
     };
     function filterEmptyCard(e) {
-        setStadeToFilter(e);
+        setStadeToFilter(e.target.value);
         setMyCardsId([]);
         items.sort((a, b) => a.localId - b.localId).map((val, key) => {
             if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == e.target.value)){
