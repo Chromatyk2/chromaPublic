@@ -18,28 +18,29 @@ function RandomProfil(props) {
     }, [])
     useEffect(() => {
         setInterval(() => {
-            console.log(allProfil)
-            setPokemonList([])
-            const pickedIndex = Math.floor(Math.random() * allProfil.length)
-            setRandomIndex(pickedIndex);
-            Axios
-                .get("/api/getCompagnonList/" + allProfil[pickedIndex].pseudo)
-                .then(function (response) {
-                    setCompagnonList(response.data);
-                    response.data.map((val, key) => {
-                        fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pkmId + "/")
-                            .then(res => res.json())
-                            .then(
-                                (result) => {
-                                    fetch(result.pokemon.url)
-                                        .then(res => res.json())
-                                        .then(
-                                            (result) => {
-                                                setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
-                                            })
-                                })
+            if(allProfil.length > 0){
+                setPokemonList([])
+                const pickedIndex = Math.floor(Math.random() * allProfil.length)
+                setRandomIndex(pickedIndex);
+                Axios
+                    .get("/api/getCompagnonList/" + allProfil[pickedIndex].pseudo)
+                    .then(function (response) {
+                        setCompagnonList(response.data);
+                        response.data.map((val, key) => {
+                            fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pkmId + "/")
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        fetch(result.pokemon.url)
+                                            .then(res => res.json())
+                                            .then(
+                                                (result) => {
+                                                    setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
+                                                })
+                                    })
+                        })
                     })
-                })
+            }
         }, 5000)
     }, [allProfil.length > 0]);
     return (
