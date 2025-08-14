@@ -129,6 +129,7 @@ function Profil(props) {
         Axios
             .get("/api/getProfil/"+pseudo)
             .then(function(response){
+                console.log(parseInt(response.data[0].sixth_pokemon.replace(/\D+$/g, "")))
                 if(response.data[0].pkmToken -1 > -1){
                     Axios.post('/api/removeToken',
                         {
@@ -986,7 +987,6 @@ function Profil(props) {
             e.target.src = "https://images.pokemontcg.io/"+e.target.getAttribute("booster")+"/"+e.target.getAttribute("number")+"_hires.png";
         }
     }
-    console.log(parseInt(profil[0].sixth_pokemon.replace(/\D+$/g, "")))
     return (
         <>
                 <div className={"profilContainer"}>
