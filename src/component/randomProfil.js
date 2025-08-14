@@ -6,6 +6,8 @@ import '../index.css'
 function RandomProfil(props) {
     const [allProfil,setAllProfil] = useState([]);
     const [randomIndex,setRandomIndex] = useState(-1);
+    const [pokemonList,setPokemonList] = useState([]);
+    const [compagnonList,setCompagnonList] = useState(null);
     useEffect(() => {
         Axios
             .get("/api/getAllProfilRandom")
@@ -15,12 +17,30 @@ function RandomProfil(props) {
             })
     }, [])
     useEffect(() => {
-        const interval = setInterval(
-            () => setRandomIndex(Math.floor(Math.random() * allProfil.length)), 5000
-        );
-        return () => {
-            clearInterval(interval);
-        };
+
+        setInterval(() => {
+            setPokemonList([])
+            const randomIndex = Math.floor(Math.random() * allProfil.length);
+            setRandomIndex(Math.floor(Math.random() * allProfil.length))
+            Axios
+                .get("/api/getCompagnonList/" + allProfil[randomIndex].pseudo)
+                .then(function (response) {
+                    setCompagnonList(response.data);
+                    props.list.map((val, key) => {
+                        fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pkmId + "/")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    fetch(result.pokemon.url)
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
+                                            })
+                                })
+                    })
+                })
+        }, 5000)
     }, [allProfil.length > 0]);
     return (
         <>
@@ -50,17 +70,18 @@ function RandomProfil(props) {
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].first_pokemon ? 'url(' + allProfil[randomIndex].first_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"first_pokemon"}
-                                className="anchorTooltip uniquePokemonContainerTeam">
+                                className={pokemonList.filter((item) => item.form_id == allProfil[randomIndex].first_pokemon.match(/\d/g).join("")).length > 0 && compagnonList.filter((item) => item.pokemon == pokemonList.filter((item) => item.form_id == allProfil[randomIndex].first_pokemon.match(/\d/g).join(""))[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+
                             </div>
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].second_pokemon ? 'url(' + allProfil[randomIndex].second_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"second_pokemon"}
-                                className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
+                                className={pokemonList.filter((item) => item.form_id == allProfil[randomIndex].second_pokemon.match(/\d/g).join("")).length > 0 && compagnonList.filter((item) => item.pokemon == pokemonList.filter((item) => item.form_id == allProfil[randomIndex].second_pokemon.match(/\d/g).join(""))[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].third_pokemon ? 'url(' + allProfil[randomIndex].third_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"third_pokemon"}
-                                className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
+                                className={pokemonList.filter((item) => item.form_id == allProfil[randomIndex].third_pokemon.match(/\d/g).join("")).length > 0 && compagnonList.filter((item) => item.pokemon == pokemonList.filter((item) => item.form_id == allProfil[randomIndex].third_pokemon.match(/\d/g).join(""))[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                             <div style={{width: "150px"}} className="anchorTooltip uniquePokemonContainer">
                                 {allProfil[randomIndex].profil_picture ?
@@ -73,17 +94,17 @@ function RandomProfil(props) {
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].fourth_pokemon ? 'url(' + allProfil[randomIndex].fourth_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"fourth_pokemon"}
-                                className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
+                                className={pokemonList.filter((item) => item.form_id == allProfil[randomIndex].fourth_pokemon.match(/\d/g).join("")).length > 0 && compagnonList.filter((item) => item.pokemon == pokemonList.filter((item) => item.form_id == allProfil[randomIndex].fourth_pokemon.match(/\d/g).join(""))[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].fifth_pokemon ? 'url(' + allProfil[randomIndex].fifth_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"fifth_pokemon"}
-                                className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
+                                className={pokemonList.filter((item) => item.form_id == allProfil[randomIndex].fifth_pokemon.match(/\d/g).join("")).length > 0 && compagnonList.filter((item) => item.pokemon == pokemonList.filter((item) => item.form_id == allProfil[randomIndex].fifth_pokemon.match(/\d/g).join(""))[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].sixth_pokemon ? 'url(' + allProfil[randomIndex].sixth_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"sixth_pokemon"}
-                                className="anchorTooltip uniquePokemonContainerTeam">
+                                className={pokemonList.filter((item) => item.form_id == allProfil[randomIndex].sixth_pokemon.match(/\d/g).join("")).length > 0 && compagnonList.filter((item) => item.pokemon == pokemonList.filter((item) => item.form_id == allProfil[randomIndex].sixth_pokemon.match(/\d/g).join(""))[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                         </div>
                     </div>
