@@ -18,9 +18,8 @@ function RandomProfil(props) {
     }, [])
     useEffect(() => {
         setInterval(() => {
-            console.log(allProfil);
-            console.log(randomIndex)
             setPokemonList([])
+            setRandomIndex(Math.floor(Math.random() * allProfil.length));
             Axios
                 .get("/api/getCompagnonList/" + allProfil[randomIndex].pseudo)
                 .then(function (response) {
