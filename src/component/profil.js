@@ -223,11 +223,11 @@ function Profil(props) {
                             transition: "width 2s"
                         },
                     });
-                    console.log(response.data.filter((item) => item.actif == 1))
                     fetch("https://pokeapi.co/api/v2/pokemon/" + response.data.filter((item) => item.actif == 1)[0].pokemon + "/")
                         .then(res => res.json())
                         .then(
                             (result) => {
+                                console.log(esult.forms.url)
                                 fetch(result.forms.url)
                                     .then(res => res.json())
                                     .then(
