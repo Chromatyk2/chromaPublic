@@ -20,10 +20,10 @@ function RandomProfil(props) {
 
         setInterval(() => {
             setPokemonList([])
-            const randomIndex = Math.floor(Math.random() * allProfil.length);
+            var pickedIndex = Math.floor(Math.random() * allProfil.length);
             setRandomIndex(Math.floor(Math.random() * allProfil.length))
             Axios
-                .get("/api/getCompagnonList/" + allProfil[randomIndex].pseudo)
+                .get("/api/getCompagnonList/" + allProfil[pickedIndex].pseudo)
                 .then(function (response) {
                     setCompagnonList(response.data);
                     response.data.map((val, key) => {
