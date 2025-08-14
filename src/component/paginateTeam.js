@@ -59,7 +59,7 @@ function Items(props) {
                                         backgroundSize:"80px"
 
                                     }}
-                                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>
+                                    className={compagnonList.filter((item) => item.pokemon == pkmList.filter((item) => item.form_id == val.pkmId).pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
@@ -111,7 +111,7 @@ function PaginationTeam(props) {
                     <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
                 </div>
             }
-            <Items  compagnonList={props.compagnonList} change={(e,f) => handleState(e,f)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
+            <Items pkmList={props.pkmList} compagnonList={props.compagnonList} change={(e,f) => handleState(e,f)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."

@@ -23,6 +23,7 @@ function PkmListTeam(props) {
                 pkmToUpdate={props.pkmToUpdate}
                 itemsPerPage={32}
                 items={props.list}
+                pkmList={props.pkmList}
             />
         </>
     );
