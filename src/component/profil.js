@@ -223,6 +223,7 @@ function Profil(props) {
                             transition: "width 2s"
                         },
                     });
+                    console.log(response.data.filter((item) => item.actif == 1))
                     fetch("https://pokeapi.co/api/v2/pokemon/" + response.data.filter((item) => item.actif == 1)[0].pokemon + "/")
                         .then(res => res.json())
                         .then(
@@ -1111,26 +1112,26 @@ function Profil(props) {
                                 <button
                                     style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
                                     onClick={handleTeam} value={"first_pokemon"}
-                                    className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].first_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].first_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                                 {profil[0].pseudo == "stryxlis"
                                     ?
                                     <button
                                         style={{backgroundImage: 'url(/images/lugia.png)'}}
                                         value={"second_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].second_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].second_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                     :
                                     <button
                                         style={{backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}}
                                         onClick={handleTeam} value={"second_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].second_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].second_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                 }
                                 <button
                                     style={{backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'}}
                                     onClick={handleTeam} value={"third_pokemon"}
-                                    className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].third_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].third_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             </div>
                             <div className={"threePokemon"}>
@@ -1138,13 +1139,13 @@ function Profil(props) {
                                     <button
                                         style={{backgroundImage:'url(/images/dialga.png)'}}
                                         value={"fourth_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fourth_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fourth_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                     :
                                     <button
                                         style={{backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'}}
                                         onClick={handleTeam} value={"fourth_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fourth_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fourth_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                 }
 
@@ -1152,19 +1153,19 @@ function Profil(props) {
                                     <button
                                         style={{backgroundImage:'url(/images/mewtwo.png)'}}
                                         value={"fifth_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fifth_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fifth_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                     :
                                     <button
                                         style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}}
                                         onClick={handleTeam} value={"fifth_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fifth_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                        className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].fifth_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                 }
                                 <button
                                     style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}}
                                     onClick={handleTeam} value={"sixth_pokemon"}
-                                    className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].sixth_pokemon.replace(/\D+$/g, "")) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={compagnonList.find((item)=>item.pokemon == parseInt(profil[0].sixth_pokemon.replace(/\D+$/g, ""))) && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             </div>
                                 <>
