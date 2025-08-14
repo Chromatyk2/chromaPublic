@@ -227,7 +227,7 @@ function Profil(props) {
                         .then(res => res.json())
                         .then(
                             (result) => {
-                                console.log(esult.forms.url)
+                                console.log(result.forms.url)
                                 fetch(result.forms.url)
                                     .then(res => res.json())
                                     .then(
