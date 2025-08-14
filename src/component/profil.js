@@ -223,7 +223,7 @@ function Profil(props) {
                             transition: "width 2s"
                         },
                     });
-                    fetch("https://pokeapi.co/api/v2/pokemon/" + response.data.filter((item) => item.actif == 1)[0] + "/")
+                    fetch("https://pokeapi.co/api/v2/pokemon/" + response.data.filter((item) => item.actif == 1)[0].pokemon + "/")
                         .then(res => res.json())
                         .then(
                             (result) => {
