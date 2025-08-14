@@ -227,12 +227,24 @@ function Profil(props) {
                         .then(res => res.json())
                         .then(
                             (result) => {
-                                console.log(result.forms.url)
-                                fetch(result.forms.url)
+                                fetch(result.forms[0].url)
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            setName(result.form_names.find((uc) => uc.language.name === "fr"));
+                                            if(result.names.find((uc) => uc.language.name === "fr")){
+                                                setName(result.names.find((uc) => uc.language.name === "fr"));
+                                            }else{
+                                                fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
+                                                    .then(res => res.json())
+                                                    .then(
+                                                        (result) => {
+                                                            if(result.status == 404){
+                                                            }else{
+                                                                setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                            }
+                                                        }
+                                                    )
+                                            }
                                         }
                                     )
                             }
