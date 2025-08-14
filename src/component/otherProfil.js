@@ -66,6 +66,7 @@ function Profil(props) {
     const [name,setName] = useState(null);
     const [compagnon,setCompagnon] = useState(null);
     const [customStyleCompagnon,setCustomStyleCompagnon] = useState(null);
+    const [compagnonList,setCompagnonList] = useState(null);
     useEffect(() => {
         const progressBars = document.querySelectorAll('.progress-container');
 
@@ -180,40 +181,60 @@ function Profil(props) {
         }
     }
     useEffect(() => {
-        Axios.get("/api/getCompagnon/" + pseudo)
-            .then(function (response) {
-                if (response.data.length > 0) {
-                    setCompagnon(response.data[0])
-                    setCustomStyleCompagnon({
-                        extBar: {
-                            width: '100%',
-                            backgroundColor: '#fff',
-                            position: 'relative',
-                            zIndex: '1',
-                            borderRadius: '50px',
-                            margin: 'auto',
-                            marginBottom: '50px'
-                        },
-                        intBar: {
-                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
-                            position: 'relative',
-                            background: '#15a3ea',
-                            textWrap: 'nowrap',
-                            color: 'white',
-                            borderRadius: '50px 50px 50px 50px',
-                            filter: "drop-shadow(0px 0px 6px blue)",
-                            transition: "width 2s"
-                        },
-                    });
-                    fetch("https://pokeapi.co/api/v2/pokemon-species/" + response.data[0].pokemon + "/")
-                        .then(res => res.json())
-                        .then(
-                            (result) => {
-                                setName(result.names.find((uc) => uc.language.name === "fr"));
-                            }
-                        )
-                }
-
+            Axios.get("/api/getCompagnonList/" + pseudo)
+                .then(function (response) {
+                    setCompagnonList(response.data)
+                    if (response.data.length > 0) {
+                        setCompagnon(response.data.filter((item) => item.actif == 1)[0])
+                        setCustomStyleCompagnon({
+                            extBar: {
+                                width: '100%',
+                                backgroundColor: '#fff',
+                                position: 'relative',
+                                zIndex: '1',
+                                borderRadius: '50px',
+                                margin: 'auto',
+                                marginBottom: '50px'
+                            },
+                            intBar: {
+                                width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                position: 'relative',
+                                background: '#15a3ea',
+                                textWrap: 'nowrap',
+                                color: 'white',
+                                borderRadius: '50px 50px 50px 50px',
+                                filter: "drop-shadow(0px 0px 6px blue)",
+                                transition: "width 2s"
+                            },
+                        });
+                        fetch("https://pokeapi.co/api/v2/pokemon/" + response.data.filter((item) => item.actif == 1)[0].pokemon + "/")
+                            .then(res => res.json())
+                            .then(
+                                (result) => {
+                                    fetch(result.forms[0].url)
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                if(result.names.find((uc) => uc.language.name === "fr")){
+                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                }else{
+                                                    fetch("https://pokeapi.co/api/v2/pokemon-species/" + result.id + "/")
+                                                        .then(res => res.json())
+                                                        .then(
+                                                            (result) => {
+                                                                if(result.status == 404){
+                                                                }else{
+                                                                    setName(result.names.find((uc) => uc.language.name === "fr"));
+                                                                }
+                                                            }
+                                                        )
+                                                }
+                                            }
+                                        )
+                                }
+                            )
+                    }
+                })
                 Axios
                     .get("/api/getProfil/"+pseudo)
                     .then(function (response){
@@ -241,7 +262,6 @@ function Profil(props) {
                                     })
                             })
                     })
-            })
     }, [])
     useEffect(() => {
         Axios
@@ -455,7 +475,7 @@ function Profil(props) {
                                 <button
                                     style={{backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
                                     value={"first_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                    className={compagnonList.find((item)=>item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                                 {profil[0].pseudo == "stryxlis"
                                     ?
@@ -468,13 +488,13 @@ function Profil(props) {
                                     <button
                                         style={{backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}}
                                         value={"second_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
+                                        className={compagnonList.find((item)=>item.pokemon == profil[0].second_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                 }
                                 <button
                                     style={{backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'}}
                                     value={"third_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                    className={compagnonList.find((item)=>item.pokemon == profil[0].third_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             </div>
                             <div className={"threePokemon"}>
@@ -488,7 +508,7 @@ function Profil(props) {
                                     <button
                                         style={{backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'}}
                                         value={"fourth_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
+                                        className={compagnonList.find((item)=>item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                 }
 
@@ -502,13 +522,13 @@ function Profil(props) {
                                     <button
                                         style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}}
                                         value={"fifth_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
+                                        className={compagnonList.find((item)=>item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                     </button>
                                 }
                                 <button
                                     style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}}
                                     value={"sixth_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                    className={compagnonList.find((item)=>item.pokemon == profil[0].sixth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             </div>
                             <>
