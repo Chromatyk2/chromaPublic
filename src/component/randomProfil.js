@@ -27,7 +27,7 @@ function RandomProfil(props) {
                     .then(function (response) {
                         setCompagnonList(response.data);
                         response.data.map((val, key) => {
-                            fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pkmId + "/")
+                            fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pokemon + "/")
                                 .then(res => res.json())
                                 .then(
                                     (result) => {
