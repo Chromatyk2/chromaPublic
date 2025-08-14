@@ -291,7 +291,7 @@ function Profil(props) {
         Axios
             .get("/api/getProfil/" + pseudo)
             .then(function (response) {
-                console.log(parseInt(response.data[0].sixth_pokemon.replace(/\D+$/g, "")))
+                console.log(response.data[0].sixth_pokemon.replace(/\D+$/g, ""))
                 setProfil(response.data);
                 Axios.get("/api/getMyTotalCards/" + pseudo)
                     .then(function (response) {
