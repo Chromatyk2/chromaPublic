@@ -26,7 +26,7 @@ function RandomProfil(props) {
                 .get("/api/getCompagnonList/" + allProfil[randomIndex].pseudo)
                 .then(function (response) {
                     setCompagnonList(response.data);
-                    props.list.map((val, key) => {
+                    response.data.map((val, key) => {
                         fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pkmId + "/")
                             .then(res => res.json())
                             .then(
