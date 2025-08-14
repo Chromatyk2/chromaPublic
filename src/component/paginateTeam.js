@@ -15,6 +15,7 @@ function Items(props) {
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
     const compagnonList = props.compagnonList;
+    const formList = props.pkmList;
     function updateTeam(e) {
         const imgToAdd = e.target.value;
         const id = e.target.id;
@@ -59,7 +60,7 @@ function Items(props) {
                                         backgroundSize:"80px"
 
                                     }}
-                                    className={compagnonList.filter((item) => item.pokemon == pkmList.filter((item) => item.form_id == val.pkmId).pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>
+                                    className={compagnonList.filter((item) => item.pokemon == formList.filter((item) => item.form_id == val.pkmId).pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
