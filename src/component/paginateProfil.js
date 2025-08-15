@@ -5,9 +5,28 @@ import { Tooltip } from 'react-tooltip'
 import { Cookies, useCookies } from 'react-cookie';
 import Axios from 'axios'
 import moment from 'moment';
+import UniqueProfil from "./uniqueProfil";
 
 function Items(props) {
     const profilList = props.currentItems;
+    Axios
+        .get("/api/getCompagnonList/" + allProfil[pickedIndex].pseudo)
+        .then(function (response) {
+            setCompagnonList(response.data);
+            response.data.map((val, key) => {
+                fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pokemon + "/")
+                    .then(res => res.json())
+                    .then(
+                        (result) => {
+                            fetch(result.pokemon.url)
+                                .then(res => res.json())
+                                .then(
+                                    (result) => {
+                                        setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
+                                    })
+                        })
+            })
+        })
     return (
         <>
             <div className="pokemonGlobalContainer">
@@ -16,57 +35,7 @@ function Items(props) {
                 ) : (
                     profilList.map((val, key) => {
                         return (
-                            <>
-                                <div style={{background:"rgba(0,0,0,.5)",borderRadius:"50px",padding: "20px 20px 0px 20px"}}>
-                                    <p className={"pseudoProfilList"}>{val.pseudo}</p>
-                                    <p className={"levelProfilList"}>Niveau {val.level} <small>( {val.xp} xp )</small></p>
-                                    <div className={"profilVisualsList"}>
-                                        <div
-                                            style={{backgroundImage: val.first_pokemon ? 'url(' + val.first_pokemon + ')' : 'url(/images/random.png)'}}
-                                            value={"first_pokemon"}
-                                            className="anchorTooltip uniquePokemonContainerTeam">
-                                        </div>
-                                        <div
-                                            style={{backgroundImage: val.second_pokemon ? 'url(' + val.second_pokemon + ')' : 'url(/images/random.png)'}}
-                                            value={"second_pokemon"}
-                                            className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
-                                        </div>
-                                        <div
-                                            style={{backgroundImage: val.third_pokemon ? 'url(' + val.third_pokemon + ')' : 'url(/images/random.png)'}}
-                                            value={"third_pokemon"}
-                                            className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
-                                        </div>
-                                        <div style={{width: "150px"}} className="anchorTooltip uniquePokemonContainer">
-                                            {val.profil_picture ?
-                                                <img style={{width: "100%"}}
-                                                     src={"/images/Trainers/Trainer"+val.profil_picture+".png"}/>
-                                                :
-                                                <img style={{width: "100%"}} src={"/images/random.png"}/>
-                                            }
-                                        </div>
-                                        <div
-                                            style={{backgroundImage: val.fourth_pokemon ? 'url(' + val.fourth_pokemon + ')' : 'url(/images/random.png)'}}
-                                            value={"fourth_pokemon"}
-                                            className="anchorTooltip uniquePokemonContainerTeam closePokemonProfilList">
-                                        </div>
-                                        <div
-                                            style={{backgroundImage: val.fifth_pokemon ? 'url(' + val.fifth_pokemon + ')' : 'url(/images/random.png)'}}
-                                            value={"fifth_pokemon"}
-                                            className="anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList">
-                                        </div>
-                                        <div
-                                            style={{backgroundImage: val.sixth_pokemon ? 'url(' + val.sixth_pokemon + ')' : 'url(/images/random.png)'}}
-                                            value={"sixth_pokemon"}
-                                            className="anchorTooltip uniquePokemonContainerTeam">
-                                        </div>
-                                    </div>
-                                    <div className={"linkList"}>
-                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/pokedex/"+val.pseudo}><img style={{width:"100%"}} src={"/images/pokedex.png"}/></Link>
-                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/profil/"+val.pseudo}><img style={{width:"100%"}} src={"/images/profil.png"}/></Link>
-                                        <Link style={{width:"50px"}} className="navLink linkFromNav" to={"/tcg/cartes/"+val.pseudo}><img style={{width:"100%"}} src={"/images/card.png"}/></Link>
-                                    </div>
-                                </div>
-                            </>
+                                <UniqueProfil user={val} />
                         )
                     })
                 )}
