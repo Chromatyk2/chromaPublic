@@ -31,7 +31,7 @@ function Items(props) {
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
                      {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
                    </div>
-                    <img className={formList.filter((item) => item.form_id == val.pkmId).length > 0 && compagnonList.filter((item) => item.pokemon == formList.filter((item) => item.form_id == val.pkmId)[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""} src={val.pkmImage}></img>
+                    <img className={formList.filter((item) => item.form_id == val.pkmId).length > 0 && compagnonList.filter((item) => item.pokemon == formList.filter((item) => item.form_id == val.pkmId)[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : "notMaxLevelFrame"} src={val.pkmImage}></img>
                   </div>
                 </Link>
               </>

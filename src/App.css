@@ -5758,5 +5758,13 @@ img.badgeToWinXp {
         border: 5px solid transparent;
         border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
         border-image-slice: 1;
+        -webkit-filter: drop-shadow(2px 4px 2px black);
         filter: drop-shadow(2px 4px 2px black);
+}
+.notMaxLevelFrame{
+     border: 5px solid transparent;
+     border-image: linear-gradient(to bottom right, #045078, #3893d5 25%, #045078 50%, #3893d5 75%, #045078);
+     border-image-slice: 1;
+     -webkit-filter: drop-shadow(2px 4px 2px #000);
+     filter: drop-shadow(2px 4px 2px black);
 }
