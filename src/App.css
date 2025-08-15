@@ -941,14 +941,14 @@ p.filterTitle {
     text-shadow: 2px 0px red, -2px 0px red, 0px 2px red, 0px -2px red, 1px 1px red, -1px -1px red, 1px -1px red, -1px 1px red;
 }
 .infoShiny{
-    left: 90px;
-    position: absolute;
-    top: 105px;
-    width: 25px;
-    height: 25px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 50%;
     color: #007bb3;
+    height: 25px;
+    left: 85px;
+    position: absolute;
+    top: 90px;
+    width: 25px;
 }
 .stats {
     display: flex;
@@ -1041,7 +1041,7 @@ p.filterTitle {
 .uniquePokemonContainer {
     background-position: 50%;
     background-repeat: no-repeat;
-    background: rgba(37,87,72,.2);
+    background: none;
     border-radius: 25%;
     -webkit-filter: drop-shadow(0 0 12px #000);
     filter: drop-shadow(0 0 12px black);
