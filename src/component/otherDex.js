@@ -44,7 +44,7 @@ function Otherdex(props) {
     return (
         <>
             {totalPkm &&
-                    <PkmList compagnonList={compagnonList} list={list} totalPkm={totalPkm} pkmList={pokemonList}/>
+                    <PkmList user={pseudo} compagnonList={compagnonList} list={list} totalPkm={totalPkm} pkmList={pokemonList}/>
 
             }
         </>

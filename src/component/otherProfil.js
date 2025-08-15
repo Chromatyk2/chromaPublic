@@ -386,13 +386,13 @@ function Profil(props) {
             <div className={"profilContainer"}>
                 <div className={"linkList"}>
                     <Link style={{width: "50px"}} className="navLink linkFromNav"
-                          to={"/pokedex/" + props.user.pseudo}><img
+                          to={"/pokedex/" + pseudo}><img
                         style={{width: "100%"}} src={"/images/pokedex.png"}/></Link>
                     <Link style={{width: "50px"}} className="navLink linkFromNav"
-                          to={"/profil/" + props.user.pseudo}><img
+                          to={"/profil/" +pseudo}><img
                         style={{width: "100%"}} src={"/images/profil.png"}/></Link>
                     <Link style={{width: "50px"}} className="navLink linkFromNav"
-                          to={"/tcg/cartes/" + props.user.pseudo}><img
+                          to={"/tcg/cartes/" + pseudo}><img
                         style={{width: "100%"}} src={"/images/card.png"}/></Link>
                 </div>
                 {isLoad === false &&

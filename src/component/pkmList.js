@@ -12,12 +12,12 @@ function PkmList(props) {
     return (
         <>
             <div className={"linkList"}>
-                <Link style={{width: "50px"}} className="navLink linkFromNav" to={"/pokedex/" + props.user.pseudo}><img
+                <Link style={{width: "50px"}} className="navLink linkFromNav" to={"/pokedex/" + props.user}><img
                     style={{width: "100%"}} src={"/images/pokedex.png"}/></Link>
-                <Link style={{width: "50px"}} className="navLink linkFromNav" to={"/profil/" + props.user.pseudo}><img
+                <Link style={{width: "50px"}} className="navLink linkFromNav" to={"/profil/" + props.user}><img
                     style={{width: "100%"}} src={"/images/profil.png"}/></Link>
                 <Link style={{width: "50px"}} className="navLink linkFromNav"
-                      to={"/tcg/cartes/" + props.user.pseudo}><img
+                      to={"/tcg/cartes/" + props.user}><img
                     style={{width: "100%"}} src={"/images/card.png"}/></Link>
             </div>
             <div className="stats">
