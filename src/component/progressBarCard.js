@@ -614,7 +614,7 @@ function ProgressBarCard(props) {
                     <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                     <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+props.booster+"_"+badgeToWinStade+".png"}/>
                     <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à 100% {badgeToWinStade != 0 && "avec les cartes de rareté "+ badgeToWinStade} !!</p>
-                    <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModal}>Cool !</button>
+                    <button style={{display:"block",margin:"auto"}} className={"filterButton filterButtonDelayed"}  onClick={closeModal}>Cool !</button>
                 </Modal>
             </>
     )

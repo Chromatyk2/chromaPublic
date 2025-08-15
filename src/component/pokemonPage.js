@@ -214,7 +214,7 @@ function changeSprite() {
                  <img style={{marginBottom: "30px"}} className={"badgeToWin"}
                       src={"/Ribbon/" + badgeToWinStade + ".png"}/>
                  <p style={{textAlign: "center", fontStyle: "20px"}}>{messageToBadge}</p>
-                 <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                 <button style={{display: "block", margin: "auto"}} className={"filterButton filterButtonDelayed"}
                          onClick={closeModalBadge}>Cool !
                  </button>
              </div>

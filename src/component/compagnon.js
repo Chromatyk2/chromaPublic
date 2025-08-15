@@ -757,7 +757,7 @@ function Compagnon(props) {
                                  src={"/images/berry.png"}/>
                         </div>
                     </div>
-                    <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton filterButtonDelayed"}
                             onClick={closeModalBerry}>Cool !
                     </button>
                 </div>

@@ -407,7 +407,11 @@ function OpeningCards(props) {
     };
     function errorImage(e){
         e.target.onerror = null;
-        e.target.src = "https://assets.tcgdex.net/en/"+props.block+"/"+props.idBooster+"/"+e.target.getAttribute("cardLocalId")+"/high.png";
+        if(props.idBooster == "sm115"){
+            e.target.src = "https://assets.tcgdex.net/en/"+props.block+"/sma/"+e.target.getAttribute("cardLocalId")+"/high.png";
+        }else{
+            e.target.src = "https://assets.tcgdex.net/en/"+props.block+"/"+props.idBooster+"/"+e.target.getAttribute("cardLocalId")+"/high.png";
+        }
     }
     useEffect(() => {
             const timeout = setTimeout(() => {

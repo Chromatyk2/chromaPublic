@@ -1264,7 +1264,7 @@ function Profil(props) {
             <Modal style={{}} overlayClassName={"overlayModalToken"} className={"modalTokenProfil"}
                    isOpen={modalIsOpenToken} onRequestClose={closeModalToken} contentLabel="Example Modal">
                 <SpawnPokemonToken change={closeModalToken} pseudo={pseudo}/>
-                <button style={{ display: "block", margin: "auto", marginTop:"50px"}} className={"filterButton"}
+                <button style={{ display: "block", margin: "auto", marginTop:"50px"}} className={"filterButton filterButtonDelayed"}
                         onClick={closeModalToken}>Cool !
                 </button>
             </Modal>
@@ -1277,7 +1277,7 @@ function Profil(props) {
                     <img style={{marginBottom: "30px"}} className={"badgeToWin"}
                          src={"/Ribbon/" + badgeToWinStade + ".png"}/>
                     <p style={{textAlign: "center", fontStyle: "20px"}}>{messageToBadge}</p>
-                    <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton filterButtonDelayed"}
                             onClick={closeModalBadge}>Cool !
                     </button>
                 </div>
@@ -1290,7 +1290,7 @@ function Profil(props) {
                     <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitations !!! </p>
                     <img style={{marginBottom: "30px"}} className={"badgeToWin"}
                          src={"/images/Trainers/Trainer"+skinToWin+".png"}/>
-                    <button style={{display: "block", margin: "auto"}} className={"filterButton"}
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton filterButtonDelayed"}
                             onClick={closeModalSkin}>Cool !
                     </button>
                 </div>
