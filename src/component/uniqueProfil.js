@@ -19,17 +19,17 @@ function UniqueProfil(props) {
                 <div
                     style={{backgroundImage: props.user.first_pokemon ? 'url(' + props.user.first_pokemon + ')' : 'url(/images/random.png)'}}
                     value={"first_pokemon"}
-                    className={compagnonList && compagnonList.find((item)=>item.pokemon == props.user.first_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.first_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                    className={props.user.first_pokemon && compagnonList && compagnonList.find((item)=>item.pokemon == props.user.first_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.first_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                 </div>
                 <div
                     style={{backgroundImage: props.user.second_pokemon ? 'url(' + props.user.second_pokemon + ')' : 'url(/images/random.png)'}}
                     value={"second_pokemon"}
-                    className={compagnonList && compagnonList.find((item)=>item.pokemon == props.user.second_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.second_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame middlePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList"}>
+                    className={props.user.second_pokemon && compagnonList && compagnonList.find((item)=>item.pokemon == props.user.second_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.second_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame middlePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList"}>
                 </div>
                 <div
                     style={{backgroundImage: props.user.third_pokemon ? 'url(' + props.user.third_pokemon + ')' : 'url(/images/random.png)'}}
                     value={"third_pokemon"}
-                    className={compagnonList && compagnonList.find((item)=>item.pokemon == props.user.third_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.third_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame closePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam closePokemonProfilList"}>
+                    className={props.user.third_pokemon && compagnonList && compagnonList.find((item)=>item.pokemon == props.user.third_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.third_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame closePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam closePokemonProfilList"}>
                 </div>
                 <div style={{width: "150px"}} className="anchorTooltip uniquePokemonContainer">
                     {props.user.profil_picture ?
@@ -42,17 +42,17 @@ function UniqueProfil(props) {
                 <div
                     style={{backgroundImage: props.user.fourth_pokemon ? 'url(' + props.user.fourth_pokemon + ')' : 'url(/images/random.png)'}}
                     value={"fourth_pokemon"}
-                    className={compagnonList && compagnonList.find((item)=>item.pokemon == props.user.fourth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.fourth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame closePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam closePokemonProfilList"}>
+                    className={props.user.fourth_pokemon && compagnonList && compagnonList.find((item)=>item.pokemon == props.user.fourth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.fourth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame closePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam closePokemonProfilList"}>
                 </div>
                 <div
                     style={{backgroundImage: props.user.fifth_pokemon ? 'url(' + props.user.fifth_pokemon + ')' : 'url(/images/random.png)'}}
                     value={"fifth_pokemon"}
-                    className={compagnonList && compagnonList.find((item)=>item.pokemon == props.user.fifth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.fifth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame middlePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList"}>
+                    className={props.user.fifth_pokemon && compagnonList && compagnonList.find((item)=>item.pokemon == props.user.fifth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.fifth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame middlePokemonProfilList" : "anchorTooltip uniquePokemonContainerTeam middlePokemonProfilList"}>
                 </div>
                 <div
                     style={{backgroundImage: props.user.sixth_pokemon ? 'url(' + props.user.sixth_pokemon + ')' : 'url(/images/random.png)'}}
                     value={"sixth_pokemon"}
-                    className={compagnonList && compagnonList.find((item)=>item.pokemon == props.user.sixth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.sixth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                    className={props.user.sixth_pokemon && compagnonList && compagnonList.find((item)=>item.pokemon == props.user.sixth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == props.user.sixth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                 </div>
             </div>
             <div className={"linkList"}>
