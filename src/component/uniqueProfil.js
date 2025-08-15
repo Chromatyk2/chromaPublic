@@ -6,11 +6,13 @@ import {Link} from "react-router-dom";
 
 function UniqueProfil(props) {
     const [compagnonList,setCompagnonList] = useState(null);
-    Axios
-        .get("/api/getCompagnonList/" + props.user.pseudo)
-        .then(function (response) {
-            setCompagnonList(response.data);
-        })
+    useEffect(() => {
+        Axios
+            .get("/api/getCompagnonList/" + props.user.pseudo)
+            .then(function (response) {
+                setCompagnonList(response.data);
+            })
+    }, []);
     return (
         <div style={{background: "rgba(0,0,0,.5)", borderRadius: "50px", padding: "20px 20px 0px 20px"}}>
             <p className={"pseudoProfilList"}>{props.user.pseudo}</p>
