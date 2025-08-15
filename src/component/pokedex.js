@@ -45,7 +45,7 @@ const [pokemonList,setPokemonList] = useState([]);
     return (
         <>
             {totalPkm &&
-                    <PkmList compagnonList={compagnonList} list={list} totalPkm={totalPkm} pkmList={pokemonList}/>
+                    <PkmList user={null} compagnonList={compagnonList} list={list} totalPkm={totalPkm} pkmList={pokemonList}/>
             }
         </>
     )
