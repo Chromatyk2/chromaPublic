@@ -10,6 +10,7 @@ function Otherdex(props) {
     const [totalPkm,setTotalPkm] = useState(null);
     const { pseudo } = useParams()
     const [compagnonList,setCompagnonList] = useState(null);
+    const [pokemonList,setPokemonList] = useState([]);
     useEffect(() => {
         Axios
             .get("/api/getCompagnonList/" + pseudo)
@@ -30,8 +31,9 @@ function Otherdex(props) {
                                                 (result) => {
                                                     setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
                                                 })
-
-                                        Axios
+                                    })
+                        })
+                        Axios
                             .get("/api/getTotalPokemon/"+pseudo)
                             .then(function(response){
                                 setTotalPkm(response.data[0].totalCapture);
@@ -42,7 +44,7 @@ function Otherdex(props) {
     return (
         <>
             {totalPkm &&
-                    <PkmList compagnonList={compagnonList} list={list} totalPkm={totalPkm}/>
+                    <PkmList compagnonList={compagnonList} list={list} totalPkm={totalPkm} pkmList={pokemonList}/>
 
             }
         </>
