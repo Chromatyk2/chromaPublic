@@ -5760,6 +5760,7 @@ img.badgeToWinXp {
         border-image-slice: 1;
         -webkit-filter: drop-shadow(2px 4px 2px black);
         filter: drop-shadow(2px 4px 2px black);
+    padding: 5px;
 }
 .notMaxLevelFrame{
      border: 5px solid transparent;
@@ -5767,4 +5768,5 @@ img.badgeToWinXp {
      border-image-slice: 1;
      -webkit-filter: drop-shadow(2px 4px 2px #000);
      filter: drop-shadow(2px 4px 2px black);
+    padding: 5px;
 }
