@@ -7,22 +7,9 @@ import {Link} from "react-router-dom";
 function UniqueProfil(props) {
     const [compagnonList,setCompagnonList] = useState(null);
     Axios
-        .get("/api/getCompagnonList/" + val.pseudo)
+        .get("/api/getCompagnonList/" + props.user.pseudo)
         .then(function (response) {
             setCompagnonList(response.data);
-            response.data.map((val, key) => {
-                fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pokemon + "/")
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            fetch(result.pokemon.url)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
-                                    })
-                        })
-            })
         })
     return (
         <div style={{background: "rgba(0,0,0,.5)", borderRadius: "50px", padding: "20px 20px 0px 20px"}}>
