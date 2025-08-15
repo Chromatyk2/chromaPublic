@@ -17,23 +17,23 @@ const [pokemonList,setPokemonList] = useState([]);
           .get("/api/getCompagnonList/" + pseudo)
           .then(function (response) {
               setCompagnonList(response.data);
-              props.list.map((val, key) => {
-                  fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pkmId + "/")
-                      .then(res => res.json())
-                      .then(
-                          (result) => {
-                              fetch(result.pokemon.url)
-                                  .then(res => res.json())
-                                  .then(
-                                      (result) => {
-                                          setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
-                                      })
-                          })
-              })
               Axios
                   .get("/api/getByUser/"+pseudo)
                   .then(function(response){
                       setList(response.data);
+                      response.data.map((val, key) => {
+                          fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pkmId + "/")
+                              .then(res => res.json())
+                              .then(
+                                  (result) => {
+                                      fetch(result.pokemon.url)
+                                          .then(res => res.json())
+                                          .then(
+                                              (result) => {
+                                                  setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
+                                              })
+                                  })
+                      })
                       Axios
                           .get("/api/getTotalPokemon/"+pseudo)
                           .then(function(response){
