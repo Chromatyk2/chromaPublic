@@ -30,8 +30,12 @@ function OpeningCards(props) {
     const [thingsBooster, setThingsBooster] = useState(true);
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
     const [berryToWins, setBerryToWins] = useState(null);
+    const [lang, setLang] = useState("fr");
 
     useEffect(() => {
+        if(props.idBooster == "sm115"){
+            setLang("en")
+        }
         window.scrollTo(0, 0)
         var berryToWin = Math.floor(Math.random() * 50 + 1);
         setBerryToWins(berryToWin);
@@ -477,7 +481,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {val.isNew == 0 &&
@@ -562,7 +566,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/fr/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
 
