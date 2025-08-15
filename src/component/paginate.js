@@ -14,6 +14,7 @@ function Items(props) {
   const nbShiny = shinys.length;
   const nbTotal = pkmList.length;
   const compagnonList = props.compagnonList;
+  const formList = props.pkmList;
   return (
     <>
       <div className="pokemonGlobalContainer">
@@ -30,7 +31,7 @@ function Items(props) {
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
                      {val.shiny == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
                    </div>
-                    <img className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""} src={val.pkmImage}></img>
+                    <img {formList.filter((item) => item.form_id == val.pkmId).length > 0 && compagnonList.filter((item) => item.pokemon == formList.filter((item) => item.form_id == val.pkmId)[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""} src={val.pkmImage}></img>
                   </div>
                 </Link>
               </>
@@ -138,7 +139,7 @@ function Pagination(props) {
                   <button className="filterButton" onClick={handlePokemon} value="3">Remettre dans l'ordre</button>
               }
             </div>
-            <Items compagnonList={props.compagnonList} currentItems={currentItems}/>
+            <Items pkmList={props.pkmList}  compagnonList={props.compagnonList} currentItems={currentItems}/>
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."

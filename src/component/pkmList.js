@@ -20,6 +20,7 @@ function PkmList(props) {
                 itemsPerPage={32}
                 items={props.list}
                 compagnonList={props.compagnonList}
+                pkmList={props.pkmList}
             />
         </>
     );
