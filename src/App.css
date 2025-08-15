@@ -913,18 +913,20 @@ p.filterTitle {
 .infoPkm{
     position: absolute;
     top: 0;
+    z-index: 1;
 }
 .infoNbCapture{
-    position: absolute;
-    left: -19px;
     background-color: white;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    font-weight: bold;
-    text-align: center;
     font-size: 18px;
     color: #007bb3;
+    border-radius: 50%;
+    font-weight: 700;
+    height: 25px;
+    left: -8px;
+    position: absolute;
+    text-align: center;
+    width: 25px;
+    top: 5px;
 }
 .infoNbCard{
     position: absolute;
