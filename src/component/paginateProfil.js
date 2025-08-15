@@ -9,24 +9,6 @@ import UniqueProfil from "./uniqueProfil";
 
 function Items(props) {
     const profilList = props.currentItems;
-    Axios
-        .get("/api/getCompagnonList/" + allProfil[pickedIndex].pseudo)
-        .then(function (response) {
-            setCompagnonList(response.data);
-            response.data.map((val, key) => {
-                fetch("https://pokeapi.co/api/v2/pokemon-form/" + val.pokemon + "/")
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            fetch(result.pokemon.url)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        setPokemonList(items => [...items,{form_id:val.pkmId,pkm_id:result.id}]);
-                                    })
-                        })
-            })
-        })
     return (
         <>
             <div className="pokemonGlobalContainer">
