@@ -24,13 +24,13 @@ function Items(props) {
              return (
                <>
                 <Link
-                    className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 ? "navLink maxLevelFrame" : "navLink"} to={"/pokemon/"+val.pkmId}>
+                    className={"navLink"} to={"/pokemon/"+val.pkmId}>
                  <div className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
-                     {val.shiny == 1 ? <img className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame infoShiny" : "infoShiny"} src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
+                     {val.shiny == 1 ? <img className={"infoShiny"} src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
                    </div>
-                    <img src={val.pkmImage}></img>
+                    <img className={compagnonList.filter((item) => item.pokemon == val.pkmId && item.level == 100 && item.shiny == val.shiny).length > 0 && "maxLevelFrame" } src={val.pkmImage}></img>
                   </div>
                 </Link>
               </>
