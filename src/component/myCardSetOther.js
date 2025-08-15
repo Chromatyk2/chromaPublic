@@ -221,10 +221,8 @@ function OtherMyCardsSet(props) {
                                         <div
                                             style={{
                                                 width: "350px",
-                                                position: "relative",
-                                                animation: "glowGetRainbow 10s infinite alternate"
+                                                position: "relative"
                                             }}
-                                             id={"lastBangerContainer"} className={"lastBangerContainer"}>
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
                                                     zIndex: "1",
@@ -259,7 +257,7 @@ function OtherMyCardsSet(props) {
                                                 </div>
                                             }
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} stade={stadeC} className="cardBangerAlertSet">
+                                                 image={val.image} stade={stadeC}>
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
@@ -269,7 +267,6 @@ function OtherMyCardsSet(props) {
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     width={"350"}
                                                     style={{width: "350px", filter: "brightness(1)"}}
-                                                    wrapperClassName={"shadowBangerCard"}
                                                     effect="blur"
                                                     threshold={200}
                                                     delayTime={5}
@@ -290,8 +287,7 @@ function OtherMyCardsSet(props) {
                                                  width: "350px",
                                                  position: "relative",
                                                  filter: "drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px) drop-shadow(rgb(200, 185, 19) 0px 0px 5px)"
-                                             }}
-                                             id={"lastBangerContainer"} className={"lastBangerContainer"}>
+                                             }}>
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 && <div
                                                 className="infoNbCard" style={{
                                                 zIndex: "1",
@@ -327,8 +323,7 @@ function OtherMyCardsSet(props) {
                                                 </div>
                                             }
                                             <div cardId={val.id} pokemonId={val.dexId} myCardNb={cardNb.nbCard}
-                                                 image={val.image} stade={stadeC}
-                                                 className="cardBangerAlertSetThree">
+                                                 image={val.image} stade={stadeC}>
                                                 <LazyLoadImage
                                                     number={val.number}
                                                     booster={val.booster}
@@ -340,7 +335,6 @@ function OtherMyCardsSet(props) {
                                                     placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                                     width={"350"}
                                                     style={{width: "350px", filter: "brightness(1.2)"}}
-                                                    wrapperClassName={"shadowBangerCard"}
                                                     effect="blur"
                                                     wrapperProps={{
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
