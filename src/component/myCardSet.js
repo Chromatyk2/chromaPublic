@@ -32,12 +32,12 @@ function MyCardsSet(props) {
     const [filterRarity, setFilterRarity] = React.useState("");
     const [onlyMine, setOnlyMine] = React.useState(true);
     const [bonusSet, setBonusSet] = React.useState(false);
-    const [lang, setLang] = React.useState(null);
     const [pickStade, setPickStade] = React.useState(null);
     const [pickCard, setPickCard] = React.useState(null);
     const [pickCardId, setPickCardId] = React.useState(null);
     const [myCardWithStade, setMyCardWithStade] = React.useState(null);
     const [stadeToFilter, setStadeToFilter] = React.useState(null);
+    const [lang, setLang] = React.useState("fr");
     const [powder, setPowder] = React.useState(props.powder);
     const [refresh, setRefresh] = React.useState(0);
 
@@ -61,6 +61,9 @@ function MyCardsSet(props) {
         }
     };
     useEffect(() => {
+        if(props.idBooster == "sm115"){
+            setLang("en")
+        }
         Axios.get("/api/getProfil/"+props.user)
             .then(function(response) {
                 setPowder(response.data[0].powder)
@@ -68,10 +71,8 @@ function MyCardsSet(props) {
                     .get("/api/getRaritiesByBooster/"+props.idBooster)
                     .then(function(response){
                         setRarities(response.data);
-                        if(response.data[0].block == "gym" ||response.data[0].block == "col"){
+                        if(response.data[0].block == "gym" || response.data[0].block == "col"){
                             setLang("en")
-                        }else{
-                            setLang("fr")
                         }
                     })
             })
