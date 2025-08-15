@@ -157,7 +157,11 @@ function MyCardsSet(props) {
     }
     function errorImages(e, booster, number){
         e.target.onerror = null;
-        e.target.src = "https://assets.tcgdex.net/en/"+rarities[0].block+"/"+props.idBooster+"/"+number+"/high.png";
+        if(props.idBooster == "sm115"){
+            e.target.src = "https://assets.tcgdex.net/en/"+rarities[0].block+"/sma/"+number+"/high.png";
+        }else{
+            e.target.src = "https://assets.tcgdex.net/en/"+rarities[0].block+"/"+props.idBooster+"/"+number+"/high.png";
+        }
     }
     function handleState() {
         setIsOpen(false);
