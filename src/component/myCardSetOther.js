@@ -222,7 +222,7 @@ function OtherMyCardsSet(props) {
                                             style={{
                                                 width: "350px",
                                                 position: "relative"
-                                            }}
+                                            }}>
                                             {myCards.find((uc) => uc.card == val.id).nbCard > 1 &&
                                                 <div className="infoNbCard" style={{
                                                     zIndex: "1",
