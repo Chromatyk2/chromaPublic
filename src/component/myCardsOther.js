@@ -65,7 +65,7 @@ function OtherMyCards(props) {
                     <ProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
                 </>
             }
-            <div style={{display:"block",margin:"auto"}} className={"linkList"}>
+            <div style={{display:"flex",margin:"auto"}} className={"linkList"}>
                 <Link style={{width: "50px"}} className="navLink linkFromNav"
                       to={"/pokedex/" + props.user}><img
                     style={{width: "100%"}} src={"/images/pokedex.png"}/></Link>
