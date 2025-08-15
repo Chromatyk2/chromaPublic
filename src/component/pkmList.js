@@ -13,7 +13,7 @@ function PkmList(props) {
   const [cookies, setCookie] = useCookies();
     return (
         <>
-            {cookies.user.data[0].login != props.user &&
+            {props.user &&
                     <div className={"linkList"}>
                         <Link style={{width: "50px"}} className="navLink linkFromNav" to={"/pokedex/" + props.user}><img
                         style={{width: "100%"}} src={"/images/pokedex.png"}/></Link>
