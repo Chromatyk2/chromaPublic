@@ -98,22 +98,22 @@ function MyCardsSet(props) {
                                             (result) => {
                                                 setItems(result.cards)
                                                 setIsLoaded(false);
-                                                if(props.idBooster === "sm115"){
-                                                    fetch("https://api.tcgdex.net/v2/en/sets/sma")
-                                                        .then(res => res.json())
-                                                        .then(
-                                                            (result) => {
-                                                                result.cards.map((val, key) => {
-                                                                    setItems(items => [...items,val]);
-                                                                })
-                                                                setIsLoaded(false);
-                                                            },
-                                                            (error) => {
-                                                                setIsLoaded(true);
-                                                                setError(error);
-                                                            }
-                                                        )
-                                                }
+                                            },
+                                            (error) => {
+                                                setIsLoaded(true);
+                                                setError(error);
+                                            }
+                                        )
+                                }else if(props.idBooster === "sm115"){
+                                    setItems(result.cards)
+                                    fetch("https://api.tcgdex.net/v2/en/sets/sma")
+                                        .then(res => res.json())
+                                        .then(
+                                            (result) => {
+                                                result.cards.map((val, key) => {
+                                                    setItems(items => [...items,val]);
+                                                })
+                                                setIsLoaded(false);
                                             },
                                             (error) => {
                                                 setIsLoaded(true);
@@ -123,7 +123,6 @@ function MyCardsSet(props) {
                                 }else{
                                     setItems(result.cards)
                                     setIsLoaded(false);
-
                                 }
                             },
                             (error) => {
