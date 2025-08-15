@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import ReactPaginate from 'react-paginate';
 import Axios from 'axios'
 import Pagination from './paginate.js';
@@ -66,21 +66,34 @@ function OtherMyCards(props) {
                 </>
             }
             <div id={"cardsContainer"}>
+                <div className={"linkList"}>
+                    <Link style={{width: "50px"}} className="navLink linkFromNav"
+                          to={"/pokedex/" + props.user.pseudo}><img
+                        style={{width: "100%"}} src={"/images/pokedex.png"}/></Link>
+                    <Link style={{width: "50px"}} className="navLink linkFromNav"
+                          to={"/profil/" + props.user.pseudo}><img
+                        style={{width: "100%"}} src={"/images/profil.png"}/></Link>
+                    <Link style={{width: "50px"}} className="navLink linkFromNav"
+                          to={"/tcg/cartes/" + props.user.pseudo}><img
+                        style={{width: "100%"}} src={"/images/card.png"}/></Link>
+                </div>
                 {totalCard &&
                 page ?
                     <>
                         <button style={{color: "white", width: "100%", margin: "0", padding: "0", marginTop: "30px"}}
                                 onClick={backPage} className="backButton">Retour
                         </button>
-                        <OtherMyCardsSet badges={badges} myPseudo={props.myPseudo} powder={powder} user={props.user} card={nbCard} idBooster={page}
-                                    guruName={guruName}/>
+                        <OtherMyCardsSet badges={badges} myPseudo={props.myPseudo} powder={powder} user={props.user}
+                                         card={nbCard} idBooster={page}
+                                         guruName={guruName}/>
                     </>
                     :
                     nbCards &&
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                         return (
-                            <MyUniqueBooster badges={badges} user={props.user} page={val.booster} change={displayPage} nbCard={val}
+                            <MyUniqueBooster badges={badges} user={props.user} page={val.booster} change={displayPage}
+                                             nbCard={val}
                                              boosterList={boosterList}
                                              maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" : uc.nameGuru == val.booster).totalCards
                                                  : boosterList.find((uc) => uc.name == val.booster).totalCards}/>

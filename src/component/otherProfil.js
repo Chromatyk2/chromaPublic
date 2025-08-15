@@ -5,7 +5,7 @@ import moment from "moment/moment";
 import OpeningBooster from "./openingBooster";
 import Modal from 'react-modal';
 import PokedexTeam from "./pokedexTeam";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
 import OnStream from "./onStream";
 import SpawnPokemonToken from "./spawnPokemonToken";
@@ -383,27 +383,38 @@ function Profil(props) {
     }
     return (
         <>
-                <div className={"profilContainer"}>
-                    {isLoad === false &&
-                        profil &&
-                        profil.length > 0 &&
-                        <>
-                            <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
-                            <div className={"profilVisuals"}>
-                                <div style={{width: "120px"}}>
-                                </div>
-                                <div className="progress-container" data-value="100">
-                                    <svg className="progress-bar" id="svg" width="120" height="120"
-                                         viewPort="0 0 100 100"
-                                         version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                        <circle className="progress-meter" r="16" cx="30" cy="90" fill="transparent"
-                                                stroke-width="13" strokeDashoffset="0"></circle>
-                                        <circle className="progress-value" r="16" cx="30" cy="90" fill="transparent"
-                                                stroke-width="13"
-                                                style={{strokeDashoffset: -parseFloat(profil[0].xp / (profil[0].level * 35) * 100).toFixed(2)}}
-                                                stroke-dasharray="301.59"></circle>
-                                    </svg>
-                                    <span>
+            <div className={"profilContainer"}>
+                <div className={"linkList"}>
+                    <Link style={{width: "50px"}} className="navLink linkFromNav"
+                          to={"/pokedex/" + props.user.pseudo}><img
+                        style={{width: "100%"}} src={"/images/pokedex.png"}/></Link>
+                    <Link style={{width: "50px"}} className="navLink linkFromNav"
+                          to={"/profil/" + props.user.pseudo}><img
+                        style={{width: "100%"}} src={"/images/profil.png"}/></Link>
+                    <Link style={{width: "50px"}} className="navLink linkFromNav"
+                          to={"/tcg/cartes/" + props.user.pseudo}><img
+                        style={{width: "100%"}} src={"/images/card.png"}/></Link>
+                </div>
+                {isLoad === false &&
+                    profil &&
+                    profil.length > 0 &&
+                    <>
+                        <p className={"pseudoProfil"}>{profil[0].pseudo}</p>
+                        <div className={"profilVisuals"}>
+                            <div style={{width: "120px"}}>
+                            </div>
+                            <div className="progress-container" data-value="100">
+                                <svg className="progress-bar" id="svg" width="120" height="120"
+                                     viewPort="0 0 100 100"
+                                     version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className="progress-meter" r="16" cx="30" cy="90" fill="transparent"
+                                            stroke-width="13" strokeDashoffset="0"></circle>
+                                    <circle className="progress-value" r="16" cx="30" cy="90" fill="transparent"
+                                            stroke-width="13"
+                                            style={{strokeDashoffset: -parseFloat(profil[0].xp / (profil[0].level * 35) * 100).toFixed(2)}}
+                                            stroke-dasharray="301.59"></circle>
+                                </svg>
+                                <span>
                                 <button style={{
                                     width: "100px",
                                     display: "block",
@@ -428,150 +439,191 @@ function Profil(props) {
                                     </div>
                                 </button>
                             </span>
-                                    <div
-                                        style={{width: "max-content", left: "-20px", position: "absolute", top: "85px"}}
-                                        className={"xpText"}>
-                                        <p style={{fontSize: "13px", textAlign: "left", width: "fit-content"}}
-                                           className={"levelProfil"}>N.{profil[0].level}</p>
-                                        <p style={{fontSize: "13px", textAlign: "left", width: "fit-content"}}
-                                           className={"levelProfil"}>{profil[0].xp + " / " + profil[0].level * 35}</p>
-                                    </div>
+                                <div
+                                    style={{width: "max-content", left: "-20px", position: "absolute", top: "85px"}}
+                                    className={"xpText"}>
+                                    <p style={{fontSize: "13px", textAlign: "left", width: "fit-content"}}
+                                       className={"levelProfil"}>N.{profil[0].level}</p>
+                                    <p style={{fontSize: "13px", textAlign: "left", width: "fit-content"}}
+                                       className={"levelProfil"}>{profil[0].xp + " / " + profil[0].level * 35}</p>
                                 </div>
-                                <button
-                                    data-tooltip-content={profil[0].badge !== null ? badgesList.find((item) => item.image === profil[0].badge).description : "Ajoute un badge"}
-                                    style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/' + profil[0].badge + '.png)' : 'url(/images/random.png)'}}
-                                    onClick={handleBadge} value={"first_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
-                                </button>
-                                <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
                             </div>
-                            <p className={"pseudoProfil"}>Mon équipe</p>
-                            {compagnon &&
-                                name &&
-                                <>
-                                    <p style={{lineHeight: "normal", marginTop: "15px"}}
-                                       className="namePokemonPage">{name.name}</p>
-                                    <img style={{
-                                        width: "280px",
-                                        marginBottom: "30px",
-                                        animation: "floatArrow 5s linear infinite",
-                                        filter: "drop-shadow(0px 0px 6px rgb(124, 146, 234))"
-                                    }}
-                                         src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
-                                    <p style={{
-                                        color: "white",
-                                        margin: "0 0 0 10px",
-                                        marginTop: "0"
-                                    }}>{"N." + compagnon.level}</p>
-                                    <div style={customStyleCompagnon.extBar} className="fullProgressBar">
-                                        <div
-                                            style={customStyleCompagnon.intBar}><p
-                                            style={{marginLeft: "15px"}}>{compagnon.xp + " / " + compagnon.level * 2 + " (" + parseFloat(compagnon.xp / (compagnon.level * 2) * 100).toFixed(2) + "%)"}</p>
-                                        </div>
-                                    </div>
-                                </>
-                            }
-                            <div className={"threePokemon"}>
-                                <button
-                                    style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
-                                    value={"first_pokemon"}
-                                    className={compagnonList.find((item)=>item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
-                                </button>
-                                {profil[0].pseudo == "stryxlis"
-                                    ?
-                                    <button
-                                        style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: 'url(/images/lugia.png)'}}
-                                        value={"second_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
-                                    </button>
-                                    :
-                                    <button
-                                        style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}}
-                                        value={"second_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == profil[0].second_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
-                                    </button>
-                                }
-                                <button
-                                    style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'}}
-                                    value={"third_pokemon"}
-                                    className={compagnonList.find((item)=>item.pokemon == profil[0].third_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
-                                </button>
-                            </div>
-                            <div className={"threePokemon"}>
-                                {profil[0].pseudo == "stryxlis" ?
-                                    <button
-                                        style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage:'url(/images/dialga.png)'}}
-                                        value={"fourth_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
-                                    </button>
-                                    :
-                                    <button
-                                        style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'}}
-                                        value={"fourth_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
-                                    </button>
-                                }
-
-                                {profil[0].pseudo == "stryxlis" ?
-                                    <button
-                                        style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage:'url(/images/mewtwo.png)'}}
-                                        value={"fifth_pokemon"}
-                                        className="anchorTooltip uniquePokemonContainerTeam">
-                                    </button>
-                                    :
-                                    <button
-                                        style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}}
-                                        value={"fifth_pokemon"}
-                                        className={compagnonList.find((item)=>item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
-                                    </button>
-                                }
-                                <button
-                                    style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}}
-                                    value={"sixth_pokemon"}
-                                    className={compagnonList.find((item)=>item.pokemon == profil[0].sixth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
-                                </button>
-                            </div>
+                            <button
+                                data-tooltip-content={profil[0].badge !== null ? badgesList.find((item) => item.image === profil[0].badge).description : "Ajoute un badge"}
+                                style={{backgroundImage: profil[0].badge ? 'url(/Ribbon/' + profil[0].badge + '.png)' : 'url(/images/random.png)'}}
+                                onClick={handleBadge} value={"first_pokemon"}
+                                className="anchorTooltip uniquePokemonContainerTeam">
+                            </button>
+                            <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
+                        </div>
+                        <p className={"pseudoProfil"}>Mon équipe</p>
+                        {compagnon &&
+                            name &&
                             <>
-                                <div style={{display: "flex", flexWrap: "wrap"}}>
-                                    <div className={"profilVisualsCard"}>
-                                        <p style={{marginTop: "20px", marginBottom: "20px", width:"100%"}}
-                                           className={"pseudoProfil"}>Statistiques</p>
-                                    </div>
-                                    <div style={{display:"flex", justifyContent:"space-around", marginBottom:"40px", width:"100%"}}>
-                                        <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
-                                        { pourcentCard > 0 &&
-                                            <img style={{width: "110px"}} className="anchorTooltip"
-                                                 data-tooltip-content={pourcent + "% du Pokedex Complété"}
-                                                 src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
-                                        }
-                                        { pourcentCard > 0 &&
-                                            <img style={{width: "110px"}} className="anchorTooltip"
-                                                 data-tooltip-content={pourcentCard + "% du Cartodex Complété"}
-                                                 src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
-                                        }
-                                        { pourcentShiny > 0 &&
-                                            <img style={{width: "110px"}} className="anchorTooltip"
-                                                 data-tooltip-content={pourcentShiny + " Shiny obtenus !"}
-                                                 src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcentShiny >= 400 ? Lv10s : pourcentShiny >= 350 ? Lv9s : pourcentShiny >= 300 ? Lv8s : pourcentShiny >= 250 ? Lv7s : pourcentShiny >= 200 ? Lv6s : pourcentShiny >= 150 ? Lv5s : pourcentShiny >= 100 ? Lv4s : pourcentShiny >= 50 ? Lv3s : pourcentShiny >= 10  ? Lv2s : Lv1s}/>
-                                        }
+                                <p style={{lineHeight: "normal", marginTop: "15px"}}
+                                   className="namePokemonPage">{name.name}</p>
+                                <img style={{
+                                    width: "280px",
+                                    marginBottom: "30px",
+                                    animation: "floatArrow 5s linear infinite",
+                                    filter: "drop-shadow(0px 0px 6px rgb(124, 146, 234))"
+                                }}
+                                     src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
+                                <p style={{
+                                    color: "white",
+                                    margin: "0 0 0 10px",
+                                    marginTop: "0"
+                                }}>{"N." + compagnon.level}</p>
+                                <div style={customStyleCompagnon.extBar} className="fullProgressBar">
+                                    <div
+                                        style={customStyleCompagnon.intBar}><p
+                                        style={{marginLeft: "15px"}}>{compagnon.xp + " / " + compagnon.level * 2 + " (" + parseFloat(compagnon.xp / (compagnon.level * 2) * 100).toFixed(2) + "%)"}</p>
                                     </div>
                                 </div>
                             </>
+                        }
+                        <div className={"threePokemon"}>
+                            <button
+                                style={{
+                                    backgroundSize: "90%",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                    backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'
+                                }}
+                                value={"first_pokemon"}
+                                className={compagnonList.find((item) => item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                            </button>
+                            {profil[0].pseudo == "stryxlis"
+                                ?
+                                <button
+                                    style={{
+                                        backgroundSize: "90%",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center",
+                                        backgroundImage: 'url(/images/lugia.png)'
+                                    }}
+                                    value={"second_pokemon"}
+                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                </button>
+                                :
+                                <button
+                                    style={{
+                                        backgroundSize: "90%",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center",
+                                        backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'
+                                    }}
+                                    value={"second_pokemon"}
+                                    className={compagnonList.find((item) => item.pokemon == profil[0].second_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                </button>
+                            }
+                            <button
+                                style={{
+                                    backgroundSize: "90%",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                    backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'
+                                }}
+                                value={"third_pokemon"}
+                                className={compagnonList.find((item) => item.pokemon == profil[0].third_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                            </button>
+                        </div>
+                        <div className={"threePokemon"}>
+                            {profil[0].pseudo == "stryxlis" ?
+                                <button
+                                    style={{
+                                        backgroundSize: "90%",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center",
+                                        backgroundImage: 'url(/images/dialga.png)'
+                                    }}
+                                    value={"fourth_pokemon"}
+                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                </button>
+                                :
+                                <button
+                                    style={{
+                                        backgroundSize: "90%",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center",
+                                        backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'
+                                    }}
+                                    value={"fourth_pokemon"}
+                                    className={compagnonList.find((item) => item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                </button>
+                            }
+
+                            {profil[0].pseudo == "stryxlis" ?
+                                <button
+                                    style={{
+                                        backgroundSize: "90%",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center",
+                                        backgroundImage: 'url(/images/mewtwo.png)'
+                                    }}
+                                    value={"fifth_pokemon"}
+                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                </button>
+                                :
+                                <button
+                                    style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}}
+                                    value={"fifth_pokemon"}
+                                    className={compagnonList.find((item) => item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                </button>
+                            }
+                            <button
+                                style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}}
+                                value={"sixth_pokemon"}
+                                className={compagnonList.find((item) => item.pokemon == profil[0].sixth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                            </button>
+                        </div>
+                        <>
+                            <div style={{display: "flex", flexWrap: "wrap"}}>
+                                <div className={"profilVisualsCard"}>
+                                    <p style={{marginTop: "20px", marginBottom: "20px", width: "100%"}}
+                                       className={"pseudoProfil"}>Statistiques</p>
+                                </div>
+                                <div style={{
+                                    display: "flex",
+                                    justifyContent: "space-around",
+                                    marginBottom: "40px",
+                                    width: "100%"
+                                }}>
+                                    <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
+                                    {pourcentCard > 0 &&
+                                        <img style={{width: "110px"}} className="anchorTooltip"
+                                             data-tooltip-content={pourcent + "% du Pokedex Complété"}
+                                             src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>
+                                    }
+                                    {pourcentCard > 0 &&
+                                        <img style={{width: "110px"}} className="anchorTooltip"
+                                             data-tooltip-content={pourcentCard + "% du Cartodex Complété"}
+                                             src={pourcentCard == 100 ? Lv11c : pourcentCard >= 90 ? Lv10c : pourcentCard >= 80 ? Lv9c : pourcentCard >= 70 ? Lv8c : pourcentCard >= 60 ? Lv7c : pourcentCard >= 50 ? Lv6c : pourcentCard >= 40 ? Lv5c : pourcentCard >= 30 ? Lv4c : pourcentCard >= 20 ? Lv3c : pourcentCard >= 10 ? Lv2c : Lv1c}/>
+                                    }
+                                    {pourcentShiny > 0 &&
+                                        <img style={{width: "110px"}} className="anchorTooltip"
+                                             data-tooltip-content={pourcentShiny + " Shiny obtenus !"}
+                                             src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcentShiny >= 400 ? Lv10s : pourcentShiny >= 350 ? Lv9s : pourcentShiny >= 300 ? Lv8s : pourcentShiny >= 250 ? Lv7s : pourcentShiny >= 200 ? Lv6s : pourcentShiny >= 150 ? Lv5s : pourcentShiny >= 100 ? Lv4s : pourcentShiny >= 50 ? Lv3s : pourcentShiny >= 10 ? Lv2s : Lv1s}/>
+                                    }
+                                </div>
+                            </div>
                         </>
-                    }
-                </div>
-                <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles} contentLabel="Example Modal">
-                    <p style={{textAlign: "center"}}>Ses Badges</p>
-                    <div style={{
-                        overflow: "overlay",
-                        display: "flex",
-                        gap: "10px",
-                        flexFlow: "row",
-                        flexWrap: "wrap",
-                        justifyContent: "center"
-                    }}>
-                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
-                                onClick={filteredBadges} value={"all"}>Tous
+                    </>
+                }
+            </div>
+            <Modal isOpen={modalIsOpenBadgeHandle} onRequestClose={closeBadgeHandle} style={customStyles}
+                   contentLabel="Example Modal">
+                <p style={{textAlign: "center"}}>Ses Badges</p>
+                <div style={{
+                    overflow: "overlay",
+                    display: "flex",
+                    gap: "10px",
+                    flexFlow: "row",
+                    flexWrap: "wrap",
+                    justifyContent: "center"
+                }}>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"all"}>Tous
                         </button>
                         <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
                                 onClick={filteredBadges} value={"pokedex"}>Pokédex
