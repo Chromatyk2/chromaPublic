@@ -413,6 +413,8 @@ function OpeningCards(props) {
         e.target.onerror = null;
         if(props.idBooster == "sm115"){
             e.target.src = "https://assets.tcgdex.net/en/"+props.block+"/sma/"+e.target.getAttribute("cardLocalId")+"/high.png";
+        }else if(props.idBooster == "sm7.5"){
+            e.target.src = "https://assets.tcgdex.net/en/"+props.block+"/sm75/"+e.target.getAttribute("cardLocalId")+"/high.png";
         }else{
             e.target.src = "https://assets.tcgdex.net/en/"+props.block+"/"+props.idBooster+"/"+e.target.getAttribute("cardLocalId")+"/high.png";
         }
