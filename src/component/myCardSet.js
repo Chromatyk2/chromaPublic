@@ -159,6 +159,8 @@ function MyCardsSet(props) {
         e.target.onerror = null;
         if(props.idBooster == "sm115"){
             e.target.src = "https://assets.tcgdex.net/en/"+rarities[0].block+"/sma/"+number+"/high.png";
+        }else if(props.idBooster == "sm7.5"){
+            e.target.src = "https://assets.tcgdex.net/en/"+rarities[0].block+"/sm75/"+number+"/high.png";
         }else{
             e.target.src = "https://assets.tcgdex.net/en/"+rarities[0].block+"/"+props.idBooster+"/"+number+"/high.png";
         }
