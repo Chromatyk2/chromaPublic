@@ -1125,7 +1125,7 @@ function Profil(props) {
                                 <button
                                     style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
                                     onClick={handleTeam} value={"first_pokemon"}
-                                    className={compagnonList && compagnonList.find((item)=>item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].first_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={profil[0].first_pokemon && compagnonList.find((item)=>item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].first_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                                 {profil[0].pseudo == "stryxlis"
                                     ?
