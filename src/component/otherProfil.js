@@ -491,7 +491,7 @@ function Profil(props) {
                                     backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'
                                 }}
                                 value={"first_pokemon"}
-                                className={compagnonList.find((item) => item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                className={profil[0].first_pokemon && compagnonList.find((item) => item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </button>
                             {profil[0].pseudo == "stryxlis"
                                 ?
@@ -514,7 +514,7 @@ function Profil(props) {
                                         backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'
                                     }}
                                     value={"second_pokemon"}
-                                    className={compagnonList.find((item) => item.pokemon == profil[0].second_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={profil[0].second_pokemon && compagnonList.find((item) => item.pokemon == profil[0].second_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             }
                             <button
@@ -525,7 +525,7 @@ function Profil(props) {
                                     backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'
                                 }}
                                 value={"third_pokemon"}
-                                className={compagnonList.find((item) => item.pokemon == profil[0].third_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                className={profil[0].third_pokemon && compagnonList.find((item) => item.pokemon == profil[0].third_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </button>
                         </div>
                         <div className={"threePokemon"}>
@@ -549,7 +549,7 @@ function Profil(props) {
                                         backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'
                                     }}
                                     value={"fourth_pokemon"}
-                                    className={compagnonList.find((item) => item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={profil[0].fourth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             }
 
@@ -568,13 +568,13 @@ function Profil(props) {
                                 <button
                                     style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}}
                                     value={"fifth_pokemon"}
-                                    className={compagnonList.find((item) => item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={profil[0].fifth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             }
                             <button
                                 style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"sixth_pokemon"}
-                                className={compagnonList.find((item) => item.pokemon == profil[0].sixth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                className={profil[0].sixth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].sixth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </button>
                         </div>
                         <>
