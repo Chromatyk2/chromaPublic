@@ -486,11 +486,22 @@ function OpeningCards(props) {
                                         id={"cardNb" + key}>
 
                                         {val.isNew === 1 &&
-                                            <div style={{position: "absolute"}} id={"shadowBox"}>
-                                                <div className={"newContainer"}>
-                                                    <p className={"rainbow rainbow_text_animated"}>NEW !</p>
-                                                </div>
-                                            </div>
+                                            <img
+                                                onClick={getLastCard}
+                                                id={"tokenContainer"}
+                                                style={{
+                                                    display: "block",
+                                                    position: "absolute",
+                                                    zIndex: "100",
+                                                    bottom: "0",
+                                                    width: "75px",
+                                                    left: "0",
+                                                    margin: 0,
+                                                    filter: "drop-shadow(0px 4px 4px black)"
+                                                }}
+                                                src={"/images/new.png"}
+                                                onError={errorImage}
+                                                alt="Grapefruit slice atop a pile of other slices"/>
                                         }
                                         <img
                                             cardLocalId={val.card.localId}
@@ -500,7 +511,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/"+lang+"/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/" + lang + "/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {getToken === true &&
@@ -586,9 +597,9 @@ function OpeningCards(props) {
                                                         display: "block",
                                                         position: "absolute",
                                                         zIndex: "100",
-                                                        bottom: "25px",
+                                                        bottom: "0",
                                                         width: "100px",
-                                                        right: "-13px",
+                                                        right: "-33px",
                                                         margin: 0,
                                                         filter: "drop-shadow(0px 4px 4px black)"
                                                     }}
@@ -600,7 +611,7 @@ function OpeningCards(props) {
                                                     color: "white",
                                                     fontSize: "30px",
                                                     right: "-20px",
-                                                    bottom: "15px",
+                                                    bottom: "-10px",
                                                     display: "block",
                                                     position: "absolute",
                                                     zIndex: "100",
