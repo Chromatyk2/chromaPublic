@@ -126,7 +126,12 @@ function OpeningCards(props) {
                                                 .then(
                                                     (result) => {
                                                         if (tenCards.length == 4) {
-                                                            var stade = 4;
+                                                            var randomStade = Math.floor(Math.random() * 100);
+                                                            if (randomStade < 50 ) {
+                                                                var stade = 3;
+                                                            } else{
+                                                                var stade = 4;
+                                                            }
                                                         }else{
                                                             var randomStade = Math.floor(Math.random() * 100);
                                                             if (randomStade < 50 ) {
@@ -235,7 +240,12 @@ function OpeningCards(props) {
                                                     })
                                         } else {
                                             if (tenCards.length == 4) {
-                                                var stade = 4;
+                                                var randomStade = Math.floor(Math.random() * 100);
+                                                if (randomStade < 50 ) {
+                                                    var stade = 3;
+                                                } else{
+                                                    var stade = 4;
+                                                }
                                             }else{
                                                 var randomStade = Math.floor(Math.random() * 100);
                                                 if (randomStade < 50 ) {
