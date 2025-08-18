@@ -125,15 +125,19 @@ function OpeningCards(props) {
                                                 .then(res => res.json())
                                                 .then(
                                                     (result) => {
-                                                        var randomStade = Math.floor(Math.random() * 100);
-                                                        if (randomStade < 50 ) {
-                                                            var stade = 1;
-                                                        } else if (randomStade > 49 && randomStade < 80) {
-                                                            var stade = 2;
-                                                        } else if (randomStade > 79 && randomStade < 95) {
-                                                            var stade = 3;
-                                                        } else if (randomStade > 94) {
+                                                        if (tenCards.length == 4) {
                                                             var stade = 4;
+                                                        }else{
+                                                            var randomStade = Math.floor(Math.random() * 100);
+                                                            if (randomStade < 50 ) {
+                                                                var stade = 1;
+                                                            } else if (randomStade > 49 && randomStade < 80) {
+                                                                var stade = 2;
+                                                            } else if (randomStade > 79 && randomStade < 95) {
+                                                                var stade = 3;
+                                                            } else if (randomStade > 94) {
+                                                                var stade = 4;
+                                                            }
                                                         }
                                                         if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
                                                             setTenCards(tenCards => [...tenCards, {
@@ -230,15 +234,19 @@ function OpeningCards(props) {
 
                                                     })
                                         } else {
-                                            var randomStade = Math.floor(Math.random() * 100);
-                                            if (randomStade < 50 ) {
-                                                var stade = 1;
-                                            } else if (randomStade > 49 && randomStade < 80) {
-                                                var stade = 2;
-                                            } else if (randomStade > 79 && randomStade < 95) {
-                                                var stade = 3;
-                                            } else if (randomStade > 94) {
+                                            if (tenCards.length == 4) {
                                                 var stade = 4;
+                                            }else{
+                                                var randomStade = Math.floor(Math.random() * 100);
+                                                if (randomStade < 50 ) {
+                                                    var stade = 1;
+                                                } else if (randomStade > 49 && randomStade < 80) {
+                                                    var stade = 2;
+                                                } else if (randomStade > 79 && randomStade < 95) {
+                                                    var stade = 3;
+                                                } else if (randomStade > 94) {
+                                                    var stade = 4;
+                                                }
                                             }
                                             if(!gettedCards.find((uc) => uc.number == pkmNumber && uc.stade == stade)){
                                                 setTenCards(tenCards => [...tenCards, {
