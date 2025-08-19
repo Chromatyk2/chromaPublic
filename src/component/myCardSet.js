@@ -446,33 +446,49 @@ function MyCardsSet(props) {
                     </Modal>
                     <ProgressBarCard badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length} myCards={myCards} myCardWithStade={myCardWithStade}/>
-                    <div style={{width:"100%", display:"flex", justifyContent:"center", gap:"10px", marginTop:"-50px"}}>
-                        <button style={{width: "70px",
-                            height: "70px",
-                            backgroundColor: "transparent",
-                            border: "none",
-                            backgroundSize: "contain",
-                            backgroundPosition: "center",
-                            backgroundImage: 'url("/images/stade_1.png")'}} value={1} onClick={filterEmptyCard}></button>
-                        <button style={{width: "70px",
-                            height: "70px",
-                            backgroundColor: "transparent",
-                            border: "none",
-                            backgroundSize: "contain",
-                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_2.png")'}} value={2} onClick={filterEmptyCard}></button>
-                        <button style={{width: "70px",
-                            height: "70px",
-                            backgroundColor: "transparent",
-                            border: "none",
-                            backgroundSize: "contain",
-                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_3.png")'}} value={3} onClick={filterEmptyCard}></button>
-                        <button style={{width: "70px",
-                            height: "70px",
-                            backgroundColor: "transparent",
-                            border: "none",
-                            backgroundSize: "contain",
-                            backgroundPosition: "center",backgroundImage: 'url("/images/stade_4.png")'}} value={4} onClick={filterEmptyCard}></button>
-                    </div>
+                    {myCards.length == items.length &&
+                        <div style={{
+                            width: "100%",
+                            display: "flex",
+                            justifyContent: "center",
+                            gap: "10px",
+                            marginTop: "-50px"
+                        }}>
+                            <button style={{
+                                width: "70px",
+                                height: "70px",
+                                backgroundColor: "transparent",
+                                border: "none",
+                                backgroundSize: "contain",
+                                backgroundPosition: "center",
+                                backgroundImage: 'url("/images/stade_1.png")'
+                            }} value={1} onClick={filterEmptyCard}></button>
+                            <button style={{
+                                width: "70px",
+                                height: "70px",
+                                backgroundColor: "transparent",
+                                border: "none",
+                                backgroundSize: "contain",
+                                backgroundPosition: "center", backgroundImage: 'url("/images/stade_2.png")'
+                            }} value={2} onClick={filterEmptyCard}></button>
+                            <button style={{
+                                width: "70px",
+                                height: "70px",
+                                backgroundColor: "transparent",
+                                border: "none",
+                                backgroundSize: "contain",
+                                backgroundPosition: "center", backgroundImage: 'url("/images/stade_3.png")'
+                            }} value={3} onClick={filterEmptyCard}></button>
+                            <button style={{
+                                width: "70px",
+                                height: "70px",
+                                backgroundColor: "transparent",
+                                border: "none",
+                                backgroundSize: "contain",
+                                backgroundPosition: "center", backgroundImage: 'url("/images/stade_4.png")'
+                            }} value={4} onClick={filterEmptyCard}></button>
+                        </div>
+                    }
                     <div style={{
                         color: "white",
                         display: "flex",
