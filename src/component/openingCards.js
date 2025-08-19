@@ -493,12 +493,12 @@ function OpeningCards(props) {
                                                     display: "block",
                                                     position: "absolute",
                                                     zIndex: "100",
-                                                    top: "-55px",
+                                                    top: "-37px",
                                                     width: "150px",
-                                                    right: "-52px",
+                                                    right: "10px",
                                                     margin: 0,
-                                                    filter: "drop-shadow(0px 4px 4px black)",
-                                                    transform:"rotate(25deg)"
+                                                    filter: "drop-shadow(5px 5px 2px black)",
+                                                    transform:"rotate(356deg)"
                                                 }}
                                                 src={"/images/new.png"}
                                                 onError={errorImage}
