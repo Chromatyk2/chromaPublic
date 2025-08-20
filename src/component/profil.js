@@ -303,7 +303,6 @@ function Profil(props) {
         Axios
             .get("/api/getProfil/" + pseudo)
             .then(function (response) {
-                console.log(response.data[0].sixth_pokemon.match(/\d/g).join(""))
                 setProfil(response.data);
                 Axios.get("/api/getMyTotalCards/" + pseudo)
                     .then(function (response) {
