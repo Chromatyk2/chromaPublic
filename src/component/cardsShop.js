@@ -182,13 +182,13 @@ function CardsShop(props) {
                 }else{
                     setNextFree(moment(lastDrawing).valueOf() + 3600000);
                     if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
+                        setCanOpenLive(0)
                         Axios.post('/api/removeCanOpen',
                             {
                                 pseudo:props.user,
                                 today:moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss')
                             })
                             .then(function(response){
-                                setCanOpenLive(0)
                                 button.disabled = false;
                                 setOnOpen(true);
                             })
