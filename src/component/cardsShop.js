@@ -176,6 +176,7 @@ function CardsShop(props) {
                         }
                     )
                         .then(function(response) {
+                            setOnOpen(true);
                             Axios
                                 .get("/api/getCanOpen/"+props.user)
                                 .then(function(response){
