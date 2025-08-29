@@ -337,6 +337,7 @@ function CardsShop(props) {
     function changeCarousel(e) {
         setSelectedBoosterId(e)
     }
+    console.log(canOpenLive)
     return (
         <>
             <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModal} style={customStyles.modal} contentLabel="Example Modal">
