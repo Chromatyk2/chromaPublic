@@ -210,6 +210,7 @@ function CardsShop(props) {
         setIsOpenBadge(true);
     }
     function handleState(e,f) {
+        setCanOpenLive(0)
         Axios.get("/api/getMyCardsByStade/"+props.user)
             .then(function(response) {
                 setPurcentsCards(response.data)
