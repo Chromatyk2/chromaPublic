@@ -112,7 +112,6 @@ function CardsShop(props) {
             })
             }, [])
     function checkEndCountdown() {
-        setCanOpenLive(1)
     }
     function selectGen(e) {
         setArray([])
