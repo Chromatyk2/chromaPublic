@@ -112,6 +112,7 @@ function CardsShop(props) {
             })
             }, [])
     function checkEndCountdown() {
+        setCanOpenLive(1)
     }
     function selectGen(e) {
         setArray([])
@@ -209,7 +210,22 @@ function CardsShop(props) {
         setIsOpenBadge(true);
     }
     function handleState(e,f) {
-        setCanOpenLive(0)
+        Axios.get("/api/getProfil/"+props.user)
+            .then(function(response) {
+                setPowder(response.data[0].powder)
+                const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
+                if (response.data[0].canOpen == 1) {
+                    setCanOpenLive(response.data[0].canOpen)
+                } else {
+                    setNextFree(moment(lastDrawing).valueOf() + 3600000);
+                    if (moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000) {
+                        setCanOpenLive(1)
+                    } else {
+                        setCanOpenLive(0)
+                    }
+                }
+            })
         Axios.get("/api/getMyCardsByStade/"+props.user)
             .then(function(response) {
                 setPurcentsCards(response.data)
