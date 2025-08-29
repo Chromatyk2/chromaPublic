@@ -175,7 +175,7 @@ function CardsShop(props) {
                             pseudo:props.user,
                             today:moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss')
                         }).then(function(response){
-                        setCanOpenLive(1)
+                        setCanOpenLive(0)
                         button.disabled = false;
                         setOnOpen(true);
                     })
@@ -188,7 +188,7 @@ function CardsShop(props) {
                                 today:moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss')
                             })
                             .then(function(response){
-                                setCanOpenLive(1)
+                                setCanOpenLive(0)
                                 button.disabled = false;
                                 setOnOpen(true);
                             })
