@@ -165,59 +165,36 @@ function CardsShop(props) {
         setBoosterId(id);
         setNameGuru(nameGuru);
         setBlock(block);
-        Axios
-            .get("/api/getCanOpen/"+props.user)
+        Axios.get("/api/getProfil/"+props.user)
             .then(function(response){
-                if(response.data[0].canOpen - 1 > -1 || canOpenLive == 1){
-                    return Axios.post('/api/removeCanOpen',
+                const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
+                if(response.data[0].canOpen == 1){
+                    Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
                             today:moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss')
-                        }
-                    )
-                        .then(function(response) {
-                            Axios
-                                .get("/api/getCanOpen/"+props.user)
-                                .then(function(response){
-                                    setOnOpen(true);
-                                    setCanOpenLive(0);
-                                    Axios.get("/api/getProfil/"+props.user)
-                                        .then(function(response){
-                                            button.disabled = false;
-                                            const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                                            const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                                            if(response.data[0].canOpen == 1){
-                                                setCanOpenLive(response.data[0].canOpen)
-                                            }else{
-                                                setNextFree(moment(lastDrawing).valueOf() + 3600000);
-                                                if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
-                                                    setCanOpenLive(1)
-                                                }else{
-                                                    setCanOpenLive(0)
-                                                }
-                                            }
-                                        })
-                                })
-                        })
+                        }).then(function(response){
+                        setCanOpenLive(1)
+                        button.disabled = false;
+                        setOnOpen(true);
+                    })
                 }else{
-                    Axios.get("/api/getProfil/"+props.user)
-                        .then(function(response){
-                            button.disabled = false;
-                            const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
-                            const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
-                            if(response.data[0].canOpen == 1){
-                                setCanOpenLive(response.data[0].canOpen)
+                    setNextFree(moment(lastDrawing).valueOf() + 3600000);
+                    if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
+                        Axios.post('/api/removeCanOpen',
+                            {
+                                pseudo:props.user,
+                                today:moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss')
+                            })
+                            .then(function(response){
+                                setCanOpenLive(1)
+                                button.disabled = false;
                                 setOnOpen(true);
-                            }else{
-                                setNextFree(moment(lastDrawing).valueOf() + 3600000);
-                                if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
-                                    setCanOpenLive(1)
-                                    setOnOpen(true);
-                                }else{
-                                    setCanOpenLive(0)
-                                }
-                            }
-                        })
+                            })
+                    }else{
+                        setCanOpenLive(0)
+                    }
                 }
             })
     }
