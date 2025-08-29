@@ -165,6 +165,7 @@ function CardsShop(props) {
         setBoosterId(id);
         setNameGuru(nameGuru);
         setBlock(block);
+        setCanOpenLive(0)
         Axios.get("/api/getProfil/"+props.user)
             .then(function(response){
                 const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
@@ -175,7 +176,6 @@ function CardsShop(props) {
                             pseudo:props.user,
                             today:moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss')
                         }).then(function(response){
-                        setCanOpenLive(0)
                         button.disabled = false;
                         setOnOpen(true);
                     })
