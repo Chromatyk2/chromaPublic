@@ -122,20 +122,19 @@ function CardsShop(props) {
     }
 
     function openModal(e) {
+        var button = e.currentTarget;
+        var nbBooster = e.target.getAttribute("nbBooster");
+        var nameGuru = e.target.getAttribute("nameGuru");
+        var block = e.target.getAttribute("block");
+        button.disabled = true;
+        var id = e.target.value;
+        setBoosterId(id);
+        setNameGuru(nameGuru);
+        setBlock(block);
         Axios
             .get("/api/getCardsPoint/"+props.user)
             .then(function(response){
                 if(response.data[0].cardToken - 1 > -1){
-                    setOnOpen(true);
-                    var button = e.currentTarget;
-                    var nbBooster = e.target.getAttribute("nbBooster");
-                    var nameGuru = e.target.getAttribute("nameGuru");
-                    var block = e.target.getAttribute("block");
-                    button.disabled = true;
-                    var id = e.target.value;
-                    setBoosterId(id);
-                    setNameGuru(nameGuru);
-                    setBlock(block);
                     return Axios.post('/api/removeCardsPoint',
                         {
                             user:props.user
@@ -147,6 +146,7 @@ function CardsShop(props) {
                                 .then(function(response){
                                     setPoints(response.data[0].cardToken);
                                     button.disabled = false;
+                                    setOnOpen(true);
                                 })
                         })
                 }else{
@@ -176,10 +176,10 @@ function CardsShop(props) {
                         }
                     )
                         .then(function(response) {
-                            setOnOpen(true);
                             Axios
                                 .get("/api/getCanOpen/"+props.user)
                                 .then(function(response){
+                                    setOnOpen(true);
                                     setCanOpenLive(0);
                                     Axios.get("/api/getProfil/"+props.user)
                                         .then(function(response){
@@ -200,7 +200,24 @@ function CardsShop(props) {
                                 })
                         })
                 }else{
-                    setOnOpen(true);
+                    Axios.get("/api/getProfil/"+props.user)
+                        .then(function(response){
+                            button.disabled = false;
+                            const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
+                            const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
+                            if(response.data[0].canOpen == 1){
+                                setCanOpenLive(response.data[0].canOpen)
+                                setOnOpen(true);
+                            }else{
+                                setNextFree(moment(lastDrawing).valueOf() + 3600000);
+                                if(moment(dateNow).valueOf() - moment(lastDrawing).valueOf() >= 3600000){
+                                    setCanOpenLive(1)
+                                    setOnOpen(true);
+                                }else{
+                                    setCanOpenLive(0)
+                                }
+                            }
+                        })
                 }
             })
     }
