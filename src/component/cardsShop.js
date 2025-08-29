@@ -156,20 +156,19 @@ function CardsShop(props) {
     }
 
     function freeBooster(e) {
+        var button = e.currentTarget;
+        var nbBooster = e.target.getAttribute("nbBooster");
+        var nameGuru = e.target.getAttribute("nameGuru");
+        var block = e.target.getAttribute("block");
+        button.disabled = true;
+        var id = e.target.value;
+        setBoosterId(id);
+        setNameGuru(nameGuru);
+        setBlock(block);
         Axios
             .get("/api/getCanOpen/"+props.user)
             .then(function(response){
                 if(response.data[0].canOpen - 1 > -1 || canOpenLive == 1){
-                    setOnOpen(true);
-                    var button = e.currentTarget;
-                    var nbBooster = e.target.getAttribute("nbBooster");
-                    var nameGuru = e.target.getAttribute("nameGuru");
-                    var block = e.target.getAttribute("block");
-                    button.disabled = true;
-                    var id = e.target.value;
-                    setBoosterId(id);
-                    setNameGuru(nameGuru);
-                    setBlock(block);
                     return Axios.post('/api/removeCanOpen',
                         {
                             pseudo:props.user,
