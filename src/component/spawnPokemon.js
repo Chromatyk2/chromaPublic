@@ -399,13 +399,15 @@ function SpawnPokemon(props) {
                         }
                     )
             },1000);
+            setTimeout(function (){
+                document.getElementById("contentPkm").style.animation = "none";
+            },10000);
         }
     }, [reloadFetch])
     return (
         <>
-            {isLoaded === false &&
-                <>
                     <div id={"contentPkm"} className="pokemonContent">
+                        {isLoaded === false &&
                         <div id={"pkmLeft"} className="pkmn exit left">
                             <div className={useBall+" ball"}>
                                 <span className="x">
@@ -453,10 +455,9 @@ function SpawnPokemon(props) {
                                 }
                             </div>
                         </div>
+                        }
                     </div>
                 </>
-            }
-        </>
     );
 }
 
