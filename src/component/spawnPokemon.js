@@ -25,7 +25,6 @@ function SpawnPokemon(props) {
     useEffect(() => {
         if(pseudo !== null){
             setTimeout(function (){
-                document.getElementById("contentPkm").style.display = "flex";
                 var tokenBonus = Math.floor(Math.random() * 10);
                 const queryParameters = new URLSearchParams(window.location.search)
                 if(tokenBonus == 0){
@@ -399,9 +398,6 @@ function SpawnPokemon(props) {
                         }
                     )
             },1000);
-            setTimeout(function (){
-                document.getElementById("contentPkm").style.display = "none";
-            },10000);
         }
     }, [reloadFetch])
     return (
