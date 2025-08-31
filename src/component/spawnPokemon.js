@@ -405,7 +405,7 @@ function SpawnPokemon(props) {
     }, [reloadFetch])
     return (
         <>
-                    <div id={"contentPkm"} className="pokemonContent">
+                    <div className="pokemonContent">
                         {isLoaded === false &&
                         <div id={"pkmLeft"} className="pkmn exit left">
                             <div className={useBall+" ball"}>
