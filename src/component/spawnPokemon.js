@@ -20,6 +20,7 @@ function SpawnPokemon(props) {
     const [berryToWins, setBerryToWins] = useState(null);
     window.addEventListener("", (param) => {
         setPseudo(param.detail.data);
+        setReloadFetch(reloadFetch + 1);
     });
     useEffect(() => {
         if(pseudo !== null){
