@@ -401,7 +401,7 @@ if(reloadFetch > 0){
             setGetToken(true);
             Axios.post('/api/addCardsPointTw',
                 {
-                    user:queryParameters.get("pseudo")
+                    user:param.detail.data
                 }
             )
         }
@@ -409,7 +409,7 @@ if(reloadFetch > 0){
         setBerryToWins(berryToWin);
         Axios.post('/api/addBerry',
             {
-                user:queryParameters.get("pseudo"),
+                user:param.detail.data,
                 berry:berryToWin
             })
         Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -458,7 +458,7 @@ if(reloadFetch > 0){
                                                                                 }
                                                                                 Axios.post('/api/addBadge',
                                                                                     {
-                                                                                        pseudo: queryParameters.get("pseudo"),
+                                                                                        pseudo: param.detail.data,
                                                                                         image: "rare"+rareBadgeValue,
                                                                                         stade: 0,
                                                                                         description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
@@ -467,7 +467,7 @@ if(reloadFetch > 0){
                                                                                 setGetBadge(true);
                                                                                 Axios.post('/api/addBadge',
                                                                                     {
-                                                                                        pseudo: queryParameters.get("pseudo"),
+                                                                                        pseudo: param.detail.data,
                                                                                         image: "pokemon"+result.id,
                                                                                         stade: 0,
                                                                                         description: "Badge obtenu en capturant "+name+" !"
@@ -479,21 +479,21 @@ if(reloadFetch > 0){
                                                                                     setIsLoaded(false);
                                                                                     setShiny(true);
                                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                                    Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                    Axios.post('/api/capture', {pseudo: param.detail.data, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                     Axios.post('/api/addXp',
                                                                                         {
-                                                                                            user: queryParameters.get("pseudo"),
+                                                                                            user: param.detail.data,
                                                                                             win: 999999999,
                                                                                             wins: 999999999
                                                                                         }
                                                                                     )
                                                                                         .then(function(response){
-                                                                                            Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                            Axios.get("/api/getProfil/"+param.detail.data)
                                                                                                 .then(function(response){
                                                                                                     if(response.data[0].xp >= response.data[0].level * 35){
                                                                                                         Axios.post('/api/levelUp',
                                                                                                             {
-                                                                                                                pseudo: queryParameters.get("pseudo")
+                                                                                                                pseudo: param.detail.data
                                                                                                             }
                                                                                                         )
                                                                                                     }
@@ -503,21 +503,21 @@ if(reloadFetch > 0){
                                                                                 default :
                                                                                     setIsLoaded(false);
                                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                                    Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                    Axios.post('/api/capture', {pseudo: param.detail.data, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                     Axios.post('/api/addXp',
                                                                                         {
-                                                                                            user: queryParameters.get("pseudo"),
+                                                                                            user: param.detail.data,
                                                                                             win: 150,
                                                                                             wins: 150
                                                                                         }
                                                                                     )
                                                                                         .then(function(response){
-                                                                                            Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                            Axios.get("/api/getProfil/"+param.detail.data)
                                                                                                 .then(function(response){
                                                                                                     if(response.data[0].xp >= response.data[0].level * 35){
                                                                                                         Axios.post('/api/levelUp',
                                                                                                             {
-                                                                                                                pseudo: queryParameters.get("pseudo")
+                                                                                                                pseudo: param.detail.data
                                                                                                             }
                                                                                                         )
                                                                                                     }
@@ -571,7 +571,7 @@ if(reloadFetch > 0){
                                                                                         }
                                                                                         Axios.post('/api/addBadge',
                                                                                             {
-                                                                                                pseudo: queryParameters.get("pseudo"),
+                                                                                                pseudo: param.detail.data,
                                                                                                 image: "rare"+rareBadgeValue,
                                                                                                 stade: 0,
                                                                                                 description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
@@ -580,7 +580,7 @@ if(reloadFetch > 0){
                                                                                         setGetBadge(true);
                                                                                         Axios.post('/api/addBadge',
                                                                                             {
-                                                                                                pseudo: queryParameters.get("pseudo"),
+                                                                                                pseudo: param.detail.data,
                                                                                                 image: "pokemon"+result.id,
                                                                                                 stade: 0,
                                                                                                 description: "Badge obtenu en capturant "+name+" !"
@@ -592,21 +592,21 @@ if(reloadFetch > 0){
                                                                                             setIsLoaded(false);
                                                                                             setShiny(true);
                                                                                             root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                                            Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                            Axios.post('/api/capture', {pseudo: param.detail.data, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                             Axios.post('/api/addXp',
                                                                                                 {
-                                                                                                    user: queryParameters.get("pseudo"),
+                                                                                                    user: param.detail.data,
                                                                                                     win: 999999999,
                                                                                                     wins: 999999999
                                                                                                 }
                                                                                             )
                                                                                                 .then(function(response){
-                                                                                                    Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                                    Axios.get("/api/getProfil/"+param.detail.data)
                                                                                                         .then(function(response){
                                                                                                             if(response.data[0].xp >= response.data[0].level * 35){
                                                                                                                 Axios.post('/api/levelUp',
                                                                                                                     {
-                                                                                                                        pseudo: queryParameters.get("pseudo")
+                                                                                                                        pseudo: param.detail.data
                                                                                                                     }
                                                                                                                 )
                                                                                                             }
@@ -616,21 +616,21 @@ if(reloadFetch > 0){
                                                                                         default :
                                                                                             setIsLoaded(false);
                                                                                             root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                                            Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                            Axios.post('/api/capture', {pseudo: param.detail.data, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                             Axios.post('/api/addXp',
                                                                                                 {
-                                                                                                    user: queryParameters.get("pseudo"),
+                                                                                                    user: param.detail.data,
                                                                                                     win: 300,
                                                                                                     wins: 300
                                                                                                 }
                                                                                             )
                                                                                                 .then(function(response){
-                                                                                                    Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                                    Axios.get("/api/getProfil/"+param.detail.data)
                                                                                                         .then(function(response){
                                                                                                             if(response.data[0].xp >= response.data[0].level * 35){
                                                                                                                 Axios.post('/api/levelUp',
                                                                                                                     {
-                                                                                                                        pseudo: queryParameters.get("pseudo")
+                                                                                                                        pseudo: param.detail.data
                                                                                                                     }
                                                                                                                 )
                                                                                                             }
@@ -680,7 +680,7 @@ if(reloadFetch > 0){
                                                                                 }
                                                                                 Axios.post('/api/addBadge',
                                                                                     {
-                                                                                        pseudo: queryParameters.get("pseudo"),
+                                                                                        pseudo: param.detail.data,
                                                                                         image: "rare"+rareBadgeValue,
                                                                                         stade: 0,
                                                                                         description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
@@ -689,7 +689,7 @@ if(reloadFetch > 0){
                                                                                 setGetBadge(true);
                                                                                 Axios.post('/api/addBadge',
                                                                                     {
-                                                                                        pseudo: queryParameters.get("pseudo"),
+                                                                                        pseudo: param.detail.data,
                                                                                         image: "pokemon"+result.id,
                                                                                         stade: 0,
                                                                                         description: "Badge obtenu en capturant "+name+" !"
@@ -701,21 +701,21 @@ if(reloadFetch > 0){
                                                                                     setIsLoaded(false);
                                                                                     setShiny(true);
                                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                                    Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                    Axios.post('/api/capture', {pseudo: param.detail.data, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                     Axios.post('/api/addXp',
                                                                                         {
-                                                                                            user: queryParameters.get("pseudo"),
+                                                                                            user: param.detail.data,
                                                                                             win: 999999999,
                                                                                             wins: 999999999
                                                                                         }
                                                                                     )
                                                                                         .then(function(response){
-                                                                                            Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                            Axios.get("/api/getProfil/"+param.detail.data)
                                                                                                 .then(function(response){
                                                                                                     if(response.data[0].xp >= response.data[0].level * 35){
                                                                                                         Axios.post('/api/levelUp',
                                                                                                             {
-                                                                                                                pseudo: queryParameters.get("pseudo")
+                                                                                                                pseudo: param.detail.data
                                                                                                             }
                                                                                                         )
                                                                                                     }
@@ -725,21 +725,21 @@ if(reloadFetch > 0){
                                                                                 default :
                                                                                     setIsLoaded(false);
                                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                                    Axios.post('/api/capture', {pseudo: queryParameters.get("pseudo"), pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                    Axios.post('/api/capture', {pseudo: param.detail.data, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                     Axios.post('/api/addXp',
                                                                                         {
-                                                                                            user: queryParameters.get("pseudo"),
+                                                                                            user: param.detail.data,
                                                                                             win: 50,
                                                                                             wins: 50
                                                                                         }
                                                                                     )
                                                                                         .then(function(response){
-                                                                                            Axios.get("/api/getProfil/"+queryParameters.get("pseudo"))
+                                                                                            Axios.get("/api/getProfil/"+param.detail.data)
                                                                                                 .then(function(response){
                                                                                                     if(response.data[0].xp >= response.data[0].level * 35){
                                                                                                         Axios.post('/api/levelUp',
                                                                                                             {
-                                                                                                                pseudo: queryParameters.get("pseudo")
+                                                                                                                pseudo: param.detail.data
                                                                                                             }
                                                                                                         )
                                                                                                     }
