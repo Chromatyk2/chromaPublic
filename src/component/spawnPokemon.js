@@ -6,6 +6,7 @@ import card from "../cards.png"
 import $ from 'jquery';
 function SpawnPokemon(props) {
     const [pseudo, setPseudo] = useState(null);
+    const [idUser, setIdUser] = useState(null);
     const [pokemon, setPokemon] = useState([])
     const [balls, setBalls] = useState(['poke','great','ultra','safari','premier','sport','net','dive','nest','repeat','timer','luxury','dusk','heal','quick','fast','level','lure','heavy','love','friend','moon','park','dream','beast']);
     const [useBall, setUseBall] = useState(null);
@@ -22,7 +23,8 @@ function SpawnPokemon(props) {
         var obj = JSON.parse(param.detail.data)
         console.log(obj.user)
         console.log(obj.id)
-        setPseudo(param.detail.data);
+        setPseudo(obj.user);
+        setIdUser(obj.id);
         setReloadFetch(reloadFetch + 1);
     });
     useEffect(() => {
@@ -97,7 +99,8 @@ function SpawnPokemon(props) {
                                                                                                 pseudo: pseudo,
                                                                                                 image: "rare"+rareBadgeValue,
                                                                                                 stade: 0,
-                                                                                                description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                                                                                                description: "Badge Ultra Rare N°"+rareBadgeValue+" !",
+                                                                                                idUser:idUser
                                                                                             })
                                                                                     }else if(getBadge === 16 && tokenBonus !== 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length === 0){
                                                                                         setGetBadge(true);
@@ -106,7 +109,8 @@ function SpawnPokemon(props) {
                                                                                                 pseudo: pseudo,
                                                                                                 image: "pokemon"+result.id,
                                                                                                 stade: 0,
-                                                                                                description: "Badge obtenu en capturant "+name+" !"
+                                                                                                description: "Badge obtenu en capturant "+name+" !",
+                                                                                                idUser:idUser
                                                                                             })
                                                                                     }
                                                                                     let root = document.querySelector(':root');
@@ -210,7 +214,8 @@ function SpawnPokemon(props) {
                                                                                                         pseudo: pseudo,
                                                                                                         image: "rare"+rareBadgeValue,
                                                                                                         stade: 0,
-                                                                                                        description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                                                                                                        description: "Badge Ultra Rare N°"+rareBadgeValue+" !",
+                                                                                                        idUser:idUser
                                                                                                     })
                                                                                             }else if(getBadge === 16 && tokenBonus !== 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length === 0){
                                                                                                 setGetBadge(true);
@@ -219,7 +224,8 @@ function SpawnPokemon(props) {
                                                                                                         pseudo: pseudo,
                                                                                                         image: "pokemon"+result.id,
                                                                                                         stade: 0,
-                                                                                                        description: "Badge obtenu en capturant "+name+" !"
+                                                                                                        description: "Badge obtenu en capturant "+name+" !",
+                                                                                                        idUser:idUser
                                                                                                     })
                                                                                             }
                                                                                             let root = document.querySelector(':root');
@@ -319,7 +325,8 @@ function SpawnPokemon(props) {
                                                                                                 pseudo: pseudo,
                                                                                                 image: "rare"+rareBadgeValue,
                                                                                                 stade: 0,
-                                                                                                description: "Badge Ultra Rare N°"+rareBadgeValue+" !"
+                                                                                                description: "Badge Ultra Rare N°"+rareBadgeValue+" !",
+                                                                                                idUser:idUser
                                                                                             })
                                                                                     }else if(getBadge === 16 && tokenBonus !== 0 && badgeList.filter(item => item.image == "pokemon"+result.id).length === 0){
                                                                                         setGetBadge(true);
@@ -328,7 +335,8 @@ function SpawnPokemon(props) {
                                                                                                 pseudo: pseudo,
                                                                                                 image: "pokemon"+result.id,
                                                                                                 stade: 0,
-                                                                                                description: "Badge obtenu en capturant "+name+" !"
+                                                                                                description: "Badge obtenu en capturant "+name+" !",
+                                                                                                idUser:idUser
                                                                                             })
                                                                                     }
                                                                                     let root = document.querySelector(':root');
