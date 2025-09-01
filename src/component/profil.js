@@ -958,7 +958,8 @@ function Profil(props) {
                             Axios.post('/api/addSkin',
                                 {
                                     user:pseudo,
-                                    skin:n
+                                    skin:n,
+                                    idUser:idUser
                                 }
                             )
                                 .then(function(response){
