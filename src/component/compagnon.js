@@ -27,7 +27,7 @@ function Compagnon(props) {
     const [profil,setProfil] = useState(null);
     const [load,setLoad] = useState(false);
     const pseudo = cookies.user.data[0].login;
-    const idUSer = cookies.user.data[0].id;
+    const idUser = cookies.user.data[0].id;
     const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
     const [berryToWin, setBerryToWin] = React.useState(null);
     const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
