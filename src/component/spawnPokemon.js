@@ -23,6 +23,9 @@ function SpawnPokemon(props) {
         setReloadFetch(reloadFetch + 1);
     });
     useEffect(() => {
+        setGetToken(false);
+        setShiny(false);
+        setGetBadge(false);
         if(pseudo !== null){
             setTimeout(function (){
                 var tokenBonus = Math.floor(Math.random() * 10);
