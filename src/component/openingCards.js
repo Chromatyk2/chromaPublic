@@ -169,7 +169,8 @@ function OpeningCards(props) {
                                                                 {
                                                                     user: props.user,
                                                                     win: stade*10,
-                                                                    wins: stade*10
+                                                                    wins: stade*10,
+                                                                    idUser:props.idUser
                                                                 }
                                                             )
                                                                 .then(function(response){
@@ -198,7 +199,8 @@ function OpeningCards(props) {
                                                                     {
                                                                         user: props.user,
                                                                         win: stade * 30,
-                                                                        wins: stade * 30
+                                                                        wins: stade * 30,
+                                                                        idUser:props.idUser
                                                                     }
                                                                 )
                                                             }
@@ -207,7 +209,8 @@ function OpeningCards(props) {
                                                                 {
                                                                     user: props.user,
                                                                     win: stade*10,
-                                                                    wins: stade*10
+                                                                    wins: stade*10,
+                                                                    idUser:props.idUser
                                                                 }
                                                             )
                                                                 .then(function(response){
@@ -286,7 +289,8 @@ function OpeningCards(props) {
                                                     {
                                                         user: props.user,
                                                         win: stade*10,
-                                                        wins: stade*10
+                                                        wins: stade*10,
+                                                        idUser:props.idUser
                                                     }
                                                 )
                                                     .then(function(response){
@@ -315,7 +319,8 @@ function OpeningCards(props) {
                                                         {
                                                             user: props.user,
                                                             win: stade *30,
-                                                            wins: stade *30
+                                                            wins: stade *30,
+                                                            idUser:props.idUser
                                                         }
                                                     )
                                                 }
@@ -325,7 +330,8 @@ function OpeningCards(props) {
                                                     {
                                                         user: props.user,
                                                         win: stade*10,
-                                                        wins: stade*10
+                                                        wins: stade*10,
+                                                        idUser:props.idUser
                                                     }
                                                 )
                                                     .then(function(response){
