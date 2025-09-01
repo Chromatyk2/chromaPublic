@@ -124,7 +124,8 @@ function SpawnPokemon(props) {
                                                                                                 {
                                                                                                     user: pseudo,
                                                                                                     win: 999999999,
-                                                                                                    wins: 999999999
+                                                                                                    wins: 999999999,
+                                                                                                    idUser:idUser
                                                                                                 }
                                                                                             )
                                                                                                 .then(function(response){
@@ -148,7 +149,8 @@ function SpawnPokemon(props) {
                                                                                                 {
                                                                                                     user: pseudo,
                                                                                                     win: 150,
-                                                                                                    wins: 150
+                                                                                                    wins: 150,
+                                                                                                    idUser:idUser
                                                                                                 }
                                                                                             )
                                                                                                 .then(function(response){
@@ -239,7 +241,8 @@ function SpawnPokemon(props) {
                                                                                                         {
                                                                                                             user: pseudo,
                                                                                                             win: 999999999,
-                                                                                                            wins: 999999999
+                                                                                                            wins: 999999999,
+                                                                                                            idUser:idUser
                                                                                                         }
                                                                                                     )
                                                                                                         .then(function(response){
@@ -263,7 +266,8 @@ function SpawnPokemon(props) {
                                                                                                         {
                                                                                                             user: pseudo,
                                                                                                             win: 300,
-                                                                                                            wins: 300
+                                                                                                            wins: 300,
+                                                                                                            idUser:idUser
                                                                                                         }
                                                                                                     )
                                                                                                         .then(function(response){
@@ -350,7 +354,8 @@ function SpawnPokemon(props) {
                                                                                                 {
                                                                                                     user: pseudo,
                                                                                                     win: 999999999,
-                                                                                                    wins: 999999999
+                                                                                                    wins: 999999999,
+                                                                                                    idUser:idUser
                                                                                                 }
                                                                                             )
                                                                                                 .then(function(response){
@@ -374,7 +379,8 @@ function SpawnPokemon(props) {
                                                                                                 {
                                                                                                     user: pseudo,
                                                                                                     win: 50,
-                                                                                                    wins: 50
+                                                                                                    wins: 50,
+                                                                                                    idUser:idUser
                                                                                                 }
                                                                                             )
                                                                                                 .then(function(response){
