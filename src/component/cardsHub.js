@@ -15,26 +15,27 @@ import Succes from "./Succes.js";
 import OnStream from "./onStream";
 function CardsHub(props) {
     const pseudo = props.cookies.user.data[0].login;
+    const idUser = props.cookies.user.data[0].id;
     return(
         <>
                 <div className={"allCards"}>
                     {props.page == "myCards" &&
-                        <MyCards user={pseudo}/>
+                        <MyCards idUser={idUser} user={pseudo}/>
                     }
                     {props.page == "cardsShop" &&
-                        <CardsShop user={pseudo}/>
+                        <CardsShop idUser={idUser} user={pseudo}/>
                     }
                     {props.page == "myBoosters" &&
-                        <MyBoosters user={pseudo}/>
+                        <MyBoosters idUser={idUser} user={pseudo}/>
                     }
                     {props.page == "listuserTcg" &&
-                        <ListUserTcg user={pseudo}/>
+                        <ListUserTcg idUser={idUser} user={pseudo}/>
                     }
                     {props.page == "sellCards" &&
-                        <SellCards user={pseudo}/>
+                        <SellCards idUser={idUser} user={pseudo}/>
                     }
                     {props.page == "succes" &&
-                        <Succes user={pseudo}/>
+                        <Succes idUser={idUser} user={pseudo}/>
                     }
                 </div>
         </>

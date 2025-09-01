@@ -19,6 +19,7 @@ function SpawnPokemon(props) {
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
     const [berryToWins, setBerryToWins] = useState(null);
     window.addEventListener("", (param) => {
+        console.log(param.detail.data)
         setPseudo(param.detail.data);
         setReloadFetch(reloadFetch + 1);
     });

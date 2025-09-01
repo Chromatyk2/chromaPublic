@@ -220,7 +220,8 @@ function MyCardsSet(props) {
                                     rarity: "Rare",
                                     grade: pickStade,
                                     nb: e.target.getAttribute("number"),
-                                    block: e.target.getAttribute("block")
+                                    block: e.target.getAttribute("block"),
+                                    idUser: props.idUser
                                 })
                                 .then(function(){
                                     Axios.get("/api/getProfil/"+props.user)
@@ -444,7 +445,7 @@ function MyCardsSet(props) {
                                 onClick={closeModal}>Cool !
                         </button>
                     </Modal>
-                    <ProgressBarCard badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
+                    <ProgressBarCard idUser={props.idUser} badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length} myCards={myCards} myCardWithStade={myCardWithStade}/>
                     {myCards.length == items.length &&
                         <div style={{

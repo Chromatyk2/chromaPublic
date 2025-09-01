@@ -27,6 +27,7 @@ function Compagnon(props) {
     const [profil,setProfil] = useState(null);
     const [load,setLoad] = useState(false);
     const pseudo = cookies.user.data[0].login;
+    const idUSer = cookies.user.data[0].id;
     const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
     const [berryToWin, setBerryToWin] = React.useState(null);
     const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
@@ -527,7 +528,8 @@ function Compagnon(props) {
                                                                 xp: 0,
                                                                 shiny: f,
                                                                 shine: f,
-                                                                actif: 1
+                                                                actif: 1,
+                                                                idUser: idUser
                                                             })
                                                             .then(function (response) {
                                                                 Axios.get("/api/getCompagnon/" + pseudo)

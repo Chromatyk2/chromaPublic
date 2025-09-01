@@ -267,7 +267,8 @@ function CardsShop(props) {
                                                                 image:e+"_0",
                                                                 stade:0,
                                                                 description:"100% du set "+response.data[0].fullName+" - Lvl.0",
-                                                                booster:e
+                                                                booster:e,
+                                                                idUser: props.idUser
                                                             })
                                                             .then(function(response) {
                                                                 Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
@@ -284,7 +285,8 @@ function CardsShop(props) {
                                                                     image:e+"_1",
                                                                     stade:1,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.1",
-                                                                    booster:e
+                                                                    booster:e,
+                                                                    idUser: props.idUser
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
@@ -300,7 +302,8 @@ function CardsShop(props) {
                                                                     image:e+"_2",
                                                                     stade:2,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.2",
-                                                                    booster:e
+                                                                    booster:e,
+                                                                    idUser: props.idUser
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
@@ -316,7 +319,8 @@ function CardsShop(props) {
                                                                     image:e+"_3",
                                                                     stade:3,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.3",
-                                                                    booster:e
+                                                                    booster:e,
+                                                                    idUser: props.idUser
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
@@ -332,7 +336,8 @@ function CardsShop(props) {
                                                                     image:e+"_4",
                                                                     stade:4,
                                                                     description:"100% du set "+response.data[0].fullName+" - Lvl.4",
-                                                                    booster:e
+                                                                    booster:e,
+                                                                    idUser: props.idUser
                                                                 })
                                                                 .then(function(response) {
                                                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + e)
@@ -362,7 +367,7 @@ function CardsShop(props) {
                 <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={closeModalBadge}>Cool !</button>
             </Modal>
             {onOpen === true ?
-                <OpeningBooster change={(e,f) => handleState(e,f)} idBooster={boosterId} user={props.user} boosterGuru={nameGuru} block={block}/>
+                <OpeningBooster change={(e,f) => handleState(e,f)} idBooster={boosterId} user={props.user} boosterGuru={nameGuru} block={block} idUser={props.idUser}/>
                 :
                 canOpenLive !== null &&
                 <>

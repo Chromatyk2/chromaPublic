@@ -43,6 +43,7 @@ import Lv13s from "../lv13s.png";
 import $ from "jquery";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
+    const idUser = props.cookies.user.data[0].id;
     const [profil, setProfil] = useState(null);
     const [skins, setSkins] = useState(null);
     const [badgesList, setBadgesList] = useState(null);
@@ -331,7 +332,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv1",
                                                             stade: 0,
-                                                            description: "Au moins 1 Pokemon capturé !"
+                                                            description: "Au moins 1 Pokemon capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -346,7 +348,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv2",
                                                             stade: 0,
-                                                            description: "10% du Pokédex complété !"
+                                                            description: "10% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -361,7 +364,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv3",
                                                             stade: 0,
-                                                            description: "20% du Pokédex complété !"
+                                                            description: "20% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -376,7 +380,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv4",
                                                             stade: 0,
-                                                            description: "30% du Pokédex complété !"
+                                                            description: "30% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -391,7 +396,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv5",
                                                             stade: 0,
-                                                            description: "40% du Pokédex complété !"
+                                                            description: "40% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -406,7 +412,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv6",
                                                             stade: 0,
-                                                            description: "50% du Pokédex complété !"
+                                                            description: "50% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -421,7 +428,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv7",
                                                             stade: 0,
-                                                            description: "60% du Pokédex complété !"
+                                                            description: "60% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -436,7 +444,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv8",
                                                             stade: 0,
-                                                            description: "70% du Pokédex complété !"
+                                                            description: "70% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -451,7 +460,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv9",
                                                             stade: 0,
-                                                            description: "80% du Pokédex complété !"
+                                                            description: "80% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -466,7 +476,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv10",
                                                             stade: 0,
-                                                            description: "90% du Pokédex complété !"
+                                                            description: "90% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -481,7 +492,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv11",
                                                             stade: 0,
-                                                            description: "100% du Pokédex complété !"
+                                                            description: "100% du Pokédex complété !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -496,7 +508,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv1c",
                                                             stade: 0,
-                                                            description: "Au moins 1 carte obtenue !"
+                                                            description: "Au moins 1 carte obtenue !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -511,7 +524,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv2c",
                                                             stade: 0,
-                                                            description: "10% de la Cartodex complétée !"
+                                                            description: "10% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -526,7 +540,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv3c",
                                                             stade: 0,
-                                                            description: "20% de la Cartodex complétée !"
+                                                            description: "20% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)

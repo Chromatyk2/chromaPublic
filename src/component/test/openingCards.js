@@ -45,7 +45,8 @@ function OpeningCardsTest(props) {
                         idCard:randomCommon.id,
                         booster:props.idBooster,
                         rarity:randomCommon.rarity,
-                        stade:0
+                        stade:0,
+                        idUser: props.idUser
                     })
                 setIsLoaded(true);
                 setTenCards(tenCards => [...tenCards,randomCommon]);
@@ -64,7 +65,8 @@ function OpeningCardsTest(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:props.rarities.find((uc) => uc.rarity.includes(randomFinal.rarity)).stade
+                                stade:props.rarities.find((uc) => uc.rarity.includes(randomFinal.rarity)).stade,
+                                idUser: props.idUser
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);
@@ -79,7 +81,8 @@ function OpeningCardsTest(props) {
                                 idCard:randomBonus.id,
                                 booster:props.idBooster,
                                 rarity:randomBonus.rarity,
-                                stade:props.rarities.find((uc) => uc.rarity.includes(randomBonus.rarity)).stade
+                                stade:props.rarities.find((uc) => uc.rarity.includes(randomBonus.rarity)).stade,
+                                idUser: props.idUser
                             })
                         setTenCards(tenCards => [...tenCards,randomBonus]);
                         setNbCards (nbCards + 1);
@@ -94,7 +97,8 @@ function OpeningCardsTest(props) {
                             idCard:randomUncommon.id,
                             booster:props.idBooster,
                             rarity:randomUncommon.rarity,
-                            stade:0
+                            stade:0,
+                            idUser: props.idUser
                         })
                     setIsLoaded(true);
                     setTenCards(tenCards => [...tenCards,randomUncommon]);
@@ -114,7 +118,8 @@ function OpeningCardsTest(props) {
                                 idCard:randomFinal.id,
                                 booster:props.idBooster,
                                 rarity:randomFinal.rarity,
-                                stade:props.rarities.find((uc) => uc.rarity.includes(randomFinal.rarity)).stade
+                                stade:props.rarities.find((uc) => uc.rarity.includes(randomFinal.rarity)).stade,
+                                idUser: props.idUser
                             })
                         setTenCards(tenCards => [...tenCards,randomFinal]);
                         setNbCards (nbCards + 1);

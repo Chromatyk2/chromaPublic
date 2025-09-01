@@ -67,7 +67,8 @@ function OpeningCards(props) {
                             pseudo: props.user,
                             image: "rare" + rareBadgeValue,
                             stade: 0,
-                            description: "Badge Ultra Rare N°" + rareBadgeValue + " !"
+                            description: "Badge Ultra Rare N°" + rareBadgeValue + " !",
+                            idUser: props.idUser
                         })
                 })
         }
@@ -161,7 +162,8 @@ function OpeningCards(props) {
                                                                     rarity: result.rarity,
                                                                     grade: stade,
                                                                     nb: pkmNumber,
-                                                                    block: props.block
+                                                                    block: props.block,
+                                                                    idUser: props.idUser
                                                                 })
                                                             Axios.post('/api/addXp',
                                                                 {
@@ -276,7 +278,8 @@ function OpeningCards(props) {
                                                         rarity: result.rarity,
                                                         grade: stade,
                                                         nb: pkmNumber,
-                                                        block: props.block
+                                                        block: props.block,
+                                                        idUser: props.idUser
                                                     })
 
                                                 Axios.post('/api/addXp',

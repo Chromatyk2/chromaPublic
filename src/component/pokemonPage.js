@@ -12,6 +12,7 @@ import SpawnPokemonToken from "./spawnPokemonToken";
 
 function PokemonPage(props) {
 const pseudo = props.cookies.user.data[0].login;
+const idUser = props.cookies.user.data[0].id;
 const [pokemon, setPokemon] = useState([]);
 const [name, setName] = useState([]);
 const [captures, setCaptures] = useState([]);
@@ -112,7 +113,8 @@ function changeSprite() {
                                     pseudo: pseudo,
                                     image: "pokemon"+idPkm,
                                     stade: 0,
-                                    description: "Badge obtenu en capturant "+captures[0].pkmName+" !"
+                                    description: "Badge obtenu en capturant "+captures[0].pkmName+" !",
+                                    idUser: idUser
                                 })
                                 .then(
                                     (result) => {
@@ -143,7 +145,8 @@ function changeSprite() {
                             pseudo: pseudo,
                             image: "pokemonshiny"+idPkm,
                             stade: 0,
-                            description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !"
+                            description: "Badge obtenu en obtenant 3 " + captures[0].pkmName + " shiny !",
+                            idUser: idUser
                         })
                         .then((result) => {
                             Axios
