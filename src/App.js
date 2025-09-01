@@ -31,46 +31,6 @@ function App() {
   if(typeof cookies.user === "undefined") {
     return <Login />
   }
-  useEffect(() => {
-    if(typeof cookies.user !== "undefined"){
-      Axios.post('/api/updateIdProfil',
-          {
-            user:cookies.user.data[0].login,
-            idUser:cookies.user.data[0].id
-          }
-      )
-      Axios.post('/api/updateIdBadges',
-          {
-            user:cookies.user.data[0].login,
-            idUser:cookies.user.data[0].id
-          }
-      )
-      Axios.post('/api/updateIdCaptures',
-          {
-            user:cookies.user.data[0].login,
-            idUser:cookies.user.data[0].id
-          }
-      )
-      Axios.post('/api/updateIdCards',
-          {
-            user:cookies.user.data[0].login,
-            idUser:cookies.user.data[0].id
-          }
-      )
-      Axios.post('/api/updateIdCompagnon',
-          {
-            user:cookies.user.data[0].login,
-            idUser:cookies.user.data[0].id
-          }
-      )
-      Axios.post('/api/updateIdSkin',
-          {
-            user:cookies.user.data[0].login,
-            idUser:cookies.user.data[0].id
-          }
-      )
-    }
-  }, [cookies]);
   return(
       <>
         {typeof cookies.user !== "undefined" &&

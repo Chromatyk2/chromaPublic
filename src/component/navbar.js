@@ -3,9 +3,51 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from "react-router-dom";
+import Axios from "axios";
 
 function NavBar(props) {
   const [expanded, setExpanded] = useState(false);
+
+    useEffect(() => {
+        if(typeof props.cookies.user !== "undefined"){
+            Axios.post('/api/updateIdProfil',
+                {
+                    user:props.cookies.user.data[0].login,
+                    idUser:props.cookies.user.data[0].id
+                }
+            )
+            Axios.post('/api/updateIdBadges',
+                {
+                    user:props.cookies.user.data[0].login,
+                    idUser:props.cookies.user.data[0].id
+                }
+            )
+            Axios.post('/api/updateIdCaptures',
+                {
+                    user:props.cookies.user.data[0].login,
+                    idUser:props.cookies.user.data[0].id
+                }
+            )
+            Axios.post('/api/updateIdCards',
+                {
+                    user:props.cookies.user.data[0].login,
+                    idUser:props.cookies.user.data[0].id
+                }
+            )
+            Axios.post('/api/updateIdCompagnon',
+                {
+                    user:props.cookies.user.data[0].login,
+                    idUser:props.cookies.user.data[0].id
+                }
+            )
+            Axios.post('/api/updateIdSkin',
+                {
+                    user:props.cookies.user.data[0].login,
+                    idUser:props.cookies.user.data[0].id
+                }
+            )
+        }
+    }, [props.cookies]);
   return (
 
       <Navbar expanded={expanded} bg="light" expand="lg">
