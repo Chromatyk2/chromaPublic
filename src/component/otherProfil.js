@@ -144,7 +144,7 @@ function Profil(props) {
                                         .get("/api/getByUser/"+pseudo)
                                         .then(function(response){
                                             setList(response.data);
-                                            setPourcent(Math.round((response.data.length / 1025) * 100));
+                                            setPourcent(Math.round((response.data.length / 1527) * 100));
                                             setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
                                         })
                                 })
@@ -250,7 +250,7 @@ function Profil(props) {
                                             .get("/api/getByUser/"+pseudo)
                                             .then(function(response){
                                                 setList(response.data);
-                                                setPourcent(Math.round((response.data.length / 1025) * 100));
+                                                setPourcent(Math.round((response.data.length / 1527) * 100));
                                                 setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
                                                 Axios
                                                     .get("/api/getBadgesByUser/"+pseudo)
@@ -590,7 +590,7 @@ function Profil(props) {
                                     width: "100%"
                                 }}>
                                     <Tooltip style={{zIndex: "1"}} anchorSelect=".anchorTooltip"/>
-                                    {pourcentCard > 0 &&
+                                    {pourcent > 0 &&
                                         <img style={{width: "110px"}} className="anchorTooltip"
                                              data-tooltip-content={pourcent + "% du Pokedex Complété"}
                                              src={pourcent == 100 ? Lv11 : pourcent >= 90 ? Lv10 : pourcent >= 80 ? Lv9 : pourcent >= 70 ? Lv8 : pourcent >= 60 ? Lv7 : pourcent >= 50 ? Lv6 : pourcent >= 40 ? Lv5 : pourcent >= 30 ? Lv4 : pourcent >= 20 ? Lv3 : pourcent >= 10 ? Lv2 : Lv1}/>

@@ -149,7 +149,7 @@ function Profil(props) {
                                                     .get("/api/getByUser/"+pseudo)
                                                     .then(function(response){
                                                         setList(response.data);
-                                                        setPourcent(Math.round((response.data.length / (1025 + 277)) * 100));
+                                                        setPourcent(Math.round((response.data.length / (1527)) * 100));
                                                     })
                                             })
                                     },1500);
@@ -315,8 +315,8 @@ function Profil(props) {
                                     .get("/api/getByUser/" + pseudo)
                                     .then(function (response) {
                                         setList(response.data);
-                                        setPourcent(Math.round((response.data.length / (1025 + 277)) * 100));
-                                        const pourcent = Math.round((response.data.length / (1025 + 277)) * 100);
+                                        setPourcent(Math.round((response.data.length / (1527)) * 100));
+                                        const pourcent = Math.round((response.data.length / (1527)) * 100);
                                         const pourcentShiny = response.data.filter(item => item.shiny == 1).length;
                                         setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
                                         Axios
