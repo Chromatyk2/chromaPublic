@@ -51,8 +51,7 @@ function SpawnPokemonToken(props) {
                 const queryParameters = new URLSearchParams(window.location.search)
                 const isShiny = Math.floor((Math.random() * 100) + 1);
                 const tmpName = result.names.find((element) => element.language.name == "fr").name;
-                // const getBadge = Math.floor((Math.random() * 30) + 1);
-                const getBadge = 16;
+                const getBadge = Math.floor((Math.random() * 30) + 1);
                 const getRareBadge = Math.floor((Math.random() * 4096) + 1);
                 setGetPkmId(result.id);
                 const id = result.id;
