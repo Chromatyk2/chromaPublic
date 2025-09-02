@@ -673,20 +673,23 @@ function Compagnon(props) {
                 Axios.post('/api/addPkmPointRoulette',
                     {
                         user:pseudo,
-                        nbToken:g
+                        nbToken:g,
+                        idUser: idUser
                     })
                     .then(function(response) {
                         Axios.post('/api/addCardsPointRoulette',
                             {
                                 user:pseudo,
-                                nbToken:f
+                                nbToken:f,
+                                idUser: idUser
                             })
                             .then(function(response) {
                                 Axios.post('/api/addPowder',
                                     {
                                         user:pseudo,
                                         win:h,
-                                        wins:h
+                                        wins:h,
+                                        idUser: idUser
                                     })
                             })
                             .then(function(response) {

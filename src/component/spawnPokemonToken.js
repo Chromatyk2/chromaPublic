@@ -27,7 +27,8 @@ function SpawnPokemonToken(props) {
             setGetToken(true);
             Axios.post('/api/addCardsPointTw',
                 {
-                    user:pseudo
+                    user:pseudo,
+                    idUser: props.idUser
                 }
             )
         }
