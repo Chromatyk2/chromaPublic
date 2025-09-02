@@ -66,6 +66,7 @@ function SpawnPokemon(props) {
                                         const getRareBadge = Math.floor((Math.random() * 4096) + 1);
                                         const tmpName = result.names.find((element) => element.language.name == "fr").name;
                                         setGetPkmId(result.id);
+                                        const id = result.id;
                                         switch (result.is_legendary){
                                             case true:
                                                 switch (isLegendary){
@@ -108,7 +109,7 @@ function SpawnPokemon(props) {
                                                                                         Axios.post('/api/addBadge',
                                                                                             {
                                                                                                 pseudo: pseudo,
-                                                                                                image: "pokemon"+result.id,
+                                                                                                image: "pokemon"+id,
                                                                                                 stade: 0,
                                                                                                 description: "Badge obtenu en capturant "+name+" !",
                                                                                                 idUser:idUser
@@ -225,7 +226,7 @@ function SpawnPokemon(props) {
                                                                                                 Axios.post('/api/addBadge',
                                                                                                     {
                                                                                                         pseudo: pseudo,
-                                                                                                        image: "pokemon"+result.id,
+                                                                                                        image: "pokemon"+id,
                                                                                                         stade: 0,
                                                                                                         description: "Badge obtenu en capturant "+name+" !",
                                                                                                         idUser:idUser
@@ -338,7 +339,7 @@ function SpawnPokemon(props) {
                                                                                         Axios.post('/api/addBadge',
                                                                                             {
                                                                                                 pseudo: pseudo,
-                                                                                                image: "pokemon"+result.id,
+                                                                                                image: "pokemon"+id,
                                                                                                 stade: 0,
                                                                                                 description: "Badge obtenu en capturant "+name+" !",
                                                                                                 idUser:idUser
