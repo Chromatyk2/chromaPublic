@@ -85,7 +85,7 @@ function changeSprite() {
                     Axios.delete('/api/deleteShiny/'+id+"/"+pseudo)
                         .then(
                             (result) => {
-                                Axios.post('/api/capture', {pseudo: pseudo, pkmName: captures[0].pkmName, pkmImage:pokemon.sprites.front_shiny,pkmId:id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                Axios.post('/api/capture', {idUser: idUser, pseudo: pseudo, pkmName: captures[0].pkmName, pkmImage:pokemon.sprites.front_shiny,pkmId:id, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                     .then(
                                         (result) => {
                                             Axios
