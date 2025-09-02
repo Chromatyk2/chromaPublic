@@ -50,7 +50,8 @@ function OpeningCards(props) {
             setGetToken(true);
             Axios.post('/api/addPkmToken',
                 {
-                    user:props.user
+                    user:props.user,
+                    idUser: props.idUser
                 }
             )
         }else if(getRareBadge === 16){
