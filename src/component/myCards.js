@@ -62,7 +62,7 @@ function MyCards(props) {
             {totalCard &&
                 !page &&
                 <>
-                    <ProgressBarCard getNb={totalCardUser} item={totalCard} global={true}/>
+                    <ProgressBarCard idUser={props.idUser} getNb={totalCardUser} item={totalCard} global={true}/>
                     <div style={{display: "block", margin: "auto", color: "white"}}>
                         <img style={{width: "45px", marginBottom: "10px"}} src={"/images/powder.png"}/>
                         <p>Poussières TCG : {powder}</p>
@@ -76,7 +76,7 @@ function MyCards(props) {
                         <button style={{color: "white", width: "100%", margin: "0", padding: "0", marginTop: "30px"}}
                                 onClick={backPage} className="backButton">Retour
                         </button>
-                        <MyCardsSet badges={badges} powder={powder} user={props.user} card={nbCard} idBooster={page}
+                        <MyCardsSet idUser={props.idUser} badges={badges} powder={powder} user={props.user} card={nbCard} idBooster={page}
                                     guruName={guruName}/>
                     </>
                     :
@@ -84,7 +84,7 @@ function MyCards(props) {
                     totalCard &&
                     nbCards.sort((a, b) => b.nbCard - a.nbCard).map((val, key) => {
                         return (
-                            <MyUniqueBooster badges={badges} user={props.user} page={val.booster} change={displayPage} nbCard={val}
+                            <MyUniqueBooster idUser={props.idUser} badges={badges} user={props.user} page={val.booster} change={displayPage} nbCard={val}
                                              boosterList={boosterList}
                                              maxBooster={typeof boosterList.find((uc) => uc.name == val.booster) === "undefined" ? boosterList.find((uc) => uc.nameGuru == "sm3.5" ? "sm35" : uc.nameGuru == val.booster).totalCards
                                                  : boosterList.find((uc) => uc.name == val.booster).totalCards}/>
