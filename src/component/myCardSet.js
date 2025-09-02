@@ -40,6 +40,7 @@ function MyCardsSet(props) {
     const [lang, setLang] = React.useState("fr");
     const [powder, setPowder] = React.useState(props.powder);
     const [refresh, setRefresh] = React.useState(0);
+    const [isFiltered, setIsFiltered] = React.useState(false);
 
     const customStyles = {
         buttonMyCard: {
@@ -145,10 +146,11 @@ function MyCardsSet(props) {
     }
 
     function closeModal() {
-
-        setTimeout(function (){
-            window.scrollTo(0, 0)
-        },10);
+        if(isFiltered === true){
+            setTimeout(function (){
+                window.scrollTo(0, 0)
+            },10);
+        }
         setIsOpen(false);
         setRefresh(refresh+1)
     }
@@ -329,6 +331,7 @@ function MyCardsSet(props) {
         setFilterRarity(event.target.value);
     };
     function filterEmptyCard(e) {
+        setIsFiltered(true)
         setStadeToFilter(e.target.value);
         setMyCardsId([]);
         items.sort((a, b) => a.localId - b.localId).map((val, key) => {
