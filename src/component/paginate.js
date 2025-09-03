@@ -100,7 +100,7 @@ function Pagination(props) {
         }
         break;
       case "3" :
-        setIsSorted(true);
+        setIsSorted(false);
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
@@ -112,7 +112,7 @@ function Pagination(props) {
         }
         break;
       case "4" :
-        setIsSorted(false);
+        setIsSorted(true);
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
