@@ -556,7 +556,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv4c",
                                                             stade: 0,
-                                                            description: "30% de la Cartodex complétée !"
+                                                            description: "30% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -571,7 +572,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv5c",
                                                             stade: 0,
-                                                            description: "40% de la Cartodex complétée !"
+                                                            description: "40% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -586,7 +588,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv6c",
                                                             stade: 0,
-                                                            description: "50% de la Cartodex complétée !"
+                                                            description: "50% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -601,7 +604,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv7c",
                                                             stade: 0,
-                                                            description: "60% de la Cartodex complétée !"
+                                                            description: "60% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -616,7 +620,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv8c",
                                                             stade: 0,
-                                                            description: "70% de la Cartodex complétée !"
+                                                            description: "70% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -631,7 +636,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv9c",
                                                             stade: 0,
-                                                            description: "80% de la Cartodex complétée !"
+                                                            description: "80% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -646,7 +652,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv10c",
                                                             stade: 0,
-                                                            description: "90% de la Cartodex complétée !"
+                                                            description: "90% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -661,7 +668,8 @@ function Profil(props) {
                                                             pseudo: pseudo,
                                                             image: "lv11c",
                                                             stade: 0,
-                                                            description: "100% de la Cartodex complétée !"
+                                                            description: "100% de la Cartodex complétée !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function (response) {
                                                             Axios.get("/api/getBadgesByUser/" + pseudo)
@@ -676,7 +684,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv1s",
                                                             stade:0,
-                                                            description:"Au moins 1 Shiny capturé !"
+                                                            description:"Au moins 1 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -691,7 +700,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv2s",
                                                             stade:0,
-                                                            description:"Au moins 10 Shiny capturé !"
+                                                            description:"Au moins 10 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -706,7 +716,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv3s",
                                                             stade:0,
-                                                            description:"Au moins 50 Shiny capturé !"
+                                                            description:"Au moins 50 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -721,7 +732,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv4s",
                                                             stade:0,
-                                                            description:"Au moins 100 Shiny capturé !"
+                                                            description:"Au moins 100 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -736,7 +748,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv5s",
                                                             stade:0,
-                                                            description:"Au moins 150 Shiny capturé !"
+                                                            description:"Au moins 150 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -751,7 +764,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv6s",
                                                             stade:0,
-                                                            description:"Au moins 200 Shiny capturé !"
+                                                            description:"Au moins 200 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -766,7 +780,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv7s",
                                                             stade:0,
-                                                            description:"Au moins 250 Shiny capturé !"
+                                                            description:"Au moins 250 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -781,7 +796,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv8s",
                                                             stade:0,
-                                                            description:"Au moins 300 Shiny capturé !"
+                                                            description:"Au moins 300 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -796,7 +812,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv9s",
                                                             stade:0,
-                                                            description:"Au moins 350 Shiny capturé !"
+                                                            description:"Au moins 350 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -811,7 +828,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv10s",
                                                             stade:0,
-                                                            description:"Au moins 400 Shiny capturé !"
+                                                            description:"Au moins 400 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -826,7 +844,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv11s",
                                                             stade:0,
-                                                            description:"Au moins 500 Shiny capturé !"
+                                                            description:"Au moins 500 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -841,7 +860,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv12s",
                                                             stade:0,
-                                                            description:"Au moins 750 Shiny capturé !"
+                                                            description:"Au moins 750 Shiny capturé !",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
@@ -856,7 +876,8 @@ function Profil(props) {
                                                             pseudo:pseudo,
                                                             image:"lv13s",
                                                             stade:0,
-                                                            description:"Shiny Living Dex Completé 1 fois !!"
+                                                            description:"Shiny Living Dex Completé 1 fois !!",
+                                                            idUser: idUser
                                                         })
                                                         .then(function(response) {
                                                             Axios.get("/api/getBadgesByUser/"+pseudo)
