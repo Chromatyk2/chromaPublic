@@ -116,11 +116,11 @@ function Pagination(props) {
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
-          setCurrentItems(filtredPokemon.sort((a, b) => a.dateCapture - b.dateCapture).slice(start, endOffset))
-          setFiltredPokemon(filtredPokemon.sort((a, b) => a.dateCapture - b.dateCapture))
+          setCurrentItems(filtredPokemon.sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)))
         }else{
-          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.dateCapture - b.dateCapture).slice(start, endOffset))
-          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.dateCapture - b.dateCapture))
+          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)))
         }
         break;
       default :
