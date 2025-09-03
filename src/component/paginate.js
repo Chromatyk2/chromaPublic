@@ -100,7 +100,7 @@ function Pagination(props) {
         }
         break;
       case "3" :
-        setIsSorted(false);
+        setIsSorted(true);
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
@@ -116,11 +116,11 @@ function Pagination(props) {
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
-          setCurrentItems(filtredPokemon.sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)).slice(start, endOffset))
-          setFiltredPokemon(filtredPokemon.sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)))
+          setCurrentItems(filtredPokemon.sort((a, b) => new Date(b.dateCapture) - new Date(a.dateCapture)).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.sort((a, b) => new Date(b.dateCapture) - new Date(a.dateCapture)))
         }else{
-          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)).slice(start, endOffset))
-          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(a.dateCapture) - new Date(b.dateCapture)))
+          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(b.dateCapture) - new Date(a.dateCapture)).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(b.dateCapture) - new Date(a.dateCapture)))
         }
         break;
       default :
