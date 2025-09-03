@@ -111,6 +111,18 @@ function Pagination(props) {
           setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId))
         }
         break;
+      case "4" :
+        setIsSorted(false);
+        var start = 0;
+        var endOffset = start + props.itemsPerPage;
+        if(isShiny === false){
+          setCurrentItems(filtredPokemon.sort((a, b) => a.dateCapture - b.dateCapture).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.sort((a, b) => a.dateCapture - b.dateCapture))
+        }else{
+          setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.dateCapture - b.dateCapture).slice(start, endOffset))
+          setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.dateCapture - b.dateCapture))
+        }
+        break;
       default :
         setFiltredPokemon(props.items);
     }
@@ -134,12 +146,15 @@ function Pagination(props) {
                   <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
               }
               {isSorted === false ?
-                  <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
+                  <>
+                    <button className="filterButton" onClick={handlePokemon} value="2">Captures décroissantes</button>
+                    <button className="filterButton" onClick={handlePokemon} value="4">Les plus récentes</button>
+                  </>
                   :
                   <button className="filterButton" onClick={handlePokemon} value="3">Remettre dans l'ordre</button>
               }
             </div>
-            <Items pkmList={props.pkmList}  compagnonList={props.compagnonList} currentItems={currentItems}/>
+            <Items pkmList={props.pkmList} compagnonList={props.compagnonList} currentItems={currentItems}/>
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."
