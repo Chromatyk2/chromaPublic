@@ -37,7 +37,7 @@ function OpeningCards(props) {
             setLang("en")
         }
         window.scrollTo(0, 0)
-        var berryToWin = Math.floor(Math.random() * 50 + 1);
+        var berryToWin = Math.floor(Math.random() * (50 - 10 + 1) + 10);
         setBerryToWins(berryToWin);
         Axios.post('/api/addBerry',
             {
