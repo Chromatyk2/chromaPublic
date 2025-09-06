@@ -423,8 +423,9 @@ function CardsShop(props) {
         <>
             <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">
-
-                <div style={{flexFlow:"column"}} className="pokemonContentToken">
+                <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitation tu as fini le set à
+                    500 % !</p>
+                <div style={{flexFlow: "column"}} className="pokemonContentToken">
                     <div style={{display: "flex", justifyContent: "center", marginTop: "150px"}}>
                         <div>
                             <p style={{
