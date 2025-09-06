@@ -367,7 +367,7 @@ function CardsShop(props) {
                 <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                 <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+boosterToDisplay+"_"+badgeToWinStade+".png"}/>
                 <p style={{textAlign:"center", fontStyle:"20px"}}>Set rempli à 100% {badgeToWinStade != 0 && "avec les cartes de rareté "+ badgeToWinStade} !!</p>
-                <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={(boosterToDisplay) => closeModalBadge(boosterToDisplay)}>Cool !</button>
+                <button style={{display:"block",margin:"auto"}} className={"filterButton"}  onClick={() => closeModalBadge(boosterToDisplay)}>Cool !</button>
             </Modal>
             {onOpen === true ?
                 <OpeningBooster change={(e,f) => handleState(e,f)} idBooster={boosterId} user={props.user} boosterGuru={nameGuru} block={block} idUser={props.idUser}/>
