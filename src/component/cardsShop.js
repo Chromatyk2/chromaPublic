@@ -406,7 +406,7 @@ function CardsShop(props) {
                             })
                             .then(function(response) {
                                 Axios
-                                    .get("/api/getProfil/"+props.user)
+                                    .get("/api/getCardsPoint/"+props.user)
                                     .then(function(response) {
                                         setPoints(response.data[0].cardToken);
                                     })
