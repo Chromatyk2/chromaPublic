@@ -364,10 +364,10 @@ function CardsShop(props) {
         Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
             .then(function(response) {
                 if(typeof badges.find((item) => item.stade === 1) !== "undefined" && typeof badges.find((item) => item.stade === 2) !== "undefined" && typeof badges.find((item) => item.stade === 3) !== "undefined" && typeof badges.find((item) => item.stade === 4) !== "undefined"){
-                    var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                    var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                    var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                    var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
+                    var berryToWin = 500;
+                    var tokenCardToWin = 5;
+                    var tokenPkmToWin = 5;
+                    var powderToWin = 1500;
                     openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                 }
             })
