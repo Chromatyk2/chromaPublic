@@ -40,6 +40,11 @@ function CardsShop(props) {
     const [badgeToWinStade, setBadgeToWinStade] = React.useState(null);
     const [boosterToDisplay, setBoosterToDisplay] = React.useState(null);
     const [modalIsOpenBadge, setIsOpenBadge] = React.useState(false);
+    const [berryToWin, setBerryToWin] = React.useState(null);
+    const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
+    const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
+    const [powderToWin, setPowderToWin] = React.useState(null);
+    const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
     const customStyles = {
         content: {
             position:'initial',
@@ -359,12 +364,114 @@ function CardsShop(props) {
         Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
             .then(function(response) {
                 if(typeof badges.find((item) => item.stade === 1) !== "undefined" && typeof badges.find((item) => item.stade === 2) !== "undefined" && typeof badges.find((item) => item.stade === 3) !== "undefined" && typeof badges.find((item) => item.stade === 4) !== "undefined"){
-                    console.log("500% !!!")
+                    var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                    var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                    var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                    var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
+                    openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                 }
             })
+    }function closeModalBerry() {
+        setIsOpenSkin(false);
+    }
+
+    function openModalBerry(e,f,g,h) {
+        Axios.post('/api/addBerry',
+            {
+                user:pseudo,
+                berry:e
+            })
+            .then(function(response) {
+                Axios.post('/api/addPkmPointRoulette',
+                    {
+                        user:pseudo,
+                        nbToken:g,
+                        idUser: idUser
+                    })
+                    .then(function(response) {
+                        Axios.post('/api/addCardsPointRoulette',
+                            {
+                                user:pseudo,
+                                nbToken:f,
+                                idUser: idUser
+                            })
+                            .then(function(response) {
+                                Axios.post('/api/addPowder',
+                                    {
+                                        user:pseudo,
+                                        win:h,
+                                        wins:h,
+                                        idUser: idUser
+                                    })
+                            })
+                            .then(function(response) {
+                                Axios
+                                    .get("/api/getProfil/"+pseudo)
+                                    .then(function(response) {
+                                        console.log(response.data[0])
+                                        setProfil(response.data[0])
+                                        setTimeout(function() {
+                                            setLoad(false)}.bind(this), 500
+                                        )
+                                    })
+                            })
+                    })
+            })
+        setBerryToWin(e)
+        setTokenCardToWin(f)
+        setTokenPkmToWin(g)
+        setPowderToWin(h)
+        setIsOpenSkin(true);
     }
     return (
         <>
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
+                   onRequestClose={closeModalBerry} contentLabel="Example Modal">
+
+                <div style={{flexFlow:"column"}} className="pokemonContentToken">
+                    <div style={{display: "flex", justifyContent: "center", marginTop: "150px"}}>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + tokenCardToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/cards.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + tokenPkmToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/token.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + powderToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/images/powder.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + berryToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/images/berry.png"}/>
+                        </div>
+                    </div>
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton filterButtonDelayed"}
+                            onClick={closeModalBerry}>Cool !
+                    </button>
+                </div>
+            </Modal>
             <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenBadge} onRequestClose={closeModal} style={customStyles.modal} contentLabel="Example Modal">
                 <p style={{textAlign:"center", fontSize:"40px", marginTop:"-100px"}}>Félicitations !!! </p>
                 <img style={{marginBottom:"30px"}} className={"badgeToWin"} src={"/Ribbon/"+boosterToDisplay+"_"+badgeToWinStade+".png"}/>
