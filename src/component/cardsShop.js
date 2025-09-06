@@ -371,7 +371,8 @@ function CardsShop(props) {
                     openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                 }
             })
-    }function closeModalBerry() {
+    }
+    function closeModalBerry() {
         setIsOpenSkin(false);
     }
 

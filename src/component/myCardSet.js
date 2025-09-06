@@ -41,6 +41,11 @@ function MyCardsSet(props) {
     const [powder, setPowder] = React.useState(props.powder);
     const [refresh, setRefresh] = React.useState(0);
     const [isFiltered, setIsFiltered] = React.useState(false);
+    const [berryToWin, setBerryToWin] = React.useState(null);
+    const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
+    const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
+    const [powderToWin, setPowderToWin] = React.useState(null);
+    const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
 
     const customStyles = {
         buttonMyCard: {
@@ -153,6 +158,62 @@ function MyCardsSet(props) {
         }
         setIsOpen(false);
         setRefresh(refresh+1)
+        Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
+            .then(function(response) {
+                if(typeof badges.find((item) => item.stade === 1) !== "undefined" && typeof badges.find((item) => item.stade === 2) !== "undefined" && typeof badges.find((item) => item.stade === 3) !== "undefined" && typeof badges.find((item) => item.stade === 4) !== "undefined"){
+                    var berryToWin = 500;
+                    var tokenCardToWin = 5;
+                    var tokenPkmToWin = 5;
+                    var powderToWin = 1500;
+                    openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                }
+            })
+    }
+
+
+    function openModalBerry(e,f,g,h) {
+        Axios.post('/api/addBerry',
+            {
+                user:props.user,
+                berry:e
+            })
+            .then(function(response) {
+                Axios.post('/api/addPkmPointRoulette',
+                    {
+                        user:props.user,
+                        nbToken:g,
+                        idUser: props.idUser
+                    })
+                    .then(function(response) {
+                        Axios.post('/api/addCardsPointRoulette',
+                            {
+                                user:props.user,
+                                nbToken:f,
+                                idUser: props.idUser
+                            })
+                            .then(function(response) {
+                                Axios.post('/api/addPowder',
+                                    {
+                                        user:props.user,
+                                        win:h,
+                                        wins:h,
+                                        idUser: props.idUser
+                                    })
+                            })
+                            .then(function(response) {
+                                Axios
+                                    .get("/api/getCardsPoint/"+props.user)
+                                    .then(function(response) {
+                                        setPoints(response.data[0].cardToken);
+                                    })
+                            })
+                    })
+            })
+        setBerryToWin(e)
+        setTokenCardToWin(f)
+        setTokenPkmToWin(g)
+        setPowderToWin(h)
+        setIsOpenSkin(true);
     }
     function handleState() {
         setIsOpen(false);
@@ -342,6 +403,54 @@ function MyCardsSet(props) {
     }
     return (
         <>
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
+                   onRequestClose={closeModalBerry} contentLabel="Example Modal">
+                <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitation tu as fini le set à
+                    500 % !</p>
+                <div style={{flexFlow: "column",width:"100%"}} className="pokemonContentToken">
+                    <div style={{display: "flex", justifyContent: "center", marginTop: "150px", gap:"10px"}}>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + tokenCardToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/cards.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + tokenPkmToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/token.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + powderToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/images/powder.png"}/>
+                        </div>
+                        <div>
+                            <p style={{
+                                textAlign: "center",
+                                fontSize: "30px",
+                                marginTop: "-100px"
+                            }}>{"X " + berryToWin}</p>
+                            <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                 src={"/images/berry.png"}/>
+                        </div>
+                    </div>
+                    <button style={{display: "block", margin: "auto"}} className={"filterButton filterButtonDelayed"}
+                            onClick={closeModalBerry}>Cool !
+                    </button>
+                </div>
+            </Modal>
             {isLoaded === false ?
                 <>
                     <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
@@ -445,7 +554,7 @@ function MyCardsSet(props) {
                                 </button>
                         }
                         <button style={{display: "block", margin: "auto"}} className={"filterButton"}
-                                onClick={closeModal}>Cool !
+                                onClick={() => closeModal(props.idBooster)}>Cool !
                         </button>
                     </Modal>
                     <ProgressBarCard idUser={props.idUser} badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
