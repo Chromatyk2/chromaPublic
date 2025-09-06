@@ -378,35 +378,35 @@ function CardsShop(props) {
     function openModalBerry(e,f,g,h) {
         Axios.post('/api/addBerry',
             {
-                user:pseudo,
+                user:props.user,
                 berry:e
             })
             .then(function(response) {
                 Axios.post('/api/addPkmPointRoulette',
                     {
-                        user:pseudo,
+                        user:props.user,
                         nbToken:g,
-                        idUser: idUser
+                        idUser: props.idUser
                     })
                     .then(function(response) {
                         Axios.post('/api/addCardsPointRoulette',
                             {
-                                user:pseudo,
+                                user:props.user,
                                 nbToken:f,
-                                idUser: idUser
+                                idUser: props.idUser
                             })
                             .then(function(response) {
                                 Axios.post('/api/addPowder',
                                     {
-                                        user:pseudo,
+                                        user:props.user,
                                         win:h,
                                         wins:h,
-                                        idUser: idUser
+                                        idUser: props.idUser
                                     })
                             })
                             .then(function(response) {
                                 Axios
-                                    .get("/api/getProfil/"+pseudo)
+                                    .get("/api/getProfil/"+props.user)
                                     .then(function(response) {
                                         console.log(response.data[0])
                                         setProfil(response.data[0])
