@@ -635,7 +635,7 @@ function ProgressBarCard(props) {
             <>
                 <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
                        onRequestClose={closeModalBerry} contentLabel="Example Modal">
-                    <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitation tu as fini le set à
+                    <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitations tu as fini le set à
                         500 % !</p>
                     <div style={{flexFlow: "column",width:"100%"}} className="pokemonContentToken">
                         <div style={{display: "flex", justifyContent: "center", marginTop: "150px", gap:"10px"}}>
