@@ -158,9 +158,9 @@ function MyCardsSet(props) {
         }
         setIsOpen(false);
         setRefresh(refresh+1)
-        Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
+        Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+props.idBooster)
             .then(function(response) {
-                if(typeof badges.find((item) => item.stade === 1) !== "undefined" && typeof badges.find((item) => item.stade === 2) !== "undefined" && typeof badges.find((item) => item.stade === 3) !== "undefined" && typeof badges.find((item) => item.stade === 4) !== "undefined"){
+                if(typeof response.data.find((item) => item.stade === 1) !== "undefined" && typeof response.data.find((item) => item.stade === 2) !== "undefined" && typeof response.data.find((item) => item.stade === 3) !== "undefined" && typeof response.data.find((item) => item.stade === 4) !== "undefined"){
                     var berryToWin = 500;
                     var tokenCardToWin = 5;
                     var tokenPkmToWin = 5;
@@ -399,6 +399,9 @@ function MyCardsSet(props) {
                 setMyCardsId(myCardsId => [...myCardsId,val.id]);
             }
         })
+    }
+    function closeModalBerry() {
+        setIsOpenSkin(false);
     }
     return (
         <>
