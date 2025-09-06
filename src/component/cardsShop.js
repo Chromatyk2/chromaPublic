@@ -358,7 +358,7 @@ function CardsShop(props) {
         setIsOpenBadge(false);
         Axios.get("/api/getBadgesByUserAndSet/"+props.user+"/"+e)
             .then(function(response) {
-                if(typeof badges.find((item) => item.stade === 1) === "undefined" && typeof badges.find((item) => item.stade === 2) === "undefined" && typeof badges.find((item) => item.stade === 3) === "undefined" && typeof badges.find((item) => item.stade === 4) === "undefined"){
+                if(typeof badges.find((item) => item.stade === 1) !== "undefined" && typeof badges.find((item) => item.stade === 2) !== "undefined" && typeof badges.find((item) => item.stade === 3) !== "undefined" && typeof badges.find((item) => item.stade === 4) !== "undefined"){
                     console.log("500% !!!")
                 }
             })
