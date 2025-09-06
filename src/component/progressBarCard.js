@@ -18,6 +18,11 @@ function ProgressBarCard(props) {
     const [customStyles, setCustomStyles] = useState(null);
     const [totalCards, setTotalCards] = useState(null);
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [berryToWin, setBerryToWin] = React.useState(null);
+    const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
+    const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
+    const [powderToWin, setPowderToWin] = React.useState(null);
+    const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
     useEffect(() => {
         if(props.global === true){
             setTotalCards(props.item);
@@ -254,6 +259,53 @@ function ProgressBarCard(props) {
         }
 
     }, [props.myCardWithStade]);
+    function openModalBerry(e,f,g,h) {
+        Axios.post('/api/addBerry',
+            {
+                user:props.user,
+                berry:e
+            })
+            .then(function(response) {
+                Axios.post('/api/addPkmPointRoulette',
+                    {
+                        user:props.user,
+                        nbToken:g,
+                        idUser: props.idUser
+                    })
+                    .then(function(response) {
+                        Axios.post('/api/addCardsPointRoulette',
+                            {
+                                user:props.user,
+                                nbToken:f,
+                                idUser: props.idUser
+                            })
+                            .then(function(response) {
+                                Axios.post('/api/addPowder',
+                                    {
+                                        user:props.user,
+                                        win:h,
+                                        wins:h,
+                                        idUser: props.idUser
+                                    })
+                            })
+                            .then(function(response) {
+                                Axios
+                                    .get("/api/getCardsPoint/"+props.user)
+                                    .then(function(response) {
+                                        setPoints(response.data[0].cardToken);
+                                    })
+                            })
+                    })
+            })
+        setBerryToWin(e)
+        setTokenCardToWin(f)
+        setTokenPkmToWin(g)
+        setPowderToWin(h)
+        setIsOpenSkin(true);
+    }
+    function closeModalBerry() {
+        setIsOpenSkin(false);
+    }
     function closeModal() {
         setIsOpen(false);
         setTimeout(function (){
@@ -261,6 +313,13 @@ function ProgressBarCard(props) {
                 .then(function(response) {
                     setBadges(response.data);
                     const badges = response.data;
+                    if(typeof badges.find((item) => item.stade === 1) !== "undefined" && typeof badges.find((item) => item.stade === 2) !== "undefined" && typeof badges.find((item) => item.stade === 3) !== "undefined" && typeof badges.find((item) => item.stade === 4) !== "undefined"){
+                        var berryToWin = 500;
+                        var tokenCardToWin = 5;
+                        var tokenPkmToWin = 5;
+                        var powderToWin = 1500;
+                        openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                    }
                     if (parseFloat(props.getNb / totalCards * 100).toFixed(2) == 100) {
                         if (typeof badges.find((item) => item.stade === 0) === "undefined" || badges.length == 0) {
                             openModalZero(0);
@@ -277,6 +336,7 @@ function ProgressBarCard(props) {
                                     Axios.get("/api/getBadgesByUserAndSet/" + props.user + "/" + props.booster)
                                         .then(function (response) {
                                             setBadges(response.data);
+                                            props.change();
                                         })
                                 })
                         } else if (purcents.length > 0) {
@@ -577,6 +637,54 @@ function ProgressBarCard(props) {
         customStyles &&
             purcents.length > 0 &&
             <>
+                <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
+                       onRequestClose={closeModalBerry} contentLabel="Example Modal">
+                    <p style={{textAlign: "center", fontSize: "40px", marginTop: "-100px"}}>Félicitation tu as fini le set à
+                        500 % !</p>
+                    <div style={{flexFlow: "column",width:"100%"}} className="pokemonContentToken">
+                        <div style={{display: "flex", justifyContent: "center", marginTop: "150px", gap:"10px"}}>
+                            <div>
+                                <p style={{
+                                    textAlign: "center",
+                                    fontSize: "30px",
+                                    marginTop: "-100px"
+                                }}>{"X " + tokenCardToWin}</p>
+                                <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                     src={"/cards.png"}/>
+                            </div>
+                            <div>
+                                <p style={{
+                                    textAlign: "center",
+                                    fontSize: "30px",
+                                    marginTop: "-100px"
+                                }}>{"X " + tokenPkmToWin}</p>
+                                <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                     src={"/token.png"}/>
+                            </div>
+                            <div>
+                                <p style={{
+                                    textAlign: "center",
+                                    fontSize: "30px",
+                                    marginTop: "-100px"
+                                }}>{"X " + powderToWin}</p>
+                                <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                     src={"/images/powder.png"}/>
+                            </div>
+                            <div>
+                                <p style={{
+                                    textAlign: "center",
+                                    fontSize: "30px",
+                                    marginTop: "-100px"
+                                }}>{"X " + berryToWin}</p>
+                                <img style={{marginBottom: "30px"}} className={"badgeToWinXp"}
+                                     src={"/images/berry.png"}/>
+                            </div>
+                        </div>
+                        <button style={{display: "block", margin: "auto"}} className={"filterButton filterButtonDelayed"}
+                                onClick={closeModalBerry}>Cool !
+                        </button>
+                    </div>
+                </Modal>
                 <div style={{color: "white",display: "flex",gap: "5px",flexWrap: "wrap",justifyContent: "center"}}>
                     {purcents.length > 0 &&
                         props.global === false &&
