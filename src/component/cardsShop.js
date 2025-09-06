@@ -408,11 +408,7 @@ function CardsShop(props) {
                                 Axios
                                     .get("/api/getProfil/"+props.user)
                                     .then(function(response) {
-                                        console.log(response.data[0])
-                                        setProfil(response.data[0])
-                                        setTimeout(function() {
-                                            setLoad(false)}.bind(this), 500
-                                        )
+                                        setPoints(response.data[0].cardToken);
                                     })
                             })
                     })
