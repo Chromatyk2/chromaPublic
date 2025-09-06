@@ -201,10 +201,9 @@ function MyCardsSet(props) {
                                     })
                             })
                             .then(function(response) {
-                                Axios
-                                    .get("/api/getCardsPoint/"+props.user)
+                                Axios.get("/api/getProfil/"+props.user)
                                     .then(function(response) {
-                                        setPoints(response.data[0].cardToken);
+                                        setPowder(response.data[0].powder)
                                     })
                             })
                     })
