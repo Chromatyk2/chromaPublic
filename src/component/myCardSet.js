@@ -157,6 +157,12 @@ function MyCardsSet(props) {
     function handleState() {
         setIsOpen(false);
     }
+    function updatePowder() {
+        Axios.get("/api/getProfil/"+props.user)
+            .then(function(response) {
+                setPowder(response.data[0].powder)
+            })
+    }
     function errorImages(e, booster, number){
         e.target.onerror = null;
         if(props.idBooster == "sm115"){
@@ -448,7 +454,7 @@ function MyCardsSet(props) {
                                 onClick={closeModal}>Cool !
                         </button>
                     </Modal>
-                    <ProgressBarCard idUser={props.idUser} badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
+                    <ProgressBarCard onChange={updatePowder} idUser={props.idUser} badges={props.badges} refresh={refresh} global={false} user={props.user} booster={props.idBooster} getNb={myCards.length}
                                      item={items.length} myCards={myCards} myCardWithStade={myCardWithStade}/>
                     {myCards.length == items.length &&
                         <div style={{

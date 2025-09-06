@@ -289,11 +289,7 @@ function ProgressBarCard(props) {
                                     })
                             })
                             .then(function(response) {
-                                Axios
-                                    .get("/api/getCardsPoint/"+props.user)
-                                    .then(function(response) {
-                                        setPoints(response.data[0].cardToken);
-                                    })
+                                props.change();
                             })
                     })
             })
