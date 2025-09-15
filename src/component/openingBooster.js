@@ -22,22 +22,11 @@ function OpeningBooster(props) {
     }
 
     useEffect(() => {
-        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setItems(result.cards);
-                    Axios
-                        .get("/api/getRaritiesByBooster/"+props.idBooster)
-                        .then(function(response){
-                            setRarities(response.data);
-                        })
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
+        Axios
+            .get("/api/getRaritiesByBooster/"+props.idBooster)
+            .then(function(response){
+                setRarities(response.data);
+            })
     }, []);
     const customStyles = {
         textModal: {
