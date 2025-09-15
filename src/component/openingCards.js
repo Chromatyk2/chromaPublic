@@ -145,11 +145,11 @@ function OpeningCards(props) {
                                 var stade = 4;
                             }
                         }
-                        if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
+                        if(gettedCards.filter((uc) => uc.number == cardItem.localId && uc.stade == stade).length == 0){
                             setTenCards(tenCards => [...tenCards, {
                                 grade: stade,
                                 rarity: "Rare",
-                                nbCard: pkmNumber,
+                                nbCard: cardItem.localId,
                                 booster: boosterName,
                                 isNew :1,
                                 idCard: cardItem.localId
@@ -161,7 +161,7 @@ function OpeningCards(props) {
                                     booster: props.idBooster,
                                     rarity: "Rare",
                                     grade: stade,
-                                    nb: pkmNumber,
+                                    nb: cardItem.localId,
                                     block: props.block,
                                     idUser: props.idUser
                                 })
@@ -189,7 +189,7 @@ function OpeningCards(props) {
                             setTenCards(tenCards => [...tenCards, {
                                 grade: stade,
                                 rarity: "Rare",
-                                nbCard: pkmNumber,
+                                nbCard: cardItem.localId,
                                 booster: boosterName,
                                 isNew :0,
                                 idCard: cardItem.localId,
