@@ -115,6 +115,7 @@ function OpeningCards(props) {
     }, [])
     useEffect(() => {
         if(booster !== null){
+            var cardItem = booster[Math.floor(Math.random() * booster.length)];
             Axios.get("/api/getAllMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
                 .then(function(response) {
                     const gettedCards = response.data;
@@ -150,12 +151,13 @@ function OpeningCards(props) {
                                 rarity: "Rare",
                                 nbCard: pkmNumber,
                                 booster: boosterName,
-                                isNew :1
+                                isNew :1,
+                                idCard: cardItem.localId,
                             }]);
                             Axios.post('/api/addCard',
                                 {
                                     pseudo: props.user,
-                                    idCard: booster[Math.floor(Math.random() * booster.length)].localId,
+                                    idCard: cardItem.localId,
                                     booster: props.idBooster,
                                     rarity: "Rare",
                                     grade: stade,
@@ -189,7 +191,8 @@ function OpeningCards(props) {
                                 rarity: "Rare",
                                 nbCard: pkmNumber,
                                 booster: boosterName,
-                                isNew :0
+                                isNew :0,
+                                idCard: cardItem.localId,
                             }]);
                             if(stade > 0){
                                 Axios.post('/api/addPowder',
