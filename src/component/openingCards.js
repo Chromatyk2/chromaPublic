@@ -21,7 +21,6 @@ function OpeningCards(props) {
     const [index, setIndex] = React.useState(0)
     const [endPull, setEndPull] = React.useState(false)
     const [myCards, setMyCards] = useState([]);
-    const [myCardsId, setMyCardsId] = useState([]);
     const [isNew, setIsNew] = useState(false);
     const [getToken, setGetToken] = useState(false);
     const [isToken, setIsToken] = useState(false);
@@ -30,7 +29,9 @@ function OpeningCards(props) {
     const [thingsBooster, setThingsBooster] = useState(true);
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
     const [berryToWins, setBerryToWins] = useState(null);
+    const [booster, setBooster] = useState(null);
     const [lang, setLang] = useState("fr");
+    const [pkmNumber, setPkmNumber] = useState(null);
 
     useEffect(() => {
         if(props.idBooster == "sm115"){
@@ -98,296 +99,152 @@ function OpeningCards(props) {
             })
     }, [])
     useEffect(() => {
-        myCards.map((val, key) => {
-            setMyCardsId(myCardsId => [...myCardsId,val.card]);
-        })
-    }, [myCards]);
-    useEffect(() => {
-    Axios.get("/api/getAllMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
-        .then(function(response) {
-            const gettedCards = response.data;
-            if (tenCards.length < 5) {
-                var boosterName = props.rarities.filter(item => item.stade === 1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade === 1).length)].nameGuru
-                if (boosterName == "sma") {
-                    var boosterDex = "sma"
-                } else {
-                    var boosterDex = props.idBooster
+        var boosterName = props.rarities.filter(item => item.stade === 1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade === 1).length)].nameGuru
+        if (boosterName == "sma") {
+            var boosterDex = "sma"
+        } else {
+            var boosterDex = props.idBooster
+        }
+        fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:' + boosterDex)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setBooster(result);
                 }
-                fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:' + boosterDex)
-                    .then(res => res.json())
-                    .then(
-                        (result) => {
-                            const pkmNumber = result[Math.floor(Math.random() * result.length)].localId;
-                            fetch('https://api.tcgdex.net/v2/en/sets/' + boosterDex + '/' + pkmNumber)
-                                .then(res => res.json())
-                                .then(
-                                    (result) => {
-                                        if (result.status == 404) {
-                                            fetch('https://api.tcgdex.net/v2/en/sets/' + boosterDex.replace(".", "") + '/' + pkmNumber)
-                                                .then(res => res.json())
-                                                .then(
-                                                    (result) => {
-                                                        if (tenCards.length == 4) {
-                                                            var randomStade = Math.floor(Math.random() * 100);
-                                                            if (randomStade < 50 ) {
-                                                                var stade = 3;
-                                                            } else{
-                                                                var stade = 4;
-                                                            }
-                                                        }else{
-                                                            var randomStade = Math.floor(Math.random() * 100);
-                                                            if (randomStade < 50 ) {
-                                                                var stade = 1;
-                                                            } else if (randomStade > 49 && randomStade < 84) {
-                                                                var stade = 2;
-                                                            } else if (randomStade > 83 && randomStade < 95) {
-                                                                var stade = 3;
-                                                            } else if (randomStade > 94) {
-                                                                var stade = 4;
-                                                            }
-                                                        }
-                                                        if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
-                                                            setTenCards(tenCards => [...tenCards, {
-                                                                grade: stade,
-                                                                card: result,
-                                                                rarity: result.rarity,
-                                                                nbCard: pkmNumber,
-                                                                booster: boosterName,
-                                                                isNew :1
-                                                            }]);
-                                                            Axios.post('/api/addCard',
-                                                                {
-                                                                    pseudo: props.user,
-                                                                    idCard: result.id,
-                                                                    booster: props.idBooster,
-                                                                    rarity: result.rarity,
-                                                                    grade: stade,
-                                                                    nb: pkmNumber,
-                                                                    block: props.block,
-                                                                    idUser: props.idUser
-                                                                })
-                                                            Axios.post('/api/addXp',
-                                                                {
-                                                                    user: props.user,
-                                                                    win: stade*10,
-                                                                    wins: stade*10,
-                                                                    idUser:props.idUser
-                                                                }
-                                                            )
-                                                                .then(function(response){
-                                                                    Axios.get("/api/getProfil/"+props.user)
-                                                                        .then(function(response){
-                                                                            if(response.data[0].xp >= response.data[0].level * 35){
-                                                                                Axios.post('/api/levelUp',
-                                                                                    {
-                                                                                        pseudo: props.user
-                                                                                    }
-                                                                                )
-                                                                            }
-                                                                        })
-                                                                })
-                                                        }else{
-                                                            setTenCards(tenCards => [...tenCards, {
-                                                                grade: stade,
-                                                                card: result,
-                                                                rarity: result.rarity,
-                                                                nbCard: pkmNumber,
-                                                                booster: boosterName,
-                                                                isNew :0
-                                                            }]);
-                                                            if(stade > 0){
-                                                                Axios.post('/api/addPowder',
-                                                                    {
-                                                                        user: props.user,
-                                                                        win: stade * 30,
-                                                                        wins: stade * 30,
-                                                                        idUser:props.idUser
-                                                                    }
-                                                                )
-                                                            }
-
-                                                            Axios.post('/api/addXp',
-                                                                {
-                                                                    user: props.user,
-                                                                    win: stade*10,
-                                                                    wins: stade*10,
-                                                                    idUser:props.idUser
-                                                                }
-                                                            )
-                                                                .then(function(response){
-                                                                    Axios.get("/api/getProfil/"+props.user)
-                                                                        .then(function(response){
-                                                                            if(response.data[0].xp >= response.data[0].level * 35){
-                                                                                Axios.post('/api/levelUp',
-                                                                                    {
-                                                                                        pseudo: props.user
-                                                                                    }
-                                                                                )
-                                                                            }
-                                                                        })
-                                                                })
-                                                        }
-                                                        setIsLoaded(true);
-                                                        setNbCards(nbCards + 1);
+            )
+    }, [])
+    useEffect(() => {
+        if(booster !== null){
+            Axios.get("/api/getAllMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
+                .then(function(response) {
+                    const gettedCards = response.data;
+                    if (tenCards.length < 5) {
+                        var boosterName = props.rarities.filter(item => item.stade === 1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade === 1).length)].nameGuru
+                        if (boosterName == "sma") {
+                            var boosterDex = "sma"
+                        } else {
+                            var boosterDex = props.idBooster
+                        }
+                        if (tenCards.length == 4) {
+                            var randomStade = Math.floor(Math.random() * 100);
+                            if (randomStade < 50 ) {
+                                var stade = 3;
+                            } else{
+                                var stade = 4;
+                            }
+                        }else{
+                            var randomStade = Math.floor(Math.random() * 100);
+                            if (randomStade < 50 ) {
+                                var stade = 1;
+                            } else if (randomStade > 49 && randomStade < 84) {
+                                var stade = 2;
+                            } else if (randomStade > 83 && randomStade < 95) {
+                                var stade = 3;
+                            } else if (randomStade > 94) {
+                                var stade = 4;
+                            }
+                        }
+                        if(gettedCards.filter((uc) => uc.number == pkmNumber && uc.stade == stade).length == 0){
+                            setTenCards(tenCards => [...tenCards, {
+                                grade: stade,
+                                rarity: "Rare",
+                                nbCard: pkmNumber,
+                                booster: boosterName,
+                                isNew :1
+                            }]);
+                            Axios.post('/api/addCard',
+                                {
+                                    pseudo: props.user,
+                                    idCard: booster[Math.floor(Math.random() * booster.length)].localId,
+                                    booster: props.idBooster,
+                                    rarity: "Rare",
+                                    grade: stade,
+                                    nb: pkmNumber,
+                                    block: props.block,
+                                    idUser: props.idUser
+                                })
+                            Axios.post('/api/addXp',
+                                {
+                                    user: props.user,
+                                    win: stade*10,
+                                    wins: stade*10,
+                                    idUser:props.idUser
+                                }
+                            )
+                                .then(function(response){
+                                    Axios.get("/api/getProfil/"+props.user)
+                                        .then(function(response){
+                                            if(response.data[0].xp >= response.data[0].level * 35){
+                                                Axios.post('/api/levelUp',
+                                                    {
+                                                        pseudo: props.user
                                                     }
                                                 )
-                                                .then(
-                                                    (result) => {
-                                                        setIsLoaded(false);
-                                                        if (tenCards.length === 4) {
-                                                            setIsLoaded(false);
-                                                            setThings(false)
-                                                            const timeoutBooster = setTimeout(() => {
-                                                                setThingsBooster(false)
-                                                            }, 1001)
-                                                            return () => clearTimeout(timeoutBooster)
-                                                        }
-
-                                                    })
-                                        } else {
-                                            if (tenCards.length == 4) {
-                                                var randomStade = Math.floor(Math.random() * 100);
-                                                if (randomStade < 50 ) {
-                                                    var stade = 3;
-                                                } else{
-                                                    var stade = 4;
-                                                }
-                                            }else{
-                                                var randomStade = Math.floor(Math.random() * 100);
-                                                if (randomStade < 50 ) {
-                                                    var stade = 1;
-                                                } else if (randomStade > 49 && randomStade < 80) {
-                                                    var stade = 2;
-                                                } else if (randomStade > 79 && randomStade < 95) {
-                                                    var stade = 3;
-                                                } else if (randomStade > 94) {
-                                                    var stade = 4;
-                                                }
                                             }
-                                            if(!gettedCards.find((uc) => uc.number == pkmNumber && uc.stade == stade)){
-                                                setTenCards(tenCards => [...tenCards, {
-                                                    card: result,
-                                                    rarity: result.rarity,
-                                                    nbCard: pkmNumber,
-                                                    booster: boosterName,
-                                                    grade: stade,
-                                                    isNew:1
-                                                }]);
-
-                                                Axios.post('/api/addCard',
-                                                    {
-                                                        pseudo: props.user,
-                                                        idCard: result.id,
-                                                        booster: props.idBooster,
-                                                        rarity: result.rarity,
-                                                        grade: stade,
-                                                        nb: pkmNumber,
-                                                        block: props.block,
-                                                        idUser: props.idUser
-                                                    })
-
-                                                Axios.post('/api/addXp',
-                                                    {
-                                                        user: props.user,
-                                                        win: stade*10,
-                                                        wins: stade*10,
-                                                        idUser:props.idUser
-                                                    }
-                                                )
-                                                    .then(function(response){
-                                                        Axios.get("/api/getProfil/"+props.user)
-                                                            .then(function(response){
-                                                                if(response.data[0].xp >= response.data[0].level * 35){
-                                                                    Axios.post('/api/levelUp',
-                                                                        {
-                                                                            pseudo: props.user
-                                                                        }
-                                                                    )
-                                                                }
-                                                            })
-                                                    })
-                                            }else{
-                                                setTenCards(tenCards => [...tenCards, {
-                                                    card: result,
-                                                    rarity: result.rarity,
-                                                    nbCard: pkmNumber,
-                                                    booster: boosterName,
-                                                    grade: stade,
-                                                    isNew:0
-                                                }]);
-                                                if(stade > 0){
-                                                    Axios.post('/api/addPowder',
-                                                        {
-                                                            user: props.user,
-                                                            win: stade *30,
-                                                            wins: stade *30,
-                                                            idUser:props.idUser
-                                                        }
-                                                    )
-                                                }
-
-
-                                                Axios.post('/api/addXp',
-                                                    {
-                                                        user: props.user,
-                                                        win: stade*10,
-                                                        wins: stade*10,
-                                                        idUser:props.idUser
-                                                    }
-                                                )
-                                                    .then(function(response){
-                                                        Axios.get("/api/getProfil/"+props.user)
-                                                            .then(function(response){
-                                                                if(response.data[0].xp >= response.data[0].level * 35){
-                                                                    Axios.post('/api/levelUp',
-                                                                        {
-                                                                            pseudo: props.user
-                                                                        }
-                                                                    )
-                                                                }
-                                                            })
-                                                    })
-                                            }
-                                            setIsLoaded(true);
-                                            setNbCards(nbCards + 1);
-
-                                        }
+                                        })
+                                })
+                        }else{
+                            setTenCards(tenCards => [...tenCards, {
+                                grade: stade,
+                                rarity: "Rare",
+                                nbCard: pkmNumber,
+                                booster: boosterName,
+                                isNew :0
+                            }]);
+                            if(stade > 0){
+                                Axios.post('/api/addPowder',
+                                    {
+                                        user: props.user,
+                                        win: stade * 30,
+                                        wins: stade * 30,
+                                        idUser:props.idUser
                                     }
                                 )
-                                .then(
-                                    (result) => {
-                                        if (tenCards.length === 4) {
-                                            setIsLoaded(false);
-                                            setThings(false)
-                                            const timeoutBooster = setTimeout(() => {
-                                                setThingsBooster(false)
-                                            }, 1001)
-                                            return () => clearTimeout(timeoutBooster)
-                                        }
+                            }
 
-                                    })
+                            Axios.post('/api/addXp',
+                                {
+                                    user: props.user,
+                                    win: stade*10,
+                                    wins: stade*10,
+                                    idUser:props.idUser
+                                }
+                            )
+                                .then(function(response){
+                                    Axios.get("/api/getProfil/"+props.user)
+                                        .then(function(response){
+                                            if(response.data[0].xp >= response.data[0].level * 35){
+                                                Axios.post('/api/levelUp',
+                                                    {
+                                                        pseudo: props.user
+                                                    }
+                                                )
+                                            }
+                                        })
+                                })
                         }
-                    )
-            }
-        })
-    }, [nbCards])
-    function showCards() {
-        setIsHidden(false);
-        if(!myCardsId.includes(tenCards.slice(0).reverse()[4].id)){
-            setIsNew(true);
+                        if (tenCards.length === 4) {
+                            setIsLoaded(false);
+                            setThings(false)
+                            const timeoutBooster = setTimeout(() => {
+                                setThingsBooster(false)
+                            }, 1001)
+                            return () => clearTimeout(timeoutBooster)
+                        }
+                        setIsLoaded(true);
+                        setNbCards(nbCards + 1);
+                    }
+                })
+        }else{
+            setNbCards(nbCards + 1);
         }
-    }
+    }, [nbCards]);
     function getCard(e) {
         var id = (e.target.getAttribute("keyCard"));
         var nextId = parseInt(id,5) - 1;
         var next = document.getElementById("cardNb"+nextId);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
-        if(!myCardsId.includes(nextCardId)){
-            setIsNew(true);
-        }else{
-            setIsNew(false);
-        }
         next.style.display = "block";
 
 
@@ -402,11 +259,6 @@ function OpeningCards(props) {
         var next = document.getElementById("cardNb"+nextId);
         var nextCardId = next.getAttribute("cardId");
         var stadeCurrent = next.getAttribute("stade");
-        if(!myCardsId.includes(nextCardId)){
-            setIsNew(true);
-        }else{
-            setIsNew(false);
-        }
         next.style.display = "block";
         e.target.classList.toggle('glowGet');
         e.target.classList.toggle('gettedCard');
@@ -489,8 +341,6 @@ function OpeningCards(props) {
                                         rarity={val.rarity.rarity}
                                         style={{display: key < 4 && "none", overflow: "unset"}}
                                         keyCard={key}
-                                        cardId={val.card.id}
-                                        cardLocalId={val.card.localId}
                                         onClick={key == 0 ? getLastCard : getCard}
                                         className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                         id={"cardNb" + key}>
@@ -515,14 +365,13 @@ function OpeningCards(props) {
                                                 alt="Grapefruit slice atop a pile of other slices"/>
                                         }
                                         <img
-                                            cardLocalId={val.card.localId}
                                             onClick={key == 0 ? getLastCard : getCard}
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/" + lang + "/" + block + "/" + boosterImg + "/" + val.card.localId + "/high.png"}
+                                            src={"https://assets.tcgdex.net/" + lang + "/" + block + "/" + boosterImg + "/" + val.idCard + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {getToken === true &&
