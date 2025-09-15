@@ -18,14 +18,19 @@ function OpeningBooster(props) {
     let [state, setState] = useState("Initial");
     let [rarities, setRarities] = useState(null);
     function handleState() {
-            props.change(props.idBooster, items.length);
+            props.change(props.idBooster, items);
     }
 
     useEffect(() => {
         Axios
-            .get("/api/getRaritiesByBooster/"+props.idBooster)
+            .get("/api/getBoosterByName/"+props.idBooster)
             .then(function(response){
-                setRarities(response.data);
+                setItems(response.data.totalcards);
+                Axios
+                    .get("/api/getRaritiesByBooster/"+props.idBooster)
+                    .then(function(response){
+                        setRarities(response.data);
+                    })
             })
     }, []);
     const customStyles = {
