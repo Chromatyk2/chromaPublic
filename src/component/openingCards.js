@@ -157,7 +157,7 @@ function OpeningCards(props) {
                             Axios.post('/api/addCard',
                                 {
                                     pseudo: props.user,
-                                    idCard: cardItem.localId,
+                                    idCard: cardItem.id,
                                     booster: props.idBooster,
                                     rarity: "Rare",
                                     grade: stade,
