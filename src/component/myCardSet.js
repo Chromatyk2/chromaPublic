@@ -244,80 +244,8 @@ function MyCardsSet(props) {
                                                     })
                                                     Axios.get("/api/getMyCardsBySetAndStade/"+props.user+"/"+props.idBooster)
                                                         .then(function(response) {
+                                                            setIsOpen(true)
                                                             setMyCardWithStade(response.data);
-                                                            var myCardWithStade = response.data;
-                                                            fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
-                                                                .then(res => res.json())
-                                                                .then(
-                                                                    (result) => {
-                                                                        if(result.status == 404){
-                                                                            fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster.replace(".",""))
-                                                                                .then(res => res.json())
-                                                                                .then(
-                                                                                    (result) => {
-                                                                                        if(stadeToFilter){
-                                                                                            setItems([])
-                                                                                            result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
-                                                                                                if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
-                                                                                                    setItems(myCardsId => [...myCardsId,val]);
-                                                                                                }
-                                                                                            })
-                                                                                        }else{
-                                                                                            setItems(result.cards)
-                                                                                        }
-                                                                                        setIsOpen(true)
-                                                                                        if(props.idBooster === "sm11.5"){
-                                                                                            fetch("https://api.tcgdex.net/v2/en/sets/sma")
-                                                                                                .then(res => res.json())
-                                                                                                .then(
-                                                                                                    (result) => {
-                                                                                                        setIsOpen(true)
-                                                                                                        if(stadeToFilter){
-                                                                                                            setItems([])
-                                                                                                            result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
-                                                                                                                if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
-                                                                                                                    setItems(myCardsId => [...myCardsId,val]);
-                                                                                                                }
-                                                                                                            })
-                                                                                                        }else{
-                                                                                                            setItems(result.cards)
-                                                                                                        }
-                                                                                                    },
-                                                                                                    (error) => {
-                                                                                                        setError(error);
-                                                                                                    }
-                                                                                                )
-                                                                                        }
-                                                                                    },
-                                                                                    (error) => {
-                                                                                        setIsLoaded(true);
-                                                                                        setError(error);
-                                                                                    }
-                                                                                )
-                                                                        }else{
-                                                                            setIsOpen(true)
-                                                                            if(stadeToFilter){
-                                                                                setItems([])
-                                                                                result.cards.sort((a, b) => a.localId - b.localId).map((val, key) => {
-                                                                                    console.log(val.id)
-                                                                                    console.log(stadeToFilter)
-                                                                                    console.log(myCardWithStade)
-                                                                                    if(!myCardWithStade.find((uc) => uc.card == val.id && uc.stade == stadeToFilter)){
-                                                                                        setItems(myCardsId => [...myCardsId,val]);
-                                                                                    }
-                                                                                })
-                                                                            }else{
-                                                                                setItems(result.cards)
-                                                                            }
-                                                                            setIsLoaded(false);
-
-                                                                        }
-                                                                    },
-                                                                    (error) => {
-                                                                        setIsLoaded(true);
-                                                                        setError(error);
-                                                                    }
-                                                                )
                                                         })
                                                 })
                                         })
