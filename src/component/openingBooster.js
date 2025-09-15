@@ -18,20 +18,26 @@ function OpeningBooster(props) {
     let [state, setState] = useState("Initial");
     let [rarities, setRarities] = useState(null);
     function handleState() {
-            props.change(props.idBooster, items);
+            props.change(props.idBooster, items.length);
     }
 
     useEffect(() => {
-        Axios
-            .get("/api/getBoosterByName/"+props.idBooster)
-            .then(function(response){
-                setItems(response.data.totalcards);
-                Axios
-                    .get("/api/getRaritiesByBooster/"+props.idBooster)
-                    .then(function(response){
-                        setRarities(response.data);
-                    })
-            })
+        fetch("https://api.tcgdex.net/v2/en/sets/"+props.idBooster)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setItems(result.cards);
+                    Axios
+                        .get("/api/getRaritiesByBooster/"+props.idBooster)
+                        .then(function(response){
+                            setRarities(response.data);
+                        })
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
     }, []);
     const customStyles = {
         textModal: {
