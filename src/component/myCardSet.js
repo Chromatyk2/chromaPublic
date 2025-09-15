@@ -373,9 +373,9 @@ function MyCardsSet(props) {
                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                             style: {transitionDelay: "0.1s"},
                                         }}
-                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
-                                    {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
-                                         onError={(e) => errorImages(e, props.idBooster, pickCard )}/>
+                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}
+                                        onError={(e) => errorImages(e, props.idBooster, pickCard )}
+                                    />
                                 </button>
                         }
                         <button style={{display: "block", margin: "auto"}} className={"filterButton"}
