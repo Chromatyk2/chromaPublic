@@ -368,6 +368,7 @@ function OpeningCards(props) {
                                                 alt="Grapefruit slice atop a pile of other slices"/>
                                         }
                                         <img
+                                            cardLocalId={val.idCard}
                                             onClick={key == 0 ? getLastCard : getCard}
                                             className={isHidden === true ? "fit-picture dropCards hiddenCards" : stadeC > 3 ? "fit-picture dropCards glowGet cardBangerAlert" : "fit-picture dropCards glowGet cardBangerAlertNoShiny"}
                                             id={"cardNb" + key}
