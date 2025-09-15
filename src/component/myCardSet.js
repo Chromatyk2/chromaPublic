@@ -375,7 +375,7 @@ function MyCardsSet(props) {
                                         }}
                                         src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + pickCard + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                     {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
-                                    {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
+                                         onError={(e) => errorImages(e, props.idBooster, pickCard )}/>
                                 </button>
                         }
                         <button style={{display: "block", margin: "auto"}} className={"filterButton"}
