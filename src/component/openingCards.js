@@ -152,7 +152,7 @@ function OpeningCards(props) {
                                 nbCard: pkmNumber,
                                 booster: boosterName,
                                 isNew :1,
-                                idCard: cardItem.localId,
+                                idCard: cardItem.id,
                             }]);
                             Axios.post('/api/addCard',
                                 {
