@@ -30,6 +30,7 @@ function OpeningCards(props) {
     const [thingsBooster, setThingsBooster] = useState(true);
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
     const [berryToWins, setBerryToWins] = useState(null);
+    const [booster, setBooster] = useState(null);
     const [lang, setLang] = useState("fr");
     const [pkmNumber, setPkmNumber] = useState(null);
 
@@ -114,12 +115,13 @@ function OpeningCards(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setPkmNumber(result[Math.floor(Math.random() * result.length)].localId);
+                    setBooster(result);
                 }
             )
     }, [])
     useEffect(() => {
-        if(pkmNumber !== null){
+        if(booster !== null){
+            setPkmNumber(result[Math.floor(Math.random() * result.length)].localId);
             Axios.get("/api/getAllMyCardsBySet/"+props.user+"/"+props.idBooster.replace(".", ""))
                 .then(function(response) {
                     const gettedCards = response.data;
