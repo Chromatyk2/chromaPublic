@@ -104,6 +104,12 @@ function OpeningCards(props) {
         })
     }, [myCards]);
     useEffect(() => {
+        var boosterName = props.rarities.filter(item => item.stade === 1)[Math.floor(Math.random() * props.rarities.filter(item => item.stade === 1).length)].nameGuru
+        if (boosterName == "sma") {
+            var boosterDex = "sma"
+        } else {
+            var boosterDex = props.idBooster
+        }
         fetch('https://api.tcgdex.net/v2/en/cards?set.id=eq:' + boosterDex)
             .then(res => res.json())
             .then(
