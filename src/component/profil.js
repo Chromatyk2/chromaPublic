@@ -128,7 +128,7 @@ function Profil(props) {
     function openToken() {
         setOpenTime(true)
         Axios
-            .get("/api/getProfil/"+pseudo)
+            .get("/api/getProfil/"+idUser)
             .then(function(response){
                 if(response.data[0].pkmToken -1 > -1){
                     Axios.post('/api/removeToken',
@@ -137,12 +137,12 @@ function Profil(props) {
                         }
                     )
                         .then(function(response){
-                            Axios.get("/api/getProfil/"+pseudo)
+                            Axios.get("/api/getProfil/"+idUser)
                                 .then(function(response){
                                     setOpenTime(false)
                                     setIsOpenToken(true);
                                     setTimeout(function (){
-                                        Axios.get("/api/getProfil/"+pseudo)
+                                        Axios.get("/api/getProfil/"+idUser)
                                             .then(function(response){
                                                 setProfil(response.data);
                                                 Axios
@@ -302,7 +302,7 @@ function Profil(props) {
     }
     function checkBadges() {
         Axios
-            .get("/api/getProfil/" + pseudo)
+            .get("/api/getProfil/" + idUser)
             .then(function (response) {
                 setProfil(response.data);
                 Axios.get("/api/getMyTotalCards/" + pseudo)
@@ -902,7 +902,7 @@ function Profil(props) {
         )
             .then(function(response){
                 Axios
-                    .get("/api/getProfil/"+pseudo)
+                    .get("/api/getProfil/"+idUser)
                     .then(function(response){
                         setProfil(response.data);
                         setIsOpen(false);
@@ -918,7 +918,7 @@ function Profil(props) {
         )
             .then(function(response){
                 Axios
-                    .get("/api/getProfil/"+pseudo)
+                    .get("/api/getProfil/"+idUser)
                     .then(function(response){
                         setProfil(response.data);
                         setIsOpen(false);
@@ -935,7 +935,7 @@ function Profil(props) {
         )
             .then(function(response){
                 Axios
-                    .get("/api/getProfil/"+pseudo)
+                    .get("/api/getProfil/"+idUser)
                     .then(function(response){
                         setProfil(response.data);
                         setOpenBadgeHandle(false);
@@ -951,7 +951,7 @@ function Profil(props) {
         )
             .then(function(response){
                 Axios
-                    .get("/api/getProfil/"+pseudo)
+                    .get("/api/getProfil/"+idUser)
                     .then(function(response){
                         setProfil(response.data);
                         setOpenBadgeHandle(false);
@@ -984,7 +984,7 @@ function Profil(props) {
                                 }
                             )
                                 .then(function(response){
-                                    Axios.get("/api/getProfil/"+pseudo)
+                                    Axios.get("/api/getProfil/"+idUser)
                                         .then(function(response){
                                             setProfil(response.data);
                                             Axios.get("/api/getSkins/"+pseudo)
@@ -999,7 +999,7 @@ function Profil(props) {
         }
     }
     function handleState() {
-        Axios.get("/api/getProfil/"+pseudo)
+        Axios.get("/api/getProfil/"+idUser)
             .then(function(response){
                 setProfil(response.data);
                 Axios
