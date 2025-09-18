@@ -126,7 +126,7 @@ function Profil(props) {
     function openToken() {
         setOpenTime(true)
         Axios
-            .get("/api/getProfil/"+pseudo)
+            .get("/api/getProfilByPseudo/"+pseudo)
             .then(function(response){
                 if(response.data[0].pkmToken -1 > -1){
                     Axios.post('/api/removeToken',
@@ -135,7 +135,7 @@ function Profil(props) {
                         }
                     )
                         .then(function(response){
-                            Axios.get("/api/getProfil/"+pseudo)
+                            Axios.get("/api/getProfilByPseudo/"+pseudo)
                                 .then(function(response){
                                     setOpenTime(false)
                                     setProfil(response.data);
@@ -153,7 +153,7 @@ function Profil(props) {
             })
     }
     function closeModalToken() {
-        Axios.get("/api/getProfil/"+pseudo)
+        Axios.get("/api/getProfilByPseudo/"+pseudo)
         setIsOpenToken(false);
     }
     function filteredBadges(e) {
@@ -236,7 +236,7 @@ function Profil(props) {
                     }
                 })
                 Axios
-                    .get("/api/getProfil/"+pseudo)
+                    .get("/api/getProfilByPseudo/"+pseudo)
                     .then(function (response){
                         setProfil(response.data);
                         Axios.get("/api/getMyTotalCards/"+pseudo)
@@ -305,7 +305,7 @@ function Profil(props) {
         )
             .then(function(response){
                 Axios
-                    .get("/api/getProfil/"+pseudo)
+                    .get("/api/getProfilByPseudo/"+pseudo)
                     .then(function(response){
                         setProfil(response.data);
                         setIsOpen(false);
@@ -327,7 +327,7 @@ function Profil(props) {
                         }
                     )
                         .then(function(response){
-                            Axios.get("/api/getProfil/"+pseudo)
+                            Axios.get("/api/getProfilByPseudo/"+pseudo)
                                 .then(function(response){
                                     setProfil(response.data);
                                     Axios
@@ -341,7 +341,7 @@ function Profil(props) {
         }
     }
     function handleState() {
-        Axios.get("/api/getProfil/"+pseudo)
+        Axios.get("/api/getProfilByPseudo/"+pseudo)
             .then(function(response){
                 setProfil(response.data);
                 Axios
