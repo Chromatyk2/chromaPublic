@@ -14,10 +14,11 @@ function NavBar(props) {
             .get("/api/getProfil/"+props.cookies.user.data[0].id)
             .then(function(response) {
                 if(response.data.length == 0){
-                    Axios.post('/api/addPkmToken',
+                    Axios.post('/api/addPkmPointRoulette',
                         {
                             user:props.cookies.user.data[0].login,
-                            idUser: props.cookies.user.data[0].id
+                            idUser: props.cookies.user.data[0].id,
+                            nbToken: 6
                         }
                     )
                 }
