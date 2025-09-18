@@ -10,6 +10,11 @@ function NavBar(props) {
 
     useEffect(() => {
         if(typeof props.cookies.user !== "undefined"){
+            Axios
+            .get("/api/getProfil/"+props.cookies.user.data[0].id)
+            .then(function(response) {
+                console.log(response.data)
+            })
             Axios.post('/api/updateIdProfil',
                 {
                     user:props.cookies.user.data[0].login,

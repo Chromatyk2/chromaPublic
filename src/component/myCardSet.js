@@ -65,7 +65,7 @@ function MyCardsSet(props) {
         if(props.idBooster == "sm115"){
             setLang("en")
         }
-        Axios.get("/api/getProfil/"+props.user)
+        Axios.get("/api/getProfil/"+props.idUser)
             .then(function(response) {
                 setPowder(response.data[0].powder)
                 Axios
@@ -158,7 +158,7 @@ function MyCardsSet(props) {
         setIsOpen(false);
     }
     function updatePowder() {
-        Axios.get("/api/getProfil/"+props.user)
+        Axios.get("/api/getProfil/"+props.idUser)
             .then(function(response) {
                 setPowder(response.data[0].powder)
             })
@@ -211,7 +211,7 @@ function MyCardsSet(props) {
             }
         }
 
-        Axios.get("/api/getProfil/"+props.user)
+        Axios.get("/api/getProfil/"+props.idUser)
             .then(function(response) {
                 if(response.data[0].powder - 300 > -1){
                     Axios.post('/api/removePowder',

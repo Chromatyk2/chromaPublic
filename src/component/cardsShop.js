@@ -84,7 +84,7 @@ function CardsShop(props) {
                             .get("/api/getCardsPoint/"+props.user)
                             .then(function(response){
                                 setPoints(response.data[0].cardToken);
-                                Axios.get("/api/getProfil/"+props.user)
+                                Axios.get("/api/getProfil/"+props.idUser)
                                     .then(function(response){
                                         setPowder(response.data[0].powder)
                                         const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
@@ -171,7 +171,7 @@ function CardsShop(props) {
         setNameGuru(nameGuru);
         setBlock(block);
         setCanOpenLive(0)
-        Axios.get("/api/getProfil/"+props.user)
+        Axios.get("/api/getProfil/"+props.idUser)
             .then(function(response){
                 const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');
                 const lastDrawing = new Date(response.data[0].lastOpening).toISOString().replace('T', ' ').split(".")[0];
@@ -212,7 +212,7 @@ function CardsShop(props) {
         setIsOpenBadge(true);
     }
     function handleState(e,f) {
-        Axios.get("/api/getProfil/"+props.user)
+        Axios.get("/api/getProfil/"+props.idUser)
             .then(function(response) {
                 setPowder(response.data[0].powder)
                 const dateNow = moment(Date.now()).tz("Europe/Paris").format('YYYY-MM-DD HH:mm:ss');

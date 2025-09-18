@@ -34,7 +34,7 @@ function Compagnon(props) {
     const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
     const [powderToWin, setPowderToWin] = React.useState(null);
     useEffect(() => {Axios
-        .get("/api/getProfil/"+pseudo)
+        .get("/api/getProfil/"+idUser)
         .then(function(response) {
             setProfil(response.data[0])
             Axios
@@ -168,7 +168,7 @@ function Compagnon(props) {
                                             }
                                         }
                                         Axios
-                                            .get("/api/getProfil/"+pseudo)
+                                            .get("/api/getProfil/"+idUser)
                                             .then(function(response) {
                                                 setProfil(response.data[0])
                                                 setLoad(false)
@@ -244,7 +244,7 @@ function Compagnon(props) {
                                                         }
                                                     }
                                                     Axios
-                                                        .get("/api/getProfil/"+pseudo)
+                                                        .get("/api/getProfil/"+idUser)
                                                         .then(function(response) {
                                                             setProfil(response.data[0])
                                                             setLoad(false)
@@ -275,7 +275,7 @@ function Compagnon(props) {
                                         },
                                     });
                                     Axios
-                                        .get("/api/getProfil/"+pseudo)
+                                        .get("/api/getProfil/"+idUser)
                                         .then(function(response) {
                                             setProfil(response.data[0])
                                             setTimeout(function() { setLoad(false)}.bind(this), 500)
@@ -351,7 +351,7 @@ function Compagnon(props) {
                                                         }
                                                     }
                                                     Axios
-                                                        .get("/api/getProfil/"+pseudo)
+                                                        .get("/api/getProfil/"+idUser)
                                                         .then(function(response) {
                                                             setProfil(response.data[0])
                                                             setLoad(false)
@@ -382,7 +382,7 @@ function Compagnon(props) {
                                         },
                                     });
                                     Axios
-                                        .get("/api/getProfil/"+pseudo)
+                                        .get("/api/getProfil/"+idUser)
                                         .then(function(response) {
                                             setProfil(response.data[0])
                                             setTimeout(function() { setLoad(false)}.bind(this), 500)
@@ -458,7 +458,7 @@ function Compagnon(props) {
                                                         }
                                                     }
                                                     Axios
-                                                        .get("/api/getProfil/"+pseudo)
+                                                        .get("/api/getProfil/"+idUser)
                                                         .then(function(response) {
                                                             setProfil(response.data[0])
                                                             setLoad(false)
@@ -489,7 +489,7 @@ function Compagnon(props) {
                                         },
                                     });
                                     Axios
-                                        .get("/api/getProfil/"+pseudo)
+                                        .get("/api/getProfil/"+idUser)
                                         .then(function(response) {
                                             setProfil(response.data[0])
                                             setTimeout(function() { setLoad(false)}.bind(this), 500)
@@ -694,7 +694,7 @@ function Compagnon(props) {
                             })
                             .then(function(response) {
                                 Axios
-                                    .get("/api/getProfil/"+pseudo)
+                                    .get("/api/getProfil/"+idUser)
                                     .then(function(response) {
                                         console.log(response.data[0])
                                         setProfil(response.data[0])
