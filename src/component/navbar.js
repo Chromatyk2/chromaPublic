@@ -13,7 +13,14 @@ function NavBar(props) {
             Axios
             .get("/api/getProfil/"+props.cookies.user.data[0].id)
             .then(function(response) {
-                console.log(response.data)
+                if(response.data.length == 0){
+                    Axios.post('/api/addPkmToken',
+                        {
+                            user:props.cookies.user.data[0].login,
+                            idUser: props.cookies.user.data[0].id
+                        }
+                    )
+                }
             })
             Axios.post('/api/updateIdProfil',
                 {
