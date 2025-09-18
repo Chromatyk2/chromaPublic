@@ -232,7 +232,7 @@ function MyCardsSet(props) {
                                     idUser: props.idUser
                                 })
                                 .then(function(){
-                                    Axios.get("/api/getProfil/"+props.user)
+                                    Axios.get("/api/getProfil/"+props.idUser)
                                         .then(function(response) {
                                             setPowder(response.data[0].powder)
                                             Axios
