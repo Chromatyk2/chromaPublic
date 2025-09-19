@@ -292,6 +292,7 @@ function MyCardsSet(props) {
                                         position: "absolute"
                                     }} src={"/images/stade_"+pickStade+".png"}/>
                                     <LazyLoadImage
+                                        onError={(e) => errorImages(e, props.idBooster, pickCard )}
                                         alt="Grapefruit slice atop a pile of other slices"
                                         placeholderSrc={"https://images.pokemontcg.io/defaut.png"}
                                         width={"350"}
@@ -327,6 +328,7 @@ function MyCardsSet(props) {
                                                                 position: "absolute"
                                                             }} src={"/images/stade_" + pickStade + ".png"}/>
                                                             <LazyLoadImage
+                                                                onError={(e) => errorImages(e, props.idBooster, pickCard )}
                                                                 alt="Grapefruit slice atop a pile of other slices"
                                                                 delayTime={0}
                                                                 threshold={200}
