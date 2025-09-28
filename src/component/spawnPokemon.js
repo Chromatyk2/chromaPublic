@@ -63,7 +63,7 @@ function SpawnPokemon(props) {
                                         const isMythical = Math.floor((Math.random() * 5) + 1);
                                         const queryParameters = new URLSearchParams(window.location.search)
                                         const isShiny = Math.floor((Math.random() * 100) + 1);
-                                        const isNegative = Math.floor((Math.random() * 1365) + 1);
+                                        const isNegative = Math.floor((Math.random() * 4096) + 1);
                                         const getBadge = Math.floor((Math.random() * 30) + 1);
                                         const getRareBadge = Math.floor((Math.random() * 4096) + 1);
                                         const tmpName = result.names.find((element) => element.language.name == "fr").name;
