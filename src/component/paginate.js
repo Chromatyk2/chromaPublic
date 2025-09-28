@@ -26,7 +26,7 @@ function Items(props) {
                <>
                 <Link
                     className={"navLink"} to={"/pokemon/"+val.pkmId}>
-                 <div style={{filter : val.negative === true ?  "invert(1)" : "invert(0)"}} className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
+                 <div style={{filter : val.negative === 1 ?  "invert(1)" : "invert(0)"}} className="anchorTooltip uniquePokemonContainer" data-tooltip-content={val.pkmName+" - "+moment(val.dateCapture).utc().format('DD/MM/YYYY')}>
                    <div className="infoPkm">
                      {val.nbCapture > 1 ? <div className="infoNbCapture">{val.nbCapture}</div> : <div></div>}
                      {val.shiny == 1 || val.negative == 1 ? <img className="infoShiny" src="https://www.depaul.org/wp-content/uploads/2022/02/DePaul-Shining-Star-Program-Blue-Icon.png"></img> : <div></div>}
