@@ -800,7 +800,7 @@ function Compagnon(props) {
                                 <img style={{margin: 0, height: "20px", width: "20px"}} src={"/images/berry.png"}/>
                                 <span style={{fontSize:"15px",color:"white"}}>{"x" + profil.berry}</span>
                             </div>
-                            <button disabled={load} style={{display:"block", margin:"auto", border: "none", background: "none"}}>
+                            <button disabled={load} style={{display:"block", margin:"auto", border: "none", background: "none",filter : compagnon.negative === 1 ?  "invert(1)" : "invert(0)"}}>
                                 <img style={{
                                     width: "280px",
                                     marginBottom: "50px",
