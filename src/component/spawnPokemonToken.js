@@ -140,7 +140,7 @@ function SpawnPokemonToken(props) {
                                                                             setIsLoaded(false);
                                                                             setShiny(true);
                                                                             root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1,negative:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                             Axios.post('/api/addXp',
                                                                                 {
                                                                                     user: pseudo,
@@ -165,7 +165,7 @@ function SpawnPokemonToken(props) {
                                                                         default :
                                                                             setIsLoaded(false);
                                                                             root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0,negative:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                             Axios.post('/api/addXp',
                                                                                 {
                                                                                     user: pseudo,
@@ -287,7 +287,7 @@ function SpawnPokemonToken(props) {
                                                                                     setIsLoaded(false);
                                                                                     setShiny(true);
                                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                                    Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                    Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1,negative:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                     Axios.post('/api/addXp',
                                                                                         {
                                                                                             user: pseudo,
@@ -312,7 +312,7 @@ function SpawnPokemonToken(props) {
                                                                                 default :
                                                                                     setIsLoaded(false);
                                                                                     root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                                    Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                                    Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0,negative:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                                     Axios.post('/api/addXp',
                                                                                         {
                                                                                             user: pseudo,
@@ -430,7 +430,7 @@ function SpawnPokemonToken(props) {
                                                                             setIsLoaded(false);
                                                                             setShiny(true);
                                                                             root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_shiny+')');
-                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_shiny,pkmId:idPkm, shiny:1,negative:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                             Axios.post('/api/addXp',
                                                                                 {
                                                                                     user: pseudo,
@@ -455,7 +455,7 @@ function SpawnPokemonToken(props) {
                                                                         default :
                                                                             setIsLoaded(false);
                                                                             root.style.setProperty('--backGgroundImage', 'url('+result.sprites.front_default+')');
-                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
+                                                                            Axios.post('/api/capture', {idUser:props.idUser, pseudo: pseudo, pkmName: name, pkmImage:result.sprites.front_default,pkmId:result.id, shiny:0,negative:0, dateCapture:moment(new Date()).utc().format('YYYY-MM-DD hh:mm:ss')})
                                                                             Axios.post('/api/addXp',
                                                                                 {
                                                                                     user: pseudo,
