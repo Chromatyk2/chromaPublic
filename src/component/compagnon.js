@@ -537,7 +537,7 @@ function Compagnon(props) {
                                         .get("/api/getCompagnonList/"+pseudo)
                                         .then(function(response) {
                                             const compagnonList = response.data;
-                                            if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == result.id && item.shiny == rf && item.negative == g).length == 0) {
+                                            if (compagnonList.length == 0 || compagnonList.filter((item) => item.pokemon == result.id && item.shiny == f && item.negative == g).length == 0) {
                                                 Axios.post('/api/updateCompagnon',
                                                     {
                                                         pseudo: pseudo
