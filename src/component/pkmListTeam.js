@@ -8,8 +8,8 @@ function PkmListTeam(props) {
     const shinys = pkmList.filter(item => item.shiny == 1);
     const nbShiny = shinys.length;
     const nbTotal = pkmList.length;
-    function handleState(e,f) {
-        props.change(e,f);
+    function handleState(e,f,g) {
+        props.change(e,f,g);
     }
     return (
         <>
@@ -19,7 +19,7 @@ function PkmListTeam(props) {
             </div>
             <PaginationTeam
                 compagnonList={props.compagnonList}
-                change={(e,f) => handleState(e,f)}
+                change={(e,f) => handleState(e,f,g)}
                 pkmToUpdate={props.pkmToUpdate}
                 itemsPerPage={32}
                 items={props.list}

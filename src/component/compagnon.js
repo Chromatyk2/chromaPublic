@@ -500,7 +500,7 @@ function Compagnon(props) {
                 })
         }
     }
-    function handleState(e,f) {
+    function handleState(e,f,g) {
             fetch("https://pokeapi.co/api/v2/pokemon-form/"+e)
                 .then(res => res.json())
                 .then(
@@ -529,7 +529,8 @@ function Compagnon(props) {
                                                                 shiny: f,
                                                                 shine: f,
                                                                 actif: 1,
-                                                                idUser: idUser
+                                                                idUser: idUser,
+                                                                negative:g
                                                             })
                                                             .then(function (response) {
                                                                 Axios.get("/api/getCompagnon/" + pseudo)
@@ -718,7 +719,7 @@ function Compagnon(props) {
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam}
                    contentLabel="Example Modal">
-                <PokedexTeam pseudo={pseudo} pkmToUpdate={"none"} list={list} change={(e,f) => handleState(e,f)} cookies={props.cookies}/>
+                <PokedexTeam pseudo={pseudo} pkmToUpdate={"none"} list={list} change={(e,f,g) => handleState(e,f,g)} cookies={props.cookies}/>
             </Modal>
             <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">

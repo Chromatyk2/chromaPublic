@@ -20,6 +20,7 @@ function Items(props) {
         const imgToAdd = e.target.value;
         const id = e.target.id;
         const shiny = e.target.getAttribute("shiny");
+        const negative = e.target.getAttribute("negative");
         const pkToUpdate = pkmToUpdate;
         if(pkmToUpdate !== "none"){
             Axios.post('/api/updatePokemonTeam',
@@ -33,7 +34,7 @@ function Items(props) {
                     props.change();
                 })
         }else{
-            props.change(id, shiny);
+            props.change(id, shiny, negative);
         }
     }
     console.log(formList)
@@ -52,6 +53,7 @@ function Items(props) {
                                     value={val.pkmImage}
                                     id={val.pkmId}
                                     shiny={val.shiny}
+                                    negative={val.negative}
                                     style={{
                                         backgroundImage:"url("+val.pkmImage+")",
                                         height:"100px",
@@ -59,7 +61,8 @@ function Items(props) {
                                         backgroundRepeat:"no-repeat",
                                         backgroundPosition:"center",
                                         backgroundColor: "rgba(37, 87, 72, .2)",
-                                        backgroundSize:"80px"
+                                        backgroundSize:"80px",
+                                        filter : val.negative === 1 ?  "invert(1)" : "invert(0)"
 
                                     }}
                                     className={formList.filter((item) => item.form_id == val.pkmId).length > 0 && compagnonList.filter((item) => item.pokemon == formList.filter((item) => item.form_id == val.pkmId)[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>

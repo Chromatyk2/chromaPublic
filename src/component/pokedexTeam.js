@@ -7,8 +7,8 @@ import PkmListTeam from './pkmListTeam.js'
 function PokedexTeam(props) {
     const [compagnonList,setCompagnonList] = useState(null);
     const [pokemonList,setPokemonList] = useState([]);
-    function handleState(e,f) {
-        props.change(e,f);
+    function handleState(e,f,g) {
+        props.change(e,f,g);
     }
 
     useEffect(() => {
@@ -34,7 +34,7 @@ function PokedexTeam(props) {
     return (
         <>
             {compagnonList &&
-                    <PkmListTeam compagnonList={compagnonList} change={(e, f) => handleState(e, f)}
+                    <PkmListTeam compagnonList={compagnonList} change={(e, f) => handleState(e, f,g)}
                                  pkmToUpdate={props.pkmToUpdate} list={props.list} pkmList={pokemonList}/>
             }
         </>
