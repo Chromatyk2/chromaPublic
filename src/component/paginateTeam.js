@@ -104,8 +104,8 @@ function PaginationTeam(props) {
         const newOffset = (event.selected * props.itemsPerPage) % filtredPokemon.length;
         setItemOffset(newOffset);
     };
-    function handleState(e,f) {
-        props.change(e,f);
+    function handleState(e,f,g) {
+        props.change(e,f,g);
     }
     return (
         <>
@@ -116,7 +116,7 @@ function PaginationTeam(props) {
                     <button className="filterButton" onClick={handlePokemon} value="1" >Shiny</button>
                 </div>
             }
-            <Items pkmList={props.pkmList} compagnonList={props.compagnonList} change={(e,f) => handleState(e,f)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
+            <Items pkmList={props.pkmList} compagnonList={props.compagnonList} change={(e,f,g) => handleState(e,f,g)} pkmToUpdate={props.pkmToUpdate} currentItems={currentItems} />
             <ReactPaginate
                 className="paginateLay"
                 breakLabel="..."
