@@ -45,7 +45,6 @@ function Items(props) {
                     <h1>Loading...</h1>
                 ) : (
                     pkmList.map((val, key) => {
-                        console.log(formList.filter((item) => item.form_id == val.pkmId))
                         return (
                             <>
                                 <button
