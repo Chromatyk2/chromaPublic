@@ -64,7 +64,7 @@ function Items(props) {
                                         filter : val.negative === 1 ?  "invert(1)" : "invert(0)"
 
                                     }}
-                                    className={formList.filter((item) => item.form_id == val.pkmId).length > 0 && compagnonList.filter((item) => item.pokemon == formList.filter((item) => item.form_id == val.pkmId)[0].pkm_id && item.level == 100 && item.shiny == val.shiny).length > 0 ? "maxLevelFrame" : ""}>
+                                    className={formList.filter((item) => item.form_id == val.pkmId).length > 0 && compagnonList.filter((item) => item.pokemon == formList.filter((item) => item.form_id == val.pkmId)[0].pkm_id && item.level == 100 && item.shiny == val.shiny && item.negative == val.negative).length > 0 ? "maxLevelFrame" : ""}>
                                 </button>
                             </>
                         )
