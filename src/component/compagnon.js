@@ -154,18 +154,25 @@ function Compagnon(props) {
 
                                         if(response.data[0].level == 100){
                                             if(response.data[0].shiny == 1){
-                                                var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
-                                                openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
-                                            }else{
-                                                var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
-                                                var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
-                                                var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
-                                                openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
-                                            }
+                                                if(response.data[0].negative == 1){
+                                                    var berryToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                    var tokenCardToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                    var tokenPkmToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                    var powderToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                    openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                                }else if(response.data[0].shiny == 1){
+                                                    var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
+                                                    var tokenCardToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
+                                                    var tokenPkmToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
+                                                    var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
+                                                    openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                                }else{
+                                                    var berryToWin = Math.floor(Math.random() * (1001 - 500) ) + 500;
+                                                    var tokenCardToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                    var tokenPkmToWin = Math.floor(Math.random() * (10 - 5) ) + 5;
+                                                    var powderToWin = Math.floor(Math.random() * (3000 - 1500) ) + 1500;
+                                                    openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                                }
                                         }
                                         Axios
                                             .get("/api/getProfil/"+idUser)
@@ -229,10 +236,16 @@ function Compagnon(props) {
                                                     });
 
                                                     if(response.data[0].level == 100){
-                                                        if(response.data[0].shiny == 1){
+                                                        if(response.data[0].negative == 1){
+                                                            var berryToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                            var powderToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                                        }else if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
                                                             var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
@@ -336,10 +349,16 @@ function Compagnon(props) {
                                                     });
 
                                                     if(response.data[0].level == 100){
-                                                        if(response.data[0].shiny == 1){
+                                                        if(response.data[0].negative == 1){
+                                                            var berryToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                            var powderToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                                        }else if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
                                                             var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
@@ -443,10 +462,16 @@ function Compagnon(props) {
                                                     });
 
                                                     if(response.data[0].level == 100){
-                                                        if(response.data[0].shiny == 1){
+                                                        if(response.data[0].negative == 1){
+                                                            var berryToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (50 - 45) ) + 45;
+                                                            var powderToWin = Math.floor(Math.random() * (10500 - 9000) ) + 9000;
+                                                            openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
+                                                        }else if(response.data[0].shiny == 1){
                                                             var berryToWin = Math.floor(Math.random() * (1501 - 1000) ) + 1000;
-                                                            var tokenCardToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
-                                                            var tokenPkmToWin = Math.floor(Math.random() * (20 - 10) ) + 10;
+                                                            var tokenCardToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
+                                                            var tokenPkmToWin = Math.floor(Math.random() * (15 - 10) ) + 10;
                                                             var powderToWin = Math.floor(Math.random() * (4500 - 3000) ) + 3000;
                                                             openModalBerry(berryToWin, tokenCardToWin, tokenPkmToWin, powderToWin);
                                                         }else{
