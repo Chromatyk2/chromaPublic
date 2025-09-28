@@ -19,7 +19,7 @@ function PkmListTeam(props) {
             </div>
             <PaginationTeam
                 compagnonList={props.compagnonList}
-                change={(e,f) => handleState(e,f,g)}
+                change={(e,f,g) => handleState(e,f,g)}
                 pkmToUpdate={props.pkmToUpdate}
                 itemsPerPage={32}
                 items={props.list}

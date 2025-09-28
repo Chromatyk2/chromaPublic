@@ -34,7 +34,7 @@ function PokedexTeam(props) {
     return (
         <>
             {compagnonList &&
-                    <PkmListTeam compagnonList={compagnonList} change={(e, f) => handleState(e, f,g)}
+                    <PkmListTeam compagnonList={compagnonList} change={(e, f,g) => handleState(e, f,g)}
                                  pkmToUpdate={props.pkmToUpdate} list={props.list} pkmList={pokemonList}/>
             }
         </>
