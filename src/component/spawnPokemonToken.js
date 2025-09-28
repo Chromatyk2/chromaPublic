@@ -505,7 +505,7 @@ function SpawnPokemonToken(props) {
             {isLoaded === false &&
                 <>
                     <div className="pokemonContentToken">
-                        <div style={{left:"0"}}  className="pkmn exit left token">
+                        <div style={{filter : negative === true ?  "invert(1)" : "invert(0)", left:"0"}} className="pkmn exit left token">
                             <div className={useBall+" ball"}>
                                 <span className="x">
                                   <span className="y">
