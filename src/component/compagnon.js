@@ -124,7 +124,9 @@ function Compagnon(props) {
                         Axios.post('/api/lvlUpPokemon',
                             {
                                 pseudo: pseudo,
-                                pokemon:compagnon.pokemon
+                                pokemon:compagnon.pokemon,
+                                shiny:compagnon.shiny,
+                                negative:compagnon.negative
                             })
                             .then(function (response) {
                                 Axios.get("/api/getCompagnon/" + pseudo)
@@ -196,7 +198,9 @@ function Compagnon(props) {
                     Axios.post('/api/addXpPokemon',
                         {
                             user: pseudo,
-                            pokemon:compagnon.pokemon
+                            pokemon:compagnon.pokemon,
+                            shiny:compagnon.shiny,
+                            negative:compagnon.negative
                         }
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
@@ -205,7 +209,9 @@ function Compagnon(props) {
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
-                                            pokemon:compagnon.pokemon
+                                            pokemon:compagnon.pokemon,
+                                            shiny:compagnon.shiny,
+                                            negative:compagnon.negative
                                         })
 
                                         .then(function (response) {
@@ -310,7 +316,9 @@ function Compagnon(props) {
                     Axios.post('/api/addXpPokemonDix',
                         {
                             user: pseudo,
-                            pokemon:compagnon.pokemon
+                            pokemon:compagnon.pokemon,
+                            shiny:compagnon.shiny,
+                            negative:compagnon.negative
                         }
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
@@ -319,7 +327,9 @@ function Compagnon(props) {
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
-                                            pokemon:compagnon.pokemon
+                                            pokemon:compagnon.pokemon,
+                                            shiny:compagnon.shiny,
+                                            negative:compagnon.negative
                                         })
                                         .then(function (response) {
                                             Axios.get("/api/getCompagnon/" + pseudo)
@@ -423,7 +433,9 @@ function Compagnon(props) {
                     Axios.post('/api/addXpPokemonCent',
                         {
                             user: pseudo,
-                            pokemon:compagnon.pokemon
+                            pokemon:compagnon.pokemon,
+                            shiny:compagnon.shiny,
+                            negative:compagnon.negative
                         }
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
@@ -432,7 +444,9 @@ function Compagnon(props) {
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
-                                            pokemon:compagnon.pokemon
+                                            pokemon:compagnon.pokemon,
+                                            shiny:compagnon.shiny,
+                                            negative:compagnon.negative
                                         })
                                         .then(function (response) {
                                             Axios.get("/api/getCompagnon/" + pseudo)
