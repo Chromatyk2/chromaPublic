@@ -623,7 +623,9 @@ function Compagnon(props) {
                                                         Axios.post('/api/activeCompagnon',
                                                             {
                                                                 pseudo: pseudo,
-                                                                pokemon: result.id
+                                                                pokemon: result.id,
+                                                                shiny: f,
+                                                                negative: g
                                                             })
                                                             .then(function (response) {
                                                                 Axios.get("/api/getCompagnon/" + pseudo)
