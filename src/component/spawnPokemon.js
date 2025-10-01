@@ -537,7 +537,7 @@ function SpawnPokemon(props) {
                                     bottom: "-140px",
                                     position: "absolute",
                                     right: "-60px"}} /></div> }
-                                {shiny === true || negative === true &&
+                                {shiny === true &&
                                     <div className="fav">
                                         <svg className="fav-star" viewBox="0 0 114 110">
                                             <path
