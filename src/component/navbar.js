@@ -76,7 +76,7 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/profil">Profil</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/compagnon">Compagnon</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/pokedex">Pokedex</Link>
-                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/allProfils">Classement</Link>
+                      <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/allProfils">Communauté</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Ouverture Booster</Link>
                   </Nav>

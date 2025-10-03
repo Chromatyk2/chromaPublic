@@ -49,9 +49,6 @@ function RandomProfil(props) {
                         <p className={"levelProfilList"}>Niveau {allProfil[randomIndex].level}
                             <small> ( {allProfil[randomIndex].xp} xp )</small>
                         </p>
-                        <p className={"levelProfilList"}>
-                            <small> Rang : {randomIndex + 1}</small>
-                        </p>
                         <div className={"profilVisualsList"}>
                             <div
                                 style={{backgroundImage: allProfil[randomIndex].first_pokemon ? 'url(' + allProfil[randomIndex].first_pokemon + ')' : 'url(/images/random.png)'}}

@@ -525,6 +525,7 @@ function CardsShop(props) {
                         <option value="Soleil let Lune">Soleil et Lune</option>
                         <option value="Épée et Bouclier">Épée et Bouclier</option>
                         <option value="Écarlate et Violet">Écarlate et Violet</option>
+                        <option value="Mega Evolution">Méga-Évolution</option>
                         <option value="TCGP">TCGP</option>
                     </select>
                     <div id={"cardsContainer"}>
