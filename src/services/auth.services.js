@@ -88,8 +88,7 @@ function AuthService() {
 
   return(
     <div className="loginContainer">
-        <img src={"/logo.png"}/>
-        <p className="pleaseLogin">Capture des pokemons, col</p>
+        <img style={{margin:0,width:"300px"}} src={"/logo.png"}/>
       <button className="loginButton" onClick={authentication}><i class="fa-brands fa-twitch"></i>Se connecter avec twitch</button>
     </div>
   )

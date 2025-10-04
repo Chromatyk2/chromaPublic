@@ -31,7 +31,7 @@ function App() {
   if(typeof cookies.user === "undefined") {
     return(
 
-        <div style={{background: window.location.href.startsWith('https://chromatyk.fr/29ct92B3Zrvx') && 'transparent'}} className={"contentContainer"}>
+        <div style={{background: window.location.href.startsWith('https://chromatyk.fr/29ct92B3Zrvx') && 'transparent', padding:0}} className={"contentContainer"}>
           <Login />
         </div>
     )
