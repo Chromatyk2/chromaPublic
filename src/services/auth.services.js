@@ -88,8 +88,8 @@ function AuthService() {
 
   return(
     <div className="loginContainer">
-      <p className="welcome">Bienvenue !</p>
-      <p className="pleaseLogin">Pour commencer connecte toi avec ton compte Twitch !</p>
+        <img src={"/logo.png"}/>
+        <p className="pleaseLogin">Capture des pokemons, col</p>
       <button className="loginButton" onClick={authentication}><i class="fa-brands fa-twitch"></i>Se connecter avec twitch</button>
     </div>
   )

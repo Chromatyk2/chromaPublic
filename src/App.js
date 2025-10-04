@@ -29,7 +29,12 @@ import Log from "./services/log";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(typeof cookies.user === "undefined") {
-    return <Login />
+    return(
+
+        <div style={{background: window.location.href.startsWith('https://chromatyk.fr/29ct92B3Zrvx') && 'transparent'}} className={"contentContainer"}>
+          <Login />
+        </div>
+    )
   }
   return(
       <>
