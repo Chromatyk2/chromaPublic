@@ -33,6 +33,7 @@ function Compagnon(props) {
     const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
     const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
     const [powderToWin, setPowderToWin] = React.useState(null);
+    const [multi, setMulti] = React.useState(2);
     useEffect(() => {Axios
         .get("/api/getProfil/"+idUser)
         .then(function(response) {
@@ -47,6 +48,16 @@ function Compagnon(props) {
                             setCompagnonList(response.data);
                             Axios.get("/api/getCompagnon/" + pseudo)
                                 .then(function (response) {
+                                    if(response.data[0].shiny === 1){
+                                        const multi = 3;
+                                        setMulti(3);
+                                    }else if(response.data[0].negative === 1){
+                                        const multi = 4;
+                                        setMulti(4);
+                                    }else{
+                                        const multi = 2;
+                                        setMulti(2);
+                                    }
                                     setCustomStyles({
                                         extBar: {
                                             width: '100%',
@@ -58,7 +69,7 @@ function Compagnon(props) {
                                             marginBottom: '15px'
                                         },
                                         intBar: {
-                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
+                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100) + "%",
                                             position: 'relative',
                                             background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                             textWrap: 'nowrap',
@@ -114,11 +125,11 @@ function Compagnon(props) {
     }
     function levelUpPokemon() {
         setLoad(true)
-        if(profil.berry - (((compagnon.level + 1) * 2) - compagnon.xp) > -1 && compagnon.level < 100){
+        if(profil.berry - (((compagnon.level + 1) * multi) - compagnon.xp) > -1 && compagnon.level < 100){
             Axios.post("/api/removeBerryLevelUp",
                 {
                     user: pseudo,
-                    win:((compagnon.level + 1) * 2) - compagnon.xp
+                    win:((compagnon.level + 1) * multi) - compagnon.xp
                 })
                 .then(function (response) {
                         Axios.post('/api/lvlUpPokemon',
@@ -143,7 +154,7 @@ function Compagnon(props) {
                                                 marginBottom: '15px'
                                             },
                                             intBar: {
-                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
+                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100) + "%",
                                                 position: 'relative',
                                                 background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                                 textWrap: 'nowrap',
@@ -205,7 +216,7 @@ function Compagnon(props) {
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
                             .then(function (response) {
-                                if(response.data[0].xp >= (response.data[0].level + 1) * 2 ){
+                                if(response.data[0].xp >= (response.data[0].level + 1) * multi ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
@@ -229,7 +240,7 @@ function Compagnon(props) {
                                                             marginBottom: '15px'
                                                         },
                                                         intBar: {
-                                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
+                                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100) + "%",
                                                             position: 'relative',
                                                             background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                                             textWrap: 'nowrap',
@@ -282,7 +293,7 @@ function Compagnon(props) {
                                             marginBottom: '15px'
                                         },
                                         intBar: {
-                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100) + "%",
+                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100) + "%",
                                             position: 'relative',
                                             background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                             textWrap: 'nowrap',
@@ -323,7 +334,7 @@ function Compagnon(props) {
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
                             .then(function (response) {
-                                if(response.data[0].xp >= (response.data[0].level + 1) * 2 ){
+                                if(response.data[0].xp >= (response.data[0].level + 1) * multi ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
@@ -346,7 +357,7 @@ function Compagnon(props) {
                                                             marginBottom: '15px'
                                                         },
                                                         intBar: {
-                                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2) + "%",
+                                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100).toFixed(2) + "%",
                                                             position: 'relative',
                                                             background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                                             textWrap: 'nowrap',
@@ -399,7 +410,7 @@ function Compagnon(props) {
                                             marginBottom: '15px'
                                         },
                                         intBar: {
-                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2) + "%",
+                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100).toFixed(2) + "%",
                                             position: 'relative',
                                             background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                             textWrap: 'nowrap',
@@ -440,7 +451,7 @@ function Compagnon(props) {
                     ).then(function (response) {
                         Axios.get("/api/getCompagnon/" + pseudo)
                             .then(function (response) {
-                                if(response.data[0].xp >= (response.data[0].level + 1) * 2 ){
+                                if(response.data[0].xp >= (response.data[0].level + 1) * multi ){
                                     Axios.post('/api/lvlUpPokemon',
                                         {
                                             pseudo: pseudo,
@@ -463,7 +474,7 @@ function Compagnon(props) {
                                                             marginBottom: '15px'
                                                         },
                                                         intBar: {
-                                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2) + "%",
+                                                            width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100).toFixed(2) + "%",
                                                             position: 'relative',
                                                             background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                                             textWrap: 'nowrap',
@@ -516,7 +527,7 @@ function Compagnon(props) {
                                             marginBottom: '15px'
                                         },
                                         intBar: {
-                                            width: parseFloat((response.data[0].xp / (response.data[0].level * 2)) * 100).toFixed(2) + "%",
+                                            width: parseFloat((response.data[0].xp / (response.data[0].level * multi)) * 100).toFixed(2) + "%",
                                             position: 'relative',
                                             background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                             textWrap: 'nowrap',
@@ -584,7 +595,7 @@ function Compagnon(props) {
                                                                                 marginBottom: '15px'
                                                                             },
                                                                             intBar: {
-                                                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
+                                                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100).toFixed(2)+"%",
                                                                                 position: 'relative',
                                                                                 background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                                                                 textWrap: 'nowrap',
@@ -655,7 +666,7 @@ function Compagnon(props) {
                                                                                 marginBottom: '15px'
                                                                             },
                                                                             intBar: {
-                                                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * 2)) * 100).toFixed(2)+"%",
+                                                                                width: parseFloat((response.data[0].xp / ((response.data[0].level + 1 ) * multi)) * 100).toFixed(2)+"%",
                                                                                 position: 'relative',
                                                                                 background: "linear-gradient(90deg,rgba(20, 106, 133, 1) 0%, rgba(49, 146, 176, 1) 100%)",
                                                                                 textWrap: 'nowrap',
@@ -862,19 +873,19 @@ function Compagnon(props) {
                                     marginTop: "-40px",
                                     color: "white"
                                 }}>
-                                    {profil.berry >= ((compagnon.level + 1) * 2) - compagnon.xp &&
+                                    {profil.berry >= ((compagnon.level + 1) * multi) - compagnon.xp &&
                                         <button disabled={load} className={"buttonToXp"}
                                                 onClick={levelUpPokemon}> {"Niveau + 1"}
                                         </button>
                                     }
                                     {profil.berry > 99 &&
-                                        ((compagnon.level + 1) * 2) - compagnon.xp >= 100 ?
+                                        ((compagnon.level + 1) * multi) - compagnon.xp >= 100 ?
                                         <button disabled={load} className={"buttonToXp"}
                                                 onClick={xpPokemonCent}> {"x100"}
                                         </button>
                                             :
                                         profil.berry > 9 &&
-                                        ((compagnon.level + 1) * 2) - compagnon.xp >= 10 ?
+                                        ((compagnon.level + 1) * multi) - compagnon.xp >= 10 ?
                                         <button disabled={load} className={"buttonToXp"}
                                                 onClick={xpPokemonDix}> {"x10"}
                                         </button>
@@ -893,7 +904,7 @@ function Compagnon(props) {
                             <div style={customStyles.extBar} className="fullProgressBar">
                                 <div
                                     style={customStyles.intBar}><p
-                                    style={{marginLeft: "15px"}}>{compagnon.xp + " / " + (compagnon.level + 1) * 2 + " (" + parseFloat((compagnon.xp / ((compagnon.level + 1 ) * 2)) * 100).toFixed(2) + "%)"}</p></div>
+                                    style={{marginLeft: "15px"}}>{compagnon.xp + " / " + (compagnon.level + 1) * multi + " (" + parseFloat((compagnon.xp / ((compagnon.level + 1 ) * multi)) * 100).toFixed(2) + "%)"}</p></div>
                             </div>
                         </>
                         :
