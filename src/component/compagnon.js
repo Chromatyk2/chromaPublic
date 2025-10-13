@@ -845,7 +845,7 @@ function Compagnon(props) {
                                     width: "280px",
                                     marginBottom: "50px",
                                     animation: "floatArrow 5s linear infinite",
-                                    filter: profil.berry >= ((compagnon.level + 1) * 2) - compagnon.xp ? "drop-shadow(0px 0px 6px yellow)" : "drop-shadow(0px 0px 6px #066d04)"
+                                    filter : compagnon.negative === 1 ?  "invert(1)" : "invert(0)"
                             }}
                                 src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
                             </button>
