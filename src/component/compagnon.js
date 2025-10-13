@@ -584,6 +584,16 @@ function Compagnon(props) {
                                                             .then(function (response) {
                                                                 Axios.get("/api/getCompagnon/" + pseudo)
                                                                     .then(function (response) {
+                                                                        if(response.data[0].negative == 1){
+                                                                            const multi = 4;
+                                                                            setMulti(4);
+                                                                        }else if(response.data[0].shiny == 1){
+                                                                            const multi = 3;
+                                                                            setMulti(3);
+                                                                        }else {
+                                                                            const multi = 2;
+                                                                            setMulti(2);
+                                                                        }
                                                                         setCustomStyles({
                                                                             extBar: {
                                                                                 width: '100%',
