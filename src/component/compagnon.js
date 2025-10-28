@@ -878,7 +878,7 @@ function Compagnon(props) {
                                     animation: "floatArrow 5s linear infinite",
                                     filter : compagnon.negative === 1 ?  "invert(1)" : "invert(0)"
                             }}
-                                src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/" + compagnon.pokemon + ".png" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" + compagnon.pokemon + ".png"}/>
+                                src={compagnon.shiny == 1 ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/" + compagnon.pokemon + ".gif" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/" + compagnon.pokemon + ".gif"}/>
                             </button>
                             {profil.berry > 0 &&
                                 compagnon.level < 100 &&
