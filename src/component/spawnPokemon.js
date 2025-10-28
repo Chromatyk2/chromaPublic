@@ -32,6 +32,7 @@ function SpawnPokemon(props) {
         setGetToken(false);
         setShiny(false);
         setGetBadge(false);
+        setIsNegative(false);
         if(pseudo !== null){
             setTimeout(function (){
                 var tokenBonus = Math.floor(Math.random() * 10);
