@@ -364,7 +364,7 @@ function SpawnPokemonToken(props) {
                                                     .then(res => res.json())
                                                     .then(
                                                         (result) => {
-                                                            var finalId = idPkm;
+                                                            var idPkm = result.id;
                                                             if (result.names.find((element) => element.language.name == "fr")) {
                                                                 var name = result.names.find((element) => element.language.name == "fr").name;
                                                             } else {
