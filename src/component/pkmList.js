@@ -8,7 +8,9 @@ import {useCookies} from "react-cookie";
 function PkmList(props) {
   const pkmList = props.list;
   const shinys = pkmList.filter(item => item.shiny == 1);
+  const negatifs = pkmList.filter(item => item.negative == 1);
   const nbShiny = shinys.length;
+  const nbNegative = negatifs.length;
   const nbTotal = pkmList.length;
   const [cookies, setCookie] = useCookies();
     return (
@@ -26,6 +28,7 @@ function PkmList(props) {
             }
             <div className="stats">
                 <p className="labelStats">Shiny<br/><span className="valueStats">{nbShiny}</span></p>
+                <p className="labelStats">Négatif<br/><span className="valueStats">{nbNegative}</span></p>
                 <p className="labelStats">Total<br/><span className="valueStats">{nbTotal}</span></p>
             </div>
             <p style={{textAlign: "center", color: "white"}}>{"Captures totales = " + props.totalPkm}</p>

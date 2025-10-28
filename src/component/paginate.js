@@ -53,7 +53,9 @@ function Pagination(props) {
   const [isSorted, setIsSorted] = useState(false);
   const [currentItems, setCurrentItems] = useState(null);
   const [isShiny, setIsShiny] = useState(false);
+  const [isNegative, setIsNegative] = useState(false);
   const hasShiny = props.items.filter(item => item.shiny == 1);
+  const hasNegative = props.items.filter(item => item.negative == 1);
   useEffect(() => {
     setFiltredPokemon(props.items);
     const endOffset = itemOffset + props.itemsPerPage;
@@ -65,6 +67,7 @@ function Pagination(props) {
     switch (sort){
       case "0" :
         setIsShiny(false);
+        setIsNegative(false);
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isSorted === false){
@@ -77,6 +80,7 @@ function Pagination(props) {
         break;
       case "1" :
         setIsShiny(true);
+        setIsNegative(false);
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isSorted === false){
@@ -92,8 +96,13 @@ function Pagination(props) {
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
-          setCurrentItems(props.items.sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
-          setFiltredPokemon(props.items.sort((a, b) => b.nbCapture - a.nbCapture))
+          if(isNegative === false){
+            setCurrentItems(props.items.sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
+            setFiltredPokemon(props.items.sort((a, b) => b.nbCapture - a.nbCapture))
+          }else{
+            setCurrentItems(props.items.filter(item => item.negative == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
+            setFiltredPokemon(props.items.filter(item => item.negative == 1).sort((a, b) => b.nbCapture - a.nbCapture))
+          }
         }else{
           setCurrentItems(props.items.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
           setFiltredPokemon(props.items.filter(item => item.shiny == 1).sort((a, b) => b.nbCapture - a.nbCapture))
@@ -104,8 +113,13 @@ function Pagination(props) {
         var start = 0;
         var endOffset = start + props.itemsPerPage;
         if(isShiny === false){
-          setCurrentItems(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
-          setFiltredPokemon(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId))
+          if(isNegative === false){
+            setCurrentItems(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
+            setFiltredPokemon(filtredPokemon.sort((a, b) => a.pkmId - b.pkmId))
+          }else{
+            setCurrentItems(filtredPokemon.filter(item => item.negative == 1).sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
+            setFiltredPokemon(filtredPokemon.filter(item => item.negative == 1).sort((a, b) => a.pkmId - b.pkmId))
+          }
         }else{
           setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
           setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => a.pkmId - b.pkmId))
@@ -121,6 +135,18 @@ function Pagination(props) {
         }else{
           setCurrentItems(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(b.dateCapture) - new Date(a.dateCapture)).slice(start, endOffset))
           setFiltredPokemon(filtredPokemon.filter(item => item.shiny == 1).sort((a, b) => new Date(b.dateCapture) - new Date(a.dateCapture)))
+        }
+        break;
+      case "5" :
+        setIsNegative(true);
+        var start = 0;
+        var endOffset = start + props.itemsPerPage;
+        if(isSorted === false){
+          setCurrentItems(props.items.filter(item => item.negative == 1).sort((a, b) => a.pkmId - b.pkmId).slice(start, endOffset))
+          setFiltredPokemon(props.items.filter(item => item.negative == 1).sort((a, b) => a.pkmId - b.pkmId))
+        }else{
+          setCurrentItems(props.items.filter(item => item.negative == 1).sort((a, b) => b.nbCapture - a.nbCapture).slice(start, endOffset))
+          setFiltredPokemon(props.items.filter(item => item.negative == 1).sort((a, b) => b.nbCapture - a.nbCapture))
         }
         break;
       default :
@@ -144,6 +170,9 @@ function Pagination(props) {
               <button className="filterButton" onClick={handlePokemon} value="0">Tous</button>
               {hasShiny.length > 0 &&
                   <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
+              }
+              {hasNegative.length > 0 &&
+                  <button className="filterButton" onClick={handlePokemon} value="5">Negative</button>
               }
               {isSorted === false ?
                   <>
