@@ -67,12 +67,14 @@ function SpawnPokemonToken(props) {
                                     .then(res => res.json())
                                     .then(
                                         (result) => {
-                                            var shinySprite = result.sprites.other.showdown.front_shiny;
-                                            var classicSprite = result.sprites.other.showdown.front_default;
                                             var idPkm = result.id;
-                                            if(result.sprites.front_default === null){
-                                                setReloadFetch(reloadFetch + 1);
+                                            if(result.sprites.other.showdown.front_default === null){
+                                                var shinySprite = result.sprites.front_shiny;
+                                                var classicSprite = result.sprites.front_default;
                                             }else {
+                                                var shinySprite = result.sprites.other.showdown.front_shiny;
+                                                var classicSprite = result.sprites.other.showdown.front_default;
+                                            }
                                                 fetch(result.forms[0].url)
                                                     .then(res => res.json())
                                                     .then(
@@ -191,7 +193,6 @@ function SpawnPokemonToken(props) {
                                                                     }
                                                             }
                                                         })
-                                            }
                                         },
                                         (error) => {
                                             setIsLoaded(true);
