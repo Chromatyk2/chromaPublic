@@ -14,9 +14,15 @@ function Shinydex() {
     }, []);
     return (
         <>
-            <p className="pseudoProfil">Shinydex de Chromatyk</p>
-            <p style={{textAlign: "center", color: "white"}}>Retrouve ici l'ensemble des shinys capturés en live avec les liens des VODs</p>
-            <p style={{textAlign: "center", color: "white", marginBottom:"35px"}}>Total : {shinydex.length}/1083</p>
+            {shinydex &&
+                <>
+                    <p className="pseudoProfil">Shinydex de Chromatyk</p>
+                    <p style={{textAlign: "center", color: "white"}}>Retrouve ici l'ensemble des shinys capturés en live
+                        avec les liens des VODs</p>
+                    <p style={{textAlign: "center", color: "white", marginBottom: "35px"}}>Total
+                        : {shinydex.length}/1083</p>
+                </>
+            }
             <div className={"shinydexContainer"}>
                 {shinydex &&
                     shinydex.map((val, key) => {

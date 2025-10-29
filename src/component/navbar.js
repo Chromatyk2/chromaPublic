@@ -79,6 +79,7 @@ function NavBar(props) {
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/allProfils">Communauté</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/cartes">Mes cartes</Link>
                       <Link onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/tcg/boutique">Ouverture Booster</Link>
+                      <Link style={{color:"gold"}} onClick={() => setExpanded(false)} className="navLink linkFromNav" to="/shinydex">Shinydex</Link>
                   </Nav>
               </Navbar.Collapse>
           </Container>
