@@ -24,7 +24,7 @@ function Shinydex() {
                                 <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/><span className={"spanShinydex"}>{val.surnom}</span></div>
                                 <div className={"shinydexSpriteContainer"}>
                                     <div style={{display:"flex"}}>
-                                        <img className={"shinydexSprite"} src={"/Shinydex/classic/" + val.idPkm + ".gif"}/>
+                                        <img className={"shinydexSprite"} src={"/Shinydex/shiny/" + val.idPkm + ".gif"}/>
                                     </div>
                                     <a target={"_blank"} href={val.lien}><img className={"linkShinydex"} src={"/youtube.png"}/></a>
                                 </div>
