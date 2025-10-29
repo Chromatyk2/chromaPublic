@@ -21,8 +21,8 @@ function Shinydex() {
                         return (
                             <div className={"shinydexCard"}>
                                 <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/><span>{val.surnom}</span></div>
-                                <div className={"shinydexSprite"}>
-                                    <img src={"/Shinydex/classic/"+val.idPkm+".gif"}/>
+                                <div className={"shinydexSpriteContainer"}>
+                                    <img className={"shinydexSprite"} src={"/Shinydex/classic/"+val.idPkm+".gif"}/>
                                 </div>
                             </div>
                         )
