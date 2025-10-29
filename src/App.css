@@ -5782,3 +5782,9 @@ img.badgeToWinXp {
     display: flex;
     flex-flow: column;
 }
+.shinydexName{
+    color: white;
+    text-align: center;
+    width: 100%;
+    background-color: #120747;
+}
