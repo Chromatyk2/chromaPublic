@@ -13,7 +13,6 @@ function HomePage(props) {
                   Complète ton Pokédex, remplis ta collection de cartes, construis ton profil pour flex sur les lives !<br/>
                   Tout ça, c’est du taff, alors si tu veux me soutenir, passe sur mes streams et pense à lacher ton follow, tu me régalerais !</p>
           <div className="socialContainer">
-              <p className="myNetworks">Mes reseaux</p>
               <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i
                   className="fa-brands fa-discord"></i>Discord</a>
               <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk"><i
