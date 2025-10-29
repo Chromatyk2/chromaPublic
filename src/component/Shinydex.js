@@ -26,7 +26,7 @@ function Shinydex() {
                                     <div style={{display:"flex"}}>
                                         <img className={"shinydexSprite"} src={"/Shinydex/classic/" + val.idPkm + ".gif"}/>
                                     </div>
-                                    <a href={val.lien}><img src={"/youtube.webp"}/></a>
+                                    <a target={"_blank"} href={val.lien}><img className={"linkShinydex"} src={"/youtube.png"}/></a>
                                 </div>
                                 <div className={"description"}>
                                     {moment(val.date).utc().format('DD/MM/YYYY')}<br/><span className={"spanShinydex"}>{val.version}</span><br/>{val.description}

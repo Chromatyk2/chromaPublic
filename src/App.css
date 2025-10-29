@@ -5795,6 +5795,7 @@ img.badgeToWinXp {
     display: flex;
     justify-content: center;
     height: 200px;
+    position: relative;
 }
 .shinydexSprite{
     margin: auto;
@@ -5808,4 +5809,10 @@ img.badgeToWinXp {
 }
 .spanShinydex{
     color: #83d7d7;
+}
+.linkShinydex{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
 }
