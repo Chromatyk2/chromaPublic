@@ -5771,12 +5771,12 @@ img.badgeToWinXp {
     padding: 5px;
 }
 .shinydexContainer{
-    display: flex;
-    justify-content: center;
+    ddisplay: flex;
     flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     width: 90%;
-    flex-flow: row;
-    gap:20px
+    margin: auto;
 }
 .shinydexCard{
     width: 300px;
