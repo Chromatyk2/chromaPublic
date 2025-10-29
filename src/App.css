@@ -5795,6 +5795,7 @@ img.badgeToWinXp {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1.25rem;
+    position: relative;
 }
 .shinydexSprite{
     max-width: 100%;
