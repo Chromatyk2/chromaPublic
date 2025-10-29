@@ -5776,6 +5776,7 @@ img.badgeToWinXp {
     flex-wrap: wrap;
     width: 90%;
     flex-flow: row;
+    gap:20px
 }
 .shinydexCard{
     width: 300px;
