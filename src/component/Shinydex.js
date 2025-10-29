@@ -20,8 +20,7 @@ function Shinydex() {
                     shinydex.map((val, key) => {
                         return (
                             <div className={"shinydexCard"}>
-                                <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/><span>{val.surnom}</span>
-                                </div>
+                                <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/><span>{val.surnom}</span></div>
                                 <div className={"shinydexSpriteContainer"}>
                                     <div>
                                         <img className={"shinydexSprite"} src={"/Shinydex/classic/" + val.idPkm + ".gif"}/>
