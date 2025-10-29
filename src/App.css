@@ -5782,14 +5782,22 @@ img.badgeToWinXp {
     width: 300px;
     display: flex;
     flex-flow: column;
+    border: solid 1px #120747;
 }
-.shinydexSpriteContainer{
+.shinydexName{
     color: white;
     text-align: center;
-    width: 100%;
     background-color: #120747;
-    background-image: linear-gradient(to bottom right, #045078, #3893d5 25%, #045078 50%, #3893d5 75%, #045078);;
+}
+.shinydexSpriteContainer{
+    background-image: linear-gradient(to bottom right, #045078, #3893d5 25%, #045078 50%, #3893d5 75%, #045078);width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
 }
 .shinydexSprite{
-    margin:15px;
+    margin: auto;
+    width: 150px;
+    vertical-align: middle;
 }
