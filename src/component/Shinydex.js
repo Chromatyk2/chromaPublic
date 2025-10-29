@@ -14,7 +14,7 @@ function Shinydex() {
     return (
         <>
             <p className="pseudoProfil">Shinydex de Chromatyk</p>
-            <p style="text-align: center; color: white;">Retrouve ici l'ensemble des shinys capturés en live avec les liens des VODs</p>
+            <p style={{textAlign: "center", color: "white"}}>Retrouve ici l'ensemble des shinys capturés en live avec les liens des VODs</p>
             <div className={"shinydexContainer"}>
                 {shinydex &&
                     shinydex.map((val, key) => {
