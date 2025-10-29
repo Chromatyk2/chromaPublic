@@ -14,7 +14,7 @@ function Shinydex() {
     return (
         <>
             <p className="pseudoProfil">Shinydex de Chromatyk</p>
-            <p style={{textAlign: "center", color: "white"}}>Retrouve ici l'ensemble des shinys capturés en live avec les liens des VODs</p>
+            <p style={{textAlign: "center", color: "white", marginBottom:"35px"}}>Retrouve ici l'ensemble des shinys capturés en live avec les liens des VODs</p>
             <div className={"shinydexContainer"}>
                 {shinydex &&
                     shinydex.map((val, key) => {
@@ -22,9 +22,12 @@ function Shinydex() {
                             <div className={"shinydexCard"}>
                                 <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/><span>{val.surnom}</span></div>
                                 <div className={"shinydexSpriteContainer"}>
-                                    <div>
+                                    <div style={{display:"flex"}}>
                                         <img className={"shinydexSprite"} src={"/Shinydex/classic/" + val.idPkm + ".gif"}/>
                                     </div>
+                                </div>
+                                <div className={"description"}>
+                                    {val.date}<br/>{val.version}<br/>{val.description}
                                 </div>
                             </div>
                         )
