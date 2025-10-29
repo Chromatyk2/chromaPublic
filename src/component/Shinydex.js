@@ -33,10 +33,12 @@ function Shinydex() {
                                     <div>
                                         <img className={"shinydexSprite"} src={"/Shinydex/shiny/" + val.idPkm + ".gif"}/>
                                     </div>
-                                    <a target={"_blank"} href={val.lien}><img className={"linkShinydex"} src={"/youtube.png"}/></a>
+                                    {val.lien !== null &&
+                                        <a target={"_blank"} href={val.lien}><img className={"linkShinydex"} src={"/youtube.png"}/></a>
+                                    }
                                 </div>
                                 <div className={"description"}>
-                                    {moment(val.date).utc().format('DD/MM/YYYY')}<br/><span className={"spanShinydex"}>{val.version}</span><br/>{val.description}
+                                {moment(val.date).utc().format('DD/MM/YYYY')}<br/><span className={"spanShinydex"}>{val.version}</span><br/>{val.description}
                                 </div>
                             </div>
                         )
