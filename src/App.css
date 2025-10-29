@@ -5792,7 +5792,6 @@ img.badgeToWinXp {
 .shinydexSpriteContainer{
     background-image: linear-gradient(to bottom right, #120747, #072057 25%, #120747 50%, #072057 75%, #120747);
     width: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     height: 200px;
