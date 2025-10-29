@@ -5777,6 +5777,7 @@ img.badgeToWinXp {
     justify-content: center;
     width: 90%;
     margin: auto;
+    padding-bottom: 100px;
 }
 .shinydexCard{
     width: 300px;
