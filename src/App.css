@@ -5801,3 +5801,11 @@ img.badgeToWinXp {
     width: 150px;
     vertical-align: middle;
 }
+.description{
+    color: white;
+    text-align: center;
+    background-color: #120747;
+}
+.spanShinydex{
+    color: #83d7d7;
+}

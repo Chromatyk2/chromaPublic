@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import Axios from "axios";
+import moment from "moment/moment";
 
 function Shinydex() {
 
@@ -20,14 +21,14 @@ function Shinydex() {
                     shinydex.map((val, key) => {
                         return (
                             <div className={"shinydexCard"}>
-                                <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/><span>{val.surnom}</span></div>
+                                <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/><span className={"spanShinydex"}>{val.surnom}</span></div>
                                 <div className={"shinydexSpriteContainer"}>
                                     <div style={{display:"flex"}}>
                                         <img className={"shinydexSprite"} src={"/Shinydex/classic/" + val.idPkm + ".gif"}/>
                                     </div>
                                 </div>
                                 <div className={"description"}>
-                                    {val.date}<br/>{val.version}<br/>{val.description}
+                                    {moment(val.date).utc().format('DD/MM/YYYY')}<br/><span className={"spanShinydex"}>{val.version}</span><br/>{val.description}
                                 </div>
                             </div>
                         )
