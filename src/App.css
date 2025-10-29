@@ -5770,3 +5770,15 @@ img.badgeToWinXp {
      filter: drop-shadow(2px 4px 2px black);
     padding: 5px;
 }
+.shinydexContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    flex-flow: row;
+}
+.shinydexCard{
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+}

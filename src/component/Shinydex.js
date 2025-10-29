@@ -19,7 +19,7 @@ function Shinydex() {
                     shinydex.map((val, key) => {
                         return (
                             <div className={"shinydexCard"}>
-                                <div className={"shinydexName"}>#{val.pkmId} {val.pokemon}<br/>{val.surnom}</div>
+                                <div className={"shinydexName"}>#{val.idPkm} {val.pokemon}<br/>{val.surnom}</div>
                             </div>
                         )
                     })
