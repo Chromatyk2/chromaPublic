@@ -5788,6 +5788,7 @@ img.badgeToWinXp {
     color: white;
     text-align: center;
     background-color: #120747;
+    padding: 5px;
 }
 .shinydexSpriteContainer{
     background-image: linear-gradient(to bottom right, #120747, #072057 25%, #120747 50%, #072057 75%, #120747);
@@ -5806,6 +5807,7 @@ img.badgeToWinXp {
     color: white;
     text-align: center;
     background-color: #120747;
+    padding: 5px;
 }
 .spanShinydex{
     color: #83d7d7;
