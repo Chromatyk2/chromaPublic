@@ -20,7 +20,7 @@ function Shinydex() {
                         return (
                             <div className={"shinydexCard"}>
                                 <div className={"shinydexName"}>#{val.pkmId} {val.pokemon}<br/>{val.surnom}</div>
-                            </>
+                            </div>
                         )
                     })
                 }
