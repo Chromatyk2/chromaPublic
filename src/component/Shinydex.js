@@ -19,8 +19,9 @@ function Shinydex() {
                     <p className="pseudoProfil">Shinydex de Chromatyk</p>
                     <p style={{textAlign: "center", color: "white"}}>Retrouve ici l'ensemble des shinys capturés en live
                         avec les liens des VODs</p>
+                    <p style={{textAlign: "center", color: "white"}}>Certaines varitations et formes alternatives sont comptées séparéments</p>
                     <p style={{textAlign: "center", color: "white", marginBottom: "35px"}}>Total
-                        : {shinydex.length}/1083 ({parseFloat(shinydex.length/1083*100).toFixed(2)}%)</p>
+                        : {shinydex.length}/1186 ({parseFloat(shinydex.length / 1186 * 100).toFixed(2)}%)</p>
                 </>
             }
             <div className={"shinydexContainer"}>
