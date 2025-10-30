@@ -14,9 +14,11 @@ function HomePage(props) {
                   Tout ça, c’est du taff, alors si tu veux me soutenir, passe sur mes streams et pense à lacher ton follow, tu me régalerais !</p>
           <div className="socialContainer">
               <a className="socialLink" target='_blank' href="https://discord.gg/8V6fyQdSCG"><i
-                  className="fa-brands fa-discord"></i>Discord</a>
+                  className="fa-brands fa-discord"></i> Discord</a>
               <a className="socialLink" target='_blank' href="https://twitch.tv/chromatyk"><i
-                  className="fa-brands fa-twitch"></i>Twitch</a>
+                  className="fa-brands fa-twitch"></i> Twitch</a>
+              <a className="socialLink" target='_blank' href="https://www.youtube.com/@chromatyk_"><i
+                  className="fa-brands fa-youtube"></i> Youtube</a>
               <Link style={{color:"gold"}} className="navLink linkFromNav socialLink" to="/shinydex">Shinydex</Link>
           </div>
       </>
