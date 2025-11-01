@@ -29,6 +29,7 @@ function HomePage(props) {
               <a className="socialLink" target='_blank' href="https://www.youtube.com/@chromatyk_"><i
                   className="fa-brands fa-youtube"></i> Youtube</a>
               <Link style={{color: "gold"}} className="navLink linkFromNav socialLink" to="/shinydex">Shinydex</Link>
+              <p className="pseudoProfil">Dernier shiny capturé</p>
               {shinydex &&
                   <div className={"shinydexCard"}>
                       <div className={"shinydexName"}>#{shinydex[0].idPkm} {shinydex[0].pokemon}<br/><span
@@ -39,7 +40,7 @@ function HomePage(props) {
                           </div>
                           {shinydex[0].lien !== null &&
                               <a target={"_blank"} href={shinydex[0].lien}><img className={"linkShinydex"}
-                                                                        src={"/youtube.png"}/></a>
+                                                                                src={"/youtube.png"}/></a>
                           }
                       </div>
                       <div className={"description"}>
