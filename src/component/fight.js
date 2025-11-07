@@ -6,7 +6,15 @@ import card from "../cards.png"
 import $ from 'jquery';
 function Fight() {
     return (
-        <img src={"/fight.png"} />
+        <div style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            margin: "auto",
+            alignItems: "center",
+            height: "100%"}}>
+            <img src={"/fight.jpg"} style={{width: "100%"}}/>
+        </div>
     );
 }
 
