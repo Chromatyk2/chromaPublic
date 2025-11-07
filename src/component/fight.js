@@ -7,7 +7,6 @@ import $ from 'jquery';
 function Fight() {
     return (
         <div className={"fightContainer"}>
-            <img src={"/fight.jpg"} style={{width: "100%"}}/>
         </div>
     );
 }
