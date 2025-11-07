@@ -5818,3 +5818,17 @@ img.badgeToWinXp {
     bottom: 0;
     width: 50px;
 }
+.fightContainer{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    height: 100%;
+}
+@media screen and (max-width: 1160px) {
+    .fightContainer{
+        width: 100%;
+    }
+}
