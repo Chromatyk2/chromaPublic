@@ -800,7 +800,7 @@ function Compagnon(props) {
                    contentLabel="Example Modal">
                 <PokedexTeam pseudo={pseudo} pkmToUpdate={"none"} list={list} change={(e,f,g) => handleState(e,f,g)} cookies={props.cookies}/>
             </Modal>
-            <Modal isOpen={modalIsOpenFight} onRequestClose={closeModalFight}
+            <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenFight} onRequestClose={closeModalFight}
                    contentLabel="Example Modal">
                 <Fight/>
             </Modal>
