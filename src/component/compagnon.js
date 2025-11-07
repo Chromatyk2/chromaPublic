@@ -29,6 +29,7 @@ function Compagnon(props) {
     const pseudo = cookies.user.data[0].login;
     const idUser = cookies.user.data[0].id;
     const [modalIsOpenSkin, setIsOpenSkin] = React.useState(false);
+    const [modalIsOpenFight, setModalIsOpenFight] = React.useState(false);
     const [berryToWin, setBerryToWin] = React.useState(null);
     const [tokenCardToWin, setTokenCardToWin] = React.useState(null);
     const [tokenPkmToWin, setTokenPkmToWin] = React.useState(null);
@@ -786,11 +787,21 @@ function Compagnon(props) {
     function closeModalBerry() {
         setIsOpenSkin(false);
     }
+    function openModalFight(){
+        setModalIsOpenFight(true)
+    }
+    function closeModalFight(){
+        setModalIsOpenFight(false)
+    }
     return (
         <>
             <Modal isOpen={modalTeamIsOpen} onRequestClose={closeModalTeam}
                    contentLabel="Example Modal">
                 <PokedexTeam pseudo={pseudo} pkmToUpdate={"none"} list={list} change={(e,f,g) => handleState(e,f,g)} cookies={props.cookies}/>
+            </Modal>
+            <Modal isOpen={modalIsOpenFight} onRequestClose={closeModalFight}
+                   contentLabel="Example Modal">
+                <Fight/>
             </Modal>
             <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">
@@ -926,6 +937,7 @@ function Compagnon(props) {
                                     style={customStyles.intBar}><p
                                     style={{marginLeft: "15px"}}>{compagnon.xp + " / " + (compagnon.level + 1) * multi + " (" + parseFloat((compagnon.xp / ((compagnon.level + 1 ) * multi)) * 100).toFixed(2) + "%)"}</p></div>
                             </div>
+                            <button onClick={openModalFight}>Combattre</button>
                         </>
                         :
                         <button
