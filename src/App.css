@@ -5818,6 +5818,17 @@ img.badgeToWinXp {
     bottom: 0;
     width: 50px;
 }
+.ReactModal__Content.ReactModal__Content--after-open.modalFight {
+    background: transparent !important;
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open.overlayModalFight {
+    background-color: rgba(0, 0, 0, .8) !important;
+    height: 100vh;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
 .fightContainer{
     width: 75%;
     display: flex;
