@@ -14,6 +14,7 @@ import 'reactjs-popup/dist/index.css';
 import Modal from "react-modal";
 import UniqueBoxV2 from "./uniqueBoxV2";
 import PokedexTeam from "./pokedexTeam";
+import Fight from "./fight";
 
 
 function Compagnon(props) {
