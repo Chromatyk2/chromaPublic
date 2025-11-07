@@ -5826,7 +5826,9 @@ img.badgeToWinXp {
     align-items: center;
     height: 100%;
     background-image: url('../public/fight.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 @media screen and (max-width: 1160px) {
     .fightContainer{
