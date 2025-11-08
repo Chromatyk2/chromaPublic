@@ -51,18 +51,18 @@ function RandomProfil(props) {
                         </p>
                         <div className={"profilVisualsList"}>
                             <div
-                                style={{backgroundImage: allProfil[randomIndex].first_pokemon ? 'url(' + allProfil[randomIndex].first_pokemon + ')' : 'url(/images/random.png)'}}
+                                style={{filter : props.user.firstNeg === 1 ?  "invert(1)" : "invert(0)",backgroundImage: allProfil[randomIndex].first_pokemon ? 'url(' + allProfil[randomIndex].first_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"first_pokemon"}
                                 className={compagnonList && compagnonList.find((item)=>item.pokemon == allProfil[randomIndex].first_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == allProfil[randomIndex].first_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
 
                             </div>
                             <div
-                                style={{backgroundImage: allProfil[randomIndex].second_pokemon ? 'url(' + allProfil[randomIndex].second_pokemon + ')' : 'url(/images/random.png)'}}
+                                style={{filter : props.user.secondNeg === 1 ?  "invert(1)" : "invert(0)",backgroundImage: allProfil[randomIndex].second_pokemon ? 'url(' + allProfil[randomIndex].second_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"second_pokemon"}
                                 className={compagnonList && compagnonList.find((item)=>item.pokemon == allProfil[randomIndex].second_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == allProfil[randomIndex].second_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                             <div
-                                style={{backgroundImage: allProfil[randomIndex].third_pokemon ? 'url(' + allProfil[randomIndex].third_pokemon + ')' : 'url(/images/random.png)'}}
+                                style={{filter : props.user.thirdNeg === 1 ?  "invert(1)" : "invert(0)",backgroundImage: allProfil[randomIndex].third_pokemon ? 'url(' + allProfil[randomIndex].third_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"third_pokemon"}
                                 className={compagnonList && compagnonList.find((item)=>item.pokemon == allProfil[randomIndex].third_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == allProfil[randomIndex].third_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
@@ -75,17 +75,17 @@ function RandomProfil(props) {
                                 }
                             </div>
                             <div
-                                style={{backgroundImage: allProfil[randomIndex].fourth_pokemon ? 'url(' + allProfil[randomIndex].fourth_pokemon + ')' : 'url(/images/random.png)'}}
+                                style={{filter : props.user.fourthNeg === 1 ?  "invert(1)" : "invert(0)",backgroundImage: allProfil[randomIndex].fourth_pokemon ? 'url(' + allProfil[randomIndex].fourth_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"fourth_pokemon"}
                                 className={compagnonList && compagnonList.find((item)=>item.pokemon == allProfil[randomIndex].fourth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == allProfil[randomIndex].fourth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                             <div
-                                style={{backgroundImage: allProfil[randomIndex].fifth_pokemon ? 'url(' + allProfil[randomIndex].fifth_pokemon + ')' : 'url(/images/random.png)'}}
+                                style={{filter : props.user.fiveNeg === 1 ?  "invert(1)" : "invert(0)",backgroundImage: allProfil[randomIndex].fifth_pokemon ? 'url(' + allProfil[randomIndex].fifth_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"fifth_pokemon"}
                                 className={compagnonList && compagnonList.find((item)=>item.pokemon == allProfil[randomIndex].fifth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == allProfil[randomIndex].fifth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
                             <div
-                                style={{backgroundImage: allProfil[randomIndex].sixth_pokemon ? 'url(' + allProfil[randomIndex].sixth_pokemon + ')' : 'url(/images/random.png)'}}
+                                style={{filter : props.user.sixthNeg === 1 ?  "invert(1)" : "invert(0)",backgroundImage: allProfil[randomIndex].sixth_pokemon ? 'url(' + allProfil[randomIndex].sixth_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"sixth_pokemon"}
                                 className={compagnonList && compagnonList.find((item)=>item.pokemon == allProfil[randomIndex].sixth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == allProfil[randomIndex].sixth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </div>
