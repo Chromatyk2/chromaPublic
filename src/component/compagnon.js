@@ -802,7 +802,7 @@ function Compagnon(props) {
             </Modal>
             <Modal overlayClassName={"overlayModalFight"} className={"modalFight"} isOpen={modalIsOpenFight} onRequestClose={closeModalFight}
                    contentLabel="Example Modal">
-                <Fight/>
+                <Fight shiny={compagnon.shiny} compagnon={compagnon.pokemon}/>
             </Modal>
             <Modal overlayClassName={"overlayModalToken"} className={"modalTokenProfil"} isOpen={modalIsOpenSkin}
                    onRequestClose={closeModalBerry} contentLabel="Example Modal">
