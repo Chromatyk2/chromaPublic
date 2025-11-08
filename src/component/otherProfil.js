@@ -484,48 +484,28 @@ function Profil(props) {
                         }
                         <div className={"threePokemon"}>
                             <button
-                                style={{
-                                    backgroundSize: "90%",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: "center",
-                                    backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'
-                                }}
+                                style={{filter : profil[0].firstNeg === 1 ?  "invert(1)" : "invert(0)",backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].first_pokemon ? 'url(' + profil[0].first_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"first_pokemon"}
-                                className={profil[0].first_pokemon && compagnonList.find((item) => item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                className={profil[0].first_pokemon && compagnonList.find((item)=>item.pokemon == profil[0].first_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].first_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </button>
                             {profil[0].pseudo == "stryxlis"
                                 ?
                                 <button
-                                    style={{
-                                        backgroundSize: "90%",
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundPosition: "center",
-                                        backgroundImage: 'url(/images/lugia.png)'
-                                    }}
+                                    style={{backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: 'url(/images/lugia.png)'}}
                                     value={"second_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                    className={profil[0].fifth_pokemon && compagnonList.find((item)=>item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].first_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                                 :
                                 <button
-                                    style={{
-                                        backgroundSize: "90%",
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundPosition: "center",
-                                        backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'
-                                    }}
+                                    style={{filter : profil[0].secondNeg === 1 ?  "invert(1)" : "invert(0)",backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].second_pokemon ? 'url(' + profil[0].second_pokemon + ')' : 'url(/images/random.png)'}}
                                     value={"second_pokemon"}
-                                    className={profil[0].second_pokemon && compagnonList.find((item) => item.pokemon == profil[0].second_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={profil[0].second_pokemon && compagnonList.find((item)=>item.pokemon ==profil[0].second_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].second_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             }
                             <button
-                                style={{
-                                    backgroundSize: "90%",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: "center",
-                                    backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'
-                                }}
+                                style={{filter : profil[0].thirdNeg === 1 ?  "invert(1)" : "invert(0)",backgroundSize:"90%", backgroundRepeat:"no-repeat", backgroundPosition:"center",backgroundImage: profil[0].third_pokemon ? 'url(' + profil[0].third_pokemon + ')' : 'url(/images/random.png)'}}
                                 value={"third_pokemon"}
-                                className={profil[0].third_pokemon && compagnonList.find((item) => item.pokemon == profil[0].third_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                className={profil[0].third_pokemon && compagnonList.find((item)=>item.pokemon == profil[0].third_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].third_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </button>
                         </div>
                         <div className={"threePokemon"}>
@@ -538,18 +518,19 @@ function Profil(props) {
                                         backgroundImage: 'url(/images/dialga.png)'
                                     }}
                                     value={"fourth_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                    className={compagnonList.find((item) => item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].fourth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                                 :
                                 <button
                                     style={{
+                                        filter: profil[0].fourthNeg === 1 ? "invert(1)" : "invert(0)",
                                         backgroundSize: "90%",
                                         backgroundRepeat: "no-repeat",
                                         backgroundPosition: "center",
                                         backgroundImage: profil[0].fourth_pokemon ? 'url(' + profil[0].fourth_pokemon + ')' : 'url(/images/random.png)'
                                     }}
                                     value={"fourth_pokemon"}
-                                    className={profil[0].fourth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={profil[0].fourth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].fourth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].fourth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             }
 
@@ -562,19 +543,31 @@ function Profil(props) {
                                         backgroundImage: 'url(/images/mewtwo.png)'
                                     }}
                                     value={"fifth_pokemon"}
-                                    className="anchorTooltip uniquePokemonContainerTeam">
+                                    className={profil[0].fifth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].fifth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                                 :
                                 <button
-                                    style={{backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'}}
+                                    style={{
+                                        filter: profil[0].fiveNeg === 1 ? "invert(1)" : "invert(0)",
+                                        backgroundSize: "90%",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center",
+                                        backgroundImage: profil[0].fifth_pokemon ? 'url(' + profil[0].fifth_pokemon + ')' : 'url(/images/random.png)'
+                                    }}
                                     value={"fifth_pokemon"}
-                                    className={profil[0].fifth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                    className={profil[0].fifth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].fifth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].fifth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                                 </button>
                             }
                             <button
-                                style={{backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'}}
+                                style={{
+                                    filter: profil[0].sixthNeg === 1 ? "invert(1)" : "invert(0)",
+                                    backgroundSize: "90%",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                    backgroundImage: profil[0].sixth_pokemon ? 'url(' + profil[0].sixth_pokemon + ')' : 'url(/images/random.png)'
+                                }}
                                 value={"sixth_pokemon"}
-                                className={profil[0].sixth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].sixth_pokemon.match(/\d/g).join("") && item.level == 100) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
+                                className={profil[0].sixth_pokemon && compagnonList.find((item) => item.pokemon == profil[0].sixth_pokemon.match(/\d/g).join("") && item.level == 100 && item.shiny == profil[0].sixth_pokemon.includes('shiny') ? 1 : 0) ? "anchorTooltip uniquePokemonContainerTeam maxLevelFrame" : "anchorTooltip uniquePokemonContainerTeam"}>
                             </button>
                         </div>
                         <>
@@ -624,70 +617,70 @@ function Profil(props) {
                 }}>
                     <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
                             onClick={filteredBadges} value={"all"}>Tous
-                        </button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
-                                onClick={filteredBadges} value={"pokedex"}>Pokédex
-                        </button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
-                                onClick={filteredBadges} value={"cartes"}>Cartes
-                        </button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
-                                onClick={filteredBadges} value={"set"}>Sets
-                        </button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
-                                onClick={filteredBadges} value={"pokemon"}>Pokémon
-                        </button>
-                        <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
-                                onClick={filteredBadges} value={"shiny"}>Shiny
-                        </button>
-                    </div>
-                    <Tooltip style={{zIndex: "1000"}} anchorSelect=".anchorTooltipBadge"/>
-                    <div style={{
-                        overflow: "overlay",
-                        display: "flex",
-                        gap: "10px",
-                        flexFlow: "row",
-                        flexWrap: "wrap",
-                        justifyContent: "center"
-                    }}>
-                        {badgesListFiltered ?
-                            badgesListFiltered.sort((a, b) => a.image - b.image).map((val, key) => {
-                                return (
-                                    <>
-                                        <button
-                                            className="anchorTooltipBadge"
-                                            data-tooltip-content={val.description}
-                                            value={val.image} style={{
-                                            backgroundPosition: "center",
-                                            backgroundRepeat: "no-repeat",
-                                            backgroundImage: "url(/Ribbon/" + val.image + ".png)",
-                                            backgroundSize: "contain",
-                                            border: "none",
-                                            borderRadius: "25px",
-                                            padding: "20px",
-                                            width: "100px",
-                                            height: "100px",
-                                            backgroundColor: "transparent"
-                                        }}></button>
-                                    </>
-                                )
-                            })
-                            :
-                            badgesList &&
-                            badgesList.sort((a, b) => a.image - b.image).map((val, key) => {
-                                return (
-                                    <>
-                                        <button
-                                            className="anchorTooltipBadge"
-                                            data-tooltip-content={val.description} value={val.image} style={{
-                                            backgroundPosition: "center",
-                                            backgroundRepeat: "no-repeat",
-                                            backgroundImage: "url(/Ribbon/" + val.image + ".png)",
-                                            backgroundSize: "contain",
-                                            border: "none",
-                                            borderRadius: "25px",
-                                            padding: "20px",
-                                            width: "100px",
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"pokedex"}>Pokédex
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"cartes"}>Cartes
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"set"}>Sets
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"pokemon"}>Pokémon
+                    </button>
+                    <button style={{border: "none", background: "none", width: "fit-content", color: "white"}}
+                            onClick={filteredBadges} value={"shiny"}>Shiny
+                    </button>
+                </div>
+                <Tooltip style={{zIndex: "1000"}} anchorSelect=".anchorTooltipBadge"/>
+                <div style={{
+                    overflow: "overlay",
+                    display: "flex",
+                    gap: "10px",
+                    flexFlow: "row",
+                    flexWrap: "wrap",
+                    justifyContent: "center"
+                }}>
+                    {badgesListFiltered ?
+                        badgesListFiltered.sort((a, b) => a.image - b.image).map((val, key) => {
+                            return (
+                                <>
+                                    <button
+                                        className="anchorTooltipBadge"
+                                        data-tooltip-content={val.description}
+                                        value={val.image} style={{
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                        backgroundSize: "contain",
+                                        border: "none",
+                                        borderRadius: "25px",
+                                        padding: "20px",
+                                        width: "100px",
+                                        height: "100px",
+                                        backgroundColor: "transparent"
+                                    }}></button>
+                                </>
+                            )
+                        })
+                        :
+                        badgesList &&
+                        badgesList.sort((a, b) => a.image - b.image).map((val, key) => {
+                            return (
+                                <>
+                                    <button
+                                        className="anchorTooltipBadge"
+                                        data-tooltip-content={val.description} value={val.image} style={{
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundImage: "url(/Ribbon/" + val.image + ".png)",
+                                        backgroundSize: "contain",
+                                        border: "none",
+                                        borderRadius: "25px",
+                                        padding: "20px",
+                                        width: "100px",
                                             height: "100px",
                                             backgroundColor: "transparent"
                                         }}></button>
