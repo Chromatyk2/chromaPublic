@@ -44,6 +44,19 @@ import Lv4s from "../lv4s.png";
 import Lv3s from "../lv3s.png";
 import Lv2s from "../lv2s.png";
 import Lv1s from "../lv1s.png";
+import Lv13n from "../lv13n.png";
+import Lv12n from "../lv12n.png";
+import Lv11n from "../lv11n.png";
+import Lv10n from "../lv10n.png";
+import Lv9n from "../lv9n.png";
+import Lv8n from "../lv8n.png";
+import Lv7n from "../lv7n.png";
+import Lv6n from "../lv6n.png";
+import Lv5n from "../lv5n.png";
+import Lv4n from "../lv4n.png";
+import Lv3n from "../lv3n.png";
+import Lv2n from "../lv2n.png";
+import Lv1n from "../lv1n.png";
 function Profil(props) {
     const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
     const { pseudo } = useParams()
@@ -67,6 +80,7 @@ function Profil(props) {
     const [compagnon,setCompagnon] = useState(null);
     const [customStyleCompagnon,setCustomStyleCompagnon] = useState(null);
     const [compagnonList,setCompagnonList] = useState(null);
+    const [pourcentNegative, setPourcentNegative] = useState();
     useEffect(() => {
         const progressBars = document.querySelectorAll('.progress-container');
 
@@ -146,6 +160,7 @@ function Profil(props) {
                                             setList(response.data);
                                             setPourcent(Math.round((response.data.length / 1527) * 100));
                                             setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
+                                            setPourcentNegative(response.data.filter(item => item.negative == 1).length);
                                         })
                                 })
                         })
@@ -252,6 +267,7 @@ function Profil(props) {
                                                 setList(response.data);
                                                 setPourcent(Math.round((response.data.length / 1527) * 100));
                                                 setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
+                                                setPourcentNegative(response.data.filter(item => item.negative == 1).length);
                                                 Axios
                                                     .get("/api/getBadgesByUser/"+pseudo)
                                                     .then(function(response){
@@ -597,6 +613,11 @@ function Profil(props) {
                                         <img style={{width: "110px"}} className="anchorTooltip"
                                              data-tooltip-content={pourcentShiny + " Shiny obtenus !"}
                                              src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcentShiny >= 400 ? Lv10s : pourcentShiny >= 350 ? Lv9s : pourcentShiny >= 300 ? Lv8s : pourcentShiny >= 250 ? Lv7s : pourcentShiny >= 200 ? Lv6s : pourcentShiny >= 150 ? Lv5s : pourcentShiny >= 100 ? Lv4s : pourcentShiny >= 50 ? Lv3s : pourcentShiny >= 10 ? Lv2s : Lv1s}/>
+                                    }
+                                    { pourcentNegative > 0 &&
+                                        <img style={{width: "110px"}} className="anchorTooltip"
+                                             data-tooltip-content={pourcentNegative + " Négatifs obtenus !"}
+                                             src={pourcentNegative == 1025 ? Lv13n : pourcentNegative >= 750 ? Lv12n : pourcentNegative >= 500 ? Lv11n : pourcentNegative >= 400 ? Lv10n : pourcentNegative >= 350 ? Lv9n : pourcentNegative >= 300 ? Lv8n : pourcentNegative >= 250 ? Lv7n : pourcentNegative >= 200 ? Lv6n : pourcentNegative >= 150 ? Lv5n : pourcentNegative >= 100 ? Lv4n : pourcentNegative >= 50 ? Lv3n : pourcentNegative >= 10  ? Lv2n : Lv1n}/>
                                     }
                                 </div>
                             </div>

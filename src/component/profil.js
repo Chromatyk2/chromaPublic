@@ -40,6 +40,19 @@ import Lv10s from "../lv10s.png";
 import Lv11s from "../lv11s.png";
 import Lv12s from "../lv12s.png";
 import Lv13s from "../lv13s.png";
+import Lv1n from "../lv1n.png";
+import Lv2n from "../lv2n.png";
+import Lv3n from "../lv3n.png";
+import Lv4n from "../lv4n.png";
+import Lv5n from "../lv5n.png";
+import Lv6n from "../lv6n.png";
+import Lv7n from "../lv7n.png";
+import Lv8n from "../lv8n.png";
+import Lv9n from "../lv9n.png";
+import Lv10n from "../lv10n.png";
+import Lv11n from "../lv11n.png";
+import Lv12n from "../lv12n.png";
+import Lv13n from "../lv13n.png";
 import $ from "jquery";
 function Profil(props) {
     const pseudo = props.cookies.user.data[0].login;
@@ -57,6 +70,7 @@ function Profil(props) {
     const [pourcent, setPourcent] = useState();
     const [pourcentCard, setPourcentCard] = useState();
     const [pourcentShiny, setPourcentShiny] = useState();
+    const [pourcentNegative, setPourcentNegative] = useState();
     const [modalIsOpenToken, setIsOpenToken] = React.useState(false);
     const [openTime, setOpenTime] = React.useState(false);
     const [modalIsOpenBadgeHandle, setOpenBadgeHandle] = React.useState(false);
@@ -282,7 +296,8 @@ function Profil(props) {
     }
     function handleBadge(e) {
         setOpenBadgeHandle(true);
-    }function closeBadgeHandle(e) {
+    }
+    function closeBadgeHandle(e) {
         setOpenBadgeHandle(false);
     }
     function closeModalTeam() {
@@ -318,7 +333,9 @@ function Profil(props) {
                                         setPourcent(Math.round((response.data.length / (1527)) * 100));
                                         const pourcent = Math.round((response.data.length / (1527)) * 100);
                                         const pourcentShiny = response.data.filter(item => item.shiny == 1).length;
+                                        const pourcentNegative = response.data.filter(item => item.negative == 1).length;
                                         setPourcentShiny(response.data.filter(item => item.shiny == 1).length);
+                                        setPourcentNegative(response.data.filter(item => item.negative == 1).length);
                                         Axios
                                             .get("/api/getBadgesByUser/" + pseudo)
                                             .then(function (response) {
@@ -710,7 +727,7 @@ function Profil(props) {
                                                                 })
                                                         })
                                                 }else if(typeof badges.find((item) => item.image === "lv3s") === "undefined" && pourcentShiny >= 50){
-                                                    openModalZero("lv1s", "Au moins 50 Shiny capturé !");
+                                                    openModalZero("lv3s", "Au moins 50 Shiny capturé !");
                                                     Axios.post('/api/addBadge',
                                                         {
                                                             pseudo:pseudo,
@@ -877,6 +894,214 @@ function Profil(props) {
                                                             image:"lv13s",
                                                             stade:0,
                                                             description:"Shiny Living Dex Completé 1 fois !!",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv1n") === "undefined" && pourcentNegative > 0){
+                                                    openModalZero("lv1n", "Au moins 1 Négatif capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv1n",
+                                                            stade:0,
+                                                            description:"Au moins 1 Négatif capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv2n") === "undefined" && pourcentNegative >= 10){
+                                                    openModalZero("lv2n", "Au moins 10 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv2n",
+                                                            stade:0,
+                                                            description:"Au moins 10 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv3n") === "undefined" && pourcentNegative >= 50){
+                                                    openModalZero("lv3n", "Au moins 50 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv3n",
+                                                            stade:0,
+                                                            description:"Au moins 50 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv4n") === "undefined" && pourcentNegative >= 100){
+                                                    openModalZero("lv4n", "Au moins 100 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv4n",
+                                                            stade:0,
+                                                            description:"Au moins 100 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv5n") === "undefined" && pourcentNegative >= 150){
+                                                    openModalZero("lv5n", "Au moins 150 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv5n",
+                                                            stade:0,
+                                                            description:"Au moins 150 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv6n") === "undefined" && pourcentNegative >= 200){
+                                                    openModalZero("lv6n", "Au moins 200 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv6n",
+                                                            stade:0,
+                                                            description:"Au moins 200 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv7n") === "undefined" && pourcentNegative >= 250){
+                                                    openModalZero("lv7n", "Au moins 250 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv7n",
+                                                            stade:0,
+                                                            description:"Au moins 250 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv8n") === "undefined" && pourcentNegative >= 300){
+                                                    openModalZero("lv8n", "Au moins 300 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv8n",
+                                                            stade:0,
+                                                            description:"Au moins 300 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv9n") === "undefined" && pourcentNegative >= 350){
+                                                    openModalZero("lv9n", "Au moins 350 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv9n",
+                                                            stade:0,
+                                                            description:"Au moins 350 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv10n") === "undefined" && pourcentNegative >= 400){
+                                                    openModalZero("lv10n", "Au moins 400 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv10n",
+                                                            stade:0,
+                                                            description:"Au moins 400 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv11n") === "undefined" && pourcentNegative >= 500){
+                                                    openModalZero("lv11n", "Au moins 500 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv11n",
+                                                            stade:0,
+                                                            description:"Au moins 500 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv12n") === "undefined" && pourcentNegative >= 750){
+                                                    openModalZero("lv12n", "Au moins 750 Négatifs capturé !");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv12n",
+                                                            stade:0,
+                                                            description:"Au moins 750 Négatifs capturé !",
+                                                            idUser: idUser
+                                                        })
+                                                        .then(function(response) {
+                                                            Axios.get("/api/getBadgesByUser/"+pseudo)
+                                                                .then(function (response) {
+                                                                    setBadges(response.data);
+                                                                })
+                                                        })
+                                                }else if(typeof badges.find((item) => item.image === "lv13n") === "undefined" && pourcentNegative == 1025){
+                                                    openModalZero("lv13n", "Négatif Living Dex Completé 1 fois !!");
+                                                    Axios.post('/api/addBadge',
+                                                        {
+                                                            pseudo:pseudo,
+                                                            image:"lv13n",
+                                                            stade:0,
+                                                            description:"Négatif Living Dex Completé 1 fois !!",
                                                             idUser: idUser
                                                         })
                                                         .then(function(response) {
@@ -1239,6 +1464,11 @@ function Profil(props) {
                                                 <img style={{width: "110px"}} className="anchorTooltip"
                                                      data-tooltip-content={pourcentShiny + " Shiny obtenus !"}
                                                      src={pourcentShiny == 1025 ? Lv13s : pourcentShiny >= 750 ? Lv12s : pourcentShiny >= 500 ? Lv11s : pourcentShiny >= 400 ? Lv10s : pourcentShiny >= 350 ? Lv9s : pourcentShiny >= 300 ? Lv8s : pourcentShiny >= 250 ? Lv7s : pourcentShiny >= 200 ? Lv6s : pourcentShiny >= 150 ? Lv5s : pourcentShiny >= 100 ? Lv4s : pourcentShiny >= 50 ? Lv3s : pourcentShiny >= 10  ? Lv2s : Lv1s}/>
+                                            }
+                                            { pourcentNegative > 0 &&
+                                                <img style={{width: "110px"}} className="anchorTooltip"
+                                                     data-tooltip-content={pourcentNegative + " Négatifs obtenus !"}
+                                                     src={pourcentNegative == 1025 ? Lv13n : pourcentNegative >= 750 ? Lv12n : pourcentNegative >= 500 ? Lv11n : pourcentNegative >= 400 ? Lv10n : pourcentNegative >= 350 ? Lv9n : pourcentNegative >= 300 ? Lv8n : pourcentNegative >= 250 ? Lv7n : pourcentNegative >= 200 ? Lv6n : pourcentNegative >= 150 ? Lv5n : pourcentNegative >= 100 ? Lv4n : pourcentNegative >= 50 ? Lv3n : pourcentNegative >= 10  ? Lv2n : Lv1n}/>
                                             }
                                         </div>
                                     </div>
