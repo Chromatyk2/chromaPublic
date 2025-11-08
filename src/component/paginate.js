@@ -172,7 +172,7 @@ function Pagination(props) {
                   <button className="filterButton" onClick={handlePokemon} value="1">Shiny</button>
               }
               {hasNegative.length > 0 &&
-                  <button className="filterButton" onClick={handlePokemon} value="5">Negative</button>
+                  <button className="filterButton" onClick={handlePokemon} value="5">Négatif</button>
               }
               {isSorted === false ?
                   <>
