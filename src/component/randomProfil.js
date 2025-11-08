@@ -34,7 +34,7 @@ function RandomProfil(props) {
                     <div style={{
                         width: "65%",
                         margin: "auto",
-                        background: "rgba(0,0,0,.5)",
+                        background: "#121212",
                         borderRadius: "50px",
                         padding: "20px",
                         position:"absolute",
