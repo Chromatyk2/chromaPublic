@@ -6,7 +6,6 @@ import Axios from 'axios'
 import MyBoosters from "../myBoosters";
 import ListUserTcg from "../listUserTcg";
 import SellCards from "../SellCards.js";
-import Succes from "../Succes.js";
 import OnStream from "../onStream";
 function CardsHubTest(props) {
     const [points,setPoints] = useState(-1);

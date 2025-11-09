@@ -941,7 +941,7 @@ function Compagnon(props) {
                                     style={customStyles.intBar}><p
                                     style={{marginLeft: "15px"}}>{compagnon.xp + " / " + (compagnon.level + 1) * multi + " (" + parseFloat((compagnon.xp / ((compagnon.level + 1 ) * multi)) * 100).toFixed(2) + "%)"}</p></div>
                             </div>
-                            <button onClick={openModalFight}>Combattre</button>
+                            {/*<button onClick={openModalFight}>Combattre</button>*/}
                         </>
                         :
                         <button

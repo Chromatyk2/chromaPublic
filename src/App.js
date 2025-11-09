@@ -27,6 +27,7 @@ import Prediction from "./component/prediction";
 import Footer from "./component/footer";
 import Log from "./services/log";
 import Shinydex from "./component/Shinydex";
+import Succes from "./component/Succes";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(typeof cookies.user === "undefined") {
@@ -73,6 +74,7 @@ function App() {
                     <Route path="/29ct92B3Zrvxpre" element={<Prediction/>}/>
                     <Route path="/compagnon" element={<Compagnon cookies={cookies}/>}/>
                       <Route path="/shinydex" element={<Shinydex cookies={cookies}/>}/>
+                      <Route path="/succes" element={<Succes cookies={cookies}/>}/>
                   </Routes>
                 </BrowserRouter>
               </div>
