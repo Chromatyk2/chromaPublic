@@ -18,7 +18,7 @@ function Succes(props) {
             <div id={"cardsContainer"}>
                 {categorie == "Pokemon" &&
                     Array.from(Array(number), (e, i) => {
-                        return <img key={i} src={"/Ribbon/pokemon"+number+".png"} />
+                        return <img key={i} src={"/Ribbon/pokemon"+(i+1)+".png"} />
                     })
                 }
             </div>
