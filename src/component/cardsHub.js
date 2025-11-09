@@ -33,9 +33,6 @@ function CardsHub(props) {
                     {props.page == "sellCards" &&
                         <SellCards idUser={idUser} user={pseudo}/>
                     }
-                    {props.page == "succes" &&
-                        <Succes idUser={idUser} user={pseudo}/>
-                    }
                 </div>
         </>
     );
