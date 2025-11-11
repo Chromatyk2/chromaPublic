@@ -25,10 +25,18 @@ function NostalBar(props) {
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
-                    <div className="barcontainer">
-                        <div id={"bar"} className="bar">
-                        </div>
+                <div>
+                    <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
+                       className="fa-solid fa-pen-to-square"></i>
+                    <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
+                       className="fa-solid fa-floppy-disk"></i>
+                    <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
+                       className="fa-solid fa-pencil"></i>
+                </div>
+                <div className="barcontainer">
+                    <div id={"bar"} className="bar">
                     </div>
+                </div>
             </div>
         </>
     )
