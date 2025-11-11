@@ -20,15 +20,13 @@ function SpawnPokemon(props) {
     const [getPkmId, setGetPkmId] = useState(null);
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
     const [berryToWins, setBerryToWins] = useState(null);
-    window.addEventListener("", (param) => {
+    window.addEventListener("Pokemon", (param) => {
         var obj = JSON.parse(param.detail.data)
         console.log(obj.user)
         console.log(obj.id)
         setPseudo(obj.user);
         setIdUser(obj.id);
-        if(obj.user !== null){
-            setReloadFetch(reloadFetch + 1);
-        }
+        setReloadFetch(reloadFetch + 1);
     });
     useEffect(() => {
         setGetToken(false);

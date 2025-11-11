@@ -8,7 +8,7 @@ import Axios from "axios";
 import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
 function NostalBar(props) {
-    window.addEventListener("", (param) => {
+    window.addEventListener("Hauteur", (param) => {
         var obj = JSON.parse(param.detail.data)
         if(obj.recall > 0) {
             document.getElementById("bar").style.height = "0%";
