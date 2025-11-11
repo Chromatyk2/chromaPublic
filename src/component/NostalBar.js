@@ -16,7 +16,7 @@ function NostalBar(props) {
         }else if(obj.recall > 0) {
             setHauteur(obj.recall);
         }else{
-            setHauteur(hauteur + obj.hauteur);
+            setHauteur(obj.hauteur);
         }
     });
     useEffect(() => {
