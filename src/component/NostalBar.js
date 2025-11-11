@@ -8,37 +8,30 @@ import Axios from "axios";
 import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
 function NostalBar(props) {
-    const [hauteur, setHauteur] = useState(0);
     window.addEventListener("", (param) => {
         var obj = JSON.parse(param.detail.data)
-        if(obj.hauteur == 0){
-            setHauteur(0);
-        }else if(obj.recall > 0) {
-            setHauteur(obj.recall);
-        }else{
-            setHauteur(obj.hauteur);
+        if(obj.recall > 0) {
+            document.getElementById("bar").style.height = "0%";
         }
-    });
-    useEffect(() => {
-        if(hauteur >= 100){
+        if(obj.hauteur >= 100){
             document.getElementById("bar").style.height = "100%";
             document.getElementById("bonus").style.display = "block";
             document.getElementById("soluce").style.display = "block";
             document.getElementById("saveState").style.display = "block";
         }else{
-            document.getElementById("bar").style.height = hauteur+"%";
-            if(hauteur > 29 && hauteur < 59){
+            document.getElementById("bar").style.height = obj.hauteur+"%";
+            if(obj.hauteur > 29 && obj.hauteur < 59){
                 document.getElementById("soluce").style.display = "block";
-            }else if(hauteur > 59 && hauteur < 99){
+            }else if(obj.hauteur > 59 && obj.hauteur < 99){
                 document.getElementById("soluce").style.display = "block";
                 document.getElementById("saveState").style.display = "block";
-            }else if(hauteur < 29){
+            }else if(obj.hauteur < 29){
                 document.getElementById("soluce").style.display = "none";
                 document.getElementById("saveState").style.display = "none";
                 document.getElementById("bonus").style.display = "none";
             }
         }
-    }, [hauteur]);
+    });
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
