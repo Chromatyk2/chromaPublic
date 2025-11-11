@@ -85,9 +85,11 @@ function NostalPickV2(props) {
                             </button>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
                             </button>
+                            <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
+                            </button>
                         </>}
             </div>
-                <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
+            <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
                     <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
                 </Modal>
         </>
