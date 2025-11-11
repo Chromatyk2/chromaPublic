@@ -5829,19 +5829,13 @@ img.badgeToWinXp {
     top: 400px;
 }
 
-.bar{
+.bar {
     background: #CA019A;
-    background: linear-gradient(90deg,rgba(202, 1, 154, 1) 0%, rgba(42, 191, 120, 1) 100%);
+    background: linear-gradient(90deg, rgba(202, 1, 154, 1) 0%, rgba(42, 191, 120, 1) 100%);
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    animation: grow 1.5s ease-out forwards;
-    transform-origin: bottom;
-}
-@keyframes grow{
-    from{
-        transform: scaleY(0);
-    }
+    transition: height 2s;
 }
