@@ -8,11 +8,15 @@ import Axios from "axios";
 import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
 function NostalBar(props) {
+    window.addEventListener("", (param) => {
+        var obj = JSON.parse(param.detail.data)
+        document.getElementById("bar").style.height = obj.hauteur+"%";
+    });
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
                     <div className="barcontainer">
-                        <div className="bar">
+                        <div id={"bar"} className="bar">
                         </div>
                     </div>
             </div>
