@@ -22,11 +22,13 @@ function SpawnPokemon(props) {
     const [berryToWins, setBerryToWins] = useState(null);
     window.addEventListener("", (param) => {
         var obj = JSON.parse(param.detail.data)
-        console.log(obj)
         console.log(obj.user)
         console.log(obj.id)
         setPseudo(obj.user);
         setIdUser(obj.id);
+        if(obj.user !== null){
+            setReloadFetch(reloadFetch + 1);
+        }
     });
     useEffect(() => {
         setGetToken(false);
