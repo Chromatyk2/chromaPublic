@@ -20,7 +20,7 @@ function NostalBar(props) {
         }
     });
     useEffect(() => {
-        if(hauteur > 100){
+        if(hauteur >= 100){
             document.getElementById("bar").style.height = "100%";
             document.getElementById("bonus").style.display = "block";
             document.getElementById("soluce").style.display = "block";
