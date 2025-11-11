@@ -27,11 +27,11 @@ function NostalBar(props) {
 
         }
         if(hauteur > 29 && hauteur < 59){
-
+            document.getElementById("soluce").style.display = "block";
         }else if(hauteur > 59 && hauteur < 99){
-
+            document.getElementById("saveState").style.display = "block";
         }else if(hauteur > 99){
-
+            document.getElementById("bonus").style.display = "block";
         }
     }, [hauteur]);
     return(
@@ -43,11 +43,11 @@ function NostalBar(props) {
                     position: "absolute",
                     top: "200px",
                     left: "470px"}}>
-                    <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
+                    <i id={"soluce"} style={{display:"none",color:"white",marginLeft: "-6px", marginTop: "4px"}}
                        className="fa-solid fa-pen-to-square"></i>
-                    <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
+                    <i id={"saveState"}  style={{display:"none",color:"white",marginLeft: "-6px", marginTop: "4px"}}
                        className="fa-solid fa-floppy-disk"></i>
-                    <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
+                    <i id={"bonus"}  style={{display:"none",color:"white",marginLeft: "-6px", marginTop: "4px"}}
                        className="fa-solid fa-pencil"></i>
                 </div>
                 <div className="barcontainer">
