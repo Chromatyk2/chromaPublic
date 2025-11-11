@@ -51,14 +51,41 @@ function NostalPickV2(props) {
         <>
             <div id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
-                        numbers.map((val, key) => {
-                        return (
-                            <button id={"buttonBox"+randomConsoles[val]} onClick={openModal} className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>{val}</p>
-                                <img uConsole={randomConsoles[val]} className={"imgBox"} src={"/basic.png"}/>
+                        <>
+                            <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
                             </button>
-                        )
-                    })}
+                            <button id={"buttonBox" + randomConsoles[1]} onClick={openModal}
+                                    className={"uniqueBoxContainer"}>
+                                <p className={"nbBox"}>1</p>
+                                <img uConsole={randomConsoles[1]} className={"imgBox"} src={"/basic.png"}/>
+                            </button>
+                            <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
+                            </button>
+                            <button id={"buttonBox" + randomConsoles[2]} onClick={openModal}
+                                    className={"uniqueBoxContainer"}>
+                                <p className={"nbBox"}>2</p>
+                                <img uConsole={randomConsoles[2]} className={"imgBox"} src={"/basic.png"}/>
+                            </button>
+                            <button id={"buttonBox" + randomConsoles[3]} onClick={openModal}
+                                    className={"uniqueBoxContainer"}>
+                                <p className={"nbBox"}>3</p>
+                                <img uConsole={randomConsoles[3]} className={"imgBox"} src={"/basic.png"}/>
+                            </button>
+                            <button id={"buttonBox" + randomConsoles[4]} onClick={openModal}
+                                    className={"uniqueBoxContainer"}>
+                                <p className={"nbBox"}>4</p>
+                                <img uConsole={randomConsoles[4]} className={"imgBox"} src={"/basic.png"}/>
+                            </button>
+                            <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
+                            </button>
+                            <button id={"buttonBox" + randomConsoles[5]} onClick={openModal}
+                                    className={"uniqueBoxContainer"}>
+                                <p className={"nbBox"}>5</p>
+                                <img uConsole={randomConsoles[5]} className={"imgBox"} src={"/basic.png"}/>
+                            </button>
+                            <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
+                            </button>
+                        </>}
             </div>
                 <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
                     <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
