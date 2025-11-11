@@ -5831,12 +5831,13 @@ img.badgeToWinXp {
 }
 
 .bar{
-    background-color: #9BC9C7;
+    background: #CA019A;
+    background: linear-gradient(90deg,rgba(202, 1, 154, 1) 0%, rgba(42, 191, 120, 1) 100%);
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 80%;
-//border-top: 6px solid #FFF;
+    border-top: 6px solid #FFF;
     box-sizing: border-box;
     animation: grow 1.5s ease-out forwards;
     transform-origin: bottom;
