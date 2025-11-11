@@ -13,6 +13,8 @@ function NostalBar(props) {
         var obj = JSON.parse(param.detail.data)
         if(obj.hauteur == 0){
             setHauteur(0);
+        }else if(obj.recall > 0) {
+            setHauteur(obj.recall);
         }else{
             setHauteur(hauteur + 2);
         }
