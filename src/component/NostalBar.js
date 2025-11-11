@@ -32,6 +32,10 @@ function NostalBar(props) {
             }else if(hauteur > 59 && hauteur < 99){
                 document.getElementById("soluce").style.display = "block";
                 document.getElementById("saveState").style.display = "block";
+            }else if(hauteur < 29){
+                document.getElementById("soluce").style.display = "none";
+                document.getElementById("saveState").style.display = "none";
+                document.getElementById("bonus").style.display = "none";
             }
         }
     }, [hauteur]);
