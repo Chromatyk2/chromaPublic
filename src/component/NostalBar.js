@@ -20,12 +20,29 @@ function NostalBar(props) {
         }
     });
     useEffect(() => {
-        document.getElementById("bar").style.height = hauteur+"%";
+        if(hauteur > 100){
+            document.getElementById("bar").style.height = "100%";
+        }else{
+            document.getElementById("bar").style.height = hauteur+"%";
+
+        }
+        if(hauteur > 29 && hauteur < 59){
+
+        }else if(hauteur > 59 && hauteur < 99){
+
+        }else if(hauteur > 99){
+
+        }
     }, [hauteur]);
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
-                <div>
+                <div style={{display: "flex",
+                    justifyContent: "center",
+                    gap: "20px",
+                    position: "absolute",
+                    top: "200px",
+                    left: "470px"}}>
                     <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
                        className="fa-solid fa-pen-to-square"></i>
                     <i style={{color:"white",marginLeft: "-6px", marginTop: "4px"}}
