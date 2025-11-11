@@ -22,16 +22,14 @@ function NostalBar(props) {
     useEffect(() => {
         if(hauteur > 100){
             document.getElementById("bar").style.height = "100%";
+            document.getElementById("bonus").style.display = "block";
         }else{
             document.getElementById("bar").style.height = hauteur+"%";
-
-        }
-        if(hauteur > 29 && hauteur < 59){
-            document.getElementById("soluce").style.display = "block";
-        }else if(hauteur > 59 && hauteur < 99){
-            document.getElementById("saveState").style.display = "block";
-        }else if(hauteur > 99){
-            document.getElementById("bonus").style.display = "block";
+            if(hauteur > 29 && hauteur < 59){
+                document.getElementById("soluce").style.display = "block";
+            }else if(hauteur > 59 && hauteur < 99){
+                document.getElementById("saveState").style.display = "block";
+            }
         }
     }, [hauteur]);
     return(
