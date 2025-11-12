@@ -5819,18 +5819,18 @@ img.badgeToWinXp {
     width: 50px;
 }
 .barcontainer{
+    -webkit-animation: flashing .5s linear infinite;
+    animation: flashing 10s linear infinite;
     background-color: #181818;
-    position: relative;
-    transform: translateY(-50%);
-    margin-left: 50px;
-    width: 50px;
-    height: 320px;
+    box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #0ff, inset 0 0 1px #0ff, 0 0 0 #0ff, inset 0 0 1px #0ff;
     float: left;
+    height: 320px;
+    margin-left: 50px;
+    position: relative;
     top: 400px;
-    border: 2px solid #00ffff;
-    box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #c6e2ff, inset 0 0 1px #c6e2ff, 0 0 0px #c6e2ff, inset 0 0 1px #c6e2ff;
-    -webkit-animation: flashing 0.5s linear infinite;
-    animation: flashing 0.5s linear infinite;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 50px;
 }
 
 .bar {
@@ -5865,9 +5865,10 @@ img.badgeToWinXp {
 }
 @keyframes flashing {
     0%, 18%, 21%, 32%, 35%, 39%, 42%, 100% {
-        box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #c6e2ff, inset 0 0 1px #c6e2ff, 0 0 0px #c6e2ff, inset 0 0 1px #c6e2ff;
+        box-shadow: 0 0 8px #0ff, inset 0 0 1px #0ff, 0 0 1px #0ff, inset 0 0 1px #0ff, 0 0 0 #0ff, inset 0 0 1px #0ff;
     }
     20%, 34%, 41% {
         box-shadow: none;
+        border: none;
     }
 }
