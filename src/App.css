@@ -5827,6 +5827,10 @@ img.badgeToWinXp {
     height: 320px;
     float: left;
     top: 400px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #c6e2ff, inset 0 0 1px #c6e2ff, 0 0 0px #c6e2ff, inset 0 0 1px #c6e2ff;
+    -webkit-animation: flashing 0.5s linear infinite;
+    animation: flashing 0.5s linear infinite;
 }
 
 .bar {
@@ -5838,10 +5842,6 @@ img.badgeToWinXp {
     height: 100%;
     box-sizing: border-box;
     transition: height 2s;
-    border: 2px solid #00ffff;
-    box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #c6e2ff, inset 0 0 1px #c6e2ff, 0 0 0px #c6e2ff, inset 0 0 1px #c6e2ff;
-    -webkit-animation: flashing 0.5s linear infinite;
-    animation: flashing 0.5s linear infinite;
 }
 #soluce{
     -webkit-animation: scaling 0.5s linear forwards;
