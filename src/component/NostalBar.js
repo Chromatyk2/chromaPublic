@@ -7,10 +7,7 @@ import UniqueBoxV2 from "./uniqueBoxV2.js";
 import Axios from "axios";
 import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
-function NostalBar(props) {
-    const [jouerBonusTrois, setJouerBonusTrois] = useState(1);
-    const [jouerBonusDeux, setJouerBonusDeux] = useState(1);
-    const [jouerBonusUn, setJouerBonusUn] = useState(1);
+function NostalBar() {
     window.addEventListener("Hauteur", (param) => {
         var obj = JSON.parse(param.detail.data)
         if(obj.recall > 0) {
@@ -52,9 +49,6 @@ function NostalBar(props) {
                     document.getElementById('bonusDeux').play();
                 }
             }else if (obj.hauteur === 0){
-                setJouerBonusDeux(1)
-                setJouerBonusUn(1)
-                setJouerBonusTrois(1)
                 document.getElementById("soluce").style.display = "none";
                 document.getElementById("saveState").style.display = "none";
                 document.getElementById("bonus").style.display = "none";
