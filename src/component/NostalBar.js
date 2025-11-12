@@ -14,7 +14,7 @@ function NostalBar(props) {
     window.addEventListener("Hauteur", (param) => {
         var obj = JSON.parse(param.detail.data)
         if(obj.recall > 0) {
-            document.getElementById("bar").style.height = "0%";
+            document.getElementById("bar").style.height = obj.recall+"%";
         }
         if(obj.hauteur >= 100){
             document.getElementById("bar").style.height = "100%";
