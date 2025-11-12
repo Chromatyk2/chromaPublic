@@ -8,9 +8,9 @@ import Axios from "axios";
 import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
 function NostalBar(props) {
-    const [JouerBonusTrois, setJouerBonusTrois] = useState(1);
-    const [JouerBonusDeux, setJouerBonusDeux] = useState(1);
-    const [JouerBonusUn, setJouerBonusUn] = useState(1);
+    const [jouerBonusTrois, setJouerBonusTrois] = useState(1);
+    const [jouerBonusDeux, setJouerBonusDeux] = useState(1);
+    const [jouerBonusUn, setJouerBonusUn] = useState(1);
     window.addEventListener("Hauteur", (param) => {
         var obj = JSON.parse(param.detail.data)
         if(obj.recall > 0) {
@@ -35,7 +35,7 @@ function NostalBar(props) {
             document.getElementById("bonus").style.display = "block";
             document.getElementById("soluce").style.display = "block";
             document.getElementById("saveState").style.display = "block";
-            if(JouerBonusTrois > 0){
+            if(jouerBonusTrois > 0){
                 setJouerBonusTrois(0)
                 document.getElementById('bonusTrois').play();
             }
@@ -43,14 +43,14 @@ function NostalBar(props) {
             document.getElementById("bar").style.height = obj.hauteur+"%";
             if(obj.hauteur > 29 && obj.hauteur < 60){
                 document.getElementById("soluce").style.display = "block";
-                if(JouerBonusUn > 0){
+                if(jouerBonusUn > 0){
                     setJouerBonusUn(0)
                     document.getElementById('bonusUn').play();
                 }
             }else if(obj.hauteur > 59){
                 document.getElementById("soluce").style.display = "block";
                 document.getElementById("saveState").style.display = "block";
-                if(JouerBonusDeux > 0){
+                if(jouerBonusDeux > 0){
                     setJouerBonusDeux(0)
                     document.getElementById('bonusDeux').play();
                 }
