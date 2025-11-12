@@ -23,8 +23,7 @@ function NostalBar(props) {
             document.getElementById("saveState").style.display = "block";
             if(JouerBonusTrois === true){
                 setJouerBonusTrois(false)
-                $('audio#rainbowWin')[0].pause();
-                $('audio#rainbowWin')[0].currentTime = 0;
+                document.getElementById('rainbowWin').play();
             }
         }else{
             document.getElementById("bar").style.height = obj.hauteur+"%";
@@ -32,16 +31,14 @@ function NostalBar(props) {
                 document.getElementById("soluce").style.display = "block";
                 if(JouerBonusUn === true){
                     setJouerBonusUn(false)
-                    $('audio#rainbowWin')[0].pause();
-                    $('audio#rainbowWin')[0].currentTime = 0;
+                    document.getElementById('rainbowWin').play();
                 }
             }else if(obj.hauteur > 59){
                 document.getElementById("soluce").style.display = "block";
                 document.getElementById("saveState").style.display = "block";
                 if(JouerBonusDeux === true){
                     setJouerBonusDeux(false)
-                    $('audio#rainbowWin')[0].pause();
-                    $('audio#rainbowWin')[0].currentTime = 0;
+                    document.getElementById('rainbowWin').play();
                 }
             }else if (obj.hauteur == 0){
                 setJouerBonusDeux(true)
