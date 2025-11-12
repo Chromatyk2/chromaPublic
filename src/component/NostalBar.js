@@ -71,7 +71,7 @@ function NostalBar() {
                     <i id={"saveState"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
                        className="fa-solid fa-floppy-disk"></i>
                     <i id={"bonus"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
-                       className="fa-solid fa-pencil"></i>
+                       className="fa-solid fa-star"></i>
                 </div>
                 <div className="barcontainer">
                     <div id={"bar"} className="bar">
