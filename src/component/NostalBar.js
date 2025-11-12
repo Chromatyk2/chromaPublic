@@ -43,7 +43,12 @@ function NostalBar(props) {
                     $('audio#rainbowWin')[0].pause();
                     $('audio#rainbowWin')[0].currentTime = 0;
                 }
-            }else if(obj.hauteur < 29){
+            }else if (obj.hauteur == 0){
+                setJouerBonusDeux(true)
+                setJouerBonusUn(true)
+                setJouerBonusTrois(true)
+            }else
+            {
                 document.getElementById("soluce").style.display = "none";
                 document.getElementById("saveState").style.display = "none";
                 document.getElementById("bonus").style.display = "none";
