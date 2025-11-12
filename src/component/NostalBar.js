@@ -64,7 +64,7 @@ function NostalBar() {
                     gap: "20px",
                     position: "absolute",
                     top: "200px",
-                    left: "470px"
+                    left: "474px"
                 }}>
                     <i id={"soluce"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
                        className="fa-solid fa-pen-to-square"></i>
