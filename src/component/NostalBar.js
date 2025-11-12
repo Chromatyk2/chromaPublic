@@ -32,26 +32,23 @@ function NostalBar(props) {
         }
         if(obj.hauteur >= 100){
             document.getElementById("bar").style.height = "100%";
-            document.getElementById("bonus").style.display = "block";
-            document.getElementById("soluce").style.display = "block";
-            document.getElementById("saveState").style.display = "block";
-            if(jouerBonusTrois > 0){
-                setJouerBonusTrois(0)
+            if(document.getElementById("bonus").style.display != "block"){
+                document.getElementById("bonus").style.display = "block";
+                document.getElementById("soluce").style.display = "block";
+                document.getElementById("saveState").style.display = "block";
                 document.getElementById('bonusTrois').play();
             }
         }else{
             document.getElementById("bar").style.height = obj.hauteur+"%";
             if(obj.hauteur > 29 && obj.hauteur < 60){
-                document.getElementById("soluce").style.display = "block";
-                if(jouerBonusUn > 0){
-                    setJouerBonusUn(0)
+                if(document.getElementById("soluce").style.display != "block"){
+                    document.getElementById("soluce").style.display = "block";
                     document.getElementById('bonusUn').play();
                 }
             }else if(obj.hauteur > 59){
-                document.getElementById("soluce").style.display = "block";
-                document.getElementById("saveState").style.display = "block";
-                if(jouerBonusDeux > 0){
-                    setJouerBonusDeux(0)
+                if(document.getElementById("saveState").style.display != "block"){
+                    document.getElementById("soluce").style.display = "block";
+                    document.getElementById("saveState").style.display = "block";
                     document.getElementById('bonusDeux').play();
                 }
             }else if (obj.hauteur === 0){
