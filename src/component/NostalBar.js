@@ -27,7 +27,7 @@ function NostalBar(props) {
             }
         }else{
             document.getElementById("bar").style.height = obj.hauteur+"%";
-            if(obj.hauteur > 29){
+            if(obj.hauteur > 29 && obj.hauteur < 60){
                 document.getElementById("soluce").style.display = "block";
                 if(JouerBonusUn === true){
                     setJouerBonusUn(false)
@@ -76,7 +76,7 @@ function NostalBar(props) {
                 </div>
             </div>
             <audio id="rainbowWin">
-                <source src="sounds/RainbowWin.mp3" type="audio/mpeg"/>
+                <source src="sounds/powerUp.mp3" type="audio/mpeg"/>
             </audio>
         </>
     )
