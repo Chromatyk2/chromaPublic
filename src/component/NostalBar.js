@@ -58,8 +58,6 @@ function NostalBar(props) {
                 setJouerBonusDeux(1)
                 setJouerBonusUn(1)
                 setJouerBonusTrois(1)
-            }else
-            {
                 document.getElementById("soluce").style.display = "none";
                 document.getElementById("saveState").style.display = "none";
                 document.getElementById("bonus").style.display = "none";
