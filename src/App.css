@@ -5836,7 +5836,7 @@ img.badgeToWinXp {
 
 .bar {
     background: #CA019A;
-    background: linear-gradient(180deg,rgba(202, 1, 154, 1) 0%, rgba(120, 33, 163, 1) 35%, rgba(42, 191, 120, 1) 100%);
+    background: linear-gradient(180deg,rgba(202, 1, 154, 1) 0%, rgba(104, 33, 163, 1) 32%, rgba(5, 102, 77, 1) 69%, rgba(65, 168, 128, 1) 100%);
     position: absolute;
     bottom: 0;
     width: 100%;
