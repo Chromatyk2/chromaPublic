@@ -8,9 +8,9 @@ import Axios from "axios";
 import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
 function NostalBar(props) {
-    const [JouerBonusTrois, setJouerBonusTrois] = useState(true);
-    const [JouerBonusDeux, setJouerBonusDeux] = useState(true);
-    const [JouerBonusUn, setJouerBonusUn] = useState(true);
+    const [JouerBonusTrois, setJouerBonusTrois] = useState(1);
+    const [JouerBonusDeux, setJouerBonusDeux] = useState(1);
+    const [JouerBonusUn, setJouerBonusUn] = useState(1);
     window.addEventListener("Hauteur", (param) => {
         var obj = JSON.parse(param.detail.data)
         if(obj.recall > 0) {
@@ -21,29 +21,29 @@ function NostalBar(props) {
             document.getElementById("bonus").style.display = "block";
             document.getElementById("soluce").style.display = "block";
             document.getElementById("saveState").style.display = "block";
-            if(JouerBonusTrois === true){
-                setJouerBonusTrois(false)
+            if(JouerBonusTrois === 1){
+                setJouerBonusTrois(0)
                 document.getElementById('rainbowWin').play();
             }
         }else{
             document.getElementById("bar").style.height = obj.hauteur+"%";
             if(obj.hauteur > 29 && obj.hauteur < 60){
                 document.getElementById("soluce").style.display = "block";
-                if(JouerBonusUn === true){
-                    setJouerBonusUn(false)
+                if(JouerBonusUn === 1){
+                    setJouerBonusUn(0)
                     document.getElementById('rainbowWin').play();
                 }
             }else if(obj.hauteur > 59){
                 document.getElementById("soluce").style.display = "block";
                 document.getElementById("saveState").style.display = "block";
-                if(JouerBonusDeux === true){
-                    setJouerBonusDeux(false)
+                if(JouerBonusDeux === 1){
+                    setJouerBonusDeux(0)
                     document.getElementById('rainbowWin').play();
                 }
-            }else if (obj.hauteur == 0){
-                setJouerBonusDeux(true)
-                setJouerBonusUn(true)
-                setJouerBonusTrois(true)
+            }else if (obj.hauteur === 0){
+                setJouerBonusDeux(1)
+                setJouerBonusUn(1)
+                setJouerBonusTrois(1)
             }else
             {
                 document.getElementById("soluce").style.display = "none";
