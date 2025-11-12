@@ -5841,16 +5841,16 @@ img.badgeToWinXp {
     border:solid 2px #fefefe
 }
 #soluce{
-    -webkit-animation: scaling 3s ease-in-out infinite;
-    animation: scaling 3s ease-in-out infinite;
+    -webkit-animation: scaling 3s ease-in-out forwards;
+    animation: scaling 3s ease-in-out forwards;
 }
 #saveState{
-    -webkit-animation: scaling 3s ease-in-out infinite;
-    animation: scaling 3s ease-in-out infinite;
+    -webkit-animation: scaling 3s ease-in-out forwards;
+    animation: scaling 3s ease-in-out forwards;
 }
 #bonus{
-    -webkit-animation: scaling 3s ease-in-out infinite;
-    animation: scaling 3s ease-in-out infinite;
+    -webkit-animation: scaling 3s ease-in-out forwards;
+    animation: scaling 3s ease-in-out forwards;
 }
 @keyframes scaling {
     0% {
