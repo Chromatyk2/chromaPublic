@@ -5838,7 +5838,8 @@ img.badgeToWinXp {
     height: 100%;
     box-sizing: border-box;
     transition: height 2s;
-    border:solid 2px #fefefe
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #c6e2ff, inset 0 0 1px #c6e2ff, 0 0 0px #c6e2ff, inset 0 0 1px #c6e2ff;
 }
 #soluce{
     -webkit-animation: scaling 0.5s linear forwards;
@@ -5858,5 +5859,13 @@ img.badgeToWinXp {
     }
     100% {
         transform: scale(1);
+    }
+}
+@keyframes flashing {
+    0%, 18%, 21%, 32%, 35%, 39%, 42%, 100% {
+        box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #c6e2ff, inset 0 0 1px #c6e2ff, 0 0 0px #c6e2ff, inset 0 0 1px #c6e2ff;
+    }
+    20%, 34%, 41% {
+        box-shadow: none;
     }
 }
