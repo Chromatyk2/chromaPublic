@@ -37,7 +37,7 @@ function NostalBar(props) {
             document.getElementById("saveState").style.display = "block";
             if(JouerBonusTrois > 0){
                 setJouerBonusTrois(0)
-                document.getElementById('rainbowWin').play();
+                document.getElementById('bonusTrois').play();
             }
         }else{
             document.getElementById("bar").style.height = obj.hauteur+"%";
@@ -45,14 +45,14 @@ function NostalBar(props) {
                 document.getElementById("soluce").style.display = "block";
                 if(JouerBonusUn > 0){
                     setJouerBonusUn(0)
-                    document.getElementById('rainbowWin').play();
+                    document.getElementById('bonusUn').play();
                 }
             }else if(obj.hauteur > 59){
                 document.getElementById("soluce").style.display = "block";
                 document.getElementById("saveState").style.display = "block";
                 if(JouerBonusDeux > 0){
                     setJouerBonusDeux(0)
-                    document.getElementById('rainbowWin').play();
+                    document.getElementById('bonusDeux').play();
                 }
             }else if (obj.hauteur === 0){
                 setJouerBonusDeux(1)
@@ -87,7 +87,13 @@ function NostalBar(props) {
                     </div>
                 </div>
             </div>
-            <audio id="rainbowWin">
+            <audio id="bonusUn">
+                <source src="sounds/powerUp.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="bonusDeux">
+                <source src="sounds/powerUp.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="bonusTrois">
                 <source src="sounds/powerUp.mp3" type="audio/mpeg"/>
             </audio>
         </>
