@@ -5840,8 +5840,8 @@ img.badgeToWinXp {
     transition: height 2s;
     border: 2px solid #00ffff;
     box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #c6e2ff, inset 0 0 1px #c6e2ff, 0 0 0px #c6e2ff, inset 0 0 1px #c6e2ff;
-    -webkit-animation: scaling 0.5s linear infinite;
-    animation: scaling 0.5s linear infinite;
+    -webkit-animation: flashing 0.5s linear infinite;
+    animation: flashing 0.5s linear infinite;
 }
 #soluce{
     -webkit-animation: scaling 0.5s linear forwards;
