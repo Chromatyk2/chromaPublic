@@ -5831,6 +5831,7 @@ img.badgeToWinXp {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 50px;
+    border-radius: 10px;
 }
 
 .bar {
@@ -5842,6 +5843,7 @@ img.badgeToWinXp {
     height: 100%;
     box-sizing: border-box;
     transition: height 2s;
+    border-radius: 10px;
 }
 #soluce{
     -webkit-animation: scaling 0.5s linear forwards;
@@ -5865,7 +5867,7 @@ img.badgeToWinXp {
 }
 @keyframes flashing {
     0%, 18%, 21%, 32%, 35%, 39%, 42%, 100% {
-        box-shadow: 0 0 8px #0ff, inset 0 0 1px #0ff, 0 0 1px #0ff, inset 0 0 1px #0ff, 0 0 0 #0ff, inset 0 0 1px #0ff;
+        box-shadow: 0 0 8px #0ff, inset 0 0 1px #0ff, 0 0 25px #0ff, inset 0 0 1px #0ff, 0 0 0 #0ff, inset 0 0 18px #0ff;
     }
     20%, 34%, 41% {
         box-shadow: none;
