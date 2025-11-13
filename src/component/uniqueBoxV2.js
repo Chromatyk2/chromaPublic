@@ -13,46 +13,46 @@ function UniqueBoxV2(props) {
     const [finalState, setFinalState] = React.useState(null);
     useEffect(() => {
         if(props.consolePicked == "GB"){
-            setMax(432);
+            setMax(288);
         }
         if(props.consolePicked == "GBA"){
-            setMax(424);
+            setMax(344);
         }
         if(props.consolePicked == "GBC"){
-            setMax(233);
+            setMax(192);
         }
         if(props.consolePicked == "MASTER SYSTEM"){
-            setMax(194);
+            setMax(142);
         }
         if(props.consolePicked == "MEGADRIVE"){
-            setMax(400);
+            setMax(252);
         }
         if(props.consolePicked == "N64"){
-            setMax(133);
+            setMax(96);
         }
         if(props.consolePicked == "NDS"){
-            setMax(488);
+            setMax(465);
         }
         if(props.consolePicked == "NES"){
-            setMax(280);
+            setMax(193);
         }
         if(props.consolePicked == "NGC"){
-            setMax(234);
+            setMax(214);
         }
         if(props.consolePicked == "PS1"){
-            setMax(147);
+            setMax(75);
         }
         if(props.consolePicked == "PSP"){
-            setMax(286);
+            setMax(234);
         }
         if(props.consolePicked == "SNES"){
-            setMax(458);
+            setMax(375);
         }
         if(props.consolePicked == "DREAMCAST"){
-            setMax(77);
+            setMax(41);
         }
         if(props.consolePicked == "GAMEGEAR"){
-            setMax(370);
+            setMax(222);
         }
         if(props.consolePicked == "WII"){
             setMax(50);
@@ -160,7 +160,7 @@ function UniqueBoxV2(props) {
         if(randomNumber !== null){
             Axios.post('/api/addCurrentImage',
                 {
-                    title:"Jaquette (" + randomNumber + ").png",
+                    title:"Jeu (" + randomNumber + ").png",
                     plateforme:props.consolePicked
 
                 }
@@ -175,7 +175,7 @@ function UniqueBoxV2(props) {
                     <div style={{display: "none"}} className={"gettedGameImg"} onClick={handleState}
                          id={"imgGame" + randomNumber}>
                         <img className={"imgInBox"}
-                             src={"/images/jaquettes/" + props.consolePicked + "/jaquette (" + randomNumber + ").png"}/>
+                             src={"/images/jaquettes/" + props.consolePicked + "/Jeu (" + randomNumber + ").png"}/>
                         {typeBox == "ultra" ?
                             <p className={"textResultBoxUltra"}>Bravo tu gagne 25 Tokens<br/> de ton choix !</p>
                             :
