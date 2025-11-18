@@ -57,6 +57,9 @@ function UniqueBoxV2(props) {
         if(props.consolePicked == "WII"){
             setMax(50);
         }
+        if(props.consolePicked == "PS2"){
+            setMax(20);
+        }
     }, [])
     function openBox(e) {
         setRandomNumber(Math.floor(Math.random()*max) + 1);
