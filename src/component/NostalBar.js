@@ -55,6 +55,27 @@ function NostalBar() {
             }
         }
     });
+
+    window.addEventListener("Recall", (param) => {
+        var obj = JSON.parse(param.detail.data)
+        if(obj.recall > 0) {
+            document.getElementById("bar").style.height = obj.recall+"%";
+            if(obj.hauteur >= 100){
+                document.getElementById("bar").style.height = "100%";
+                document.getElementById("bonus").style.display = "block";
+                document.getElementById("soluce").style.display = "block";
+                document.getElementById("saveState").style.display = "block";
+            }else{
+                document.getElementById("bar").style.height = obj.hauteur+"%";
+                if(obj.hauteur > 29 && obj.hauteur < 60){
+                    document.getElementById("soluce").style.display = "block";
+                }else if(obj.hauteur > 59){
+                    document.getElementById("soluce").style.display = "block";
+                    document.getElementById("saveState").style.display = "block";
+                }
+            }
+        }
+    });
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
