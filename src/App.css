@@ -5835,15 +5835,17 @@ img.badgeToWinXp {
 }
 
 .bar {
-    background: #CA019A;
-    background: linear-gradient(180deg,rgba(202, 1, 154, 1) 0%, rgba(104, 33, 163, 1) 32%, rgba(5, 102, 77, 1) 69%, rgba(65, 168, 128, 1) 100%);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 0%;
+    background: linear-gradient(180deg, #ca019a, #6821a3 32%, #05664d 69%, #41a880);
+    bottom: 1px;
     box-sizing: border-box;
+    height: 0;
+    position: absolute;
     transition: height 2s;
-    border-radius: 10px;
+    width: 97%;
+    box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px #0ff, inset 0 0 1px #0ff, 0 0 0 #0ff, inset 0 0 1px #0ff;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 #soluce{
     -webkit-animation: scaling 0.5s linear forwards;
