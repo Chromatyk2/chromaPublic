@@ -10,23 +10,6 @@ import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 function NostalBar() {
     window.addEventListener("Hauteur", (param) => {
         var obj = JSON.parse(param.detail.data)
-        if(obj.recall > 0) {
-            document.getElementById("bar").style.height = obj.recall+"%";
-            if(obj.hauteur >= 100){
-                document.getElementById("bar").style.height = "100%";
-                document.getElementById("bonus").style.display = "block";
-                document.getElementById("soluce").style.display = "block";
-                document.getElementById("saveState").style.display = "block";
-            }else{
-                document.getElementById("bar").style.height = obj.hauteur+"%";
-                if(obj.hauteur > 29 && obj.hauteur < 60){
-                    document.getElementById("soluce").style.display = "block";
-                }else if(obj.hauteur > 59){
-                    document.getElementById("soluce").style.display = "block";
-                    document.getElementById("saveState").style.display = "block";
-                }
-            }
-        }
         if(obj.hauteur >= 100){
             document.getElementById("bar").style.height = "100%";
             if(document.getElementById("bonus").style.display != "block"){
@@ -58,16 +41,16 @@ function NostalBar() {
 
     window.addEventListener("Recall", (param) => {
         var obj = JSON.parse(param.detail.data)
-        if(obj.hauteur >= 100){
+        if(obj.recall >= 100){
             document.getElementById("bar").style.height = "100%";
             document.getElementById("bonus").style.display = "block";
             document.getElementById("soluce").style.display = "block";
             document.getElementById("saveState").style.display = "block";
         }else{
-            document.getElementById("bar").style.height = obj.hauteur+"%";
-            if(obj.hauteur > 29 && obj.hauteur < 60){
+            document.getElementById("bar").style.height = obj.recall+"%";
+            if(obj.recall > 29 && obj.recall < 60){
                 document.getElementById("soluce").style.display = "block";
-            }else if(obj.hauteur > 59){
+            }else if(obj.recall > 59){
                 document.getElementById("soluce").style.display = "block";
                 document.getElementById("saveState").style.display = "block";
             }
