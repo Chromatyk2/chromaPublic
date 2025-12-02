@@ -40,6 +40,7 @@ function NostalBar() {
         if(obj.achievement >= 100){
             document.getElementById("barAchievement").style.height = "100%";
             document.getElementById("trophy").style.display = "block";
+            document.getElementById('bonusAchievement').play();
         }else{
             document.getElementById("barAchievement").style.height = obj.achievement+"%";
             document.getElementById("trophy").style.display = "none";
@@ -106,6 +107,9 @@ function NostalBar() {
             </audio>
             <audio id="bonusTrois">
                 <source src="sounds/powerUp.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio id="bonusAchievement">
+                <source src="sounds/zelda.mp3" type="audio/mpeg"/>
             </audio>
         </>
     )
