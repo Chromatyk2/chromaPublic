@@ -5862,6 +5862,10 @@ img.badgeToWinXp {
     width: 100%;
 
 }
+#trophy{
+    -webkit-animation: scaling 0.5s linear forwards;
+    animation: scaling 0.5s linear forwards;
+}
 #soluce{
     -webkit-animation: scaling 0.5s linear forwards;
     animation: scaling 0.5s linear forwards;

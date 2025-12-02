@@ -39,8 +39,10 @@ function NostalBar() {
         }
         if(obj.achievement >= 100){
             document.getElementById("barAchievement").style.height = "100%";
+            document.getElementById("trophy").style.display = "block";
         }else{
             document.getElementById("barAchievement").style.height = obj.achievement+"%";
+            document.getElementById("trophy").style.display = "none";
         }
     });
 
@@ -62,8 +64,10 @@ function NostalBar() {
         }
         if(obj.achievement >= 100){
             document.getElementById("barAchievement").style.height = "100%";
+            document.getElementById("trophy").style.display = "block";
         }else{
             document.getElementById("barAchievement").style.height = obj.achievement+"%";
+            document.getElementById("trophy").style.display = "none";
         }
     });
     return(
@@ -72,17 +76,19 @@ function NostalBar() {
                 <div style={{
                     display: "flex",
                     justifyContent: "center",
-                    gap: "20px",
+                    gap: "10px",
                     position: "absolute",
-                    top: "200px",
-                    left: "474px"
+                    top: "170px",
+                    left: "455px",
+                    flexWrap:"wrap",
+                    width:"103px"
                 }}>
-                    <i className="fa-solid fa-trophy" style={{color: "#FFD43B"}}></i>
-                    <i id={"soluce"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
+                    <i id={"trophy"} className="fa-solid fa-trophy" style={{display: "none", color: "#FFD43B",width:"100%",textAlign:"center"}}></i>
+                    <i id={"soluce"} style={{display: "none", color: "white", marginTop: "4px"}}
                        className="fa-solid fa-pen-to-square"></i>
-                    <i id={"saveState"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
+                    <i id={"saveState"} style={{display: "none", color: "white", marginTop: "4px"}}
                        className="fa-solid fa-floppy-disk"></i>
-                    <i id={"bonus"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
+                    <i id={"bonus"} style={{display: "none", color: "white", marginTop: "4px"}}
                        className="fa-solid fa-star"></i>
                 </div>
                 <div className="barcontainer">
