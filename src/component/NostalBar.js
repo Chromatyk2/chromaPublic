@@ -38,7 +38,7 @@ function NostalBar() {
             }
         }
         if(obj.achievement >= 100){
-            document.getElementById("bar").style.height = "100%";
+            document.getElementById("barAchievement").style.height = "100%";
         }else{
             document.getElementById("barAchievement").style.height = obj.achievement+"%";
         }
@@ -61,7 +61,7 @@ function NostalBar() {
             }
         }
         if(obj.achievement >= 100){
-            document.getElementById("bar").style.height = "100%";
+            document.getElementById("barAchievement").style.height = "100%";
         }else{
             document.getElementById("barAchievement").style.height = obj.achievement+"%";
         }
