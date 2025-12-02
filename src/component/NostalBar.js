@@ -37,6 +37,11 @@ function NostalBar() {
                 document.getElementById("bonus").style.display = "none";
             }
         }
+        if(obj.achievement >= 100){
+            document.getElementById("bar").style.height = "100%";
+        }else{
+            document.getElementById("barAchievement").style.height = obj.achievement+"%";
+        }
     });
 
     window.addEventListener("Recall", (param) => {
@@ -76,6 +81,8 @@ function NostalBar() {
                 </div>
                 <div className="barcontainer">
                     <div id={"bar"} className="bar">
+                    </div>
+                    <div id={"barAchievement"} className="barAchievement">
                     </div>
                 </div>
             </div>
