@@ -77,7 +77,7 @@ function NostalBar() {
                     top: "200px",
                     left: "474px"
                 }}>
-                    <i className="fa-solid fa-trophy" style="color: #FFD43B;"></i>
+                    <i className="fa-solid fa-trophy" style={{color: "#FFD43B"}}></i>
                     <i id={"soluce"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
                        className="fa-solid fa-pen-to-square"></i>
                     <i id={"saveState"} style={{display: "none", color: "white", marginLeft: "-6px", marginTop: "4px"}}
