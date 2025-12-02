@@ -60,6 +60,11 @@ function NostalBar() {
                 document.getElementById("saveState").style.display = "block";
             }
         }
+        if(obj.achievement >= 100){
+            document.getElementById("bar").style.height = "100%";
+        }else{
+            document.getElementById("barAchievement").style.height = obj.achievement+"%";
+        }
     });
     return(
         <>
