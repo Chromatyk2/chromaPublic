@@ -38,9 +38,11 @@ function NostalBar() {
             }
         }
         if(obj.achievement >= 100){
-            document.getElementById("barAchievement").style.height = "100%";
-            document.getElementById("trophy").style.display = "block";
-            document.getElementById('bonusAchievement').play();
+            if(document.getElementById("trophy").style.display != "block") {
+                document.getElementById("barAchievement").style.height = "100%";
+                document.getElementById("trophy").style.display = "block";
+                document.getElementById('bonusAchievement').play();
+            }
         }else{
             document.getElementById("barAchievement").style.height = obj.achievement+"%";
             document.getElementById("trophy").style.display = "none";
@@ -64,9 +66,9 @@ function NostalBar() {
             }
         }
         if(obj.achievement >= 100){
-            if(document.getElementById("trophy").style.display != "block") {
-                document.getElementById("barAchievement").style.height = "100%";
-                document.getElementById("trophy").style.display = "block";
+            if(document.getElementById("trophy").style.display != "block"){
+            document.getElementById("barAchievement").style.height = "100%";
+            document.getElementById("trophy").style.display = "block";
             }
         }else{
             document.getElementById("barAchievement").style.height = obj.achievement+"%";
