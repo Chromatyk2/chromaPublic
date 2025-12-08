@@ -375,7 +375,7 @@ function OpeningCards(props) {
                                             block={block}
                                             booster={val.booster == "sma" ? "sma" : props.idBooster.replace(".", "")}
                                             local={val.nbCard}
-                                            src={"https://assets.tcgdex.net/" + lang + "/" + block + "/" + boosterImg + "/" + val.idCard + "/high.png"}
+                                            src={"https://assets.tcgdex.net/en/" + block + "/" + boosterImg + "/" + val.idCard + "/high.png"}
                                             onError={errorImage}
                                             alt="Grapefruit slice atop a pile of other slices"/>
                                         {getToken === true &&

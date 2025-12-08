@@ -274,7 +274,7 @@ function OtherMyCardsSet(props) {
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
                                                     }}
-                                                    src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
+                                                    src={"https://assets.tcgdex.net/en/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*<img className={"shadowBangerCard"} style={{width:"250px",filter:"brightness(1)"}} src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}/>*/}
                                             </div>
                                         </div>
                                     )
@@ -340,7 +340,7 @@ function OtherMyCardsSet(props) {
                                                         // If you need to, you can tweak the effect transition using the wrapper style.
                                                         style: {transitionDelay: "0.1s"},
                                                     }}
-                                                    src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
+                                                    src={"https://assets.tcgdex.net/en/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
                                             </div>
                                         </div>
                                     )
@@ -406,7 +406,7 @@ function OtherMyCardsSet(props) {
                                                     // If you need to, you can tweak the effect transition using the wrapper style.
                                                     style: {transitionDelay: "0.1s"},
                                                 }}
-                                                src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
+                                                src={"https://assets.tcgdex.net/en/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/> {/*     image={val.image} className={stadeC == 4 ? "fit-picture-card cardOnListRainbow" : "fit-picture-card"}*/}
                                             {/*     src={"https://images.pokemontcg.io/"+val.set.id+"/"+val.number+"_hires.png"}*/}
                                             {/*     onError={(e) => errorImages(e, props.idBooster, val.localId )}/>*/}
                                         </button>
@@ -433,7 +433,7 @@ function OtherMyCardsSet(props) {
                                             // If you need to, you can tweak the effect transition using the wrapper style.
                                             style: {width: "350px", transitionDelay: "0.1s"},
                                         }}
-                                        src={"https://assets.tcgdex.net/" + lang + "/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
+                                        src={"https://assets.tcgdex.net/en/" + rarities[0].block + "/" + props.idBooster + "/" + val.localId + "/high.png"}/>
                                 </div>)
                             }
                         })
