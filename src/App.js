@@ -28,6 +28,7 @@ import Footer from "./component/footer";
 import Log from "./services/log";
 import Shinydex from "./component/Shinydex";
 import NostalBar from "./component/NostalBar";
+import OneBox from "./component/OneBox";
 function App() {
   const [cookies, setCookie] = useCookies();
   if(typeof cookies.user === "undefined") {
@@ -54,6 +55,7 @@ function App() {
                     <Route path="/pokedex/:pseudo" element={<OtherDex cookies={cookies}/>}/>
                     <Route path="/pokemon/:id" element={<PokemonPage cookies={cookies}/>}/>
                     <Route path="/29ct92B3ZrvxGS" element={<NostalPickV2 cookies={cookies}/>}/>
+                      <Route path="/29ct92B3ZrvxGSO" element={<OneBox cookies={cookies}/>}/>
                     <Route path="/29ct92B3ZrvxGL" element={<LastGames cookies={cookies}/>}/>
                     <Route path="/tcg/cartes" element={<CardsHub page={"myCards"} cookies={cookies}/>}/>
                     <Route path="/tcg/boosters" element={<CardsHub page={"myBoosters"} cookies={cookies}/>}/>
