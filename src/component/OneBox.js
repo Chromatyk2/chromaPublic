@@ -63,7 +63,6 @@ function OneBox(props) {
                             </button>
                             <button id={"buttonBox" + randomConsoles[2]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>2</p>
                                 <img uConsole={randomConsoles[2]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
@@ -77,8 +76,8 @@ function OneBox(props) {
                         </>}
             </div>
             <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
-                    <UniqueBoxV2One consolePicked = {pickConsole} change={handleState} />
-                </Modal>
+                <UniqueBoxV2One consolePicked = {pickConsole} change={handleState} />
+            </Modal>
         </>
     )
 }
