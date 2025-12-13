@@ -3,7 +3,7 @@ import '../App.css';
 import UniqueBox from "./UniqueBox";
 import $ from 'jquery';
 import Modal from "react-modal";
-import UniqueBoxV2 from "./uniqueBoxV2.js";
+import UniqueBoxV2One from "./uniqueBoxV2One.js";
 import Axios from "axios";
 import OBSWebSocket, {EventSubscription} from 'obs-websocket-js';
 
@@ -77,7 +77,7 @@ function OneBox(props) {
                         </>}
             </div>
             <Modal overlayClassName={"OverlayNostal"} isOpen={modalIsOpen} style={customStyles.content} contentLabel="Example Modal" id={"modalBoxNostal"}>
-                    <UniqueBoxV2 consolePicked = {pickConsole} change={handleState} />
+                    <UniqueBoxV2One consolePicked = {pickConsole} change={handleState} />
                 </Modal>
         </>
     )
