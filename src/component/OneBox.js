@@ -50,7 +50,7 @@ function OneBox(props) {
     }
     return(
         <>
-            <div id={"boxContainerId"} className="boxContainer">
+            <div style={{marginTop:"200px"}} id={"boxContainerId"} className="boxContainer">
                     {randomConsoles &&
                         <>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
