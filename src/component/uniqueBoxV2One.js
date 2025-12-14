@@ -7,8 +7,6 @@ import OpeningBooster from "./openingBooster";
 import Axios from "axios";
 
 function UniqueBoxV2(props) {
-    const [randomNumber, setRandomNumber] = React.useState(null)
-    const [max, setMax] = React.useState(null);
     const [typeBox, setTypeBox] = React.useState("basic");
     const [finalState, setFinalState] = React.useState(null);
     const [banger, setBanger] = React.useState(null);
@@ -110,7 +108,7 @@ function UniqueBoxV2(props) {
     useEffect(() => {
         if(finalState !== null){
             setTimeout(function() {
-                document.getElementById("imgGame"+randomNumber).style.display = "block";
+                document.getElementById("imgGame"+randomBanger.number).style.display = "block";
             }.bind(this), 0)
         }
     }, [finalState])
@@ -120,7 +118,7 @@ function UniqueBoxV2(props) {
     return(
         <>
             <div>
-                {randomNumber &&
+                {randomBanger.number &&
                     <div style={{display: "none"}} className={"gettedGameImg"} onClick={handleState}
                          id={"imgGame" + randomBanger.number}>
                         <img className={"imgInBox"}
