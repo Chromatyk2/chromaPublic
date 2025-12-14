@@ -121,6 +121,7 @@ function UniqueBoxV2(props) {
                 {randomBanger &&
                     <div style={{display: "none"}} className={"gettedGameImg"} onClick={handleState}
                          id={"imgGame" + randomBanger.number}>
+                        <p className={"textResultBoxLegendary"}>{randomBanger.viewer}</p>
                         <img className={"imgInBox"}
                              src={"/images/jaquettes/" + randomBanger.console + "/Jeu (" + randomBanger.number + ").png"}/>
                         {typeBox == "ultra" ?
