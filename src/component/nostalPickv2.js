@@ -13,7 +13,7 @@ function NostalPickV2(props) {
     const [randomConsoles, setRandomConsoles] = React.useState(null);
     var numbers = [1,2,3,4,5,6,7,8,9,10];
     useEffect(() => {
-        var consoles = ["GB","GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM","GAMEGEAR","WII","PS2"];
+        var consoles = ["GB",+"GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM","GAMEGEAR","WII","PS2"];
         // var consoles = ["GBA","NDS","NGC","PSP","WII","SNES"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
     }, []);
@@ -57,31 +57,31 @@ function NostalPickV2(props) {
                             </button>
                             <button id={"buttonBox" + randomConsoles[1]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>1</p>
+                                <p className={"nbBox"}>randomConsoles[1]</p>
                                 <img uConsole={randomConsoles[1]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
                             </button>
                             <button id={"buttonBox" + randomConsoles[2]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>2</p>
+                                <p className={"nbBox"}>randomConsoles[2]</p>
                                 <img uConsole={randomConsoles[2]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button id={"buttonBox" + randomConsoles[3]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>3</p>
+                                <p className={"nbBox"}>randomConsoles[3]</p>
                                 <img uConsole={randomConsoles[3]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button id={"buttonBox" + randomConsoles[4]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>4</p>
+                                <p className={"nbBox"}>randomConsoles[4]</p>
                                 <img uConsole={randomConsoles[4]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
                             </button>
                             <button id={"buttonBox" + randomConsoles[5]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>5</p>
+                                <p className={"nbBox"}>randomConsoles[5]</p>
                                 <img uConsole={randomConsoles[5]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
