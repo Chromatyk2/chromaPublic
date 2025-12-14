@@ -1609,6 +1609,16 @@ p.nbBox {
     z-index: 1;
     width: 90%;
 }
+.viewerBanger{
+    color: black;
+    font-size: 65px;
+    left: 260px;
+    position: absolute;
+    top: -65px;
+    width: 100vw;
+    z-index: 1;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px black, 0 0 70px black, 0 0 80px black, 0 0 100px black, 0 0 150px black;
+}
 object{
 
     -webkit-filter: opacity(0.9);
