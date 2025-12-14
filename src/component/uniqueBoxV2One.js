@@ -11,58 +11,17 @@ function UniqueBoxV2(props) {
     const [max, setMax] = React.useState(null);
     const [typeBox, setTypeBox] = React.useState("basic");
     const [finalState, setFinalState] = React.useState(null);
+    const [banger, setBanger] = React.useState(null);
+    const [randomBanger, setRandomBanger] = React.useState(null);
     useEffect(() => {
-        if(props.consolePicked == "GB"){
-            setMax(288);
-        }
-        if(props.consolePicked == "GBA"){
-            setMax(344);
-        }
-        if(props.consolePicked == "GBC"){
-            setMax(192);
-        }
-        if(props.consolePicked == "MASTER SYSTEM"){
-            setMax(142);
-        }
-        if(props.consolePicked == "MEGADRIVE"){
-            setMax(252);
-        }
-        if(props.consolePicked == "N64"){
-            setMax(96);
-        }
-        if(props.consolePicked == "NDS"){
-            setMax(465);
-        }
-        if(props.consolePicked == "NES"){
-            setMax(193);
-        }
-        if(props.consolePicked == "NGC"){
-            setMax(214);
-        }
-        if(props.consolePicked == "PS1"){
-            setMax(75);
-        }
-        if(props.consolePicked == "PSP"){
-            setMax(234);
-        }
-        if(props.consolePicked == "SNES"){
-            setMax(375);
-        }
-        if(props.consolePicked == "DREAMCAST"){
-            setMax(41);
-        }
-        if(props.consolePicked == "GAMEGEAR"){
-            setMax(222);
-        }
-        if(props.consolePicked == "WII"){
-            setMax(50);
-        }
-        if(props.consolePicked == "PS2"){
-            setMax(20);
-        }
+
+        Axios.get('/api/getBanger')
+            .then(function(response){
+                setBanger(response.data);
+            })
     }, [])
     function openBox(e) {
-        setRandomNumber(Math.floor(Math.random()*max) + 1);
+        setRandomBanger(banger[Math.floor(Math.random() * banger.length)])
         var rarity = Math.floor(Math.random() * 101);
         console.log(rarity)
         if(rarity > 95){
@@ -158,27 +117,14 @@ function UniqueBoxV2(props) {
     function handleState() {
         props.change();
     }
-
-    useEffect(() => {
-        if(randomNumber !== null){
-            Axios.post('/api/addCurrentImage',
-                {
-                    title:"Jeu (" + randomNumber + ").png",
-                    plateforme:props.consolePicked
-
-                }
-            )
-
-        }
-    }, [randomNumber]);
     return(
         <>
             <div>
                 {randomNumber &&
                     <div style={{display: "none"}} className={"gettedGameImg"} onClick={handleState}
-                         id={"imgGame" + randomNumber}>
+                         id={"imgGame" + randomBanger.number}>
                         <img className={"imgInBox"}
-                             src={"/images/jaquettes/" + props.consolePicked + "/Jeu (" + randomNumber + ").png"}/>
+                             src={"/images/jaquettes/" + randomBanger.console + "/Jeu (" + randomBanger.number + ").png"}/>
                         {typeBox == "ultra" ?
                             <p className={"textResultBoxUltra"}>Bravo tu gagne 25 Tokens<br/> de ton choix !</p>
                             :
