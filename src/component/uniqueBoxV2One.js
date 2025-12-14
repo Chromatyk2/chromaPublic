@@ -118,7 +118,7 @@ function UniqueBoxV2(props) {
     return(
         <>
             <div>
-                {randomBanger.number &&
+                {randomBanger &&
                     <div style={{display: "none"}} className={"gettedGameImg"} onClick={handleState}
                          id={"imgGame" + randomBanger.number}>
                         <img className={"imgInBox"}
