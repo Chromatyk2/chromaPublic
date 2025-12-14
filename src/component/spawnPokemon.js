@@ -22,7 +22,7 @@ function SpawnPokemon(props) {
     const [berryToWins, setBerryToWins] = useState(null);
     window.addEventListener("Banger", (param) => {
         var obj = JSON.parse(param.detail.data)
-        console.log(obj.viewer)
+        console.log(obj.user)
         console.log(obj.message)
     });
     window.addEventListener("Pokemon", (param) => {
