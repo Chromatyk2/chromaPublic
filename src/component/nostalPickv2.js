@@ -61,17 +61,17 @@ function NostalPickV2(props) {
                             </button>
                             <button id={"buttonBox" + randomConsoles[2]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>randomConsoles[2]</p>
+                                <p className={"nbBox"}>{randomConsoles[2]}</p>
                                 <img uConsole={randomConsoles[2]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button id={"buttonBox" + randomConsoles[3]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>randomConsoles[3]</p>
+                                <p className={"nbBox"}>{randomConsoles[3]}</p>
                                 <img uConsole={randomConsoles[3]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button id={"buttonBox" + randomConsoles[4]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <p className={"nbBox"}>randomConsoles[4]</p>
+                                <p className={"nbBox"}>{randomConsoles[4]}</p>
                                 <img uConsole={randomConsoles[4]} className={"imgBox"} src={"/basic.png"}/>
                             </button>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
