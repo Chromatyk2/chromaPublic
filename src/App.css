@@ -1601,12 +1601,13 @@ img.imgBox {
 }
 p.nbBox {
     color: #fff;
-    font-size: 90px;
+    font-size: 38px;
     position: absolute;
-    top: 86px;
+    text-align: center;
+    text-shadow: 2px 3px 10px #000;
+    top: 165px;
     z-index: 1;
-    text-align: left;
-    text-shadow: 2px 3px 10px black;
+    width: 90%;
 }
 object{
 
