@@ -24,6 +24,15 @@ function SpawnPokemon(props) {
         var obj = JSON.parse(param.detail.data)
         console.log(obj.user)
         console.log(obj.message)
+
+        Axios.post('/api/addBanger',
+            {
+                support:obj.message.substring(0, obj.message.indexOf(' ')),
+                jeu:obj.message.substring(obj.message.indexOf(' ') + 1),
+                viewer:obj.user,
+                number:null
+            }
+        )
     });
     window.addEventListener("Pokemon", (param) => {
         var obj = JSON.parse(param.detail.data)
