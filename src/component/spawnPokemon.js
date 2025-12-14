@@ -20,6 +20,11 @@ function SpawnPokemon(props) {
     const [getPkmId, setGetPkmId] = useState(null);
     const [getRareBadgeId, setGetRareBadgeId] = useState(-1);
     const [berryToWins, setBerryToWins] = useState(null);
+    window.addEventListener("Banger", (param) => {
+        var obj = JSON.parse(param.detail.data)
+        console.log(obj.viewer)
+        console.log(obj.message)
+    });
     window.addEventListener("Pokemon", (param) => {
         var obj = JSON.parse(param.detail.data)
         console.log(obj.user)
