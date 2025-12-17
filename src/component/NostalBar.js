@@ -75,6 +75,14 @@ function NostalBar() {
             document.getElementById("trophy").style.display = "none";
         }
     });
+    window.addEventListener("Reset", (param) => {
+        document.getElementById("bar").style.height = "0%";
+        document.getElementById("barAchievement").style.height = "0%";
+        document.getElementById("bonus").style.display = "none";
+        document.getElementById("soluce").style.display = "none";
+        document.getElementById("saveState").style.display = "none";
+        document.getElementById("trophy").style.display = "none";
+    });
     return(
         <>
             <div id={"boxContainerId"} className="boxContainer">
