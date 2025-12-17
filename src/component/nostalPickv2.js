@@ -13,7 +13,7 @@ function NostalPickV2(props) {
     const [randomConsoles, setRandomConsoles] = React.useState(null);
     var numbers = [1,2,3,4,5,6,7,8,9,10];
     useEffect(() => {
-        var consoles = ["GB","GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM","GAMEGEAR","WII","PS2"];
+        var consoles = ["GB","GBA","GBC","MEGADRIVE","N64","NDS","NGC","PS1","PSP","SNES","NES","MASTER SYSTEM","GAMEGEAR","PS2"];
         // var consoles = ["GBA","NDS","NGC","PSP","WII","SNES"];
         setRandomConsoles(consoles.sort(() => Math.random() - 0.5));
     }, []);
