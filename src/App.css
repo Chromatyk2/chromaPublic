@@ -1588,7 +1588,26 @@ img.done {
 img.imgBox {
     width: 226px;
     animation: float 6s ease-in-out infinite;
+}img.imgBoxBanger {
+    width: 350px;
+    animation: float 6s ease-in-out infinite;
+     animation-name:rainbowlogo;
+     animation-duration:3s;
+     animation-iteration-count:infinite;
 }
+
+@keyframes rainbowlogo {
+    0% {filter: hue-rotate(0deg)}
+    10% {filter: hue-rotate(36deg)}
+    20% {filter: hue-rotate(72deg)}
+    30% {filter: hue-rotate(180deg)}
+    40% {filter: hue-rotate(144deg)}
+    50% {filter: hue-rotate(180deg)}
+    60% {filter: hue-rotate(216deg)}
+    70% {filter: hue-rotate(252deg)}
+    80% {filter: hue-rotate(288deg)}
+    90% {filter: hue-rotate(384deg)}
+    100% {filter: hue-rotate(360deg)}}
 .uniqueBoxContainer {
     background: none;
     border: none;

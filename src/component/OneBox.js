@@ -63,7 +63,7 @@ function OneBox(props) {
                             </button>
                             <button id={"buttonBox" + randomConsoles[2]} onClick={openModal}
                                     className={"uniqueBoxContainer"}>
-                                <img uConsole={randomConsoles[2]} className={"imgBox"} src={"/basic.png"}/>
+                                <img uConsole={randomConsoles[2]} className={"imgBoxBanger"} src={"/basic.png"}/>
                             </button>
                             <button style={{width: "215px"}} className={"uniqueBoxContainer"}>
                             </button>
