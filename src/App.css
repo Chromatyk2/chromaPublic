@@ -1588,7 +1588,8 @@ img.done {
 img.imgBox {
     width: 226px;
     animation: float 6s ease-in-out infinite;
-}img.imgBoxBanger {
+}
+img.imgBoxBanger {
     width: 350px;
     animation: float 6s ease-in-out infinite;
      animation-name:rainbowlogo;
