@@ -5889,10 +5889,10 @@ img.badgeToWinXp {
     right: 0;
     transition: height 2s;
     background: #158f7d;
-    background: linear-gradient(180deg,rgba(21, 143, 125, 1) 0%, rgba(13, 13, 13, 1) 100%);
-    box-shadow: 0 0 8px #fff, inset 0 0 1px #fff, 0 0 1px rgba(224, 194, 0, 1), inset 0 0 1px rgba(224, 194, 0, 1), 0 0 0 rgba(224, 194, 0, 1), inset 0 0 1px rgba(224, 194, 0, 1);
-    width: 100%;
+    background: linear-gradient(180deg, #158f7d, #121212);
+    width: 94%;
     border-radius: 5px;
+    margin-bottom: -1px;
 
 }
 #trophy{
