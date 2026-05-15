@@ -1,8 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import Axios from 'axios'
 import '../App.css'
-import PkmList from './pkmList.js'
-import OnStream from "./onStream";
 import {Link} from "react-router-dom";
 import moment from "moment";
 
