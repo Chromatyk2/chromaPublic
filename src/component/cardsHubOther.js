@@ -11,7 +11,6 @@ import MyBoosters from "./myBoosters";
 import ListUserTcg from "./listUserTcg";
 import Countdown from 'react-countdown';
 import SellCards from "./SellCards.js";
-import Succes from "./Succes.js";
 import OnStream from "./onStream";
 import OtherMyCards from "./myCardsOther";
 function CardsHubOther(props) {
@@ -51,9 +50,6 @@ function CardsHubOther(props) {
                     }
                     {props.page == "sellCards" &&
                         <SellCards user={pseudo}/>
-                    }
-                    {props.page == "succes" &&
-                        <Succes user={pseudo}/>
                     }
                 </div>
         </>

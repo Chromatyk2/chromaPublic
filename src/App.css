@@ -5849,6 +5849,7 @@ img.badgeToWinXp {
     bottom: 0;
     width: 50px;
 }
+<<<<<<< HEAD
 .barcontainer{
     -webkit-animation: flashing .5s linear infinite;
     animation: flashing 10s linear infinite;
@@ -5925,5 +5926,32 @@ img.badgeToWinXp {
     }
     20%, 34%, 41% {
         box-shadow: none;
+=======
+.ReactModal__Content.ReactModal__Content--after-open.modalFight {
+    background: transparent !important;
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open.overlayModalFight {
+    background-color: rgba(0, 0, 0, .8) !important;
+    height: 100vh;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+.fightContainer{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    background-image: url('../public/fight.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+@media screen and (max-width: 1160px) {
+    .fightContainer{
+        width: 100%;
+>>>>>>> ef4d581ffe6fb232249477afb8b979d341d0f4f5
     }
 }

@@ -11,7 +11,6 @@ import MyBoosters from "./myBoosters";
 import ListUserTcg from "./listUserTcg";
 import Countdown from 'react-countdown';
 import SellCards from "./SellCards.js";
-import Succes from "./Succes.js";
 import OnStream from "./onStream";
 function CardsHub(props) {
     const pseudo = props.cookies.user.data[0].login;
@@ -33,9 +32,6 @@ function CardsHub(props) {
                     }
                     {props.page == "sellCards" &&
                         <SellCards idUser={idUser} user={pseudo}/>
-                    }
-                    {props.page == "succes" &&
-                        <Succes idUser={idUser} user={pseudo}/>
                     }
                 </div>
         </>
