@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
+import UniqueBox from "./UniqueBox";
 import $ from 'jquery';
 import Modal from "react-modal";
 import UniqueBoxV2One from "./uniqueBoxV2One.js";
